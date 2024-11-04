@@ -1,6 +1,6 @@
-// src/app/components/ImageLightbox.js
 'use client';
 import React from 'react';
+import Image from 'next/image';
 import {
   ChevronLeft,
   ChevronRight,
@@ -19,7 +19,6 @@ export default function ImageLightbox({
 }) {
   const currentImage = images[currentIndex];
 
-  // Placeholder functions for zoom and download
   const handleZoomIn = () => {
     // Implement zoom in functionality
   };
@@ -61,11 +60,17 @@ export default function ImageLightbox({
       </button>
 
       <div className="relative max-w-5xl max-h-[85vh]">
-        <img
-          src={currentImage.url}
-          alt={currentImage.caption}
-          className="max-h-[85vh] w-auto object-contain rounded-lg shadow-lg"
-        />
+        <div className="relative w-full h-[85vh]">
+          <Image
+            src={currentImage.url}
+            alt={currentImage.caption}
+            fill
+            sizes="100vw"
+            className="object-contain"
+            priority
+            quality={100}
+          />
+        </div>
         <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6 rounded-b-lg">
           <p className="text-white text-lg font-semibold" id="lightbox-title">
             {currentImage.caption}

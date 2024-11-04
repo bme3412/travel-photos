@@ -2,7 +2,7 @@
 import { NextResponse } from 'next/server';
 import albums from '../../../../data/albums.json';
 
-export async function GET(request, { params }) {
+export async function GET( { params }) {
   const { id } = params;
   const album = albums.find((album) => album.id === id);
 
