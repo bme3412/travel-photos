@@ -22,3 +22,34 @@
   opacity: 0.05;
   pointer-events: none;
 }
+
+.mapboxgl-canvas {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.custom-marker {
+  transform: translate(-50%, -50%);
+}
+
+.mapboxgl-popup {
+  max-width: 200px;
+}
+
+.mapboxgl-popup-content {
+  padding: 0;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.mapboxgl-popup-close-button {
+  right: 8px;
+  top: 8px;
+  color: #4B5563;
+}

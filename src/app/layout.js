@@ -9,7 +9,7 @@ const lora = Lora({
 });
 
 export const metadata = {
-  title: 'Travel Albums',
+  title: 'Where to go next?',
   description: 'Relive your journeys around the world',
 };
 

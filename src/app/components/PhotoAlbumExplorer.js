@@ -81,9 +81,9 @@ export default function PhotoAlbumExplorer() {
             <Pyramid className="h-16 w-16 text-teal-700" aria-label="Pyramids of Giza" />
             <Theater className="h-16 w-16 text-teal-700" aria-label="Sydney Opera House" />
           </div>
-          <h1 className="text-5xl font-bold text-gray-800">Travel Albums</h1>
+          <h1 className="text-5xl font-bold text-gray-800">Where to go next?</h1>
           <p className="mt-4 text-lg text-gray-600">
-            Relive your journeys around the world
+            45 countries, 6 continents, 80 cities and counting
           </p>
         </div>
 

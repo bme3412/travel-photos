@@ -1,7 +1,15 @@
 // src/app/api/albums/route.js
 import { NextResponse } from 'next/server';
-import albums from '../../../data/albums.json';
+import albums from '@/data/albums.json';
 
-export async function GET() {  // Removed unused request parameter
-  return NextResponse.json(albums);
+export async function GET() {
+  try {
+    return NextResponse.json(albums);
+  } catch (error) {
+    console.error('Error fetching albums:', error);
+    return NextResponse.json(
+      { error: 'Failed to fetch albums' },
+      { status: 500 }
+    );
+  }
 }

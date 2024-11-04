@@ -1,14 +1,25 @@
 // src/app/api/albums/[id]/route.js
 import { NextResponse } from 'next/server';
-import albums from '../../../../data/albums.json';
+import albums from '@/data/albums.json';
 
 export async function GET(request, { params }) {
-  const { id } = params;
-  const album = albums.find((album) => album.id === id);
+  try {
+    const id = await params.id;
+    const album = albums.find(album => album.id === id);
+    
+    if (!album) {
+      return NextResponse.json(
+        { error: 'Album not found' },
+        { status: 404 }
+      );
+    }
 
-  if (album) {
     return NextResponse.json(album);
-  } else {
-    return NextResponse.json({ message: 'Album not found' }, { status: 404 });
+  } catch (error) {
+    console.error('Error fetching album:', error);
+    return NextResponse.json(
+      { error: 'Failed to fetch album' },
+      { status: 500 }
+    );
   }
 }

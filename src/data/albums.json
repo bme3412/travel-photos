@@ -1,356 +1,207 @@
 [
     {
-      "id": "1",
-      "name": "Exploring Japan",
-      "year": "2023",
-      "country": "Japan",
-      "dateRange": "March 10 - March 20, 2023",
-      "duration": 10,
-      "photoCount": 120,
-      "locations": [
-        { "id": "loc1", "name": "Tokyo", "photoCount": 50 },
-        { "id": "loc2", "name": "Kyoto", "photoCount": 70 }
-      ],
-      "photos": [
-        {
-          "id": "photo1",
-          "url": "/photos/japan1.jpg",
-          "caption": "Shibuya Crossing",
-          "location": "Tokyo"
-        },
-        {
-          "id": "photo2",
-          "url": "/photos/japan2.jpg",
-          "caption": "Fushimi Inari Shrine",
-          "location": "Kyoto"
-        }
-        
-      ]
-    },
-    {
       "id": "2",
       "name": "Adventures in France",
       "year": "2022",
       "country": "France",
       "dateRange": "May 5 - May 15, 2022",
       "duration": 11,
-      "photoCount": 95,
+      "photoCount": 24,
       "locations": [
-        { "id": "loc3", "name": "Paris", "photoCount": 45 },
-        { "id": "loc4", "name": "Nice", "photoCount": 50 }
+        {
+          "id": "loc3",
+          "name": "Paris",
+          "photoCount": 3,
+          "coordinates": { "lng": 2.3431, "lat": 48.8867 }  
+        },
+        {
+          "id": "loc4",
+          "name": "Menton",
+          "photoCount": 1,
+          "coordinates": { "lng": 7.5012, "lat": 43.7747 }
+        },
+        {
+          "id": "loc5",
+          "name": "Roquebrune-Cap-Martin",
+          "photoCount": 9,
+          "coordinates": { "lng": 7.4454, "lat": 43.7573 }
+        },
+        {
+          "id": "loc6",
+          "name": "Cannes",
+          "photoCount": 11,
+          "coordinates": { "lng": 7.0179, "lat": 43.5528 }
+        }
       ],
       "photos": [
         {
-          "id": "photo3",
-          "url": "/photos/france1.jpg",
-          "caption": "Eiffel Tower",
-          "location": "Paris"
+          "id": "france1",
+          "url": "/images/albums/France/sacre-coeur-window-1.jpeg",
+          "caption": "Sacré-Cœur Window View",
+          "location": "Paris",
+          "coordinates": { "lng": 2.3431, "lat": 48.8867 }
         },
         {
-          "id": "photo4",
-          "url": "/photos/france2.jpg",
-          "caption": "Promenade des Anglais",
-          "location": "Nice"
+          "id": "france2",
+          "url": "/images/albums/France/sacre-coeur-window-2.jpeg",
+          "caption": "Sacré-Cœur Window Detail",
+          "location": "Paris",
+          "coordinates": { "lng": 2.3431, "lat": 48.8867 }
+        },
+        {
+          "id": "france3",
+          "url": "/images/albums/France/sacre-coeur.jpeg",
+          "caption": "Sacré-Cœur Basilica",
+          "location": "Paris",
+          "coordinates": { "lng": 2.3431, "lat": 48.8867 }
+        },
+        {
+          "id": "france4",
+          "url": "/images/albums/France/menton.jpeg",
+          "caption": "Menton Coastline",
+          "location": "Menton",
+          "coordinates": { "lng": 7.5012, "lat": 43.7747 }
+        },
+        {
+          "id": "france5",
+          "url": "/images/albums/France/roquebrune-cap-martin1.jpeg",
+          "caption": "Roquebrune-Cap-Martin View",
+          "location": "Roquebrune-Cap-Martin",
+          "coordinates": { "lng": 7.4454, "lat": 43.7573 }
+        },
+        {
+          "id": "france6",
+          "url": "/images/albums/France/roquebrune-cap-martin2.jpeg",
+          "caption": "Roquebrune-Cap-Martin Coastline",
+          "location": "Roquebrune-Cap-Martin",
+          "coordinates": { "lng": 7.4454, "lat": 43.7573 }
+        },
+        {
+          "id": "france7",
+          "url": "/images/albums/France/roquebrune-citadel-window.jpeg",
+          "caption": "Roquebrune Citadel Window View",
+          "location": "Roquebrune-Cap-Martin",
+          "coordinates": { "lng": 7.4454, "lat": 43.7573 }
+        },
+        {
+          "id": "france8",
+          "url": "/images/albums/France/roquebrune-citadel1.jpeg",
+          "caption": "Roquebrune Citadel Architecture",
+          "location": "Roquebrune-Cap-Martin",
+          "coordinates": { "lng": 7.4454, "lat": 43.7573 }
+        },
+        {
+          "id": "france9",
+          "url": "/images/albums/France/roquebrune-citadel2.jpeg",
+          "caption": "Roquebrune Citadel Interior",
+          "location": "Roquebrune-Cap-Martin",
+          "coordinates": { "lng": 7.4454, "lat": 43.7573 }
+        },
+        {
+          "id": "france10",
+          "url": "/images/albums/France/roquebrune-citadel3.jpeg",
+          "caption": "Roquebrune Citadel Courtyard",
+          "location": "Roquebrune-Cap-Martin",
+          "coordinates": { "lng": 7.4454, "lat": 43.7573 }
+        },
+        {
+          "id": "france11",
+          "url": "/images/albums/France/roquebrune-citadel4.jpeg",
+          "caption": "Roquebrune Citadel Passage",
+          "location": "Roquebrune-Cap-Martin",
+          "coordinates": { "lng": 7.4454, "lat": 43.7573 }
+        },
+        {
+          "id": "france12",
+          "url": "/images/albums/France/roquebrune-citadel5.jpeg",
+          "caption": "Roquebrune Citadel Tower",
+          "location": "Roquebrune-Cap-Martin",
+          "coordinates": { "lng": 7.4454, "lat": 43.7573 }
+        },
+        {
+          "id": "france13",
+          "url": "/images/albums/France/roquebrune-citadel6.jpeg",
+          "caption": "Roquebrune Citadel Overview",
+          "location": "Roquebrune-Cap-Martin",
+          "coordinates": { "lng": 7.4454, "lat": 43.7573 }
+        },
+        {
+          "id": "france14",
+          "url": "/images/albums/France/cannes-beach.jpeg",
+          "caption": "Cannes Beach",
+          "location": "Cannes",
+          "coordinates": { "lng": 7.0179, "lat": 43.5528 }
+        },
+        {
+          "id": "france15",
+          "url": "/images/albums/France/cannes-beachclub.jpeg",
+          "caption": "Cannes Beach Club",
+          "location": "Cannes",
+          "coordinates": { "lng": 7.0179, "lat": 43.5528 }
+        },
+        {
+          "id": "france16",
+          "url": "/images/albums/France/cannes-coast.jpeg",
+          "caption": "Cannes Coastal View",
+          "location": "Cannes",
+          "coordinates": { "lng": 7.0179, "lat": 43.5528 }
+        },
+        {
+          "id": "france17",
+          "url": "/images/albums/France/cannes-coast2.jpeg",
+          "caption": "Cannes Coastline",
+          "location": "Cannes",
+          "coordinates": { "lng": 7.0179, "lat": 43.5528 }
+        },
+        {
+          "id": "france18",
+          "url": "/images/albums/France/cannes-food.jpeg",
+          "caption": "Cannes Culinary Experience",
+          "location": "Cannes",
+          "coordinates": { "lng": 7.0179, "lat": 43.5528 }
+        },
+        {
+          "id": "france19",
+          "url": "/images/albums/France/cannes-hotel.jpeg",
+          "caption": "Cannes Hotel",
+          "location": "Cannes",
+          "coordinates": { "lng": 7.0179, "lat": 43.5528 }
+        },
+        {
+          "id": "france20",
+          "url": "/images/albums/France/cannes-restaurant.jpeg",
+          "caption": "Cannes Restaurant",
+          "location": "Cannes",
+          "coordinates": { "lng": 7.0179, "lat": 43.5528 }
+        },
+        {
+          "id": "france21",
+          "url": "/images/albums/France/cannes-sunset.jpeg",
+          "caption": "Cannes Sunset",
+          "location": "Cannes",
+          "coordinates": { "lng": 7.0179, "lat": 43.5528 }
+        },
+        {
+          "id": "france22",
+          "url": "/images/albums/France/cannes-versace-hotel.jpeg",
+          "caption": "Versace Hotel Cannes",
+          "location": "Cannes",
+          "coordinates": { "lng": 7.0179, "lat": 43.5528 }
+        },
+        {
+          "id": "france23",
+          "url": "/images/albums/France/cannes-versace.jpeg",
+          "caption": "Versace Cannes",
+          "location": "Cannes",
+          "coordinates": { "lng": 7.0179, "lat": 43.5528 }
+        },
+        {
+          "id": "france24",
+          "url": "/images/albums/France/cannes-view.jpeg",
+          "caption": "Cannes Panoramic View",
+          "location": "Cannes",
+          "coordinates": { "lng": 7.0179, "lat": 43.5528 }
         }
-        
-      ]
-    },
-    {
-      "id": "3",
-      "name": "Safari in Kenya",
-      "year": "2021",
-      "country": "Kenya",
-      "dateRange": "August 10 - August 20, 2021",
-      "duration": 10,
-      "photoCount": 150,
-      "locations": [
-        { "id": "loc5", "name": "Maasai Mara", "photoCount": 80 },
-        { "id": "loc6", "name": "Nairobi", "photoCount": 70 }
-      ],
-      "photos": [
-        {
-          "id": "photo5",
-          "url": "/photos/kenya1.jpg",
-          "caption": "Lion in Maasai Mara",
-          "location": "Maasai Mara"
-        },
-        {
-          "id": "photo6",
-          "url": "/photos/kenya2.jpg",
-          "caption": "Nairobi Skyline",
-          "location": "Nairobi"
-        }
-        
-      ]
-    },
-    {
-      "id": "4",
-      "name": "Road Trip USA",
-      "year": "2020",
-      "country": "USA",
-      "dateRange": "June 1 - June 30, 2020",
-      "duration": 30,
-      "photoCount": 200,
-      "locations": [
-        { "id": "loc7", "name": "New York", "photoCount": 50 },
-        { "id": "loc8", "name": "Los Angeles", "photoCount": 50 },
-        { "id": "loc9", "name": "Grand Canyon", "photoCount": 100 }
-      ],
-      "photos": [
-        {
-          "id": "photo7",
-          "url": "/photos/usa1.jpg",
-          "caption": "Statue of Liberty",
-          "location": "New York"
-        },
-        {
-          "id": "photo8",
-          "url": "/photos/usa2.jpg",
-          "caption": "Hollywood Sign",
-          "location": "Los Angeles"
-        },
-        {
-          "id": "photo9",
-          "url": "/photos/usa3.jpg",
-          "caption": "Grand Canyon View",
-          "location": "Grand Canyon"
-        }
-        
-      ]
-    },
-    {
-      "id": "5",
-      "name": "Discovering Australia",
-      "year": "2019",
-      "country": "Australia",
-      "dateRange": "December 1 - December 15, 2019",
-      "duration": 15,
-      "photoCount": 130,
-      "locations": [
-        { "id": "loc10", "name": "Sydney", "photoCount": 70 },
-        { "id": "loc11", "name": "Melbourne", "photoCount": 60 }
-      ],
-      "photos": [
-        {
-          "id": "photo10",
-          "url": "/photos/australia1.jpg",
-          "caption": "Sydney Opera House",
-          "location": "Sydney"
-        },
-        {
-          "id": "photo11",
-          "url": "/photos/australia2.jpg",
-          "caption": "Great Ocean Road",
-          "location": "Melbourne"
-        }
-        
-      ]
-    },
-    {
-      "id": "6",
-      "name": "Cultural Tour of India",
-      "year": "2018",
-      "country": "India",
-      "dateRange": "October 5 - October 25, 2018",
-      "duration": 20,
-      "photoCount": 180,
-      "locations": [
-        { "id": "loc12", "name": "Delhi", "photoCount": 60 },
-        { "id": "loc13", "name": "Agra", "photoCount": 50 },
-        { "id": "loc14", "name": "Jaipur", "photoCount": 70 }
-      ],
-      "photos": [
-        {
-          "id": "photo12",
-          "url": "/photos/india1.jpg",
-          "caption": "Taj Mahal",
-          "location": "Agra"
-        },
-        {
-          "id": "photo13",
-          "url": "/photos/india2.jpg",
-          "caption": "Amber Fort",
-          "location": "Jaipur"
-        }
-        
-      ]
-    },
-    {
-      "id": "7",
-      "name": "Discover Egypt",
-      "year": "2017",
-      "country": "Egypt",
-      "dateRange": "April 10 - April 20, 2017",
-      "duration": 10,
-      "photoCount": 100,
-      "locations": [
-        { "id": "loc15", "name": "Cairo", "photoCount": 60 },
-        { "id": "loc16", "name": "Luxor", "photoCount": 40 }
-      ],
-      "photos": [
-        {
-          "id": "photo14",
-          "url": "/photos/egypt1.jpg",
-          "caption": "Pyramids of Giza",
-          "location": "Cairo"
-        },
-        {
-          "id": "photo15",
-          "url": "/photos/egypt2.jpg",
-          "caption": "Temple of Karnak",
-          "location": "Luxor"
-        }
-        
-      ]
-    },
-    {
-      "id": "8",
-      "name": "European Expedition",
-      "year": "2016",
-      "country": "Multiple",
-      "dateRange": "July 1 - August 1, 2016",
-      "duration": 31,
-      "photoCount": 250,
-      "locations": [
-        { "id": "loc17", "name": "London", "photoCount": 50 },
-        { "id": "loc18", "name": "Paris", "photoCount": 50 },
-        { "id": "loc19", "name": "Rome", "photoCount": 50 },
-        { "id": "loc20", "name": "Berlin", "photoCount": 50 },
-        { "id": "loc21", "name": "Barcelona", "photoCount": 50 }
-      ],
-      "photos": [
-        {
-          "id": "photo16",
-          "url": "/photos/europe1.jpg",
-          "caption": "Big Ben",
-          "location": "London"
-        },
-        {
-          "id": "photo17",
-          "url": "/photos/europe2.jpg",
-          "caption": "Eiffel Tower",
-          "location": "Paris"
-        },
-        {
-          "id": "photo18",
-          "url": "/photos/europe3.jpg",
-          "caption": "Colosseum",
-          "location": "Rome"
-        }
-        
-      ]
-    },
-    {
-      "id": "9",
-      "name": "Brazilian Beaches",
-      "year": "2024",
-      "country": "Brazil",
-      "dateRange": "January 5 - January 15, 2024",
-      "duration": 11,
-      "photoCount": 110,
-      "locations": [
-        { "id": "loc22", "name": "Rio de Janeiro", "photoCount": 70 },
-        { "id": "loc23", "name": "Salvador", "photoCount": 40 }
-      ],
-      "photos": [
-        {
-          "id": "photo19",
-          "url": "/photos/brazil1.jpg",
-          "caption": "Christ the Redeemer",
-          "location": "Rio de Janeiro"
-        },
-        {
-          "id": "photo20",
-          "url": "/photos/brazil2.jpg",
-          "caption": "Pelourinho District",
-          "location": "Salvador"
-        }
-        
-      ]
-    },
-    {
-      "id": "10",
-      "name": "Winter in Canada",
-      "year": "2025",
-      "country": "Canada",
-      "dateRange": "February 1 - February 10, 2025",
-      "duration": 10,
-      "photoCount": 90,
-      "locations": [
-        { "id": "loc24", "name": "Toronto", "photoCount": 50 },
-        { "id": "loc25", "name": "Montreal", "photoCount": 40 }
-      ],
-      "photos": [
-        {
-          "id": "photo21",
-          "url": "/photos/canada1.jpg",
-          "caption": "CN Tower",
-          "location": "Toronto"
-        },
-        {
-          "id": "photo22",
-          "url": "/photos/canada2.jpg",
-          "caption": "Old Montreal",
-          "location": "Montreal"
-        }
-        
-      ]
-    },
-    {
-      "id": "11",
-      "name": "Thailand Adventure",
-      "year": "2023",
-      "country": "Thailand",
-      "dateRange": "November 10 - November 25, 2023",
-      "duration": 16,
-      "photoCount": 140,
-      "locations": [
-        { "id": "loc26", "name": "Bangkok", "photoCount": 70 },
-        { "id": "loc27", "name": "Phuket", "photoCount": 70 }
-      ],
-      "photos": [
-        {
-          "id": "photo23",
-          "url": "/photos/thailand1.jpg",
-          "caption": "Grand Palace",
-          "location": "Bangkok"
-        },
-        {
-          "id": "photo24",
-          "url": "/photos/thailand2.jpg",
-          "caption": "Phi Phi Islands",
-          "location": "Phuket"
-        }
-        
-      ]
-    },
-    {
-      "id": "12",
-      "name": "South African Safari",
-      "year": "2022",
-      "country": "South Africa",
-      "dateRange": "September 15 - September 25, 2022",
-      "duration": 11,
-      "photoCount": 130,
-      "locations": [
-        { "id": "loc28", "name": "Kruger National Park", "photoCount": 80 },
-        { "id": "loc29", "name": "Cape Town", "photoCount": 50 }
-      ],
-      "photos": [
-        {
-          "id": "photo25",
-          "url": "/photos/southafrica1.jpg",
-          "caption": "Elephant in Kruger",
-          "location": "Kruger National Park"
-        },
-        {
-          "id": "photo26",
-          "url": "/photos/southafrica2.jpg",
-          "caption": "Table Mountain",
-          "location": "Cape Town"
-        }
-        
       ]
     }
-  ]
-  
+]

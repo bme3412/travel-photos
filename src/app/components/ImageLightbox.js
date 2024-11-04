@@ -1,114 +1,102 @@
-'use client';
-import React from 'react';
-import Image from 'next/image';
-import {
-  ChevronLeft,
-  ChevronRight,
-  X,
-  ZoomIn,
-  ZoomOut,
-  Download,
-} from 'lucide-react';
+import React, { useEffect, useCallback } from 'react';
+import { X, ChevronLeft, ChevronRight } from 'lucide-react';
 
-export default function ImageLightbox({
-  images,
-  currentIndex,
-  onClose,
-  onNext,
-  onPrevious,
+export default function ImageLightbox({ 
+  images, 
+  currentIndex, 
+  onClose, 
+  onNext, 
+  onPrevious 
 }) {
+  // Handle keyboard events
+  const handleKeyDown = useCallback((e) => {
+    switch(e.key) {
+      case 'Escape':
+        onClose();
+        break;
+      case 'ArrowLeft':
+        onPrevious();
+        break;
+      case 'ArrowRight':
+        onNext();
+        break;
+      default:
+        break;
+    }
+  }, [onClose, onNext, onPrevious]);
+
+  useEffect(() => {
+    // Add keyboard event listener
+    window.addEventListener('keydown', handleKeyDown);
+    // Prevent body scroll
+    document.body.style.overflow = 'hidden';
+
+    return () => {
+      // Cleanup
+      window.removeEventListener('keydown', handleKeyDown);
+      document.body.style.overflow = 'unset';
+    };
+  }, [handleKeyDown]);
+
   const currentImage = images[currentIndex];
 
-  const handleZoomIn = () => {
-    // Implement zoom in functionality
-  };
-
-  const handleZoomOut = () => {
-    // Implement zoom out functionality
-  };
-
-  const handleDownload = () => {
-    const link = document.createElement('a');
-    link.href = currentImage.url;
-    link.download = currentImage.caption || 'download';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
-
   return (
-    <div
-      className="fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center"
-      role="dialog"
-      aria-modal="true"
-      aria-labelledby="lightbox-title"
-    >
+    <div className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center">
+      {/* Close button */}
       <button
         onClick={onClose}
-        className="absolute top-6 right-6 text-white hover:text-gray-300"
-        aria-label="Close Lightbox"
+        className="absolute top-4 right-4 text-white p-2 hover:bg-white/10 rounded-full 
+                   transition-colors duration-200"
+        aria-label="Close lightbox"
       >
-        <X size={32} />
+        <X className="h-8 w-8" />
       </button>
 
+      {/* Navigation buttons */}
       <button
         onClick={onPrevious}
-        className="absolute left-6 text-white hover:text-gray-300"
-        aria-label="Previous Image"
+        className="absolute left-4 top-1/2 -translate-y-1/2 text-white p-2 
+                   hover:bg-white/10 rounded-full transition-colors duration-200"
+        aria-label="Previous image"
       >
-        <ChevronLeft size={48} />
+        <ChevronLeft className="h-8 w-8" />
       </button>
-
-      <div className="relative max-w-5xl max-h-[85vh]">
-        <div className="relative w-full h-[85vh]">
-          <Image
-            src={currentImage.url}
-            alt={currentImage.caption}
-            fill
-            sizes="100vw"
-            className="object-contain"
-            priority
-            quality={100}
-          />
-        </div>
-        <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6 rounded-b-lg">
-          <p className="text-white text-lg font-semibold" id="lightbox-title">
-            {currentImage.caption}
-          </p>
-          <p className="text-gray-300 text-sm">{currentImage.location}</p>
-        </div>
-      </div>
 
       <button
         onClick={onNext}
-        className="absolute right-6 text-white hover:text-gray-300"
-        aria-label="Next Image"
+        className="absolute right-4 top-1/2 -translate-y-1/2 text-white p-2 
+                   hover:bg-white/10 rounded-full transition-colors duration-200"
+        aria-label="Next image"
       >
-        <ChevronRight size={48} />
+        <ChevronRight className="h-8 w-8" />
       </button>
 
-      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-6">
-        <button
-          onClick={handleZoomIn}
-          className="p-3 bg-white/10 rounded-full hover:bg-white/20"
-          aria-label="Zoom In"
-        >
-          <ZoomIn size={24} className="text-white" />
-        </button>
-        <button
-          onClick={handleZoomOut}
-          className="p-3 bg-white/10 rounded-full hover:bg-white/20"
-          aria-label="Zoom Out"
-        >
-          <ZoomOut size={24} className="text-white" />
-        </button>
-        <button
-          onClick={handleDownload}
-          className="p-3 bg-white/10 rounded-full hover:bg-white/20"
-          aria-label="Download Image"
-        >
-          <Download size={24} className="text-white" />
-        </button>
+      {/* Image container */}
+      <div className="relative w-full h-full flex items-center justify-center p-4">
+        {currentImage && (
+          <div className="relative max-w-5xl w-full h-full flex flex-col items-center justify-center">
+            <div className="relative w-full max-h-[80vh] aspect-[3/2]">
+              <img
+                src={currentImage.url}
+                alt={currentImage.caption}
+                className="object-contain w-full h-full"
+              />
+            </div>
+            <div className="mt-4 text-center">
+              <h3 className="text-white text-xl font-medium mb-2">
+                {currentImage.caption}
+              </h3>
+              <p className="text-gray-300">
+                {currentImage.location}
+              </p>
+            </div>
+          </div>
+        )}
+      </div>
+
+      {/* Image counter */}
+      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 text-white">
+        {currentIndex + 1} / {images.length}
       </div>
     </div>
   );
