@@ -1,11 +1,9 @@
 'use client';
 
-import React, { useEffect } from 'react';  // Removed useState since it's not used
+import React from 'react';  // Just import React without useState
 import Image from 'next/image';
-// Removed unused ImageLightbox import
 import Link from 'next/link';
 import { 
-  // Removed unused imports: ArrowLeft, Grid, MapIcon
   Loader, 
   MapPin, 
   Camera,
@@ -30,7 +28,7 @@ export default function AlbumsPage() {
 
   const [searchTerm, setSearchTerm] = React.useState('');
 
-  useEffect(() => {
+  React.useEffect(() => {
     const fetchAlbums = async () => {
       setLoading(true);
       try {
