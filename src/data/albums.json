@@ -1,208 +1,24 @@
-[
-    {
-      "id": "2",
-      "name": "Adventures in France",
-      "year": "2022",
-      "country": "France",
-      "dateRange": "May 5 - May 15, 2022",
-      "duration": 11,
-      "photoCount": 24,
-      "locations": [
-        {
-          "id": "loc3",
-          "name": "Paris",
-          "photoCount": 3,
-          "coordinates": { "lng": 2.3431, "lat": 48.8867 }  
-        },
-        {
-          "id": "loc4",
-          "name": "Menton",
-          "photoCount": 1,
-          "coordinates": { "lng": 7.5012, "lat": 43.7747 }
-        },
-        {
-          "id": "loc5",
-          "name": "Roquebrune-Cap-Martin",
-          "photoCount": 9,
-          "coordinates": { "lng": 7.4454, "lat": 43.7573 }
-        },
-        {
-          "id": "loc6",
-          "name": "Cannes",
-          "photoCount": 11,
-          "coordinates": { "lng": 7.0179, "lat": 43.5528 }
-        }
-      ],
-      "photos": [
-        {
-          "id": "france1",
-          "url": "/images/albums/France/sacre-coeur-window-1.jpeg",
-          "caption": "Sacré-Cœur Window View",
-          "location": "Paris",
-          "coordinates": { "lng": 2.3431, "lat": 48.8867 }
-        },
-        {
-          "id": "france2",
-          "url": "/images/albums/France/sacre-coeur-window-2.jpeg",
-          "caption": "Sacré-Cœur Window Detail",
-          "location": "Paris",
-          "coordinates": { "lng": 2.3431, "lat": 48.8867 }
-        },
-        {
-          "id": "france3",
-          "url": "/images/albums/France/sacre-coeur.jpeg",
-          "caption": "Sacré-Cœur Basilica",
-          "location": "Paris",
-          "coordinates": { "lng": 2.3431, "lat": 48.8867 }
-        },
-        {
-          "id": "france4",
-          "url": "/images/albums/France/menton.jpeg",
-          "caption": "Menton Coastline",
-          "location": "Menton",
-          "coordinates": { "lng": 7.5012, "lat": 43.7747 }
-        },
-        {
-          "id": "france5",
-          "url": "/images/albums/France/roquebrune-cap-martin1.jpeg",
-          "caption": "Roquebrune-Cap-Martin View",
-          "location": "Roquebrune-Cap-Martin",
-          "coordinates": { "lng": 7.4454, "lat": 43.7573 }
-        },
-        {
-          "id": "france6",
-          "url": "/images/albums/France/roquebrune-cap-martin2.jpeg",
-          "caption": "Roquebrune-Cap-Martin Coastline",
-          "location": "Roquebrune-Cap-Martin",
-          "coordinates": { "lng": 7.4454, "lat": 43.7573 }
-        },
-        {
-          "id": "france7",
-          "url": "/images/albums/France/roquebrune-citadel-window.jpeg",
-          "caption": "Roquebrune Citadel Window View",
-          "location": "Roquebrune-Cap-Martin",
-          "coordinates": { "lng": 7.4454, "lat": 43.7573 }
-        },
-        {
-          "id": "france8",
-          "url": "/images/albums/France/roquebrune-citadel1.jpeg",
-          "caption": "Roquebrune Citadel Architecture",
-          "location": "Roquebrune-Cap-Martin",
-          "coordinates": { "lng": 7.4454, "lat": 43.7573 }
-        },
-        {
-          "id": "france9",
-          "url": "/images/albums/France/roquebrune-citadel2.jpeg",
-          "caption": "Roquebrune Citadel Interior",
-          "location": "Roquebrune-Cap-Martin",
-          "coordinates": { "lng": 7.4454, "lat": 43.7573 }
-        },
-        {
-          "id": "france10",
-          "url": "/images/albums/France/roquebrune-citadel3.jpeg",
-          "caption": "Roquebrune Citadel Courtyard",
-          "location": "Roquebrune-Cap-Martin",
-          "coordinates": { "lng": 7.4454, "lat": 43.7573 }
-        },
-        {
-          "id": "france11",
-          "url": "/images/albums/France/roquebrune-citadel4.jpeg",
-          "caption": "Roquebrune Citadel Passage",
-          "location": "Roquebrune-Cap-Martin",
-          "coordinates": { "lng": 7.4454, "lat": 43.7573 }
-        },
-        {
-          "id": "france12",
-          "url": "/images/albums/France/roquebrune-citadel5.jpeg",
-          "caption": "Roquebrune Citadel Tower",
-          "location": "Roquebrune-Cap-Martin",
-          "coordinates": { "lng": 7.4454, "lat": 43.7573 }
-        },
-        {
-          "id": "france13",
-          "url": "/images/albums/France/roquebrune-citadel6.jpeg",
-          "caption": "Roquebrune Citadel Overview",
-          "location": "Roquebrune-Cap-Martin",
-          "coordinates": { "lng": 7.4454, "lat": 43.7573 }
-        },
-        {
-          "id": "france14",
-          "url": "/images/albums/France/cannes-beach.jpeg",
-          "caption": "Cannes Beach",
-          "location": "Cannes",
-          "coordinates": { "lng": 7.0179, "lat": 43.5528 }
-        },
-        {
-          "id": "france15",
-          "url": "/images/albums/France/cannes-beachclub.jpeg",
-          "caption": "Cannes Beach Club",
-          "location": "Cannes",
-          "coordinates": { "lng": 7.0179, "lat": 43.5528 }
-        },
-        {
-          "id": "france16",
-          "url": "/images/albums/France/cannes-coast.jpeg",
-          "caption": "Cannes Coastal View",
-          "location": "Cannes",
-          "coordinates": { "lng": 7.0179, "lat": 43.5528 }
-        },
-        {
-          "id": "france17",
-          "url": "/images/albums/France/cannes-coast2.jpeg",
-          "caption": "Cannes Coastline",
-          "location": "Cannes",
-          "coordinates": { "lng": 7.0179, "lat": 43.5528 }
-        },
-        {
-          "id": "france18",
-          "url": "/images/albums/France/cannes-food.jpeg",
-          "caption": "Cannes Culinary Experience",
-          "location": "Cannes",
-          "coordinates": { "lng": 7.0179, "lat": 43.5528 }
-        },
-        {
-          "id": "france19",
-          "url": "/images/albums/France/cannes-hotel.jpeg",
-          "caption": "Cannes Hotel",
-          "location": "Cannes",
-          "coordinates": { "lng": 7.0179, "lat": 43.5528 }
-        },
-        {
-          "id": "france20",
-          "url": "/images/albums/France/cannes-restaurant.jpeg",
-          "caption": "Cannes Restaurant",
-          "location": "Cannes",
-          "coordinates": { "lng": 7.0179, "lat": 43.5528 }
-        },
-        {
-          "id": "france21",
-          "url": "/images/albums/France/cannes-sunset.jpeg",
-          "caption": "Cannes Sunset",
-          "location": "Cannes",
-          "coordinates": { "lng": 7.0179, "lat": 43.5528 }
-        },
-        {
-          "id": "france22",
-          "url": "/images/albums/France/cannes-versace-hotel.jpeg",
-          "caption": "Versace Hotel Cannes",
-          "location": "Cannes",
-          "coordinates": { "lng": 7.0179, "lat": 43.5528 }
-        },
-        {
-          "id": "france23",
-          "url": "/images/albums/France/cannes-versace.jpeg",
-          "caption": "Versace Cannes",
-          "location": "Cannes",
-          "coordinates": { "lng": 7.0179, "lat": 43.5528 }
-        },
-        {
-          "id": "france24",
-          "url": "/images/albums/France/cannes-view.jpeg",
-          "caption": "Cannes Panoramic View",
-          "location": "Cannes",
-          "coordinates": { "lng": 7.0179, "lat": 43.5528 }
-        }
-      ]
-    }
-  ]
+{
+    "albums": [
+      {
+        "id": "france",
+        "name": "Adventures in France",
+        "countryId": "FR",
+        "year": "2022"
+      },
+      {
+        "id": "hongkong",
+        "name": "Exploring Hong Kong",
+        "countryId": "HK",
+        "year": "2023"
+      },
+      {
+        "id": "brazil",
+        "name": "Brazil ",
+        "countryId": "BR",
+        "year": "2023"
+      }
+      
+    ]
+  }
   

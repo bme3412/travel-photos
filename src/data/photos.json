@@ -1,0 +1,334 @@
+{
+    "photos": [
+      {
+        "id": "france1",
+        "albumId": "france",
+        "url": "/images/albums/France/sacre-coeur-window-1.jpeg",
+        "caption": "Sacré-Cœur Window View",
+        "locationId": "Paris",
+        "coordinates": { "lng": 2.3431, "lat": 48.8867 },
+        "dateCreated": "2022-06-15",
+        "tags": ["architecture", "church", "window", "paris"]
+      },
+      {
+        "id": "france2",
+        "albumId": "france",
+        "url": "/images/albums/France/sacre-coeur-window-2.jpeg",
+        "caption": "Sacré-Cœur Window Detail",
+        "locationId": "Paris",
+        "coordinates": { "lng": 2.3431, "lat": 48.8867 },
+        "dateCreated": "2022-06-15",
+        "tags": ["architecture", "church", "window", "detail"]
+      },
+      {
+        "id": "france3",
+        "albumId": "france",
+        "url": "/images/albums/France/sacre-coeur.jpeg",
+        "caption": "Sacré-Cœur Basilica",
+        "locationId": "Paris",
+        "coordinates": { "lng": 2.3431, "lat": 48.8867 },
+        "dateCreated": "2022-06-15",
+        "tags": ["architecture", "church", "landmark"]
+      },
+      {
+        "id": "france4",
+        "albumId": "france",
+        "url": "/images/albums/France/menton.jpeg",
+        "caption": "Menton Coastline",
+        "locationId": "Menton",
+        "coordinates": { "lng": 7.5012, "lat": 43.7747 },
+        "dateCreated": "2022-06-18",
+        "tags": ["coast", "landscape", "beach"]
+      },
+      {
+        "id": "france5",
+        "albumId": "france",
+        "url": "/images/albums/France/roquebrune-cap-martin1.jpeg",
+        "caption": "Roquebrune-Cap-Martin View",
+        "locationId": "Roquebrune-Cap-Martin",
+        "coordinates": { "lng": 7.4454, "lat": 43.7573 },
+        "dateCreated": "2022-06-20",
+        "tags": ["coast", "landscape", "village"]
+      },
+      {
+        "id": "france6",
+        "albumId": "france",
+        "url": "/images/albums/France/roquebrune-cap-martin2.jpeg",
+        "caption": "Roquebrune-Cap-Martin Coastline",
+        "locationId": "Roquebrune-Cap-Martin",
+        "coordinates": { "lng": 7.4454, "lat": 43.7573 },
+        "dateCreated": "2022-06-20",
+        "tags": ["coast", "landscape"]
+      },
+      {
+        "id": "france7",
+        "albumId": "france",
+        "url": "/images/albums/France/roquebrune-citadel-window.jpeg",
+        "caption": "Roquebrune Citadel Window View",
+        "locationId": "Roquebrune-Cap-Martin",
+        "coordinates": { "lng": 7.4454, "lat": 43.7573 },
+        "dateCreated": "2022-06-20",
+        "tags": ["architecture", "medieval", "window"]
+      },
+      {
+        "id": "france8",
+        "albumId": "france",
+        "url": "/images/albums/France/roquebrune-citadel1.jpeg",
+        "caption": "Roquebrune Citadel Architecture",
+        "locationId": "Roquebrune-Cap-Martin",
+        "coordinates": { "lng": 7.4454, "lat": 43.7573 },
+        "dateCreated": "2022-06-20",
+        "tags": ["architecture", "medieval", "castle"]
+      },
+      {
+        "id": "france9",
+        "albumId": "france",
+        "url": "/images/albums/France/roquebrune-citadel2.jpeg",
+        "caption": "Roquebrune Citadel Interior",
+        "locationId": "Roquebrune-Cap-Martin",
+        "coordinates": { "lng": 7.4454, "lat": 43.7573 },
+        "dateCreated": "2022-06-20",
+        "tags": ["architecture", "medieval", "interior"]
+      },
+      {
+        "id": "france10",
+        "albumId": "france",
+        "url": "/images/albums/France/roquebrune-citadel3.jpeg",
+        "caption": "Roquebrune Citadel Courtyard",
+        "locationId": "Roquebrune-Cap-Martin",
+        "coordinates": { "lng": 7.4454, "lat": 43.7573 },
+        "dateCreated": "2022-06-20",
+        "tags": ["architecture", "medieval", "courtyard"]
+      },
+      {
+        "id": "france11",
+        "albumId": "france",
+        "url": "/images/albums/France/roquebrune-citadel4.jpeg",
+        "caption": "Roquebrune Citadel Passage",
+        "locationId": "Roquebrune-Cap-Martin",
+        "coordinates": { "lng": 7.4454, "lat": 43.7573 },
+        "dateCreated": "2022-06-20",
+        "tags": ["architecture", "medieval", "passage"]
+      },
+      {
+        "id": "france12",
+        "albumId": "france",
+        "url": "/images/albums/France/roquebrune-citadel5.jpeg",
+        "caption": "Roquebrune Citadel Tower",
+        "locationId": "Roquebrune-Cap-Martin",
+        "coordinates": { "lng": 7.4454, "lat": 43.7573 },
+        "dateCreated": "2022-06-20",
+        "tags": ["architecture", "medieval", "tower"]
+      },
+      {
+        "id": "france13",
+        "albumId": "france",
+        "url": "/images/albums/France/roquebrune-citadel6.jpeg",
+        "caption": "Roquebrune Citadel Overview",
+        "locationId": "Roquebrune-Cap-Martin",
+        "coordinates": { "lng": 7.4454, "lat": 43.7573 },
+        "dateCreated": "2022-06-20",
+        "tags": ["architecture", "medieval", "overview"]
+      },
+      {
+        "id": "france14",
+        "albumId": "france",
+        "url": "/images/albums/France/cannes-beach.jpeg",
+        "caption": "Cannes Beach",
+        "locationId": "Cannes",
+        "coordinates": { "lng": 7.0179, "lat": 43.5528 },
+        "dateCreated": "2022-06-22",
+        "tags": ["beach", "coast", "leisure"]
+      },
+      {
+        "id": "france15",
+        "albumId": "france",
+        "url": "/images/albums/France/cannes-beachclub.jpeg",
+        "caption": "Cannes Beach Club",
+        "locationId": "Cannes",
+        "coordinates": { "lng": 7.0179, "lat": 43.5528 },
+        "dateCreated": "2022-06-22",
+        "tags": ["beach", "leisure", "luxury"]
+      },
+      {
+        "id": "france16",
+        "albumId": "france",
+        "url": "/images/albums/France/cannes-coast.jpeg",
+        "caption": "Cannes Coastal View",
+        "locationId": "Cannes",
+        "coordinates": { "lng": 7.0179, "lat": 43.5528 },
+        "dateCreated": "2022-06-22",
+        "tags": ["coast", "landscape"]
+      },
+      {
+        "id": "france17",
+        "albumId": "france",
+        "url": "/images/albums/France/cannes-coast2.jpeg",
+        "caption": "Cannes Coastline",
+        "locationId": "Cannes",
+        "coordinates": { "lng": 7.0179, "lat": 43.5528 },
+        "dateCreated": "2022-06-22",
+        "tags": ["coast", "landscape"]
+      },
+      {
+        "id": "france18",
+        "albumId": "france",
+        "url": "/images/albums/France/cannes-food.jpeg",
+        "caption": "Cannes Culinary Experience",
+        "locationId": "Cannes",
+        "coordinates": { "lng": 7.0179, "lat": 43.5528 },
+        "dateCreated": "2022-06-22",
+        "tags": ["food", "cuisine", "dining"]
+      },
+      {
+        "id": "france19",
+        "albumId": "france",
+        "url": "/images/albums/France/cannes-hotel.jpeg",
+        "caption": "Cannes Hotel",
+        "locationId": "Cannes",
+        "coordinates": { "lng": 7.0179, "lat": 43.5528 },
+        "dateCreated": "2022-06-22",
+        "tags": ["hotel", "luxury", "architecture"]
+      },
+      {
+        "id": "france20",
+        "albumId": "france",
+        "url": "/images/albums/France/cannes-restaurant.jpeg",
+        "caption": "Cannes Restaurant",
+        "locationId": "Cannes",
+        "coordinates": { "lng": 7.0179, "lat": 43.5528 },
+        "dateCreated": "2022-06-22",
+        "tags": ["restaurant", "dining", "food"]
+      },
+      {
+        "id": "france21",
+        "albumId": "france",
+        "url": "/images/albums/France/cannes-sunset.jpeg",
+        "caption": "Cannes Sunset",
+        "locationId": "Cannes",
+        "coordinates": { "lng": 7.0179, "lat": 43.5528 },
+        "dateCreated": "2022-06-22",
+        "tags": ["sunset", "landscape", "coast"]
+      },
+      {
+        "id": "france22",
+        "albumId": "france",
+        "url": "/images/albums/France/cannes-versace-hotel.jpeg",
+        "caption": "Versace Hotel Cannes",
+        "locationId": "Cannes",
+        "coordinates": { "lng": 7.0179, "lat": 43.5528 },
+        "dateCreated": "2022-06-22",
+        "tags": ["hotel", "luxury", "versace"]
+      },
+      {
+        "id": "france23",
+        "albumId": "france",
+        "url": "/images/albums/France/cannes-versace.jpeg",
+        "caption": "Versace Cannes",
+        "locationId": "Cannes",
+        "coordinates": { "lng": 7.0179, "lat": 43.5528 },
+        "dateCreated": "2022-06-22",
+        "tags": ["fashion", "luxury", "versace"]
+      },
+      {
+        "id": "france24",
+        "albumId": "france",
+        "url": "/images/albums/France/cannes-view.jpeg",
+        "caption": "Cannes Panoramic View",
+        "locationId": "Cannes",
+        "coordinates": { "lng": 7.0179, "lat": 43.5528 },
+        "dateCreated": "2022-06-22",
+        "tags": ["landscape", "panorama", "city"]
+      },
+      {
+        "id": "hk1",
+        "albumId": "hongkong",
+        "url": "/images/albums/Hong-Kong/highrise-towers.jpeg",
+        "caption": "Hong Kong Highrise Towers",
+        "locationId": "Hong Kong",
+        "coordinates": { "lng": 114.1694, "lat": 22.3193 },
+        "dateCreated": "2023-03-15",
+        "tags": ["architecture", "skyline", "urban", "towers"]
+      },
+      {
+        "id": "hk2",
+        "albumId": "hongkong",
+        "url": "/images/albums/Hong-Kong/hongkong-ritzcarlton-pool.jpeg",
+        "caption": "Ritz-Carlton Pool",
+        "locationId": "Hong Kong",
+        "coordinates": { "lng": 114.1694, "lat": 22.3193 },
+        "dateCreated": "2023-03-15",
+        "tags": ["hotel", "luxury", "pool", "leisure"]
+      },
+      {
+        "id": "hk3",
+        "albumId": "hongkong",
+        "url": "/images/albums/Hong-Kong/hongkong-ritzcarlton.jpeg",
+        "caption": "Ritz-Carlton Hotel",
+        "locationId": "Hong Kong",
+        "coordinates": { "lng": 114.1667, "lat": 22.3100 },
+        "dateCreated": "2023-03-16",
+        "tags": ["hotel", "luxury", "architecture"]
+      },
+      {
+        "id": "hk4",
+        "albumId": "hongkong",
+        "url": "/images/albums/Hong-Kong/hongkong-skyline-celtics.jpeg",
+        "caption": "Hong Kong Skyline with Celtic Towers",
+        "locationId": "Hong Kong",
+        "coordinates": { "lng": 114.1600, "lat": 22.2800 },
+        "dateCreated": "2023-03-16",
+        "tags": ["skyline", "cityscape", "night", "architecture"]
+      },
+      {
+        "id": "hk5",
+        "albumId": "hongkong",
+        "url": "/images/albums/Hong-Kong/hongkong-skyline-hotel.jpeg",
+        "caption": "Hong Kong Hotel Skyline View",
+        "locationId": "Hong Kong",
+        "coordinates": { "lng": 114.1694, "lat": 22.3193 },
+        "dateCreated": "2023-03-16",
+        "tags": ["skyline", "hotel", "cityscape", "view"]
+      },
+      {
+        "id": "hk6",
+        "albumId": "hongkong",
+        "url": "/images/albums/Hong-Kong/hongkong-skyline-icc.jpeg",
+        "caption": "ICC Tower Skyline",
+        "locationId": "Hong Kong",
+        "coordinates": { "lng": 114.1694, "lat": 22.3193 },
+        "dateCreated": "2023-03-16",
+        "tags": ["skyline", "icc", "architecture", "night"]
+      },
+      {
+        "id": "hk7",
+        "albumId": "hongkong",
+        "url": "/images/albums/Hong-Kong/hongkong-skyline-sunset.jpeg",
+        "caption": "Hong Kong Sunset Skyline",
+        "locationId": "Hong Kong",
+        "coordinates": { "lng": 114.1694, "lat": 22.3193 },
+        "dateCreated": "2023-03-17",
+        "tags": ["skyline", "sunset", "cityscape", "evening"]
+      },
+      {
+        "id": "hk8",
+        "albumId": "hongkong",
+        "url": "/images/albums/Hong-Kong/hongkong-skyline.jpeg",
+        "caption": "Hong Kong Victoria Harbor Skyline",
+        "locationId": "Hong Kong",
+        "coordinates": { "lng": 114.1694, "lat": 22.3193 },
+        "dateCreated": "2023-03-17",
+        "tags": ["skyline", "harbour", "cityscape", "victoria"]
+      },
+      {
+        "id": "hk9",
+        "albumId": "hongkong",
+        "url": "/images/albums/Hong-Kong/hongkong-skyline2.jpeg",
+        "caption": "Hong Kong Night Skyline",
+        "locationId": "Hong Kong",
+        "coordinates": { "lng": 114.1694, "lat": 22.3193 },
+        "dateCreated": "2023-03-17",
+        "tags": ["skyline", "night", "cityscape", "lights"]
+      }
+    ]
+  }

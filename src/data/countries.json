@@ -1,0 +1,16 @@
+{
+    "countries": [
+      {
+        "id": "france",
+        "name": "France"
+      },
+      {
+        "id": "hongkong",
+        "name": "Hong Kong"
+      },
+      {
+        "id": "brazil",
+        "name": "Brazil"
+      }
+    ]
+  }

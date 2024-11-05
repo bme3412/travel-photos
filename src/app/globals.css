@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Pseudo-element for the world map background */
+/* Background map pattern */
 .bg-world-map {
   position: relative;
   overflow: hidden;
@@ -11,45 +11,104 @@
 .bg-world-map::before {
   content: '';
   position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
+  inset: 0;
   background-image: url('/images/world-map-pattern.png');
   background-size: cover;
-  background-repeat: no-repeat;
   background-position: center;
   opacity: 0.05;
   pointer-events: none;
 }
 
+/* Mapbox container and canvas */
+.mapboxgl-map {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  background-color: transparent !important;
+}
+
 .mapboxgl-canvas {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  position: absolute !important;
+  inset: 0 !important;
   width: 100% !important;
   height: 100% !important;
 }
 
-.custom-marker {
+.mapboxgl-canvas-container {
+  width: 100%;
+  height: 100%;
+}
+
+/* Markers */
+.marker-container {
+  cursor: pointer;
+  width: 32px;
+  height: 32px;
   transform: translate(-50%, -50%);
 }
 
+/* Popups */
 .mapboxgl-popup {
-  max-width: 200px;
+  max-width: 240px;
+  z-index: 10;
 }
 
 .mapboxgl-popup-content {
-  padding: 0;
-  border-radius: 0.5rem;
+  padding: 0 !important;
+  border-radius: 0.75rem !important;
   overflow: hidden;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 
+              0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.mapboxgl-popup-tip {
+  display: none;
 }
 
 .mapboxgl-popup-close-button {
   right: 8px;
   top: 8px;
+  padding: 4px;
   color: #4B5563;
+  font-size: 16px;
+  border-radius: 4px;
+  transition: all 0.2s;
+}
+
+.mapboxgl-popup-close-button:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+  color: #1F2937;
+}
+
+/* Controls */
+.mapboxgl-ctrl-top-right {
+  top: 12px !important;
+  right: 12px !important;
+}
+
+.mapboxgl-ctrl-group {
+  border-radius: 8px !important;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: white !important;
+}
+
+.mapboxgl-ctrl-group button {
+  width: 32px !important;
+  height: 32px !important;
+}
+
+/* Attribution */
+.mapboxgl-ctrl-attrib {
+  display: none;
+}
+
+/* Map container wrapper */
+.map-wrapper {
+  position: relative !important;
+  width: 100% !important;
+  height: 500px !important;
+  min-height: 500px !important;
+  background-color: #f9fafb;
 }

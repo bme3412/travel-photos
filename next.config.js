@@ -1,15 +1,20 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     webpack: (config) => {
-      // Remove source-map-loader config as it's causing issues
       config.module.rules.push({
         test: /\.worker\.js$/,
         use: { loader: 'worker-loader' }
       });
-      
+  
+      // Add proper resolution for mapbox-gl
+      config.resolve.alias = {
+        ...config.resolve.alias,
+        'mapbox-gl': 'mapbox-gl'
+      };
+  
       return config;
     },
-    
+  
     images: {
       remotePatterns: [
         {
@@ -19,12 +24,20 @@ const nextConfig = {
         {
           protocol: 'https',
           hostname: 'mapping.api.here.com',
+        },
+        {
+          protocol: 'https',
+          hostname: 'flagcdn.com',  // Added for country flags
         }
       ],
     },
+  
+    transpilePackages: ['mapbox-gl'],
     
-    // Important for Mapbox GL
-    transpilePackages: ['mapbox-gl']
-  }
+    // Ensure worker files are handled correctly
+    experimental: {
+      workerThreads: true,
+    }
+  };
   
   module.exports = nextConfig;

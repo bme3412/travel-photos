@@ -1,198 +1,217 @@
 'use client';
 
-import React, { useEffect, useRef } from 'react';
-import mapboxgl from 'mapbox-gl';
+import React, { useEffect, useRef, useState } from 'react';
+import { Map as MapIcon, Camera, Loader2 } from 'lucide-react';
 import 'mapbox-gl/dist/mapbox-gl.css';
-import { Map as MapIcon, Camera } from 'lucide-react';
-import ReactCountryFlag from 'react-country-flag';
 
-// Set Mapbox token from environment variable
-mapboxgl.accessToken = process.env.NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN;
+const debug = (message, data = null) => {
+  if (data) {
+    console.log(`[MapDebug] ${message}`, data);
+  } else {
+    console.log(`[MapDebug] ${message}`);
+  }
+};
 
-export default function AlbumMap({ locations }) {
+export default function AlbumMap({ album, onLocationSelect }) {
   const mapContainer = useRef(null);
-  const map = useRef(null);
-  const markersRef = useRef([]);
-
-  // Function to fly to a location
-  const flyToLocation = (coordinates, zoom = 13) => {
-    if (map.current) {
-      map.current.flyTo({
-        center: [coordinates.lng, coordinates.lat],
-        zoom: zoom,
-        essential: true,
-        duration: 2000,
-      });
-    }
-  };
+  const mapInstance = useRef(null);
+  const [error, setError] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    console.log('Initializing AlbumMap with locations:', locations);
+    let mounted = true;
+    let mapboxgl = null;
 
-    // Early exit if conditions are not met
-    if (
-      typeof window === 'undefined' ||
-      !mapContainer.current ||
-      !locations?.length ||
-      map.current
-    ) {
-      return;
-    }
+    const initializeMap = async () => {
+      try {
+        debug('Starting map initialization');
 
-    // Filter out invalid locations
-    const validLocations = locations.filter(
-      (location) =>
-        location.coordinates &&
-        typeof location.coordinates.lng === 'number' &&
-        typeof location.coordinates.lat === 'number'
-    );
-
-    if (validLocations.length === 0) {
-      console.warn('No valid locations available for mapping.');
-      return;
-    }
-
-    // Assign the worker class correctly by creating a new Worker instance
-    try {
-      mapboxgl.workerClass = class extends Worker {
-        constructor() {
-          super('/workers/mapbox-gl-csp-worker.js');
+        if (!mapContainer.current) {
+          throw new Error('Container not available');
         }
-      };
-    } catch (error) {
-      console.error('Failed to assign Mapbox workerClass:', error);
-      return;
-    }
 
-    // Calculate bounds for all locations
-    const bounds = new mapboxgl.LngLatBounds();
-    validLocations.forEach((location) => {
-      bounds.extend([location.coordinates.lng, location.coordinates.lat]);
-    });
+        if (!album?.photos?.length) {
+          throw new Error('No photos available');
+        }
 
-    // Initialize map
-    map.current = new mapboxgl.Map({
-      container: mapContainer.current,
-      style: 'mapbox://styles/mapbox/light-v11',
-      bounds: bounds,
-      padding: 50,
-      maxZoom: 15,
-    });
+        // Wait for container to be ready
+        await new Promise(resolve => setTimeout(resolve, 500));
 
-    // Add navigation controls
-    map.current.addControl(new mapboxgl.NavigationControl(), 'top-right');
+        if (!mounted) return;
 
-    // Add markers when map loads
-    map.current.on('load', () => {
-      validLocations.forEach((location) => {
-        // Create a DOM element for the marker
-        const markerEl = document.createElement('div');
-        markerEl.className = 'custom-marker';
-
-        // Render the flag icon to a string
-        import('react-dom/server').then((ReactDOMServer) => {
-          const flagHTML = ReactDOMServer.renderToStaticMarkup(
-            <ReactCountryFlag
-              countryCode={location.countryCode}
-              svg
-              style={{
-                width: '30px',
-                height: '30px',
-                cursor: 'pointer',
-              }}
-              title={location.countryName}
-            />
-          );
-
-          markerEl.innerHTML = flagHTML;
-
-          // Create popup
-          const popup = new mapboxgl.Popup({ offset: 25 }).setHTML(`
-            <div class="p-2">
-              <h3 class="font-semibold text-gray-900">${location.name}</h3>
-              <p class="text-sm text-gray-600">${location.photoCount} photos</p>
-            </div>
-          `);
-
-          // Add marker to map
-          const marker = new mapboxgl.Marker(markerEl)
-            .setLngLat([location.coordinates.lng, location.coordinates.lat])
-            .setPopup(popup)
-            .addTo(map.current);
-
-          markersRef.current.push(marker);
+        debug('Container dimensions:', {
+          width: mapContainer.current.offsetWidth,
+          height: mapContainer.current.offsetHeight
         });
-      });
 
-      map.current.resize();
-    });
+        // Import and setup Mapbox
+        const mapboxModule = await import('mapbox-gl');
+        mapboxgl = mapboxModule.default;
 
-    // Capture markersRef.current in a local variable to prevent stale references in cleanup
-    const markers = [...markersRef.current];
+        if (!process.env.NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN) {
+          throw new Error('Mapbox token missing');
+        }
 
-    // Cleanup function
-    return () => {
-      // Use the captured markers for cleanup to ensure consistency
-      markers.forEach((marker) => marker.remove());
+        mapboxgl.accessToken = process.env.NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN;
 
-      if (map.current) {
-        map.current.remove();
-        map.current = null;
+        // Process locations from photos
+        const locationMap = new Map();
+        album.photos.forEach(photo => {
+          if (!photo.coordinates || !photo.locationId) return;
+          
+          const key = photo.locationId;
+          if (!locationMap.has(key)) {
+            locationMap.set(key, {
+              name: photo.locationId,
+              coordinates: photo.coordinates,
+              photoCount: 1
+            });
+          } else {
+            const location = locationMap.get(key);
+            location.photoCount += 1;
+          }
+        });
+
+        const locations = Array.from(locationMap.values());
+
+        if (!locations.length) {
+          throw new Error('No locations available');
+        }
+
+        debug('Valid locations:', locations);
+
+        // Calculate bounds
+        const bounds = new mapboxgl.LngLatBounds();
+        locations.forEach(location => {
+          bounds.extend([location.coordinates.lng, location.coordinates.lat]);
+        });
+
+        // Create map
+        mapInstance.current = new mapboxgl.Map({
+          container: mapContainer.current,
+          style: 'mapbox://styles/mapbox/light-v11',
+          bounds: bounds,
+          fitBoundsOptions: { 
+            padding: 50,
+            maxZoom: 12 
+          },
+          attributionControl: false,
+          preserveDrawingBuffer: true
+        });
+
+        // Add navigation control
+        mapInstance.current.addControl(
+          new mapboxgl.NavigationControl({ showCompass: false }),
+          'top-right'
+        );
+
+        // Add markers on load
+        mapInstance.current.on('load', () => {
+          if (!mounted) return;
+
+          locations.forEach(location => {
+            const el = document.createElement('div');
+            el.className = 'marker-container';
+            el.innerHTML = `
+              <div class="flex items-center justify-center w-8 h-8 rounded-full 
+                          bg-teal-600 text-white border-2 border-white shadow-lg">
+                <span class="text-sm font-medium">${location.photoCount}</span>
+              </div>
+            `;
+
+            const marker = new mapboxgl.Marker(el)
+              .setLngLat([location.coordinates.lng, location.coordinates.lat])
+              .setPopup(
+                new mapboxgl.Popup({ offset: 25 })
+                  .setHTML(`
+                    <div class="p-3">
+                      <h3 class="font-semibold text-gray-900">${location.name}</h3>
+                      <p class="text-sm text-gray-600 mt-1">${location.photoCount} photos</p>
+                    </div>
+                  `)
+              )
+              .addTo(mapInstance.current);
+
+            // Add click handler if onLocationSelect is provided
+            if (onLocationSelect) {
+              el.addEventListener('click', () => {
+                onLocationSelect(location);
+              });
+            }
+          });
+
+          setIsLoading(false);
+        });
+
+      } catch (err) {
+        debug('Error:', err);
+        if (mounted) {
+          setError(err.message);
+          setIsLoading(false);
+        }
       }
     };
-  }, [locations]);
 
-  // Render Empty State if no locations are available
-  if (!locations || locations.length === 0) {
+    initializeMap();
+
+    return () => {
+      mounted = false;
+      if (mapInstance.current) {
+        mapInstance.current.remove();
+        mapInstance.current = null;
+      }
+    };
+  }, [album, onLocationSelect]);
+
+  // If no album or photos are provided, show a message
+  if (!album?.photos?.length) {
     return (
       <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
-        <div className="p-6 border-b">
+        <div className="p-6 border-b flex justify-between items-center">
           <h2 className="text-2xl font-semibold text-gray-800">Photo Locations</h2>
-        </div>
-        <div className="aspect-w-16 aspect-h-9 bg-gray-100 flex items-center justify-center">
-          <div className="text-center text-gray-500">
-            <Camera className="h-12 w-12 mx-auto mb-2 opacity-50" />
-            <p>No location data available</p>
+          <div className="flex items-center space-x-2 text-sm text-gray-600">
+            <MapIcon className="h-4 w-4" />
+            <span>0 locations</span>
           </div>
+        </div>
+        <div className="h-96 flex items-center justify-center text-gray-500">
+          No photos available to display on map
         </div>
       </div>
     );
   }
 
-  // Render Map and Location List
   return (
     <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
       <div className="p-6 border-b flex justify-between items-center">
         <h2 className="text-2xl font-semibold text-gray-800">Photo Locations</h2>
         <div className="flex items-center space-x-2 text-sm text-gray-600">
           <MapIcon className="h-4 w-4" />
-          <span>{locations.length} locations</span>
+          <span>{album?.photos?.length || 0} photos</span>
         </div>
       </div>
 
-      {/* Map Container */}
-      <div className="relative h-[500px]" ref={mapContainer} />
+      <div className="relative">
+        {isLoading && (
+          <div className="absolute inset-0 z-10 flex flex-col items-center justify-center bg-gray-50/80">
+            <Loader2 className="h-8 w-8 animate-spin text-teal-600 mb-4" />
+            <p className="text-gray-600">Loading map...</p>
+          </div>
+        )}
 
-      {/* Location List */}
-      <div className="p-6 bg-gray-50">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          {locations.map((location) => (
-            <div
-              key={location.id}
-              className="flex items-center justify-between p-3 bg-white rounded-lg 
-                         shadow-sm hover:shadow-md transition-shadow cursor-pointer"
-              onClick={() => flyToLocation(location.coordinates)}
-            >
-              <div className="flex items-center space-x-3">
-                <div className="w-8 h-8 bg-teal-600 rounded-full flex items-center justify-center text-white">
-                  <span className="text-sm font-medium">{location.photoCount}</span>
-                </div>
-                <span className="text-gray-700 font-medium">{location.name}</span>
-              </div>
-              <span className="text-sm text-gray-500">{location.photoCount} photos</span>
+        {error && (
+          <div className="absolute inset-0 z-10 flex items-center justify-center bg-gray-50/80">
+            <div className="text-red-500 text-center px-4">
+              <p className="font-medium mb-1">Error loading map</p>
+              <p className="text-sm">{error}</p>
             </div>
-          ))}
-        </div>
+          </div>
+        )}
+
+        <div 
+          ref={mapContainer}
+          className="map-wrapper h-96"
+        />
       </div>
     </div>
   );

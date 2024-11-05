@@ -1,36 +1,93 @@
-import React from 'react';
+// AlbumStats.js
+'use client';
+
+import React, { useMemo } from 'react';
 import { Calendar, Camera, MapPin, Clock } from 'lucide-react';
 
 export default function AlbumStats({ album }) {
   if (!album) return null;
 
+  // Calculate unique locations from photos
+  const uniqueLocations = useMemo(() => {
+    if (!album.photos) return new Set();
+    return new Set(album.photos.map(photo => photo.locationId));
+  }, [album.photos]);
+
+  // Calculate date range from photos
+  const dateRange = useMemo(() => {
+    if (!album.photos?.length) return 'N/A';
+    
+    const dates = album.photos.map(photo => new Date(photo.dateCreated));
+    const startDate = new Date(Math.min(...dates));
+    const endDate = new Date(Math.max(...dates));
+    
+    // If same day, show single date
+    if (startDate.toDateString() === endDate.toDateString()) {
+      return startDate.toLocaleDateString('en-US', {
+        month: 'short',
+        day: 'numeric',
+        year: 'numeric'
+      });
+    }
+    
+    // If different days but same month and year
+    if (startDate.getMonth() === endDate.getMonth() && 
+        startDate.getFullYear() === endDate.getFullYear()) {
+      return `${startDate.toLocaleDateString('en-US', { month: 'short' })} ${startDate.getDate()}-${endDate.getDate()}, ${startDate.getFullYear()}`;
+    }
+    
+    // If different months or years
+    return `${startDate.toLocaleDateString('en-US', { 
+      month: 'short', 
+      day: 'numeric' 
+    })} - ${endDate.toLocaleDateString('en-US', { 
+      month: 'short', 
+      day: 'numeric',
+      year: 'numeric'
+    })}`;
+  }, [album.photos]);
+
+  // Calculate duration in days
+  const duration = useMemo(() => {
+    if (!album.photos?.length) return 'N/A';
+    
+    const dates = album.photos.map(photo => new Date(photo.dateCreated));
+    const startDate = new Date(Math.min(...dates));
+    const endDate = new Date(Math.max(...dates));
+    
+    const diffTime = Math.abs(endDate - startDate);
+    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+    
+    return diffDays === 0 ? '1 day' : `${diffDays + 1} days`;
+  }, [album.photos]);
+
   const stats = [
     {
       icon: <Calendar className="h-5 w-5 text-teal-600" />,
       label: "Date",
-      value: album.dateRange
+      value: dateRange
     },
     {
       icon: <Clock className="h-5 w-5 text-teal-600" />,
       label: "Duration",
-      value: `${album.duration} days`
+      value: duration
     },
     {
       icon: <Camera className="h-5 w-5 text-teal-600" />,
       label: "Photos",
-      value: album.photoCount
+      value: album.photos?.length || 0
     },
     {
       icon: <MapPin className="h-5 w-5 text-teal-600" />,
       label: "Locations",
-      value: album.locations?.length || 0
+      value: uniqueLocations.size
     }
   ];
 
   return (
     <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
       {stats.map((stat) => (
-        <div 
+        <div
           key={stat.label}
           className="bg-white p-6 rounded-xl shadow-sm flex flex-col items-center text-center"
         >

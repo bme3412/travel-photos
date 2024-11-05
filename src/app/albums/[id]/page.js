@@ -39,23 +39,30 @@ const PhotoCard = React.memo(({ photo, index, onPhotoClick }) => {
       <div className="absolute inset-0 bg-black/5 group-hover:bg-black/0 transition-colors duration-300" />
       <Image
         src={photo.url}
-        alt={photo.caption}
+        alt={photo.title || photo.description || 'Album photo'} // Using title as primary alt text
         fill
         sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
         className="object-cover transition-transform duration-300 group-hover:scale-105"
         placeholder="blur"
         blurDataURL={`data:image/svg+xml;base64,${toBase64(shimmer(700, 475))}`}
-        priority={index < 4} // Prioritize loading first 4 images
+        priority={index < 4}
       />
       <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent 
                       p-4 translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
         <h3 className="text-white font-medium text-lg mb-1 drop-shadow-sm">
-          {photo.caption}
+          {photo.title}
         </h3>
-        <p className="text-white/90 text-sm flex items-center gap-1">
-          <MapPin className="h-4 w-4" />
-          {photo.location}
-        </p>
+        {photo.description && (
+          <p className="text-white/90 text-sm mb-2">
+            {photo.description}
+          </p>
+        )}
+        {photo.locationId && (
+          <p className="text-white/90 text-sm flex items-center gap-1">
+            <MapPin className="h-4 w-4" aria-hidden="true" />
+            {photo.locationId}
+          </p>
+        )}
       </div>
     </div>
   );
@@ -113,7 +120,7 @@ export default function AlbumPage() {
         <Camera className="h-16 w-16 text-gray-400" />
         <p className="text-gray-600 text-lg">Album not found.</p>
         <Link 
-          href="/"
+          href="/albums"
           className="text-teal-600 hover:text-teal-700 flex items-center gap-2 mt-2"
         >
           <ArrowLeft className="h-4 w-4" />
@@ -129,7 +136,7 @@ export default function AlbumPage() {
       <div className="bg-white border-b sticky top-0 z-10 shadow-sm">
         <div className="max-w-7xl mx-auto p-6">
           <Link 
-            href="/" 
+            href="/albums" 
             className="inline-flex items-center text-teal-600 hover:text-teal-700 
                        transition-colors duration-200 mb-6 group"
           >
@@ -141,8 +148,8 @@ export default function AlbumPage() {
             <div>
               <h1 className="text-4xl font-bold text-gray-800">{currentAlbum.name}</h1>
               <p className="text-gray-600 flex items-center mt-2">
-                <MapPin className="h-4 w-4 mr-1 text-teal-600" />
-                {currentAlbum.country}
+                <MapPin className="h-4 w-4 mr-1 text-teal-600" aria-hidden="true" />
+                {currentAlbum.countryId}
               </p>
             </div>
 
@@ -178,23 +185,24 @@ export default function AlbumPage() {
         <AlbumStats album={currentAlbum} />
 
         {view === 'grid' ? (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
-            {currentAlbum.photos.map((photo, index) => (
-              <PhotoCard
-                key={photo.id}
-                photo={photo}
-                index={index}
-                onPhotoClick={openLightbox}
-              />
-            ))}
-          </div>
-        ) : (
-          <div className="mt-8">
-            <AlbumMap locations={currentAlbum.locations} />
-          </div>
-        )}
+  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
+    {currentAlbum.photos?.map((photo, index) => (
+      <PhotoCard
+        key={photo.id}
+        photo={photo}
+        index={index}
+        onPhotoClick={openLightbox}
+      />
+    ))}
+  </div>
+) : (
+  <div className="mt-8 h-[600px]">
+    <AlbumMap album={currentAlbum} onLocationSelect={(location) => console.log(location)} />
+  </div>
+)}
       </div>
 
+      {/* Lightbox */}
       {isLightboxOpen && selectedPhoto && (
         <ImageLightbox
           images={currentAlbum.photos}

@@ -7,16 +7,18 @@ import usePhotoStore from '../store/usePhotoStore';
 import AlbumFilters from './AlbumFilters';
 import { 
   Search as SearchIcon, 
-  Camera as CameraIcon, 
-  MapPin,
+  Camera as CameraIcon,
   Landmark,
   Building2,
   Mountain,
   Building,
   Pyramid,
-  Theater
+  Theater,
+  MapPin
 } from 'lucide-react';
+import countriesData from '../../data/countries.json';
 
+// Rest of the component remains the same...
 export default function PhotoAlbumExplorer() {
   const {
     albums,
@@ -63,7 +65,7 @@ export default function PhotoAlbumExplorer() {
       result = result.filter((album) => album.year === activeYear);
     }
     if (activeCountry !== 'all') {
-      result = result.filter((album) => album.country === activeCountry);
+      result = result.filter((album) => album.countryId === activeCountry);
     }
     return result;
   }, [albums, searchTerm, activeYear, activeCountry]);
@@ -108,7 +110,7 @@ export default function PhotoAlbumExplorer() {
             onCountryFilter={setActiveCountry}
             activeYear={activeYear}
             activeCountry={activeCountry}
-            albums={albums}
+            countriesData={countriesData}
           />
         </div>
 
@@ -133,33 +135,40 @@ export default function PhotoAlbumExplorer() {
 
 // AlbumCard Component
 const AlbumCard = ({ album }) => (
-  <Link href={`/albums/${album.id}`} className="group">
-    <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
-      <div className="relative h-64 bg-gray-200">
-        {album.photos && album.photos[0] ? (
-          <div className="relative w-full h-full">
-            <Image
-              src={album.photos[0].url}
-              alt={album.name}
-              fill
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-              className="object-cover"
-              priority={false}
-            />
+    <Link href={`/albums/${album.id}`} className="group">
+      <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+        <div className="relative h-64 bg-gray-200">
+          {album.photos && album.photos[0] ? (
+            <div className="relative w-full h-full">
+              <Image
+                src={album.photos[0].url}
+                alt={album.photos[0].title || `Cover photo for ${album.name}`}
+                fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                className="object-cover"
+                priority={false}
+                quality={75}
+                onError={(e) => {
+                  console.error(`Error loading image: ${album.photos[0].url}`);
+                  e.target.src = '/images/placeholder.jpg';
+                }}
+              />
+            </div>
+          ) : (
+            <div className="flex items-center justify-center h-full text-gray-400" 
+                 role="img" 
+                 aria-label={`No photos available for ${album.name}`}>
+              <CameraIcon className="h-12 w-12" />
+            </div>
+          )}
+          <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black via-transparent to-transparent p-4">
+            <h3 className="text-xl font-semibold text-white">{album.name}</h3>
+            <p className="text-sm text-gray-200 flex items-center">
+              <MapPin className="h-4 w-4 mr-1 text-teal-300" aria-hidden="true" />
+              {album.countryId === 'all' ? 'All Countries' : album.countryId} - {album.year}
+            </p>
           </div>
-        ) : (
-          <div className="flex items-center justify-center h-full text-gray-400">
-            <CameraIcon className="h-12 w-12" />
-          </div>
-        )}
-        <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black via-transparent to-transparent p-4">
-          <h3 className="text-xl font-semibold text-white">{album.name}</h3>
-          <p className="text-sm text-gray-200 flex items-center">
-            <MapPin className="h-4 w-4 mr-1 text-teal-300" />
-            {album.country} - {album.year}
-          </p>
         </div>
       </div>
-    </div>
-  </Link>
-);
+    </Link>
+  );

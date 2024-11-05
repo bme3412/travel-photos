@@ -1,0 +1,36 @@
+{
+    "locations": [
+      {
+        "id": "loc1",
+        "name": "Paris",
+        "countryId": "FR",
+        "coordinates": { "lng": 2.3431, "lat": 48.8867 }
+      },
+      {
+        "id": "loc2",
+        "name": "Menton",
+        "countryId": "FR",
+        "coordinates": { "lng": 7.5012, "lat": 43.7747 }
+      },
+      {
+        "id": "loc3",
+        "name": "Roquebrune-Cap-Martin",
+        "countryId": "FR",
+        "coordinates": { "lng": 7.4454, "lat": 43.7573 }
+      },
+      {
+        "id": "loc4",
+        "name": "Cannes",
+        "countryId": "FR",
+        "coordinates": { "lng": 7.0179, "lat": 43.5528 }
+      },
+      {
+        "id": "loc5",
+        "name": "Hong Kong",
+        "countryId": "HK",
+        "coordinates": { "lng": 114.1694, "lat": 22.3193 }
+      }
+      
+    ]
+  }
+  
