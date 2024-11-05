@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useEffect, useRef, useState } from 'react';
-import { Map as MapIcon, Camera, Loader2 } from 'lucide-react';
+import { Map as MapIcon, Loader2 } from 'lucide-react';
 import 'mapbox-gl/dist/mapbox-gl.css';
 
 const debug = (message, data = null) => {
@@ -119,7 +119,8 @@ export default function AlbumMap({ album, onLocationSelect }) {
               </div>
             `;
 
-            const marker = new mapboxgl.Marker(el)
+            // Create and add marker without storing the reference
+            new mapboxgl.Marker(el)
               .setLngLat([location.coordinates.lng, location.coordinates.lat])
               .setPopup(
                 new mapboxgl.Popup({ offset: 25 })

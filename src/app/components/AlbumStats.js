@@ -1,21 +1,16 @@
-// AlbumStats.js
 'use client';
 
 import React, { useMemo } from 'react';
 import { Calendar, Camera, MapPin, Clock } from 'lucide-react';
 
 export default function AlbumStats({ album }) {
-  if (!album) return null;
+  // Move all useMemo hooks outside of conditional blocks
+  const uniqueLocations = useMemo(() => 
+    album?.photos ? new Set(album.photos.map(photo => photo.locationId)) : new Set()
+  , [album?.photos]);
 
-  // Calculate unique locations from photos
-  const uniqueLocations = useMemo(() => {
-    if (!album.photos) return new Set();
-    return new Set(album.photos.map(photo => photo.locationId));
-  }, [album.photos]);
-
-  // Calculate date range from photos
   const dateRange = useMemo(() => {
-    if (!album.photos?.length) return 'N/A';
+    if (!album?.photos?.length) return 'N/A';
     
     const dates = album.photos.map(photo => new Date(photo.dateCreated));
     const startDate = new Date(Math.min(...dates));
@@ -37,19 +32,18 @@ export default function AlbumStats({ album }) {
     }
     
     // If different months or years
-    return `${startDate.toLocaleDateString('en-US', { 
-      month: 'short', 
-      day: 'numeric' 
-    })} - ${endDate.toLocaleDateString('en-US', { 
-      month: 'short', 
+    return `${startDate.toLocaleDateString('en-US', {
+      month: 'short',
+      day: 'numeric'
+    })} - ${endDate.toLocaleDateString('en-US', {
+      month: 'short',
       day: 'numeric',
       year: 'numeric'
     })}`;
-  }, [album.photos]);
+  }, [album?.photos]);
 
-  // Calculate duration in days
   const duration = useMemo(() => {
-    if (!album.photos?.length) return 'N/A';
+    if (!album?.photos?.length) return 'N/A';
     
     const dates = album.photos.map(photo => new Date(photo.dateCreated));
     const startDate = new Date(Math.min(...dates));
@@ -59,7 +53,10 @@ export default function AlbumStats({ album }) {
     const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
     
     return diffDays === 0 ? '1 day' : `${diffDays + 1} days`;
-  }, [album.photos]);
+  }, [album?.photos]);
+
+  // Early return if no album
+  if (!album) return null;
 
   const stats = [
     {
