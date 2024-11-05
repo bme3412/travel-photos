@@ -1,17 +1,15 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';  // Removed useState since it's not used
 import Image from 'next/image';
-import ImageLightbox from '../components/ImageLightbox';
+// Removed unused ImageLightbox import
 import Link from 'next/link';
 import { 
-  ArrowLeft, 
-  Grid, 
-  Map as MapIcon, 
+  // Removed unused imports: ArrowLeft, Grid, MapIcon
   Loader, 
   MapPin, 
   Camera,
-  Search as SearchIcon  // Added SearchIcon import
+  Search as SearchIcon
 } from 'lucide-react';
 import usePhotoStore from '../store/usePhotoStore';
 import AlbumFilters from '../components/AlbumFilters';
