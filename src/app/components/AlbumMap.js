@@ -20,7 +20,7 @@ export default function AlbumMap({ locations }) {
         center: [coordinates.lng, coordinates.lat],
         zoom: zoom,
         essential: true,
-        duration: 2000
+        duration: 2000,
       });
     }
   };
@@ -28,6 +28,7 @@ export default function AlbumMap({ locations }) {
   useEffect(() => {
     console.log('Initializing AlbumMap with locations:', locations);
 
+    // Early exit if conditions are not met
     if (
       typeof window === 'undefined' ||
       !mapContainer.current ||
@@ -36,8 +37,6 @@ export default function AlbumMap({ locations }) {
     ) {
       return;
     }
-
-    let isMounted = true; // To prevent state updates if component is unmounted
 
     // Filter out invalid locations
     const validLocations = locations.filter(
@@ -76,7 +75,7 @@ export default function AlbumMap({ locations }) {
       style: 'mapbox://styles/mapbox/light-v11',
       bounds: bounds,
       padding: 50,
-      maxZoom: 15
+      maxZoom: 15,
     });
 
     // Add navigation controls
@@ -116,17 +115,22 @@ export default function AlbumMap({ locations }) {
       map.current.resize();
     });
 
+    // **Capture markersRef.current in a local variable to prevent stale references in cleanup**
+    const markers = [...markersRef.current];
+
     // Cleanup function
     return () => {
-      isMounted = false;
+      // **Use the captured markers for cleanup to ensure consistency**
+      markers.forEach((marker) => marker.remove());
+
       if (map.current) {
-        markersRef.current.forEach((marker) => marker.remove());
         map.current.remove();
         map.current = null;
       }
     };
   }, [locations]);
 
+  // **Render Empty State if no locations are available**
   if (!locations || locations.length === 0) {
     return (
       <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
@@ -143,6 +147,7 @@ export default function AlbumMap({ locations }) {
     );
   }
 
+  // **Render Map and Location List**
   return (
     <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
       <div className="p-6 border-b flex justify-between items-center">

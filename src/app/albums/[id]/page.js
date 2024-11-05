@@ -76,7 +76,7 @@ export default function AlbumPage() {
     setError,
     loading,
   } = usePhotoStore();
-  const [view, setView] = React.useState('grid');
+  const [view, setView] = useState('grid');
 
   useEffect(() => {
     const fetchAlbumData = async (id) => {
