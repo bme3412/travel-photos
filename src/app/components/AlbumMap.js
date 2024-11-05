@@ -1,3 +1,4 @@
+// src/app/components/AlbumMap.js
 'use client';
 
 import React, { useEffect, useRef } from 'react';
@@ -5,7 +6,7 @@ import mapboxgl from 'mapbox-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import { Map as MapIcon, Camera } from 'lucide-react';
 
-// Set Mapbox token
+// Set Mapbox token from environment variable
 mapboxgl.accessToken = process.env.NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN;
 
 export default function AlbumMap({ locations }) {
@@ -115,12 +116,12 @@ export default function AlbumMap({ locations }) {
       map.current.resize();
     });
 
-    // **Capture markersRef.current in a local variable to prevent stale references in cleanup**
+    // Capture markersRef.current in a local variable to prevent stale references in cleanup
     const markers = [...markersRef.current];
 
     // Cleanup function
     return () => {
-      // **Use the captured markers for cleanup to ensure consistency**
+      // Use the captured markers for cleanup to ensure consistency
       markers.forEach((marker) => marker.remove());
 
       if (map.current) {
@@ -130,7 +131,7 @@ export default function AlbumMap({ locations }) {
     };
   }, [locations]);
 
-  // **Render Empty State if no locations are available**
+  // Render Empty State if no locations are available
   if (!locations || locations.length === 0) {
     return (
       <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
@@ -147,7 +148,7 @@ export default function AlbumMap({ locations }) {
     );
   }
 
-  // **Render Map and Location List**
+  // Render Map and Location List
   return (
     <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
       <div className="p-6 border-b flex justify-between items-center">
