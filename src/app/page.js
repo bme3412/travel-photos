@@ -1,4 +1,3 @@
-// src/app/page.js
 import PhotoAlbumExplorer from './components/PhotoAlbumExplorer';
 
 export default function Home() {

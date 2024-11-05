@@ -1,4 +1,5 @@
 'use client';
+
 import React, { useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -132,34 +133,33 @@ export default function PhotoAlbumExplorer() {
 
 // AlbumCard Component
 const AlbumCard = ({ album }) => (
-    <Link href={`/albums/${album.id}`} className="group">
-      <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
-        <div className="relative h-64 bg-gray-200">
-          {album.photos && album.photos[0] ? (
-            <div className="relative w-full h-full">
-              <Image
-                src={album.photos[0].url}
-                alt={album.name}
-                fill
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                className="object-cover"
-                priority={false}
-              />
-            </div>
-          ) : (
-            <div className="flex items-center justify-center h-full text-gray-400">
-              <CameraIcon className="h-12 w-12" />
-            </div>
-          )}
-          <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black via-transparent to-transparent p-4">
-            <h3 className="text-xl font-semibold text-white">{album.name}</h3>
-            <p className="text-sm text-gray-200 flex items-center">
-              <MapPin className="h-4 w-4 mr-1 text-teal-300" />
-              {album.country} - {album.year}
-            </p>
+  <Link href={`/albums/${album.id}`} className="group">
+    <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+      <div className="relative h-64 bg-gray-200">
+        {album.photos && album.photos[0] ? (
+          <div className="relative w-full h-full">
+            <Image
+              src={album.photos[0].url}
+              alt={album.name}
+              fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              className="object-cover"
+              priority={false}
+            />
           </div>
+        ) : (
+          <div className="flex items-center justify-center h-full text-gray-400">
+            <CameraIcon className="h-12 w-12" />
+          </div>
+        )}
+        <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black via-transparent to-transparent p-4">
+          <h3 className="text-xl font-semibold text-white">{album.name}</h3>
+          <p className="text-sm text-gray-200 flex items-center">
+            <MapPin className="h-4 w-4 mr-1 text-teal-300" />
+            {album.country} - {album.year}
+          </p>
         </div>
       </div>
-    </Link>
-  );
-  
+    </div>
+  </Link>
+);

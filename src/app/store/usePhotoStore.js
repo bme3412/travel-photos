@@ -1,4 +1,3 @@
-// src/app/store/usePhotoStore.js
 import { create } from 'zustand';
 
 const usePhotoStore = create((set) => ({

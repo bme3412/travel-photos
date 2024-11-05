@@ -1,10 +1,11 @@
-// src/app/api/albums/[id]/route.js
 import { NextResponse } from 'next/server';
 import albums from '@/data/albums.json';
 
-export async function GET(request, { params }) {
+export async function GET(request, context) {
   try {
-    const id = await params.id;
+    // Await the params object before destructuring
+    const { id } = await context.params;
+
     const album = albums.find(album => album.id === id);
     
     if (!album) {

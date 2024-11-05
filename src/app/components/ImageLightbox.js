@@ -1,4 +1,7 @@
+'use client';
+
 import React, { useEffect, useCallback } from 'react';
+import Image from 'next/image';
 import { X, ChevronLeft, ChevronRight } from 'lucide-react';
 
 export default function ImageLightbox({ 
@@ -76,10 +79,13 @@ export default function ImageLightbox({
         {currentImage && (
           <div className="relative max-w-5xl w-full h-full flex flex-col items-center justify-center">
             <div className="relative w-full max-h-[80vh] aspect-[3/2]">
-              <img
+              <Image
                 src={currentImage.url}
                 alt={currentImage.caption}
+                fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 className="object-contain w-full h-full"
+                priority={false} // Adjust as needed
               />
             </div>
             <div className="mt-4 text-center">

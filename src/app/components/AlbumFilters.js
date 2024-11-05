@@ -1,4 +1,3 @@
-// src/app/components/AlbumFilters.js
 'use client';
 import React from 'react';
 import { Calendar, MapPin } from 'lucide-react';

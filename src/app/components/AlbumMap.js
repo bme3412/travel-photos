@@ -1,4 +1,3 @@
-// src/app/components/AlbumMap.js
 'use client';
 
 import React, { useEffect, useRef } from 'react';
@@ -8,13 +7,6 @@ import { Map as MapIcon, Camera } from 'lucide-react';
 
 // Set Mapbox token
 mapboxgl.accessToken = process.env.NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN;
-
-// Handle worker
-if (typeof window !== 'undefined') {
-  // Dynamically import the worker
-  const worker = require('mapbox-gl/dist/mapbox-gl-csp-worker').default;
-  mapboxgl.workerClass = worker;
-}
 
 export default function AlbumMap({ locations }) {
   const mapContainer = useRef(null);
@@ -34,75 +26,101 @@ export default function AlbumMap({ locations }) {
   };
 
   useEffect(() => {
-    if (typeof window === 'undefined' || !mapContainer.current || !locations?.length || map.current) {
+    console.log('Initializing AlbumMap with locations:', locations);
+
+    if (
+      typeof window === 'undefined' ||
+      !mapContainer.current ||
+      !locations?.length ||
+      map.current
+    ) {
       return;
     }
 
-    try {
-      // Calculate bounds for all locations
-      const bounds = new mapboxgl.LngLatBounds();
-      locations.forEach(location => {
-        if (location.coordinates) {
-          bounds.extend([location.coordinates.lng, location.coordinates.lat]);
-        }
-      });
+    let isMounted = true; // To prevent state updates if component is unmounted
 
-      // Initialize map
-      map.current = new mapboxgl.Map({
-        container: mapContainer.current,
-        style: 'mapbox://styles/mapbox/light-v11',
-        bounds: bounds,
-        padding: 50,
-        maxZoom: 15
-      });
+    // Filter out invalid locations
+    const validLocations = locations.filter(
+      (location) =>
+        location.coordinates &&
+        typeof location.coordinates.lng === 'number' &&
+        typeof location.coordinates.lat === 'number'
+    );
 
-      // Add navigation controls
-      map.current.addControl(new mapboxgl.NavigationControl(), 'top-right');
-
-      // Add markers when map loads
-      map.current.on('load', () => {
-        locations.forEach(location => {
-          if (location.coordinates) {
-            // Create custom marker element
-            const markerEl = document.createElement('div');
-            markerEl.className = 'custom-marker';
-            markerEl.innerHTML = `
-              <div class="w-10 h-10 bg-teal-600 rounded-full flex items-center justify-center 
-                          text-white font-semibold shadow-lg transform transition-transform 
-                          hover:scale-110 cursor-pointer">
-                <span>${location.photoCount}</span>
-              </div>
-            `;
-
-            // Create popup
-            const popup = new mapboxgl.Popup({ offset: 25 })
-              .setHTML(`
-                <div class="p-2">
-                  <h3 class="font-semibold text-gray-900">${location.name}</h3>
-                  <p class="text-sm text-gray-600">${location.photoCount} photos</p>
-                </div>
-              `);
-
-            // Add marker to map
-            const marker = new mapboxgl.Marker(markerEl)
-              .setLngLat([location.coordinates.lng, location.coordinates.lat])
-              .setPopup(popup)
-              .addTo(map.current);
-
-            markersRef.current.push(marker);
-          }
-        });
-
-        map.current.resize();
-      });
-    } catch (error) {
-      console.error('Error initializing map:', error);
+    if (validLocations.length === 0) {
+      console.warn('No valid locations available for mapping.');
+      return;
     }
+
+    // Assign the worker class correctly by creating a new Worker instance
+    try {
+      mapboxgl.workerClass = class extends Worker {
+        constructor() {
+          super('/workers/mapbox-gl-csp-worker.js');
+        }
+      };
+    } catch (error) {
+      console.error('Failed to assign Mapbox workerClass:', error);
+      return;
+    }
+
+    // Calculate bounds for all locations
+    const bounds = new mapboxgl.LngLatBounds();
+    validLocations.forEach((location) => {
+      bounds.extend([location.coordinates.lng, location.coordinates.lat]);
+    });
+
+    // Initialize map
+    map.current = new mapboxgl.Map({
+      container: mapContainer.current,
+      style: 'mapbox://styles/mapbox/light-v11',
+      bounds: bounds,
+      padding: 50,
+      maxZoom: 15
+    });
+
+    // Add navigation controls
+    map.current.addControl(new mapboxgl.NavigationControl(), 'top-right');
+
+    // Add markers when map loads
+    map.current.on('load', () => {
+      validLocations.forEach((location) => {
+        // Create custom marker element
+        const markerEl = document.createElement('div');
+        markerEl.className = 'custom-marker';
+        markerEl.innerHTML = `
+          <div class="w-10 h-10 bg-teal-600 rounded-full flex items-center justify-center 
+                      text-white font-semibold shadow-lg transform transition-transform 
+                      hover:scale-110 cursor-pointer">
+            <span>${location.photoCount}</span>
+          </div>
+        `;
+
+        // Create popup
+        const popup = new mapboxgl.Popup({ offset: 25 }).setHTML(`
+          <div class="p-2">
+            <h3 class="font-semibold text-gray-900">${location.name}</h3>
+            <p class="text-sm text-gray-600">${location.photoCount} photos</p>
+          </div>
+        `);
+
+        // Add marker to map
+        const marker = new mapboxgl.Marker(markerEl)
+          .setLngLat([location.coordinates.lng, location.coordinates.lat])
+          .setPopup(popup)
+          .addTo(map.current);
+
+        markersRef.current.push(marker);
+      });
+
+      map.current.resize();
+    });
 
     // Cleanup function
     return () => {
+      isMounted = false;
       if (map.current) {
-        markersRef.current.forEach(marker => marker.remove());
+        markersRef.current.forEach((marker) => marker.remove());
         map.current.remove();
         map.current = null;
       }

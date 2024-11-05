@@ -1,10 +1,11 @@
 'use client';
-import React, { useEffect } from 'react';
+
+import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { useParams } from 'next/navigation';
 import usePhotoStore from '../../store/usePhotoStore';
-import AlbumStats from '../../components/AlbumStats';
 import AlbumMap from '../../components/AlbumMap';
+import AlbumStats from '../../components/AlbumStats';
 import ImageLightbox from '../../components/ImageLightbox';
 import { ArrowLeft, Grid, Map as MapIcon, Loader, MapPin, Camera } from 'lucide-react';
 import Link from 'next/link';
@@ -59,6 +60,8 @@ const PhotoCard = React.memo(({ photo, index, onPhotoClick }) => {
     </div>
   );
 });
+
+PhotoCard.displayName = 'PhotoCard';
 
 export default function AlbumPage() {
   const params = useParams();

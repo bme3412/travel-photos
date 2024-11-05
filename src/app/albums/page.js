@@ -2,7 +2,7 @@
 'use client';
 import { useState } from 'react';
 import Image from 'next/image';
-import ImageLightbox from '../../components/ImageLightbox';
+import ImageLightbox from '../components/ImageLightbox'
 
 export default function AlbumPage({ params }) {
   const [selectedImageIndex, setSelectedImageIndex] = useState(null);

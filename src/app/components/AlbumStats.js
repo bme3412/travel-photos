@@ -29,7 +29,7 @@ export default function AlbumStats({ album }) {
 
   return (
     <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-      {stats.map((stat, index) => (
+      {stats.map((stat) => (
         <div 
           key={stat.label}
           className="bg-white p-6 rounded-xl shadow-sm flex flex-col items-center text-center"

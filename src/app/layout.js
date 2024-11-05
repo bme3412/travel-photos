@@ -1,4 +1,3 @@
-// src/app/layout.js
 import './globals.css';
 import { Lora } from 'next/font/google';
 
