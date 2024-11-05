@@ -90,31 +90,18 @@ export default function AlbumMap({ locations }) {
         markerEl.className = 'custom-marker';
 
         // Render the flag icon to a string
-        const flagSVG = ReactCountryFlag({
-          countryCode: location.countryCode, // Ensure you have country codes
-          svg: true,
-          style: {
-            width: '30px',
-            height: '30px',
-            cursor: 'pointer',
-          },
-          title: location.countryName,
-        });
-
-        // Since ReactCountryFlag returns a React component, we need to render it to an SVG string
-        // We'll use ReactDOMServer for this
         import('react-dom/server').then((ReactDOMServer) => {
           const flagHTML = ReactDOMServer.renderToStaticMarkup(
-            ReactCountryFlag({
-              countryCode: location.countryCode,
-              svg: true,
-              style: {
+            <ReactCountryFlag
+              countryCode={location.countryCode}
+              svg
+              style={{
                 width: '30px',
                 height: '30px',
                 cursor: 'pointer',
-              },
-              title: location.countryName,
-            })
+              }}
+              title={location.countryName}
+            />
           );
 
           markerEl.innerHTML = flagHTML;
