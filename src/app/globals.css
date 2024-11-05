@@ -2,6 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Custom base styles */
+@layer base {
+  body {
+    @apply antialiased;
+  }
+}
+
 /* Background map pattern */
 .bg-world-map {
   position: relative;
@@ -47,9 +54,7 @@
   }
 
   .mapboxgl-popup-content {
-    @apply p-0 rounded-xl overflow-hidden;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 
-                0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    @apply p-0 rounded-xl overflow-hidden shadow-lg bg-white;
   }
 
   .mapboxgl-popup-tip {
@@ -77,6 +82,16 @@
     @apply w-8 h-8;
   }
 
+  .mapboxgl-ctrl-group button.mapboxgl-ctrl-zoom-in .mapboxgl-ctrl-icon {
+    @apply bg-no-repeat bg-center;
+    background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 6V18M6 12H18' stroke='%23374151' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
+  }
+
+  .mapboxgl-ctrl-group button.mapboxgl-ctrl-zoom-out .mapboxgl-ctrl-icon {
+    @apply bg-no-repeat bg-center;
+    background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6 12H18' stroke='%23374151' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
+  }
+
   /* Attribution */
   .mapboxgl-ctrl-attrib {
     @apply hidden;
@@ -84,6 +99,18 @@
 
   /* Map container wrapper */
   .map-wrapper {
-    @apply relative w-full h-[500px] min-h-[500px] bg-gray-50;
+    @apply relative w-full h-[500px] min-h-[500px] bg-gray-50 rounded-lg overflow-hidden;
+  }
+}
+
+/* Custom utilities */
+@layer utilities {
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
   }
 }

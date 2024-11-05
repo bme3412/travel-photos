@@ -2,7 +2,6 @@
 
 import React, { useEffect, useRef, useState } from 'react';
 import { Map as MapIcon, Loader2 } from 'lucide-react';
-import 'mapbox-gl/dist/mapbox-gl.css';
 
 const debug = (message, data = null) => {
   if (data) {
@@ -22,6 +21,15 @@ export default function AlbumMap({ album, onLocationSelect }) {
     let mounted = true;
     let mapboxgl = null;
 
+    // Dynamically add Mapbox CSS
+    const addMapboxCSS = () => {
+      const link = document.createElement('link');
+      link.href = 'https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.css';
+      link.rel = 'stylesheet';
+      document.head.appendChild(link);
+      return link;
+    };
+
     const initializeMap = async () => {
       try {
         debug('Starting map initialization');
@@ -34,10 +42,16 @@ export default function AlbumMap({ album, onLocationSelect }) {
           throw new Error('No photos available');
         }
 
+        // Add Mapbox CSS
+        const cssLink = addMapboxCSS();
+
         // Wait for container to be ready
         await new Promise(resolve => setTimeout(resolve, 500));
 
-        if (!mounted) return;
+        if (!mounted) {
+          cssLink.remove();
+          return;
+        }
 
         debug('Container dimensions:', {
           width: mapContainer.current.offsetWidth,
@@ -119,7 +133,7 @@ export default function AlbumMap({ album, onLocationSelect }) {
               </div>
             `;
 
-            // Create and add marker without storing the reference
+            // Create and add marker
             new mapboxgl.Marker(el)
               .setLngLat([location.coordinates.lng, location.coordinates.lat])
               .setPopup(
@@ -133,7 +147,6 @@ export default function AlbumMap({ album, onLocationSelect }) {
               )
               .addTo(mapInstance.current);
 
-            // Add click handler if onLocationSelect is provided
             if (onLocationSelect) {
               el.addEventListener('click', () => {
                 onLocationSelect(location);
@@ -161,10 +174,14 @@ export default function AlbumMap({ album, onLocationSelect }) {
         mapInstance.current.remove();
         mapInstance.current = null;
       }
+      // Remove the Mapbox CSS link if it exists
+      const cssLink = document.querySelector('link[href*="mapbox-gl.css"]');
+      if (cssLink) {
+        cssLink.remove();
+      }
     };
   }, [album, onLocationSelect]);
 
-  // If no album or photos are provided, show a message
   if (!album?.photos?.length) {
     return (
       <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
