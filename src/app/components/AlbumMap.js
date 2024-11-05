@@ -1,10 +1,10 @@
-// src/app/components/AlbumMap.js
 'use client';
 
 import React, { useEffect, useRef } from 'react';
 import mapboxgl from 'mapbox-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import { Map as MapIcon, Camera } from 'lucide-react';
+import ReactCountryFlag from 'react-country-flag';
 
 // Set Mapbox token from environment variable
 mapboxgl.accessToken = process.env.NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN;
@@ -85,32 +85,56 @@ export default function AlbumMap({ locations }) {
     // Add markers when map loads
     map.current.on('load', () => {
       validLocations.forEach((location) => {
-        // Create custom marker element
+        // Create a DOM element for the marker
         const markerEl = document.createElement('div');
         markerEl.className = 'custom-marker';
-        markerEl.innerHTML = `
-          <div class="w-10 h-10 bg-teal-600 rounded-full flex items-center justify-center 
-                      text-white font-semibold shadow-lg transform transition-transform 
-                      hover:scale-110 cursor-pointer">
-            <span>${location.photoCount}</span>
-          </div>
-        `;
 
-        // Create popup
-        const popup = new mapboxgl.Popup({ offset: 25 }).setHTML(`
-          <div class="p-2">
-            <h3 class="font-semibold text-gray-900">${location.name}</h3>
-            <p class="text-sm text-gray-600">${location.photoCount} photos</p>
-          </div>
-        `);
+        // Render the flag icon to a string
+        const flagSVG = ReactCountryFlag({
+          countryCode: location.countryCode, // Ensure you have country codes
+          svg: true,
+          style: {
+            width: '30px',
+            height: '30px',
+            cursor: 'pointer',
+          },
+          title: location.countryName,
+        });
 
-        // Add marker to map
-        const marker = new mapboxgl.Marker(markerEl)
-          .setLngLat([location.coordinates.lng, location.coordinates.lat])
-          .setPopup(popup)
-          .addTo(map.current);
+        // Since ReactCountryFlag returns a React component, we need to render it to an SVG string
+        // We'll use ReactDOMServer for this
+        import('react-dom/server').then((ReactDOMServer) => {
+          const flagHTML = ReactDOMServer.renderToStaticMarkup(
+            ReactCountryFlag({
+              countryCode: location.countryCode,
+              svg: true,
+              style: {
+                width: '30px',
+                height: '30px',
+                cursor: 'pointer',
+              },
+              title: location.countryName,
+            })
+          );
 
-        markersRef.current.push(marker);
+          markerEl.innerHTML = flagHTML;
+
+          // Create popup
+          const popup = new mapboxgl.Popup({ offset: 25 }).setHTML(`
+            <div class="p-2">
+              <h3 class="font-semibold text-gray-900">${location.name}</h3>
+              <p class="text-sm text-gray-600">${location.photoCount} photos</p>
+            </div>
+          `);
+
+          // Add marker to map
+          const marker = new mapboxgl.Marker(markerEl)
+            .setLngLat([location.coordinates.lng, location.coordinates.lat])
+            .setPopup(popup)
+            .addTo(map.current);
+
+          markersRef.current.push(marker);
+        });
       });
 
       map.current.resize();
