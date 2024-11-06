@@ -1,138 +1,136 @@
+// src/app/components/ImageLightbox.js
 'use client';
 
-import React, { useEffect, useCallback } from 'react';
+import React, { useState, useCallback, useEffect } from 'react';
 import Image from 'next/image';
-import { X, ChevronLeft, ChevronRight } from 'lucide-react';
+import { X as CloseIcon, ChevronLeft, ChevronRight } from 'lucide-react';
 
-export default function ImageLightbox({
-  images,
-  currentIndex,
-  onClose,
-  onNext,
-  onPrevious
-}) {
-  // Handle keyboard events
-  const handleKeyDown = useCallback((e) => {
-    switch(e.key) {
-      case 'Escape':
-        onClose();
-        break;
-      case 'ArrowLeft':
-        onPrevious();
-        break;
-      case 'ArrowRight':
-        onNext();
-        break;
-      default:
-        break;
-    }
-  }, [onClose, onNext, onPrevious]);
+const LightboxImage = ({ src, alt, ...props }) => {
+  // Replace HEIC with jpg in the src path
+  const getJpgPath = (path) => path.replace(/\.HEIC$/i, '.jpg');
+  
+  const [imageSrc, setImageSrc] = useState(getJpgPath(src));
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
-    // Add keyboard event listener
-    window.addEventListener('keydown', handleKeyDown);
-    // Prevent body scroll
-    document.body.style.overflow = 'hidden';
+    setIsLoading(true);
+    setError(null);
+    setImageSrc(getJpgPath(src));
+    setIsLoading(false);
+  }, [src]);
 
-    return () => {
-      // Cleanup
-      window.removeEventListener('keydown', handleKeyDown);
-      document.body.style.overflow = 'unset';
-    };
-  }, [handleKeyDown]);
+  if (isLoading) {
+    return (
+      <div className="animate-pulse bg-gray-200 w-full h-full flex items-center justify-center">
+        <div className="text-gray-600">Loading...</div>
+      </div>
+    );
+  }
 
-  const currentImage = images[currentIndex];
-
-  // Generate a descriptive alt text
-  const getAltText = (image) => {
-    if (!image) return '';
-    return image.title || image.description || `Photo ${currentIndex + 1} of ${images.length}`;
-  };
+  if (error) {
+    return (
+      <div className="bg-gray-200 w-full h-full flex items-center justify-center">
+        <div className="text-red-500 text-center p-4">
+          Error loading image<br />
+          {error.message}
+        </div>
+      </div>
+    );
+  }
 
   return (
-    <div 
-      className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center"
-      role="dialog"
-      aria-modal="true"
-      aria-label="Image lightbox"
-    >
+    <Image
+      src={imageSrc}
+      alt={alt}
+      {...props}
+      onError={(e) => {
+        console.error(`Error loading image: ${imageSrc}`);
+        setError(new Error('Failed to load image'));
+        e.target.src = '/images/placeholder.jpg';
+      }}
+    />
+  );
+};
+
+export default function ImageLightbox({ images, initialIndex = 0, onClose }) {
+  const [currentIndex, setCurrentIndex] = useState(initialIndex);
+  const currentImage = images[currentIndex];
+
+  const handlePrevious = useCallback(() => {
+    setCurrentIndex((prevIndex) => (prevIndex > 0 ? prevIndex - 1 : images.length - 1));
+  }, [images.length]);
+
+  const handleNext = useCallback(() => {
+    setCurrentIndex((prevIndex) => (prevIndex < images.length - 1 ? prevIndex + 1 : 0));
+  }, [images.length]);
+
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      switch (e.key) {
+        case 'ArrowLeft':
+          handlePrevious();
+          break;
+        case 'ArrowRight':
+          handleNext();
+          break;
+        case 'Escape':
+          onClose();
+          break;
+        default:
+          break;
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [handleNext, handlePrevious, onClose]);
+
+  return (
+    <div className="fixed inset-0 z-50 bg-black bg-opacity-90 flex items-center justify-center">
       {/* Close button */}
       <button
         onClick={onClose}
-        className="absolute top-4 right-4 text-white p-2 hover:bg-white/10 rounded-full
-                  transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-white/50"
+        className="absolute top-4 right-4 text-white hover:text-gray-300 transition-colors"
         aria-label="Close lightbox"
       >
-        <X className="h-8 w-8" aria-hidden="true" />
+        <CloseIcon className="w-8 h-8" />
       </button>
 
       {/* Navigation buttons */}
       <button
-        onClick={onPrevious}
-        className="absolute left-4 top-1/2 -translate-y-1/2 text-white p-2
-                  hover:bg-white/10 rounded-full transition-colors duration-200
-                  focus:outline-none focus:ring-2 focus:ring-white/50"
+        onClick={handlePrevious}
+        className="absolute left-4 text-white hover:text-gray-300 transition-colors"
         aria-label="Previous image"
       >
-        <ChevronLeft className="h-8 w-8" aria-hidden="true" />
+        <ChevronLeft className="w-8 h-8" />
       </button>
 
       <button
-        onClick={onNext}
-        className="absolute right-4 top-1/2 -translate-y-1/2 text-white p-2
-                  hover:bg-white/10 rounded-full transition-colors duration-200
-                  focus:outline-none focus:ring-2 focus:ring-white/50"
+        onClick={handleNext}
+        className="absolute right-4 text-white hover:text-gray-300 transition-colors"
         aria-label="Next image"
       >
-        <ChevronRight className="h-8 w-8" aria-hidden="true" />
+        <ChevronRight className="w-8 h-8" />
       </button>
 
       {/* Image container */}
-      <div className="relative w-full h-full flex items-center justify-center p-4">
-        {currentImage && (
-          <div className="relative max-w-5xl w-full h-full flex flex-col items-center justify-center">
-            <div className="relative w-full max-h-[80vh] aspect-[3/2]">
-              <Image
-                src={currentImage.url}
-                alt={getAltText(currentImage)}
-                fill
-                sizes="100vw"
-                className="object-contain w-full h-full"
-                priority={true} // Priority loading for lightbox images
-                quality={85}
-                onError={(e) => {
-                  console.error(`Error loading image: ${currentImage.url}`);
-                  e.target.src = '/images/placeholder.jpg';
-                }}
-              />
-            </div>
-            <div className="mt-4 text-center">
-              <h3 className="text-white text-xl font-medium mb-2">
-                {currentImage.title || currentImage.caption}
-              </h3>
-              {currentImage.description && (
-                <p className="text-gray-300 mb-2">
-                  {currentImage.description}
-                </p>
-              )}
-              {currentImage.locationId && (
-                <p className="text-gray-300 flex items-center justify-center gap-2">
-                  <span className="sr-only">Location:</span>
-                  {currentImage.locationId}
-                </p>
-              )}
-            </div>
+      <div className="relative max-w-[90vw] max-h-[90vh] w-full h-full">
+        <LightboxImage
+          src={currentImage.url}
+          alt={currentImage.caption || 'Gallery image'}
+          fill
+          style={{ objectFit: 'contain' }}
+          priority
+          quality={85}
+        />
+        
+        {/* Caption */}
+        {currentImage.caption && (
+          <div className="absolute bottom-0 left-0 right-0 p-4 bg-black bg-opacity-50 text-white">
+            <p className="text-center">{currentImage.caption}</p>
           </div>
         )}
-      </div>
-
-      {/* Image counter */}
-      <div 
-        className="absolute bottom-4 left-1/2 -translate-x-1/2 text-white"
-        aria-live="polite"
-        role="status"
-      >
-        Image {currentIndex + 1} of {images.length}
       </div>
     </div>
   );
