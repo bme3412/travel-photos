@@ -1,6 +1,5 @@
 // src/app/utils/imageConverter.js
 import heicConvert from 'heic-convert';
-import sharp from 'sharp';
 
 export async function convertHeicToJpeg(buffer) {
   try {
@@ -10,9 +9,8 @@ export async function convertHeicToJpeg(buffer) {
       quality: 0.85
     });
     return jpegBuffer;
-  } catch (error) {
-    console.error('Error converting HEIC to JPEG:', error);
-    throw error;
+  } catch (err) {
+    console.error('Error converting HEIC to JPEG:', err);
+    throw err;
   }
 }
-

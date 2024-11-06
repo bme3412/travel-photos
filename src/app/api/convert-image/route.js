@@ -1,3 +1,4 @@
+// src/app/api/convert-image/route.js
 import { NextResponse } from 'next/server';
 import fs from 'fs/promises';
 import path from 'path';
@@ -12,22 +13,19 @@ export async function GET(request) {
       return new NextResponse('Image URL is required', { status: 400 });
     }
 
-    console.log('Converting image:', imageUrl); // Debug log
-
     // Remove leading slash and get full path
     const imagePath = path.join(process.cwd(), 'public', imageUrl.replace(/^\//, ''));
     
     // Check if file exists
     try {
       await fs.access(imagePath);
-    } catch (error) {
+    } catch {
       console.error('File not found:', imagePath);
       return new NextResponse('File not found', { status: 404 });
     }
 
     // Read the HEIC file
     const buffer = await fs.readFile(imagePath);
-    console.log('File size:', buffer.length); // Debug log
 
     // Convert to JPEG using sharp
     const jpegBuffer = await sharp(buffer, { 
@@ -41,8 +39,6 @@ export async function GET(request) {
       })
       .toBuffer();
 
-    console.log('Converted size:', jpegBuffer.length); // Debug log
-
     // Return the converted image
     return new NextResponse(jpegBuffer, {
       headers: {
@@ -51,8 +47,8 @@ export async function GET(request) {
         'Content-Length': jpegBuffer.length.toString(),
       },
     });
-  } catch (error) {
-    console.error('Error converting image:', error);
-    return new NextResponse(error.message, { status: 500 });
+  } catch (err) {
+    console.error('Error converting image:', err);
+    return new NextResponse(err.message, { status: 500 });
   }
 }
