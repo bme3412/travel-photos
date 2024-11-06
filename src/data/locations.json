@@ -7,7 +7,7 @@
       "coordinates": { "lng": 2.3431, "lat": 48.8867 }
     },
     {
-      "id": "loc2",
+      "id": "loc2", 
       "name": "Menton",
       "countryId": "FR",
       "coordinates": { "lng": 7.5012, "lat": 43.7747 }
@@ -44,15 +44,9 @@
     },
     {
       "id": "loc8",
-      "name": "Hanoi",
+      "name": "Phu Quoc",
       "countryId": "VN",
-      "coordinates": { "lng": 105.8342, "lat": 21.0285 }
-    },
-    {
-      "id": "loc9",
-      "name": "Ho Chi Minh City",
-      "countryId": "VN",
-      "coordinates": { "lng": 106.6297, "lat": 10.8231 }
+      "coordinates": { "lng": 103.9554, "lat": 10.2895 }
     },
     {
       "id": "loc10",

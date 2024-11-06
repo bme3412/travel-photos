@@ -37,6 +37,8 @@ const AlbumCard = ({ album }) => {
       'monaco': photos.find(p => p.url.includes('monaco-panorama.jpg')),
       'france': photos.find(p => p.url.includes('eiffel-tower-straight-on.jpg')),
       'hongkong': photos.find(p => p.url.includes('hongkong-skyline2.jpeg')),
+      'vietnam': photos.find(p => p.url.includes('temple.jpg')),
+      'singapore': photos.find(p => p.url.includes('singapore-pool-night.jpg')),
       'brazil': findBrazilPhoto()
     };
     

@@ -1135,6 +1135,402 @@
         "morning",
         "landmark"
       ]
+    },
+    {
+      "id": "vn1",
+      "albumId": "vietnam",
+      "url": "/images/albums/Vietnam/beach-celtics.jpg",
+      "caption": "Celtics Fan on Phu Quoc Beach",
+      "locationId": "Phu Quoc",
+      "coordinates": {
+        "lng": 103.9554,
+        "lat": 10.2895
+      },
+      "dateCreated": "2024-03-15",
+      "tags": [
+        "beach",
+        "people",
+        "culture",
+        "sports"
+      ]
+    },
+    {
+      "id": "vn2",
+      "albumId": "vietnam",
+      "url": "/images/albums/Vietnam/beach-huts.jpg",
+      "caption": "Traditional Beach Huts on Phu Quoc",
+      "locationId": "Phu Quoc",
+      "coordinates": {
+        "lng": 103.9554,
+        "lat": 10.2895
+      },
+      "dateCreated": "2024-03-15",
+      "tags": [
+        "beach",
+        "huts",
+        "traditional",
+        "architecture"
+      ]
+    },
+    {
+      "id": "vn3",
+      "albumId": "vietnam",
+      "url": "/images/albums/Vietnam/beach-palmtree.jpg",
+      "caption": "Palm Trees on Phu Quoc Beach",
+      "locationId": "Phu Quoc",
+      "coordinates": {
+        "lng": 103.9554,
+        "lat": 10.2895
+      },
+      "dateCreated": "2024-03-15",
+      "tags": [
+        "beach",
+        "palmtree",
+        "nature",
+        "tropical"
+      ]
+    },
+    {
+      "id": "vn4",
+      "albumId": "vietnam",
+      "url": "/images/albums/Vietnam/horizon-boat.jpg",
+      "caption": "Traditional Boat on Phu Quoc Horizon",
+      "locationId": "Phu Quoc",
+      "coordinates": {
+        "lng": 103.9554,
+        "lat": 10.2895
+      },
+      "dateCreated": "2024-03-15",
+      "tags": [
+        "boat",
+        "horizon",
+        "ocean",
+        "traditional"
+      ]
+    },
+    {
+      "id": "vn5",
+      "albumId": "vietnam",
+      "url": "/images/albums/Vietnam/hotel-infinity.jpg",
+      "caption": "Infinity Pool at Phu Quoc Resort",
+      "locationId": "Phu Quoc",
+      "coordinates": {
+        "lng": 103.9554,
+        "lat": 10.2895
+      },
+      "dateCreated": "2024-03-16",
+      "tags": [
+        "hotel",
+        "pool",
+        "luxury",
+        "resort"
+      ]
+    },
+    {
+      "id": "vn6",
+      "albumId": "vietnam",
+      "url": "/images/albums/Vietnam/sunset-horizon.jpg",
+      "caption": "Sunset Over Phu Quoc Horizon",
+      "locationId": "Phu Quoc",
+      "coordinates": {
+        "lng": 103.9554,
+        "lat": 10.2895
+      },
+      "dateCreated": "2024-03-16",
+      "tags": [
+        "sunset",
+        "horizon",
+        "ocean",
+        "landscape"
+      ]
+    },
+    {
+      "id": "vn7",
+      "albumId": "vietnam",
+      "url": "/images/albums/Vietnam/sunset-parachute.jpg",
+      "caption": "Parasailing at Sunset in Phu Quoc",
+      "locationId": "Phu Quoc",
+      "coordinates": {
+        "lng": 103.9554,
+        "lat": 10.2895
+      },
+      "dateCreated": "2024-03-16",
+      "tags": [
+        "sunset",
+        "parasailing",
+        "adventure",
+        "watersports"
+      ]
+    },
+    {
+      "id": "vn8",
+      "albumId": "vietnam",
+      "url": "/images/albums/Vietnam/sunset-penthouse.jpg",
+      "caption": "Penthouse View at Sunset in Phu Quoc",
+      "locationId": "Phu Quoc",
+      "coordinates": {
+        "lng": 103.9554,
+        "lat": 10.2895
+      },
+      "dateCreated": "2024-03-16",
+      "tags": [
+        "sunset",
+        "penthouse",
+        "luxury",
+        "view"
+      ]
+    },
+    {
+      "id": "vn9",
+      "albumId": "vietnam",
+      "url": "/images/albums/Vietnam/temple.jpg",
+      "caption": "Traditional Temple in Phu Quoc",
+      "locationId": "Phu Quoc",
+      "coordinates": {
+        "lng": 103.9554,
+        "lat": 10.2895
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "temple",
+        "culture",
+        "architecture",
+        "religious"
+      ]
+    },
+    {
+      "id": "sg1",
+      "albumId": "singapore",
+      "url": "/images/albums/Singapore/sinapore-pool-tower.jpg",
+      "caption": "Pool View with Singapore Tower",
+      "locationId": "Singapore",
+      "coordinates": {
+        "lng": 103.8198,
+        "lat": 1.3521
+      },
+      "dateCreated": "2024-03-15",
+      "tags": [
+        "pool",
+        "tower",
+        "architecture",
+        "urban"
+      ]
+    },
+    {
+      "id": "sg2",
+      "albumId": "singapore",
+      "url": "/images/albums/Singapore/singapore-art-statue.jpg",
+      "caption": "Art Installation in Singapore",
+      "locationId": "Singapore",
+      "coordinates": {
+        "lng": 103.8198,
+        "lat": 1.3521
+      },
+      "dateCreated": "2024-03-15",
+      "tags": [
+        "art",
+        "statue",
+        "culture",
+        "urban"
+      ]
+    },
+    {
+      "id": "sg3",
+      "albumId": "singapore",
+      "url": "/images/albums/Singapore/singapore-india.jpg",
+      "caption": "Little India District",
+      "locationId": "Singapore",
+      "coordinates": {
+        "lng": 103.8198,
+        "lat": 1.3521
+      },
+      "dateCreated": "2024-03-15",
+      "tags": [
+        "culture",
+        "little-india",
+        "urban",
+        "district"
+      ]
+    },
+    {
+      "id": "sg4",
+      "albumId": "singapore",
+      "url": "/images/albums/Singapore/singapore-marinasands-tower.jpg",
+      "caption": "Marina Sands Tower",
+      "locationId": "Singapore",
+      "coordinates": {
+        "lng": 103.8198,
+        "lat": 1.3521
+      },
+      "dateCreated": "2024-03-15",
+      "tags": [
+        "marina-sands",
+        "tower",
+        "architecture",
+        "landmark"
+      ]
+    },
+    {
+      "id": "sg5",
+      "albumId": "singapore",
+      "url": "/images/albums/Singapore/singapore-mosque.jpg",
+      "caption": "Traditional Singapore Mosque",
+      "locationId": "Singapore",
+      "coordinates": {
+        "lng": 103.8198,
+        "lat": 1.3521
+      },
+      "dateCreated": "2024-03-15",
+      "tags": [
+        "mosque",
+        "religious",
+        "architecture",
+        "culture"
+      ]
+    },
+    {
+      "id": "sg6",
+      "albumId": "singapore",
+      "url": "/images/albums/Singapore/singapore-pool-evening.jpg",
+      "caption": "Evening at Infinity Pool",
+      "locationId": "Singapore",
+      "coordinates": {
+        "lng": 103.8198,
+        "lat": 1.3521
+      },
+      "dateCreated": "2024-03-16",
+      "tags": [
+        "pool",
+        "evening",
+        "luxury",
+        "urban"
+      ]
+    },
+    {
+      "id": "sg7",
+      "albumId": "singapore",
+      "url": "/images/albums/Singapore/singapore-pool-night.jpg",
+      "caption": "Night View from Infinity Pool",
+      "locationId": "Singapore",
+      "coordinates": {
+        "lng": 103.8198,
+        "lat": 1.3521
+      },
+      "dateCreated": "2024-03-16",
+      "tags": [
+        "pool",
+        "night",
+        "cityscape",
+        "luxury"
+      ]
+    },
+    {
+      "id": "sg8",
+      "albumId": "singapore",
+      "url": "/images/albums/Singapore/singapore-pool-night2.jpg",
+      "caption": "Nighttime Pool Panorama",
+      "locationId": "Singapore",
+      "coordinates": {
+        "lng": 103.8198,
+        "lat": 1.3521
+      },
+      "dateCreated": "2024-03-16",
+      "tags": [
+        "pool",
+        "night",
+        "panorama",
+        "cityscape"
+      ]
+    },
+    {
+      "id": "sg9",
+      "albumId": "singapore",
+      "url": "/images/albums/Singapore/singapore-pool.jpg",
+      "caption": "Infinity Pool View",
+      "locationId": "Singapore",
+      "coordinates": {
+        "lng": 103.8198,
+        "lat": 1.3521
+      },
+      "dateCreated": "2024-03-16",
+      "tags": [
+        "pool",
+        "infinity-pool",
+        "luxury",
+        "view"
+      ]
+    },
+    {
+      "id": "sg10",
+      "albumId": "singapore",
+      "url": "/images/albums/Singapore/singapore-sign.jpg",
+      "caption": "Singapore Welcome Sign",
+      "locationId": "Singapore",
+      "coordinates": {
+        "lng": 103.8198,
+        "lat": 1.3521
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "sign",
+        "landmark",
+        "urban",
+        "welcome"
+      ]
+    },
+    {
+      "id": "sg11",
+      "albumId": "singapore",
+      "url": "/images/albums/Singapore/singapore-skyline.jpg",
+      "caption": "Singapore Skyline Panorama",
+      "locationId": "Singapore",
+      "coordinates": {
+        "lng": 103.8198,
+        "lat": 1.3521
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "skyline",
+        "cityscape",
+        "urban",
+        "panorama"
+      ]
+    },
+    {
+      "id": "sg12",
+      "albumId": "singapore",
+      "url": "/images/albums/Singapore/singapore-water-towers.jpg",
+      "caption": "Singapore Water Towers",
+      "locationId": "Singapore",
+      "coordinates": {
+        "lng": 103.8198,
+        "lat": 1.3521
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "towers",
+        "water",
+        "architecture",
+        "urban"
+      ]
+    },
+    {
+      "id": "sg13",
+      "albumId": "singapore",
+      "url": "/images/albums/Singapore/singaproe-marinasandsbay.jpg",
+      "caption": "Marina Sands Bay View",
+      "locationId": "Singapore",
+      "coordinates": {
+        "lng": 103.8198,
+        "lat": 1.3521
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "marina-sands",
+        "bay",
+        "waterfront",
+        "landmark"
+      ]
     }
   ]
 }
