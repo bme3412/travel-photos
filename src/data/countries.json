@@ -1,16 +1,48 @@
 {
-    "countries": [
-      {
-        "id": "france",
-        "name": "France"
-      },
-      {
-        "id": "hongkong",
-        "name": "Hong Kong"
-      },
-      {
-        "id": "brazil",
-        "name": "Brazil"
-      }
-    ]
-  }
+  "countries": [
+    {
+      "id": "france",
+      "name": "France"
+    },
+    {
+      "id": "hongkong",
+      "name": "Hong Kong"
+    },
+    {
+      "id": "brazil",
+      "name": "Brazil"
+    },
+    {
+      "id": "monaco",
+      "name": "Monaco"
+    },
+    {
+      "id": "vietnam",
+      "name": "Vietnam"
+    },
+    {
+      "id": "singapore",
+      "name": "Singapore"
+    },
+    {
+      "id": "italy",
+      "name": "Italy"
+    },
+    {
+      "id": "slovenia",
+      "name": "Slovenia"
+    },
+    {
+      "id": "switzerland",
+      "name": "Switzerland"
+    },
+    {
+      "id": "uruguay",
+      "name": "Uruguay"
+    },
+    {
+      "id": "chile",
+      "name": "Chile"
+    }
+  ]
+}

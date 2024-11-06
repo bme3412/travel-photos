@@ -1,36 +1,112 @@
 {
-    "locations": [
-      {
-        "id": "loc1",
-        "name": "Paris",
-        "countryId": "FR",
-        "coordinates": { "lng": 2.3431, "lat": 48.8867 }
-      },
-      {
-        "id": "loc2",
-        "name": "Menton",
-        "countryId": "FR",
-        "coordinates": { "lng": 7.5012, "lat": 43.7747 }
-      },
-      {
-        "id": "loc3",
-        "name": "Roquebrune-Cap-Martin",
-        "countryId": "FR",
-        "coordinates": { "lng": 7.4454, "lat": 43.7573 }
-      },
-      {
-        "id": "loc4",
-        "name": "Cannes",
-        "countryId": "FR",
-        "coordinates": { "lng": 7.0179, "lat": 43.5528 }
-      },
-      {
-        "id": "loc5",
-        "name": "Hong Kong",
-        "countryId": "HK",
-        "coordinates": { "lng": 114.1694, "lat": 22.3193 }
-      }
-      
-    ]
-  }
-  
+  "locations": [
+    {
+      "id": "loc1",
+      "name": "Paris",
+      "countryId": "FR",
+      "coordinates": { "lng": 2.3431, "lat": 48.8867 }
+    },
+    {
+      "id": "loc2",
+      "name": "Menton",
+      "countryId": "FR",
+      "coordinates": { "lng": 7.5012, "lat": 43.7747 }
+    },
+    {
+      "id": "loc3",
+      "name": "Roquebrune-Cap-Martin",
+      "countryId": "FR",
+      "coordinates": { "lng": 7.4454, "lat": 43.7573 }
+    },
+    {
+      "id": "loc4",
+      "name": "Cannes",
+      "countryId": "FR",
+      "coordinates": { "lng": 7.0179, "lat": 43.5528 }
+    },
+    {
+      "id": "loc5",
+      "name": "Hong Kong",
+      "countryId": "HK",
+      "coordinates": { "lng": 114.1694, "lat": 22.3193 }
+    },
+    {
+      "id": "loc6",
+      "name": "Rio de Janeiro",
+      "countryId": "BR",
+      "coordinates": { "lng": -43.1729, "lat": -22.9068 }
+    },
+    {
+      "id": "loc7",
+      "name": "Monte Carlo",
+      "countryId": "MC",
+      "coordinates": { "lng": 7.4246, "lat": 43.7384 }
+    },
+    {
+      "id": "loc8",
+      "name": "Hanoi",
+      "countryId": "VN",
+      "coordinates": { "lng": 105.8342, "lat": 21.0285 }
+    },
+    {
+      "id": "loc9",
+      "name": "Ho Chi Minh City",
+      "countryId": "VN",
+      "coordinates": { "lng": 106.6297, "lat": 10.8231 }
+    },
+    {
+      "id": "loc10",
+      "name": "Singapore",
+      "countryId": "SG",
+      "coordinates": { "lng": 103.8198, "lat": 1.3521 }
+    },
+    {
+      "id": "loc11",
+      "name": "Rome",
+      "countryId": "IT",
+      "coordinates": { "lng": 12.4964, "lat": 41.9028 }
+    },
+    {
+      "id": "loc12",
+      "name": "Venice",
+      "countryId": "IT",
+      "coordinates": { "lng": 12.3155, "lat": 45.4408 }
+    },
+    {
+      "id": "loc13",
+      "name": "Ljubljana",
+      "countryId": "SI",
+      "coordinates": { "lng": 14.5057, "lat": 46.0569 }
+    },
+    {
+      "id": "loc14",
+      "name": "Zurich",
+      "countryId": "CH",
+      "coordinates": { "lng": 8.5417, "lat": 47.3769 }
+    },
+    {
+      "id": "loc15",
+      "name": "Geneva",
+      "countryId": "CH",
+      "coordinates": { "lng": 6.1432, "lat": 46.2044 }
+    },
+    {
+      "id": "loc16",
+      "name": "Montevideo",
+      "countryId": "UY",
+      "coordinates": { "lng": -56.1645, "lat": -34.9011 }
+    },
+    {
+      "id": "loc17",
+      "name": "Santiago",
+      "countryId": "CL",
+      "coordinates": { "lng": -70.6483, "lat": -33.4489 }
+    },
+    {
+      "id": "loc18",
+      "name": "Valparaiso",
+      "countryId": "CL",
+      "coordinates": { "lng": -71.6127, "lat": -33.0472 }
+    }
+  ]
+}
