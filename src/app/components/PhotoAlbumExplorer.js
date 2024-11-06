@@ -23,24 +23,56 @@ import photosData from '../../data/photos.json';
 const AlbumCard = ({ album }) => {
   // Define specific cover photos for certain albums
   const getSpecificPhoto = (albumId, photos) => {
+    const normalizedAlbumId = albumId.toLowerCase();
+    
+    // Find Brazil photo specifically checking both path formats
+    const findBrazilPhoto = () => {
+      return photos.find(p => 
+        p.url.includes('helicopter-beach-sugarloaf.jpg') || 
+        p.url.includes('/Brazil/helicopter-beach-sugarloaf.jpg')
+      );
+    };
+
     const coverPhotoMap = {
       'monaco': photos.find(p => p.url.includes('monaco-panorama.jpg')),
       'france': photos.find(p => p.url.includes('eiffel-tower-straight-on.jpg')),
-      'hongkong': photos.find(p => p.url.includes('hongkong-skyline2.jpeg'))
+      'hongkong': photos.find(p => p.url.includes('hongkong-skyline2.jpeg')),
+      'brazil': findBrazilPhoto()
     };
     
-    return coverPhotoMap[albumId.toLowerCase()] || 
-           photos.find(photo => photo.albumId.toLowerCase() === albumId.toLowerCase());
+    // Debug logging
+    console.log(`Looking for album: ${normalizedAlbumId}`);
+    console.log('Found mapped photo:', coverPhotoMap[normalizedAlbumId]);
+    
+    // First try to get the specific mapped photo
+    const mappedPhoto = coverPhotoMap[normalizedAlbumId];
+    if (mappedPhoto) {
+      return mappedPhoto;
+    }
+    
+    // Fallback to finding any photo from the album
+    return photos.find(photo => photo.albumId.toLowerCase() === normalizedAlbumId);
   };
 
   // Find the specific photo for this album
   const albumPhoto = getSpecificPhoto(album.id, photosData.photos);
 
-  // Get cover photo URL (converting HEIC to jpg if necessary)
+  // Get cover photo URL with path normalization
   const getCoverPhotoUrl = (photo) => {
     if (!photo) return null;
-    const url = photo.url;
-    return url.replace(/\.HEIC$/i, '.jpg');
+    
+    let url = photo.url;
+    
+    // Handle Brazil specific case and ensure correct path format
+    if (url.includes('helicopter-beach-sugarloaf.jpg') && !url.startsWith('/images/albums/')) {
+      url = `/images/albums${url.startsWith('/') ? '' : '/'}${url}`;
+    }
+    
+    // Convert HEIC to jpg if necessary
+    url = url.replace(/\.HEIC$/i, '.jpg');
+    
+    console.log('Processed URL:', url);
+    return url;
   };
 
   const coverPhotoUrl = getCoverPhotoUrl(albumPhoto);

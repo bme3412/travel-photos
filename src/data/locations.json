@@ -107,6 +107,30 @@
       "name": "Valparaiso",
       "countryId": "CL",
       "coordinates": { "lng": -71.6127, "lat": -33.0472 }
+    },
+    {
+      "id": "loc19",
+      "name": "Copacabana",
+      "countryId": "BR",
+      "coordinates": { "lng": -43.1729, "lat": -22.9068 }
+    },
+    {
+      "id": "loc20",
+      "name": "Leblon",
+      "countryId": "BR",
+      "coordinates": { "lng": -43.2234, "lat": -22.9847 }
+    },
+    {
+      "id": "loc21",
+      "name": "Christ the Redeemer",
+      "countryId": "BR",
+      "coordinates": { "lng": -43.2104, "lat": -22.9519 }
+    },
+    {
+      "id": "loc22",
+      "name": "Sugarloaf Mountain",
+      "countryId": "BR",
+      "coordinates": { "lng": -43.1566, "lat": -22.9489 }
     }
   ]
 }

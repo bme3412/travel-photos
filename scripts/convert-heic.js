@@ -33,15 +33,17 @@ async function main() {
   try {
     const francePath = path.join(process.cwd(), 'public', 'images', 'albums', 'France');
     const monacoPath = path.join(process.cwd(), 'public', 'images', 'albums', 'Monaco');
+    const brazilPath = path.join(process.cwd(), 'public', 'images', 'albums', 'Brazil');
 
-    const files = await fs.readdir(monacoPath);
+
+    const files = await fs.readdir(brazilPath);
     let convertedCount = 0;
     
     console.log('Starting HEIC conversion...');
     
     for (const file of files) {
       if (file.toUpperCase().endsWith('.HEIC')) {
-        const filePath = path.join(monacoPath, file);
+        const filePath = path.join(brazilPath, file);
         const success = await convertHeicToJpeg(filePath);
         if (success) convertedCount++;
       }
