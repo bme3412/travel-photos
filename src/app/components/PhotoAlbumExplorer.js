@@ -17,17 +17,33 @@ import {
   MapPin
 } from 'lucide-react';
 import countriesData from '../../data/countries.json';
+import photosData from '../../data/photos.json';
 
-// Updated AlbumCard Component
+// Updated AlbumCard Component with Photo Integration
 const AlbumCard = ({ album }) => {
-  // Function to get cover photo URL (converting HEIC to jpg if necessary)
-  const getCoverPhotoUrl = (photos) => {
-    if (!photos || !photos[0]) return null;
-    const url = photos[0].url;
+  // Define specific cover photos for certain albums
+  const getSpecificPhoto = (albumId, photos) => {
+    const coverPhotoMap = {
+      'monaco': photos.find(p => p.url.includes('monaco-panorama.jpg')),
+      'france': photos.find(p => p.url.includes('eiffel-tower-straight-on.jpg')),
+      'hongkong': photos.find(p => p.url.includes('hongkong-skyline2.jpeg'))
+    };
+    
+    return coverPhotoMap[albumId.toLowerCase()] || 
+           photos.find(photo => photo.albumId.toLowerCase() === albumId.toLowerCase());
+  };
+
+  // Find the specific photo for this album
+  const albumPhoto = getSpecificPhoto(album.id, photosData.photos);
+
+  // Get cover photo URL (converting HEIC to jpg if necessary)
+  const getCoverPhotoUrl = (photo) => {
+    if (!photo) return null;
+    const url = photo.url;
     return url.replace(/\.HEIC$/i, '.jpg');
   };
 
-  const coverPhotoUrl = getCoverPhotoUrl(album.photos);
+  const coverPhotoUrl = getCoverPhotoUrl(albumPhoto);
 
   return (
     <Link href={`/albums/${album.id}`} className="group">
@@ -37,13 +53,24 @@ const AlbumCard = ({ album }) => {
             <div className="relative w-full h-full">
               <AlbumImage
                 src={coverPhotoUrl}
-                alt={album.photos[0].title || `Cover photo for ${album.name}`}
+                alt={albumPhoto.caption || `Cover photo for ${album.name}`}
                 fill
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 className="object-cover"
                 priority={false}
                 quality={75}
               />
+              {albumPhoto.locationId && (
+                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black via-black/50 to-transparent p-4">
+                  <h3 className="text-xl font-semibold text-white">{album.name}</h3>
+                  <p className="text-sm text-gray-200 flex items-center">
+                    <MapPin className="h-4 w-4 mr-1 text-teal-300" aria-hidden="true" />
+                    <span className="mr-2">{albumPhoto.locationId}</span>
+                    <span className="text-teal-300">•</span>
+                    <span className="ml-2">{album.year}</span>
+                  </p>
+                </div>
+              )}
             </div>
           ) : (
             <div className="flex items-center justify-center h-full text-gray-400" 
@@ -52,20 +79,13 @@ const AlbumCard = ({ album }) => {
               <CameraIcon className="h-12 w-12" />
             </div>
           )}
-          <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black via-transparent to-transparent p-4">
-            <h3 className="text-xl font-semibold text-white">{album.name}</h3>
-            <p className="text-sm text-gray-200 flex items-center">
-              <MapPin className="h-4 w-4 mr-1 text-teal-300" aria-hidden="true" />
-              {album.countryId === 'all' ? 'All Countries' : album.countryId} - {album.year}
-            </p>
-          </div>
         </div>
       </div>
     </Link>
   );
 };
 
-// Rest of your PhotoAlbumExplorer component remains the same...
+// Main PhotoAlbumExplorer Component
 export default function PhotoAlbumExplorer() {
   const {
     albums,
@@ -119,23 +139,21 @@ export default function PhotoAlbumExplorer() {
   return (
     <div className="min-h-screen bg-gray-100 py-16 bg-world-map">
       <div className="max-w-7xl mx-auto px-6">
-        {/* Header section remains the same... */}
         <div className="text-center mb-12">
           <div className="flex justify-center items-center mb-4 space-x-6 flex-wrap gap-6">
-            <Landmark className="h-16 w-16 text-teal-700" aria-label="Eiffel Tower" />
-            <Building2 className="h-16 w-16 text-teal-700" aria-label="Statue of Liberty" />
-            <Mountain className="h-16 w-16 text-teal-700" aria-label="Great Wall of China" />
-            <Building className="h-16 w-16 text-teal-700" aria-label="Colosseum" />
-            <Pyramid className="h-16 w-16 text-teal-700" aria-label="Pyramids of Giza" />
-            <Theater className="h-16 w-16 text-teal-700" aria-label="Sydney Opera House" />
+            <Landmark className="h-16 w-16 text-teal-700" aria-label="Landmark" />
+            <Building2 className="h-16 w-16 text-teal-700" aria-label="Building" />
+            <Mountain className="h-16 w-16 text-teal-700" aria-label="Mountain" />
+            <Building className="h-16 w-16 text-teal-700" aria-label="Architecture" />
+            <Pyramid className="h-16 w-16 text-teal-700" aria-label="Monument" />
+            <Theater className="h-16 w-16 text-teal-700" aria-label="Culture" />
           </div>
           <h1 className="text-5xl font-bold text-gray-800">Where to go next?</h1>
           <p className="mt-4 text-lg text-gray-600">
-            45 countries, 6 continents, 80 cities and counting
+            Explore destinations through our photo collection
           </p>
         </div>
 
-        {/* Search and Filters section remains the same... */}
         <div className="flex flex-col md:flex-row items-center justify-between gap-8 mb-12">
           <div className="relative w-full md:w-auto">
             <SearchIcon className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-500" />
@@ -157,7 +175,6 @@ export default function PhotoAlbumExplorer() {
           />
         </div>
 
-        {/* Album Grid section */}
         {filteredAlbums.length > 0 ? (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredAlbums.map((album) => (

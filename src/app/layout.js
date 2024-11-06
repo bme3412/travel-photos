@@ -8,7 +8,7 @@ const lora = Lora({
 })
 
 export const metadata = {
-  title: 'Where to go next?',
+  title: 'Where to next?',
   description: 'Relive your journeys around the world',
   viewport: 'width=device-width, initial-scale=1',
   icons: {
