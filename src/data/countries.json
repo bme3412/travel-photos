@@ -1,3 +1,4 @@
+
 {
   "countries": [
     {
@@ -43,6 +44,10 @@
     {
       "id": "chile",
       "name": "Chile"
+    },
+    {
+      "id": "malaysia",
+      "name": "Malaysia"
     }
   ]
 }

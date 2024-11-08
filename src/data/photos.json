@@ -562,6 +562,582 @@
       ]
     },
     {
+      "id": "france34",
+      "albumId": "france",
+      "url": "/images/albums/France/stjeancapmartin-airbnb.jpg",
+      "caption": "St Jean Cap Martin Accommodation",
+      "locationId": "St Jean Cap Martin",
+      "coordinates": {
+        "lng": 7.4504,
+        "lat": 43.7571
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "accommodation",
+        "architecture",
+        "villa",
+        "exterior"
+      ]
+    },
+    {
+      "id": "france35",
+      "albumId": "france",
+      "url": "/images/albums/France/stjeancapmartin-aqueduct.jpg",
+      "caption": "Historic Aqueduct in St Jean Cap Martin",
+      "locationId": "St Jean Cap Martin",
+      "coordinates": {
+        "lng": 7.4504,
+        "lat": 43.7571
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "aqueduct",
+        "historic",
+        "architecture",
+        "landmark"
+      ]
+    },
+    {
+      "id": "france36",
+      "albumId": "france",
+      "url": "/images/albums/France/stjeancapmartin-baie-boats.jpg",
+      "caption": "Boats in the Bay of St Jean Cap Martin",
+      "locationId": "St Jean Cap Martin",
+      "coordinates": {
+        "lng": 7.4504,
+        "lat": 43.7571
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "bay",
+        "boats",
+        "marina",
+        "nautical"
+      ]
+    },
+    {
+      "id": "france37",
+      "albumId": "france",
+      "url": "/images/albums/France/stjeancapmartin-baie-plant.jpg",
+      "caption": "Coastal Vegetation by the Bay",
+      "locationId": "St Jean Cap Martin",
+      "coordinates": {
+        "lng": 7.4504,
+        "lat": 43.7571
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "bay",
+        "nature",
+        "vegetation",
+        "coastal"
+      ]
+    },
+    {
+      "id": "france38",
+      "albumId": "france",
+      "url": "/images/albums/France/stjeancapmartin-baie.jpg",
+      "caption": "Bay of St Jean Cap Martin",
+      "locationId": "St Jean Cap Martin",
+      "coordinates": {
+        "lng": 7.4504,
+        "lat": 43.7571
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "bay",
+        "sea",
+        "coastal",
+        "landscape"
+      ]
+    },
+    {
+      "id": "france39",
+      "albumId": "france",
+      "url": "/images/albums/France/stjeancapmartin-bay-buoy.jpg",
+      "caption": "Bay View with Buoy",
+      "locationId": "St Jean Cap Martin",
+      "coordinates": {
+        "lng": 7.4504,
+        "lat": 43.7571
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "bay",
+        "sea",
+        "buoy",
+        "coastal"
+      ]
+    },
+    {
+      "id": "france40",
+      "albumId": "france",
+      "url": "/images/albums/France/stjeancapmartin-bay-green.jpg",
+      "caption": "Green Waters of St Jean Cap Martin Bay",
+      "locationId": "St Jean Cap Martin",
+      "coordinates": {
+        "lng": 7.4504,
+        "lat": 43.7571
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "bay",
+        "sea",
+        "nature",
+        "coastal"
+      ]
+    },
+    {
+      "id": "france41",
+      "albumId": "france",
+      "url": "/images/albums/France/stjeancapmartin-bay-rocks.jpg",
+      "caption": "Rocky Coastline of St Jean Cap Martin",
+      "locationId": "St Jean Cap Martin",
+      "coordinates": {
+        "lng": 7.4504,
+        "lat": 43.7571
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "rocks",
+        "coastline",
+        "nature",
+        "sea"
+      ]
+    },
+    {
+      "id": "france42",
+      "albumId": "france",
+      "url": "/images/albums/France/stjeancapmartin-bay.jpg",
+      "caption": "St Jean Cap Martin Bay Panorama",
+      "locationId": "St Jean Cap Martin",
+      "coordinates": {
+        "lng": 7.4504,
+        "lat": 43.7571
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "bay",
+        "panorama",
+        "sea",
+        "coastal"
+      ]
+    },
+    {
+      "id": "france43",
+      "albumId": "france",
+      "url": "/images/albums/France/stjeancapmartin-beach-blue.jpg",
+      "caption": "Blue Waters at St Jean Cap Martin Beach",
+      "locationId": "St Jean Cap Martin",
+      "coordinates": {
+        "lng": 7.4504,
+        "lat": 43.7571
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "beach",
+        "sea",
+        "blue",
+        "coastal"
+      ]
+    },
+    {
+      "id": "france44",
+      "albumId": "france",
+      "url": "/images/albums/France/stjeancapmartin-beach.jpg",
+      "caption": "Beach at St Jean Cap Martin",
+      "locationId": "St Jean Cap Martin",
+      "coordinates": {
+        "lng": 7.4504,
+        "lat": 43.7571
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "beach",
+        "sea",
+        "coastal",
+        "nature"
+      ]
+    },
+    {
+      "id": "france45",
+      "albumId": "france",
+      "url": "/images/albums/France/stjeancapmartin-beachlot.jpg",
+      "caption": "Beach Area of St Jean Cap Martin",
+      "locationId": "St Jean Cap Martin",
+      "coordinates": {
+        "lng": 7.4504,
+        "lat": 43.7571
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "beach",
+        "coastal",
+        "sea",
+        "landscape"
+      ]
+    },
+    {
+      "id": "france46",
+      "albumId": "france",
+      "url": "/images/albums/France/stjeancapmartin-boats.jpg",
+      "caption": "Boats in St Jean Cap Martin",
+      "locationId": "St Jean Cap Martin",
+      "coordinates": {
+        "lng": 7.4504,
+        "lat": 43.7571
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "boats",
+        "marina",
+        "nautical",
+        "sea"
+      ]
+    },
+    {
+      "id": "france47",
+      "albumId": "france",
+      "url": "/images/albums/France/stjeancapmartin-grassybeach.jpg",
+      "caption": "Natural Beach Area with Vegetation",
+      "locationId": "St Jean Cap Martin",
+      "coordinates": {
+        "lng": 7.4504,
+        "lat": 43.7571
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "beach",
+        "nature",
+        "vegetation",
+        "coastal"
+      ]
+    },
+    {
+      "id": "france48",
+      "albumId": "france",
+      "url": "/images/albums/France/stjeancapmartin-harbor-boats.jpg",
+      "caption": "Harbor View with Boats",
+      "locationId": "St Jean Cap Martin",
+      "coordinates": {
+        "lng": 7.4504,
+        "lat": 43.7571
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "harbor",
+        "boats",
+        "marina",
+        "nautical"
+      ]
+    },
+    {
+      "id": "france49",
+      "albumId": "france",
+      "url": "/images/albums/France/stjeancapmartin-harbor.jpg",
+      "caption": "St Jean Cap Martin Harbor",
+      "locationId": "St Jean Cap Martin",
+      "coordinates": {
+        "lng": 7.4504,
+        "lat": 43.7571
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "harbor",
+        "marina",
+        "coastal",
+        "nautical"
+      ]
+    },
+    {
+      "id": "france50",
+      "albumId": "france",
+      "url": "/images/albums/France/stjeancapmartin-quarry.jpg",
+      "caption": "Historic Quarry Site",
+      "locationId": "St Jean Cap Martin",
+      "coordinates": {
+        "lng": 7.4504,
+        "lat": 43.7571
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "quarry",
+        "historic",
+        "landscape",
+        "nature"
+      ]
+    },
+    {
+      "id": "france51",
+      "albumId": "france",
+      "url": "/images/albums/France/stjeancapmartin-restaurant.jpg",
+      "caption": "Restaurant in St Jean Cap Martin",
+      "locationId": "St Jean Cap Martin",
+      "coordinates": {
+        "lng": 7.4504,
+        "lat": 43.7571
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "restaurant",
+        "dining",
+        "food",
+        "architecture"
+      ]
+    },
+    {
+      "id": "france52",
+      "albumId": "france",
+      "url": "/images/albums/France/stjeancapmartin-roof.jpg",
+      "caption": "Traditional Roof Architecture",
+      "locationId": "St Jean Cap Martin",
+      "coordinates": {
+        "lng": 7.4504,
+        "lat": 43.7571
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "roof",
+        "architecture",
+        "traditional",
+        "building"
+      ]
+    },
+    {
+      "id": "france53",
+      "albumId": "france",
+      "url": "/images/albums/France/stjeancapmartin-view-nice.jpg",
+      "caption": "View Towards Nice",
+      "locationId": "St Jean Cap Martin",
+      "coordinates": {
+        "lng": 7.4504,
+        "lat": 43.7571
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "vista",
+        "landscape",
+        "coastal",
+        "panorama"
+      ]
+    },
+    {
+      "id": "france54",
+      "albumId": "france",
+      "url": "/images/albums/France/stjeancapmartin-villa-back.jpg",
+      "caption": "Back View of Villa",
+      "locationId": "St Jean Cap Martin",
+      "coordinates": {
+        "lng": 7.4504,
+        "lat": 43.7571
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "villa",
+        "architecture",
+        "luxury",
+        "exterior"
+      ]
+    },
+    {
+      "id": "france55",
+      "albumId": "france",
+      "url": "/images/albums/France/stjeancapmartin-villa-backgarden.jpg",
+      "caption": "Villa Back Garden",
+      "locationId": "St Jean Cap Martin",
+      "coordinates": {
+        "lng": 7.4504,
+        "lat": 43.7571
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "garden",
+        "villa",
+        "nature",
+        "luxury"
+      ]
+    },
+    {
+      "id": "france56",
+      "albumId": "france",
+      "url": "/images/albums/France/stjeancapmartin-villa-entry.jpg",
+      "caption": "Villa Entrance",
+      "locationId": "St Jean Cap Martin",
+      "coordinates": {
+        "lng": 7.4504,
+        "lat": 43.7571
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "villa",
+        "entrance",
+        "architecture",
+        "luxury"
+      ]
+    },
+    {
+      "id": "france57",
+      "albumId": "france",
+      "url": "/images/albums/France/stjeancapmartin-villa-fountain.jpg",
+      "caption": "Villa Fountain",
+      "locationId": "St Jean Cap Martin",
+      "coordinates": {
+        "lng": 7.4504,
+        "lat": 43.7571
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "fountain",
+        "villa",
+        "garden",
+        "luxury"
+      ]
+    },
+    {
+      "id": "france58",
+      "albumId": "france",
+      "url": "/images/albums/France/stjeancapmartin-villa-garden.jpg",
+      "caption": "Villa Garden",
+      "locationId": "St Jean Cap Martin",
+      "coordinates": {
+        "lng": 7.4504,
+        "lat": 43.7571
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "garden",
+        "villa",
+        "nature",
+        "landscape"
+      ]
+    },
+    {
+      "id": "france59",
+      "albumId": "france",
+      "url": "/images/albums/France/stjeancapmartin-villa-gazebo.jpg",
+      "caption": "Villa Gazebo",
+      "locationId": "St Jean Cap Martin",
+      "coordinates": {
+        "lng": 7.4504,
+        "lat": 43.7571
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "gazebo",
+        "villa",
+        "garden",
+        "architecture"
+      ]
+    },
+    {
+      "id": "france60",
+      "albumId": "france",
+      "url": "/images/albums/France/stjeancapmartin-villa-interior.jpg",
+      "caption": "Villa Interior",
+      "locationId": "St Jean Cap Martin",
+      "coordinates": {
+        "lng": 7.4504,
+        "lat": 43.7571
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "interior",
+        "villa",
+        "luxury",
+        "design"
+      ]
+    },
+    {
+      "id": "france61",
+      "albumId": "france",
+      "url": "/images/albums/France/stjeancapmartin-villa-oceanview.jpg",
+      "caption": "Villa Ocean View",
+      "locationId": "St Jean Cap Martin",
+      "coordinates": {
+        "lng": 7.4504,
+        "lat": 43.7571
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "villa",
+        "ocean",
+        "view",
+        "luxury"
+      ]
+    },
+    {
+      "id": "france62",
+      "albumId": "france",
+      "url": "/images/albums/France/stjeancapmartin-villa.jpg",
+      "caption": "Villa Overview",
+      "locationId": "St Jean Cap Martin",
+      "coordinates": {
+        "lng": 7.4504,
+        "lat": 43.7571
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "villa",
+        "architecture",
+        "luxury",
+        "building"
+      ]
+    },
+    {
+      "id": "france63",
+      "albumId": "france",
+      "url": "/images/albums/France/stjeancapmartin-villafront.jpg",
+      "caption": "Villa Front View",
+      "locationId": "St Jean Cap Martin",
+      "coordinates": {
+        "lng": 7.4504,
+        "lat": 43.7571
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "villa",
+        "architecture",
+        "facade",
+        "luxury"
+      ]
+    },
+    {
+      "id": "france64",
+      "albumId": "france",
+      "url": "/images/albums/France/stjeancapmartin-vista.jpg",
+      "caption": "Panoramic Vista of St Jean Cap Martin",
+      "locationId": "St Jean Cap Martin",
+      "coordinates": {
+        "lng": 7.4504,
+        "lat": 43.7571
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "vista",
+        "panorama",
+        "landscape",
+        "coastal"
+      ]
+    },
+    {
+      "id": "france65",
+      "albumId": "france",
+      "url": "/images/albums/France/stjeancapmartin-restaurant.jpg",
+      "caption": "Local Restaurant",
+      "locationId": "St Jean Cap Martin",
+      "coordinates": {
+        "lng": 7.4504,
+        "lat": 43.7571
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "restaurant",
+        "dining",
+        "local",
+        "architecture"
+      ]
+    },
+    {
       "id": "hk1",
       "albumId": "hongkong",
       "url": "/images/albums/Hong-Kong/highrise-towers.jpeg",
@@ -1530,6 +2106,1806 @@
         "bay",
         "waterfront",
         "landmark"
+      ]
+    },
+    {
+      "id": "my1",
+      "albumId": "malaysia",
+      "url": "/images/albums/Malaysia/malaysia-balloons.jpg",
+      "caption": "Colorful Balloons Display",
+      "locationId": "Kuala Lumpur",
+      "coordinates": {
+        "lng": 101.6869,
+        "lat": 3.1390
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "balloons",
+        "decoration",
+        "colorful",
+        "events"
+      ]
+    },
+    {
+      "id": "my2",
+      "albumId": "malaysia",
+      "url": "/images/albums/Malaysia/malaysia-buildings-petronas.jpg",
+      "caption": "Petronas Towers Cityscape",
+      "locationId": "Kuala Lumpur",
+      "coordinates": {
+        "lng": 101.6869,
+        "lat": 3.1390
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "petronas-towers",
+        "skyline",
+        "architecture",
+        "urban"
+      ]
+    },
+    {
+      "id": "my3",
+      "albumId": "malaysia",
+      "url": "/images/albums/Malaysia/malaysia-clocktower.JPG",
+      "caption": "Historic Clock Tower",
+      "locationId": "Kuala Lumpur",
+      "coordinates": {
+        "lng": 101.6869,
+        "lat": 3.1390
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "clock-tower",
+        "historic",
+        "architecture",
+        "landmark"
+      ]
+    },
+    {
+      "id": "my4",
+      "albumId": "malaysia",
+      "url": "/images/albums/Malaysia/malaysia-gold-statue-front.jpg",
+      "caption": "Golden Statue Front View",
+      "locationId": "Kuala Lumpur",
+      "coordinates": {
+        "lng": 101.6869,
+        "lat": 3.1390
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "statue",
+        "gold",
+        "art",
+        "culture"
+      ]
+    },
+    {
+      "id": "my5",
+      "albumId": "malaysia",
+      "url": "/images/albums/Malaysia/malaysia-gold-statute-behind.jpg",
+      "caption": "Golden Statue Rear View",
+      "locationId": "Kuala Lumpur",
+      "coordinates": {
+        "lng": 101.6869,
+        "lat": 3.1390
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "statue",
+        "gold",
+        "art",
+        "culture"
+      ]
+    },
+    {
+      "id": "my6",
+      "albumId": "malaysia",
+      "url": "/images/albums/Malaysia/malaysia-hotel-pool-cloudy.JPG",
+      "caption": "Hotel Pool on Cloudy Day",
+      "locationId": "Kuala Lumpur",
+      "coordinates": {
+        "lng": 101.6869,
+        "lat": 3.1390
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "pool",
+        "hotel",
+        "cloudy",
+        "leisure"
+      ]
+    },
+    {
+      "id": "my7",
+      "albumId": "malaysia",
+      "url": "/images/albums/Malaysia/malaysia-hotel-pool-dark.JPG",
+      "caption": "Hotel Pool at Night",
+      "locationId": "Kuala Lumpur",
+      "coordinates": {
+        "lng": 101.6869,
+        "lat": 3.1390
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "pool",
+        "hotel",
+        "night",
+        "leisure"
+      ]
+    },
+    {
+      "id": "my8",
+      "albumId": "malaysia",
+      "url": "/images/albums/Malaysia/malaysia-hotel-tub.jpg",
+      "caption": "Luxury Hotel Bathtub",
+      "locationId": "Kuala Lumpur",
+      "coordinates": {
+        "lng": 101.6869,
+        "lat": 3.1390
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "hotel",
+        "luxury",
+        "bathroom",
+        "interior"
+      ]
+    },
+    {
+      "id": "my9",
+      "albumId": "malaysia",
+      "url": "/images/albums/Malaysia/malaysia-petronas-clear.jpg",
+      "caption": "Petronas Towers Clear Sky View",
+      "locationId": "Kuala Lumpur",
+      "coordinates": {
+        "lng": 101.6869,
+        "lat": 3.1390
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "petronas-towers",
+        "architecture",
+        "landmark",
+        "clear-sky"
+      ]
+    },
+    {
+      "id": "my10",
+      "albumId": "malaysia",
+      "url": "/images/albums/Malaysia/malaysia-petronas-couch.jpg",
+      "caption": "Petronas Towers View from Lounge",
+      "locationId": "Kuala Lumpur",
+      "coordinates": {
+        "lng": 101.6869,
+        "lat": 3.1390
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "petronas-towers",
+        "interior",
+        "lounge",
+        "luxury"
+      ]
+    },
+    {
+      "id": "my11",
+      "albumId": "malaysia",
+      "url": "/images/albums/Malaysia/malaysia-petronas-food.jpg",
+      "caption": "Dining with Petronas View",
+      "locationId": "Kuala Lumpur",
+      "coordinates": {
+        "lng": 101.6869,
+        "lat": 3.1390
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "food",
+        "dining",
+        "petronas-towers",
+        "restaurant"
+      ]
+    },
+    {
+      "id": "my12",
+      "albumId": "malaysia",
+      "url": "/images/albums/Malaysia/malaysia-petronas-lights-dark.jpg",
+      "caption": "Petronas Towers Night Lights",
+      "locationId": "Kuala Lumpur",
+      "coordinates": {
+        "lng": 101.6869,
+        "lat": 3.1390
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "night",
+        "lights",
+        "petronas-towers",
+        "urban"
+      ]
+    },
+    {
+      "id": "my13",
+      "albumId": "malaysia",
+      "url": "/images/albums/Malaysia/malaysia-petronas-night.jpg",
+      "caption": "Petronas Towers Evening View",
+      "locationId": "Kuala Lumpur",
+      "coordinates": {
+        "lng": 101.6869,
+        "lat": 3.1390
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "evening",
+        "petronas-towers",
+        "skyline",
+        "urban"
+      ]
+    },
+    {
+      "id": "my14",
+      "albumId": "malaysia",
+      "url": "/images/albums/Malaysia/malaysia-temple-colors.JPG",
+      "caption": "Colorful Temple Architecture",
+      "locationId": "Kuala Lumpur",
+      "coordinates": {
+        "lng": 101.6869,
+        "lat": 3.1390
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "temple",
+        "colorful",
+        "architecture",
+        "culture"
+      ]
+    },
+    {
+      "id": "my15",
+      "albumId": "malaysia",
+      "url": "/images/albums/Malaysia/malaysia-temple-red.jpg",
+      "caption": "Red Temple Detail",
+      "locationId": "Kuala Lumpur",
+      "coordinates": {
+        "lng": 101.6869,
+        "lat": 3.1390
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "temple",
+        "red",
+        "architecture",
+        "religious"
+      ]
+    },
+    {
+      "id": "my16",
+      "albumId": "malaysia",
+      "url": "/images/albums/Malaysia/malaysia-tower-lights.JPG",
+      "caption": "Tower Illumination at Night",
+      "locationId": "Kuala Lumpur",
+      "coordinates": {
+        "lng": 101.6869,
+        "lat": 3.1390
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "tower",
+        "lights",
+        "night",
+        "urban"
+      ]
+    },
+    {
+      "id": "my17",
+      "albumId": "malaysia",
+      "url": "/images/albums/Malaysia/malaysia-under-petronas-bluesky.jpg",
+      "caption": "Under Petronas Towers Blue Sky",
+      "locationId": "Kuala Lumpur",
+      "coordinates": {
+        "lng": 101.6869,
+        "lat": 3.1390
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "petronas-towers",
+        "blue-sky",
+        "architecture",
+        "perspective"
+      ]
+    },
+    {
+      "id": "my18",
+      "albumId": "malaysia",
+      "url": "/images/albums/Malaysia/malaysia-under-petronas.JPG",
+      "caption": "Looking Up at Petronas Towers",
+      "locationId": "Kuala Lumpur",
+      "coordinates": {
+        "lng": 101.6869,
+        "lat": 3.1390
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "petronas-towers",
+        "architecture",
+        "perspective",
+        "urban"
+      ]
+    },
+    {
+      "id": "si1",
+      "albumId": "slovenia",
+      "url": "/images/albums/Slovenia/ljubljana-bridge.jpg",
+      "caption": "Bridge in Ljubljana",
+      "locationId": "Ljubljana",
+      "coordinates": {
+        "lng": 14.5058,
+        "lat": 46.0569
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "bridge",
+        "architecture",
+        "urban",
+        "city"
+      ]
+    },
+    {
+      "id": "si2",
+      "albumId": "slovenia",
+      "url": "/images/albums/Slovenia/ljubljana-cafe-canal.jpg",
+      "caption": "Riverside Cafe in Ljubljana",
+      "locationId": "Ljubljana",
+      "coordinates": {
+        "lng": 14.5058,
+        "lat": 46.0569
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "cafe",
+        "canal",
+        "riverside",
+        "urban-life"
+      ]
+    },
+    {
+      "id": "si3",
+      "albumId": "slovenia",
+      "url": "/images/albums/Slovenia/ljubljana-canal-bridge.jpg",
+      "caption": "Canal and Bridge View in Ljubljana",
+      "locationId": "Ljubljana",
+      "coordinates": {
+        "lng": 14.5058,
+        "lat": 46.0569
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "canal",
+        "bridge",
+        "waterfront",
+        "architecture"
+      ]
+    },
+    {
+      "id": "si4",
+      "albumId": "slovenia",
+      "url": "/images/albums/Slovenia/ljubljana-castle-distance.jpg",
+      "caption": "Ljubljana Castle from Distance",
+      "locationId": "Ljubljana",
+      "coordinates": {
+        "lng": 14.5058,
+        "lat": 46.0569
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "castle",
+        "cityscape",
+        "landmark",
+        "historic"
+      ]
+    },
+    {
+      "id": "si5",
+      "albumId": "slovenia",
+      "url": "/images/albums/Slovenia/ljubljana-castle.jpg",
+      "caption": "Ljubljana Castle Close-up",
+      "locationId": "Ljubljana",
+      "coordinates": {
+        "lng": 14.5058,
+        "lat": 46.0569
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "castle",
+        "architecture",
+        "historic",
+        "landmark"
+      ]
+    },
+    {
+      "id": "si6",
+      "albumId": "slovenia",
+      "url": "/images/albums/Slovenia/ljubljana-church.jpg",
+      "caption": "Church in Ljubljana",
+      "locationId": "Ljubljana",
+      "coordinates": {
+        "lng": 14.5058,
+        "lat": 46.0569
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "church",
+        "religious",
+        "architecture",
+        "historic"
+      ]
+    },
+    {
+      "id": "si7",
+      "albumId": "slovenia",
+      "url": "/images/albums/Slovenia/piran-beach-tower.jpg",
+      "caption": "Beach and Tower in Piran",
+      "locationId": "Piran",
+      "coordinates": {
+        "lng": 13.5703,
+        "lat": 45.5280
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "beach",
+        "tower",
+        "coastal",
+        "seaside"
+      ]
+    },
+    {
+      "id": "si8",
+      "albumId": "slovenia",
+      "url": "/images/albums/Slovenia/piran-courtyard.jpg",
+      "caption": "Historic Courtyard in Piran",
+      "locationId": "Piran",
+      "coordinates": {
+        "lng": 13.5703,
+        "lat": 45.5280
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "courtyard",
+        "historic",
+        "architecture",
+        "mediterranean"
+      ]
+    },
+    {
+      "id": "si9",
+      "albumId": "slovenia",
+      "url": "/images/albums/Slovenia/piran-evening.jpg",
+      "caption": "Evening in Piran",
+      "locationId": "Piran",
+      "coordinates": {
+        "lng": 13.5703,
+        "lat": 45.5280
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "evening",
+        "sunset",
+        "coastal",
+        "cityscape"
+      ]
+    },
+    {
+      "id": "si10",
+      "albumId": "slovenia",
+      "url": "/images/albums/Slovenia/piran-rooftops-ocean.jpg",
+      "caption": "Piran Rooftops with Ocean View",
+      "locationId": "Piran",
+      "coordinates": {
+        "lng": 13.5703,
+        "lat": 45.5280
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "rooftops",
+        "ocean",
+        "coastal",
+        "cityscape"
+      ]
+    },
+    {
+      "id": "si11",
+      "albumId": "slovenia",
+      "url": "/images/albums/Slovenia/piran-rooftops.jpg",
+      "caption": "Piran Rooftops",
+      "locationId": "Piran",
+      "coordinates": {
+        "lng": 13.5703,
+        "lat": 45.5280
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "rooftops",
+        "architecture",
+        "historic",
+        "cityscape"
+      ]
+    },
+    {
+      "id": "si12",
+      "albumId": "slovenia",
+      "url": "/images/albums/Slovenia/piran-tower-flowers.jpg",
+      "caption": "Tower and Flowers in Piran",
+      "locationId": "Piran",
+      "coordinates": {
+        "lng": 13.5703,
+        "lat": 45.5280
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "tower",
+        "flowers",
+        "architecture",
+        "nature"
+      ]
+    },
+    {
+      "id": "si13",
+      "albumId": "slovenia",
+      "url": "/images/albums/Slovenia/slovenia-mountains.jpg",
+      "caption": "Slovenian Mountains",
+      "locationId": "Ljubljana",
+      "coordinates": {
+        "lng": 14.5058,
+        "lat": 46.0569
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "mountains",
+        "nature",
+        "landscape",
+        "scenic"
+      ]
+    },
+    {
+      "id": "it01",
+      "albumId": "italy",
+      "url": "/images/albums/Italy/ferrara-castle.jpg",
+      "caption": "Historic Castle of Ferrara",
+      "locationId": "Ferrara",
+      "coordinates": {
+        "lng": 11.6190,
+        "lat": 44.8378
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "castle",
+        "architecture",
+        "historic",
+        "medieval"
+      ]
+    },
+    {
+      "id": "it02",
+      "albumId": "italy",
+      "url": "/images/albums/Italy/ferrara-communal.jpg",
+      "caption": "Ferrara Communal Palace",
+      "locationId": "Ferrara",
+      "coordinates": {
+        "lng": 11.6190,
+        "lat": 44.8378
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "palace",
+        "architecture",
+        "historic",
+        "government"
+      ]
+    },
+    {
+      "id": "it03",
+      "albumId": "italy",
+      "url": "/images/albums/Italy/ferrara-square.jpg",
+      "caption": "Ferrara Main Square",
+      "locationId": "Ferrara",
+      "coordinates": {
+        "lng": 11.6190,
+        "lat": 44.8378
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "square",
+        "urban",
+        "architecture",
+        "cityscape"
+      ]
+    },
+    {
+      "id": "it04",
+      "albumId": "italy",
+      "url": "/images/albums/Italy/ferrara-tower.jpg",
+      "caption": "Tower of Ferrara",
+      "locationId": "Ferrara",
+      "coordinates": {
+        "lng": 11.6190,
+        "lat": 44.8378
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "tower",
+        "architecture",
+        "historic",
+        "landmark"
+      ]
+    },
+    {
+      "id": "it05",
+      "albumId": "italy",
+      "url": "/images/albums/Italy/ferrara-tower2.jpg",
+      "caption": "Ferrara Tower Alternative View",
+      "locationId": "Ferrara",
+      "coordinates": {
+        "lng": 11.6190,
+        "lat": 44.8378
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "tower",
+        "architecture",
+        "historic",
+        "perspective"
+      ]
+    },
+    {
+      "id": "ch01",
+      "albumId": "switzerland",
+      "url": "/images/albums/Switzerland/zurich-cafe-flag.jpg",
+      "caption": "Swiss Cafe with National Flag",
+      "locationId": "Zurich",
+      "coordinates": {
+        "lng": 8.5417,
+        "lat": 47.3769
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "cafe",
+        "flag",
+        "street",
+        "urban"
+      ]
+    },
+    {
+      "id": "ch02",
+      "albumId": "switzerland",
+      "url": "/images/albums/Switzerland/zurich-canal-bridge.jpg",
+      "caption": "Bridge Over Limmat River",
+      "locationId": "Zurich",
+      "coordinates": {
+        "lng": 8.5417,
+        "lat": 47.3769
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "bridge",
+        "river",
+        "architecture",
+        "urban"
+      ]
+    },
+    {
+      "id": "ch03",
+      "albumId": "switzerland",
+      "url": "/images/albums/Switzerland/zurich-clocktower.jpg",
+      "caption": "Historic Zurich Clock Tower",
+      "locationId": "Zurich",
+      "coordinates": {
+        "lng": 8.5417,
+        "lat": 47.3769
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "clocktower",
+        "architecture",
+        "historic",
+        "landmark"
+      ]
+    },
+    {
+      "id": "ch04",
+      "albumId": "switzerland",
+      "url": "/images/albums/Switzerland/zurich-river-boats-dusk.jpg",
+      "caption": "Limmat River Boats at Dusk",
+      "locationId": "Zurich",
+      "coordinates": {
+        "lng": 8.5417,
+        "lat": 47.3769
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "river",
+        "boats",
+        "dusk",
+        "cityscape"
+      ]
+    },
+    {
+      "id": "ch05",
+      "albumId": "switzerland",
+      "url": "/images/albums/Switzerland/zurich-river-boats.jpg",
+      "caption": "Boats on Limmat River",
+      "locationId": "Zurich",
+      "coordinates": {
+        "lng": 8.5417,
+        "lat": 47.3769
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "river",
+        "boats",
+        "daytime",
+        "urban"
+      ]
+    },
+    {
+      "id": "ch06",
+      "albumId": "switzerland",
+      "url": "/images/albums/Switzerland/zurich-river-bridge.jpg",
+      "caption": "Bridge Crossing Limmat River",
+      "locationId": "Zurich",
+      "coordinates": {
+        "lng": 8.5417,
+        "lat": 47.3769
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "bridge",
+        "river",
+        "architecture",
+        "infrastructure"
+      ]
+    },
+    {
+      "id": "ch07",
+      "albumId": "switzerland",
+      "url": "/images/albums/Switzerland/zurich-river-clocktower.jpg",
+      "caption": "Clock Tower View from River",
+      "locationId": "Zurich",
+      "coordinates": {
+        "lng": 8.5417,
+        "lat": 47.3769
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "clocktower",
+        "river",
+        "landmark",
+        "cityscape"
+      ]
+    },
+    {
+      "id": "ch08",
+      "albumId": "switzerland",
+      "url": "/images/albums/Switzerland/zurich-river-dusk.jpg",
+      "caption": "Limmat River at Dusk",
+      "locationId": "Zurich",
+      "coordinates": {
+        "lng": 8.5417,
+        "lat": 47.3769
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "river",
+        "dusk",
+        "cityscape",
+        "evening"
+      ]
+    },
+    {
+      "id": "ch09",
+      "albumId": "switzerland",
+      "url": "/images/albums/Switzerland/zurich-river-tower.jpg",
+      "caption": "Tower Along Limmat River",
+      "locationId": "Zurich",
+      "coordinates": {
+        "lng": 8.5417,
+        "lat": 47.3769
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "tower",
+        "river",
+        "architecture",
+        "historic"
+      ]
+    },
+    {
+      "id": "ch10",
+      "albumId": "switzerland",
+      "url": "/images/albums/Switzerland/zurich-river.jpg",
+      "caption": "Limmat River View",
+      "locationId": "Zurich",
+      "coordinates": {
+        "lng": 8.5417,
+        "lat": 47.3769
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "river",
+        "cityscape",
+        "urban",
+        "water"
+      ]
+    },
+    {
+      "id": "ch11",
+      "albumId": "switzerland",
+      "url": "/images/albums/Switzerland/zurich-street-flags.jpg",
+      "caption": "Zurich Street with Swiss Flags",
+      "locationId": "Zurich",
+      "coordinates": {
+        "lng": 8.5417,
+        "lat": 47.3769
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "street",
+        "flags",
+        "urban",
+        "city"
+      ]
+    },
+    {
+      "id": "ch12",
+      "albumId": "switzerland",
+      "url": "/images/albums/Switzerland/zurich-tower-river.jpg",
+      "caption": "Tower View with River",
+      "locationId": "Zurich",
+      "coordinates": {
+        "lng": 8.5417,
+        "lat": 47.3769
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "tower",
+        "river",
+        "architecture",
+        "cityscape"
+      ]
+    },
+    {
+      "id": "ch13",
+      "albumId": "switzerland",
+      "url": "/images/albums/Switzerland/zurich-tower.jpg",
+      "caption": "Historic Zurich Tower",
+      "locationId": "Zurich",
+      "coordinates": {
+        "lng": 8.5417,
+        "lat": 47.3769
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "tower",
+        "architecture",
+        "historic",
+        "landmark"
+      ]
+    },
+    {
+      "id": "ch14",
+      "albumId": "switzerland",
+      "url": "/images/albums/Switzerland/zurich-tram.jpg",
+      "caption": "Zurich City Tram",
+      "locationId": "Zurich",
+      "coordinates": {
+        "lng": 8.5417,
+        "lat": 47.3769
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "tram",
+        "transport",
+        "urban",
+        "public transit"
+      ]
+    },
+    {
+      "id": "uy01",
+      "albumId": "uruguay",
+      "url": "/images/albums/Uruguay/montevideo-building.jpg",
+      "caption": "Historic Building in Montevideo",
+      "locationId": "Montevideo",
+      "coordinates": {
+        "lng": -56.1645,
+        "lat": -34.9011
+      },
+      "dateCreated": "2024-03-15",
+      "tags": [
+        "architecture",
+        "historic",
+        "urban",
+        "building"
+      ]
+    },
+    {
+      "id": "uy02",
+      "albumId": "uruguay",
+      "url": "/images/albums/Uruguay/montevideo-church.jpg",
+      "caption": "Metropolitan Cathedral of Montevideo",
+      "locationId": "Montevideo",
+      "coordinates": {
+        "lng": -56.2021,
+        "lat": -34.9033
+      },
+      "dateCreated": "2024-03-15",
+      "tags": [
+        "church",
+        "religion",
+        "architecture",
+        "historic"
+      ]
+    },
+    {
+      "id": "uy03",
+      "albumId": "uruguay",
+      "url": "/images/albums/Uruguay/montevideo-palmtree.jpg",
+      "caption": "Palm Trees along Montevideo Waterfront",
+      "locationId": "Montevideo",
+      "coordinates": {
+        "lng": -56.1819,
+        "lat": -34.9067
+      },
+      "dateCreated": "2024-03-16",
+      "tags": [
+        "nature",
+        "waterfront",
+        "palm trees",
+        "coastal"
+      ]
+    },
+    {
+      "id": "uy04",
+      "albumId": "uruguay",
+      "url": "/images/albums/Uruguay/montevideo-sign.JPG",
+      "caption": "Montevideo City Sign",
+      "locationId": "Montevideo",
+      "coordinates": {
+        "lng": -56.1711,
+        "lat": -34.9033
+      },
+      "dateCreated": "2024-03-16",
+      "tags": [
+        "sign",
+        "city",
+        "landmark",
+        "tourism"
+      ]
+    },
+    {
+      "id": "uy05",
+      "albumId": "uruguay",
+      "url": "/images/albums/Uruguay/montevideo-statue-building.jpg",
+      "caption": "Statue in front of Historic Building",
+      "locationId": "Montevideo",
+      "coordinates": {
+        "lng": -56.1982,
+        "lat": -34.9055
+      },
+      "dateCreated": "2024-03-16",
+      "tags": [
+        "statue",
+        "architecture",
+        "historic",
+        "monument"
+      ]
+    },
+    {
+      "id": "uy06",
+      "albumId": "uruguay",
+      "url": "/images/albums/Uruguay/montevideo-statue-townsquare.jpg",
+      "caption": "Town Square Monument",
+      "locationId": "Montevideo",
+      "coordinates": {
+        "lng": -56.1834,
+        "lat": -34.9078
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "plaza",
+        "statue",
+        "public space",
+        "urban"
+      ]
+    },
+    {
+      "id": "uy07",
+      "albumId": "uruguay",
+      "url": "/images/albums/Uruguay/montevideo-statue.jpg",
+      "caption": "Public Art Installation",
+      "locationId": "Montevideo",
+      "coordinates": {
+        "lng": -56.1901,
+        "lat": -34.9044
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "art",
+        "statue",
+        "public art",
+        "sculpture"
+      ]
+    },
+    {
+      "id": "uy08",
+      "albumId": "uruguay",
+      "url": "/images/albums/Uruguay/montevideo-streetart.jpg",
+      "caption": "Colorful Street Art Mural",
+      "locationId": "Montevideo",
+      "coordinates": {
+        "lng": -56.1855,
+        "lat": -34.9089
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "street art",
+        "mural",
+        "urban art",
+        "culture"
+      ]
+    },
+    {
+      "id": "cl01",
+      "albumId": "chile",
+      "url": "/images/albums/Chile/santiago-clocktower.jpg",
+      "caption": "Historic Clock Tower in Santiago",
+      "locationId": "Santiago",
+      "coordinates": {
+        "lng": -70.6483,
+        "lat": -33.4489
+      },
+      "dateCreated": "2024-03-15",
+      "tags": [
+        "architecture",
+        "historic",
+        "urban",
+        "landmark"
+      ]
+    },
+    {
+      "id": "cl02",
+      "albumId": "chile",
+      "url": "/images/albums/Chile/santiago-tower.jpg",
+      "caption": "Modern Tower in Santiago Skyline",
+      "locationId": "Santiago",
+      "coordinates": {
+        "lng": -70.6483,
+        "lat": -33.4489
+      },
+      "dateCreated": "2024-03-15",
+      "tags": [
+        "architecture",
+        "modern",
+        "urban",
+        "skyline"
+      ]
+    },
+    {
+      "id": "cl03",
+      "albumId": "chile",
+      "url": "/images/albums/Chile/easter-island-status-dog.jpg",
+      "caption": "Moai Statues with Dog in Foreground",
+      "locationId": "Easter Island",
+      "coordinates": {
+        "lng": -109.3497,
+        "lat": -27.1127
+      },
+      "dateCreated": "2024-03-16",
+      "tags": [
+        "moai",
+        "dog",
+        "statue",
+        "wildlife"
+      ]
+    },
+    {
+      "id": "cl04",
+      "albumId": "chile",
+      "url": "/images/albums/Chile/easterisland-5statues.jpg",
+      "caption": "Five Moai Statues at Ahu",
+      "locationId": "Ahu Tongariki",
+      "coordinates": {
+        "lng": -109.2684,
+        "lat": -27.1258
+      },
+      "dateCreated": "2024-03-16",
+      "tags": [
+        "moai",
+        "archaeology",
+        "history",
+        "statues"
+      ]
+    },
+    {
+      "id": "cl05",
+      "albumId": "chile",
+      "url": "/images/albums/Chile/easterisland-blueocean.jpg",
+      "caption": "Moai with Blue Ocean Vista",
+      "locationId": "Easter Island",
+      "coordinates": {
+        "lng": -109.3497,
+        "lat": -27.1127
+      },
+      "dateCreated": "2024-03-16",
+      "tags": [
+        "ocean",
+        "moai",
+        "scenic",
+        "landscape"
+      ]
+    },
+    {
+      "id": "cl06",
+      "albumId": "chile",
+      "url": "/images/albums/Chile/easterisland-cliffside.jpg",
+      "caption": "Cliffside View of Easter Island",
+      "locationId": "Easter Island",
+      "coordinates": {
+        "lng": -109.3497,
+        "lat": -27.1127
+      },
+      "dateCreated": "2024-03-16",
+      "tags": [
+        "cliff",
+        "landscape",
+        "ocean",
+        "nature"
+      ]
+    },
+    {
+      "id": "cl07",
+      "albumId": "chile",
+      "url": "/images/albums/Chile/easterisland-crater.jpg",
+      "caption": "Rano Kau Volcanic Crater",
+      "locationId": "Rano Kau",
+      "coordinates": {
+        "lng": -109.4324,
+        "lat": -27.1833
+      },
+      "dateCreated": "2024-03-16",
+      "tags": [
+        "volcano",
+        "crater",
+        "landscape",
+        "nature"
+      ]
+    },
+    {
+      "id": "cl08",
+      "albumId": "chile",
+      "url": "/images/albums/Chile/easterisland-facestatue.jpg",
+      "caption": "Close-up of Moai Face",
+      "locationId": "Easter Island",
+      "coordinates": {
+        "lng": -109.3497,
+        "lat": -27.1127
+      },
+      "dateCreated": "2024-03-16",
+      "tags": [
+        "moai",
+        "detail",
+        "statue",
+        "close-up"
+      ]
+    },
+    {
+      "id": "cl09",
+      "albumId": "chile",
+      "url": "/images/albums/Chile/easterisland-harbor-moai.jpg",
+      "caption": "Moai Near Harbor",
+      "locationId": "Easter Island",
+      "coordinates": {
+        "lng": -109.3497,
+        "lat": -27.1127
+      },
+      "dateCreated": "2024-03-16",
+      "tags": [
+        "harbor",
+        "moai",
+        "ocean",
+        "coastal"
+      ]
+    },
+    {
+      "id": "cl10",
+      "albumId": "chile",
+      "url": "/images/albums/Chile/easterisland-harbor-statue.jpg",
+      "caption": "Harbor View with Moai",
+      "locationId": "Easter Island",
+      "coordinates": {
+        "lng": -109.3497,
+        "lat": -27.1127
+      },
+      "dateCreated": "2024-03-16",
+      "tags": [
+        "harbor",
+        "moai",
+        "ocean",
+        "statue"
+      ]
+    },
+    {
+      "id": "cl11",
+      "albumId": "chile",
+      "url": "/images/albums/Chile/easterisland-moai-hat.jpg",
+      "caption": "Moai with Traditional Pukao Topknot",
+      "locationId": "Easter Island",
+      "coordinates": {
+        "lng": -109.3497,
+        "lat": -27.1127
+      },
+      "dateCreated": "2024-03-16",
+      "tags": [
+        "moai",
+        "pukao",
+        "history",
+        "culture"
+      ]
+    },
+    {
+      "id": "cl12",
+      "albumId": "chile",
+      "url": "/images/albums/Chile/easterisland-moai.jpg",
+      "caption": "Solitary Moai Statue",
+      "locationId": "Easter Island",
+      "coordinates": {
+        "lng": -109.3497,
+        "lat": -27.1127
+      },
+      "dateCreated": "2024-03-16",
+      "tags": [
+        "moai",
+        "statue",
+        "single",
+        "archaeology"
+      ]
+    },
+    {
+      "id": "cl13",
+      "albumId": "chile",
+      "url": "/images/albums/Chile/easterisland-statue-grassrow.jpg",
+      "caption": "Row of Moai on Grassy Hill",
+      "locationId": "Ahu Tongariki",
+      "coordinates": {
+        "lng": -109.2684,
+        "lat": -27.1258
+      },
+      "dateCreated": "2024-03-16",
+      "tags": [
+        "moai",
+        "grass",
+        "row",
+        "landscape"
+      ]
+    },
+    {
+      "id": "cl14",
+      "albumId": "chile",
+      "url": "/images/albums/Chile/easterisland-statue-sunset-profile.jpg",
+      "caption": "Moai Profile at Sunset",
+      "locationId": "Easter Island",
+      "coordinates": {
+        "lng": -109.3497,
+        "lat": -27.1127
+      },
+      "dateCreated": "2024-03-16",
+      "tags": [
+        "sunset",
+        "moai",
+        "profile",
+        "silhouette"
+      ]
+    },
+    {
+      "id": "cl15",
+      "albumId": "chile",
+      "url": "/images/albums/Chile/easterisland-statue.jpg",
+      "caption": "Individual Moai Statue",
+      "locationId": "Easter Island",
+      "coordinates": {
+        "lng": -109.3497,
+        "lat": -27.1127
+      },
+      "dateCreated": "2024-03-16",
+      "tags": [
+        "moai",
+        "statue",
+        "single",
+        "archaeology"
+      ]
+    },
+    {
+      "id": "cl16",
+      "albumId": "chile",
+      "url": "/images/albums/Chile/easterisland-statuerow-sunset.jpg",
+      "caption": "Row of Moai at Sunset",
+      "locationId": "Ahu Tongariki",
+      "coordinates": {
+        "lng": -109.2684,
+        "lat": -27.1258
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "sunset",
+        "moai",
+        "row",
+        "silhouette"
+      ]
+    },
+    {
+      "id": "cl17",
+      "albumId": "chile",
+      "url": "/images/albums/Chile/easterisland-statuerow.jpg",
+      "caption": "Row of Moai in Daylight",
+      "locationId": "Ahu Tongariki",
+      "coordinates": {
+        "lng": -109.2684,
+        "lat": -27.1258
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "moai",
+        "row",
+        "daylight",
+        "archaeology"
+      ]
+    },
+    {
+      "id": "cl18",
+      "albumId": "chile",
+      "url": "/images/albums/Chile/easterisland-statues-backisland.jpg",
+      "caption": "Moai with Island Background",
+      "locationId": "Easter Island",
+      "coordinates": {
+        "lng": -109.3497,
+        "lat": -27.1127
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "moai",
+        "landscape",
+        "island",
+        "panorama"
+      ]
+    },
+    {
+      "id": "cl19",
+      "albumId": "chile",
+      "url": "/images/albums/Chile/easterisland-statues-close.jpg",
+      "caption": "Close-up of Multiple Moai",
+      "locationId": "Easter Island",
+      "coordinates": {
+        "lng": -109.3497,
+        "lat": -27.1127
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "moai",
+        "close-up",
+        "detail",
+        "statues"
+      ]
+    },
+    {
+      "id": "cl20",
+      "albumId": "chile",
+      "url": "/images/albums/Chile/easterisland-statues-cloudy.jpg",
+      "caption": "Moai Under Cloudy Sky",
+      "locationId": "Easter Island",
+      "coordinates": {
+        "lng": -109.3497,
+        "lat": -27.1127
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "moai",
+        "cloudy",
+        "weather",
+        "atmospheric"
+      ]
+    },
+    {
+      "id": "cl21",
+      "albumId": "chile",
+      "url": "/images/albums/Chile/easterisland-statues-dark.jpg",
+      "caption": "Moai in Low Light",
+      "locationId": "Easter Island",
+      "coordinates": {
+        "lng": -109.3497,
+        "lat": -27.1127
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "moai",
+        "evening",
+        "dramatic",
+        "low light"
+      ]
+    },
+    {
+      "id": "cl22",
+      "albumId": "chile",
+      "url": "/images/albums/Chile/easterisland-statues-dog-statue.jpg",
+      "caption": "Dog Near Moai Statues",
+      "locationId": "Easter Island",
+      "coordinates": {
+        "lng": -109.3497,
+        "lat": -27.1127
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "moai",
+        "dog",
+        "wildlife",
+        "statue"
+      ]
+    },
+    {
+      "id": "cl23",
+      "albumId": "chile",
+      "url": "/images/albums/Chile/easterisland-statues-lawn.jpg",
+      "caption": "Moai on Grassy Field",
+      "locationId": "Easter Island",
+      "coordinates": {
+        "lng": -109.3497,
+        "lat": -27.1127
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "moai",
+        "grass",
+        "landscape",
+        "nature"
+      ]
+    },
+    {
+      "id": "cl24",
+      "albumId": "chile",
+      "url": "/images/albums/Chile/easterisland-statues-lawns.jpg",
+      "caption": "Multiple Moai on Grass",
+      "locationId": "Easter Island",
+      "coordinates": {
+        "lng": -109.3497,
+        "lat": -27.1127
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "moai",
+        "grass",
+        "multiple",
+        "landscape"
+      ]
+    },
+    {
+      "id": "cl25",
+      "albumId": "chile",
+      "url": "/images/albums/Chile/easterisland-statues-nosun.jpg",
+      "caption": "Moai on Overcast Day",
+      "locationId": "Easter Island",
+      "coordinates": {
+        "lng": -109.3497,
+        "lat": -27.1127
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "moai",
+        "overcast",
+        "weather",
+        "cloudy"
+      ]
+    },
+    {
+      "id": "cl26",
+      "albumId": "chile",
+      "url": "/images/albums/Chile/easterisland-statues-ocean-profile.jpg",
+      "caption": "Profile View of Moai by Ocean",
+      "locationId": "Easter Island",
+      "coordinates": {
+        "lng": -109.3497,
+        "lat": -27.1127
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "moai",
+        "ocean",
+        "profile",
+        "coastal"
+      ]
+    },
+    {
+      "id": "cl27",
+      "albumId": "chile",
+      "url": "/images/albums/Chile/easterisland-statues-ocean.jpg",
+      "caption": "Moai Overlooking Ocean",
+      "locationId": "Easter Island",
+      "coordinates": {
+        "lng": -109.3497,
+        "lat": -27.1127
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "moai",
+        "ocean",
+        "scenic",
+        "coastal"
+      ]
+    },
+    {
+      "id": "cl28",
+      "albumId": "chile",
+      "url": "/images/albums/Chile/easterisland-statues-panorama.jpg",
+      "caption": "Panoramic View of Moai Statues",
+      "locationId": "Ahu Tongariki",
+      "coordinates": {
+        "lng": -109.2684,
+        "lat": -27.1258
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "panorama",
+        "moai",
+        "landscape",
+        "wide"
+      ]
+    },
+    {
+      "id": "cl29",
+      "albumId": "chile",
+      "url": "/images/albums/Chile/easterisland-statues-redsky.jpg",
+      "caption": "Moai Against Red Sunset Sky",
+      "locationId": "Easter Island",
+      "coordinates": {
+        "lng": -109.3497,
+        "lat": -27.1127
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "sunset",
+        "moai",
+        "red sky",
+        "dramatic"
+      ]
+    },
+    {
+      "id": "cl30",
+      "albumId": "chile",
+      "url": "/images/albums/Chile/easterisland-statues-shade.jpg",
+      "caption": "Moai in Natural Shade",
+      "locationId": "Easter Island",
+      "coordinates": {
+        "lng": -109.3497,
+        "lat": -27.1127
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "moai",
+        "shade",
+        "lighting",
+        "natural"
+      ]
+    },
+    {
+      "id": "cl31",
+      "albumId": "chile",
+      "url": "/images/albums/Chile/easterisland-statues-side.jpg",
+      "caption": "Side View of Moai Statues",
+      "locationId": "Easter Island",
+      "coordinates": {
+        "lng": -109.3497,
+        "lat": -27.1127
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "moai",
+        "profile",
+        "side view",
+        "statues"
+      ]
+    },
+    {
+      "id": "cl32",
+      "albumId": "chile",
+      "url": "/images/albums/Chile/easterisland-statues-solo-sunset.jpg",
+      "caption": "Single Moai at Sunset",
+      "locationId": "Easter Island",
+      "coordinates": {
+        "lng": -109.3497,
+        "lat": -27.1127
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "sunset",
+        "moai",
+        "single",
+        "silhouette"
+      ]
+    },
+    {
+      "id": "cl33",
+      "albumId": "chile",
+      "url": "/images/albums/Chile/easterisland-statues-sun-angle.jpg",
+      "caption": "Moai with Angled Sunlight",
+      "locationId": "Easter Island",
+      "coordinates": {
+        "lng": -109.3497,
+        "lat": -27.1127
+      },
+      "dateCreated": "2024-03-18",
+      "tags": [
+        "sunlight",
+        "moai",
+        "angle",
+        "lighting"
+      ]
+    },
+    {
+      "id": "cl34",
+      "albumId": "chile",
+      "url": "/images/albums/Chile/easterisland-statues-sunbehind.jpg",
+      "caption": "Moai Silhouetted Against Sun",
+      "locationId": "Easter Island",
+      "coordinates": {
+        "lng": -109.3497,
+        "lat": -27.1127
+      },
+      "dateCreated": "2024-03-18",
+      "tags": [
+        "silhouette",
+        "moai",
+        "sun",
+        "backlit"
+      ]
+    },
+    {
+      "id": "cl35",
+      "albumId": "chile",
+      "url": "/images/albums/Chile/easterisland-statues-sunbehindlower.jpg",
+      "caption": "Moai with Low Sun Behind",
+      "locationId": "Easter Island",
+      "coordinates": {
+        "lng": -109.3497,
+        "lat": -27.1127
+      },
+      "dateCreated": "2024-03-18",
+      "tags": [
+        "sunset",
+        "moai",
+        "backlit",
+        "evening"
+      ]
+    },
+    {
+      "id": "cl36",
+      "albumId": "chile",
+      "url": "/images/albums/Chile/easterisland-statues-sunbehindwide.jpg",
+      "caption": "Wide Shot of Backlit Moai",
+      "locationId": "Easter Island",
+      "coordinates": {
+        "lng": -109.3497,
+        "lat": -27.1127
+      },
+      "dateCreated": "2024-03-18",
+      "tags": [
+        "wide angle",
+        "moai",
+        "backlit",
+        "landscape"
+      ]
+    },
+    {
+      "id": "cl37",
+      "albumId": "chile",
+      "url": "/images/albums/Chile/easterisland-statues-suncloud.jpg",
+      "caption": "Moai Under Sun and Clouds",
+      "locationId": "Easter Island",
+      "coordinates": {
+        "lng": -109.3497,
+        "lat": -27.1127
+      },
+      "dateCreated": "2024-03-18",
+      "tags": [
+        "clouds",
+        "moai",
+        "sun",
+        "weather"
+      ]
+    },
+    {
+      "id": "cl38",
+      "albumId": "chile",
+      "url": "/images/albums/Chile/easterisland-statues-sunclouds.jpg",
+      "caption": "Moai with Dramatic Sky",
+      "locationId": "Easter Island",
+      "coordinates": {
+        "lng": -109.3497,
+        "lat": -27.1127
+      },
+      "dateCreated": "2024-03-18",
+      "tags": [
+        "dramatic",
+        "sky",
+        "moai",
+        "clouds"
+      ]
+    },
+    {
+      "id": "cl39",
+      "albumId": "chile",
+      "url": "/images/albums/Chile/easterisland-statues-sunglare.jpg",
+      "caption": "Moai with Sun Glare Effect",
+      "locationId": "Easter Island",
+      "coordinates": {
+        "lng": -109.3497,
+        "lat": -27.1127
+      },
+      "dateCreated": "2024-03-18",
+      "tags": [
+        "sun",
+        "glare",
+        "moai",
+        "lighting"
+      ]
+    },
+    {
+      "id": "cl40",
+      "albumId": "chile",
+      "url": "/images/albums/Chile/easterisland-statues-sunhorizon.jpg",
+      "caption": "Moai at Horizon with Setting Sun",
+      "locationId": "Easter Island",
+      "coordinates": {
+        "lng": -109.3497,
+        "lat": -27.1127
+      },
+      "dateCreated": "2024-03-18",
+      "tags": [
+        "horizon",
+        "sunset",
+        "moai",
+        "silhouette"
+      ]
+    },
+    {
+      "id": "cl41",
+      "albumId": "chile",
+      "url": "/images/albums/Chile/easterislandstatues-sunlower-wide.jpg",
+      "caption": "Wide View of Moai at Sunset",
+      "locationId": "Easter Island",
+      "coordinates": {
+        "lng": -109.3497,
+        "lat": -27.1127
+      },
+      "dateCreated": "2024-03-18",
+      "tags": [
+        "wide angle",
+        "sunset",
+        "moai",
+        "landscape"
+      ]
+    },
+    {
+      "id": "cl42",
+      "albumId": "chile",
+      "url": "/images/albums/Chile/easterislandsunset-behind.jpg",
+      "caption": "Sunset Behind Moai",
+      "locationId": "Easter Island",
+      "coordinates": {
+        "lng": -109.3497,
+        "lat": -27.1127
+      },
+      "dateCreated": "2024-03-18",
+      "tags": [
+        "sunset",
+        "moai",
+        "backlit",
+        "silhouette"
       ]
     }
   ]

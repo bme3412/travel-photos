@@ -65,6 +65,12 @@
       "name": "Chilean Chronicles",
       "countryId": "CL",
       "year": "2023"
+    },
+    {
+      "id": "malaysia",
+      "name": "Malaysian Adventures",
+      "countryId": "MY",
+      "year": "2023"
     }
   ]
 }

@@ -4,8 +4,9 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: '**',
-      },
+        hostname: 'global-travel.s3.us-east-1.amazonaws.com',
+        pathname: '/albums/**',
+      }
     ],
     formats: ['image/avif', 'image/webp'],
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
@@ -13,28 +14,7 @@ const nextConfig = {
     dangerouslyAllowSVG: true,
     contentDispositionType: 'attachment',
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
-  },
-  outputFileTracingIncludes: {
-    '/api/**/*': ['./public/**/*']
-  },
-  webpack: (config) => {
-    config.module.rules.push({
-      test: /\.(heic|heif)$/i,
-      use: [
-        {
-          loader: 'url-loader',
-          options: {
-            limit: 8192,
-            fallback: 'file-loader',
-            publicPath: '/_next',
-            outputPath: 'static/images/',
-            name: '[name].[hash].[ext]',
-          },
-        },
-      ],
-    });
-    return config;
-  },
+  }
 };
 
 module.exports = nextConfig;

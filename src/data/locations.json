@@ -7,7 +7,7 @@
       "coordinates": { "lng": 2.3431, "lat": 48.8867 }
     },
     {
-      "id": "loc2", 
+      "id": "loc2",
       "name": "Menton",
       "countryId": "FR",
       "coordinates": { "lng": 7.5012, "lat": 43.7747 }
@@ -125,6 +125,42 @@
       "name": "Sugarloaf Mountain",
       "countryId": "BR",
       "coordinates": { "lng": -43.1566, "lat": -22.9489 }
+    },
+    {
+      "id": "loc23",
+      "name": "Kuala Lumpur",
+      "countryId": "MY",
+      "coordinates": { "lng": 101.6869, "lat": 3.1390 }
+    },
+    {
+      "id": "loc24",
+      "name": "Ljubljana",
+      "countryId": "SI",
+      "coordinates": { "lng": 14.5058, "lat": 46.0569 }
+    },
+    {
+      "id": "loc25",
+      "name": "Piran",
+      "countryId": "SI",
+      "coordinates": { "lng": 13.5703, "lat": 45.5280 }
+    },
+    {
+      "id": "loc26",
+      "name": "Ferrara",
+      "countryId": "IT",
+      "coordinates": { "lng": 11.6190, "lat": 44.8378 }
+    },
+    {
+      "id": "loc27",
+      "name": "St Jean Cap Martin",
+      "countryId": "FR",
+      "coordinates": { "lng": 7.4504, "lat": 43.7571 }
+    },
+    {
+      "id": "loc28",
+      "name": "Easter Island",
+      "countryId": "CL",
+      "coordinates": { "lng": -109.3497, "lat": -27.1127 }
     }
   ]
 }

@@ -36,16 +36,22 @@ async function main() {
     const brazilPath = path.join(process.cwd(), 'public', 'images', 'albums', 'Brazil');
     const vietnamPath = path.join(process.cwd(), 'public', 'images', 'albums', 'Vietnam');
     const singaporePath = path.join(process.cwd(), 'public', 'images', 'albums', 'Singapore');
+    const malaysiaPath = path.join(process.cwd(), 'public', 'images', 'albums', 'Malaysia');
+    const sloveniaPath = path.join(process.cwd(), 'public', 'images', 'albums', 'Slovenia');
+    const italyPath = path.join(process.cwd(), 'public', 'images', 'albums', 'Italy');
+    const switzerlandPath = path.join(process.cwd(), 'public', 'images', 'albums', 'Switzerland');
+    const uruguayPath = path.join(process.cwd(), 'public', 'images', 'albums', 'Uruguay');
+    const chilePath = path.join(process.cwd(), 'public', 'images', 'albums', 'Chile');
 
 
-    const files = await fs.readdir(singaporePath);
+    const files = await fs.readdir(chilePath);
     let convertedCount = 0;
     
     console.log('Starting HEIC conversion...');
     
     for (const file of files) {
       if (file.toUpperCase().endsWith('.HEIC')) {
-        const filePath = path.join(singaporePath, file);
+        const filePath = path.join(chilePath, file);
         const success = await convertHeicToJpeg(filePath);
         if (success) convertedCount++;
       }
