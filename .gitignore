@@ -37,4 +37,4 @@ next-env.d.ts
 
 # photos
 /public/images/albums/*
-!/public/images/albums/.gitkeep
+!/public/images/albums/.gitkeep.env*
