@@ -1,54 +1,55 @@
-// src/app/api/convert-image/route.js
 import { NextResponse } from 'next/server';
-import fs from 'fs/promises';
-import path from 'path';
-import sharp from 'sharp';
+import { S3Client, GetObjectCommand, PutObjectCommand } from '@aws-sdk/client-s3';
 
-export async function GET(request) {
+export const runtime = 'edge';
+
+const s3Client = new S3Client({
+  region: process.env.AWS_REGION,
+  credentials: {
+    accessKeyId: process.env.AWS_ACCESS_KEY_ID,
+    secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+  },
+});
+
+export async function POST(request) {
   try {
-    const { searchParams } = new URL(request.url);
-    const imageUrl = searchParams.get('url');
-    
-    if (!imageUrl) {
-      return new NextResponse('Image URL is required', { status: 400 });
-    }
+    const { imagePath } = await request.json();
 
-    // Remove leading slash and get full path
-    const imagePath = path.join(process.cwd(), 'public', imageUrl.replace(/^\//, ''));
-    
-    // Check if file exists
-    try {
-      await fs.access(imagePath);
-    } catch {
-      console.error('File not found:', imagePath);
-      return new NextResponse('File not found', { status: 404 });
-    }
-
-    // Read the HEIC file
-    const buffer = await fs.readFile(imagePath);
-
-    // Convert to JPEG using sharp
-    const jpegBuffer = await sharp(buffer, { 
-      failOnError: false,
-      density: 300
-    })
-      .jpeg({ 
-        quality: 85,
-        mozjpeg: true,
-        chromaSubsampling: '4:4:4'
-      })
-      .toBuffer();
-
-    // Return the converted image
-    return new NextResponse(jpegBuffer, {
-      headers: {
-        'Content-Type': 'image/jpeg',
-        'Cache-Control': 'public, max-age=31536000, immutable',
-        'Content-Length': jpegBuffer.length.toString(),
-      },
+    // Get image from S3
+    const getCommand = new GetObjectCommand({
+      Bucket: process.env.AWS_BUCKET_NAME,
+      Key: imagePath
     });
-  } catch (err) {
-    console.error('Error converting image:', err);
-    return new NextResponse(err.message, { status: 500 });
+
+    const { Body } = await s3Client.send(getCommand);
+    
+    // Convert stream to array buffer
+    const response = new Response(Body);
+    const arrayBuffer = await response.arrayBuffer();
+    
+    // Create a new key for the processed image
+    const newKey = imagePath.replace(/\.[^.]+$/, '.jpg');
+    
+    // Upload back to S3
+    const putCommand = new PutObjectCommand({
+      Bucket: process.env.AWS_BUCKET_NAME,
+      Key: newKey,
+      Body: arrayBuffer,
+      ContentType: 'image/jpeg',
+      ACL: 'public-read'
+    });
+
+    await s3Client.send(putCommand);
+
+    return NextResponse.json({
+      success: true,
+      url: `https://${process.env.AWS_BUCKET_NAME}.s3.${process.env.AWS_REGION}.amazonaws.com/${newKey}`
+    });
+  } catch (error) {
+    console.error('Image conversion error:', error);
+    return NextResponse.json(
+      { error: 'Failed to convert image' },
+      { status: 500 }
+    );
   }
 }
