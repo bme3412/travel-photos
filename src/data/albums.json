@@ -1,10 +1,52 @@
 {
   "albums": [
     {
+      "id": "chile",
+      "name": "Chilean Chronicles",
+      "countryId": "CL",
+      "year": "2024"
+    },
+    {
       "id": "france",
       "name": "Adventures in France",
       "countryId": "FR",
-      "year": "2022"
+      "year": "2024"
+    },
+    {
+      "id": "italy",
+      "name": "Italian Journey",
+      "countryId": "IT",
+      "year": "2024"
+    },
+    {
+      "id": "portugal",
+      "name": "Portuguese Perspectives",
+      "countryId": "PT",
+      "year": "2024"
+    },
+    {
+      "id": "spain",
+      "name": "Spanish Sojourn",
+      "countryId": "ES",
+      "year": "2024"
+    },
+    {
+      "id": "uruguay",
+      "name": "Uruguay Unveiled",
+      "countryId": "UY",
+      "year": "2024"
+    },
+    {
+      "id": "argentina",
+      "name": "Argentine Adventures",
+      "countryId": "AR",
+      "year": "2023"
+    },
+    {
+      "id": "brazil",
+      "name": "Brazilian Beauty",
+      "countryId": "BR",
+      "year": "2023"
     },
     {
       "id": "hongkong",
@@ -13,15 +55,15 @@
       "year": "2023"
     },
     {
-      "id": "brazil",
-      "name": "Brazil",
-      "countryId": "BR",
+      "id": "slovenia",
+      "name": "Slovenian Stories",
+      "countryId": "SI",
       "year": "2023"
     },
     {
-      "id": "monaco",
-      "name": "Monaco Moments",
-      "countryId": "MC",
+      "id": "switzerland",
+      "name": "Swiss Scenes",
+      "countryId": "CH",
       "year": "2023"
     },
     {
@@ -31,46 +73,184 @@
       "year": "2023"
     },
     {
+      "id": "malaysia",
+      "name": "Malaysian Moments",
+      "countryId": "MY",
+      "year": "2022"
+    },
+    {
+      "id": "monaco",
+      "name": "Monaco Moments",
+      "countryId": "MC",
+      "year": "2022"
+    },
+    {
       "id": "singapore",
       "name": "Singapore Stories",
       "countryId": "SG",
-      "year": "2023"
+      "year": "2022"
     },
     {
-      "id": "italy",
-      "name": "Italian Journey",
-      "countryId": "IT",
-      "year": "2023"
+      "id": "belgium",
+      "name": "Belgian Beauty",
+      "countryId": "BE",
+      "year": "2019"
     },
     {
-      "id": "slovenia",
-      "name": "Slovenian Sights",
-      "countryId": "SI",
-      "year": "2023"
+      "id": "bosnia-herzegovina",
+      "name": "Bosnia and Herzegovina Highlights",
+      "countryId": "BA",
+      "year": "2019"
     },
     {
-      "id": "switzerland",
-      "name": "Swiss Scenery",
-      "countryId": "CH",
-      "year": "2023"
+      "id": "croatia",
+      "name": "Croatian Chronicles",
+      "countryId": "HR",
+      "year": "2019"
     },
     {
-      "id": "uruguay",
-      "name": "Uruguay Unveiled",
-      "countryId": "UY",
-      "year": "2023"
+      "id": "montenegro",
+      "name": "Montenegro Memories",
+      "countryId": "ME",
+      "year": "2019"
     },
     {
-      "id": "chile",
-      "name": "Chilean Chronicles",
-      "countryId": "CL",
-      "year": "2023"
+      "id": "botswana",
+      "name": "Botswana Beauty",
+      "countryId": "BW",
+      "year": "2018"
     },
     {
-      "id": "malaysia",
-      "name": "Malaysian Adventures",
-      "countryId": "MY",
-      "year": "2023"
+      "id": "mauritius",
+      "name": "Mauritius Magic",
+      "countryId": "MU",
+      "year": "2018"
+    },
+    {
+      "id": "saint-barthelemy",
+      "name": "Saint Barthélemy Scenes",
+      "countryId": "BL",
+      "year": "2018"
+    },
+    {
+      "id": "south-africa",
+      "name": "South African Safari",
+      "countryId": "ZA",
+      "year": "2018"
+    },
+    {
+      "id": "belize",
+      "name": "Belize Beauty",
+      "countryId": "BZ",
+      "year": "2017"
+    },
+    {
+      "id": "guatemala",
+      "name": "Guatemalan Getaway",
+      "countryId": "GT",
+      "year": "2017"
+    },
+    {
+      "id": "australia",
+      "name": "Australian Odyssey",
+      "countryId": "AU",
+      "year": "2015"
+    },
+    {
+      "id": "china",
+      "name": "China Chronicles",
+      "countryId": "CN",
+      "year": "2013"
+    },
+    {
+      "id": "japan",
+      "name": "Japanese Journey",
+      "countryId": "JP",
+      "year": "2013"
+    },
+    {
+      "id": "vatican-city",
+      "name": "Vatican Vistas",
+      "countryId": "VA",
+      "year": "2013"
+    },
+    {
+      "id": "canada",
+      "name": "Canadian Chronicles",
+      "countryId": "CA",
+      "year": "2012"
+    },
+    {
+      "id": "thailand",
+      "name": "Thai Tales",
+      "countryId": "TH",
+      "year": "2012"
+    },
+    {
+      "id": "indonesia",
+      "name": "Indonesian Islands",
+      "countryId": "ID",
+      "year": "2013"
+    },
+    {
+      "id": "austria",
+      "name": "Austrian Adventures",
+      "countryId": "AT",
+      "year": "2009"
+    },
+    {
+      "id": "czech-republic",
+      "name": "Czech Charm",
+      "countryId": "CZ",
+      "year": "2009"
+    },
+    {
+      "id": "germany",
+      "name": "German Glimpses",
+      "countryId": "DE",
+      "year": "2009"
+    },
+    {
+      "id": "hungary",
+      "name": "Hungarian Heritage",
+      "countryId": "HU",
+      "year": "2009"
+    },
+    {
+      "id": "netherlands",
+      "name": "Netherlands Notes",
+      "countryId": "NL",
+      "year": "2009"
+    },
+    {
+      "id": "slovakia",
+      "name": "Slovak Stories",
+      "countryId": "SK",
+      "year": "2009"
+    },
+    {
+      "id": "uk",
+      "name": "British Adventures",
+      "countryId": "GB",
+      "year": "2009"
+    },
+    {
+      "id": "estonia",
+      "name": "Estonian Explorations",
+      "countryId": "EE",
+      "year": "2006"
+    },
+    {
+      "id": "finland",
+      "name": "Finnish Frontiers",
+      "countryId": "FI",
+      "year": "2006"
+    },
+    {
+      "id": "usa",
+      "name": "American Adventures",
+      "countryId": "US",
+      "year": "1987"
     }
   ]
 }

@@ -647,6 +647,38 @@
         "description": "Enjoyed the vibrant beaches of Copacabana and Ipanema, visited the Christ the Redeemer statue, and experienced the lively Carnival festivities.",
         "latitude": -22.9068,
         "longitude": -43.1729
+      },
+      {
+        "id": "82",
+        "name": "Boulder",
+        "country": "USA",
+        "description": "Explored the Flatirons, enjoyed the Pearl Street Mall, and experienced the vibrant outdoor lifestyle.",
+        "latitude": 40.0150,
+        "longitude": -105.2705
+      },
+      {
+        "id": "83",
+        "name": "Denver",
+        "country": "USA",
+        "description": "Visited the Denver Art Museum, explored the RiNo district, and enjoyed the Rocky Mountain views.",
+        "latitude": 39.7392,
+        "longitude": -104.9903
+      },
+      {
+        "id": "84",
+        "name": "Aix-en-Provence",
+        "country": "France",
+        "description": "Strolled through charming boulevards, visited historic fountains, and enjoyed the vibrant markets.",
+        "latitude": 43.5297,
+        "longitude": 5.4474
+      },
+      {
+        "id": "85",
+        "name": "Pertuis",
+        "country": "France",
+        "description": "Explored the medieval old town, enjoyed local Provençal cuisine, and visited the weekly markets.",
+        "latitude": 43.6947,
+        "longitude": 5.5047
       }
     ]
-  } 
+  }
