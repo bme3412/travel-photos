@@ -9,7 +9,6 @@ import { default as usePhotoStore } from '../store/usePhotoStore';
 import countriesData from '../../data/countries.json';
 import photosData from '../../data/photos.json';
 
-// Keep your existing transformToCloudFront function
 const transformToCloudFront = (url) => {
   if (!url) return '';
   const path = url
@@ -43,8 +42,6 @@ const PhotoAlbumExplorer = () => {
         }
         const data = await response.json();
 
-        console.log("Fetched Albums:", data);
-
         const mergedAlbums = data.map((album) => ({
           ...album,
           photos: photosData.photos.filter(
@@ -52,7 +49,6 @@ const PhotoAlbumExplorer = () => {
           ),
         }));
 
-        console.log("Merged Albums:", mergedAlbums);
         setAlbums(mergedAlbums);
       } catch (error) {
         setError(error.message);
@@ -93,9 +89,6 @@ const PhotoAlbumExplorer = () => {
       ),
     };
 
-    console.log(`Looking for album: ${normalizedAlbumId}`);
-    console.log("Found mapped photo:", coverPhotoMap[normalizedAlbumId]);
-
     return (
       coverPhotoMap[normalizedAlbumId] ||
       photos.find((photo) => photo.albumId.toLowerCase() === normalizedAlbumId)
@@ -104,10 +97,7 @@ const PhotoAlbumExplorer = () => {
 
   const getCoverPhotoUrl = (photo) => {
     if (!photo || !photo.url) return null;
-
-    const url = transformToCloudFront(photo.url);
-    console.log("Processed URL:", url);
-    return url;
+    return transformToCloudFront(photo.url);
   };
 
   const filteredAlbums = React.useMemo(() => {
@@ -129,39 +119,6 @@ const PhotoAlbumExplorer = () => {
   return (
     <div className="min-h-screen bg-gray-100 py-16 bg-world-map">
       <div className="max-w-7xl mx-auto px-6">
-        {/* Improved Header Section */}
-        <header className="text-center mb-12">
-          {/* Optional: Add a Logo */}
-          {/* Uncomment and replace 'logo.png' with your logo file if available */}
-          {/* <div className="mb-4">
-            <Image src="/logo.png" alt="Global Travel Logo" width={100} height={100} />
-          </div> */}
-          
-          <h1 className="text-5xl font-extrabold text-gray-800">
-            Discover Your Next Destination
-          </h1>
-          <p className="mt-4 text-lg text-gray-600">
-            Explore stunning destinations through our curated photo collection
-          </p>
-
-          {/* Navigation Links */}
-          <nav className="mt-6 flex justify-center space-x-8">
-            <Link
-              href="/"
-              className="text-gray-700 hover:text-teal-700 font-medium"
-            >
-              Home
-            </Link>
-            <Link
-              href="/map"
-              className="text-gray-700 hover:text-teal-700 font-medium"
-            >
-              Where I've Been
-            </Link>
-            {/* Add more links as needed */}
-          </nav>
-        </header>
-
         {/* Search and Filters */}
         <div className="flex flex-col md:flex-row items-center justify-between gap-8 mb-12">
           <div className="relative w-full md:w-auto">
