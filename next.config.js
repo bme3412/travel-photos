@@ -6,10 +6,10 @@ const nextConfig = {
         protocol: 'https',
         hostname: 'd1mnon53ja4k10.cloudfront.net',
         port: '',
-        pathname: '/albums/**',
-      },
+        pathname: '/**',
+      }
     ],
-    minimumCacheTTL: 60,
+    minimumCacheTTL: 3600,
     dangerouslyAllowSVG: true,
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
   },
@@ -18,10 +18,6 @@ const nextConfig = {
   },
   eslint: {
     ignoreDuringBuilds: true,
-  },
-  // Only fetch images that exist in your S3 bucket
-  async redirects() {
-    return [];
   }
 };
 

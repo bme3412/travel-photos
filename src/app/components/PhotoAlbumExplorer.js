@@ -1,15 +1,34 @@
-// src/app/components/PhotoAlbumExplorer.js
+"use client";
 
-'use client';
+import React, { useEffect, useState } from "react";
+import Link from "next/link";
+import Image from "next/image";
+import {
+  Search as SearchIcon,
+  Camera as CameraIcon,
+  Landmark,
+  Building2,
+  Mountain,
+  Building,
+  Pyramid,
+  Theater,
+  MapPin,
+} from "lucide-react";
+import AlbumImage from "./AlbumImage"; // Make sure this import exists
+import AlbumFilters from "./AlbumFilters";
+import { default as usePhotoStore } from "../store/usePhotoStore";
+import countriesData from "../../data/countries.json";
+import photosData from "../../data/photos.json";
 
-import React, { useEffect, useState } from 'react';
-import Link from 'next/link';
-import { Search as SearchIcon, Camera as CameraIcon, Landmark, Building2, Mountain, Building, Pyramid, Theater, MapPin } from 'lucide-react';
-import AlbumFilters from './AlbumFilters';
-import { default as usePhotoStore } from '../store/usePhotoStore'; // Ensure default import
-import countriesData from '../../data/countries.json';
-import photosData from '../../data/photos.json';
-import Image from 'next/image';
+// Add URL transformation
+const transformToCloudFront = (url) => {
+  if (!url) return "";
+  const path = url
+    .replace("https://global-travel.s3.us-east-1.amazonaws.com/", "")
+    .replace("https://d1mnon53ja4k10.cloudfront.net/", "")
+    .replace(/\.HEIC$/i, ".jpg");
+  return `https://d1mnon53ja4k10.cloudfront.net/${path}`;
+};
 
 const PhotoAlbumExplorer = () => {
   const {
@@ -23,22 +42,20 @@ const PhotoAlbumExplorer = () => {
     setError,
   } = usePhotoStore();
 
-  const [searchTerm, setSearchTerm] = useState('');
+  const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
     const fetchAlbums = async () => {
       setLoading(true);
       try {
-        const response = await fetch('/api/albums');
+        const response = await fetch("/api/albums");
         if (!response.ok) {
-          throw new Error('Failed to fetch albums.');
+          throw new Error("Failed to fetch albums.");
         }
         const data = await response.json();
 
-        // Debug: Log fetched data
-        console.log('Fetched Albums:', data);
+        console.log("Fetched Albums:", data);
 
-        // Merge photos into albums
         const mergedAlbums = data.map((album) => ({
           ...album,
           photos: photosData.photos.filter(
@@ -46,13 +63,11 @@ const PhotoAlbumExplorer = () => {
           ),
         }));
 
-        // Debug: Log merged albums
-        console.log('Merged Albums:', mergedAlbums);
-
+        console.log("Merged Albums:", mergedAlbums);
         setAlbums(mergedAlbums);
       } catch (error) {
         setError(error.message);
-        console.error('Error fetching albums:', error);
+        console.error("Error fetching albums:", error);
       } finally {
         setLoading(false);
       }
@@ -67,37 +82,42 @@ const PhotoAlbumExplorer = () => {
     const normalizedAlbumId = albumId.toLowerCase();
 
     const coverPhotoMap = {
-      'monaco': photos.find(p => p.url.includes('monaco-panorama.jpg')),
-      'france': photos.find(p => p.url.includes('eiffel-tower-straight-on.jpg')),
-      'hongkong': photos.find(p => p.url.includes('hongkong-skyline2.jpeg')),
-      'vietnam': photos.find(p => p.url.includes('temple.jpg')),
-      'singapore': photos.find(p => p.url.includes('singapore-pool-night.jpg')),
-      'malaysia': photos.find(p => p.url.includes('malaysia-petronas-couch.jpg')),
-      'switzerland': photos.find(p => p.url.includes('zurich-river-bridge.jpg')),
-      'uruguay': photos.find(p => p.url.includes('montevideo-palmtree.jpg')),
-      'chile': photos.find(p => p.url.includes('easterisland-moai-hat.jpg')),
-      'brazil': photos.find(p => 
-        p.url.includes('helicopter-beach-sugarloaf.jpg') || 
-        p.url.includes('/Brazil/helicopter-beach-sugarloaf.jpg')
+      monaco: photos.find((p) => p.url.includes("monaco-panorama.jpg")),
+      france: photos.find((p) =>
+        p.url.includes("eiffel-tower-straight-on.jpg")
+      ),
+      hongkong: photos.find((p) => p.url.includes("hongkong-skyline2.jpeg")),
+      vietnam: photos.find((p) => p.url.includes("temple.jpg")),
+      singapore: photos.find((p) => p.url.includes("singapore-pool-night.jpg")),
+      malaysia: photos.find((p) =>
+        p.url.includes("malaysia-petronas-couch.jpg")
+      ),
+      switzerland: photos.find((p) =>
+        p.url.includes("zurich-river-bridge.jpg")
+      ),
+      uruguay: photos.find((p) => p.url.includes("montevideo-palmtree.jpg")),
+      chile: photos.find((p) => p.url.includes("easterisland-moai-hat.jpg")),
+      brazil: photos.find(
+        (p) =>
+          p.url.includes("helicopter-beach-sugarloaf.jpg") ||
+          p.url.includes("/Brazil/helicopter-beach-sugarloaf.jpg")
       ),
     };
 
-    // Debug: Log albumId and found photo
     console.log(`Looking for album: ${normalizedAlbumId}`);
-    console.log('Found mapped photo:', coverPhotoMap[normalizedAlbumId]);
+    console.log("Found mapped photo:", coverPhotoMap[normalizedAlbumId]);
 
-    return coverPhotoMap[normalizedAlbumId] || photos.find(photo => photo.albumId.toLowerCase() === normalizedAlbumId);
+    return (
+      coverPhotoMap[normalizedAlbumId] ||
+      photos.find((photo) => photo.albumId.toLowerCase() === normalizedAlbumId)
+    );
   };
 
   const getCoverPhotoUrl = (photo) => {
     if (!photo || !photo.url) return null;
 
-    // Convert HEIC to JPG if necessary
-    let url = photo.url.replace(/\.HEIC$/i, '.jpg');
-
-    // Debug: Log processed URL
-    console.log('Processed URL:', url);
-
+    const url = transformToCloudFront(photo.url);
+    console.log("Processed URL:", url);
     return url;
   };
 
@@ -108,17 +128,14 @@ const PhotoAlbumExplorer = () => {
         album.name.toLowerCase().includes(searchTerm.toLowerCase())
       );
     }
-    if (activeYear !== 'all') {
+    if (activeYear !== "all") {
       result = result.filter((album) => album.year === activeYear);
     }
-    if (activeCountry !== 'all') {
+    if (activeCountry !== "all") {
       result = result.filter((album) => album.countryId === activeCountry);
     }
     return result;
   }, [albums, searchTerm, activeYear, activeCountry]);
-
-  // Debug: Log filtered albums
-  console.log('Filtered Albums:', filteredAlbums);
 
   return (
     <div className="min-h-screen bg-gray-100 py-16 bg-world-map">
@@ -126,14 +143,31 @@ const PhotoAlbumExplorer = () => {
         {/* Header Section */}
         <div className="text-center mb-12">
           <div className="flex justify-center items-center mb-4 space-x-6 flex-wrap gap-6">
-            <Landmark className="h-16 w-16 text-teal-700" aria-label="Landmark" />
-            <Building2 className="h-16 w-16 text-teal-700" aria-label="Building" />
-            <Mountain className="h-16 w-16 text-teal-700" aria-label="Mountain" />
-            <Building className="h-16 w-16 text-teal-700" aria-label="Architecture" />
-            <Pyramid className="h-16 w-16 text-teal-700" aria-label="Monument" />
+            <Landmark
+              className="h-16 w-16 text-teal-700"
+              aria-label="Landmark"
+            />
+            <Building2
+              className="h-16 w-16 text-teal-700"
+              aria-label="Building"
+            />
+            <Mountain
+              className="h-16 w-16 text-teal-700"
+              aria-label="Mountain"
+            />
+            <Building
+              className="h-16 w-16 text-teal-700"
+              aria-label="Architecture"
+            />
+            <Pyramid
+              className="h-16 w-16 text-teal-700"
+              aria-label="Monument"
+            />
             <Theater className="h-16 w-16 text-teal-700" aria-label="Culture" />
           </div>
-          <h1 className="text-5xl font-bold text-gray-800">Where to go next?</h1>
+          <h1 className="text-5xl font-bold text-gray-800">
+            Where to go next?
+          </h1>
           <p className="mt-4 text-lg text-gray-600">
             Explore destinations through our photo collection
           </p>
@@ -165,42 +199,56 @@ const PhotoAlbumExplorer = () => {
         {filteredAlbums.length > 0 ? (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredAlbums.map((album) => {
-              // Defensive Check: Ensure album and album.id exist
               if (!album || !album.id) {
-                console.warn('Invalid album data:', album);
-                return null; // Skip rendering this album
+                console.warn("Invalid album data:", album);
+                return null;
               }
 
-              // Find the specific photo for this album
               const albumPhoto = getSpecificPhoto(album.id, album.photos || []);
               const coverPhotoUrl = getCoverPhotoUrl(albumPhoto);
 
               return (
-                <Link href={`/albums/${album.id}`} key={album.id} className="group">
+                <Link
+                  href={`/albums/${album.id}`}
+                  key={album.id}
+                  className="group"
+                >
                   <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
                     <div className="relative h-64 bg-gray-200">
                       {coverPhotoUrl ? (
                         <div className="relative w-full h-full">
-                          <Image
-                            src={coverPhotoUrl}
-                            alt={albumPhoto.caption || `Cover photo for ${album.name}`}
-                            fill
-                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                            className="object-cover"
-                            priority={false}
-                            quality={75}
-                          />
-                          {albumPhoto.locationId && (
-                            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black via-black/50 to-transparent p-4">
-                              <h3 className="text-xl font-semibold text-white">{album.name}</h3>
-                              <p className="text-sm text-gray-200 flex items-center">
-                                <MapPin className="h-4 w-4 mr-1 text-teal-300" aria-hidden="true" />
-                                <span className="mr-2">{albumPhoto.locationId}</span>
-                                <span className="text-teal-300">•</span>
-                                <span className="ml-2">{album.year}</span>
-                              </p>
-                            </div>
-                          )}
+                          <div className="relative w-full h-64">
+                            <Image
+                              src={coverPhotoUrl}
+                              alt={
+                                albumPhoto.caption ||
+                                `Cover photo for ${album.name}`
+                              }
+                              fill
+                              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                              className="object-cover"
+                              priority={false}
+                              quality={75}
+                            />
+                            {albumPhoto.locationId && (
+                              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black via-black/50 to-transparent p-4">
+                                <h3 className="text-xl font-semibold text-white">
+                                  {album.name}
+                                </h3>
+                                <p className="text-sm text-gray-200 flex items-center">
+                                  <MapPin
+                                    className="h-4 w-4 mr-1 text-teal-300"
+                                    aria-hidden="true"
+                                  />
+                                  <span className="mr-2">
+                                    {albumPhoto.locationId}
+                                  </span>
+                                  <span className="text-teal-300">•</span>
+                                  <span className="ml-2">{album.year}</span>
+                                </p>
+                              </div>
+                            )}
+                          </div>
                         </div>
                       ) : (
                         <div
@@ -221,7 +269,9 @@ const PhotoAlbumExplorer = () => {
           <div className="flex flex-col items-center justify-center text-gray-500 py-24">
             <CameraIcon className="h-20 w-20 mb-6 text-gray-300" />
             <h3 className="text-2xl font-semibold mb-2">No albums found</h3>
-            <p className="text-md">Try adjusting your filters or search criteria.</p>
+            <p className="text-md">
+              Try adjusting your filters or search criteria.
+            </p>
           </div>
         )}
       </div>

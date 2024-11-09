@@ -10,6 +10,16 @@ import ImageLightbox from '../../components/ImageLightbox';
 import { ArrowLeft, Grid, Map as MapIcon, Loader, MapPin, Camera } from 'lucide-react';
 import Link from 'next/link';
 
+// Add transformToCloudFront utility
+const transformToCloudFront = (url) => {
+  if (!url) return '';
+  const path = url
+    .replace('https://global-travel.s3.us-east-1.amazonaws.com/', '')
+    .replace('https://d1mnon53ja4k10.cloudfront.net/', '')
+    .replace(/\.HEIC$/i, '.jpg');
+  return `https://d1mnon53ja4k10.cloudfront.net/${path}`;
+};
+
 const shimmer = (w, h) => `
 <svg width="${w}" height="${h}" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
   <defs>
@@ -30,16 +40,19 @@ const toBase64 = (str) =>
     : window.btoa(str);
 
 const PhotoCard = React.memo(({ photo, index, onPhotoClick }) => {
+  // Transform the URL to CloudFront
+  const cloudFrontUrl = transformToCloudFront(photo.url);
+
   return (
     <div 
       className="group relative aspect-[3/2] rounded-xl overflow-hidden bg-gray-100 cursor-pointer
                  transform transition-all duration-300 hover:scale-[1.02] hover:shadow-xl"
-      onClick={() => onPhotoClick({ ...photo, index })}
+      onClick={() => onPhotoClick({ ...photo, index, url: cloudFrontUrl })}
     >
       <div className="absolute inset-0 bg-black/5 group-hover:bg-black/0 transition-colors duration-300" />
       <Image
-        src={photo.url}
-        alt={photo.title || photo.description || 'Album photo'} // Using title as primary alt text
+        src={cloudFrontUrl}
+        alt={photo.title || photo.description || 'Album photo'}
         fill
         sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
         className="object-cover transition-transform duration-300 group-hover:scale-105"
@@ -92,6 +105,16 @@ export default function AlbumPage() {
         const response = await fetch(`/api/albums/${id}`);
         if (!response.ok) throw new Error('Failed to fetch album data.');
         const data = await response.json();
+
+        // Transform URLs in the album data
+        if (data.photos) {
+          data.photos = data.photos.map(photo => ({
+            ...photo,
+            originalUrl: photo.url, // Keep original URL for reference
+            url: transformToCloudFront(photo.url)
+          }));
+        }
+
         setCurrentAlbum(data);
       } catch (error) {
         setError(error.message);
@@ -104,7 +127,6 @@ export default function AlbumPage() {
       fetchAlbumData(params.id);
     }
   }, [params.id, setCurrentAlbum, setLoading, setError]);
-
   if (loading) {
     return (
       <div className="flex flex-col items-center justify-center min-h-screen gap-4">

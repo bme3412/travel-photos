@@ -1,32 +1,66 @@
 // src/app/components/AlbumImage.js
-const CLOUDFRONT_DOMAIN = process.env.NEXT_PUBLIC_CLOUDFRONT_DOMAIN || 'd1mnon53ja4k10.cloudfront.net';
-const S3_DOMAIN = 's3.us-east-1.amazonaws.com';
-const BUCKET_NAME = 'global-travel';
 
-const getImageUrl = (path) => {
-  if (!path) {
-    console.error('No path provided to getImageUrl');
-    return '';
+import React, { useState } from 'react';
+import Image from 'next/image';
+import { AlertTriangle } from 'lucide-react';
+
+const AlbumImage = ({ 
+  imageUrl, 
+  altText = 'Album image', 
+  className = '', 
+  priority = false 
+}) => {
+  const [imageError, setImageError] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+
+  if (!imageUrl) {
+    return (
+      <div className={`${className} min-h-[200px] flex items-center justify-center bg-gray-100 rounded-md`}>
+        <div className="flex items-center gap-2 text-gray-500">
+          <AlertTriangle className="h-4 w-4" />
+          <span>No image URL provided</span>
+        </div>
+      </div>
+    );
   }
 
-  let cleanPath = path;
-  
-  // If it's a full S3 URL, extract just the path portion
-  if (path.includes(S3_DOMAIN)) {
-    // Extract path after the bucket name
-    const pathMatch = path.match(new RegExp(`${BUCKET_NAME}/(.*)`));
-    if (pathMatch && pathMatch[1]) {
-      cleanPath = pathMatch[1];
-    }
+  if (imageError) {
+    return (
+      <div className={`${className} min-h-[200px] flex items-center justify-center bg-gray-100 rounded-md`}>
+        <div className="flex items-center gap-2 text-gray-500">
+          <AlertTriangle className="h-4 w-4" />
+          <span>Failed to load image</span>
+        </div>
+      </div>
+    );
   }
 
-  // Clean up the path
-  cleanPath = cleanPath
-    .replace(/\.HEIC$/i, '.jpg')
-    .replace(/^\/?(images\/)?albums\//, '')
-    .replace(/\/+/g, '/');
-
-  const url = `https://${CLOUDFRONT_DOMAIN}/albums/${cleanPath}`;
-  console.log('Generated CloudFront URL:', url);
-  return url;
+  return (
+    <div className={`relative ${className}`}>
+      {isLoading && (
+        <div className="absolute inset-0 bg-gray-100 animate-pulse rounded-md" />
+      )}
+      <div className="relative w-full h-full min-h-[200px]">
+        <Image
+          src={imageUrl}
+          alt={altText}
+          fill
+          className={`
+            object-cover rounded-md
+            ${isLoading ? 'opacity-0' : 'opacity-100'}
+            transition-opacity duration-300 ease-in-out
+          `}
+          onError={() => setImageError(true)}
+          onLoadingComplete={() => setIsLoading(false)}
+          sizes="(max-width: 640px) 100vw,
+                 (max-width: 1024px) 50vw,
+                 33vw"
+          priority={priority}
+          quality={85}
+        />
+      </div>
+    </div>
+  );
 };
+
+export default AlbumImage;

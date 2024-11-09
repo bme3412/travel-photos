@@ -3,7 +3,7 @@
     {
       "id": "france1",
       "albumId": "france",
-      "url": "France/sacre-coeur-window-1.jpeg",  
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/France/sacre-coeur-window-1.jpeg",  
       "caption": "Sacré-Cœur Window View",
       "locationId": "Paris",
       "coordinates": {
