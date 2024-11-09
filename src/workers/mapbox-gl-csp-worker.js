@@ -1,4 +1,5 @@
-// public/workers/mapbox-gl-csp-worker.js
+// src/workers/mapbox-gl-csp-worker.js
+
 self.importScripts('https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl-worker.js');
 
 self.addEventListener('message', function(e) {

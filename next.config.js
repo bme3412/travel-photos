@@ -18,7 +18,17 @@ const nextConfig = {
   },
   eslint: {
     ignoreDuringBuilds: true,
-  }
+  },
+  webpack: (config) => {
+    // Add fallback for 'fs' module required by Mapbox GL
+    config.resolve.fallback = {
+      ...config.resolve.fallback,
+      fs: false,
+    };
+    return config;
+  },
+  // Allow Mapbox GL JS to work in Next.js environment
+  transpilePackages: ['mapbox-gl'],
 };
 
 module.exports = nextConfig;

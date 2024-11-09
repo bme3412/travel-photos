@@ -1,32 +1,21 @@
-"use client";
+'use client';
 
-import React, { useEffect, useState } from "react";
-import Link from "next/link";
-import Image from "next/image";
-import {
-  Search as SearchIcon,
-  Camera as CameraIcon,
-  Landmark,
-  Building2,
-  Mountain,
-  Building,
-  Pyramid,
-  Theater,
-  MapPin,
-} from "lucide-react";
-import AlbumImage from "./AlbumImage"; // Make sure this import exists
-import AlbumFilters from "./AlbumFilters";
-import { default as usePhotoStore } from "../store/usePhotoStore";
-import countriesData from "../../data/countries.json";
-import photosData from "../../data/photos.json";
+import React, { useEffect, useState } from 'react';
+import Link from 'next/link';
+import Image from 'next/image';
+import { Search as SearchIcon, Camera as CameraIcon, MapPin } from 'lucide-react';
+import AlbumFilters from './AlbumFilters';
+import { default as usePhotoStore } from '../store/usePhotoStore';
+import countriesData from '../../data/countries.json';
+import photosData from '../../data/photos.json';
 
-// Add URL transformation
+// Keep your existing transformToCloudFront function
 const transformToCloudFront = (url) => {
-  if (!url) return "";
+  if (!url) return '';
   const path = url
-    .replace("https://global-travel.s3.us-east-1.amazonaws.com/", "")
-    .replace("https://d1mnon53ja4k10.cloudfront.net/", "")
-    .replace(/\.HEIC$/i, ".jpg");
+    .replace('https://global-travel.s3.us-east-1.amazonaws.com/', '')
+    .replace('https://d1mnon53ja4k10.cloudfront.net/', '')
+    .replace(/\.HEIC$/i, '.jpg');
   return `https://d1mnon53ja4k10.cloudfront.net/${path}`;
 };
 
@@ -140,38 +129,38 @@ const PhotoAlbumExplorer = () => {
   return (
     <div className="min-h-screen bg-gray-100 py-16 bg-world-map">
       <div className="max-w-7xl mx-auto px-6">
-        {/* Header Section */}
-        <div className="text-center mb-12">
-          <div className="flex justify-center items-center mb-4 space-x-6 flex-wrap gap-6">
-            <Landmark
-              className="h-16 w-16 text-teal-700"
-              aria-label="Landmark"
-            />
-            <Building2
-              className="h-16 w-16 text-teal-700"
-              aria-label="Building"
-            />
-            <Mountain
-              className="h-16 w-16 text-teal-700"
-              aria-label="Mountain"
-            />
-            <Building
-              className="h-16 w-16 text-teal-700"
-              aria-label="Architecture"
-            />
-            <Pyramid
-              className="h-16 w-16 text-teal-700"
-              aria-label="Monument"
-            />
-            <Theater className="h-16 w-16 text-teal-700" aria-label="Culture" />
-          </div>
-          <h1 className="text-5xl font-bold text-gray-800">
-            Where to go next?
+        {/* Improved Header Section */}
+        <header className="text-center mb-12">
+          {/* Optional: Add a Logo */}
+          {/* Uncomment and replace 'logo.png' with your logo file if available */}
+          {/* <div className="mb-4">
+            <Image src="/logo.png" alt="Global Travel Logo" width={100} height={100} />
+          </div> */}
+          
+          <h1 className="text-5xl font-extrabold text-gray-800">
+            Discover Your Next Destination
           </h1>
           <p className="mt-4 text-lg text-gray-600">
-            Explore destinations through our photo collection
+            Explore stunning destinations through our curated photo collection
           </p>
-        </div>
+
+          {/* Navigation Links */}
+          <nav className="mt-6 flex justify-center space-x-8">
+            <Link
+              href="/"
+              className="text-gray-700 hover:text-teal-700 font-medium"
+            >
+              Home
+            </Link>
+            <Link
+              href="/map"
+              className="text-gray-700 hover:text-teal-700 font-medium"
+            >
+              Where I've Been
+            </Link>
+            {/* Add more links as needed */}
+          </nav>
+        </header>
 
         {/* Search and Filters */}
         <div className="flex flex-col md:flex-row items-center justify-between gap-8 mb-12">
@@ -217,38 +206,36 @@ const PhotoAlbumExplorer = () => {
                     <div className="relative h-64 bg-gray-200">
                       {coverPhotoUrl ? (
                         <div className="relative w-full h-full">
-                          <div className="relative w-full h-64">
-                            <Image
-                              src={coverPhotoUrl}
-                              alt={
-                                albumPhoto.caption ||
-                                `Cover photo for ${album.name}`
-                              }
-                              fill
-                              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                              className="object-cover"
-                              priority={false}
-                              quality={75}
-                            />
-                            {albumPhoto.locationId && (
-                              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black via-black/50 to-transparent p-4">
-                                <h3 className="text-xl font-semibold text-white">
-                                  {album.name}
-                                </h3>
-                                <p className="text-sm text-gray-200 flex items-center">
-                                  <MapPin
-                                    className="h-4 w-4 mr-1 text-teal-300"
-                                    aria-hidden="true"
-                                  />
-                                  <span className="mr-2">
-                                    {albumPhoto.locationId}
-                                  </span>
-                                  <span className="text-teal-300">•</span>
-                                  <span className="ml-2">{album.year}</span>
-                                </p>
-                              </div>
-                            )}
-                          </div>
+                          <Image
+                            src={coverPhotoUrl}
+                            alt={
+                              albumPhoto.caption ||
+                              `Cover photo for ${album.name}`
+                            }
+                            fill
+                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                            className="object-cover"
+                            priority={false}
+                            quality={75}
+                          />
+                          {albumPhoto.locationId && (
+                            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black via-black/50 to-transparent p-4">
+                              <h3 className="text-xl font-semibold text-white">
+                                {album.name}
+                              </h3>
+                              <p className="text-sm text-gray-200 flex items-center">
+                                <MapPin
+                                  className="h-4 w-4 mr-1 text-teal-300"
+                                  aria-hidden="true"
+                                />
+                                <span className="mr-2">
+                                  {albumPhoto.locationId}
+                                </span>
+                                <span className="text-teal-300">•</span>
+                                <span className="ml-2">{album.year}</span>
+                              </p>
+                            </div>
+                          )}
                         </div>
                       ) : (
                         <div
