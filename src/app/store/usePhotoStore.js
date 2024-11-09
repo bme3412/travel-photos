@@ -2,7 +2,6 @@
 
 import { create } from 'zustand';
 
-
 const usePhotoStore = create((set) => ({
   albums: [],
   currentAlbum: null,

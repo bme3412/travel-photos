@@ -3,7 +3,7 @@
     {
       "id": "france1",
       "albumId": "france",
-      "url": "/images/albums/France/sacre-coeur-window-1.jpeg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/France/sacre-coeur-window-1.jpeg",
       "caption": "Sacré-Cœur Window View",
       "locationId": "Paris",
       "coordinates": {
@@ -21,7 +21,7 @@
     {
       "id": "france2",
       "albumId": "france",
-      "url": "/images/albums/France/sacre-coeur-window-2.jpeg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/France/sacre-coeur-window-2.jpeg",
       "caption": "Sacré-Cœur Window Detail",
       "locationId": "Paris",
       "coordinates": {
@@ -39,7 +39,7 @@
     {
       "id": "france3",
       "albumId": "france",
-      "url": "/images/albums/France/sacre-coeur.jpeg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/France/sacre-coeur.jpeg",
       "caption": "Sacré-Cœur Basilica",
       "locationId": "Paris",
       "coordinates": {
@@ -56,7 +56,7 @@
     {
       "id": "france4",
       "albumId": "france",
-      "url": "/images/albums/France/menton.jpeg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/France/menton.jpeg",
       "caption": "Menton Coastline",
       "locationId": "Menton",
       "coordinates": {
@@ -73,7 +73,7 @@
     {
       "id": "france5",
       "albumId": "france",
-      "url": "/images/albums/France/roquebrune-cap-martin1.jpeg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/France/roquebrune-cap-martin1.jpeg",
       "caption": "Roquebrune-Cap-Martin View",
       "locationId": "Roquebrune-Cap-Martin",
       "coordinates": {
@@ -90,7 +90,7 @@
     {
       "id": "france6",
       "albumId": "france",
-      "url": "/images/albums/France/roquebrune-cap-martin2.jpeg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/France/roquebrune-cap-martin2.jpeg",
       "caption": "Roquebrune-Cap-Martin Coastline",
       "locationId": "Roquebrune-Cap-Martin",
       "coordinates": {
@@ -106,7 +106,7 @@
     {
       "id": "france7",
       "albumId": "france",
-      "url": "/images/albums/France/roquebrune-citadel-window.jpeg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/France/roquebrune-citadel-window.jpeg",
       "caption": "Roquebrune Citadel Window View",
       "locationId": "Roquebrune-Cap-Martin",
       "coordinates": {
@@ -123,7 +123,7 @@
     {
       "id": "france8",
       "albumId": "france",
-      "url": "/images/albums/France/roquebrune-citadel1.jpeg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/France/roquebrune-citadel1.jpeg",
       "caption": "Roquebrune Citadel Architecture",
       "locationId": "Roquebrune-Cap-Martin",
       "coordinates": {
@@ -140,7 +140,7 @@
     {
       "id": "france9",
       "albumId": "france",
-      "url": "/images/albums/France/roquebrune-citadel2.jpeg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/France/roquebrune-citadel2.jpeg",
       "caption": "Roquebrune Citadel Interior",
       "locationId": "Roquebrune-Cap-Martin",
       "coordinates": {
@@ -157,7 +157,7 @@
     {
       "id": "france10",
       "albumId": "france",
-      "url": "/images/albums/France/roquebrune-citadel3.jpeg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/France/roquebrune-citadel3.jpeg",
       "caption": "Roquebrune Citadel Courtyard",
       "locationId": "Roquebrune-Cap-Martin",
       "coordinates": {
@@ -174,7 +174,7 @@
     {
       "id": "france11",
       "albumId": "france",
-      "url": "/images/albums/France/roquebrune-citadel4.jpeg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/France/roquebrune-citadel4.jpeg",
       "caption": "Roquebrune Citadel Passage",
       "locationId": "Roquebrune-Cap-Martin",
       "coordinates": {
@@ -191,7 +191,7 @@
     {
       "id": "france12",
       "albumId": "france",
-      "url": "/images/albums/France/roquebrune-citadel5.jpeg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/France/roquebrune-citadel5.jpeg",
       "caption": "Roquebrune Citadel Tower",
       "locationId": "Roquebrune-Cap-Martin",
       "coordinates": {
@@ -208,7 +208,7 @@
     {
       "id": "france13",
       "albumId": "france",
-      "url": "/images/albums/France/roquebrune-citadel6.jpeg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/France/roquebrune-citadel6.jpeg",
       "caption": "Roquebrune Citadel Overview",
       "locationId": "Roquebrune-Cap-Martin",
       "coordinates": {
@@ -225,7 +225,7 @@
     {
       "id": "france14",
       "albumId": "france",
-      "url": "/images/albums/France/cannes-beach.jpeg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/France/cannes-beach.jpeg",
       "caption": "Cannes Beach",
       "locationId": "Cannes",
       "coordinates": {
@@ -242,7 +242,7 @@
     {
       "id": "france15",
       "albumId": "france",
-      "url": "/images/albums/France/cannes-beachclub.jpeg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/France/cannes-beachclub.jpeg",
       "caption": "Cannes Beach Club",
       "locationId": "Cannes",
       "coordinates": {
@@ -259,7 +259,7 @@
     {
       "id": "france16",
       "albumId": "france",
-      "url": "/images/albums/France/cannes-coast.jpeg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/France/cannes-coast.jpeg",
       "caption": "Cannes Coastal View",
       "locationId": "Cannes",
       "coordinates": {
@@ -275,7 +275,7 @@
     {
       "id": "france17",
       "albumId": "france",
-      "url": "/images/albums/France/cannes-coast2.jpeg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/France/cannes-coast2.jpeg",
       "caption": "Cannes Coastline",
       "locationId": "Cannes",
       "coordinates": {
@@ -291,7 +291,7 @@
     {
       "id": "france18",
       "albumId": "france",
-      "url": "/images/albums/France/cannes-food.jpeg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/France/cannes-food.jpeg",
       "caption": "Cannes Culinary Experience",
       "locationId": "Cannes",
       "coordinates": {
@@ -308,7 +308,7 @@
     {
       "id": "france19",
       "albumId": "france",
-      "url": "/images/albums/France/cannes-hotel.jpeg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/France/cannes-hotel.jpeg",
       "caption": "Cannes Hotel",
       "locationId": "Cannes",
       "coordinates": {
@@ -325,7 +325,7 @@
     {
       "id": "france20",
       "albumId": "france",
-      "url": "/images/albums/France/cannes-restaurant.jpeg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/France/cannes-restaurant.jpeg",
       "caption": "Cannes Restaurant",
       "locationId": "Cannes",
       "coordinates": {
@@ -342,7 +342,7 @@
     {
       "id": "france21",
       "albumId": "france",
-      "url": "/images/albums/France/cannes-sunset.jpeg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/France/cannes-sunset.jpeg",
       "caption": "Cannes Sunset",
       "locationId": "Cannes",
       "coordinates": {
@@ -359,7 +359,7 @@
     {
       "id": "france22",
       "albumId": "france",
-      "url": "/images/albums/France/cannes-versace-hotel.jpeg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/France/cannes-versace-hotel.jpeg",
       "caption": "Versace Hotel Cannes",
       "locationId": "Cannes",
       "coordinates": {
@@ -376,7 +376,7 @@
     {
       "id": "france23",
       "albumId": "france",
-      "url": "/images/albums/France/cannes-versace.jpeg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/France/cannes-versace.jpeg",
       "caption": "Versace Cannes",
       "locationId": "Cannes",
       "coordinates": {
@@ -393,7 +393,7 @@
     {
       "id": "france24",
       "albumId": "france",
-      "url": "/images/albums/France/cannes-view.jpeg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/France/cannes-view.jpeg",
       "caption": "Cannes Panoramic View",
       "locationId": "Cannes",
       "coordinates": {
@@ -410,7 +410,7 @@
     {
       "id": "france25",
       "albumId": "france",
-      "url": "/images/albums/France/eiffel-tower-bridge.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/France/eiffel-tower-bridge.jpg",
       "caption": "Eiffel Tower Bridge View",
       "locationId": "Paris",
       "coordinates": {
@@ -427,7 +427,7 @@
     {
       "id": "france26",
       "albumId": "france",
-      "url": "/images/albums/France/eiffel-tower-olympic-rings.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/France/eiffel-tower-olympic-rings.jpg",
       "caption": "Eiffel Tower Olympic Rings",
       "locationId": "Paris",
       "coordinates": {
@@ -444,7 +444,7 @@
     {
       "id": "france27",
       "albumId": "france",
-      "url": "/images/albums/France/eiffel-tower-olympic.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/France/eiffel-tower-olympic.jpg",
       "caption": "Eiffel Tower Olympic Display",
       "locationId": "Paris",
       "coordinates": {
@@ -461,7 +461,7 @@
     {
       "id": "france28",
       "albumId": "france",
-      "url": "/images/albums/France/eiffel-tower-olympics-angle.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/France/eiffel-tower-olympics-angle.jpg",
       "caption": "Eiffel Tower Olympic Perspective",
       "locationId": "Paris",
       "coordinates": {
@@ -479,7 +479,7 @@
     {
       "id": "france29",
       "albumId": "france",
-      "url": "/images/albums/France/eiffel-tower-olympics.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/France/eiffel-tower-olympics.jpg",
       "caption": "Eiffel Tower Olympics View",
       "locationId": "Paris",
       "coordinates": {
@@ -496,7 +496,7 @@
     {
       "id": "france30",
       "albumId": "france",
-      "url": "/images/albums/France/eiffel-tower-profile.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/France/eiffel-tower-profile.jpg",
       "caption": "Eiffel Tower Profile View",
       "locationId": "Paris",
       "coordinates": {
@@ -513,7 +513,7 @@
     {
       "id": "france31",
       "albumId": "france",
-      "url": "/images/albums/France/eiffel-tower-straight-on.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/France/eiffel-tower-straight-on.jpg",
       "caption": "Eiffel Tower Direct View",
       "locationId": "Paris",
       "coordinates": {
@@ -530,7 +530,7 @@
     {
       "id": "france32",
       "albumId": "france",
-      "url": "/images/albums/France/eiffel-tower-trocadero.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/France/eiffel-tower-trocadero.jpg",
       "caption": "Eiffel Tower from Trocadéro",
       "locationId": "Paris",
       "coordinates": {
@@ -547,7 +547,7 @@
     {
       "id": "france33",
       "albumId": "france",
-      "url": "/images/albums/France/eiffel-tower-under.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/France/eiffel-tower-under.jpg",
       "caption": "Under the Eiffel Tower",
       "locationId": "Paris",
       "coordinates": {
@@ -564,7 +564,7 @@
     {
       "id": "france34",
       "albumId": "france",
-      "url": "/images/albums/France/stjeancapmartin-airbnb.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/France/stjeancapmartin-airbnb.jpg",
       "caption": "St Jean Cap Martin Accommodation",
       "locationId": "St Jean Cap Martin",
       "coordinates": {
@@ -582,7 +582,7 @@
     {
       "id": "france35",
       "albumId": "france",
-      "url": "/images/albums/France/stjeancapmartin-aqueduct.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/France/stjeancapmartin-aqueduct.jpg",
       "caption": "Historic Aqueduct in St Jean Cap Martin",
       "locationId": "St Jean Cap Martin",
       "coordinates": {
@@ -600,7 +600,7 @@
     {
       "id": "france36",
       "albumId": "france",
-      "url": "/images/albums/France/stjeancapmartin-baie-boats.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/France/stjeancapmartin-baie-boats.jpg",
       "caption": "Boats in the Bay of St Jean Cap Martin",
       "locationId": "St Jean Cap Martin",
       "coordinates": {
@@ -618,7 +618,7 @@
     {
       "id": "france37",
       "albumId": "france",
-      "url": "/images/albums/France/stjeancapmartin-baie-plant.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/France/stjeancapmartin-baie-plant.jpg",
       "caption": "Coastal Vegetation by the Bay",
       "locationId": "St Jean Cap Martin",
       "coordinates": {
@@ -636,7 +636,7 @@
     {
       "id": "france38",
       "albumId": "france",
-      "url": "/images/albums/France/stjeancapmartin-baie.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/France/stjeancapmartin-baie.jpg",
       "caption": "Bay of St Jean Cap Martin",
       "locationId": "St Jean Cap Martin",
       "coordinates": {
@@ -654,7 +654,7 @@
     {
       "id": "france39",
       "albumId": "france",
-      "url": "/images/albums/France/stjeancapmartin-bay-buoy.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/France/stjeancapmartin-bay-buoy.jpg",
       "caption": "Bay View with Buoy",
       "locationId": "St Jean Cap Martin",
       "coordinates": {
@@ -672,7 +672,7 @@
     {
       "id": "france40",
       "albumId": "france",
-      "url": "/images/albums/France/stjeancapmartin-bay-green.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/France/stjeancapmartin-bay-green.jpg",
       "caption": "Green Waters of St Jean Cap Martin Bay",
       "locationId": "St Jean Cap Martin",
       "coordinates": {
@@ -690,7 +690,7 @@
     {
       "id": "france41",
       "albumId": "france",
-      "url": "/images/albums/France/stjeancapmartin-bay-rocks.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/France/stjeancapmartin-bay-rocks.jpg",
       "caption": "Rocky Coastline of St Jean Cap Martin",
       "locationId": "St Jean Cap Martin",
       "coordinates": {
@@ -708,7 +708,7 @@
     {
       "id": "france42",
       "albumId": "france",
-      "url": "/images/albums/France/stjeancapmartin-bay.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/France/stjeancapmartin-bay.jpg",
       "caption": "St Jean Cap Martin Bay Panorama",
       "locationId": "St Jean Cap Martin",
       "coordinates": {
@@ -726,7 +726,7 @@
     {
       "id": "france43",
       "albumId": "france",
-      "url": "/images/albums/France/stjeancapmartin-beach-blue.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/France/stjeancapmartin-beach-blue.jpg",
       "caption": "Blue Waters at St Jean Cap Martin Beach",
       "locationId": "St Jean Cap Martin",
       "coordinates": {
@@ -744,7 +744,7 @@
     {
       "id": "france44",
       "albumId": "france",
-      "url": "/images/albums/France/stjeancapmartin-beach.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/France/stjeancapmartin-beach.jpg",
       "caption": "Beach at St Jean Cap Martin",
       "locationId": "St Jean Cap Martin",
       "coordinates": {
@@ -762,7 +762,7 @@
     {
       "id": "france45",
       "albumId": "france",
-      "url": "/images/albums/France/stjeancapmartin-beachlot.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/France/stjeancapmartin-beachlot.jpg",
       "caption": "Beach Area of St Jean Cap Martin",
       "locationId": "St Jean Cap Martin",
       "coordinates": {
@@ -780,7 +780,7 @@
     {
       "id": "france46",
       "albumId": "france",
-      "url": "/images/albums/France/stjeancapmartin-boats.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/France/stjeancapmartin-boats.jpg",
       "caption": "Boats in St Jean Cap Martin",
       "locationId": "St Jean Cap Martin",
       "coordinates": {
@@ -798,7 +798,7 @@
     {
       "id": "france47",
       "albumId": "france",
-      "url": "/images/albums/France/stjeancapmartin-grassybeach.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/France/stjeancapmartin-grassybeach.jpg",
       "caption": "Natural Beach Area with Vegetation",
       "locationId": "St Jean Cap Martin",
       "coordinates": {
@@ -816,7 +816,7 @@
     {
       "id": "france48",
       "albumId": "france",
-      "url": "/images/albums/France/stjeancapmartin-harbor-boats.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/France/stjeancapmartin-harbor-boats.jpg",
       "caption": "Harbor View with Boats",
       "locationId": "St Jean Cap Martin",
       "coordinates": {
@@ -834,7 +834,7 @@
     {
       "id": "france49",
       "albumId": "france",
-      "url": "/images/albums/France/stjeancapmartin-harbor.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/France/stjeancapmartin-harbor.jpg",
       "caption": "St Jean Cap Martin Harbor",
       "locationId": "St Jean Cap Martin",
       "coordinates": {
@@ -852,7 +852,7 @@
     {
       "id": "france50",
       "albumId": "france",
-      "url": "/images/albums/France/stjeancapmartin-quarry.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/France/stjeancapmartin-quarry.jpg",
       "caption": "Historic Quarry Site",
       "locationId": "St Jean Cap Martin",
       "coordinates": {
@@ -870,7 +870,7 @@
     {
       "id": "france51",
       "albumId": "france",
-      "url": "/images/albums/France/stjeancapmartin-restaurant.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/France/stjeancapmartin-restaurant.jpg",
       "caption": "Restaurant in St Jean Cap Martin",
       "locationId": "St Jean Cap Martin",
       "coordinates": {
@@ -888,7 +888,7 @@
     {
       "id": "france52",
       "albumId": "france",
-      "url": "/images/albums/France/stjeancapmartin-roof.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/France/stjeancapmartin-roof.jpg",
       "caption": "Traditional Roof Architecture",
       "locationId": "St Jean Cap Martin",
       "coordinates": {
@@ -906,7 +906,7 @@
     {
       "id": "france53",
       "albumId": "france",
-      "url": "/images/albums/France/stjeancapmartin-view-nice.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/France/stjeancapmartin-view-nice.jpg",
       "caption": "View Towards Nice",
       "locationId": "St Jean Cap Martin",
       "coordinates": {
@@ -924,7 +924,7 @@
     {
       "id": "france54",
       "albumId": "france",
-      "url": "/images/albums/France/stjeancapmartin-villa-back.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/France/stjeancapmartin-villa-back.jpg",
       "caption": "Back View of Villa",
       "locationId": "St Jean Cap Martin",
       "coordinates": {
@@ -942,7 +942,7 @@
     {
       "id": "france55",
       "albumId": "france",
-      "url": "/images/albums/France/stjeancapmartin-villa-backgarden.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/France/stjeancapmartin-villa-backgarden.jpg",
       "caption": "Villa Back Garden",
       "locationId": "St Jean Cap Martin",
       "coordinates": {
@@ -960,7 +960,7 @@
     {
       "id": "france56",
       "albumId": "france",
-      "url": "/images/albums/France/stjeancapmartin-villa-entry.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/France/stjeancapmartin-villa-entry.jpg",
       "caption": "Villa Entrance",
       "locationId": "St Jean Cap Martin",
       "coordinates": {
@@ -978,7 +978,7 @@
     {
       "id": "france57",
       "albumId": "france",
-      "url": "/images/albums/France/stjeancapmartin-villa-fountain.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/France/stjeancapmartin-villa-fountain.jpg",
       "caption": "Villa Fountain",
       "locationId": "St Jean Cap Martin",
       "coordinates": {
@@ -996,7 +996,7 @@
     {
       "id": "france58",
       "albumId": "france",
-      "url": "/images/albums/France/stjeancapmartin-villa-garden.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/France/stjeancapmartin-villa-garden.jpg",
       "caption": "Villa Garden",
       "locationId": "St Jean Cap Martin",
       "coordinates": {
@@ -1014,7 +1014,7 @@
     {
       "id": "france59",
       "albumId": "france",
-      "url": "/images/albums/France/stjeancapmartin-villa-gazebo.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/France/stjeancapmartin-villa-gazebo.jpg",
       "caption": "Villa Gazebo",
       "locationId": "St Jean Cap Martin",
       "coordinates": {
@@ -1032,7 +1032,7 @@
     {
       "id": "france60",
       "albumId": "france",
-      "url": "/images/albums/France/stjeancapmartin-villa-interior.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/France/stjeancapmartin-villa-interior.jpg",
       "caption": "Villa Interior",
       "locationId": "St Jean Cap Martin",
       "coordinates": {
@@ -1050,7 +1050,7 @@
     {
       "id": "france61",
       "albumId": "france",
-      "url": "/images/albums/France/stjeancapmartin-villa-oceanview.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/France/stjeancapmartin-villa-oceanview.jpg",
       "caption": "Villa Ocean View",
       "locationId": "St Jean Cap Martin",
       "coordinates": {
@@ -1068,7 +1068,7 @@
     {
       "id": "france62",
       "albumId": "france",
-      "url": "/images/albums/France/stjeancapmartin-villa.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/France/stjeancapmartin-villa.jpg",
       "caption": "Villa Overview",
       "locationId": "St Jean Cap Martin",
       "coordinates": {
@@ -1086,7 +1086,7 @@
     {
       "id": "france63",
       "albumId": "france",
-      "url": "/images/albums/France/stjeancapmartin-villafront.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/France/stjeancapmartin-villafront.jpg",
       "caption": "Villa Front View",
       "locationId": "St Jean Cap Martin",
       "coordinates": {
@@ -1104,7 +1104,7 @@
     {
       "id": "france64",
       "albumId": "france",
-      "url": "/images/albums/France/stjeancapmartin-vista.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/France/stjeancapmartin-vista.jpg",
       "caption": "Panoramic Vista of St Jean Cap Martin",
       "locationId": "St Jean Cap Martin",
       "coordinates": {
@@ -1122,7 +1122,7 @@
     {
       "id": "france65",
       "albumId": "france",
-      "url": "/images/albums/France/stjeancapmartin-restaurant.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/France/stjeancapmartin-restaurant.jpg",
       "caption": "Local Restaurant",
       "locationId": "St Jean Cap Martin",
       "coordinates": {
@@ -1140,7 +1140,7 @@
     {
       "id": "hk1",
       "albumId": "hongkong",
-      "url": "/images/albums/Hong-Kong/highrise-towers.jpeg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Hong-Kong/highrise-towers.jpeg",
       "caption": "Hong Kong Highrise Towers",
       "locationId": "Hong Kong",
       "coordinates": {
@@ -1158,7 +1158,7 @@
     {
       "id": "hk2",
       "albumId": "hongkong",
-      "url": "/images/albums/Hong-Kong/hongkong-ritzcarlton-pool.jpeg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Hong-Kong/hongkong-ritzcarlton-pool.jpeg",
       "caption": "Ritz-Carlton Pool",
       "locationId": "Hong Kong",
       "coordinates": {
@@ -1176,7 +1176,7 @@
     {
       "id": "hk3",
       "albumId": "hongkong",
-      "url": "/images/albums/Hong-Kong/hongkong-ritzcarlton.jpeg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Hong-Kong/hongkong-ritzcarlton.jpeg",
       "caption": "Ritz-Carlton Hotel",
       "locationId": "Hong Kong",
       "coordinates": {
@@ -1193,7 +1193,7 @@
     {
       "id": "hk4",
       "albumId": "hongkong",
-      "url": "/images/albums/Hong-Kong/hongkong-skyline-celtics.jpeg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Hong-Kong/hongkong-skyline-celtics.jpeg",
       "caption": "Hong Kong Skyline with Celtic Towers",
       "locationId": "Hong Kong",
       "coordinates": {
@@ -1211,7 +1211,7 @@
     {
       "id": "hk5",
       "albumId": "hongkong",
-      "url": "/images/albums/Hong-Kong/hongkong-skyline-hotel.jpeg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Hong-Kong/hongkong-skyline-hotel.jpeg",
       "caption": "Hong Kong Hotel Skyline View",
       "locationId": "Hong Kong",
       "coordinates": {
@@ -1229,7 +1229,7 @@
     {
       "id": "hk6",
       "albumId": "hongkong",
-      "url": "/images/albums/Hong-Kong/hongkong-skyline-icc.jpeg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Hong-Kong/hongkong-skyline-icc.jpeg",
       "caption": "ICC Tower Skyline",
       "locationId": "Hong Kong",
       "coordinates": {
@@ -1247,7 +1247,7 @@
     {
       "id": "hk7",
       "albumId": "hongkong",
-      "url": "/images/albums/Hong-Kong/hongkong-skyline-sunset.jpeg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Hong-Kong/hongkong-skyline-sunset.jpeg",
       "caption": "Hong Kong Sunset Skyline",
       "locationId": "Hong Kong",
       "coordinates": {
@@ -1265,7 +1265,7 @@
     {
       "id": "hk8",
       "albumId": "hongkong",
-      "url": "/images/albums/Hong-Kong/hongkong-skyline.jpeg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Hong-Kong/hongkong-skyline.jpeg",
       "caption": "Hong Kong Victoria Harbor Skyline",
       "locationId": "Hong Kong",
       "coordinates": {
@@ -1283,7 +1283,7 @@
     {
       "id": "hk9",
       "albumId": "hongkong",
-      "url": "/images/albums/Hong-Kong/hongkong-skyline2.jpeg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Hong-Kong/hongkong-skyline2.jpeg",
       "caption": "Hong Kong Night Skyline",
       "locationId": "Hong Kong",
       "coordinates": {
@@ -1301,7 +1301,7 @@
     {
       "id": "monaco1",
       "albumId": "monaco",
-      "url": "/images/albums/Monaco/monaco-casino.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Monaco/monaco-casino.jpg",
       "caption": "Monte Carlo Casino",
       "locationId": "Monte Carlo",
       "coordinates": {
@@ -1319,7 +1319,7 @@
     {
       "id": "monaco2",
       "albumId": "monaco",
-      "url": "/images/albums/Monaco/monaco-ferrari.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Monaco/monaco-ferrari.jpg",
       "caption": "Ferrari in Monte Carlo",
       "locationId": "Monte Carlo",
       "coordinates": {
@@ -1337,7 +1337,7 @@
     {
       "id": "monaco3",
       "albumId": "monaco",
-      "url": "/images/albums/Monaco/monaco-gardens.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Monaco/monaco-gardens.jpg",
       "caption": "Monaco Japanese Gardens",
       "locationId": "Monte Carlo",
       "coordinates": {
@@ -1355,7 +1355,7 @@
     {
       "id": "monaco4",
       "albumId": "monaco",
-      "url": "/images/albums/Monaco/monaco-harbor.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Monaco/monaco-harbor.jpg",
       "caption": "Port Hercule",
       "locationId": "Monte Carlo",
       "coordinates": {
@@ -1373,7 +1373,7 @@
     {
       "id": "monaco5",
       "albumId": "monaco",
-      "url": "/images/albums/Monaco/monaco-montecarlo-gardens.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Monaco/monaco-montecarlo-gardens.jpg",
       "caption": "Monte Carlo Gardens",
       "locationId": "Monte Carlo",
       "coordinates": {
@@ -1391,7 +1391,7 @@
     {
       "id": "monaco6",
       "albumId": "monaco",
-      "url": "/images/albums/Monaco/monaco-panorama.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Monaco/monaco-panorama.jpg",
       "caption": "Monaco Panoramic View",
       "locationId": "Monte Carlo",
       "coordinates": {
@@ -1409,7 +1409,7 @@
     {
       "id": "br1",
       "albumId": "brazil",
-      "url": "/images/albums/Brazil/beach-flags.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Brazil/beach-flags.jpg",
       "caption": "Colorful Beach Flags on Copacabana",
       "locationId": "Rio de Janeiro",
       "coordinates": {
@@ -1427,7 +1427,7 @@
     {
       "id": "br2",
       "albumId": "brazil",
-      "url": "/images/albums/Brazil/copacabana.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Brazil/copacabana.jpg",
       "caption": "Copacabana Beach Panorama",
       "locationId": "Rio de Janeiro",
       "coordinates": {
@@ -1445,7 +1445,7 @@
     {
       "id": "br3",
       "albumId": "brazil",
-      "url": "/images/albums/Brazil/helicopter-beach-waves.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Brazil/helicopter-beach-waves.jpg",
       "caption": "Aerial View of Rio's Coastline",
       "locationId": "Rio de Janeiro",
       "coordinates": {
@@ -1463,7 +1463,7 @@
     {
       "id": "br4",
       "albumId": "brazil",
-      "url": "/images/albums/Brazil/helicopter-beach.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Brazil/helicopter-beach.jpg",
       "caption": "Helicopter View of Rio Beaches",
       "locationId": "Rio de Janeiro",
       "coordinates": {
@@ -1481,7 +1481,7 @@
     {
       "id": "br5",
       "albumId": "brazil",
-      "url": "/images/albums/Brazil/helicopter-sprawl.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Brazil/helicopter-sprawl.jpg",
       "caption": "Rio Urban Sprawl from Above",
       "locationId": "Rio de Janeiro",
       "coordinates": {
@@ -1499,7 +1499,7 @@
     {
       "id": "br6",
       "albumId": "brazil",
-      "url": "/images/albums/Brazil/helicopter-statue-clouds.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Brazil/helicopter-statue-clouds.jpg",
       "caption": "Christ the Redeemer through Clouds",
       "locationId": "Rio de Janeiro",
       "coordinates": {
@@ -1517,7 +1517,7 @@
     {
       "id": "br7",
       "albumId": "brazil",
-      "url": "/images/albums/Brazil/helicopter-statue.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Brazil/helicopter-statue.jpg",
       "caption": "Aerial View of Christ the Redeemer",
       "locationId": "Rio de Janeiro",
       "coordinates": {
@@ -1535,7 +1535,7 @@
     {
       "id": "br8",
       "albumId": "brazil",
-      "url": "/Brazil/helicopter-beach-sugarloaf.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Brazil/helicopter-beach-sugarloaf.jpg",
       "caption": "Sugarloaf Mountain and Beaches",
       "locationId": "Rio de Janeiro",
       "coordinates": {
@@ -1553,7 +1553,7 @@
     {
       "id": "br9",
       "albumId": "brazil",
-      "url": "/images/albums/Brazil/leblon-beach-sunset.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Brazil/leblon-beach-sunset.jpg",
       "caption": "Leblon Beach at Sunset",
       "locationId": "Rio de Janeiro",
       "coordinates": {
@@ -1571,7 +1571,7 @@
     {
       "id": "br10",
       "albumId": "brazil",
-      "url": "/images/albums/Brazil/leblon-beach.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Brazil/leblon-beach.jpg",
       "caption": "Leblon Beach Panorama",
       "locationId": "Rio de Janeiro",
       "coordinates": {
@@ -1589,7 +1589,7 @@
     {
       "id": "br11",
       "albumId": "brazil",
-      "url": "/images/albums/Brazil/leblon-helicopter.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Brazil/leblon-helicopter.jpg",
       "caption": "Aerial View of Leblon",
       "locationId": "Rio de Janeiro",
       "coordinates": {
@@ -1607,7 +1607,7 @@
     {
       "id": "br12",
       "albumId": "brazil",
-      "url": "/images/albums/Brazil/leblon-hotel-beach.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Brazil/leblon-hotel-beach.jpg",
       "caption": "Leblon Hotel Beachfront",
       "locationId": "Rio de Janeiro",
       "coordinates": {
@@ -1625,7 +1625,7 @@
     {
       "id": "br13",
       "albumId": "brazil",
-      "url": "/images/albums/Brazil/leblon-hotel-rock.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Brazil/leblon-hotel-rock.jpg",
       "caption": "Leblon Hotel Rock Formation View",
       "locationId": "Rio de Janeiro",
       "coordinates": {
@@ -1643,7 +1643,7 @@
     {
       "id": "br14",
       "albumId": "brazil",
-      "url": "/images/albums/Brazil/leblon-hotel.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Brazil/leblon-hotel.jpg",
       "caption": "Leblon Luxury Hotel",
       "locationId": "Rio de Janeiro",
       "coordinates": {
@@ -1661,7 +1661,7 @@
     {
       "id": "br15",
       "albumId": "brazil",
-      "url": "/images/albums/Brazil/leblon-hotels.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Brazil/leblon-hotels.jpg",
       "caption": "Leblon Beachfront Hotels",
       "locationId": "Rio de Janeiro",
       "coordinates": {
@@ -1679,7 +1679,7 @@
     {
       "id": "br16",
       "albumId": "brazil",
-      "url": "/images/albums/Brazil/statue-dancer.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Brazil/statue-dancer.jpg",
       "caption": "Christ the Redeemer with Dancer",
       "locationId": "Rio de Janeiro",
       "coordinates": {
@@ -1697,7 +1697,7 @@
     {
       "id": "br17",
       "albumId": "brazil",
-      "url": "/images/albums/Brazil/statue-mist.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Brazil/statue-mist.jpg",
       "caption": "Christ the Redeemer in Morning Mist",
       "locationId": "Rio de Janeiro",
       "coordinates": {
@@ -1715,7 +1715,7 @@
     {
       "id": "vn1",
       "albumId": "vietnam",
-      "url": "/images/albums/Vietnam/beach-celtics.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Vietnam/beach-celtics.jpg",
       "caption": "Celtics Fan on Phu Quoc Beach",
       "locationId": "Phu Quoc",
       "coordinates": {
@@ -1733,7 +1733,7 @@
     {
       "id": "vn2",
       "albumId": "vietnam",
-      "url": "/images/albums/Vietnam/beach-huts.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Vietnam/beach-huts.jpg",
       "caption": "Traditional Beach Huts on Phu Quoc",
       "locationId": "Phu Quoc",
       "coordinates": {
@@ -1751,7 +1751,7 @@
     {
       "id": "vn3",
       "albumId": "vietnam",
-      "url": "/images/albums/Vietnam/beach-palmtree.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Vietnam/beach-palmtree.jpg",
       "caption": "Palm Trees on Phu Quoc Beach",
       "locationId": "Phu Quoc",
       "coordinates": {
@@ -1769,7 +1769,7 @@
     {
       "id": "vn4",
       "albumId": "vietnam",
-      "url": "/images/albums/Vietnam/horizon-boat.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Vietnam/horizon-boat.jpg",
       "caption": "Traditional Boat on Phu Quoc Horizon",
       "locationId": "Phu Quoc",
       "coordinates": {
@@ -1787,7 +1787,7 @@
     {
       "id": "vn5",
       "albumId": "vietnam",
-      "url": "/images/albums/Vietnam/hotel-infinity.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Vietnam/hotel-infinity.jpg",
       "caption": "Infinity Pool at Phu Quoc Resort",
       "locationId": "Phu Quoc",
       "coordinates": {
@@ -1805,7 +1805,7 @@
     {
       "id": "vn6",
       "albumId": "vietnam",
-      "url": "/images/albums/Vietnam/sunset-horizon.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Vietnam/sunset-horizon.jpg",
       "caption": "Sunset Over Phu Quoc Horizon",
       "locationId": "Phu Quoc",
       "coordinates": {
@@ -1823,7 +1823,7 @@
     {
       "id": "vn7",
       "albumId": "vietnam",
-      "url": "/images/albums/Vietnam/sunset-parachute.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Vietnam/sunset-parachute.jpg",
       "caption": "Parasailing at Sunset in Phu Quoc",
       "locationId": "Phu Quoc",
       "coordinates": {
@@ -1841,7 +1841,7 @@
     {
       "id": "vn8",
       "albumId": "vietnam",
-      "url": "/images/albums/Vietnam/sunset-penthouse.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Vietnam/sunset-penthouse.jpg",
       "caption": "Penthouse View at Sunset in Phu Quoc",
       "locationId": "Phu Quoc",
       "coordinates": {
@@ -1859,7 +1859,7 @@
     {
       "id": "vn9",
       "albumId": "vietnam",
-      "url": "/images/albums/Vietnam/temple.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Vietnam/temple.jpg",
       "caption": "Traditional Temple in Phu Quoc",
       "locationId": "Phu Quoc",
       "coordinates": {
@@ -1877,7 +1877,7 @@
     {
       "id": "sg1",
       "albumId": "singapore",
-      "url": "/images/albums/Singapore/sinapore-pool-tower.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Singapore/sinapore-pool-tower.jpg",
       "caption": "Pool View with Singapore Tower",
       "locationId": "Singapore",
       "coordinates": {
@@ -1895,7 +1895,7 @@
     {
       "id": "sg2",
       "albumId": "singapore",
-      "url": "/images/albums/Singapore/singapore-art-statue.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Singapore/singapore-art-statue.jpg",
       "caption": "Art Installation in Singapore",
       "locationId": "Singapore",
       "coordinates": {
@@ -1913,7 +1913,7 @@
     {
       "id": "sg3",
       "albumId": "singapore",
-      "url": "/images/albums/Singapore/singapore-india.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Singapore/singapore-india.jpg",
       "caption": "Little India District",
       "locationId": "Singapore",
       "coordinates": {
@@ -1931,7 +1931,7 @@
     {
       "id": "sg4",
       "albumId": "singapore",
-      "url": "/images/albums/Singapore/singapore-marinasands-tower.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Singapore/singapore-marinasands-tower.jpg",
       "caption": "Marina Sands Tower",
       "locationId": "Singapore",
       "coordinates": {
@@ -1949,7 +1949,7 @@
     {
       "id": "sg5",
       "albumId": "singapore",
-      "url": "/images/albums/Singapore/singapore-mosque.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Singapore/singapore-mosque.jpg",
       "caption": "Traditional Singapore Mosque",
       "locationId": "Singapore",
       "coordinates": {
@@ -1967,7 +1967,7 @@
     {
       "id": "sg6",
       "albumId": "singapore",
-      "url": "/images/albums/Singapore/singapore-pool-evening.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Singapore/singapore-pool-evening.jpg",
       "caption": "Evening at Infinity Pool",
       "locationId": "Singapore",
       "coordinates": {
@@ -1985,7 +1985,7 @@
     {
       "id": "sg7",
       "albumId": "singapore",
-      "url": "/images/albums/Singapore/singapore-pool-night.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Singapore/singapore-pool-night.jpg",
       "caption": "Night View from Infinity Pool",
       "locationId": "Singapore",
       "coordinates": {
@@ -2003,7 +2003,7 @@
     {
       "id": "sg8",
       "albumId": "singapore",
-      "url": "/images/albums/Singapore/singapore-pool-night2.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Singapore/singapore-pool-night2.jpg",
       "caption": "Nighttime Pool Panorama",
       "locationId": "Singapore",
       "coordinates": {
@@ -2021,7 +2021,7 @@
     {
       "id": "sg9",
       "albumId": "singapore",
-      "url": "/images/albums/Singapore/singapore-pool.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Singapore/singapore-pool.jpg",
       "caption": "Infinity Pool View",
       "locationId": "Singapore",
       "coordinates": {
@@ -2039,7 +2039,7 @@
     {
       "id": "sg10",
       "albumId": "singapore",
-      "url": "/images/albums/Singapore/singapore-sign.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Singapore/singapore-sign.jpg",
       "caption": "Singapore Welcome Sign",
       "locationId": "Singapore",
       "coordinates": {
@@ -2057,7 +2057,7 @@
     {
       "id": "sg11",
       "albumId": "singapore",
-      "url": "/images/albums/Singapore/singapore-skyline.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Singapore/singapore-skyline.jpg",
       "caption": "Singapore Skyline Panorama",
       "locationId": "Singapore",
       "coordinates": {
@@ -2075,7 +2075,7 @@
     {
       "id": "sg12",
       "albumId": "singapore",
-      "url": "/images/albums/Singapore/singapore-water-towers.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Singapore/singapore-water-towers.jpg",
       "caption": "Singapore Water Towers",
       "locationId": "Singapore",
       "coordinates": {
@@ -2093,7 +2093,7 @@
     {
       "id": "sg13",
       "albumId": "singapore",
-      "url": "/images/albums/Singapore/singaproe-marinasandsbay.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Singapore/singaproe-marinasandsbay.jpg",
       "caption": "Marina Sands Bay View",
       "locationId": "Singapore",
       "coordinates": {
@@ -2107,11 +2107,11 @@
         "waterfront",
         "landmark"
       ]
-    },
+    },  
     {
       "id": "my1",
       "albumId": "malaysia",
-      "url": "/images/albums/Malaysia/malaysia-balloons.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Malaysia/malaysia-balloons.jpg",
       "caption": "Colorful Balloons Display",
       "locationId": "Kuala Lumpur",
       "coordinates": {
@@ -2129,7 +2129,7 @@
     {
       "id": "my2",
       "albumId": "malaysia",
-      "url": "/images/albums/Malaysia/malaysia-buildings-petronas.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Malaysia/malaysia-buildings-petronas.jpg",
       "caption": "Petronas Towers Cityscape",
       "locationId": "Kuala Lumpur",
       "coordinates": {
@@ -2147,7 +2147,7 @@
     {
       "id": "my3",
       "albumId": "malaysia",
-      "url": "/images/albums/Malaysia/malaysia-clocktower.JPG",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Malaysia/malaysia-clocktower.JPG",
       "caption": "Historic Clock Tower",
       "locationId": "Kuala Lumpur",
       "coordinates": {
@@ -2165,7 +2165,7 @@
     {
       "id": "my4",
       "albumId": "malaysia",
-      "url": "/images/albums/Malaysia/malaysia-gold-statue-front.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Malaysia/malaysia-gold-statue-front.jpg",
       "caption": "Golden Statue Front View",
       "locationId": "Kuala Lumpur",
       "coordinates": {
@@ -2183,7 +2183,7 @@
     {
       "id": "my5",
       "albumId": "malaysia",
-      "url": "/images/albums/Malaysia/malaysia-gold-statute-behind.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Malaysia/malaysia-gold-statute-behind.jpg",
       "caption": "Golden Statue Rear View",
       "locationId": "Kuala Lumpur",
       "coordinates": {
@@ -2201,7 +2201,7 @@
     {
       "id": "my6",
       "albumId": "malaysia",
-      "url": "/images/albums/Malaysia/malaysia-hotel-pool-cloudy.JPG",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Malaysia/malaysia-hotel-pool-cloudy.JPG",
       "caption": "Hotel Pool on Cloudy Day",
       "locationId": "Kuala Lumpur",
       "coordinates": {
@@ -2219,7 +2219,7 @@
     {
       "id": "my7",
       "albumId": "malaysia",
-      "url": "/images/albums/Malaysia/malaysia-hotel-pool-dark.JPG",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Malaysia/malaysia-hotel-pool-dark.JPG",
       "caption": "Hotel Pool at Night",
       "locationId": "Kuala Lumpur",
       "coordinates": {
@@ -2237,7 +2237,7 @@
     {
       "id": "my8",
       "albumId": "malaysia",
-      "url": "/images/albums/Malaysia/malaysia-hotel-tub.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Malaysia/malaysia-hotel-tub.jpg",
       "caption": "Luxury Hotel Bathtub",
       "locationId": "Kuala Lumpur",
       "coordinates": {
@@ -2255,7 +2255,7 @@
     {
       "id": "my9",
       "albumId": "malaysia",
-      "url": "/images/albums/Malaysia/malaysia-petronas-clear.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Malaysia/malaysia-petronas-clear.jpg",
       "caption": "Petronas Towers Clear Sky View",
       "locationId": "Kuala Lumpur",
       "coordinates": {
@@ -2273,7 +2273,7 @@
     {
       "id": "my10",
       "albumId": "malaysia",
-      "url": "/images/albums/Malaysia/malaysia-petronas-couch.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Malaysia/malaysia-petronas-couch.jpg",
       "caption": "Petronas Towers View from Lounge",
       "locationId": "Kuala Lumpur",
       "coordinates": {
@@ -2291,7 +2291,7 @@
     {
       "id": "my11",
       "albumId": "malaysia",
-      "url": "/images/albums/Malaysia/malaysia-petronas-food.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Malaysia/malaysia-petronas-food.jpg",
       "caption": "Dining with Petronas View",
       "locationId": "Kuala Lumpur",
       "coordinates": {
@@ -2309,7 +2309,7 @@
     {
       "id": "my12",
       "albumId": "malaysia",
-      "url": "/images/albums/Malaysia/malaysia-petronas-lights-dark.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Malaysia/malaysia-petronas-lights-dark.jpg",
       "caption": "Petronas Towers Night Lights",
       "locationId": "Kuala Lumpur",
       "coordinates": {
@@ -2327,7 +2327,7 @@
     {
       "id": "my13",
       "albumId": "malaysia",
-      "url": "/images/albums/Malaysia/malaysia-petronas-night.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Malaysia/malaysia-petronas-night.jpg",
       "caption": "Petronas Towers Evening View",
       "locationId": "Kuala Lumpur",
       "coordinates": {
@@ -2345,7 +2345,7 @@
     {
       "id": "my14",
       "albumId": "malaysia",
-      "url": "/images/albums/Malaysia/malaysia-temple-colors.JPG",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Malaysia/malaysia-temple-colors.JPG",
       "caption": "Colorful Temple Architecture",
       "locationId": "Kuala Lumpur",
       "coordinates": {
@@ -2363,7 +2363,7 @@
     {
       "id": "my15",
       "albumId": "malaysia",
-      "url": "/images/albums/Malaysia/malaysia-temple-red.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Malaysia/malaysia-temple-red.jpg",
       "caption": "Red Temple Detail",
       "locationId": "Kuala Lumpur",
       "coordinates": {
@@ -2381,7 +2381,7 @@
     {
       "id": "my16",
       "albumId": "malaysia",
-      "url": "/images/albums/Malaysia/malaysia-tower-lights.JPG",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Malaysia/malaysia-tower-lights.JPG",
       "caption": "Tower Illumination at Night",
       "locationId": "Kuala Lumpur",
       "coordinates": {
@@ -2399,7 +2399,7 @@
     {
       "id": "my17",
       "albumId": "malaysia",
-      "url": "/images/albums/Malaysia/malaysia-under-petronas-bluesky.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Malaysia/malaysia-under-petronas-bluesky.jpg",
       "caption": "Under Petronas Towers Blue Sky",
       "locationId": "Kuala Lumpur",
       "coordinates": {
@@ -2417,7 +2417,7 @@
     {
       "id": "my18",
       "albumId": "malaysia",
-      "url": "/images/albums/Malaysia/malaysia-under-petronas.JPG",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Malaysia/malaysia-under-petronas.JPG",
       "caption": "Looking Up at Petronas Towers",
       "locationId": "Kuala Lumpur",
       "coordinates": {
@@ -2435,7 +2435,7 @@
     {
       "id": "si1",
       "albumId": "slovenia",
-      "url": "/images/albums/Slovenia/ljubljana-bridge.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Slovenia/ljubljana-bridge.jpg",
       "caption": "Bridge in Ljubljana",
       "locationId": "Ljubljana",
       "coordinates": {
@@ -2453,7 +2453,7 @@
     {
       "id": "si2",
       "albumId": "slovenia",
-      "url": "/images/albums/Slovenia/ljubljana-cafe-canal.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Slovenia/ljubljana-cafe-canal.jpg",
       "caption": "Riverside Cafe in Ljubljana",
       "locationId": "Ljubljana",
       "coordinates": {
@@ -2471,7 +2471,7 @@
     {
       "id": "si3",
       "albumId": "slovenia",
-      "url": "/images/albums/Slovenia/ljubljana-canal-bridge.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Slovenia/ljubljana-canal-bridge.jpg",
       "caption": "Canal and Bridge View in Ljubljana",
       "locationId": "Ljubljana",
       "coordinates": {
@@ -2489,7 +2489,7 @@
     {
       "id": "si4",
       "albumId": "slovenia",
-      "url": "/images/albums/Slovenia/ljubljana-castle-distance.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Slovenia/ljubljana-castle-distance.jpg",
       "caption": "Ljubljana Castle from Distance",
       "locationId": "Ljubljana",
       "coordinates": {
@@ -2507,7 +2507,7 @@
     {
       "id": "si5",
       "albumId": "slovenia",
-      "url": "/images/albums/Slovenia/ljubljana-castle.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Slovenia/ljubljana-castle.jpg",
       "caption": "Ljubljana Castle Close-up",
       "locationId": "Ljubljana",
       "coordinates": {
@@ -2525,7 +2525,7 @@
     {
       "id": "si6",
       "albumId": "slovenia",
-      "url": "/images/albums/Slovenia/ljubljana-church.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Slovenia/ljubljana-church.jpg",
       "caption": "Church in Ljubljana",
       "locationId": "Ljubljana",
       "coordinates": {
@@ -2543,7 +2543,7 @@
     {
       "id": "si7",
       "albumId": "slovenia",
-      "url": "/images/albums/Slovenia/piran-beach-tower.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Slovenia/piran-beach-tower.jpg",
       "caption": "Beach and Tower in Piran",
       "locationId": "Piran",
       "coordinates": {
@@ -2561,7 +2561,7 @@
     {
       "id": "si8",
       "albumId": "slovenia",
-      "url": "/images/albums/Slovenia/piran-courtyard.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Slovenia/piran-courtyard.jpg",
       "caption": "Historic Courtyard in Piran",
       "locationId": "Piran",
       "coordinates": {
@@ -2579,7 +2579,7 @@
     {
       "id": "si9",
       "albumId": "slovenia",
-      "url": "/images/albums/Slovenia/piran-evening.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Slovenia/piran-evening.jpg",
       "caption": "Evening in Piran",
       "locationId": "Piran",
       "coordinates": {
@@ -2597,7 +2597,7 @@
     {
       "id": "si10",
       "albumId": "slovenia",
-      "url": "/images/albums/Slovenia/piran-rooftops-ocean.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Slovenia/piran-rooftops-ocean.jpg",
       "caption": "Piran Rooftops with Ocean View",
       "locationId": "Piran",
       "coordinates": {
@@ -2615,7 +2615,7 @@
     {
       "id": "si11",
       "albumId": "slovenia",
-      "url": "/images/albums/Slovenia/piran-rooftops.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Slovenia/piran-rooftops.jpg",
       "caption": "Piran Rooftops",
       "locationId": "Piran",
       "coordinates": {
@@ -2633,7 +2633,7 @@
     {
       "id": "si12",
       "albumId": "slovenia",
-      "url": "/images/albums/Slovenia/piran-tower-flowers.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Slovenia/piran-tower-flowers.jpg",
       "caption": "Tower and Flowers in Piran",
       "locationId": "Piran",
       "coordinates": {
@@ -2651,7 +2651,7 @@
     {
       "id": "si13",
       "albumId": "slovenia",
-      "url": "/images/albums/Slovenia/slovenia-mountains.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Slovenia/slovenia-mountains.jpg",
       "caption": "Slovenian Mountains",
       "locationId": "Ljubljana",
       "coordinates": {
@@ -2669,7 +2669,7 @@
     {
       "id": "it01",
       "albumId": "italy",
-      "url": "/images/albums/Italy/ferrara-castle.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Italy/ferrara-castle.jpg",
       "caption": "Historic Castle of Ferrara",
       "locationId": "Ferrara",
       "coordinates": {
@@ -2687,7 +2687,7 @@
     {
       "id": "it02",
       "albumId": "italy",
-      "url": "/images/albums/Italy/ferrara-communal.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Italy/ferrara-communal.jpg",
       "caption": "Ferrara Communal Palace",
       "locationId": "Ferrara",
       "coordinates": {
@@ -2705,7 +2705,7 @@
     {
       "id": "it03",
       "albumId": "italy",
-      "url": "/images/albums/Italy/ferrara-square.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Italy/ferrara-square.jpg",
       "caption": "Ferrara Main Square",
       "locationId": "Ferrara",
       "coordinates": {
@@ -2723,7 +2723,7 @@
     {
       "id": "it04",
       "albumId": "italy",
-      "url": "/images/albums/Italy/ferrara-tower.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Italy/ferrara-tower.jpg",
       "caption": "Tower of Ferrara",
       "locationId": "Ferrara",
       "coordinates": {
@@ -2741,7 +2741,7 @@
     {
       "id": "it05",
       "albumId": "italy",
-      "url": "/images/albums/Italy/ferrara-tower2.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Italy/ferrara-tower2.jpg",
       "caption": "Ferrara Tower Alternative View",
       "locationId": "Ferrara",
       "coordinates": {
@@ -2759,7 +2759,7 @@
     {
       "id": "ch01",
       "albumId": "switzerland",
-      "url": "/images/albums/Switzerland/zurich-cafe-flag.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Switzerland/zurich-cafe-flag.jpg",
       "caption": "Swiss Cafe with National Flag",
       "locationId": "Zurich",
       "coordinates": {
@@ -2777,7 +2777,7 @@
     {
       "id": "ch02",
       "albumId": "switzerland",
-      "url": "/images/albums/Switzerland/zurich-canal-bridge.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Switzerland/zurich-canal-bridge.jpg",
       "caption": "Bridge Over Limmat River",
       "locationId": "Zurich",
       "coordinates": {
@@ -2795,7 +2795,7 @@
     {
       "id": "ch03",
       "albumId": "switzerland",
-      "url": "/images/albums/Switzerland/zurich-clocktower.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Switzerland/zurich-clocktower.jpg",
       "caption": "Historic Zurich Clock Tower",
       "locationId": "Zurich",
       "coordinates": {
@@ -2813,7 +2813,7 @@
     {
       "id": "ch04",
       "albumId": "switzerland",
-      "url": "/images/albums/Switzerland/zurich-river-boats-dusk.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Switzerland/zurich-river-boats-dusk.jpg",
       "caption": "Limmat River Boats at Dusk",
       "locationId": "Zurich",
       "coordinates": {
@@ -2831,7 +2831,7 @@
     {
       "id": "ch05",
       "albumId": "switzerland",
-      "url": "/images/albums/Switzerland/zurich-river-boats.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Switzerland/zurich-river-boats.jpg",
       "caption": "Boats on Limmat River",
       "locationId": "Zurich",
       "coordinates": {
@@ -2849,7 +2849,7 @@
     {
       "id": "ch06",
       "albumId": "switzerland",
-      "url": "/images/albums/Switzerland/zurich-river-bridge.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Switzerland/zurich-river-bridge.jpg",
       "caption": "Bridge Crossing Limmat River",
       "locationId": "Zurich",
       "coordinates": {
@@ -2867,7 +2867,7 @@
     {
       "id": "ch07",
       "albumId": "switzerland",
-      "url": "/images/albums/Switzerland/zurich-river-clocktower.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Switzerland/zurich-river-clocktower.jpg",
       "caption": "Clock Tower View from River",
       "locationId": "Zurich",
       "coordinates": {
@@ -2885,7 +2885,7 @@
     {
       "id": "ch08",
       "albumId": "switzerland",
-      "url": "/images/albums/Switzerland/zurich-river-dusk.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Switzerland/zurich-river-dusk.jpg",
       "caption": "Limmat River at Dusk",
       "locationId": "Zurich",
       "coordinates": {
@@ -2903,7 +2903,7 @@
     {
       "id": "ch09",
       "albumId": "switzerland",
-      "url": "/images/albums/Switzerland/zurich-river-tower.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Switzerland/zurich-river-tower.jpg",
       "caption": "Tower Along Limmat River",
       "locationId": "Zurich",
       "coordinates": {
@@ -2921,7 +2921,7 @@
     {
       "id": "ch10",
       "albumId": "switzerland",
-      "url": "/images/albums/Switzerland/zurich-river.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Switzerland/zurich-river.jpg",
       "caption": "Limmat River View",
       "locationId": "Zurich",
       "coordinates": {
@@ -2939,7 +2939,7 @@
     {
       "id": "ch11",
       "albumId": "switzerland",
-      "url": "/images/albums/Switzerland/zurich-street-flags.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Switzerland/zurich-street-flags.jpg",
       "caption": "Zurich Street with Swiss Flags",
       "locationId": "Zurich",
       "coordinates": {
@@ -2957,7 +2957,7 @@
     {
       "id": "ch12",
       "albumId": "switzerland",
-      "url": "/images/albums/Switzerland/zurich-tower-river.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Switzerland/zurich-tower-river.jpg",
       "caption": "Tower View with River",
       "locationId": "Zurich",
       "coordinates": {
@@ -2975,7 +2975,7 @@
     {
       "id": "ch13",
       "albumId": "switzerland",
-      "url": "/images/albums/Switzerland/zurich-tower.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Switzerland/zurich-tower.jpg",
       "caption": "Historic Zurich Tower",
       "locationId": "Zurich",
       "coordinates": {
@@ -2993,7 +2993,7 @@
     {
       "id": "ch14",
       "albumId": "switzerland",
-      "url": "/images/albums/Switzerland/zurich-tram.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Switzerland/zurich-tram.jpg",
       "caption": "Zurich City Tram",
       "locationId": "Zurich",
       "coordinates": {
@@ -3011,7 +3011,7 @@
     {
       "id": "uy01",
       "albumId": "uruguay",
-      "url": "/images/albums/Uruguay/montevideo-building.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Uruguay/montevideo-building.jpg",
       "caption": "Historic Building in Montevideo",
       "locationId": "Montevideo",
       "coordinates": {
@@ -3029,7 +3029,7 @@
     {
       "id": "uy02",
       "albumId": "uruguay",
-      "url": "/images/albums/Uruguay/montevideo-church.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Uruguay/montevideo-church.jpg",
       "caption": "Metropolitan Cathedral of Montevideo",
       "locationId": "Montevideo",
       "coordinates": {
@@ -3047,7 +3047,7 @@
     {
       "id": "uy03",
       "albumId": "uruguay",
-      "url": "/images/albums/Uruguay/montevideo-palmtree.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Uruguay/montevideo-palmtree.jpg",
       "caption": "Palm Trees along Montevideo Waterfront",
       "locationId": "Montevideo",
       "coordinates": {
@@ -3065,7 +3065,7 @@
     {
       "id": "uy04",
       "albumId": "uruguay",
-      "url": "/images/albums/Uruguay/montevideo-sign.JPG",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Uruguay/montevideo-sign.JPG",
       "caption": "Montevideo City Sign",
       "locationId": "Montevideo",
       "coordinates": {
@@ -3083,7 +3083,7 @@
     {
       "id": "uy05",
       "albumId": "uruguay",
-      "url": "/images/albums/Uruguay/montevideo-statue-building.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Uruguay/montevideo-statue-building.jpg",
       "caption": "Statue in front of Historic Building",
       "locationId": "Montevideo",
       "coordinates": {
@@ -3101,7 +3101,7 @@
     {
       "id": "uy06",
       "albumId": "uruguay",
-      "url": "/images/albums/Uruguay/montevideo-statue-townsquare.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Uruguay/montevideo-statue-townsquare.jpg",
       "caption": "Town Square Monument",
       "locationId": "Montevideo",
       "coordinates": {
@@ -3119,7 +3119,7 @@
     {
       "id": "uy07",
       "albumId": "uruguay",
-      "url": "/images/albums/Uruguay/montevideo-statue.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Uruguay/montevideo-statue.jpg",
       "caption": "Public Art Installation",
       "locationId": "Montevideo",
       "coordinates": {
@@ -3137,7 +3137,7 @@
     {
       "id": "uy08",
       "albumId": "uruguay",
-      "url": "/images/albums/Uruguay/montevideo-streetart.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Uruguay/montevideo-streetart.jpg",
       "caption": "Colorful Street Art Mural",
       "locationId": "Montevideo",
       "coordinates": {
@@ -3155,7 +3155,7 @@
     {
       "id": "cl01",
       "albumId": "chile",
-      "url": "/images/albums/Chile/santiago-clocktower.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Chile/santiago-clocktower.jpg",
       "caption": "Historic Clock Tower in Santiago",
       "locationId": "Santiago",
       "coordinates": {
@@ -3173,7 +3173,7 @@
     {
       "id": "cl02",
       "albumId": "chile",
-      "url": "/images/albums/Chile/santiago-tower.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Chile/santiago-tower.jpg",
       "caption": "Modern Tower in Santiago Skyline",
       "locationId": "Santiago",
       "coordinates": {
@@ -3191,7 +3191,7 @@
     {
       "id": "cl03",
       "albumId": "chile",
-      "url": "/images/albums/Chile/easter-island-status-dog.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Chile/easter-island-status-dog.jpg",
       "caption": "Moai Statues with Dog in Foreground",
       "locationId": "Easter Island",
       "coordinates": {
@@ -3209,7 +3209,7 @@
     {
       "id": "cl04",
       "albumId": "chile",
-      "url": "/images/albums/Chile/easterisland-5statues.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Chile/easterisland-5statues.jpg",
       "caption": "Five Moai Statues at Ahu",
       "locationId": "Ahu Tongariki",
       "coordinates": {
@@ -3227,7 +3227,7 @@
     {
       "id": "cl05",
       "albumId": "chile",
-      "url": "/images/albums/Chile/easterisland-blueocean.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Chile/easterisland-blueocean.jpg",
       "caption": "Moai with Blue Ocean Vista",
       "locationId": "Easter Island",
       "coordinates": {
@@ -3245,7 +3245,7 @@
     {
       "id": "cl06",
       "albumId": "chile",
-      "url": "/images/albums/Chile/easterisland-cliffside.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Chile/easterisland-cliffside.jpg",
       "caption": "Cliffside View of Easter Island",
       "locationId": "Easter Island",
       "coordinates": {
@@ -3263,7 +3263,7 @@
     {
       "id": "cl07",
       "albumId": "chile",
-      "url": "/images/albums/Chile/easterisland-crater.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Chile/easterisland-crater.jpg",
       "caption": "Rano Kau Volcanic Crater",
       "locationId": "Rano Kau",
       "coordinates": {
@@ -3281,7 +3281,7 @@
     {
       "id": "cl08",
       "albumId": "chile",
-      "url": "/images/albums/Chile/easterisland-facestatue.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Chile/easterisland-facestatue.jpg",
       "caption": "Close-up of Moai Face",
       "locationId": "Easter Island",
       "coordinates": {
@@ -3299,7 +3299,7 @@
     {
       "id": "cl09",
       "albumId": "chile",
-      "url": "/images/albums/Chile/easterisland-harbor-moai.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Chile/easterisland-harbor-moai.jpg",
       "caption": "Moai Near Harbor",
       "locationId": "Easter Island",
       "coordinates": {
@@ -3317,7 +3317,7 @@
     {
       "id": "cl10",
       "albumId": "chile",
-      "url": "/images/albums/Chile/easterisland-harbor-statue.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Chile/easterisland-harbor-statue.jpg",
       "caption": "Harbor View with Moai",
       "locationId": "Easter Island",
       "coordinates": {
@@ -3335,7 +3335,7 @@
     {
       "id": "cl11",
       "albumId": "chile",
-      "url": "/images/albums/Chile/easterisland-moai-hat.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Chile/easterisland-moai-hat.jpg",
       "caption": "Moai with Traditional Pukao Topknot",
       "locationId": "Easter Island",
       "coordinates": {
@@ -3353,7 +3353,7 @@
     {
       "id": "cl12",
       "albumId": "chile",
-      "url": "/images/albums/Chile/easterisland-moai.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Chile/easterisland-moai.jpg",
       "caption": "Solitary Moai Statue",
       "locationId": "Easter Island",
       "coordinates": {
@@ -3371,7 +3371,7 @@
     {
       "id": "cl13",
       "albumId": "chile",
-      "url": "/images/albums/Chile/easterisland-statue-grassrow.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Chile/easterisland-statue-grassrow.jpg",
       "caption": "Row of Moai on Grassy Hill",
       "locationId": "Ahu Tongariki",
       "coordinates": {
@@ -3389,7 +3389,7 @@
     {
       "id": "cl14",
       "albumId": "chile",
-      "url": "/images/albums/Chile/easterisland-statue-sunset-profile.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Chile/easterisland-statue-sunset-profile.jpg",
       "caption": "Moai Profile at Sunset",
       "locationId": "Easter Island",
       "coordinates": {
@@ -3407,7 +3407,7 @@
     {
       "id": "cl15",
       "albumId": "chile",
-      "url": "/images/albums/Chile/easterisland-statue.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Chile/easterisland-statue.jpg",
       "caption": "Individual Moai Statue",
       "locationId": "Easter Island",
       "coordinates": {
@@ -3425,7 +3425,7 @@
     {
       "id": "cl16",
       "albumId": "chile",
-      "url": "/images/albums/Chile/easterisland-statuerow-sunset.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Chile/easterisland-statuerow-sunset.jpg",
       "caption": "Row of Moai at Sunset",
       "locationId": "Ahu Tongariki",
       "coordinates": {
@@ -3443,7 +3443,7 @@
     {
       "id": "cl17",
       "albumId": "chile",
-      "url": "/images/albums/Chile/easterisland-statuerow.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Chile/easterisland-statuerow.jpg",
       "caption": "Row of Moai in Daylight",
       "locationId": "Ahu Tongariki",
       "coordinates": {
@@ -3461,7 +3461,7 @@
     {
       "id": "cl18",
       "albumId": "chile",
-      "url": "/images/albums/Chile/easterisland-statues-backisland.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Chile/easterisland-statues-backisland.jpg",
       "caption": "Moai with Island Background",
       "locationId": "Easter Island",
       "coordinates": {
@@ -3479,7 +3479,7 @@
     {
       "id": "cl19",
       "albumId": "chile",
-      "url": "/images/albums/Chile/easterisland-statues-close.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Chile/easterisland-statues-close.jpg",
       "caption": "Close-up of Multiple Moai",
       "locationId": "Easter Island",
       "coordinates": {
@@ -3497,7 +3497,7 @@
     {
       "id": "cl20",
       "albumId": "chile",
-      "url": "/images/albums/Chile/easterisland-statues-cloudy.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Chile/easterisland-statues-cloudy.jpg",
       "caption": "Moai Under Cloudy Sky",
       "locationId": "Easter Island",
       "coordinates": {
@@ -3515,7 +3515,7 @@
     {
       "id": "cl21",
       "albumId": "chile",
-      "url": "/images/albums/Chile/easterisland-statues-dark.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Chile/easterisland-statues-dark.jpg",
       "caption": "Moai in Low Light",
       "locationId": "Easter Island",
       "coordinates": {
@@ -3533,7 +3533,7 @@
     {
       "id": "cl22",
       "albumId": "chile",
-      "url": "/images/albums/Chile/easterisland-statues-dog-statue.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Chile/easterisland-statues-dog-statue.jpg",
       "caption": "Dog Near Moai Statues",
       "locationId": "Easter Island",
       "coordinates": {
@@ -3551,7 +3551,7 @@
     {
       "id": "cl23",
       "albumId": "chile",
-      "url": "/images/albums/Chile/easterisland-statues-lawn.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Chile/easterisland-statues-lawn.jpg",
       "caption": "Moai on Grassy Field",
       "locationId": "Easter Island",
       "coordinates": {
@@ -3569,7 +3569,7 @@
     {
       "id": "cl24",
       "albumId": "chile",
-      "url": "/images/albums/Chile/easterisland-statues-lawns.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Chile/easterisland-statues-lawns.jpg",
       "caption": "Multiple Moai on Grass",
       "locationId": "Easter Island",
       "coordinates": {
@@ -3587,7 +3587,7 @@
     {
       "id": "cl25",
       "albumId": "chile",
-      "url": "/images/albums/Chile/easterisland-statues-nosun.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Chile/easterisland-statues-nosun.jpg",
       "caption": "Moai on Overcast Day",
       "locationId": "Easter Island",
       "coordinates": {
@@ -3605,7 +3605,7 @@
     {
       "id": "cl26",
       "albumId": "chile",
-      "url": "/images/albums/Chile/easterisland-statues-ocean-profile.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Chile/easterisland-statues-ocean-profile.jpg",
       "caption": "Profile View of Moai by Ocean",
       "locationId": "Easter Island",
       "coordinates": {
@@ -3623,7 +3623,7 @@
     {
       "id": "cl27",
       "albumId": "chile",
-      "url": "/images/albums/Chile/easterisland-statues-ocean.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Chile/easterisland-statues-ocean.jpg",
       "caption": "Moai Overlooking Ocean",
       "locationId": "Easter Island",
       "coordinates": {
@@ -3641,7 +3641,7 @@
     {
       "id": "cl28",
       "albumId": "chile",
-      "url": "/images/albums/Chile/easterisland-statues-panorama.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Chile/easterisland-statues-panorama.jpg",
       "caption": "Panoramic View of Moai Statues",
       "locationId": "Ahu Tongariki",
       "coordinates": {
@@ -3659,7 +3659,7 @@
     {
       "id": "cl29",
       "albumId": "chile",
-      "url": "/images/albums/Chile/easterisland-statues-redsky.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Chile/easterisland-statues-redsky.jpg",
       "caption": "Moai Against Red Sunset Sky",
       "locationId": "Easter Island",
       "coordinates": {
@@ -3677,7 +3677,7 @@
     {
       "id": "cl30",
       "albumId": "chile",
-      "url": "/images/albums/Chile/easterisland-statues-shade.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Chile/easterisland-statues-shade.jpg",
       "caption": "Moai in Natural Shade",
       "locationId": "Easter Island",
       "coordinates": {
@@ -3695,7 +3695,7 @@
     {
       "id": "cl31",
       "albumId": "chile",
-      "url": "/images/albums/Chile/easterisland-statues-side.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Chile/easterisland-statues-side.jpg",
       "caption": "Side View of Moai Statues",
       "locationId": "Easter Island",
       "coordinates": {
@@ -3713,7 +3713,7 @@
     {
       "id": "cl32",
       "albumId": "chile",
-      "url": "/images/albums/Chile/easterisland-statues-solo-sunset.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Chile/easterisland-statues-solo-sunset.jpg",
       "caption": "Single Moai at Sunset",
       "locationId": "Easter Island",
       "coordinates": {
@@ -3731,7 +3731,7 @@
     {
       "id": "cl33",
       "albumId": "chile",
-      "url": "/images/albums/Chile/easterisland-statues-sun-angle.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Chile/easterisland-statues-sun-angle.jpg",
       "caption": "Moai with Angled Sunlight",
       "locationId": "Easter Island",
       "coordinates": {
@@ -3749,7 +3749,7 @@
     {
       "id": "cl34",
       "albumId": "chile",
-      "url": "/images/albums/Chile/easterisland-statues-sunbehind.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Chile/easterisland-statues-sunbehind.jpg",
       "caption": "Moai Silhouetted Against Sun",
       "locationId": "Easter Island",
       "coordinates": {
@@ -3767,7 +3767,7 @@
     {
       "id": "cl35",
       "albumId": "chile",
-      "url": "/images/albums/Chile/easterisland-statues-sunbehindlower.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Chile/easterisland-statues-sunbehindlower.jpg",
       "caption": "Moai with Low Sun Behind",
       "locationId": "Easter Island",
       "coordinates": {
@@ -3785,7 +3785,7 @@
     {
       "id": "cl36",
       "albumId": "chile",
-      "url": "/images/albums/Chile/easterisland-statues-sunbehindwide.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Chile/easterisland-statues-sunbehindwide.jpg",
       "caption": "Wide Shot of Backlit Moai",
       "locationId": "Easter Island",
       "coordinates": {
@@ -3803,7 +3803,7 @@
     {
       "id": "cl37",
       "albumId": "chile",
-      "url": "/images/albums/Chile/easterisland-statues-suncloud.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Chile/easterisland-statues-suncloud.jpg",
       "caption": "Moai Under Sun and Clouds",
       "locationId": "Easter Island",
       "coordinates": {
@@ -3821,7 +3821,7 @@
     {
       "id": "cl38",
       "albumId": "chile",
-      "url": "/images/albums/Chile/easterisland-statues-sunclouds.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Chile/easterisland-statues-sunclouds.jpg",
       "caption": "Moai with Dramatic Sky",
       "locationId": "Easter Island",
       "coordinates": {
@@ -3839,7 +3839,7 @@
     {
       "id": "cl39",
       "albumId": "chile",
-      "url": "/images/albums/Chile/easterisland-statues-sunglare.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Chile/easterisland-statues-sunglare.jpg",
       "caption": "Moai with Sun Glare Effect",
       "locationId": "Easter Island",
       "coordinates": {
@@ -3857,7 +3857,7 @@
     {
       "id": "cl40",
       "albumId": "chile",
-      "url": "/images/albums/Chile/easterisland-statues-sunhorizon.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Chile/easterisland-statues-sunhorizon.jpg",
       "caption": "Moai at Horizon with Setting Sun",
       "locationId": "Easter Island",
       "coordinates": {
@@ -3875,7 +3875,7 @@
     {
       "id": "cl41",
       "albumId": "chile",
-      "url": "/images/albums/Chile/easterislandstatues-sunlower-wide.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Chile/easterislandstatues-sunlower-wide.jpg",
       "caption": "Wide View of Moai at Sunset",
       "locationId": "Easter Island",
       "coordinates": {
@@ -3893,7 +3893,7 @@
     {
       "id": "cl42",
       "albumId": "chile",
-      "url": "/images/albums/Chile/easterislandsunset-behind.jpg",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Chile/easterislandsunset-behind.jpg",
       "caption": "Sunset Behind Moai",
       "locationId": "Easter Island",
       "coordinates": {
