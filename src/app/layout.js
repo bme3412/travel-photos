@@ -1,27 +1,22 @@
+// app/layout.js
 import './globals.css'
-import { Lora } from 'next/font/google'
 
-const lora = Lora({
-  subsets: ['latin'],
-  weight: ['400', '600', '700'],
-  display: 'swap',
-})
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1
+};
 
 export const metadata = {
-  title: 'Where to next?',
-  description: 'Relive your journeys around the world',
-  viewport: 'width=device-width, initial-scale=1',
-  icons: {
-    icon: '/favicon.ico',
-  },
-}
+  title: 'Travel Photo Albums',
+  description: 'A collection of travel photographs from around the world',
+};
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={lora.className}>
-      <body className="bg-gray-100 text-gray-800 antialiased">
+    <html lang="en">
+      <body className="min-h-screen bg-white">
         {children}
       </body>
     </html>
-  )
+  );
 }

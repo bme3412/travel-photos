@@ -4,17 +4,19 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'global-travel.s3.us-east-1.amazonaws.com',
+        hostname: 'd1mnon53ja4k10.cloudfront.net',
+        port: '',
         pathname: '/albums/**',
       }
     ],
-    formats: ['image/avif', 'image/webp'],
-    deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
-    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
+    minimumCacheTTL: 60,
     dangerouslyAllowSVG: true,
-    contentDispositionType: 'attachment',
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
+  },
+  // Only fetch images that exist in your S3 bucket
+  async redirects() {
+    return [];
   }
-};
+}
 
 module.exports = nextConfig;
