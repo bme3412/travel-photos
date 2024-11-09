@@ -103,7 +103,7 @@ export default function AlbumMap({ album, onLocationSelect }) {
         // Create map
         mapInstance.current = new mapboxgl.Map({
           container: mapContainer.current,
-          style: 'mapbox://styles/mapbox/light-v11',
+          style: 'mapbox://styles/mapbox/streets-v12',
           bounds: bounds,
           fitBoundsOptions: { 
             padding: 50,
