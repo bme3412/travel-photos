@@ -7,6 +7,12 @@ const nextConfig = {
         hostname: 'd1mnon53ja4k10.cloudfront.net',
         port: '',
         pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'global-travel.s3.us-east-1.amazonaws.com',
+        port: '',
+        pathname: '/albums/**',
       }
     ],
     minimumCacheTTL: 3600,

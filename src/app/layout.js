@@ -21,7 +21,7 @@ export default function RootLayout({ children }) {
                   🌎 Passport & Ponder 🛫
                 </h1>
                 <p className="text-lg text-gray-600 font-medium tracking-wide transform transition-all duration-300 group-hover:text-teal-600">
-                  Exploring the world, one story at a time
+                  Exploring the world, one two-week trip at a time
                 </p>
               </Link>
             </div>
@@ -49,7 +49,7 @@ export default function RootLayout({ children }) {
                 </span>
               </Link>
               <Link
-                href="/albums"
+                href="/photo-of-the-day"
                 className="group flex items-center px-6 py-6 text-gray-700 hover:text-teal-600 font-medium transition-all duration-200 hover:border-t-2 hover:border-teal-600 -mt-[1px] relative"
               >
                 <Camera className="w-5 h-5 mr-2 group-hover:text-teal-600 transition-colors" />
@@ -98,7 +98,7 @@ export default function RootLayout({ children }) {
                   <span className="absolute bottom-0 left-0 w-1/2 h-0.5 bg-teal-500"></span>
                 </h3>
                 <p className="text-gray-300 leading-relaxed">
-                  Documenting my journey around the world through photographs and stories, capturing moments that inspire and connect us all.
+                  Documenting my journey around the world through photographs and stories.
                 </p>
               </div>
 
