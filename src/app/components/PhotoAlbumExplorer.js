@@ -1,11 +1,11 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Search as SearchIcon, Camera as CameraIcon, MapPin } from 'lucide-react';
+import { Camera as CameraIcon, MapPin } from 'lucide-react';
 import AlbumFilters from './AlbumFilters';
-import { default as usePhotoStore } from '../store/usePhotoStore';
+import usePhotoStore from '../store/usePhotoStore';  // Fixed import
 import countriesData from '../../data/countries.json';
 import photosData from '../../data/photos.json';
 
@@ -18,19 +18,60 @@ const transformToCloudFront = (url) => {
   return `https://d1mnon53ja4k10.cloudfront.net/${path}`;
 };
 
-const PhotoAlbumExplorer = () => {
-  const {
-    albums,
-    activeYear,
-    activeCountry,
-    setActiveYear,
-    setActiveCountry,
-    setAlbums,
-    setLoading,
-    setError,
-  } = usePhotoStore();
+const AlbumCard = ({ album, photo }) => {
+  const coverPhotoUrl = photo?.url ? transformToCloudFront(photo.url) : null;
 
-  const [searchTerm, setSearchTerm] = useState("");
+  return (
+    <Link href={`/albums/${album.id}`} className="group">
+      <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+        <div className="relative h-64 bg-gray-200">
+          {coverPhotoUrl ? (
+            <div className="relative w-full h-full">
+              <Image
+                src={coverPhotoUrl}
+                alt={photo.caption || `Cover photo for ${album.name}`}
+                fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                className="object-cover"
+                priority={false}
+                quality={75}
+              />
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black via-black/50 to-transparent p-4">
+                <h3 className="text-xl font-semibold text-white group-hover:text-teal-200 transition-colors duration-300">
+                  {album.name}
+                </h3>
+                <p className="text-sm text-gray-200 flex items-center">
+                  <MapPin className="h-4 w-4 mr-1 text-teal-300" aria-hidden="true" />
+                  <span className="mr-2">{photo.locationId}</span>
+                  <span className="text-teal-300">•</span>
+                  <span className="ml-2">{album.year}</span>
+                </p>
+              </div>
+            </div>
+          ) : (
+            <div className="flex items-center justify-center h-full text-gray-400"
+                 role="img"
+                 aria-label={`No photos available for ${album.name}`}>
+              <CameraIcon className="h-12 w-12" />
+            </div>
+          )}
+        </div>
+      </div>
+    </Link>
+  );
+};
+
+const PhotoAlbumExplorer = () => {
+  // Fixed Zustand store usage
+  const albums = usePhotoStore((state) => state.albums);
+  const activeYear = usePhotoStore((state) => state.activeYear);
+  const activeCountry = usePhotoStore((state) => state.activeCountry);
+  const loading = usePhotoStore((state) => state.loading);
+  const setAlbums = usePhotoStore((state) => state.setAlbums);
+  const setActiveYear = usePhotoStore((state) => state.setActiveYear);
+  const setActiveCountry = usePhotoStore((state) => state.setActiveCountry);
+  const setLoading = usePhotoStore((state) => state.setLoading);
+  const setError = usePhotoStore((state) => state.setError);
 
   useEffect(() => {
     const fetchAlbums = async () => {
@@ -38,7 +79,7 @@ const PhotoAlbumExplorer = () => {
       try {
         const response = await fetch("/api/albums");
         if (!response.ok) {
-          throw new Error("Failed to fetch albums.");
+          throw new Error("Failed to fetch albums");
         }
         const data = await response.json();
 
@@ -64,22 +105,14 @@ const PhotoAlbumExplorer = () => {
   const getSpecificPhoto = (albumId, photos) => {
     if (!albumId || !Array.isArray(photos)) return null;
 
-    const normalizedAlbumId = albumId.toLowerCase();
-
     const coverPhotoMap = {
       monaco: photos.find((p) => p.url.includes("monaco-panorama.jpg")),
-      france: photos.find((p) =>
-        p.url.includes("eiffel-tower-straight-on.jpg")
-      ),
+      france: photos.find((p) => p.url.includes("eiffel-tower-straight-on.jpg")),
       hongkong: photos.find((p) => p.url.includes("hongkong-skyline2.jpeg")),
       vietnam: photos.find((p) => p.url.includes("temple.jpg")),
       singapore: photos.find((p) => p.url.includes("singapore-pool-night.jpg")),
-      malaysia: photos.find((p) =>
-        p.url.includes("malaysia-petronas-couch.jpg")
-      ),
-      switzerland: photos.find((p) =>
-        p.url.includes("zurich-river-bridge.jpg")
-      ),
+      malaysia: photos.find((p) => p.url.includes("malaysia-petronas-couch.jpg")),
+      switzerland: photos.find((p) => p.url.includes("zurich-river-bridge.jpg")),
       uruguay: photos.find((p) => p.url.includes("montevideo-palmtree.jpg")),
       portugal: photos.find((p) => p.url.includes("lisbon-arch-close.jpg")),
       spain: photos.find((p) => p.url.includes("madrid-castle.jpg")),
@@ -89,30 +122,17 @@ const PhotoAlbumExplorer = () => {
       bosnia: photos.find((p) => p.url.includes("mostar-pano.jpg")),
       croatia: photos.find((p) => p.url.includes("dubrovnik-steps.jpg")),
       brazil: photos.find(
-        (p) =>
-          p.url.includes("helicopter-beach-sugarloaf.jpg") ||
-          p.url.includes("/Brazil/helicopter-beach-sugarloaf.jpg")
+        (p) => p.url.includes("helicopter-beach-sugarloaf.jpg") ||
+              p.url.includes("/Brazil/helicopter-beach-sugarloaf.jpg")
       ),
     };
 
-    return (
-      coverPhotoMap[normalizedAlbumId] ||
-      photos.find((photo) => photo.albumId.toLowerCase() === normalizedAlbumId)
-    );
-  };
-
-  const getCoverPhotoUrl = (photo) => {
-    if (!photo || !photo.url) return null;
-    return transformToCloudFront(photo.url);
+    return coverPhotoMap[albumId.toLowerCase()] ||
+           photos.find((photo) => photo.albumId.toLowerCase() === albumId.toLowerCase());
   };
 
   const filteredAlbums = React.useMemo(() => {
     let result = [...albums];
-    if (searchTerm) {
-      result = result.filter((album) =>
-        album.name.toLowerCase().includes(searchTerm.toLowerCase())
-      );
-    }
     if (activeYear !== "all") {
       result = result.filter((album) => album.year === activeYear);
     }
@@ -120,30 +140,28 @@ const PhotoAlbumExplorer = () => {
       result = result.filter((album) => album.countryId === activeCountry);
     }
     return result;
-  }, [albums, searchTerm, activeYear, activeCountry]);
+  }, [albums, activeYear, activeCountry]);
+
+  if (loading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="animate-spin rounded-full h-32 w-32 border-t-2 border-b-2 border-teal-500" />
+      </div>
+    );
+  }
 
   return (
-    <div className="min-h-screen bg-gray-100 py-16 bg-world-map">
-      <div className="max-w-7xl mx-auto px-6">
-        {/* Search and Filters */}
-        <div className="flex flex-col md:flex-row items-center justify-between gap-8 mb-12">
-          <div className="relative w-full md:w-auto">
-            <SearchIcon className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-500" />
-            <input
-              type="text"
-              placeholder="Search albums..."
-              className="w-full md:w-96 pl-12 pr-6 py-2 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-teal-700"
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-            />
-          </div>
-
+    <div className="min-h-screen bg-gray-50">
+      <div className="max-w-7xl mx-auto px-6 py-8">
+        {/* Filters Section */}
+        <div className="mb-8">
           <AlbumFilters
             onYearFilter={setActiveYear}
             onCountryFilter={setActiveCountry}
             activeYear={activeYear}
             activeCountry={activeCountry}
             countriesData={countriesData}
+            albums={albums}
           />
         </div>
 
@@ -151,67 +169,14 @@ const PhotoAlbumExplorer = () => {
         {filteredAlbums.length > 0 ? (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredAlbums.map((album) => {
-              if (!album || !album.id) {
-                console.warn("Invalid album data:", album);
-                return null;
-              }
-
+              if (!album?.id) return null;
               const albumPhoto = getSpecificPhoto(album.id, album.photos || []);
-              const coverPhotoUrl = getCoverPhotoUrl(albumPhoto);
-
               return (
-                <Link
-                  href={`/albums/${album.id}`}
+                <AlbumCard
                   key={album.id}
-                  className="group"
-                >
-                  <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
-                    <div className="relative h-64 bg-gray-200">
-                      {coverPhotoUrl ? (
-                        <div className="relative w-full h-full">
-                          <Image
-                            src={coverPhotoUrl}
-                            alt={
-                              albumPhoto.caption ||
-                              `Cover photo for ${album.name}`
-                            }
-                            fill
-                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                            className="object-cover"
-                            priority={false}
-                            quality={75}
-                          />
-                          {albumPhoto.locationId && (
-                            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black via-black/50 to-transparent p-4">
-                              <h3 className="text-xl font-semibold text-white">
-                                {album.name}
-                              </h3>
-                              <p className="text-sm text-gray-200 flex items-center">
-                                <MapPin
-                                  className="h-4 w-4 mr-1 text-teal-300"
-                                  aria-hidden="true"
-                                />
-                                <span className="mr-2">
-                                  {albumPhoto.locationId}
-                                </span>
-                                <span className="text-teal-300">•</span>
-                                <span className="ml-2">{album.year}</span>
-                              </p>
-                            </div>
-                          )}
-                        </div>
-                      ) : (
-                        <div
-                          className="flex items-center justify-center h-full text-gray-400"
-                          role="img"
-                          aria-label={`No photos available for ${album.name}`}
-                        >
-                          <CameraIcon className="h-12 w-12" />
-                        </div>
-                      )}
-                    </div>
-                  </div>
-                </Link>
+                  album={album}
+                  photo={albumPhoto}
+                />
               );
             })}
           </div>
@@ -220,7 +185,7 @@ const PhotoAlbumExplorer = () => {
             <CameraIcon className="h-20 w-20 mb-6 text-gray-300" />
             <h3 className="text-2xl font-semibold mb-2">No albums found</h3>
             <p className="text-md">
-              Try adjusting your filters or search criteria.
+              Try adjusting your filters
             </p>
           </div>
         )}
