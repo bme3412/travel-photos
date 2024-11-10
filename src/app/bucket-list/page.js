@@ -6,15 +6,101 @@ import { MapPin, Globe, Check, Filter, Search, MapIcon } from 'lucide-react';
 import { bucketListData } from './bucketListData';
 
 const getCountryCode = (location) => {
-  const country = location.split(',').pop().trim();
-  const countryMap = {
-    'Japan': 'JP', 'Norway': 'NO', 'Tanzania': 'TZ', 'Australia': 'AU',
-    'Peru': 'PE', 'Greece': 'GR', 'Chile': 'CL', 'Kenya': 'KE',
-    'Switzerland': 'CH', 'China': 'CN', 'France': 'FR', 'USA': 'US',
-    // Add other countries as needed
+    const country = location.split(',').pop().trim();
+    const countryMap = {
+      // North America
+      'USA': 'US',
+      'Canada': 'CA',
+      'Mexico': 'MX',
+  
+      // South America
+      'Argentina': 'AR',
+      'Brazil': 'BR',
+      'Chile': 'CL',
+      'Colombia': 'CO',
+      'Peru': 'PE',
+      'Uruguay': 'UY',
+      'Venezuela': 'VE',
+  
+      // Europe
+      'Austria': 'AT',
+      'Belgium': 'BE',
+      'Bulgaria': 'BG',
+      'Croatia': 'HR',
+      'Cyprus': 'CY',
+      'Czech Republic': 'CZ',
+      'Denmark': 'DK',
+      'Estonia': 'EE',
+      'Finland': 'FI',
+      'France': 'FR',
+      'Germany': 'DE',
+      'Greece': 'GR',
+      'Hungary': 'HU',
+      'Iceland': 'IS',
+      'Ireland': 'IE',
+      'Italy': 'IT',
+      'Latvia': 'LV',
+      'Lithuania': 'LT',
+      'Luxembourg': 'LU',
+      'Malta': 'MT',
+      'Netherlands': 'NL',
+      'Norway': 'NO',
+      'Poland': 'PL',
+      'Portugal': 'PT',
+      'Romania': 'RO',
+      'Slovakia': 'SK',
+      'Slovenia': 'SI',
+      'Spain': 'ES',
+      'Sweden': 'SE',
+      'Switzerland': 'CH',
+      'United Kingdom': 'GB',
+  
+      // Asia
+      'China': 'CN',
+      'Hong Kong': 'HK',
+      'India': 'IN',
+      'Indonesia': 'ID',
+      'Japan': 'JP',
+      'Malaysia': 'MY',
+      'Philippines': 'PH',
+      'Singapore': 'SG',
+      'South Korea': 'KR',
+      'Taiwan': 'TW',
+      'Thailand': 'TH',
+      'Vietnam': 'VN',
+  
+      // Middle East
+      'Israel': 'IL',
+      'Saudi Arabia': 'SA',
+      'Turkey': 'TR',
+      'United Arab Emirates': 'AE',
+  
+      // Africa
+      'Egypt': 'EG',
+      'Kenya': 'KE',
+      'Morocco': 'MA',
+      'Nigeria': 'NG',
+      'South Africa': 'ZA',
+      'Tanzania': 'TZ',
+  
+      // Oceania
+      'Australia': 'AU',
+      'New Zealand': 'NZ',
+  
+      // Common alternative names
+      'United States': 'US',
+      'United States of America': 'US',
+      'UK': 'GB',
+      'Great Britain': 'GB',
+      'South Korea': 'KR',
+      'Republic of Korea': 'KR',
+      'North Korea': 'KP',
+      'Russia': 'RU',
+      'Russian Federation': 'RU'
+    };
+    
+    return countryMap[country] || '';
   };
-  return countryMap[country] || '';
-};
 
 const BucketListItem = ({ title, location, description, checked }) => {
   const countryCode = getCountryCode(location);
