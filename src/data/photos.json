@@ -3,7 +3,7 @@
     {
       "id": "france1",
       "albumId": "france",
-      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/France/sacre-coeur-window-1.jpeg",  
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/France/sacre-coeur-window-1.jpeg",
       "caption": "Sacré-Cœur Window View",
       "locationId": "Paris",
       "coordinates": {
@@ -2107,7 +2107,7 @@
         "waterfront",
         "landmark"
       ]
-    },  
+    },
     {
       "id": "my1",
       "albumId": "malaysia",
@@ -4339,15 +4339,24 @@
         "historic",
         "perspective"
       ]
-    },{
+    },
+    {
       "id": "es1",
       "albumId": "spain",
       "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Spain/madrid-architecture.jpg",
       "caption": "Madrid Architectural Details",
       "locationId": "Madrid",
-      "coordinates": { "lng": -3.7038, "lat": 40.4168 },
+      "coordinates": {
+        "lng": -3.7038,
+        "lat": 40.4168
+      },
       "dateCreated": "2024-03-18",
-      "tags": ["architecture", "historic", "city", "detail"]
+      "tags": [
+        "architecture",
+        "historic",
+        "city",
+        "detail"
+      ]
     },
     {
       "id": "es2",
@@ -4355,9 +4364,17 @@
       "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Spain/madrid-castle-flags.jpg",
       "caption": "Royal Palace of Madrid with Flags",
       "locationId": "Madrid",
-      "coordinates": { "lng": -3.7138, "lat": 40.4183 },
+      "coordinates": {
+        "lng": -3.7138,
+        "lat": 40.4183
+      },
       "dateCreated": "2024-03-18",
-      "tags": ["castle", "palace", "flags", "royal"]
+      "tags": [
+        "castle",
+        "palace",
+        "flags",
+        "royal"
+      ]
     },
     {
       "id": "es3",
@@ -4365,9 +4382,17 @@
       "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Spain/madrid-castle.jpg",
       "caption": "Royal Palace of Madrid",
       "locationId": "Madrid",
-      "coordinates": { "lng": -3.7138, "lat": 40.4183 },
+      "coordinates": {
+        "lng": -3.7138,
+        "lat": 40.4183
+      },
       "dateCreated": "2024-03-18",
-      "tags": ["castle", "palace", "architecture", "historic"]
+      "tags": [
+        "castle",
+        "palace",
+        "architecture",
+        "historic"
+      ]
     },
     {
       "id": "es4",
@@ -4375,9 +4400,17 @@
       "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Spain/madrid-metropolis.jpg",
       "caption": "Metropolis Building",
       "locationId": "Madrid",
-      "coordinates": { "lng": -3.7038, "lat": 40.4168 },
+      "coordinates": {
+        "lng": -3.7038,
+        "lat": 40.4168
+      },
       "dateCreated": "2024-03-18",
-      "tags": ["building", "architecture", "urban", "landmark"]
+      "tags": [
+        "building",
+        "architecture",
+        "urban",
+        "landmark"
+      ]
     },
     {
       "id": "es5",
@@ -4385,9 +4418,17 @@
       "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Spain/madrid-sidestreet.jpg",
       "caption": "Madrid Side Street",
       "locationId": "Madrid",
-      "coordinates": { "lng": -3.7038, "lat": 40.4168 },
+      "coordinates": {
+        "lng": -3.7038,
+        "lat": 40.4168
+      },
       "dateCreated": "2024-03-18",
-      "tags": ["street", "urban", "city", "architecture"]
+      "tags": [
+        "street",
+        "urban",
+        "city",
+        "architecture"
+      ]
     },
     {
       "id": "es6",
@@ -4395,9 +4436,17 @@
       "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Spain/madrid-statue-horse.jpg",
       "caption": "Equestrian Statue in Madrid",
       "locationId": "Madrid",
-      "coordinates": { "lng": -3.7038, "lat": 40.4168 },
+      "coordinates": {
+        "lng": -3.7038,
+        "lat": 40.4168
+      },
       "dateCreated": "2024-03-18",
-      "tags": ["statue", "horse", "art", "monument"]
+      "tags": [
+        "statue",
+        "horse",
+        "art",
+        "monument"
+      ]
     },
     {
       "id": "es7",
@@ -4405,9 +4454,17 @@
       "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Spain/pamplona-bull-crowd.jpg",
       "caption": "Bull Run Crowd in Pamplona",
       "locationId": "Pamplona",
-      "coordinates": { "lng": -1.6444, "lat": 42.8196 },
+      "coordinates": {
+        "lng": -1.6444,
+        "lat": 42.8196
+      },
       "dateCreated": "2024-03-18",
-      "tags": ["festival", "crowd", "sanfermin", "bullrun"]
+      "tags": [
+        "festival",
+        "crowd",
+        "sanfermin",
+        "bullrun"
+      ]
     },
     {
       "id": "es8",
@@ -4415,9 +4472,17 @@
       "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Spain/pamplona-bull-runner.jpg",
       "caption": "Bull Runner at San Fermin",
       "locationId": "Pamplona",
-      "coordinates": { "lng": -1.6444, "lat": 42.8196 },
+      "coordinates": {
+        "lng": -1.6444,
+        "lat": 42.8196
+      },
       "dateCreated": "2024-03-18",
-      "tags": ["festival", "runner", "bullrun", "action"]
+      "tags": [
+        "festival",
+        "runner",
+        "bullrun",
+        "action"
+      ]
     },
     {
       "id": "es9",
@@ -4425,9 +4490,17 @@
       "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Spain/pamplona-bull-runners.jpg",
       "caption": "Group of Bull Runners",
       "locationId": "Pamplona",
-      "coordinates": { "lng": -1.6444, "lat": 42.8196 },
+      "coordinates": {
+        "lng": -1.6444,
+        "lat": 42.8196
+      },
       "dateCreated": "2024-03-18",
-      "tags": ["festival", "runners", "bullrun", "group"]
+      "tags": [
+        "festival",
+        "runners",
+        "bullrun",
+        "group"
+      ]
     },
     {
       "id": "es10",
@@ -4435,9 +4508,17 @@
       "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Spain/pamplona-bull-start.jpg",
       "caption": "Start of the Bull Run",
       "locationId": "Pamplona",
-      "coordinates": { "lng": -1.6444, "lat": 42.8196 },
+      "coordinates": {
+        "lng": -1.6444,
+        "lat": 42.8196
+      },
       "dateCreated": "2024-03-18",
-      "tags": ["festival", "start", "bullrun", "morning"]
+      "tags": [
+        "festival",
+        "start",
+        "bullrun",
+        "morning"
+      ]
     },
     {
       "id": "es11",
@@ -4445,9 +4526,17 @@
       "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Spain/pamplona-bulls-balcony.jpg",
       "caption": "Bull Run View from Balcony",
       "locationId": "Pamplona",
-      "coordinates": { "lng": -1.6444, "lat": 42.8196 },
+      "coordinates": {
+        "lng": -1.6444,
+        "lat": 42.8196
+      },
       "dateCreated": "2024-03-18",
-      "tags": ["festival", "balcony", "viewpoint", "bullrun"]
+      "tags": [
+        "festival",
+        "balcony",
+        "viewpoint",
+        "bullrun"
+      ]
     },
     {
       "id": "es12",
@@ -4455,9 +4544,17 @@
       "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Spain/pamplona-bulls-barricade.jpg",
       "caption": "Bull Run Barricade",
       "locationId": "Pamplona",
-      "coordinates": { "lng": -1.6444, "lat": 42.8196 },
+      "coordinates": {
+        "lng": -1.6444,
+        "lat": 42.8196
+      },
       "dateCreated": "2024-03-18",
-      "tags": ["festival", "safety", "barrier", "bullrun"]
+      "tags": [
+        "festival",
+        "safety",
+        "barrier",
+        "bullrun"
+      ]
     },
     {
       "id": "es13",
@@ -4465,9 +4562,17 @@
       "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Spain/pamplona-bullsrun-start.jpg",
       "caption": "Starting Point of Bull Run",
       "locationId": "Pamplona",
-      "coordinates": { "lng": -1.6444, "lat": 42.8196 },
+      "coordinates": {
+        "lng": -1.6444,
+        "lat": 42.8196
+      },
       "dateCreated": "2024-03-18",
-      "tags": ["festival", "starting point", "bullrun", "morning"]
+      "tags": [
+        "festival",
+        "starting point",
+        "bullrun",
+        "morning"
+      ]
     },
     {
       "id": "es14",
@@ -4475,9 +4580,17 @@
       "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Spain/pamplona-burger-king.jpg",
       "caption": "Modern Meets Traditional in Pamplona",
       "locationId": "Pamplona",
-      "coordinates": { "lng": -1.6444, "lat": 42.8196 },
+      "coordinates": {
+        "lng": -1.6444,
+        "lat": 42.8196
+      },
       "dateCreated": "2024-03-18",
-      "tags": ["urban", "contrast", "modern", "street"]
+      "tags": [
+        "urban",
+        "contrast",
+        "modern",
+        "street"
+      ]
     },
     {
       "id": "es15",
@@ -4485,9 +4598,17 @@
       "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Spain/pamplona-crowds-start.jpg",
       "caption": "San Fermin Festival Crowds",
       "locationId": "Pamplona",
-      "coordinates": { "lng": -1.6444, "lat": 42.8196 },
+      "coordinates": {
+        "lng": -1.6444,
+        "lat": 42.8196
+      },
       "dateCreated": "2024-03-18",
-      "tags": ["festival", "crowd", "sanfermin", "people"]
+      "tags": [
+        "festival",
+        "crowd",
+        "sanfermin",
+        "people"
+      ]
     },
     {
       "id": "es16",
@@ -4495,9 +4616,17 @@
       "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Spain/pamplona-run-start.jpg",
       "caption": "Beginning of the Run",
       "locationId": "Pamplona",
-      "coordinates": { "lng": -1.6444, "lat": 42.8196 },
+      "coordinates": {
+        "lng": -1.6444,
+        "lat": 42.8196
+      },
       "dateCreated": "2024-03-18",
-      "tags": ["festival", "start", "running", "event"]
+      "tags": [
+        "festival",
+        "start",
+        "running",
+        "event"
+      ]
     },
     {
       "id": "es17",
@@ -4505,9 +4634,17 @@
       "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Spain/pamplona-san-fermin.jpg",
       "caption": "San Fermin Festival Scene",
       "locationId": "Pamplona",
-      "coordinates": { "lng": -1.6444, "lat": 42.8196 },
+      "coordinates": {
+        "lng": -1.6444,
+        "lat": 42.8196
+      },
       "dateCreated": "2024-03-18",
-      "tags": ["festival", "celebration", "sanfermin", "tradition"]
+      "tags": [
+        "festival",
+        "celebration",
+        "sanfermin",
+        "tradition"
+      ]
     },
     {
       "id": "es18",
@@ -4515,9 +4652,17 @@
       "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Spain/pamplona-sanfermin-cafe.jpg",
       "caption": "Café During San Fermin",
       "locationId": "Pamplona",
-      "coordinates": { "lng": -1.6444, "lat": 42.8196 },
+      "coordinates": {
+        "lng": -1.6444,
+        "lat": 42.8196
+      },
       "dateCreated": "2024-03-18",
-      "tags": ["cafe", "festival", "urban", "dining"]
+      "tags": [
+        "cafe",
+        "festival",
+        "urban",
+        "dining"
+      ]
     },
     {
       "id": "es19",
@@ -4525,9 +4670,17 @@
       "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Spain/pamplona-sanfermin-clocktower.jpg",
       "caption": "Clock Tower During Festival",
       "locationId": "Pamplona",
-      "coordinates": { "lng": -1.6444, "lat": 42.8196 },
+      "coordinates": {
+        "lng": -1.6444,
+        "lat": 42.8196
+      },
       "dateCreated": "2024-03-18",
-      "tags": ["clocktower", "architecture", "landmark", "historic"]
+      "tags": [
+        "clocktower",
+        "architecture",
+        "landmark",
+        "historic"
+      ]
     },
     {
       "id": "es20",
@@ -4535,9 +4688,17 @@
       "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Spain/pamplona-sanfermin-crowd.jpg",
       "caption": "Festival Crowd Gathering",
       "locationId": "Pamplona",
-      "coordinates": { "lng": -1.6444, "lat": 42.8196 },
+      "coordinates": {
+        "lng": -1.6444,
+        "lat": 42.8196
+      },
       "dateCreated": "2024-03-18",
-      "tags": ["festival", "crowd", "gathering", "celebration"]
+      "tags": [
+        "festival",
+        "crowd",
+        "gathering",
+        "celebration"
+      ]
     },
     {
       "id": "es21",
@@ -4545,9 +4706,17 @@
       "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Spain/pamplona-sanfermin-crowds.jpg",
       "caption": "San Fermin Street Crowds",
       "locationId": "Pamplona",
-      "coordinates": { "lng": -1.6444, "lat": 42.8196 },
+      "coordinates": {
+        "lng": -1.6444,
+        "lat": 42.8196
+      },
       "dateCreated": "2024-03-18",
-      "tags": ["festival", "crowd", "street", "people"]
+      "tags": [
+        "festival",
+        "crowd",
+        "street",
+        "people"
+      ]
     },
     {
       "id": "es22",
@@ -4555,9 +4724,17 @@
       "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Spain/pamplona-sanfermin-oldbuilding.jpg",
       "caption": "Historic Building During Festival",
       "locationId": "Pamplona",
-      "coordinates": { "lng": -1.6444, "lat": 42.8196 },
+      "coordinates": {
+        "lng": -1.6444,
+        "lat": 42.8196
+      },
       "dateCreated": "2024-03-18",
-      "tags": ["architecture", "historic", "building", "festival"]
+      "tags": [
+        "architecture",
+        "historic",
+        "building",
+        "festival"
+      ]
     },
     {
       "id": "es23",
@@ -4565,9 +4742,17 @@
       "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Spain/pamplona-sanfermin-restaurant.jpg",
       "caption": "Restaurant During San Fermin",
       "locationId": "Pamplona",
-      "coordinates": { "lng": -1.6444, "lat": 42.8196 },
+      "coordinates": {
+        "lng": -1.6444,
+        "lat": 42.8196
+      },
       "dateCreated": "2024-03-18",
-      "tags": ["restaurant", "dining", "festival", "urban"]
+      "tags": [
+        "restaurant",
+        "dining",
+        "festival",
+        "urban"
+      ]
     },
     {
       "id": "es24",
@@ -4575,9 +4760,17 @@
       "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Spain/pamplona-sanfermin-sidestreet.jpg",
       "caption": "Festival Side Street",
       "locationId": "Pamplona",
-      "coordinates": { "lng": -1.6444, "lat": 42.8196 },
+      "coordinates": {
+        "lng": -1.6444,
+        "lat": 42.8196
+      },
       "dateCreated": "2024-03-18",
-      "tags": ["street", "festival", "urban", "alley"]
+      "tags": [
+        "street",
+        "festival",
+        "urban",
+        "alley"
+      ]
     },
     {
       "id": "es25",
@@ -4585,9 +4778,17 @@
       "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Spain/pamplona-sanfermin-street.jpg",
       "caption": "Festival Street Scene",
       "locationId": "Pamplona",
-      "coordinates": { "lng": -1.6444, "lat": 42.8196 },
+      "coordinates": {
+        "lng": -1.6444,
+        "lat": 42.8196
+      },
       "dateCreated": "2024-03-18",
-      "tags": ["street", "festival", "urban", "scene"]
+      "tags": [
+        "street",
+        "festival",
+        "urban",
+        "scene"
+      ]
     },
     {
       "id": "es26",
@@ -4595,9 +4796,17 @@
       "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Spain/pamplona-sanfermin-townsquare.jpg",
       "caption": "Town Square During San Fermin",
       "locationId": "Pamplona",
-      "coordinates": { "lng": -1.6444, "lat": 42.8196 },
+      "coordinates": {
+        "lng": -1.6444,
+        "lat": 42.8196
+      },
       "dateCreated": "2024-03-18",
-      "tags": ["square", "festival", "town", "gathering"]
+      "tags": [
+        "square",
+        "festival",
+        "town",
+        "gathering"
+      ]
     },
     {
       "id": "es27",
@@ -4605,9 +4814,17 @@
       "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Spain/pamplona-sanfermin-white.jpg",
       "caption": "Traditional White Clothing at San Fermin",
       "locationId": "Pamplona",
-      "coordinates": { "lng": -1.6444, "lat": 42.8196 },
+      "coordinates": {
+        "lng": -1.6444,
+        "lat": 42.8196
+      },
       "dateCreated": "2024-03-18",
-      "tags": ["tradition", "clothing", "white", "festival"]
+      "tags": [
+        "tradition",
+        "clothing",
+        "white",
+        "festival"
+      ]
     },
     {
       "id": "es28",
@@ -4615,9 +4832,17 @@
       "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Spain/pamplona-townsquare.jpg",
       "caption": "Pamplona Town Square",
       "locationId": "Pamplona",
-      "coordinates": { "lng": -1.6444, "lat": 42.8196 },
+      "coordinates": {
+        "lng": -1.6444,
+        "lat": 42.8196
+      },
       "dateCreated": "2024-03-18",
-      "tags": ["square", "town", "urban", "architecture"]
+      "tags": [
+        "square",
+        "town",
+        "urban",
+        "architecture"
+      ]
     },
     {
       "id": "ar1",
@@ -4625,9 +4850,17 @@
       "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Argentina/buenosaires-center.jpg",
       "caption": "Buenos Aires City Center",
       "locationId": "Buenos Aires",
-      "coordinates": { "lng": -58.3816, "lat": -34.6037 },
+      "coordinates": {
+        "lng": -58.3816,
+        "lat": -34.6037
+      },
       "dateCreated": "2024-03-18",
-      "tags": ["city", "urban", "architecture", "downtown"]
+      "tags": [
+        "city",
+        "urban",
+        "architecture",
+        "downtown"
+      ]
     },
     {
       "id": "ar2",
@@ -4635,9 +4868,17 @@
       "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Argentina/buenosaires-flag.jpg",
       "caption": "Argentine Flag Display",
       "locationId": "Buenos Aires",
-      "coordinates": { "lng": -58.3816, "lat": -34.6037 },
+      "coordinates": {
+        "lng": -58.3816,
+        "lat": -34.6037
+      },
       "dateCreated": "2024-03-18",
-      "tags": ["flag", "national", "symbol", "patriotic"]
+      "tags": [
+        "flag",
+        "national",
+        "symbol",
+        "patriotic"
+      ]
     },
     {
       "id": "ar3",
@@ -4645,9 +4886,17 @@
       "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Argentina/buenosaires-ginobili.jpg",
       "caption": "Manu Ginobili Tribute",
       "locationId": "Buenos Aires",
-      "coordinates": { "lng": -58.3816, "lat": -34.6037 },
+      "coordinates": {
+        "lng": -58.3816,
+        "lat": -34.6037
+      },
       "dateCreated": "2024-03-18",
-      "tags": ["sports", "basketball", "tribute", "athlete"]
+      "tags": [
+        "sports",
+        "basketball",
+        "tribute",
+        "athlete"
+      ]
     },
     {
       "id": "ar4",
@@ -4655,9 +4904,17 @@
       "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Argentina/buenosaires-laboca-buildings.jpg",
       "caption": "La Boca Colorful Buildings",
       "locationId": "Buenos Aires",
-      "coordinates": { "lng": -58.3816, "lat": -34.6037 },
+      "coordinates": {
+        "lng": -58.3816,
+        "lat": -34.6037
+      },
       "dateCreated": "2024-03-18",
-      "tags": ["laboca", "colorful", "architecture", "neighborhood"]
+      "tags": [
+        "laboca",
+        "colorful",
+        "architecture",
+        "neighborhood"
+      ]
     },
     {
       "id": "ar5",
@@ -4665,9 +4922,17 @@
       "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Argentina/buenosaires-laboca-colors.jpg",
       "caption": "Vibrant Colors of La Boca",
       "locationId": "Buenos Aires",
-      "coordinates": { "lng": -58.3816, "lat": -34.6037 },
+      "coordinates": {
+        "lng": -58.3816,
+        "lat": -34.6037
+      },
       "dateCreated": "2024-03-18",
-      "tags": ["laboca", "colors", "street", "culture"]
+      "tags": [
+        "laboca",
+        "colors",
+        "street",
+        "culture"
+      ]
     },
     {
       "id": "ar6",
@@ -4675,9 +4940,17 @@
       "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Argentina/buenosaires-laboca-messi.jpg",
       "caption": "Messi Mural in La Boca",
       "locationId": "Buenos Aires",
-      "coordinates": { "lng": -58.3816, "lat": -34.6037 },
+      "coordinates": {
+        "lng": -58.3816,
+        "lat": -34.6037
+      },
       "dateCreated": "2024-03-18",
-      "tags": ["messi", "mural", "art", "football"]
+      "tags": [
+        "messi",
+        "mural",
+        "art",
+        "football"
+      ]
     },
     {
       "id": "ar7",
@@ -4685,9 +4958,17 @@
       "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Argentina/buenosaires-laboca-wallart.jpg",
       "caption": "La Boca Street Art",
       "locationId": "Buenos Aires",
-      "coordinates": { "lng": -58.3816, "lat": -34.6037 },
+      "coordinates": {
+        "lng": -58.3816,
+        "lat": -34.6037
+      },
       "dateCreated": "2024-03-18",
-      "tags": ["art", "street art", "mural", "culture"]
+      "tags": [
+        "art",
+        "street art",
+        "mural",
+        "culture"
+      ]
     },
     {
       "id": "ar8",
@@ -4695,9 +4976,17 @@
       "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Argentina/buenosaires-laboca.jpg",
       "caption": "La Boca District",
       "locationId": "Buenos Aires",
-      "coordinates": { "lng": -58.3816, "lat": -34.6037 },
+      "coordinates": {
+        "lng": -58.3816,
+        "lat": -34.6037
+      },
       "dateCreated": "2024-03-18",
-      "tags": ["laboca", "district", "urban", "colorful"]
+      "tags": [
+        "laboca",
+        "district",
+        "urban",
+        "colorful"
+      ]
     },
     {
       "id": "ar9",
@@ -4705,9 +4994,17 @@
       "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Argentina/buenosaires-messi-plaque.jpg",
       "caption": "Messi Commemorative Plaque",
       "locationId": "Buenos Aires",
-      "coordinates": { "lng": -58.3816, "lat": -34.6037 },
+      "coordinates": {
+        "lng": -58.3816,
+        "lat": -34.6037
+      },
       "dateCreated": "2024-03-18",
-      "tags": ["messi", "plaque", "memorial", "tribute"]
+      "tags": [
+        "messi",
+        "plaque",
+        "memorial",
+        "tribute"
+      ]
     },
     {
       "id": "ar10",
@@ -4715,9 +5012,17 @@
       "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Argentina/buenosaires-messi-statue.jpg",
       "caption": "Messi Statue Monument",
       "locationId": "Buenos Aires",
-      "coordinates": { "lng": -58.3816, "lat": -34.6037 },
+      "coordinates": {
+        "lng": -58.3816,
+        "lat": -34.6037
+      },
       "dateCreated": "2024-03-18",
-      "tags": ["messi", "statue", "monument", "tribute"]
+      "tags": [
+        "messi",
+        "statue",
+        "monument",
+        "tribute"
+      ]
     },
     {
       "id": "ar11",
@@ -4725,9 +5030,17 @@
       "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Argentina/buenosaires-messi-wall.jpg",
       "caption": "Messi Wall Tribute",
       "locationId": "Buenos Aires",
-      "coordinates": { "lng": -58.3816, "lat": -34.6037 },
+      "coordinates": {
+        "lng": -58.3816,
+        "lat": -34.6037
+      },
       "dateCreated": "2024-03-18",
-      "tags": ["messi", "mural", "art", "tribute"]
+      "tags": [
+        "messi",
+        "mural",
+        "art",
+        "tribute"
+      ]
     },
     {
       "id": "ar12",
@@ -4735,9 +5048,17 @@
       "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Argentina/buenosaires-messi.jpg",
       "caption": "Messi Street Art",
       "locationId": "Buenos Aires",
-      "coordinates": { "lng": -58.3816, "lat": -34.6037 },
+      "coordinates": {
+        "lng": -58.3816,
+        "lat": -34.6037
+      },
       "dateCreated": "2024-03-18",
-      "tags": ["messi", "art", "mural", "street art"]
+      "tags": [
+        "messi",
+        "art",
+        "mural",
+        "street art"
+      ]
     },
     {
       "id": "ar13",
@@ -4745,9 +5066,17 @@
       "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Argentina/buenosaires-messiwall.jpg",
       "caption": "Large Messi Mural",
       "locationId": "Buenos Aires",
-      "coordinates": { "lng": -58.3816, "lat": -34.6037 },
+      "coordinates": {
+        "lng": -58.3816,
+        "lat": -34.6037
+      },
       "dateCreated": "2024-03-18",
-      "tags": ["messi", "mural", "large", "art"]
+      "tags": [
+        "messi",
+        "mural",
+        "large",
+        "art"
+      ]
     },
     {
       "id": "ar14",
@@ -4755,9 +5084,17 @@
       "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Argentina/buenosaires-obelisk-flag.jpg",
       "caption": "Obelisk with Argentine Flag",
       "locationId": "Buenos Aires",
-      "coordinates": { "lng": -58.3816, "lat": -34.6037 },
+      "coordinates": {
+        "lng": -58.3816,
+        "lat": -34.6037
+      },
       "dateCreated": "2024-03-18",
-      "tags": ["obelisk", "flag", "landmark", "monument"]
+      "tags": [
+        "obelisk",
+        "flag",
+        "landmark",
+        "monument"
+      ]
     },
     {
       "id": "ar15",
@@ -4765,9 +5102,17 @@
       "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Argentina/buenosaires-obelisk.jpg",
       "caption": "Buenos Aires Obelisk",
       "locationId": "Buenos Aires",
-      "coordinates": { "lng": -58.3816, "lat": -34.6037 },
+      "coordinates": {
+        "lng": -58.3816,
+        "lat": -34.6037
+      },
       "dateCreated": "2024-03-18",
-      "tags": ["obelisk", "landmark", "monument", "architecture"]
+      "tags": [
+        "obelisk",
+        "landmark",
+        "monument",
+        "architecture"
+      ]
     },
     {
       "id": "ar16",
@@ -4775,9 +5120,17 @@
       "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Argentina/buenosaires-panorama.jpg",
       "caption": "Buenos Aires City Panorama",
       "locationId": "Buenos Aires",
-      "coordinates": { "lng": -58.3816, "lat": -34.6037 },
+      "coordinates": {
+        "lng": -58.3816,
+        "lat": -34.6037
+      },
       "dateCreated": "2024-03-18",
-      "tags": ["panorama", "cityscape", "skyline", "urban"]
+      "tags": [
+        "panorama",
+        "cityscape",
+        "skyline",
+        "urban"
+      ]
     },
     {
       "id": "ar17",
@@ -4785,9 +5138,17 @@
       "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Argentina/buenosiares-pope.jpg",
       "caption": "Pope Francis Tribute",
       "locationId": "Buenos Aires",
-      "coordinates": { "lng": -58.3816, "lat": -34.6037 },
+      "coordinates": {
+        "lng": -58.3816,
+        "lat": -34.6037
+      },
       "dateCreated": "2024-03-18",
-      "tags": ["pope", "religious", "tribute", "catholic"]
+      "tags": [
+        "pope",
+        "religious",
+        "tribute",
+        "catholic"
+      ]
     },
     {
       "id": "be1",
@@ -4795,9 +5156,17 @@
       "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Belgium/bruges-beer.jpg",
       "caption": "Belgian Beer Selection",
       "locationId": "Bruges",
-      "coordinates": { "lng": 3.2247, "lat": 51.2093 },
+      "coordinates": {
+        "lng": 3.2247,
+        "lat": 51.2093
+      },
       "dateCreated": "2024-03-18",
-      "tags": ["beer", "drinks", "belgian", "culture"]
+      "tags": [
+        "beer",
+        "drinks",
+        "belgian",
+        "culture"
+      ]
     },
     {
       "id": "be2",
@@ -4805,9 +5174,17 @@
       "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Belgium/bruges-canal-tower.jpg",
       "caption": "Bruges Canal and Belfry Tower",
       "locationId": "Bruges",
-      "coordinates": { "lng": 3.2247, "lat": 51.2093 },
+      "coordinates": {
+        "lng": 3.2247,
+        "lat": 51.2093
+      },
       "dateCreated": "2024-03-18",
-      "tags": ["canal", "tower", "historic", "reflection"]
+      "tags": [
+        "canal",
+        "tower",
+        "historic",
+        "reflection"
+      ]
     },
     {
       "id": "be3",
@@ -4815,9 +5192,17 @@
       "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Belgium/bruges-canal-tree-tower.jpg",
       "caption": "Canal View with Tree and Belfry",
       "locationId": "Bruges",
-      "coordinates": { "lng": 3.2247, "lat": 51.2093 },
+      "coordinates": {
+        "lng": 3.2247,
+        "lat": 51.2093
+      },
       "dateCreated": "2024-03-18",
-      "tags": ["canal", "tower", "tree", "cityscape"]
+      "tags": [
+        "canal",
+        "tower",
+        "tree",
+        "cityscape"
+      ]
     },
     {
       "id": "be4",
@@ -4825,9 +5210,17 @@
       "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Belgium/bruges-canal-tree.jpg",
       "caption": "Tree-lined Canal",
       "locationId": "Bruges",
-      "coordinates": { "lng": 3.2247, "lat": 51.2093 },
+      "coordinates": {
+        "lng": 3.2247,
+        "lat": 51.2093
+      },
       "dateCreated": "2024-03-18",
-      "tags": ["canal", "tree", "water", "scenic"]
+      "tags": [
+        "canal",
+        "tree",
+        "water",
+        "scenic"
+      ]
     },
     {
       "id": "be5",
@@ -4835,9 +5228,17 @@
       "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Belgium/bruges-canal.jpg",
       "caption": "Bruges Canal Scene",
       "locationId": "Bruges",
-      "coordinates": { "lng": 3.2247, "lat": 51.2093 },
+      "coordinates": {
+        "lng": 3.2247,
+        "lat": 51.2093
+      },
       "dateCreated": "2024-03-18",
-      "tags": ["canal", "water", "historic", "architecture"]
+      "tags": [
+        "canal",
+        "water",
+        "historic",
+        "architecture"
+      ]
     },
     {
       "id": "be6",
@@ -4845,9 +5246,17 @@
       "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Belgium/bruges-chocolate.jpg",
       "caption": "Belgian Chocolate Display",
       "locationId": "Bruges",
-      "coordinates": { "lng": 3.2247, "lat": 51.2093 },
+      "coordinates": {
+        "lng": 3.2247,
+        "lat": 51.2093
+      },
       "dateCreated": "2024-03-18",
-      "tags": ["chocolate", "food", "belgian", "sweets"]
+      "tags": [
+        "chocolate",
+        "food",
+        "belgian",
+        "sweets"
+      ]
     },
     {
       "id": "be7",
@@ -4855,9 +5264,17 @@
       "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Belgium/bruges-cremebrulee.jpg",
       "caption": "Crème Brûlée Dessert",
       "locationId": "Bruges",
-      "coordinates": { "lng": 3.2247, "lat": 51.2093 },
+      "coordinates": {
+        "lng": 3.2247,
+        "lat": 51.2093
+      },
       "dateCreated": "2024-03-18",
-      "tags": ["dessert", "food", "culinary", "sweet"]
+      "tags": [
+        "dessert",
+        "food",
+        "culinary",
+        "sweet"
+      ]
     },
     {
       "id": "be8",
@@ -4865,9 +5282,17 @@
       "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Belgium/bruges-flags.jpg",
       "caption": "Belgian Flags Display",
       "locationId": "Bruges",
-      "coordinates": { "lng": 3.2247, "lat": 51.2093 },
+      "coordinates": {
+        "lng": 3.2247,
+        "lat": 51.2093
+      },
       "dateCreated": "2024-03-18",
-      "tags": ["flags", "national", "belgium", "patriotic"]
+      "tags": [
+        "flags",
+        "national",
+        "belgium",
+        "patriotic"
+      ]
     },
     {
       "id": "be9",
@@ -4875,9 +5300,17 @@
       "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Belgium/bruges-godiva.jpg",
       "caption": "Godiva Chocolate Shop",
       "locationId": "Bruges",
-      "coordinates": { "lng": 3.2247, "lat": 51.2093 },
+      "coordinates": {
+        "lng": 3.2247,
+        "lat": 51.2093
+      },
       "dateCreated": "2024-03-18",
-      "tags": ["chocolate", "shop", "godiva", "retail"]
+      "tags": [
+        "chocolate",
+        "shop",
+        "godiva",
+        "retail"
+      ]
     },
     {
       "id": "be10",
@@ -4885,9 +5318,17 @@
       "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Belgium/bruges-moulesfrites.jpg",
       "caption": "Traditional Moules-Frites",
       "locationId": "Bruges",
-      "coordinates": { "lng": 3.2247, "lat": 51.2093 },
+      "coordinates": {
+        "lng": 3.2247,
+        "lat": 51.2093
+      },
       "dateCreated": "2024-03-18",
-      "tags": ["food", "mussels", "belgian", "traditional"]
+      "tags": [
+        "food",
+        "mussels",
+        "belgian",
+        "traditional"
+      ]
     },
     {
       "id": "be11",
@@ -4895,9 +5336,17 @@
       "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Belgium/bruges-statue.jpg",
       "caption": "Historic Statue in Bruges",
       "locationId": "Bruges",
-      "coordinates": { "lng": 3.2247, "lat": 51.2093 },
+      "coordinates": {
+        "lng": 3.2247,
+        "lat": 51.2093
+      },
       "dateCreated": "2024-03-18",
-      "tags": ["statue", "art", "historic", "sculpture"]
+      "tags": [
+        "statue",
+        "art",
+        "historic",
+        "sculpture"
+      ]
     },
     {
       "id": "be12",
@@ -4905,9 +5354,17 @@
       "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Belgium/bruges-tower-close.jpg",
       "caption": "Belfry Tower Close-up",
       "locationId": "Bruges",
-      "coordinates": { "lng": 3.2247, "lat": 51.2093 },
+      "coordinates": {
+        "lng": 3.2247,
+        "lat": 51.2093
+      },
       "dateCreated": "2024-03-18",
-      "tags": ["tower", "belfry", "architecture", "historic"]
+      "tags": [
+        "tower",
+        "belfry",
+        "architecture",
+        "historic"
+      ]
     },
     {
       "id": "be13",
@@ -4915,9 +5372,17 @@
       "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Belgium/bruges-tower.jpg",
       "caption": "Bruges Belfry Tower",
       "locationId": "Bruges",
-      "coordinates": { "lng": 3.2247, "lat": 51.2093 },
+      "coordinates": {
+        "lng": 3.2247,
+        "lat": 51.2093
+      },
       "dateCreated": "2024-03-18",
-      "tags": ["tower", "landmark", "historic", "architecture"]
+      "tags": [
+        "tower",
+        "landmark",
+        "historic",
+        "architecture"
+      ]
     },
     {
       "id": "ba1",
@@ -4925,9 +5390,17 @@
       "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Bosnia/mostar-bridge-mountain.jpg",
       "caption": "Stari Most with Mountain Background",
       "locationId": "Mostar",
-      "coordinates": { "lng": 17.8078, "lat": 43.3429 },
+      "coordinates": {
+        "lng": 17.8078,
+        "lat": 43.3429
+      },
       "dateCreated": "2024-03-18",
-      "tags": ["bridge", "mountain", "historic", "landscape"]
+      "tags": [
+        "bridge",
+        "mountain",
+        "historic",
+        "landscape"
+      ]
     },
     {
       "id": "ba2",
@@ -4935,9 +5408,17 @@
       "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Bosnia/mostar-bridge-pano.jpg",
       "caption": "Panoramic View of Stari Most",
       "locationId": "Mostar",
-      "coordinates": { "lng": 17.8078, "lat": 43.3429 },
+      "coordinates": {
+        "lng": 17.8078,
+        "lat": 43.3429
+      },
       "dateCreated": "2024-03-18",
-      "tags": ["bridge", "panorama", "historic", "cityscape"]
+      "tags": [
+        "bridge",
+        "panorama",
+        "historic",
+        "cityscape"
+      ]
     },
     {
       "id": "ba3",
@@ -4945,9 +5426,17 @@
       "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Bosnia/mostar-bridge-trees.jpg",
       "caption": "Old Bridge with Tree Framing",
       "locationId": "Mostar",
-      "coordinates": { "lng": 17.8078, "lat": 43.3429 },
+      "coordinates": {
+        "lng": 17.8078,
+        "lat": 43.3429
+      },
       "dateCreated": "2024-03-18",
-      "tags": ["bridge", "trees", "nature", "historic"]
+      "tags": [
+        "bridge",
+        "trees",
+        "nature",
+        "historic"
+      ]
     },
     {
       "id": "ba4",
@@ -4955,9 +5444,17 @@
       "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Bosnia/mostar-bridge-vertical.jpg",
       "caption": "Vertical Shot of Stari Most",
       "locationId": "Mostar",
-      "coordinates": { "lng": 17.8078, "lat": 43.3429 },
+      "coordinates": {
+        "lng": 17.8078,
+        "lat": 43.3429
+      },
       "dateCreated": "2024-03-18",
-      "tags": ["bridge", "architecture", "vertical", "historic"]
+      "tags": [
+        "bridge",
+        "architecture",
+        "vertical",
+        "historic"
+      ]
     },
     {
       "id": "ba5",
@@ -4965,9 +5462,17 @@
       "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Bosnia/mostar-bridge-water.jpg",
       "caption": "Stari Most Over Neretva River",
       "locationId": "Mostar",
-      "coordinates": { "lng": 17.8078, "lat": 43.3429 },
+      "coordinates": {
+        "lng": 17.8078,
+        "lat": 43.3429
+      },
       "dateCreated": "2024-03-18",
-      "tags": ["bridge", "river", "water", "reflection"]
+      "tags": [
+        "bridge",
+        "river",
+        "water",
+        "reflection"
+      ]
     },
     {
       "id": "ba6",
@@ -4975,9 +5480,17 @@
       "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Bosnia/mostar-pano.jpg",
       "caption": "Mostar City Panorama",
       "locationId": "Mostar",
-      "coordinates": { "lng": 17.8078, "lat": 43.3429 },
+      "coordinates": {
+        "lng": 17.8078,
+        "lat": 43.3429
+      },
       "dateCreated": "2024-03-18",
-      "tags": ["panorama", "cityscape", "urban", "landscape"]
+      "tags": [
+        "panorama",
+        "cityscape",
+        "urban",
+        "landscape"
+      ]
     },
     {
       "id": "ba7",
@@ -4985,9 +5498,17 @@
       "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Bosnia/mostar-river-tower.jpg",
       "caption": "River View with Tower",
       "locationId": "Mostar",
-      "coordinates": { "lng": 17.8078, "lat": 43.3429 },
+      "coordinates": {
+        "lng": 17.8078,
+        "lat": 43.3429
+      },
       "dateCreated": "2024-03-18",
-      "tags": ["river", "tower", "historic", "architecture"]
+      "tags": [
+        "river",
+        "tower",
+        "historic",
+        "architecture"
+      ]
     },
     {
       "id": "ba8",
@@ -4995,9 +5516,17 @@
       "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Bosnia/mostar-turrets.jpg",
       "caption": "Historic Turrets of Mostar",
       "locationId": "Mostar",
-      "coordinates": { "lng": 17.8078, "lat": 43.3429 },
+      "coordinates": {
+        "lng": 17.8078,
+        "lat": 43.3429
+      },
       "dateCreated": "2024-03-18",
-      "tags": ["turrets", "architecture", "historic", "defense"]
+      "tags": [
+        "turrets",
+        "architecture",
+        "historic",
+        "defense"
+      ]
     },
     {
       "id": "ba9",
@@ -5005,9 +5534,17 @@
       "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Bosnia/mostar-under-bridge.jpg",
       "caption": "View from Below Stari Most",
       "locationId": "Mostar",
-      "coordinates": { "lng": 17.8078, "lat": 43.3429 },
+      "coordinates": {
+        "lng": 17.8078,
+        "lat": 43.3429
+      },
       "dateCreated": "2024-03-18",
-      "tags": ["bridge", "perspective", "architecture", "underneath"]
+      "tags": [
+        "bridge",
+        "perspective",
+        "architecture",
+        "underneath"
+      ]
     },
     {
       "id": "hr1",
@@ -5015,321 +5552,3491 @@
       "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/croatia/dubrovnik-GoT-tree.jpg",
       "caption": "Game of Thrones Filming Location with Tree",
       "locationId": "Dubrovnik",
-      "coordinates": { "lng": 18.0944, "lat": 42.6507 },
+      "coordinates": {
+        "lng": 18.0944,
+        "lat": 42.6507
+      },
       "dateCreated": "2024-03-18",
-      "tags": ["game of thrones", "tree", "film location", "historic"]
-  },
-  {
+      "tags": [
+        "game of thrones",
+        "tree",
+        "film location",
+        "historic"
+      ]
+    },
+    {
       "id": "hr2",
       "albumId": "croatia",
       "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/croatia/dubrovnik-GoT.jpg",
       "caption": "Game of Thrones Filming Location",
       "locationId": "Dubrovnik",
-      "coordinates": { "lng": 18.0944, "lat": 42.6507 },
+      "coordinates": {
+        "lng": 18.0944,
+        "lat": 42.6507
+      },
       "dateCreated": "2024-03-18",
-      "tags": ["game of thrones", "film location", "historic"]
-  },
-  {
+      "tags": [
+        "game of thrones",
+        "film location",
+        "historic"
+      ]
+    },
+    {
       "id": "hr3",
       "albumId": "croatia",
       "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/croatia/dubrovnik-beach.jpg",
       "caption": "Dubrovnik Beach View",
       "locationId": "Dubrovnik",
-      "coordinates": { "lng": 18.0944, "lat": 42.6507 },
+      "coordinates": {
+        "lng": 18.0944,
+        "lat": 42.6507
+      },
       "dateCreated": "2024-03-18",
-      "tags": ["beach", "coastline", "ocean"]
-  },
-  {
+      "tags": [
+        "beach",
+        "coastline",
+        "ocean"
+      ]
+    },
+    {
       "id": "hr4",
       "albumId": "croatia",
       "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/croatia/dubrovnik-boats.jpg",
       "caption": "Boats in Dubrovnik Harbor",
       "locationId": "Dubrovnik",
-      "coordinates": { "lng": 18.0944, "lat": 42.6507 },
+      "coordinates": {
+        "lng": 18.0944,
+        "lat": 42.6507
+      },
       "dateCreated": "2024-03-18",
-      "tags": ["boats", "harbor", "maritime", "water"]
-  },
-  {
+      "tags": [
+        "boats",
+        "harbor",
+        "maritime",
+        "water"
+      ]
+    },
+    {
       "id": "hr5",
       "albumId": "croatia",
       "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/croatia/dubrovnik-got-flowers.jpg",
       "caption": "Floral Scene at Game of Thrones Location",
       "locationId": "Dubrovnik",
-      "coordinates": { "lng": 18.0944, "lat": 42.6507 },
+      "coordinates": {
+        "lng": 18.0944,
+        "lat": 42.6507
+      },
       "dateCreated": "2024-03-18",
-      "tags": ["game of thrones", "flowers", "film location", "nature"]
-  },
-  {
+      "tags": [
+        "game of thrones",
+        "flowers",
+        "film location",
+        "nature"
+      ]
+    },
+    {
       "id": "hr6",
       "albumId": "croatia",
       "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/croatia/dubrovnik-steps.jpg",
       "caption": "Historic Steps in Dubrovnik",
       "locationId": "Dubrovnik",
-      "coordinates": { "lng": 18.0944, "lat": 42.6507 },
+      "coordinates": {
+        "lng": 18.0944,
+        "lat": 42.6507
+      },
       "dateCreated": "2024-03-18",
-      "tags": ["steps", "architecture", "historic", "urban"]
-  },
-  {
+      "tags": [
+        "steps",
+        "architecture",
+        "historic",
+        "urban"
+      ]
+    },
+    {
       "id": "hr7",
       "albumId": "croatia",
       "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/croatia/dubrovnik-tower-ocean.jpg",
       "caption": "Tower Overlooking the Ocean",
       "locationId": "Dubrovnik",
-      "coordinates": { "lng": 18.0944, "lat": 42.6507 },
+      "coordinates": {
+        "lng": 18.0944,
+        "lat": 42.6507
+      },
       "dateCreated": "2024-03-18",
-      "tags": ["tower", "ocean", "historic", "architecture"]
-  },
-  {
+      "tags": [
+        "tower",
+        "ocean",
+        "historic",
+        "architecture"
+      ]
+    },
+    {
       "id": "hr8",
       "albumId": "croatia",
       "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/croatia/dubrovnik-tower.jpg",
       "caption": "Dubrovnik Tower",
       "locationId": "Dubrovnik",
-      "coordinates": { "lng": 18.0944, "lat": 42.6507 },
+      "coordinates": {
+        "lng": 18.0944,
+        "lat": 42.6507
+      },
       "dateCreated": "2024-03-18",
-      "tags": ["tower", "architecture", "historic"]
-  },
-  {
+      "tags": [
+        "tower",
+        "architecture",
+        "historic"
+      ]
+    },
+    {
       "id": "hr9",
       "albumId": "croatia",
       "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/croatia/split-archway.jpg",
       "caption": "Historic Archway in Split",
       "locationId": "Split",
-      "coordinates": { "lng": 16.4402, "lat": 43.5081 },
+      "coordinates": {
+        "lng": 16.4402,
+        "lat": 43.5081
+      },
       "dateCreated": "2024-03-18",
-      "tags": ["archway", "architecture", "historic"]
-  },
-  {
+      "tags": [
+        "archway",
+        "architecture",
+        "historic"
+      ]
+    },
+    {
       "id": "hr10",
       "albumId": "croatia",
       "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/croatia/split-beach.jpg",
       "caption": "Split Beach",
       "locationId": "Split",
-      "coordinates": { "lng": 16.4402, "lat": 43.5081 },
+      "coordinates": {
+        "lng": 16.4402,
+        "lat": 43.5081
+      },
       "dateCreated": "2024-03-18",
-      "tags": ["beach", "coastline", "ocean"]
-  },
-  {
+      "tags": [
+        "beach",
+        "coastline",
+        "ocean"
+      ]
+    },
+    {
       "id": "hr11",
       "albumId": "croatia",
       "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/croatia/split-beachside.jpg",
       "caption": "Beachside View in Split",
       "locationId": "Split",
-      "coordinates": { "lng": 16.4402, "lat": 43.5081 },
+      "coordinates": {
+        "lng": 16.4402,
+        "lat": 43.5081
+      },
       "dateCreated": "2024-03-18",
-      "tags": ["beach", "coastline", "seaside"]
-  },
-  {
+      "tags": [
+        "beach",
+        "coastline",
+        "seaside"
+      ]
+    },
+    {
       "id": "hr12",
       "albumId": "croatia",
       "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/croatia/split-boardwalk.jpg",
       "caption": "Split Boardwalk",
       "locationId": "Split",
-      "coordinates": { "lng": 16.4402, "lat": 43.5081 },
+      "coordinates": {
+        "lng": 16.4402,
+        "lat": 43.5081
+      },
       "dateCreated": "2024-03-18",
-      "tags": ["boardwalk", "waterfront", "promenade"]
-  },
-  {
+      "tags": [
+        "boardwalk",
+        "waterfront",
+        "promenade"
+      ]
+    },
+    {
       "id": "hr13",
       "albumId": "croatia",
       "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/croatia/split-boat-waves.jpg",
       "caption": "Boat on Waves in Split",
       "locationId": "Split",
-      "coordinates": { "lng": 16.4402, "lat": 43.5081 },
+      "coordinates": {
+        "lng": 16.4402,
+        "lat": 43.5081
+      },
       "dateCreated": "2024-03-18",
-      "tags": ["boat", "waves", "ocean", "maritime"]
-  },
-  {
+      "tags": [
+        "boat",
+        "waves",
+        "ocean",
+        "maritime"
+      ]
+    },
+    {
       "id": "hr14",
       "albumId": "croatia",
       "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/croatia/split-boats-tower.jpg",
       "caption": "Boats and Tower in Split Harbor",
       "locationId": "Split",
-      "coordinates": { "lng": 16.4402, "lat": 43.5081 },
+      "coordinates": {
+        "lng": 16.4402,
+        "lat": 43.5081
+      },
       "dateCreated": "2024-03-18",
-      "tags": ["boats", "tower", "harbor", "maritime"]
-  },
-  {
+      "tags": [
+        "boats",
+        "tower",
+        "harbor",
+        "maritime"
+      ]
+    },
+    {
       "id": "hr15",
       "albumId": "croatia",
       "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/croatia/split-harbor-boats.jpg",
       "caption": "Split Harbor with Boats",
       "locationId": "Split",
-      "coordinates": { "lng": 16.4402, "lat": 43.5081 },
+      "coordinates": {
+        "lng": 16.4402,
+        "lat": 43.5081
+      },
       "dateCreated": "2024-03-18",
-      "tags": ["harbor", "boats", "maritime", "waterfront"]
-  },
-  {
+      "tags": [
+        "harbor",
+        "boats",
+        "maritime",
+        "waterfront"
+      ]
+    },
+    {
       "id": "hr16",
       "albumId": "croatia",
       "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/croatia/split-harbor-palmtrees.jpg",
       "caption": "Palm Trees at Split Harbor",
       "locationId": "Split",
-      "coordinates": { "lng": 16.4402, "lat": 43.5081 },
+      "coordinates": {
+        "lng": 16.4402,
+        "lat": 43.5081
+      },
       "dateCreated": "2024-03-18",
-      "tags": ["harbor", "palm trees", "waterfront", "tropical"]
-  },
-  {
+      "tags": [
+        "harbor",
+        "palm trees",
+        "waterfront",
+        "tropical"
+      ]
+    },
+    {
       "id": "hr17",
       "albumId": "croatia",
       "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/croatia/split-harbor.jpg",
       "caption": "Split Harbor View",
       "locationId": "Split",
-      "coordinates": { "lng": 16.4402, "lat": 43.5081 },
+      "coordinates": {
+        "lng": 16.4402,
+        "lat": 43.5081
+      },
       "dateCreated": "2024-03-18",
-      "tags": ["harbor", "waterfront", "maritime"]
-  },
-  {
+      "tags": [
+        "harbor",
+        "waterfront",
+        "maritime"
+      ]
+    },
+    {
       "id": "hr18",
       "albumId": "croatia",
       "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/croatia/split-menacing-statue.jpg",
       "caption": "Dramatic Statue in Split",
       "locationId": "Split",
-      "coordinates": { "lng": 16.4402, "lat": 43.5081 },
+      "coordinates": {
+        "lng": 16.4402,
+        "lat": 43.5081
+      },
       "dateCreated": "2024-03-18",
-      "tags": ["statue", "art", "sculpture", "historic"]
-  },
-  {
+      "tags": [
+        "statue",
+        "art",
+        "sculpture",
+        "historic"
+      ]
+    },
+    {
       "id": "hr19",
       "albumId": "croatia",
       "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/croatia/split-palm-sunset.jpg",
       "caption": "Sunset with Palm Trees in Split",
       "locationId": "Split",
-      "coordinates": { "lng": 16.4402, "lat": 43.5081 },
+      "coordinates": {
+        "lng": 16.4402,
+        "lat": 43.5081
+      },
       "dateCreated": "2024-03-18",
-      "tags": ["sunset", "palm trees", "silhouette", "nature"]
-  },
-  {
+      "tags": [
+        "sunset",
+        "palm trees",
+        "silhouette",
+        "nature"
+      ]
+    },
+    {
       "id": "hr20",
       "albumId": "croatia",
       "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/croatia/split-palmtree.jpg",
       "caption": "Palm Tree in Split",
       "locationId": "Split",
-      "coordinates": { "lng": 16.4402, "lat": 43.5081 },
+      "coordinates": {
+        "lng": 16.4402,
+        "lat": 43.5081
+      },
       "dateCreated": "2024-03-18",
-      "tags": ["palm tree", "nature", "tropical"]
-  },
-  {
+      "tags": [
+        "palm tree",
+        "nature",
+        "tropical"
+      ]
+    },
+    {
       "id": "hr21",
       "albumId": "croatia",
       "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/croatia/split-pano.jpg",
       "caption": "Panoramic View of Split",
       "locationId": "Split",
-      "coordinates": { "lng": 16.4402, "lat": 43.5081 },
+      "coordinates": {
+        "lng": 16.4402,
+        "lat": 43.5081
+      },
       "dateCreated": "2024-03-18",
-      "tags": ["panorama", "cityscape", "landscape"]
-  },
-  {
+      "tags": [
+        "panorama",
+        "cityscape",
+        "landscape"
+      ]
+    },
+    {
       "id": "hr22",
       "albumId": "croatia",
       "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/croatia/split-panorama.jpg",
       "caption": "Split Panoramic Landscape",
       "locationId": "Split",
-      "coordinates": { "lng": 16.4402, "lat": 43.5081 },
+      "coordinates": {
+        "lng": 16.4402,
+        "lat": 43.5081
+      },
       "dateCreated": "2024-03-18",
-      "tags": ["panorama", "cityscape", "landscape", "wide view"]
-  },
-  {
+      "tags": [
+        "panorama",
+        "cityscape",
+        "landscape",
+        "wide view"
+      ]
+    },
+    {
       "id": "hr23",
       "albumId": "croatia",
       "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/croatia/split-sailboat.jpg",
       "caption": "Sailboat in Split Waters",
       "locationId": "Split",
-      "coordinates": { "lng": 16.4402, "lat": 43.5081 },
+      "coordinates": {
+        "lng": 16.4402,
+        "lat": 43.5081
+      },
       "dateCreated": "2024-03-18",
-      "tags": ["sailboat", "ocean", "maritime", "sailing"]
-  },
-  {
+      "tags": [
+        "sailboat",
+        "ocean",
+        "maritime",
+        "sailing"
+      ]
+    },
+    {
       "id": "hr24",
       "albumId": "croatia",
       "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/croatia/split-summerblues.jpg",
       "caption": "Summer Blues in Split",
       "locationId": "Split",
-      "coordinates": { "lng": 16.4402, "lat": 43.5081 },
+      "coordinates": {
+        "lng": 16.4402,
+        "lat": 43.5081
+      },
       "dateCreated": "2024-03-18",
-      "tags": ["summer", "ocean", "blue", "scenic"]
-  },
-  {
+      "tags": [
+        "summer",
+        "ocean",
+        "blue",
+        "scenic"
+      ]
+    },
+    {
       "id": "hr25",
       "albumId": "croatia",
       "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/croatia/split-tower.jpg",
       "caption": "Historic Tower in Split",
       "locationId": "Split",
-      "coordinates": { "lng": 16.4402, "lat": 43.5081 },
+      "coordinates": {
+        "lng": 16.4402,
+        "lat": 43.5081
+      },
       "dateCreated": "2024-03-18",
-      "tags": ["tower", "architecture", "historic"]
-  },
-  {
+      "tags": [
+        "tower",
+        "architecture",
+        "historic"
+      ]
+    },
+    {
       "id": "hr26",
       "albumId": "croatia",
       "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/croatia/split-water-skyline.jpg",
       "caption": "Split Waterfront Skyline",
       "locationId": "Split",
-      "coordinates": { "lng": 16.4402, "lat": 43.5081 },
+      "coordinates": {
+        "lng": 16.4402,
+        "lat": 43.5081
+      },
       "dateCreated": "2024-03-18",
-      "tags": ["skyline", "waterfront", "cityscape"]
-  },
-  {
+      "tags": [
+        "skyline",
+        "waterfront",
+        "cityscape"
+      ]
+    },
+    {
       "id": "hr27",
       "albumId": "croatia",
       "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/croatia/zlatnirat-beach-mountain.jpg",
       "caption": "Zlatni Rat Beach with Mountain View",
       "locationId": "Zlatni Rat",
-      "coordinates": { "lng": 16.6340, "lat": 43.2578 },
+      "coordinates": {
+        "lng": 16.6340,
+        "lat": 43.2578
+      },
       "dateCreated": "2024-03-18",
-      "tags": ["beach", "mountain", "landscape", "nature"]
-  },
-  {
+      "tags": [
+        "beach",
+        "mountain",
+        "landscape",
+        "nature"
+      ]
+    },
+    {
       "id": "hr28",
       "albumId": "croatia",
       "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/croatia/zlatnirat-beach-people.jpg",
       "caption": "Beachgoers at Zlatni Rat",
       "locationId": "Zlatni Rat",
-      "coordinates": { "lng": 16.6340, "lat": 43.2578 },
+      "coordinates": {
+        "lng": 16.6340,
+        "lat": 43.2578
+      },
       "dateCreated": "2024-03-18",
-      "tags": ["beach", "people", "summer", "leisure"]
-  },
-  {
-    "id": "hr29",
-    "albumId": "croatia",
-    "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/croatia/zlatnirat-beach.jpg",
-    "caption": "Zlatni Rat Beach",
-    "locationId": "Zlatni Rat",
-    "coordinates": { "lng": 16.6340, "lat": 43.2578 },
-    "dateCreated": "2024-03-18",
-    "tags": ["beach", "coastline", "paradise", "nature"]
-},
-{
-    "id": "hr30",
-    "albumId": "croatia",
-    "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/croatia/zlatnirat-boat-clear.jpg",
-    "caption": "Boat in Crystal Clear Waters",
-    "locationId": "Zlatni Rat",
-    "coordinates": { "lng": 16.6340, "lat": 43.2578 },
-    "dateCreated": "2024-03-18",
-    "tags": ["boat", "clear water", "ocean", "maritime"]
-},
-{
-    "id": "hr31",
-    "albumId": "croatia",
-    "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/croatia/zlatnirat-greenwater.jpg",
-    "caption": "Emerald Waters at Zlatni Rat",
-    "locationId": "Zlatni Rat",
-    "coordinates": { "lng": 16.6340, "lat": 43.2578 },
-    "dateCreated": "2024-03-18",
-    "tags": ["ocean", "clear water", "turquoise", "nature"]
-},
-{
-    "id": "hr32",
-    "albumId": "croatia",
-    "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/croatia/zlatnirat-ocean.jpg",
-    "caption": "Ocean View at Zlatni Rat",
-    "locationId": "Zlatni Rat",
-    "coordinates": { "lng": 16.6340, "lat": 43.2578 },
-    "dateCreated": "2024-03-18",
-    "tags": ["ocean", "seascape", "water", "horizon"]
-}
-
-
+      "tags": [
+        "beach",
+        "people",
+        "summer",
+        "leisure"
+      ]
+    },
+    {
+      "id": "hr29",
+      "albumId": "croatia",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/croatia/zlatnirat-beach.jpg",
+      "caption": "Zlatni Rat Beach",
+      "locationId": "Zlatni Rat",
+      "coordinates": {
+        "lng": 16.6340,
+        "lat": 43.2578
+      },
+      "dateCreated": "2024-03-18",
+      "tags": [
+        "beach",
+        "coastline",
+        "paradise",
+        "nature"
+      ]
+    },
+    {
+      "id": "hr30",
+      "albumId": "croatia",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/croatia/zlatnirat-boat-clear.jpg",
+      "caption": "Boat in Crystal Clear Waters",
+      "locationId": "Zlatni Rat",
+      "coordinates": {
+        "lng": 16.6340,
+        "lat": 43.2578
+      },
+      "dateCreated": "2024-03-18",
+      "tags": [
+        "boat",
+        "clear water",
+        "ocean",
+        "maritime"
+      ]
+    },
+    {
+      "id": "hr31",
+      "albumId": "croatia",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/croatia/zlatnirat-greenwater.jpg",
+      "caption": "Emerald Waters at Zlatni Rat",
+      "locationId": "Zlatni Rat",
+      "coordinates": {
+        "lng": 16.6340,
+        "lat": 43.2578
+      },
+      "dateCreated": "2024-03-18",
+      "tags": [
+        "ocean",
+        "clear water",
+        "turquoise",
+        "nature"
+      ]
+    },
+    {
+      "id": "hr32",
+      "albumId": "croatia",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/croatia/zlatnirat-ocean.jpg",
+      "caption": "Ocean View at Zlatni Rat",
+      "locationId": "Zlatni Rat",
+      "coordinates": {
+        "lng": 16.6340,
+        "lat": 43.2578
+      },
+      "dateCreated": "2024-03-18",
+      "tags": [
+        "ocean",
+        "seascape",
+        "water",
+        "horizon"
+      ]
+    },
+    {
+      "id": "me01",
+      "albumId": "montenegro",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Montenegro/kotor-bay-mist.jpg",
+      "caption": "Misty Morning at Kotor Bay",
+      "locationId": "Kotor",
+      "coordinates": {
+        "lng": 18.7716,
+        "lat": 42.4242
+      },
+      "dateCreated": "2024-03-18",
+      "tags": [
+        "bay",
+        "mist",
+        "morning",
+        "mountains",
+        "water"
+      ]
+    },
+    {
+      "id": "me02",
+      "albumId": "montenegro",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Montenegro/kotor-bay-mountain.jpg",
+      "caption": "Mountains Surrounding Kotor Bay",
+      "locationId": "Kotor",
+      "coordinates": {
+        "lng": 18.7716,
+        "lat": 42.4242
+      },
+      "dateCreated": "2024-03-18",
+      "tags": [
+        "bay",
+        "mountains",
+        "landscape",
+        "water"
+      ]
+    },
+    {
+      "id": "me03",
+      "albumId": "montenegro",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Montenegro/kotor-bay.jpg",
+      "caption": "Panoramic View of Kotor Bay",
+      "locationId": "Kotor",
+      "coordinates": {
+        "lng": 18.7716,
+        "lat": 42.4242
+      },
+      "dateCreated": "2024-03-18",
+      "tags": [
+        "bay",
+        "panorama",
+        "water",
+        "landscape"
+      ]
+    },
+    {
+      "id": "me04",
+      "albumId": "montenegro",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Montenegro/kotor-beach.jpg",
+      "caption": "Beach View in Kotor",
+      "locationId": "Kotor",
+      "coordinates": {
+        "lng": 18.7716,
+        "lat": 42.4242
+      },
+      "dateCreated": "2024-03-18",
+      "tags": [
+        "beach",
+        "coastline",
+        "water"
+      ]
+    },
+    {
+      "id": "me05",
+      "albumId": "montenegro",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Montenegro/kotor-mountain-bay.jpg",
+      "caption": "Mountain Views Over Kotor Bay",
+      "locationId": "Kotor",
+      "coordinates": {
+        "lng": 18.7716,
+        "lat": 42.4242
+      },
+      "dateCreated": "2024-03-18",
+      "tags": [
+        "mountains",
+        "bay",
+        "landscape",
+        "scenic"
+      ]
+    },
+    {
+      "id": "me06",
+      "albumId": "montenegro",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Montenegro/perast-bluetower.jpg",
+      "caption": "Blue Tower of Perast",
+      "locationId": "Perast",
+      "coordinates": {
+        "lng": 18.7082,
+        "lat": 42.4868
+      },
+      "dateCreated": "2024-03-18",
+      "tags": [
+        "architecture",
+        "tower",
+        "historic",
+        "blue"
+      ]
+    },
+    {
+      "id": "me07",
+      "albumId": "montenegro",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Montenegro/perast-contrast.jpg",
+      "caption": "Light and Shadow Contrasts in Perast",
+      "locationId": "Perast",
+      "coordinates": {
+        "lng": 18.7082,
+        "lat": 42.4868
+      },
+      "dateCreated": "2024-03-18",
+      "tags": [
+        "architecture",
+        "lighting",
+        "contrast",
+        "cityscape"
+      ]
+    },
+    {
+      "id": "me08",
+      "albumId": "montenegro",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Montenegro/perast-cruise.jpg",
+      "caption": "Cruise Ship Visiting Perast",
+      "locationId": "Perast",
+      "coordinates": {
+        "lng": 18.7082,
+        "lat": 42.4868
+      },
+      "dateCreated": "2024-03-18",
+      "tags": [
+        "cruise",
+        "ship",
+        "water",
+        "harbor"
+      ]
+    },
+    {
+      "id": "me09",
+      "albumId": "montenegro",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Montenegro/perast-food.jpg",
+      "caption": "Local Cuisine in Perast",
+      "locationId": "Perast",
+      "coordinates": {
+        "lng": 18.7082,
+        "lat": 42.4868
+      },
+      "dateCreated": "2024-03-18",
+      "tags": [
+        "food",
+        "cuisine",
+        "local",
+        "dining"
+      ]
+    },
+    {
+      "id": "me10",
+      "albumId": "montenegro",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Montenegro/perast-island-boats.jpg",
+      "caption": "Boats Near Our Lady of the Rocks Island",
+      "locationId": "Perast",
+      "coordinates": {
+        "lng": 18.7082,
+        "lat": 42.4868
+      },
+      "dateCreated": "2024-03-18",
+      "tags": [
+        "boats",
+        "island",
+        "water",
+        "church"
+      ]
+    },
+    {
+      "id": "me11",
+      "albumId": "montenegro",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Montenegro/perast-island-sphere.jpg",
+      "caption": "Spherical View of Our Lady of the Rocks",
+      "locationId": "Perast",
+      "coordinates": {
+        "lng": 18.7082,
+        "lat": 42.4868
+      },
+      "dateCreated": "2024-03-18",
+      "tags": [
+        "island",
+        "church",
+        "architecture",
+        "artistic"
+      ]
+    },
+    {
+      "id": "me12",
+      "albumId": "montenegro",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Montenegro/perast-island-window.jpg",
+      "caption": "Window View from Our Lady of the Rocks",
+      "locationId": "Perast",
+      "coordinates": {
+        "lng": 18.7082,
+        "lat": 42.4868
+      },
+      "dateCreated": "2024-03-18",
+      "tags": [
+        "window",
+        "view",
+        "church",
+        "architecture"
+      ]
+    },
+    {
+      "id": "me13",
+      "albumId": "montenegro",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Montenegro/perast-island.jpg",
+      "caption": "Our Lady of the Rocks Island",
+      "locationId": "Perast",
+      "coordinates": {
+        "lng": 18.7082,
+        "lat": 42.4868
+      },
+      "dateCreated": "2024-03-18",
+      "tags": [
+        "island",
+        "church",
+        "water",
+        "historic"
+      ]
+    },
+    {
+      "id": "me14",
+      "albumId": "montenegro",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Montenegro/perast-museum.jpg",
+      "caption": "Perast Museum",
+      "locationId": "Perast",
+      "coordinates": {
+        "lng": 18.7082,
+        "lat": 42.4868
+      },
+      "dateCreated": "2024-03-18",
+      "tags": [
+        "museum",
+        "historic",
+        "architecture",
+        "culture"
+      ]
+    },
+    {
+      "id": "me15",
+      "albumId": "montenegro",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Montenegro/perast-rooftops-mountain.jpg",
+      "caption": "Perast Rooftops with Mountain Backdrop",
+      "locationId": "Perast",
+      "coordinates": {
+        "lng": 18.7082,
+        "lat": 42.4868
+      },
+      "dateCreated": "2024-03-18",
+      "tags": [
+        "rooftops",
+        "mountains",
+        "architecture",
+        "cityscape"
+      ]
+    },
+    {
+      "id": "me16",
+      "albumId": "montenegro",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Montenegro/perast-rooftops.jpg",
+      "caption": "Traditional Rooftops of Perast",
+      "locationId": "Perast",
+      "coordinates": {
+        "lng": 18.7082,
+        "lat": 42.4868
+      },
+      "dateCreated": "2024-03-18",
+      "tags": [
+        "rooftops",
+        "architecture",
+        "historic",
+        "cityscape"
+      ]
+    },
+    {
+      "id": "me17",
+      "albumId": "montenegro",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Montenegro/perast-sky.jpg",
+      "caption": "Dramatic Sky Over Perast",
+      "locationId": "Perast",
+      "coordinates": {
+        "lng": 18.7082,
+        "lat": 42.4868
+      },
+      "dateCreated": "2024-03-18",
+      "tags": [
+        "sky",
+        "clouds",
+        "weather",
+        "scenic"
+      ]
+    },
+    {
+      "id": "me18",
+      "albumId": "montenegro",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Montenegro/perast-tower-flag.jpg",
+      "caption": "Flag Flying from Perast Tower",
+      "locationId": "Perast",
+      "coordinates": {
+        "lng": 18.7082,
+        "lat": 42.4868
+      },
+      "dateCreated": "2024-03-18",
+      "tags": [
+        "tower",
+        "flag",
+        "architecture",
+        "historic"
+      ]
+    },
+    {
+      "id": "me19",
+      "albumId": "montenegro",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Montenegro/perast-tower.jpg",
+      "caption": "Historic Tower of Perast",
+      "locationId": "Perast",
+      "coordinates": {
+        "lng": 18.7082,
+        "lat": 42.4868
+      },
+      "dateCreated": "2024-03-18",
+      "tags": [
+        "tower",
+        "architecture",
+        "historic",
+        "landmark"
+      ]
+    },
+    {
+      "id": "me20",
+      "albumId": "montenegro",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Montenegro/perast-towers-mountain.jpg",
+      "caption": "Perast Towers with Mountain Background",
+      "locationId": "Perast",
+      "coordinates": {
+        "lng": 18.7082,
+        "lat": 42.4868
+      },
+      "dateCreated": "2024-03-18",
+      "tags": [
+        "towers",
+        "mountains",
+        "architecture",
+        "landscape"
+      ]
+    },
+    {
+      "id": "me21",
+      "albumId": "montenegro",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Montenegro/perast-towers.jpg",
+      "caption": "Historic Towers of Perast",
+      "locationId": "Perast",
+      "coordinates": {
+        "lng": 18.7082,
+        "lat": 42.4868
+      },
+      "dateCreated": "2024-03-18",
+      "tags": [
+        "towers",
+        "architecture",
+        "historic",
+        "cityscape"
+      ]
+    },
+    {
+      "id": "me22",
+      "albumId": "montenegro",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Montenegro/perast-view.jpg",
+      "caption": "Scenic View of Perast",
+      "locationId": "Perast",
+      "coordinates": {
+        "lng": 18.7082,
+        "lat": 42.4868
+      },
+      "dateCreated": "2024-03-18",
+      "tags": [
+        "view",
+        "landscape",
+        "scenic",
+        "cityscape"
+      ]
+    },
+    {
+      "id": "me23",
+      "albumId": "montenegro",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Montenegro/perast-vista-cruise.jpg",
+      "caption": "Cruise Ship Vista in Perast",
+      "locationId": "Perast",
+      "coordinates": {
+        "lng": 18.7082,
+        "lat": 42.4868
+      },
+      "dateCreated": "2024-03-18",
+      "tags": [
+        "cruise",
+        "ship",
+        "vista",
+        "harbor"
+      ]
+    },
+    {
+      "id": "me24",
+      "albumId": "montenegro",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Montenegro/perast-vista-cruiseship.jpg",
+      "caption": "Cruise Ship Approaching Perast",
+      "locationId": "Perast",
+      "coordinates": {
+        "lng": 18.7082,
+        "lat": 42.4868
+      },
+      "dateCreated": "2024-03-18",
+      "tags": [
+        "cruise",
+        "ship",
+        "water",
+        "transportation"
+      ]
+    },
+    {
+      "id": "me25",
+      "albumId": "montenegro",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Montenegro/perast-vista-tower.jpg",
+      "caption": "Tower Vista in Perast",
+      "locationId": "Perast",
+      "coordinates": {
+        "lng": 18.7082,
+        "lat": 42.4868
+      },
+      "dateCreated": "2024-03-18",
+      "tags": [
+        "tower",
+        "vista",
+        "architecture",
+        "scenic"
+      ]
+    },
+    {
+      "id": "me26",
+      "albumId": "montenegro",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Montenegro/perast-vista.jpg",
+      "caption": "Panoramic Vista of Perast",
+      "locationId": "Perast",
+      "coordinates": {
+        "lng": 18.7082,
+        "lat": 42.4868
+      },
+      "dateCreated": "2024-03-18",
+      "tags": [
+        "panorama",
+        "vista",
+        "cityscape",
+        "landscape"
+      ]
+    },
+    {
+      "id": "me27",
+      "albumId": "montenegro",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Montenegro/perast-water-mountains.jpg",
+      "caption": "Water and Mountain Views of Perast",
+      "locationId": "Perast",
+      "coordinates": {
+        "lng": 18.7082,
+        "lat": 42.4868
+      },
+      "dateCreated": "2024-03-18",
+      "tags": [
+        "water",
+        "mountains",
+        "landscape",
+        "scenic"
+      ]
+    },
+    {
+      "id": "mu01",
+      "albumId": "mauritius",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Mauritius/mauritius-beach-green.jpg",
+      "caption": "Tropical Green Beach Landscape",
+      "locationId": "Belle Mare",
+      "coordinates": {
+        "lng": 57.7647,
+        "lat": -20.1897
+      },
+      "dateCreated": "2024-03-18",
+      "tags": [
+        "beach",
+        "tropical",
+        "green",
+        "landscape"
+      ]
+    },
+    {
+      "id": "mu02",
+      "albumId": "mauritius",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Mauritius/mauritius-beach-house.jpg",
+      "caption": "Beach House on Mauritius Coast",
+      "locationId": "Flic en Flac",
+      "coordinates": {
+        "lng": 57.3711,
+        "lat": -20.2747
+      },
+      "dateCreated": "2024-03-18",
+      "tags": [
+        "beach",
+        "house",
+        "architecture",
+        "coastal"
+      ]
+    },
+    {
+      "id": "mu03",
+      "albumId": "mauritius",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Mauritius/mauritius-beach-hut.jpg",
+      "caption": "Traditional Beach Hut",
+      "locationId": "Belle Mare",
+      "coordinates": {
+        "lng": 57.7647,
+        "lat": -20.1897
+      },
+      "dateCreated": "2024-03-18",
+      "tags": [
+        "hut",
+        "beach",
+        "traditional",
+        "architecture"
+      ]
+    },
+    {
+      "id": "mu04",
+      "albumId": "mauritius",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Mauritius/mauritius-beach-wave-sand.jpg",
+      "caption": "Waves Meeting Sandy Shore",
+      "locationId": "Flic en Flac",
+      "coordinates": {
+        "lng": 57.3711,
+        "lat": -20.2747
+      },
+      "dateCreated": "2024-03-18",
+      "tags": [
+        "waves",
+        "sand",
+        "beach",
+        "ocean"
+      ]
+    },
+    {
+      "id": "mu05",
+      "albumId": "mauritius",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Mauritius/mauritius-beach-wave.jpg",
+      "caption": "Rolling Wave on Mauritius Beach",
+      "locationId": "Le Morne",
+      "coordinates": {
+        "lng": 57.3275,
+        "lat": -20.4562
+      },
+      "dateCreated": "2024-03-18",
+      "tags": [
+        "wave",
+        "ocean",
+        "beach",
+        "water"
+      ]
+    },
+    {
+      "id": "mu06",
+      "albumId": "mauritius",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Mauritius/mauritius-beach-waves.jpg",
+      "caption": "Multiple Waves Breaking",
+      "locationId": "Le Morne",
+      "coordinates": {
+        "lng": 57.3275,
+        "lat": -20.4562
+      },
+      "dateCreated": "2024-03-18",
+      "tags": [
+        "waves",
+        "ocean",
+        "surf",
+        "water"
+      ]
+    },
+    {
+      "id": "mu07",
+      "albumId": "mauritius",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Mauritius/mauritius-beach.jpg",
+      "caption": "Pristine Mauritius Beach",
+      "locationId": "Belle Mare",
+      "coordinates": {
+        "lng": 57.7647,
+        "lat": -20.1897
+      },
+      "dateCreated": "2024-03-18",
+      "tags": [
+        "beach",
+        "ocean",
+        "tropical",
+        "paradise"
+      ]
+    },
+    {
+      "id": "mu08",
+      "albumId": "mauritius",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Mauritius/mauritius-budda-pink.jpg",
+      "caption": "Pink Buddha Statue",
+      "locationId": "Port Louis",
+      "coordinates": {
+        "lng": 57.5042,
+        "lat": -20.1609
+      },
+      "dateCreated": "2024-03-18",
+      "tags": [
+        "buddha",
+        "statue",
+        "pink",
+        "religious"
+      ]
+    },
+    {
+      "id": "mu09",
+      "albumId": "mauritius",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Mauritius/mauritius-colored-earth-bumps.jpg",
+      "caption": "Chamarel Seven Colored Earth Formations",
+      "locationId": "Le Morne",
+      "coordinates": {
+        "lng": 57.3275,
+        "lat": -20.4562
+      },
+      "dateCreated": "2024-03-18",
+      "tags": [
+        "colored earth",
+        "geological",
+        "natural",
+        "landscape"
+      ]
+    },
+    {
+      "id": "mu10",
+      "albumId": "mauritius",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Mauritius/mauritius-colored-earth-trees.jpg",
+      "caption": "Colored Earth with Surrounding Forest",
+      "locationId": "Le Morne",
+      "coordinates": {
+        "lng": 57.3275,
+        "lat": -20.4562
+      },
+      "dateCreated": "2024-03-18",
+      "tags": [
+        "colored earth",
+        "trees",
+        "forest",
+        "landscape"
+      ]
+    },
+    {
+      "id": "mu11",
+      "albumId": "mauritius",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Mauritius/mauritius-colored-earth.jpg",
+      "caption": "Vivid Colors of Chamarel Earth",
+      "locationId": "Le Morne",
+      "coordinates": {
+        "lng": 57.3275,
+        "lat": -20.4562
+      },
+      "dateCreated": "2024-03-18",
+      "tags": [
+        "colored earth",
+        "natural",
+        "geological",
+        "scenic"
+      ]
+    },
+    {
+      "id": "mu12",
+      "albumId": "mauritius",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Mauritius/mauritius-cow-statue.jpg",
+      "caption": "Sacred Cow Statue",
+      "locationId": "Port Louis",
+      "coordinates": {
+        "lng": 57.5042,
+        "lat": -20.1609
+      },
+      "dateCreated": "2024-03-18",
+      "tags": [
+        "cow",
+        "statue",
+        "religious",
+        "cultural"
+      ]
+    },
+    {
+      "id": "mu13",
+      "albumId": "mauritius",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Mauritius/mauritius-lion-statue.jpg",
+      "caption": "Majestic Lion Statue",
+      "locationId": "Port Louis",
+      "coordinates": {
+        "lng": 57.5042,
+        "lat": -20.1609
+      },
+      "dateCreated": "2024-03-18",
+      "tags": [
+        "lion",
+        "statue",
+        "sculpture",
+        "art"
+      ]
+    },
+    {
+      "id": "mu14",
+      "albumId": "mauritius",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Mauritius/mauritius-mountain-peaks.jpg",
+      "caption": "Mountain Peaks of Mauritius",
+      "locationId": "Le Morne",
+      "coordinates": {
+        "lng": 57.3275,
+        "lat": -20.4562
+      },
+      "dateCreated": "2024-03-18",
+      "tags": [
+        "mountains",
+        "peaks",
+        "landscape",
+        "nature"
+      ]
+    },
+    {
+      "id": "mu15",
+      "albumId": "mauritius",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Mauritius/mauritius-mountain.jpg",
+      "caption": "Iconic Mountain Landscape",
+      "locationId": "Le Morne",
+      "coordinates": {
+        "lng": 57.3275,
+        "lat": -20.4562
+      },
+      "dateCreated": "2024-03-18",
+      "tags": [
+        "mountain",
+        "landscape",
+        "nature",
+        "scenic"
+      ]
+    },
+    {
+      "id": "mu16",
+      "albumId": "mauritius",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Mauritius/mauritius-mountains-clouds.jpg",
+      "caption": "Mountains Shrouded in Clouds",
+      "locationId": "Le Morne",
+      "coordinates": {
+        "lng": 57.3275,
+        "lat": -20.4562
+      },
+      "dateCreated": "2024-03-18",
+      "tags": [
+        "mountains",
+        "clouds",
+        "landscape",
+        "weather"
+      ]
+    },
+    {
+      "id": "mu17",
+      "albumId": "mauritius",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Mauritius/mauritius-peaks.jpg",
+      "caption": "Dramatic Mountain Peaks",
+      "locationId": "Le Morne",
+      "coordinates": {
+        "lng": 57.3275,
+        "lat": -20.4562
+      },
+      "dateCreated": "2024-03-18",
+      "tags": [
+        "peaks",
+        "mountains",
+        "dramatic",
+        "landscape"
+      ]
+    },
+    {
+      "id": "mu18",
+      "albumId": "mauritius",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Mauritius/mauritius-solo-mountain.jpg",
+      "caption": "Solitary Mountain Peak",
+      "locationId": "Le Morne",
+      "coordinates": {
+        "lng": 57.3275,
+        "lat": -20.4562
+      },
+      "dateCreated": "2024-03-18",
+      "tags": [
+        "mountain",
+        "peak",
+        "landscape",
+        "nature"
+      ]
+    },
+    {
+      "id": "mu19",
+      "albumId": "mauritius",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Mauritius/mauritius-statue-angle.jpg",
+      "caption": "Angled View of Religious Statue",
+      "locationId": "Port Louis",
+      "coordinates": {
+        "lng": 57.5042,
+        "lat": -20.1609
+      },
+      "dateCreated": "2024-03-18",
+      "tags": [
+        "statue",
+        "religious",
+        "art",
+        "architecture"
+      ]
+    },
+    {
+      "id": "mu20",
+      "albumId": "mauritius",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Mauritius/mauritius-statue-bluebuddha.jpg",
+      "caption": "Blue Buddha Statue",
+      "locationId": "Port Louis",
+      "coordinates": {
+        "lng": 57.5042,
+        "lat": -20.1609
+      },
+      "dateCreated": "2024-03-18",
+      "tags": [
+        "buddha",
+        "statue",
+        "blue",
+        "religious"
+      ]
+    },
+    {
+      "id": "mu21",
+      "albumId": "mauritius",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Mauritius/mauritius-statue-close.jpg",
+      "caption": "Close-up of Religious Statue",
+      "locationId": "Port Louis",
+      "coordinates": {
+        "lng": 57.5042,
+        "lat": -20.1609
+      },
+      "dateCreated": "2024-03-18",
+      "tags": [
+        "statue",
+        "close-up",
+        "religious",
+        "detail"
+      ]
+    },
+    {
+      "id": "mu22",
+      "albumId": "mauritius",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Mauritius/mauritius-statue-clouds.jpg",
+      "caption": "Statue Against Cloudy Sky",
+      "locationId": "Port Louis",
+      "coordinates": {
+        "lng": 57.5042,
+        "lat": -20.1609
+      },
+      "dateCreated": "2024-03-18",
+      "tags": [
+        "statue",
+        "clouds",
+        "sky",
+        "religious"
+      ]
+    },
+    {
+      "id": "mu23",
+      "albumId": "mauritius",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Mauritius/mauritius-statue-cow.jpg",
+      "caption": "Hindu Sacred Cow Statue",
+      "locationId": "Port Louis",
+      "coordinates": {
+        "lng": 57.5042,
+        "lat": -20.1609
+      },
+      "dateCreated": "2024-03-18",
+      "tags": [
+        "cow",
+        "statue",
+        "hindu",
+        "religious"
+      ]
+    },
+    {
+      "id": "mu24",
+      "albumId": "mauritius",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Mauritius/mauritius-statue-greenelephant.jpg",
+      "caption": "Green Elephant Statue",
+      "locationId": "Port Louis",
+      "coordinates": {
+        "lng": 57.5042,
+        "lat": -20.1609
+      },
+      "dateCreated": "2024-03-18",
+      "tags": [
+        "elephant",
+        "statue",
+        "green",
+        "religious"
+      ]
+    },
+    {
+      "id": "mu25",
+      "albumId": "mauritius",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Mauritius/mauritius-statue-lion-close.jpg",
+      "caption": "Close-up of Lion Statue",
+      "locationId": "Port Louis",
+      "coordinates": {
+        "lng": 57.5042,
+        "lat": -20.1609
+      },
+      "dateCreated": "2024-03-18",
+      "tags": [
+        "lion",
+        "statue",
+        "close-up",
+        "detail"
+      ]
+    },
+    {
+      "id": "mu26",
+      "albumId": "mauritius",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Mauritius/mauritius-statue-lion.jpg",
+      "caption": "Guardian Lion Statue",
+      "locationId": "Port Louis",
+      "coordinates": {
+        "lng": 57.5042,
+        "lat": -20.1609
+      },
+      "dateCreated": "2024-03-18",
+      "tags": [
+        "lion",
+        "statue",
+        "guardian",
+        "sculpture"
+      ]
+    },
+    {
+      "id": "mu27",
+      "albumId": "mauritius",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Mauritius/mauritius-statue-orange.jpg",
+      "caption": "Orange Religious Statue",
+      "locationId": "Port Louis",
+      "coordinates": {
+        "lng": 57.5042,
+        "lat": -20.1609
+      },
+      "dateCreated": "2024-03-18",
+      "tags": [
+        "statue",
+        "orange",
+        "religious",
+        "art"
+      ]
+    },
+    {
+      "id": "mu28",
+      "albumId": "mauritius",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Mauritius/mauritius-statue-palmup.jpg",
+      "caption": "Religious Statue with Raised Palm",
+      "locationId": "Port Louis",
+      "coordinates": {
+        "lng": 57.5042,
+        "lat": -20.1609
+      },
+      "dateCreated": "2024-03-18",
+      "tags": [
+        "statue",
+        "religious",
+        "gesture",
+        "art"
+      ]
+    },
+    {
+      "id": "mu29",
+      "albumId": "mauritius",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Mauritius/mauritius-statue-pink.jpg",
+      "caption": "Pink Religious Statue",
+      "locationId": "Port Louis",
+      "coordinates": {
+        "lng": 57.5042,
+        "lat": -20.1609
+      },
+      "dateCreated": "2024-03-18",
+      "tags": [
+        "statue",
+        "pink",
+        "religious",
+        "art"
+      ]
+    },
+    {
+      "id": "mu30",
+      "albumId": "mauritius",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Mauritius/mauritius-statue-solo.jpg",
+      "caption": "Solitary Religious Statue",
+      "locationId": "Port Louis",
+      "coordinates": {
+        "lng": 57.5042,
+        "lat": -20.1609
+      },
+      "dateCreated": "2024-03-18",
+      "tags": [
+        "statue",
+        "solitary",
+        "religious",
+        "sculpture"
+      ]
+    },
+    {
+      "id": "mu31",
+      "albumId": "mauritius",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Mauritius/mauritius-valley-cloud.jpg",
+      "caption": "Valley with Single Cloud",
+      "locationId": "Le Morne",
+      "coordinates": {
+        "lng": 57.3275,
+        "lat": -20.4562
+      },
+      "dateCreated": "2024-03-18",
+      "tags": [
+        "valley",
+        "cloud",
+        "landscape",
+        "nature"
+      ]
+    },
+    {
+      "id": "mu32",
+      "albumId": "mauritius",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Mauritius/mauritius-valley-clouds.jpg",
+      "caption": "Valley Under Cloudy Sky",
+      "locationId": "Le Morne",
+      "coordinates": {
+        "lng": 57.3275,
+        "lat": -20.4562
+      },
+      "dateCreated": "2024-03-18",
+      "tags": [
+        "valley",
+        "clouds",
+        "landscape",
+        "scenic"
+      ]
+    },
+    {
+      "id": "mu33",
+      "albumId": "mauritius",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Mauritius/mauritius-valley-waterfall.jpg",
+      "caption": "Waterfall in Valley",
+      "locationId": "Le Morne",
+      "coordinates": {
+        "lng": 57.3275,
+        "lat": -20.4562
+      },
+      "dateCreated": "2024-03-18",
+      "tags": [
+        "waterfall",
+        "valley",
+        "nature",
+        "water"
+      ]
+    },
+    {
+      "id": "mu34",
+      "albumId": "mauritius",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Mauritius/mauritius-valley.jpg",
+      "caption": "Scenic Valley View",
+      "locationId": "Le Morne",
+      "coordinates": {
+        "lng": 57.3275,
+        "lat": -20.4562
+      },
+      "dateCreated": "2024-03-18",
+      "tags": [
+        "valley",
+        "landscape",
+        "scenic",
+        "nature"
+      ]
+    },
+    {
+      "id": "mu35",
+      "albumId": "mauritius",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Mauritius/mauritius-waterfall-hole.jpg",
+      "caption": "Natural Pool at Waterfall",
+      "locationId": "Le Morne",
+      "coordinates": {
+        "lng": 57.3275,
+        "lat": -20.4562
+      },
+      "dateCreated": "2024-03-18",
+      "tags": [
+        "waterfall",
+        "pool",
+        "nature",
+        "water"
+      ]
+    },
+    {
+      "id": "mu36",
+      "albumId": "mauritius",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Mauritius/mauritius-waterfall.jpg",
+      "caption": "Cascading Waterfall",
+      "locationId": "Le Morne",
+      "coordinates": {
+        "lng": 57.3275,
+        "lat": -20.4562
+      },
+      "dateCreated": "2024-03-18",
+      "tags": [
+        "waterfall",
+        "cascade",
+        "nature",
+        "water"
+      ]
+    },
+    {
+      "id": "bo01",
+      "albumId": "botswana",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Botswana/choba-boat.jpg",
+      "caption": "Choba Boat",
+      "locationId": "Chobe National Park",
+      "coordinates": {
+        "lng": 27.4733,
+        "lat": -19.7450
+      },
+      "dateCreated": "2024-03-18",
+      "tags": ["boat", "choba", "water"]
+    },
+    {
+      "id": "bo02",
+      "albumId": "botswana",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Botswana/choba-impala-group.jpg",
+      "caption": "Choba Impala Group",
+      "locationId": "Chobe National Park",
+      "coordinates": {
+        "lng": 27.4733,
+        "lat": -19.7450
+      },
+      "dateCreated": "2024-03-18",
+      "tags": ["impala", "group", "choba", "wildlife"]
+    },
+    {
+      "id": "bo03",
+      "albumId": "botswana",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Botswana/chobe-buffaloes.jpg",
+      "caption": "Chobe Buffaloes",
+      "locationId": "Chobe National Park",
+      "coordinates": {
+        "lng": 27.4733,
+        "lat": -19.7450
+      },
+      "dateCreated": "2024-03-18",
+      "tags": ["buffaloes", "chobe", "wildlife"]
+    },
+    {
+      "id": "bo04",
+      "albumId": "botswana",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Botswana/chobe-buffalos.jpg",
+      "caption": "Chobe Buffalos",
+      "locationId": "Chobe National Park",
+      "coordinates": {
+        "lng": 27.4733,
+        "lat": -19.7450
+      },
+      "dateCreated": "2024-03-18",
+      "tags": ["buffalos", "chobe", "wildlife"]
+    },
+    {
+      "id": "bo05",
+      "albumId": "botswana",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Botswana/chobe-car-horizon.jpg",
+      "caption": "Chobe Car Horizon",
+      "locationId": "Chobe National Park",
+      "coordinates": {
+        "lng": 27.4733,
+        "lat": -19.7450
+      },
+      "dateCreated": "2024-03-18",
+      "tags": ["car", "horizon", "chobe", "scenery"]
+    },
+    {
+      "id": "bo06",
+      "albumId": "botswana",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Botswana/chobe-change-tire.jpg",
+      "caption": "Chobe Change Tire",
+      "locationId": "Chobe National Park",
+      "coordinates": {
+        "lng": 27.4733,
+        "lat": -19.7450
+      },
+      "dateCreated": "2024-03-18",
+      "tags": ["change tire", "chobe", "vehicle"]
+    },
+    {
+      "id": "bo07",
+      "albumId": "botswana",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Botswana/chobe-crocodile.jpg",
+      "caption": "Chobe Crocodile",
+      "locationId": "Chobe National Park",
+      "coordinates": {
+        "lng": 27.4733,
+        "lat": -19.7450
+      },
+      "dateCreated": "2024-03-18",
+      "tags": ["crocodile", "chobe", "wildlife", "reptile"]
+    },
+    {
+      "id": "bo08",
+      "albumId": "botswana",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Botswana/chobe-elephant-baby.jpg",
+      "caption": "Chobe Elephant Baby",
+      "locationId": "Chobe National Park",
+      "coordinates": {
+        "lng": 27.4733,
+        "lat": -19.7450
+      },
+      "dateCreated": "2024-03-18",
+      "tags": ["elephant", "baby", "chobe", "wildlife"]
+    },
+    {
+      "id": "bo09",
+      "albumId": "botswana",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Botswana/chobe-elephant-close.jpg",
+      "caption": "Chobe Elephant Close",
+      "locationId": "Chobe National Park",
+      "coordinates": {
+        "lng": 27.4733,
+        "lat": -19.7450
+      },
+      "dateCreated": "2024-03-18",
+      "tags": ["elephant", "close", "chobe", "wildlife"]
+    },
+    {
+      "id": "bo10",
+      "albumId": "botswana",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Botswana/chobe-elephant-creek-impala.jpg",
+      "caption": "Chobe Elephant Creek Impala",
+      "locationId": "Chobe National Park",
+      "coordinates": {
+        "lng": 27.4733,
+        "lat": -19.7450
+      },
+      "dateCreated": "2024-03-18",
+      "tags": ["elephant", "creek", "impala", "chobe", "wildlife"]
+    },
+    {
+      "id": "bo11",
+      "albumId": "botswana",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Botswana/chobe-elephant-eat.jpg",
+      "caption": "Chobe Elephant Eat",
+      "locationId": "Chobe National Park",
+      "coordinates": {
+        "lng": 27.4733,
+        "lat": -19.7450
+      },
+      "dateCreated": "2024-03-18",
+      "tags": ["elephant", "eat", "chobe", "wildlife"]
+    },
+    {
+      "id": "bo12",
+      "albumId": "botswana",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Botswana/chobe-elephant-family-close.jpg",
+      "caption": "Chobe Elephant Family Close",
+      "locationId": "Chobe National Park",
+      "coordinates": {
+        "lng": 27.4733,
+        "lat": -19.7450
+      },
+      "dateCreated": "2024-03-18",
+      "tags": ["elephant", "family", "close", "chobe", "wildlife"]
+    },
+    {
+      "id": "bo13",
+      "albumId": "botswana",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Botswana/chobe-elephant-family-swim.jpg",
+      "caption": "Chobe Elephant Family Swim",
+      "locationId": "Chobe National Park",
+      "coordinates": {
+        "lng": 27.4733,
+        "lat": -19.7450
+      },
+      "dateCreated": "2024-03-18",
+      "tags": ["elephant", "family", "swim", "chobe", "wildlife", "water"]
+    },
+    {
+      "id": "bo14",
+      "albumId": "botswana",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Botswana/chobe-elephant-front.jpg",
+      "caption": "Chobe Elephant Front",
+      "locationId": "Chobe National Park",
+      "coordinates": {
+        "lng": 27.4733,
+        "lat": -19.7450
+      },
+      "dateCreated": "2024-03-18",
+      "tags": ["elephant", "front", "chobe", "wildlife"]
+    },
+    {
+      "id": "bo15",
+      "albumId": "botswana",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Botswana/chobe-elephant-mud.jpg",
+      "caption": "Chobe Elephant Mud",
+      "locationId": "Chobe National Park",
+      "coordinates": {
+        "lng": 27.4733,
+        "lat": -19.7450
+      },
+      "dateCreated": "2024-03-18",
+      "tags": ["elephant", "mud", "chobe", "wildlife"]
+    },
+    {
+      "id": "bo16",
+      "albumId": "botswana",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Botswana/chobe-elephant-pack.jpg",
+      "caption": "Chobe Elephant Pack",
+      "locationId": "Chobe National Park",
+      "coordinates": {
+        "lng": 27.4733,
+        "lat": -19.7450
+      },
+      "dateCreated": "2024-03-18",
+      "tags": ["elephant", "pack", "chobe", "wildlife"]
+    },
+    {
+      "id": "bo17",
+      "albumId": "botswana",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Botswana/chobe-elephant-solo.jpg",
+      "caption": "Chobe Elephant Solo",
+      "locationId": "Chobe National Park",
+      "coordinates": {
+        "lng": 27.4733,
+        "lat": -19.7450
+      },
+      "dateCreated": "2024-03-18",
+      "tags": ["elephant", "solo", "chobe", "wildlife"]
+    },
+    {
+      "id": "bo18",
+      "albumId": "botswana",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Botswana/chobe-elephant-walking.jpg",
+      "caption": "Chobe Elephant Walking",
+      "locationId": "Chobe National Park",
+      "coordinates": {
+        "lng": 27.4733,
+        "lat": -19.7450
+      },
+      "dateCreated": "2024-03-18",
+      "tags": ["elephant", "walking", "chobe", "wildlife"]
+    },
+    {
+      "id": "bo19",
+      "albumId": "botswana",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Botswana/chobe-elephant-zoom.jpg",
+      "caption": "Chobe Elephant Zoom",
+      "locationId": "Chobe National Park",
+      "coordinates": {
+        "lng": 27.4733,
+        "lat": -19.7450
+      },
+      "dateCreated": "2024-03-18",
+      "tags": ["elephant", "zoom", "chobe", "wildlife", "close-up"]
+    },
+    {
+      "id": "bo20",
+      "albumId": "botswana",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Botswana/chobe-elephants-boat.jpg",
+      "caption": "Chobe Elephants Boat",
+      "locationId": "Chobe National Park",
+      "coordinates": {
+        "lng": 27.4733,
+        "lat": -19.7450
+      },
+      "dateCreated": "2024-03-18",
+      "tags": ["elephants", "boat", "chobe", "wildlife", "water"]
+    },
+    {
+      "id": "bo21",
+      "albumId": "botswana",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Botswana/chobe-elephants-closer.jpg",
+      "caption": "Chobe Elephants Closer",
+      "locationId": "Chobe National Park",
+      "coordinates": {
+        "lng": 27.4733,
+        "lat": -19.7450
+      },
+      "dateCreated": "2024-03-18",
+      "tags": ["elephants", "closer", "chobe", "wildlife", "close-up"]
+    },
+    {
+      "id": "bo22",
+      "albumId": "botswana",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Botswana/chobe-elephants-cross.jpg",
+      "caption": "Chobe Elephants Cross",
+      "locationId": "Chobe National Park",
+      "coordinates": {
+        "lng": 27.4733,
+        "lat": -19.7450
+      },
+      "dateCreated": "2024-03-18",
+      "tags": ["elephants", "cross", "chobe", "wildlife", "movement"]
+    },
+    {
+      "id": "bo23",
+      "albumId": "botswana",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Botswana/chobe-elephants-crosswater.jpg",
+      "caption": "Chobe Elephants Cross Water",
+      "locationId": "Chobe National Park",
+      "coordinates": {
+        "lng": 27.4733,
+        "lat": -19.7450
+      },
+      "dateCreated": "2024-03-18",
+      "tags": ["elephants", "cross water", "chobe", "wildlife", "water"]
+    },
+    {
+      "id": "bo24",
+      "albumId": "botswana",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Botswana/chobe-elephants-mud.jpg",
+      "caption": "Chobe Elephants Mud",
+      "locationId": "Chobe National Park",
+      "coordinates": {
+        "lng": 27.4733,
+        "lat": -19.7450
+      },
+      "dateCreated": "2024-03-18",
+      "tags": ["elephants", "mud", "chobe", "wildlife"]
+    },
+    {
+      "id": "bo25",
+      "albumId": "botswana",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Botswana/chobe-elephants-orb.jpg",
+      "caption": "Chobe Elephants Orb",
+      "locationId": "Chobe National Park",
+      "coordinates": {
+        "lng": 27.4733,
+        "lat": -19.7450
+      },
+      "dateCreated": "2024-03-18",
+      "tags": ["elephants", "orb", "chobe", "wildlife", "sun"]
+    },
+    {
+      "id": "bo26",
+      "albumId": "botswana",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Botswana/chobe-elephants-river-wet.jpg",
+      "caption": "Chobe Elephants River Wet",
+      "locationId": "Chobe National Park",
+      "coordinates": {
+        "lng": 27.4733,
+        "lat": -19.7450
+      },
+      "dateCreated": "2024-03-18",
+      "tags": ["elephants", "river", "wet", "chobe", "wildlife", "water"]
+    },
+    {
+      "id": "bo27",
+      "albumId": "botswana",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Botswana/chobe-elephants-river.jpg",
+      "caption": "Chobe Elephants River",
+      "locationId": "Chobe National Park",
+      "coordinates": {
+        "lng": 27.4733,
+        "lat": -19.7450
+      },
+      "dateCreated": "2024-03-18",
+      "tags": ["elephants", "river", "chobe", "wildlife", "water"]
+    },
+    {
+      "id": "bo28",
+      "albumId": "botswana",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Botswana/chobe-elephants-road.jpg",
+      "caption": "Chobe Elephants Road",
+      "locationId": "Chobe National Park",
+      "coordinates": {
+        "lng": 27.4733,
+        "lat": -19.7450
+      },
+      "dateCreated": "2024-03-18",
+      "tags": ["elephants", "road", "chobe", "wildlife", "movement"]
+    },
+    {
+      "id": "bo29",
+      "albumId": "botswana",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Botswana/chobe-elephants-sun-orb.jpg",
+      "caption": "Chobe Elephants Sun Orb",
+      "locationId": "Chobe National Park",
+      "coordinates": {
+        "lng": 27.4733,
+        "lat": -19.7450
+      },
+      "dateCreated": "2024-03-18",
+      "tags": ["elephants", "sun orb", "chobe", "wildlife", "sun"]
+    },
+    {
+      "id": "bo30",
+      "albumId": "botswana",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Botswana/chobe-elephants-sundown-orb.jpg",
+      "caption": "Chobe Elephants Sundown Orb",
+      "locationId": "Chobe National Park",
+      "coordinates": {
+        "lng": 27.4733,
+        "lat": -19.7450
+      },
+      "dateCreated": "2024-03-18",
+      "tags": ["elephants", "sundown orb", "chobe", "wildlife", "sunset"]
+    },
+    {
+      "id": "bo31",
+      "albumId": "botswana",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Botswana/chobe-elephants-sunorb.jpg",
+      "caption": "Chobe Elephants Sunorb",
+      "locationId": "Chobe National Park",
+      "coordinates": {
+        "lng": 27.4733,
+        "lat": -19.7450
+      },
+      "dateCreated": "2024-03-18",
+      "tags": ["elephants", "sunorb", "chobe", "wildlife", "sun"]
+    },
+    {
+      "id": "bo32",
+      "albumId": "botswana",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Botswana/chobe-elephants-swim.jpg",
+      "caption": "Chobe Elephants Swim",
+      "locationId": "Chobe National Park",
+      "coordinates": {
+        "lng": 27.4733,
+        "lat": -19.7450
+      },
+      "dateCreated": "2024-03-18",
+      "tags": ["elephants", "swim", "chobe", "wildlife", "water"]
+    },
+    {
+      "id": "bo33",
+      "albumId": "botswana",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Botswana/chobe-elephants-synchronized-swim.jpg",
+      "caption": "Chobe Elephants Synchronized Swim",
+      "locationId": "Chobe National Park",
+      "coordinates": {
+        "lng": 27.4733,
+        "lat": -19.7450
+      },
+      "dateCreated": "2024-03-18",
+      "tags": ["elephants", "synchronized swim", "chobe", "wildlife", "water"]
+    },
+    {
+      "id": "bo34",
+      "albumId": "botswana",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Botswana/chobe-elephants-wading.jpg",
+      "caption": "Chobe Elephants Wading",
+      "locationId": "Chobe National Park",
+      "coordinates": {
+        "lng": 27.4733,
+        "lat": -19.7450
+      },
+      "dateCreated": "2024-03-18",
+      "tags": ["elephants", "wading", "chobe", "wildlife", "water"]
+    },
+    {
+      "id": "bo35",
+      "albumId": "botswana",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Botswana/chobe-five-lion.jpg",
+      "caption": "Chobe Five Lion",
+      "locationId": "Chobe National Park",
+      "coordinates": {
+        "lng": 27.4733,
+        "lat": -19.7450
+      },
+      "dateCreated": "2024-03-18",
+      "tags": ["five", "lion", "chobe", "wildlife"]
+    },
+    {
+      "id": "bo36",
+      "albumId": "botswana",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Botswana/chobe-five-lions.jpg",
+      "caption": "Chobe Five Lions",
+      "locationId": "Chobe National Park",
+      "coordinates": {
+        "lng": 27.4733,
+        "lat": -19.7450
+      },
+      "dateCreated": "2024-03-18",
+      "tags": ["five", "lions", "chobe", "wildlife"]
+    },
+    {
+      "id": "bo37",
+      "albumId": "botswana",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Botswana/chobe-flat-tire.jpg",
+      "caption": "Chobe Flat Tire",
+      "locationId": "Chobe National Park",
+      "coordinates": {
+        "lng": 27.4733,
+        "lat": -19.7450
+      },
+      "dateCreated": "2024-03-18",
+      "tags": ["flat tire", "chobe", "vehicle"]
+    },
+    {
+      "id": "bo38",
+      "albumId": "botswana",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Botswana/chobe-giraffe-three.jpg",
+      "caption": "Chobe Giraffe Three",
+      "locationId": "Chobe National Park",
+      "coordinates": {
+        "lng": 27.4733,
+        "lat": -19.7450
+      },
+      "dateCreated": "2024-03-18",
+      "tags": ["giraffe", "three", "chobe", "wildlife"]
+    },
+    {
+      "id": "bo39",
+      "albumId": "botswana",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Botswana/chobe-hippo-graze.jpg",
+      "caption": "Chobe Hippo Graze",
+      "locationId": "Chobe National Park",
+      "coordinates": {
+        "lng": 27.4733,
+        "lat": -19.7450
+      },
+      "dateCreated": "2024-03-18",
+      "tags": ["hippo", "graze", "chobe", "wildlife"]
+    },
+    {
+      "id": "bo40",
+      "albumId": "botswana",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Botswana/chobe-hippo-grazing.jpg",
+      "caption": "Chobe Hippo Grazing",
+      "locationId": "Chobe National Park",
+      "coordinates": {
+        "lng": 27.4733,
+        "lat": -19.7450
+      },
+      "dateCreated": "2024-03-18",
+      "tags": ["hippo", "grazing", "chobe", "wildlife"]
+    },
+    {
+      "id": "bo41",
+      "albumId": "botswana",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Botswana/chobe-hyena.jpg",
+      "caption": "Chobe Hyena",
+      "locationId": "Chobe National Park",
+      "coordinates": {
+        "lng": 27.4733,
+        "lat": -19.7450
+      },
+      "dateCreated": "2024-03-18",
+      "tags": ["hyena", "chobe", "wildlife"]
+    },
+    {
+      "id": "bo42",
+      "albumId": "botswana",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Botswana/chobe-hyenas-close.jpg",
+      "caption": "Chobe Hyenas Close",
+      "locationId": "Chobe National Park",
+      "coordinates": {
+        "lng": 27.4733,
+        "lat": -19.7450
+      },
+      "dateCreated": "2024-03-18",
+      "tags": ["hyenas", "close", "chobe", "wildlife", "close-up"]
+    },
+    {
+      "id": "bo43",
+      "albumId": "botswana",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Botswana/chobe-hyenas-walking.jpg",
+      "caption": "Chobe Hyenas Walking",
+      "locationId": "Chobe National Park",
+      "coordinates": {
+        "lng": 27.4733,
+        "lat": -19.7450
+      },
+      "dateCreated": "2024-03-18",
+      "tags": ["hyenas", "walking", "chobe", "wildlife", "movement"]
+    },
+    {
+      "id": "bo44",
+      "albumId": "botswana",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Botswana/chobe-impala-battling.jpg",
+      "caption": "Chobe Impala Battling",
+      "locationId": "Chobe National Park",
+      "coordinates": {
+        "lng": 27.4733,
+        "lat": -19.7450
+      },
+      "dateCreated": "2024-03-18",
+      "tags": ["impala", "battling", "chobe", "wildlife", "action"]
+    },
+    {
+      "id": "bo45",
+      "albumId": "botswana",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Botswana/chobe-impala-sand.jpg",
+      "caption": "Chobe Impala Sand",
+      "locationId": "Chobe National Park",
+      "coordinates": {
+        "lng": 27.4733,
+        "lat": -19.7450
+      },
+      "dateCreated": "2024-03-18",
+      "tags": ["impala", "sand", "chobe", "wildlife", "habitat"]
+    },
+    {
+      "id": "bo46",
+      "albumId": "botswana",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Botswana/chobe-impala-zebra.jpg",
+      "caption": "Chobe Impala Zebra",
+      "locationId": "Chobe National Park",
+      "coordinates": {
+        "lng": 27.4733,
+        "lat": -19.7450
+      },
+      "dateCreated": "2024-03-18",
+      "tags": ["impala", "zebra", "chobe", "wildlife"]
+    },
+    {
+      "id": "bo47",
+      "albumId": "botswana",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Botswana/chobe-king-lion.jpg",
+      "caption": "Chobe King Lion",
+      "locationId": "Chobe National Park",
+      "coordinates": {
+        "lng": 27.4733,
+        "lat": -19.7450
+      },
+      "dateCreated": "2024-03-18",
+      "tags": ["king", "lion", "chobe", "wildlife", "majestic"]
+    },
+    {
+      "id": "bo48",
+      "albumId": "botswana",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Botswana/chobe-leopard-fuzzy.jpg",
+      "caption": "Chobe Leopard Fuzzy",
+      "locationId": "Chobe National Park",
+      "coordinates": {
+        "lng": 27.4733,
+        "lat": -19.7450
+      },
+      "dateCreated": "2024-03-18",
+      "tags": ["leopard", "fuzzy", "chobe", "wildlife", "close-up"]
+    },
+    {
+      "id": "bo49",
+      "albumId": "botswana",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Botswana/chobe-leopard-guard.jpg",
+      "caption": "Chobe Leopard Guard",
+      "locationId": "Chobe National Park",
+      "coordinates": {
+        "lng": 27.4733,
+        "lat": -19.7450
+      },
+      "dateCreated": "2024-03-18",
+      "tags": ["leopard", "guard", "chobe", "wildlife", "alert"]
+    },
+    {
+      "id": "bo50",
+      "albumId": "botswana",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Botswana/chobe-leopard-hunting.jpg",
+      "caption": "Chobe Leopard Hunting",
+      "locationId": "Chobe National Park",
+      "coordinates": {
+        "lng": 27.4733,
+        "lat": -19.7450
+      },
+      "dateCreated": "2024-03-18",
+      "tags": ["leopard", "hunting", "chobe", "wildlife", "action"]
+    },
+    {
+      "id": "bo51",
+      "albumId": "botswana",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Botswana/chobe-leopard-meow.jpg",
+      "caption": "Chobe Leopard Meow",
+      "locationId": "Chobe National Park",
+      "coordinates": {
+        "lng": 27.4733,
+        "lat": -19.7450
+      },
+      "dateCreated": "2024-03-18",
+      "tags": ["leopard", "meow", "chobe", "wildlife", "sound"]
+    },
+    {
+      "id": "bo52",
+      "albumId": "botswana",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Botswana/chobe-leopard-mouth.jpg",
+      "caption": "Chobe Leopard Mouth",
+      "locationId": "Chobe National Park",
+      "coordinates": {
+        "lng": 27.4733,
+        "lat": -19.7450
+      },
+      "dateCreated": "2024-03-18",
+      "tags": ["leopard", "mouth", "chobe", "wildlife", "close-up"]
+    },
+    {
+      "id": "bo53",
+      "albumId": "botswana",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Botswana/chobe-leopard-prowl.jpg",
+      "caption": "Chobe Leopard Prowl",
+      "locationId": "Chobe National Park",
+      "coordinates": {
+        "lng": 27.4733,
+        "lat": -19.7450
+      },
+      "dateCreated": "2024-03-18",
+      "tags": ["leopard", "prowl", "chobe", "wildlife", "movement"]
+    },
+    {
+      "id": "bo54",
+      "albumId": "botswana",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Botswana/chobe-leopard-sand-close.jpg",
+      "caption": "Chobe Leopard Sand Close",
+      "locationId": "Chobe National Park",
+      "coordinates": {
+        "lng": 27.4733,
+        "lat": -19.7450
+      },
+      "dateCreated": "2024-03-18",
+      "tags": ["leopard", "sand", "close", "chobe", "wildlife", "habitat"]
+    },
+    {
+      "id": "bo55",
+      "albumId": "botswana",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Botswana/chobe-leopard-sand-prowl.jpg",
+      "caption": "Chobe Leopard Sand Prowl",
+      "locationId": "Chobe National Park",
+      "coordinates": {
+        "lng": 27.4733,
+        "lat": -19.7450
+      },
+      "dateCreated": "2024-03-18",
+      "tags": ["leopard", "sand", "prowl", "chobe", "wildlife", "habitat"]
+    },
+    {
+      "id": "bo56",
+      "albumId": "botswana",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Botswana/chobe-leopard-sand.jpg",
+      "caption": "Chobe Leopard Sand",
+      "locationId": "Chobe National Park",
+      "coordinates": {
+        "lng": 27.4733,
+        "lat": -19.7450
+      },
+      "dateCreated": "2024-03-18",
+      "tags": ["leopard", "sand", "chobe", "wildlife", "habitat"]
+    },
+    {
+      "id": "bo57",
+      "albumId": "botswana",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Botswana/chobe-leopard-smirk.jpg",
+      "caption": "Chobe Leopard Smirk",
+      "locationId": "Chobe National Park",
+      "coordinates": {
+        "lng": 27.4733,
+        "lat": -19.7450
+      },
+      "dateCreated": "2024-03-18",
+      "tags": ["leopard", "smirk", "chobe", "wildlife", "expression"]
+    },
+    {
+      "id": "bo58",
+      "albumId": "botswana",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Botswana/chobe-leopard-tongue.jpg",
+      "caption": "Chobe Leopard Tongue",
+      "locationId": "Chobe National Park",
+      "coordinates": {
+        "lng": 27.4733,
+        "lat": -19.7450
+      },
+      "dateCreated": "2024-03-18",
+      "tags": ["leopard", "tongue", "chobe", "wildlife", "close-up"]
+    },
+    {
+      "id": "bo59",
+      "albumId": "botswana",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Botswana/chobe-leopard-trees.jpg",
+      "caption": "Chobe Leopard Trees",
+      "locationId": "Chobe National Park",
+      "coordinates": {
+        "lng": 27.4733,
+        "lat": -19.7450
+      },
+      "dateCreated": "2024-03-18",
+      "tags": ["leopard", "trees", "chobe", "wildlife", "habitat"]
+    },
+    {
+      "id": "bo60",
+      "albumId": "botswana",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Botswana/chobe-leopard.jpg",
+      "caption": "Chobe Leopard",
+      "locationId": "Chobe National Park",
+      "coordinates": {
+        "lng": 27.4733,
+        "lat": -19.7450
+      },
+      "dateCreated": "2024-03-18",
+      "tags": ["leopard", "chobe", "wildlife"]
+    },
+    {
+      "id": "bo61",
+      "albumId": "botswana",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Botswana/chobe-leopards-smile.jpg",
+      "caption": "Chobe Leopards Smile",
+      "locationId": "Chobe National Park",
+      "coordinates": {
+        "lng": 27.4733,
+        "lat": -19.7450
+      },
+      "dateCreated": "2024-03-18",
+      "tags": ["leopards", "smile", "chobe", "wildlife", "expression"]
+    },
+    {
+      "id": "bo62",
+      "albumId": "botswana",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Botswana/chobe-leopards.jpg",
+      "caption": "Chobe Leopards",
+      "locationId": "Chobe National Park",
+      "coordinates": {
+        "lng": 27.4733,
+        "lat": -19.7450
+      },
+      "dateCreated": "2024-03-18",
+      "tags": ["leopards", "chobe", "wildlife"]
+    },
+    {
+      "id": "bo63",
+      "albumId": "botswana",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Botswana/chobe-lion-chill.jpg",
+      "caption": "Chobe Lion Chill",
+      "locationId": "Chobe National Park",
+      "coordinates": {
+        "lng": 27.4733,
+        "lat": -19.7450
+      },
+      "dateCreated": "2024-03-18",
+      "tags": ["lion", "chill", "chobe", "wildlife", "relaxed"]
+    },
+    {
+      "id": "bo64",
+      "albumId": "botswana",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Botswana/chobe-lion-content.jpg",
+      "caption": "Chobe Lion Content",
+      "locationId": "Chobe National Park",
+      "coordinates": {
+        "lng": 27.4733,
+        "lat": -19.7450
+      },
+      "dateCreated": "2024-03-18",
+      "tags": ["lion", "content", "chobe", "wildlife", "relaxed"]
+    },
+    {
+      "id": "bo65",
+      "albumId": "botswana",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Botswana/chobe-lion-cub.jpg",
+      "caption": "Chobe Lion Cub",
+      "locationId": "Chobe National Park",
+      "coordinates": {
+        "lng": 27.4733,
+        "lat": -19.7450
+      },
+      "dateCreated": "2024-03-18",
+      "tags": ["lion", "cub", "chobe", "wildlife", "young"]
+    },
+    {
+      "id": "bo66",
+      "albumId": "botswana",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Botswana/chobe-lion-dad-cub.jpg",
+      "caption": "Chobe Lion Dad Cub",
+      "locationId": "Chobe National Park",
+      "coordinates": {
+        "lng": 27.4733,
+        "lat": -19.7450
+      },
+      "dateCreated": "2024-03-18",
+      "tags": ["lion", "dad", "cub", "chobe", "wildlife", "family"]
+    },
+    {
+      "id": "bo67",
+      "albumId": "botswana",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Botswana/chobe-lion-elephants.jpg",
+      "caption": "Chobe Lion Elephants",
+      "locationId": "Chobe National Park",
+      "coordinates": {
+        "lng": 27.4733,
+        "lat": -19.7450
+      },
+      "dateCreated": "2024-03-18",
+      "tags": ["lion", "elephants", "chobe", "wildlife", "interaction"]
+    },
+    {
+      "id": "bo68",
+      "albumId": "botswana",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Botswana/chobe-lion-face-close.jpg",
+      "caption": "Chobe Lion Face Close",
+      "locationId": "Chobe National Park",
+      "coordinates": {
+        "lng": 27.4733,
+        "lat": -19.7450
+      },
+      "dateCreated": "2024-03-18",
+      "tags": ["lion", "face close", "chobe", "wildlife", "close-up"]
+    },
+    {
+      "id": "bo69",
+      "albumId": "botswana",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Botswana/chobe-lion-face.jpg",
+      "caption": "Chobe Lion Face",
+      "locationId": "Chobe National Park",
+      "coordinates": {
+        "lng": 27.4733,
+        "lat": -19.7450
+      },
+      "dateCreated": "2024-03-18",
+      "tags": ["lion", "face", "chobe", "wildlife", "close-up"]
+    },
+    {
+      "id": "bo70",
+      "albumId": "botswana",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Botswana/chobe-lion-king-angle.jpg",
+      "caption": "Chobe Lion King Angle",
+      "locationId": "Chobe National Park",
+      "coordinates": {
+        "lng": 27.4733,
+        "lat": -19.7450
+      },
+      "dateCreated": "2024-03-18",
+      "tags": ["lion", "king", "angle", "chobe", "wildlife"]
+    },
+    {
+      "id": "bo71",
+      "albumId": "botswana",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Botswana/chobe-lion-king-elephants.jpg",
+      "caption": "Chobe Lion King Elephants",
+      "locationId": "Chobe National Park",
+      "coordinates": {
+        "lng": 27.4733,
+        "lat": -19.7450
+      },
+      "dateCreated": "2024-03-18",
+      "tags": ["lion", "king", "elephants", "chobe", "wildlife", "interaction"]
+    },
+    {
+      "id": "bo72",
+      "albumId": "botswana",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Botswana/chobe-lion-king-mane.jpg",
+      "caption": "Chobe Lion King Mane",
+      "locationId": "Chobe National Park",
+      "coordinates": {
+        "lng": 27.4733,
+        "lat": -19.7450
+      },
+      "dateCreated": "2024-03-18",
+      "tags": ["lion", "king", "mane", "chobe", "wildlife", "close-up"]
+    },
+    {
+      "id": "bo73",
+      "albumId": "botswana",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Botswana/chobe-lion-king-side.jpg",
+      "caption": "Chobe Lion King Side",
+      "locationId": "Chobe National Park",
+      "coordinates": {
+        "lng": 27.4733,
+        "lat": -19.7450
+      },
+      "dateCreated": "2024-03-18",
+      "tags": ["lion", "king", "side", "chobe", "wildlife", "profile"]
+    },
+    {
+      "id": "bo74",
+      "albumId": "botswana",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Botswana/chobe-lion-king-wink.jpg",
+      "caption": "Chobe Lion King Wink",
+      "locationId": "Chobe National Park",
+      "coordinates": {
+        "lng": 27.4733,
+        "lat": -19.7450
+      },
+      "dateCreated": "2024-03-18",
+      "tags": ["lion", "king", "wink", "chobe", "wildlife", "expression"]
+    },
+    {
+      "id": "bo75",
+      "albumId": "botswana",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Botswana/chobe-lion-king.jpg",
+      "caption": "Chobe Lion King",
+      "locationId": "Chobe National Park",
+      "coordinates": {
+        "lng": 27.4733,
+        "lat": -19.7450
+      },
+      "dateCreated": "2024-03-18",
+      "tags": ["lion", "king", "chobe", "wildlife", "majestic"]
+    },
+    {
+      "id": "bo76",
+      "albumId": "botswana",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Botswana/chobe-lion-lazy.jpg",
+      "caption": "Chobe Lion Lazy",
+      "locationId": "Chobe National Park",
+      "coordinates": {
+        "lng": 27.4733,
+        "lat": -19.7450
+      },
+      "dateCreated": "2024-03-18",
+      "tags": ["lion", "lazy", "chobe", "wildlife", "relaxed"]
+    },
+    {
+      "id": "bo77",
+      "albumId": "botswana",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Botswana/chobe-lion-lookaway.jpg",
+      "caption": "Chobe Lion Lookaway",
+      "locationId": "Chobe National Park",
+      "coordinates": {
+        "lng": 27.4733,
+        "lat": -19.7450
+      },
+      "dateCreated": "2024-03-18",
+      "tags": ["lion", "lookaway", "chobe", "wildlife", "expression"]
+    },
+    {
+      "id": "bo78",
+      "albumId": "botswana",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Botswana/chobe-lion-medium.jpg",
+      "caption": "Chobe Lion Medium",
+      "locationId": "Chobe National Park",
+      "coordinates": {
+        "lng": 27.4733,
+        "lat": -19.7450
+      },
+      "dateCreated": "2024-03-18",
+      "tags": ["lion", "medium", "chobe", "wildlife", "portrait"]
+    },
+    {
+      "id": "bo79",
+      "albumId": "botswana",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Botswana/chobe-lion-portrait.jpg",
+      "caption": "Chobe Lion Portrait",
+      "locationId": "Chobe National Park",
+      "coordinates": {
+        "lng": 27.4733,
+        "lat": -19.7450
+      },
+      "dateCreated": "2024-03-18",
+      "tags": ["lion", "portrait", "chobe", "wildlife", "close-up"]
+    },
+    {
+      "id": "bo80",
+      "albumId": "botswana",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Botswana/chobe-lion-queen.jpg",
+      "caption": "Chobe Lion Queen",
+      "locationId": "Chobe National Park",
+      "coordinates": {
+        "lng": 27.4733,
+        "lat": -19.7450
+      },
+      "dateCreated": "2024-03-18",
+      "tags": ["lion", "queen", "chobe", "wildlife", "majestic"]
+    },
+    {
+      "id": "bo81",
+      "albumId": "botswana",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Botswana/chobe-lion-snarl.jpg",
+      "caption": "Chobe Lion Snarl",
+      "locationId": "Chobe National Park",
+      "coordinates": {
+        "lng": 27.4733,
+        "lat": -19.7450
+      },
+      "dateCreated": "2024-03-18",
+      "tags": ["lion", "snarl", "chobe", "wildlife", "expression"]
+    },
+    {
+      "id": "bo82",
+      "albumId": "botswana",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Botswana/chobe-lion-stare.jpg",
+      "caption": "Chobe Lion Stare",
+      "locationId": "Chobe National Park",
+      "coordinates": {
+        "lng": 27.4733,
+        "lat": -19.7450
+      },
+      "dateCreated": "2024-03-18",
+      "tags": ["lion", "stare", "chobe", "wildlife", "intense"]
+    },
+    {
+      "id": "bo83",
+      "albumId": "botswana",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Botswana/chobe-lion-tongue.jpg",
+      "caption": "Chobe Lion Tongue",
+      "locationId": "Chobe National Park",
+      "coordinates": {
+        "lng": 27.4733,
+        "lat": -19.7450
+      },
+      "dateCreated": "2024-03-18",
+      "tags": ["lion", "tongue", "chobe", "wildlife", "close-up"]
+    },
+    {
+      "id": "bo84",
+      "albumId": "botswana",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Botswana/chobe-lion.jpg",
+      "caption": "Chobe Lion",
+      "locationId": "Chobe National Park",
+      "coordinates": {
+        "lng": 27.4733,
+        "lat": -19.7450
+      },
+      "dateCreated": "2024-03-18",
+      "tags": ["lion", "chobe", "wildlife"]
+    },
+    {
+      "id": "bo85",
+      "albumId": "botswana",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Botswana/chobe-lioness-closer.jpg",
+      "caption": "Chobe Lioness Closer",
+      "locationId": "Chobe National Park",
+      "coordinates": {
+        "lng": 27.4733,
+        "lat": -19.7450
+      },
+      "dateCreated": "2024-03-18",
+      "tags": ["lioness", "closer", "chobe", "wildlife", "close-up"]
+    },
+    {
+      "id": "bo86",
+      "albumId": "botswana",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Botswana/chobe-lioness-water.jpg",
+      "caption": "Chobe Lioness Water",
+      "locationId": "Chobe National Park",
+      "coordinates": {
+        "lng": 27.4733,
+        "lat": -19.7450
+      },
+      "dateCreated": "2024-03-18",
+      "tags": ["lioness", "water", "chobe", "wildlife", "water"]
+    },
+    {
+      "id": "bo87",
+      "albumId": "botswana",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Botswana/chobe-lioness.jpg",
+      "caption": "Chobe Lioness",
+      "locationId": "Chobe National Park",
+      "coordinates": {
+        "lng": 27.4733,
+        "lat": -19.7450
+      },
+      "dateCreated": "2024-03-18",
+      "tags": ["lioness", "chobe", "wildlife"]
+    },
+    {
+      "id": "bo88",
+      "albumId": "botswana",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Botswana/chobe-lionking-tail.jpg",
+      "caption": "Chobe Lionking Tail",
+      "locationId": "Chobe National Park",
+      "coordinates": {
+        "lng": 27.4733,
+        "lat": -19.7450
+      },
+      "dateCreated": "2024-03-18",
+      "tags": ["lionking", "tail", "chobe", "wildlife", "detail"]
+    },
+    {
+      "id": "bo89",
+      "albumId": "botswana",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Botswana/chobe-lionness-portrait.jpg",
+      "caption": "Chobe Lionness Portrait",
+      "locationId": "Chobe National Park",
+      "coordinates": {
+        "lng": 27.4733,
+        "lat": -19.7450
+      },
+      "dateCreated": "2024-03-18",
+      "tags": ["lionness", "portrait", "chobe", "wildlife", "close-up"]
+    },
+    {
+      "id": "bo90",
+      "albumId": "botswana",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Botswana/chobe-lions-close.jpg",
+      "caption": "Chobe Lions Close",
+      "locationId": "Chobe National Park",
+      "coordinates": {
+        "lng": 27.4733,
+        "lat": -19.7450
+      },
+      "dateCreated": "2024-03-18",
+      "tags": ["lions", "close", "chobe", "wildlife", "close-up"]
+    },
+    {
+      "id": "bo91",
+      "albumId": "botswana",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Botswana/chobe-lions-grooming.jpg",
+      "caption": "Chobe Lions Grooming",
+      "locationId": "Chobe National Park",
+      "coordinates": {
+        "lng": 27.4733,
+        "lat": -19.7450
+      },
+      "dateCreated": "2024-03-18",
+      "tags": ["lions", "grooming", "chobe", "wildlife", "social"]
+    },
+    {
+      "id": "bo92",
+      "albumId": "botswana",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Botswana/chobe-lions-necking.jpg",
+      "caption": "Chobe Lions Necking",
+      "locationId": "Chobe National Park",
+      "coordinates": {
+        "lng": 27.4733,
+        "lat": -19.7450
+      },
+      "dateCreated": "2024-03-18",
+      "tags": ["lions", "necking", "chobe", "wildlife", "behavior"]
+    },
+    {
+      "id": "bo93",
+      "albumId": "botswana",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Botswana/chobe-lions-rear.jpg",
+      "caption": "Chobe Lions Rear",
+      "locationId": "Chobe National Park",
+      "coordinates": {
+        "lng": 27.4733,
+        "lat": -19.7450
+      },
+      "dateCreated": "2024-03-18",
+      "tags": ["lions", "rear", "chobe", "wildlife", "profile"]
+    },
+    {
+      "id": "bo94",
+      "albumId": "botswana",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Botswana/chobe-lions.jpg",
+      "caption": "Chobe Lions",
+      "locationId": "Chobe National Park",
+      "coordinates": {
+        "lng": 27.4733,
+        "lat": -19.7450
+      },
+      "dateCreated": "2024-03-18",
+      "tags": ["lions", "chobe", "wildlife"]
+    },
+    {
+      "id": "bo95",
+      "albumId": "botswana",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Botswana/chobe-medium-elephant.jpg",
+      "caption": "Chobe Medium Elephant",
+      "locationId": "Chobe National Park",
+      "coordinates": {
+        "lng": 27.4733,
+        "lat": -19.7450
+      },
+      "dateCreated": "2024-03-18",
+      "tags": ["elephant", "medium", "chobe", "wildlife"]
+    },
+    {
+      "id": "bo96",
+      "albumId": "botswana",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Botswana/chobe-monkey-sit.jpg",
+      "caption": "Chobe Monkey Sit",
+      "locationId": "Chobe National Park",
+      "coordinates": {
+        "lng": 27.4733,
+        "lat": -19.7450
+      },
+      "dateCreated": "2024-03-18",
+      "tags": ["monkey", "sit", "chobe", "wildlife", "behavior"]
+    },
+    {
+      "id": "bo97",
+      "albumId": "botswana",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Botswana/chobe-monkey-strolling.jpg",
+      "caption": "Chobe Monkey Strolling",
+      "locationId": "Chobe National Park",
+      "coordinates": {
+        "lng": 27.4733,
+        "lat": -19.7450
+      },
+      "dateCreated": "2024-03-18",
+      "tags": ["monkey", "strolling", "chobe", "wildlife", "movement"]
+    },
+    {
+      "id": "bo98",
+      "albumId": "botswana",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Botswana/chobe-river-elephant-monkey.jpg",
+      "caption": "Chobe River Elephant Monkey",
+      "locationId": "Chobe National Park",
+      "coordinates": {
+        "lng": 27.4733,
+        "lat": -19.7450
+      },
+      "dateCreated": "2024-03-18",
+      "tags": ["river", "elephant", "monkey", "chobe", "wildlife", "water"]
+    },
+    {
+      "id": "bo99",
+      "albumId": "botswana",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Botswana/chobe-road-sun.jpg",
+      "caption": "Chobe Road Sun",
+      "locationId": "Chobe National Park",
+      "coordinates": {
+        "lng": 27.4733,
+        "lat": -19.7450
+      },
+      "dateCreated": "2024-03-18",
+      "tags": ["road", "sun", "chobe", "scenery", "sunset"]
+    },
+    {
+      "id": "bo100",
+      "albumId": "botswana",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Botswana/chobe-scenery.jpg",
+      "caption": "Chobe Scenery",
+      "locationId": "Chobe National Park",
+      "coordinates": {
+        "lng": 27.4733,
+        "lat": -19.7450
+      },
+      "dateCreated": "2024-03-18",
+      "tags": ["scenery", "chobe", "nature", "landscape"]
+    },
+    {
+      "id": "bo101",
+      "albumId": "botswana",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Botswana/chobe-solo-giraffe.jpg",
+      "caption": "Chobe Solo Giraffe",
+      "locationId": "Chobe National Park",
+      "coordinates": {
+        "lng": 27.4733,
+        "lat": -19.7450
+      },
+      "dateCreated": "2024-03-18",
+      "tags": ["solo", "giraffe", "chobe", "wildlife"]
+    },
+    {
+      "id": "bo102",
+      "albumId": "botswana",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Botswana/chobe-sun-lions.jpg",
+      "caption": "Chobe Sun Lions",
+      "locationId": "Chobe National Park",
+      "coordinates": {
+        "lng": 27.4733,
+        "lat": -19.7450
+      },
+      "dateCreated": "2024-03-18",
+      "tags": ["sun", "lions", "chobe", "wildlife", "sunset"]
+    },
+    {
+      "id": "bo103",
+      "albumId": "botswana",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Botswana/chobe-sun-truck-lion.jpg",
+      "caption": "Chobe Sun Truck Lion",
+      "locationId": "Chobe National Park",
+      "coordinates": {
+        "lng": 27.4733,
+        "lat": -19.7450
+      },
+      "dateCreated": "2024-03-18",
+      "tags": ["sun", "truck", "lion", "chobe", "wildlife", "vehicle"]
+    },
+    {
+      "id": "bo104",
+      "albumId": "botswana",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Botswana/chobe-sundown-giraffe.jpg",
+      "caption": "Chobe Sundown Giraffe",
+      "locationId": "Chobe National Park",
+      "coordinates": {
+        "lng": 27.4733,
+        "lat": -19.7450
+      },
+      "dateCreated": "2024-03-18",
+      "tags": ["sundown", "giraffe", "chobe", "wildlife", "sunset"]
+    },
+    {
+      "id": "bo105",
+      "albumId": "botswana",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Botswana/chobe-sundown-lion.jpg",
+      "caption": "Chobe Sundown Lion",
+      "locationId": "Chobe National Park",
+      "coordinates": {
+        "lng": 27.4733,
+        "lat": -19.7450
+      },
+      "dateCreated": "2024-03-18",
+      "tags": ["sundown", "lion", "chobe", "wildlife", "sunset"]
+    },
+    {
+      "id": "bo106",
+      "albumId": "botswana",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Botswana/chobe-sunglare-lion.jpg",
+      "caption": "Chobe Sunglare Lion",
+      "locationId": "Chobe National Park",
+      "coordinates": {
+        "lng": 27.4733,
+        "lat": -19.7450
+      },
+      "dateCreated": "2024-03-18",
+      "tags": ["sunglare", "lion", "chobe", "wildlife", "sun"]
+    },
+    {
+      "id": "bo107",
+      "albumId": "botswana",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Botswana/chobe-sunset-leopard.jpg",
+      "caption": "Chobe Sunset Leopard",
+      "locationId": "Chobe National Park",
+      "coordinates": {
+        "lng": 27.4733,
+        "lat": -19.7450
+      },
+      "dateCreated": "2024-03-18",
+      "tags": ["sunset", "leopard", "chobe", "wildlife", "sun"]
+    },
+    {
+      "id": "bo108",
+      "albumId": "botswana",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Botswana/chobe-sunset-lion.jpg",
+      "caption": "Chobe Sunset Lion",
+      "locationId": "Chobe National Park",
+      "coordinates": {
+        "lng": 27.4733,
+        "lat": -19.7450
+      },
+      "dateCreated": "2024-03-18",
+      "tags": ["sunset", "lion", "chobe", "wildlife", "sun"]
+    },
+    {
+      "id": "bo109",
+      "albumId": "botswana",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Botswana/chobe-sunset-two-lions.jpg",
+      "caption": "Chobe Sunset Two Lions",
+      "locationId": "Chobe National Park",
+      "coordinates": {
+        "lng": 27.4733,
+        "lat": -19.7450
+      },
+      "dateCreated": "2024-03-18",
+      "tags": ["sunset", "two lions", "chobe", "wildlife", "sun"]
+    },
+    {
+      "id": "bo110",
+      "albumId": "botswana",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Botswana/chobe-three-giraffes-close.jpg",
+      "caption": "Chobe Three Giraffes Close",
+      "locationId": "Chobe National Park",
+      "coordinates": {
+        "lng": 27.4733,
+        "lat": -19.7450
+      },
+      "dateCreated": "2024-03-18",
+      "tags": ["three giraffes", "close", "chobe", "wildlife", "close-up"]
+    },
+    {
+      "id": "bo111",
+      "albumId": "botswana",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Botswana/chobe-three-giraffes-pose.jpg",
+      "caption": "Chobe Three Giraffes Pose",
+      "locationId": "Chobe National Park",
+      "coordinates": {
+        "lng": 27.4733,
+        "lat": -19.7450
+      },
+      "dateCreated": "2024-03-18",
+      "tags": ["three giraffes", "pose", "chobe", "wildlife", "behavior"]
+    },
+    {
+      "id": "bo112",
+      "albumId": "botswana",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Botswana/chobe-three-giraffes-strolling.jpg",
+      "caption": "Chobe Three Giraffes Strolling",
+      "locationId": "Chobe National Park",
+      "coordinates": {
+        "lng": 27.4733,
+        "lat": -19.7450
+      },
+      "dateCreated": "2024-03-18",
+      "tags": ["three giraffes", "strolling", "chobe", "wildlife", "movement"]
+    },
+    {
+      "id": "bo113",
+      "albumId": "botswana",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Botswana/chobe-three-giraffes.jpg",
+      "caption": "Chobe Three Giraffes",
+      "locationId": "Chobe National Park",
+      "coordinates": {
+        "lng": 27.4733,
+        "lat": -19.7450
+      },
+      "dateCreated": "2024-03-18",
+      "tags": ["three giraffes", "chobe", "wildlife"]
+    },
+    {
+      "id": "bo114",
+      "albumId": "botswana",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Botswana/chobe-three-lion.jpg",
+      "caption": "Chobe Three Lion",
+      "locationId": "Chobe National Park",
+      "coordinates": {
+        "lng": 27.4733,
+        "lat": -19.7450
+      },
+      "dateCreated": "2024-03-18",
+      "tags": ["three", "lion", "chobe", "wildlife"]
+    },
+    {
+      "id": "bo115",
+      "albumId": "botswana",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Botswana/chobe-three-lions.jpg",
+      "caption": "Chobe Three Lions",
+      "locationId": "Chobe National Park",
+      "coordinates": {
+        "lng": 27.4733,
+        "lat": -19.7450
+      },
+      "dateCreated": "2024-03-18",
+      "tags": ["three lions", "chobe", "wildlife"]
+    },
+    {
+      "id": "bo116",
+      "albumId": "botswana",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Botswana/chobe-three-monkeys-baby.jpg",
+      "caption": "Chobe Three Monkeys Baby",
+      "locationId": "Chobe National Park",
+      "coordinates": {
+        "lng": 27.4733,
+        "lat": -19.7450
+      },
+      "dateCreated": "2024-03-18",
+      "tags": ["three monkeys", "baby", "chobe", "wildlife", "young"]
+    },
+    {
+      "id": "bo117",
+      "albumId": "botswana",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Botswana/chobe-three-zebra.jpg",
+      "caption": "Chobe Three Zebra",
+      "locationId": "Chobe National Park",
+      "coordinates": {
+        "lng": 27.4733,
+        "lat": -19.7450
+      },
+      "dateCreated": "2024-03-18",
+      "tags": ["three zebra", "chobe", "wildlife"]
+    },
+    {
+      "id": "bo118",
+      "albumId": "botswana",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Botswana/chobe-truck-baobab.jpg",
+      "caption": "Chobe Truck Baobab",
+      "locationId": "Chobe National Park",
+      "coordinates": {
+        "lng": 27.4733,
+        "lat": -19.7450
+      },
+      "dateCreated": "2024-03-18",
+      "tags": ["truck", "baobab", "chobe", "nature", "vehicle"]
+    },
+    {
+      "id": "bo119",
+      "albumId": "botswana",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Botswana/chobe-truck.jpg",
+      "caption": "Chobe Truck",
+      "locationId": "Chobe National Park",
+      "coordinates": {
+        "lng": 27.4733,
+        "lat": -19.7450
+      },
+      "dateCreated": "2024-03-18",
+      "tags": ["truck", "chobe", "vehicle"]
+    },
+    {
+      "id": "bo120",
+      "albumId": "botswana",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Botswana/chobe-two-giraffes.jpg",
+      "caption": "Chobe Two Giraffes",
+      "locationId": "Chobe National Park",
+      "coordinates": {
+        "lng": 27.4733,
+        "lat": -19.7450
+      },
+      "dateCreated": "2024-03-18",
+      "tags": ["two giraffes", "chobe", "wildlife"]
+    },
+    {
+      "id": "bo121",
+      "albumId": "botswana",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Botswana/chobe-two-leopards-camo.jpg",
+      "caption": "Chobe Two Leopards Camo",
+      "locationId": "Chobe National Park",
+      "coordinates": {
+        "lng": 27.4733,
+        "lat": -19.7450
+      },
+      "dateCreated": "2024-03-18",
+      "tags": ["two leopards", "camo", "chobe", "wildlife", "camouflage"]
+    },
+    {
+      "id": "bo122",
+      "albumId": "botswana",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Botswana/chobe-two-leopards-camoflauge.jpg",
+      "caption": "Chobe Two Leopards Camouflage",
+      "locationId": "Chobe National Park",
+      "coordinates": {
+        "lng": 27.4733,
+        "lat": -19.7450
+      },
+      "dateCreated": "2024-03-18",
+      "tags": ["two leopards", "camouflage", "chobe", "wildlife", "camouflage"]
+    },
+    {
+      "id": "bo123",
+      "albumId": "botswana",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Botswana/chobe-two-leopards-guard.jpg",
+      "caption": "Chobe Two Leopards Guard",
+      "locationId": "Chobe National Park",
+      "coordinates": {
+        "lng": 27.4733,
+        "lat": -19.7450
+      },
+      "dateCreated": "2024-03-18",
+      "tags": ["two leopards", "guard", "chobe", "wildlife", "alert"]
+    },
+    {
+      "id": "bo124",
+      "albumId": "botswana",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Botswana/chobe-two-leopards-pensive.jpg",
+      "caption": "Chobe Two Leopards Pensive",
+      "locationId": "Chobe National Park",
+      "coordinates": {
+        "lng": 27.4733,
+        "lat": -19.7450
+      },
+      "dateCreated": "2024-03-18",
+      "tags": ["two leopards", "pensive", "chobe", "wildlife", "expression"]
+    },
+    {
+      "id": "bo125",
+      "albumId": "botswana",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Botswana/chobe-two-leopards-prowl.jpg",
+      "caption": "Chobe Two Leopards Prowl",
+      "locationId": "Chobe National Park",
+      "coordinates": {
+        "lng": 27.4733,
+        "lat": -19.7450
+      },
+      "dateCreated": "2024-03-18",
+      "tags": ["two leopards", "prowl", "chobe", "wildlife", "movement"]
+    },
+    {
+      "id": "bo126",
+      "albumId": "botswana",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Botswana/chobe-two-leopards-tongue.jpg",
+      "caption": "Chobe Two Leopards Tongue",
+      "locationId": "Chobe National Park",
+      "coordinates": {
+        "lng": 27.4733,
+        "lat": -19.7450
+      },
+      "dateCreated": "2024-03-18",
+      "tags": ["two leopards", "tongue", "chobe", "wildlife", "close-up"]
+    },
+    {
+      "id": "bo127",
+      "albumId": "botswana",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Botswana/chobe-two-leopards-walk.jpg",
+      "caption": "Chobe Two Leopards Walk",
+      "locationId": "Chobe National Park",
+      "coordinates": {
+        "lng": 27.4733,
+        "lat": -19.7450
+      },
+      "dateCreated": "2024-03-18",
+      "tags": ["two leopards", "walk", "chobe", "wildlife", "movement"]
+    },
+    {
+      "id": "bo128",
+      "albumId": "botswana",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Botswana/chobe-two-leopards.jpg",
+      "caption": "Chobe Two Leopards",
+      "locationId": "Chobe National Park",
+      "coordinates": {
+        "lng": 27.4733,
+        "lat": -19.7450
+      },
+      "dateCreated": "2024-03-18",
+      "tags": ["two leopards", "chobe", "wildlife"]
+    },
+    {
+      "id": "bo129",
+      "albumId": "botswana",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Botswana/chobe-two-monkeys-baby.jpg",
+      "caption": "Chobe Two Monkeys Baby",
+      "locationId": "Chobe National Park",
+      "coordinates": {
+        "lng": 27.4733,
+        "lat": -19.7450
+      },
+      "dateCreated": "2024-03-18",
+      "tags": ["two monkeys", "baby", "chobe", "wildlife", "young"]
+    },
+    {
+      "id": "bo130",
+      "albumId": "botswana",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Botswana/chobe-two-monkeys.jpg",
+      "caption": "Chobe Two Monkeys",
+      "locationId": "Chobe National Park",
+      "coordinates": {
+        "lng": 27.4733,
+        "lat": -19.7450
+      },
+      "dateCreated": "2024-03-18",
+      "tags": ["two monkeys", "chobe", "wildlife"]
+    },
+    {
+      "id": "bo131",
+      "albumId": "botswana",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Botswana/chobe-two-queen-lion.jpg",
+      "caption": "Chobe Two Queen Lion",
+      "locationId": "Chobe National Park",
+      "coordinates": {
+        "lng": 27.4733,
+        "lat": -19.7450
+      },
+      "dateCreated": "2024-03-18",
+      "tags": ["two queen lions", "chobe", "wildlife", "majestic"]
+    },
+    {
+      "id": "bo132",
+      "albumId": "botswana",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Botswana/chobe-warthogs.jpg",
+      "caption": "Chobe Warthogs",
+      "locationId": "Chobe National Park",
+      "coordinates": {
+        "lng": 27.4733,
+        "lat": -19.7450
+      },
+      "dateCreated": "2024-03-18",
+      "tags": ["warthogs", "chobe", "wildlife"]
+    },
+    {
+      "id": "bo133",
+      "albumId": "botswana",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Botswana/chobe-water-buffalo.jpg",
+      "caption": "Chobe Water Buffalo",
+      "locationId": "Chobe National Park",
+      "coordinates": {
+        "lng": 27.4733,
+        "lat": -19.7450
+      },
+      "dateCreated": "2024-03-18",
+      "tags": ["water buffalo", "chobe", "wildlife", "water"]
+    },
+    {
+      "id": "bo134",
+      "albumId": "botswana",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Botswana/chobe-water-horizon.jpg",
+      "caption": "Chobe Water Horizon",
+      "locationId": "Chobe National Park",
+      "coordinates": {
+        "lng": 27.4733,
+        "lat": -19.7450
+      },
+      "dateCreated": "2024-03-18",
+      "tags": ["water", "horizon", "chobe", "wildlife", "scenery"]
+    },
+    {
+      "id": "bo135",
+      "albumId": "botswana",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Botswana/chobe-zebra-graze.jpg",
+      "caption": "Chobe Zebra Graze",
+      "locationId": "Chobe National Park",
+      "coordinates": {
+        "lng": 27.4733,
+        "lat": -19.7450
+      },
+      "dateCreated": "2024-03-18",
+      "tags": ["zebra", "graze", "chobe", "wildlife"]
+    },
+    {
+      "id": "bo136",
+      "albumId": "botswana",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Botswana/chobe-zebra-sun.jpg",
+      "caption": "Chobe Zebra Sun",
+      "locationId": "Chobe National Park",
+      "coordinates": {
+        "lng": 27.4733,
+        "lat": -19.7450
+      },
+      "dateCreated": "2024-03-18",
+      "tags": ["zebra", "sun", "chobe", "wildlife", "sunset"]
+    },
+    {
+      "id": "bo137",
+      "albumId": "botswana",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Botswana/choe-elephant-group-swim.jpg",
+      "caption": "Choe Elephant Group Swim",
+      "locationId": "Chobe National Park",
+      "coordinates": {
+        "lng": 27.4733,
+        "lat": -19.7450
+      },
+      "dateCreated": "2024-03-18",
+      "tags": ["elephant group", "swim", "chobe", "wildlife", "water"]
+    },
+    {
+      "id": "bo138",
+      "albumId": "botswana",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Botswana/chope-two-leopards-coat.jpg",
+      "caption": "Chope Two Leopards Coat",
+      "locationId": "Chobe National Park",
+      "coordinates": {
+        "lng": 27.4733,
+        "lat": -19.7450
+      },
+      "dateCreated": "2024-03-18",
+      "tags": ["two leopards", "coat", "chobe", "wildlife", "camouflage"]
+    }
   ]
 }

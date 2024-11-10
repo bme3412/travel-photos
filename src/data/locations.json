@@ -4,235 +4,397 @@
       "id": "loc1",
       "name": "Paris",
       "countryId": "FR",
-      "coordinates": { "lng": 2.3431, "lat": 48.8867 }
+      "coordinates": {
+        "lng": 2.3431,
+        "lat": 48.8867
+      }
     },
     {
       "id": "loc2",
       "name": "Menton",
       "countryId": "FR",
-      "coordinates": { "lng": 7.5012, "lat": 43.7747 }
+      "coordinates": {
+        "lng": 7.5012,
+        "lat": 43.7747
+      }
     },
     {
       "id": "loc3",
       "name": "Roquebrune-Cap-Martin",
       "countryId": "FR",
-      "coordinates": { "lng": 7.4454, "lat": 43.7573 }
+      "coordinates": {
+        "lng": 7.4454,
+        "lat": 43.7573
+      }
     },
     {
       "id": "loc4",
       "name": "Cannes",
       "countryId": "FR",
-      "coordinates": { "lng": 7.0179, "lat": 43.5528 }
+      "coordinates": {
+        "lng": 7.0179,
+        "lat": 43.5528
+      }
     },
     {
       "id": "loc5",
       "name": "Hong Kong",
       "countryId": "HK",
-      "coordinates": { "lng": 114.1694, "lat": 22.3193 }
+      "coordinates": {
+        "lng": 114.1694,
+        "lat": 22.3193
+      }
     },
     {
       "id": "loc6",
       "name": "Rio de Janeiro",
       "countryId": "BR",
-      "coordinates": { "lng": -43.1729, "lat": -22.9068 }
+      "coordinates": {
+        "lng": -43.1729,
+        "lat": -22.9068
+      }
     },
     {
       "id": "loc7",
       "name": "Monte Carlo",
       "countryId": "MC",
-      "coordinates": { "lng": 7.4246, "lat": 43.7384 }
+      "coordinates": {
+        "lng": 7.4246,
+        "lat": 43.7384
+      }
     },
     {
       "id": "loc8",
       "name": "Phu Quoc",
       "countryId": "VN",
-      "coordinates": { "lng": 103.9554, "lat": 10.2895 }
+      "coordinates": {
+        "lng": 103.9554,
+        "lat": 10.2895
+      }
     },
     {
       "id": "loc10",
       "name": "Singapore",
       "countryId": "SG",
-      "coordinates": { "lng": 103.8198, "lat": 1.3521 }
+      "coordinates": {
+        "lng": 103.8198,
+        "lat": 1.3521
+      }
     },
     {
       "id": "loc11",
       "name": "Rome",
       "countryId": "IT",
-      "coordinates": { "lng": 12.4964, "lat": 41.9028 }
+      "coordinates": {
+        "lng": 12.4964,
+        "lat": 41.9028
+      }
     },
     {
       "id": "loc12",
       "name": "Venice",
       "countryId": "IT",
-      "coordinates": { "lng": 12.3155, "lat": 45.4408 }
+      "coordinates": {
+        "lng": 12.3155,
+        "lat": 45.4408
+      }
     },
     {
       "id": "loc13",
       "name": "Ljubljana",
       "countryId": "SI",
-      "coordinates": { "lng": 14.5057, "lat": 46.0569 }
+      "coordinates": {
+        "lng": 14.5057,
+        "lat": 46.0569
+      }
     },
     {
       "id": "loc14",
       "name": "Zurich",
       "countryId": "CH",
-      "coordinates": { "lng": 8.5417, "lat": 47.3769 }
+      "coordinates": {
+        "lng": 8.5417,
+        "lat": 47.3769
+      }
     },
     {
       "id": "loc15",
       "name": "Geneva",
       "countryId": "CH",
-      "coordinates": { "lng": 6.1432, "lat": 46.2044 }
+      "coordinates": {
+        "lng": 6.1432,
+        "lat": 46.2044
+      }
     },
     {
       "id": "loc16",
       "name": "Montevideo",
       "countryId": "UY",
-      "coordinates": { "lng": -56.1645, "lat": -34.9011 }
+      "coordinates": {
+        "lng": -56.1645,
+        "lat": -34.9011
+      }
     },
     {
       "id": "loc17",
       "name": "Santiago",
       "countryId": "CL",
-      "coordinates": { "lng": -70.6483, "lat": -33.4489 }
+      "coordinates": {
+        "lng": -70.6483,
+        "lat": -33.4489
+      }
     },
     {
       "id": "loc18",
       "name": "Valparaiso",
       "countryId": "CL",
-      "coordinates": { "lng": -71.6127, "lat": -33.0472 }
+      "coordinates": {
+        "lng": -71.6127,
+        "lat": -33.0472
+      }
     },
     {
       "id": "loc19",
       "name": "Copacabana",
       "countryId": "BR",
-      "coordinates": { "lng": -43.1729, "lat": -22.9068 }
+      "coordinates": {
+        "lng": -43.1729,
+        "lat": -22.9068
+      }
     },
     {
       "id": "loc20",
       "name": "Leblon",
       "countryId": "BR",
-      "coordinates": { "lng": -43.2234, "lat": -22.9847 }
+      "coordinates": {
+        "lng": -43.2234,
+        "lat": -22.9847
+      }
     },
     {
       "id": "loc21",
       "name": "Christ the Redeemer",
       "countryId": "BR",
-      "coordinates": { "lng": -43.2104, "lat": -22.9519 }
+      "coordinates": {
+        "lng": -43.2104,
+        "lat": -22.9519
+      }
     },
     {
       "id": "loc22",
       "name": "Sugarloaf Mountain",
       "countryId": "BR",
-      "coordinates": { "lng": -43.1566, "lat": -22.9489 }
+      "coordinates": {
+        "lng": -43.1566,
+        "lat": -22.9489
+      }
     },
     {
       "id": "loc23",
       "name": "Kuala Lumpur",
       "countryId": "MY",
-      "coordinates": { "lng": 101.6869, "lat": 3.1390 }
+      "coordinates": {
+        "lng": 101.6869,
+        "lat": 3.1390
+      }
     },
     {
       "id": "loc24",
       "name": "Ljubljana",
       "countryId": "SI",
-      "coordinates": { "lng": 14.5058, "lat": 46.0569 }
+      "coordinates": {
+        "lng": 14.5058,
+        "lat": 46.0569
+      }
     },
     {
       "id": "loc25",
       "name": "Piran",
       "countryId": "SI",
-      "coordinates": { "lng": 13.5703, "lat": 45.5280 }
+      "coordinates": {
+        "lng": 13.5703,
+        "lat": 45.5280
+      }
     },
     {
       "id": "loc26",
       "name": "Ferrara",
       "countryId": "IT",
-      "coordinates": { "lng": 11.6190, "lat": 44.8378 }
+      "coordinates": {
+        "lng": 11.6190,
+        "lat": 44.8378
+      }
     },
     {
       "id": "loc27",
       "name": "St Jean Cap Martin",
       "countryId": "FR",
-      "coordinates": { "lng": 7.4504, "lat": 43.7571 }
+      "coordinates": {
+        "lng": 7.4504,
+        "lat": 43.7571
+      }
     },
     {
       "id": "loc28",
       "name": "Easter Island",
       "countryId": "CL",
-      "coordinates": { "lng": -109.3497, "lat": -27.1127 }
+      "coordinates": {
+        "lng": -109.3497,
+        "lat": -27.1127
+      }
     },
     {
       "id": "loc29",
       "name": "Lisbon",
       "countryId": "PT",
-      "coordinates": { "lng": -9.1333, "lat": 38.7167 }
+      "coordinates": {
+        "lng": -9.1333,
+        "lat": 38.7167
+      }
     },
     {
       "id": "loc30",
       "name": "Barcelona",
       "countryId": "ES",
-      "coordinates": { "lng": 2.1734, "lat": 41.3851 }
+      "coordinates": {
+        "lng": 2.1734,
+        "lat": 41.3851
+      }
     },
     {
       "id": "loc31",
       "name": "Madrid",
-      "countryId": "ES", 
-      "coordinates": { "lng": -3.7038, "lat": 40.4168 }
+      "countryId": "ES",
+      "coordinates": {
+        "lng": -3.7038,
+        "lat": 40.4168
+      }
     },
     {
       "id": "loc32",
       "name": "Ibiza",
       "countryId": "ES",
-      "coordinates": { "lng": 1.4283, "lat": 38.9067 }
+      "coordinates": {
+        "lng": 1.4283,
+        "lat": 38.9067
+      }
     },
     {
-      "id": "loc33", 
+      "id": "loc33",
       "name": "Mallorca",
       "countryId": "ES",
-      "coordinates": { "lng": 2.6502, "lat": 39.6953 }
+      "coordinates": {
+        "lng": 2.6502,
+        "lat": 39.6953
+      }
     },
     {
       "id": "loc34",
       "name": "Pamplona",
       "countryId": "ES",
-      "coordinates": { "lng": -1.6444, "lat": 42.8196 }
+      "coordinates": {
+        "lng": -1.6444,
+        "lat": 42.8196
+      }
     },
     {
       "id": "loc35",
       "name": "Buenos Aires",
       "countryId": "AR",
-      "coordinates": { "lng": -58.3816, "lat": -34.6037 }
+      "coordinates": {
+        "lng": -58.3816,
+        "lat": -34.6037
+      }
     },
     {
       "id": "loc36",
       "name": "Bruges",
       "countryId": "BE",
-      "coordinates": { "lng": 3.2247, "lat": 51.2093 }
+      "coordinates": {
+        "lng": 3.2247,
+        "lat": 51.2093
+      }
     },
     {
       "id": "loc37",
       "name": "Mostar",
       "countryId": "BA",
-      "coordinates": { "lng": 17.8078, "lat": 43.3429 }
+      "coordinates": {
+        "lng": 17.8078,
+        "lat": 43.3429
+      }
     },
     {
       "id": "loc38",
       "name": "Dubrovnik",
       "countryId": "HR",
-      "coordinates": { "lng": 18.0944, "lat": 42.6507 }
-  },
-  {
+      "coordinates": {
+        "lng": 18.0944,
+        "lat": 42.6507
+      }
+    },
+    {
       "id": "loc39",
       "name": "Split",
       "countryId": "HR",
-      "coordinates": { "lng": 16.4402, "lat": 43.5081 }
-  },
-  {
+      "coordinates": {
+        "lng": 16.4402,
+        "lat": 43.5081
+      }
+    },
+    {
       "id": "loc40",
       "name": "Zlatni Rat",
       "countryId": "HR",
-      "coordinates": { "lng": 16.6340, "lat": 43.2578 }
-  }
+      "coordinates": {
+        "lng": 16.6340,
+        "lat": 43.2578
+      }
+    },
+    {
+      "id": "loc41",
+      "name": "Perast",
+      "countryId": "ME",
+      "coordinates": {
+        "lng": 18.7082,
+        "lat": 42.4868
+      }
+    },
+    {
+      "id": "loc42",
+      "name": "Kotor",
+      "countryId": "ME",
+      "coordinates": {
+        "lng": 18.7716,
+        "lat": 42.4242
+      }
+    },
+    {
+      "id": "loc43",
+      "name": "Port Louis",
+      "countryId": "MU",
+      "coordinates": {
+        "lng": 57.5042,
+        "lat": -20.1609
+      }
+    },
+    {
+      "id": "loc44",
+      "name": "Flic en Flac",
+      "countryId": "MU",
+      "coordinates": {
+        "lng": 57.3711,
+        "lat": -20.2747
+      }
+    },
+    {
+      "id": "loc45",
+      "name": "Chobe",
+      "countryId": "BW",
+      "coordinates": {
+        "lng": 25.1479,
+        "lat": -17.8292
+      }
+    }
   ]
 }

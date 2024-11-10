@@ -121,6 +121,9 @@ const PhotoAlbumExplorer = () => {
       belgium: photos.find((p) => p.url.includes("bruges-canal-tree-tower.jpg")),
       bosnia: photos.find((p) => p.url.includes("mostar-pano.jpg")),
       croatia: photos.find((p) => p.url.includes("dubrovnik-steps.jpg")),
+      montenegro: photos.find((p) => p.url.includes("perast-contrast.jpg")),
+      mauritius: photos.find((p) => p.url.includes("mauritius-beach-house.jpg")),
+      botswana: photos.find((p) => p.url.includes("chobe-three-giraffes-pose.jpg")),
       brazil: photos.find(
         (p) => p.url.includes("helicopter-beach-sugarloaf.jpg") ||
               p.url.includes("/Brazil/helicopter-beach-sugarloaf.jpg")
