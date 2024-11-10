@@ -126,6 +126,7 @@ const PhotoAlbumExplorer = () => {
       mauritius: photos.find((p) => p.url.includes("mauritius-beach-house.jpg")),
       botswana: photos.find((p) => p.url.includes("chobe-three-giraffes-pose.jpg")),
       southafrica: photos.find((p) => p.url.includes("capetown-beach-sunset.jpg")),
+      belize: photos.find((p) => p.url.includes("belize-sun-hut-palm.jpg")),
       brazil: photos.find(
         (p) => p.url.includes("helicopter-beach-sugarloaf.jpg") ||
               p.url.includes("/Brazil/helicopter-beach-sugarloaf.jpg")

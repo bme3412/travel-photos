@@ -440,6 +440,33 @@
         "lng": 18.4241,
         "lat": -33.9249
       }
+    },
+    {
+      "id": "loc51",
+      "name": "Saint Barthélemy",
+      "countryId": "BL",
+      "coordinates": {
+        "lng": -62.8333,
+        "lat": 17.9000
+      }
+    },
+    {
+      "id": "loc52",
+      "name": "Caye Caulker",
+      "countryId": "BZ",
+      "coordinates": {
+        "lng": -88.0277,
+        "lat": 17.7612
+      }
+    },
+    {
+      "id": "loc53",
+      "name": "San Pedro",
+      "countryId": "BZ",
+      "coordinates": {
+        "lng": -87.9659,
+        "lat": 17.9165
+      }
     }
   ]
 }

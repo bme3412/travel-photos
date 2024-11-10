@@ -11308,6 +11308,1163 @@
         "sea",
         "water"
       ]
+    },
+    {
+      "id": "sb001",
+      "albumId": "stbarts",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/St-Barts/st-barts-bay-boats.jpg",
+      "caption": "St-Barts Bay Boats",
+      "locationId": "St-Barts",
+      "coordinates": {
+        "lng": -62.8279,
+        "lat": 17.8964
+      },
+      "dateCreated": "2024-04-01",
+      "tags": ["boats", "St-Barts", "bay", "water"]
+    },
+    {
+      "id": "sb002",
+      "albumId": "stbarts",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/St-Barts/st-barts-bay.jpg",
+      "caption": "St-Barts Bay",
+      "locationId": "St-Barts",
+      "coordinates": {
+        "lng": -62.8279,
+        "lat": 17.8964
+      },
+      "dateCreated": "2024-04-01",
+      "tags": ["bay", "St-Barts", "water", "nature"]
+    },
+    {
+      "id": "sb003",
+      "albumId": "stbarts",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/St-Barts/st-barts-beach-hill.jpg",
+      "caption": "St-Barts Beach Hill",
+      "locationId": "St-Barts",
+      "coordinates": {
+        "lng": -62.8279,
+        "lat": 17.8964
+      },
+      "dateCreated": "2024-04-01",
+      "tags": ["beach", "hill", "St-Barts", "nature"]
+    },
+    {
+      "id": "sb004",
+      "albumId": "stbarts",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/St-Barts/st-barts-beach-main.jpg",
+      "caption": "St-Barts Main Beach",
+      "locationId": "St-Barts",
+      "coordinates": {
+        "lng": -62.8279,
+        "lat": 17.8964
+      },
+      "dateCreated": "2024-04-01",
+      "tags": ["beach", "main", "St-Barts", "sun"]
+    },
+    {
+      "id": "sb005",
+      "albumId": "stbarts",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/St-Barts/st-barts-beach-sun.jpg",
+      "caption": "St-Barts Beach Sun",
+      "locationId": "St-Barts",
+      "coordinates": {
+        "lng": -62.8279,
+        "lat": 17.8964
+      },
+      "dateCreated": "2024-04-01",
+      "tags": ["beach", "sun", "St-Barts", "water"]
+    },
+    {
+      "id": "sb006",
+      "albumId": "stbarts",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/St-Barts/st-barts-beach.jpg",
+      "caption": "St-Barts Beach",
+      "locationId": "St-Barts",
+      "coordinates": {
+        "lng": -62.8279,
+        "lat": 17.8964
+      },
+      "dateCreated": "2024-04-01",
+      "tags": ["beach", "St-Barts", "sea", "nature"]
+    },
+    {
+      "id": "sb007",
+      "albumId": "stbarts",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/St-Barts/st-barts-boat-flag.jpg",
+      "caption": "St-Barts Boat Flag",
+      "locationId": "St-Barts",
+      "coordinates": {
+        "lng": -62.8279,
+        "lat": 17.8964
+      },
+      "dateCreated": "2024-04-01",
+      "tags": ["boat", "flag", "St-Barts", "water"]
+    },
+    {
+      "id": "sb008",
+      "albumId": "stbarts",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/St-Barts/st-barts-boat-wheel.jpg",
+      "caption": "St-Barts Boat Wheel",
+      "locationId": "St-Barts",
+      "coordinates": {
+        "lng": -62.8279,
+        "lat": 17.8964
+      },
+      "dateCreated": "2024-04-01",
+      "tags": ["boat", "wheel", "St-Barts", "marine"]
+    },
+    {
+      "id": "sb009",
+      "albumId": "stbarts",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/St-Barts/st-barts-boats.jpg",
+      "caption": "St-Barts Boats",
+      "locationId": "St-Barts",
+      "coordinates": {
+        "lng": -62.8279,
+        "lat": 17.8964
+      },
+      "dateCreated": "2024-04-01",
+      "tags": ["boats", "St-Barts", "marine", "water"]
+    },
+    {
+      "id": "sb010",
+      "albumId": "stbarts",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/St-Barts/st-barts-boatsteer.jpg",
+      "caption": "St-Barts Boat Steer",
+      "locationId": "St-Barts",
+      "coordinates": {
+        "lng": -62.8279,
+        "lat": 17.8964
+      },
+      "dateCreated": "2024-04-01",
+      "tags": ["boat", "steer", "St-Barts", "navigation"]
+    },
+    {
+      "id": "sb011",
+      "albumId": "stbarts",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/St-Barts/st-barts-catamaran-cruise.jpg",
+      "caption": "St-Barts Catamaran Cruise",
+      "locationId": "St-Barts",
+      "coordinates": {
+        "lng": -62.8279,
+        "lat": 17.8964
+      },
+      "dateCreated": "2024-04-01",
+      "tags": ["catamaran", "cruise", "St-Barts", "boats"]
+    },
+    {
+      "id": "sb012",
+      "albumId": "stbarts",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/St-Barts/st-barts-catamaran.jpg",
+      "caption": "St-Barts Catamaran",
+      "locationId": "St-Barts",
+      "coordinates": {
+        "lng": -62.8279,
+        "lat": 17.8964
+      },
+      "dateCreated": "2024-04-01",
+      "tags": ["catamaran", "St-Barts", "boats", "marine"]
+    },
+    {
+      "id": "sb013",
+      "albumId": "stbarts",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/St-Barts/st-barts-coast-boats.jpg",
+      "caption": "St-Barts Coast Boats",
+      "locationId": "St-Barts",
+      "coordinates": {
+        "lng": -62.8279,
+        "lat": 17.8964
+      },
+      "dateCreated": "2024-04-01",
+      "tags": ["coast", "boats", "St-Barts", "water"]
+    },
+    {
+      "id": "sb014",
+      "albumId": "stbarts",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/St-Barts/st-barts-colombe.jpg",
+      "caption": "St-Barts Colombie",
+      "locationId": "St-Barts",
+      "coordinates": {
+        "lng": -62.8279,
+        "lat": 17.8964
+      },
+      "dateCreated": "2024-04-01",
+      "tags": ["Colombie", "St-Barts", "village", "nature"]
+    },
+    {
+      "id": "sb015",
+      "albumId": "stbarts",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/St-Barts/st-barts-dusk.jpg",
+      "caption": "St-Barts Dusk",
+      "locationId": "St-Barts",
+      "coordinates": {
+        "lng": -62.8279,
+        "lat": 17.8964
+      },
+      "dateCreated": "2024-04-01",
+      "tags": ["dusk", "St-Barts", "sunset", "evening"]
+    },
+    {
+      "id": "sb016",
+      "albumId": "stbarts",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/St-Barts/st-barts-gouvernor-road.jpg",
+      "caption": "St-Barts Gouvernor Road",
+      "locationId": "St-Barts",
+      "coordinates": {
+        "lng": -62.8279,
+        "lat": 17.8964
+      },
+      "dateCreated": "2024-04-01",
+      "tags": ["Gouvernor Road", "St-Barts", "road", "scenery"]
+    },
+    {
+      "id": "sb017",
+      "albumId": "stbarts",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/St-Barts/st-barts-gouvernor.jpg",
+      "caption": "St-Barts Gouvernor",
+      "locationId": "St-Barts",
+      "coordinates": {
+        "lng": -62.8279,
+        "lat": 17.8964
+      },
+      "dateCreated": "2024-04-01",
+      "tags": ["Gouvernor", "St-Barts", "landmark", "architecture"]
+    },
+    {
+      "id": "sb018",
+      "albumId": "stbarts",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/St-Barts/st-barts-green-waves.JPG",
+      "caption": "St-Barts Green Waves",
+      "locationId": "St-Barts",
+      "coordinates": {
+        "lng": -62.8279,
+        "lat": 17.8964
+      },
+      "dateCreated": "2024-04-01",
+      "tags": ["green waves", "St-Barts", "sea", "nature"]
+    },
+    {
+      "id": "sb019",
+      "albumId": "stbarts",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/St-Barts/st-barts-grotto.jpg",
+      "caption": "St-Barts Grotto",
+      "locationId": "St-Barts",
+      "coordinates": {
+        "lng": -62.8279,
+        "lat": 17.8964
+      },
+      "dateCreated": "2024-04-01",
+      "tags": ["grotto", "St-Barts", "cave", "nature"]
+    },
+    {
+      "id": "sb020",
+      "albumId": "stbarts",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/St-Barts/st-barts-harbor-boat.jpg",
+      "caption": "St-Barts Harbor Boat",
+      "locationId": "St-Barts",
+      "coordinates": {
+        "lng": -62.8279,
+        "lat": 17.8964
+      },
+      "dateCreated": "2024-04-01",
+      "tags": ["harbor", "boat", "St-Barts", "marine"]
+    },
+    {
+      "id": "sb021",
+      "albumId": "stbarts",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/St-Barts/st-barts-main-beach.jpg",
+      "caption": "St-Barts Main Beach",
+      "locationId": "St-Barts",
+      "coordinates": {
+        "lng": -62.8279,
+        "lat": 17.8964
+      },
+      "dateCreated": "2024-04-01",
+      "tags": ["main beach", "St-Barts", "sun", "sand"]
+    },
+    {
+      "id": "sb022",
+      "albumId": "stbarts",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/St-Barts/st-barts-main-greenwaves.JPG",
+      "caption": "St-Barts Main Green Waves",
+      "locationId": "St-Barts",
+      "coordinates": {
+        "lng": -62.8279,
+        "lat": 17.8964
+      },
+      "dateCreated": "2024-04-01",
+      "tags": ["main green waves", "St-Barts", "sea", "nature"]
+    },
+    {
+      "id": "sb023",
+      "albumId": "stbarts",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/St-Barts/st-barts-nikki-beach-main.jpg",
+      "caption": "St-Barts Nikki Beach Main",
+      "locationId": "St-Barts",
+      "coordinates": {
+        "lng": -62.8279,
+        "lat": 17.8964
+      },
+      "dateCreated": "2024-04-01",
+      "tags": ["Nikki Beach", "main", "St-Barts", "beach"]
+    },
+    {
+      "id": "sb024",
+      "albumId": "stbarts",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/St-Barts/st-barts-nikki-beach.jpg",
+      "caption": "St-Barts Nikki Beach",
+      "locationId": "St-Barts",
+      "coordinates": {
+        "lng": -62.8279,
+        "lat": 17.8964
+      },
+      "dateCreated": "2024-04-01",
+      "tags": ["Nikki Beach", "St-Barts", "beach", "resort"]
+    },
+    {
+      "id": "sb025",
+      "albumId": "stbarts",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/St-Barts/st-barts-rainbow.jpg",
+      "caption": "St-Barts Rainbow",
+      "locationId": "St-Barts",
+      "coordinates": {
+        "lng": -62.8279,
+        "lat": 17.8964
+      },
+      "dateCreated": "2024-04-01",
+      "tags": ["rainbow", "St-Barts", "sky", "nature"]
+    },
+    {
+      "id": "sb026",
+      "albumId": "stbarts",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/St-Barts/st-barts-redroof.jpg",
+      "caption": "St-Barts Red Roof",
+      "locationId": "St-Barts",
+      "coordinates": {
+        "lng": -62.8279,
+        "lat": 17.8964
+      },
+      "dateCreated": "2024-04-01",
+      "tags": ["red roof", "St-Barts", "architecture", "colorful"]
+    },
+    {
+      "id": "sb027",
+      "albumId": "stbarts",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/St-Barts/st-barts-rock-beach.jpg",
+      "caption": "St-Barts Rock Beach",
+      "locationId": "St-Barts",
+      "coordinates": {
+        "lng": -62.8279,
+        "lat": 17.8964
+      },
+      "dateCreated": "2024-04-01",
+      "tags": ["rock beach", "St-Barts", "beach", "nature"]
+    },
+    {
+      "id": "sb028",
+      "albumId": "stbarts",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/St-Barts/st-barts-roughwaves.jpg",
+      "caption": "St-Barts Rough Waves",
+      "locationId": "St-Barts",
+      "coordinates": {
+        "lng": -62.8279,
+        "lat": 17.8964
+      },
+      "dateCreated": "2024-04-01",
+      "tags": ["rough waves", "St-Barts", "sea", "nature"]
+    },
+    {
+      "id": "sb029",
+      "albumId": "stbarts",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/St-Barts/st-barts-sail-sun.jpg",
+      "caption": "St-Barts Sail Sun",
+      "locationId": "St-Barts",
+      "coordinates": {
+        "lng": -62.8279,
+        "lat": 17.8964
+      },
+      "dateCreated": "2024-04-01",
+      "tags": ["sail", "sun", "St-Barts", "boats"]
+    },
+    {
+      "id": "sb030",
+      "albumId": "stbarts",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/St-Barts/st-barts-sailboat-cliff.jpg",
+      "caption": "St-Barts Sailboat Cliff",
+      "locationId": "St-Barts",
+      "coordinates": {
+        "lng": -62.8279,
+        "lat": 17.8964
+      },
+      "dateCreated": "2024-04-01",
+      "tags": ["sailboat", "cliff", "St-Barts", "marine"]
+    },
+    {
+      "id": "sb031",
+      "albumId": "stbarts",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/St-Barts/st-barts-sailboat.jpg",
+      "caption": "St-Barts Sailboat",
+      "locationId": "St-Barts",
+      "coordinates": {
+        "lng": -62.8279,
+        "lat": 17.8964
+      },
+      "dateCreated": "2024-04-01",
+      "tags": ["sailboat", "St-Barts", "boats", "water"]
+    },
+    {
+      "id": "sb032",
+      "albumId": "stbarts",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/St-Barts/st-barts-sun-fullsail.jpg",
+      "caption": "St-Barts Sun Full Sail",
+      "locationId": "St-Barts",
+      "coordinates": {
+        "lng": -62.8279,
+        "lat": 17.8964
+      },
+      "dateCreated": "2024-04-01",
+      "tags": ["sun", "full sail", "St-Barts", "boats"]
+    },
+    {
+      "id": "sb033",
+      "albumId": "stbarts",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/St-Barts/st-barts-sun-horizon-boat.jpg",
+      "caption": "St-Barts Sun Horizon Boat",
+      "locationId": "St-Barts",
+      "coordinates": {
+        "lng": -62.8279,
+        "lat": 17.8964
+      },
+      "dateCreated": "2024-04-01",
+      "tags": ["sun", "horizon", "boat", "St-Barts"]
+    },
+    {
+      "id": "sb034",
+      "albumId": "stbarts",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/St-Barts/st-barts-sun-horizon.jpg",
+      "caption": "St-Barts Sun Horizon",
+      "locationId": "St-Barts",
+      "coordinates": {
+        "lng": -62.8279,
+        "lat": 17.8964
+      },
+      "dateCreated": "2024-04-01",
+      "tags": ["sun", "horizon", "St-Barts", "sunset"]
+    },
+    {
+      "id": "sb035",
+      "albumId": "stbarts",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/St-Barts/st-barts-sundown-boat.jpg",
+      "caption": "St-Barts Sundown Boat",
+      "locationId": "St-Barts",
+      "coordinates": {
+        "lng": -62.8279,
+        "lat": 17.8964
+      },
+      "dateCreated": "2024-04-01",
+      "tags": ["sundown", "boat", "St-Barts", "sunset"]
+    },
+    {
+      "id": "sb036",
+      "albumId": "stbarts",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/St-Barts/st-barts-sundown.jpg",
+      "caption": "St-Barts Sundown",
+      "locationId": "St-Barts",
+      "coordinates": {
+        "lng": -62.8279,
+        "lat": 17.8964
+      },
+      "dateCreated": "2024-04-01",
+      "tags": ["sundown", "St-Barts", "sunset", "evening"]
+    },
+    {
+      "id": "sb037",
+      "albumId": "stbarts",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/St-Barts/st-barts-valley-ocean.jpg",
+      "caption": "St-Barts Valley Ocean",
+      "locationId": "St-Barts",
+      "coordinates": {
+        "lng": -62.8279,
+        "lat": 17.8964
+      },
+      "dateCreated": "2024-04-01",
+      "tags": ["valley", "ocean", "St-Barts", "nature"]
+    },
+    {
+      "id": "sb038",
+      "albumId": "stbarts",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/St-Barts/st-barts-vista.jpg",
+      "caption": "St-Barts Vista",
+      "locationId": "St-Barts",
+      "coordinates": {
+        "lng": -62.8279,
+        "lat": 17.8964
+      },
+      "dateCreated": "2024-04-01",
+      "tags": ["vista", "St-Barts", "scenery", "view"]
+    },
+    {
+      "id": "sb039",
+      "albumId": "stbarts",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/St-Barts/st-barts-water.jpg",
+      "caption": "St-Barts Water",
+      "locationId": "St-Barts",
+      "coordinates": {
+        "lng": -62.8279,
+        "lat": 17.8964
+      },
+      "dateCreated": "2024-04-01",
+      "tags": ["water", "St-Barts", "sea", "nature"]
+    },
+    {
+      "id": "sb040",
+      "albumId": "stbarts",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/St-Barts/st-barts-wave-ocean.jpg",
+      "caption": "St-Barts Wave Ocean",
+      "locationId": "St-Barts",
+      "coordinates": {
+        "lng": -62.8279,
+        "lat": 17.8964
+      },
+      "dateCreated": "2024-04-01",
+      "tags": ["wave", "ocean", "St-Barts", "water"]
+    },
+    {
+      "id": "sb041",
+      "albumId": "stbarts",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/St-Barts/st-barts-wheel-sun.jpg",
+      "caption": "St-Barts Wheel Sun",
+      "locationId": "St-Barts",
+      "coordinates": {
+        "lng": -62.8279,
+        "lat": 17.8964
+      },
+      "dateCreated": "2024-04-01",
+      "tags": ["wheel", "sun", "St-Barts", "boats"]
+    },
+    {
+      "id": "sb042",
+      "albumId": "stbarts",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/St-Barts/st-barts-yacht.jpg",
+      "caption": "St-Barts Yacht",
+      "locationId": "St-Barts",
+      "coordinates": {
+        "lng": -62.8279,
+        "lat": 17.8964
+      },
+      "dateCreated": "2024-04-01",
+      "tags": ["yacht", "St-Barts", "boats", "marine"]
+    },
+    {
+      "id": "sb043",
+      "albumId": "stbarts",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/St-Barts/st-bartts-beach-shell.jpg",
+      "caption": "St-Bartts Beach Shell",
+      "locationId": "St-Barts",
+      "coordinates": {
+        "lng": -62.8279,
+        "lat": 17.8964
+      },
+      "dateCreated": "2024-04-01",
+      "tags": ["beach", "shell", "St-Barts", "nature"]
+    },
+    {
+      "id": "sb044",
+      "albumId": "stbarts",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/St-Barts/st-bearts-sparkling-waves.jpg",
+      "caption": "St-Barts Sparkling Waves",
+      "locationId": "St-Barts",
+      "coordinates": {
+        "lng": -62.8279,
+        "lat": 17.8964
+      },
+      "dateCreated": "2024-04-01",
+      "tags": ["sparkling waves", "St-Barts", "sea", "nature"]
+    },
+    {
+      "id": "bz001",
+      "albumId": "belize",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Belize/belize-bar-slide.jpg",
+      "caption": "Belize Bar Slide",
+      "locationId": "Belize",
+      "coordinates": {
+        "lng": -88.4976,
+        "lat": 17.1899
+      },
+      "dateCreated": "2024-04-01",
+      "tags": ["bar", "slide", "Belize", "water"]
+    },
+    {
+      "id": "bz002",
+      "albumId": "belize",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Belize/belize-bar.jpg",
+      "caption": "Belize Bar",
+      "locationId": "Belize",
+      "coordinates": {
+        "lng": -88.4976,
+        "lat": 17.1899
+      },
+      "dateCreated": "2024-04-01",
+      "tags": ["bar", "Belize", "beach", "nightlife"]
+    },
+    {
+      "id": "bz003",
+      "albumId": "belize",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Belize/belize-beah-hammock.jpg",
+      "caption": "Belize Beach Hammock",
+      "locationId": "Belize",
+      "coordinates": {
+        "lng": -88.4976,
+        "lat": 17.1899
+      },
+      "dateCreated": "2024-04-01",
+      "tags": ["beach", "hammock", "Belize", "relaxation"]
+    },
+    {
+      "id": "bz004",
+      "albumId": "belize",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Belize/belize-boat-dusk.jpg",
+      "caption": "Belize Boat Dusk",
+      "locationId": "Belize",
+      "coordinates": {
+        "lng": -88.4976,
+        "lat": 17.1899
+      },
+      "dateCreated": "2024-04-01",
+      "tags": ["boat", "dusk", "Belize", "sunset"]
+    },
+    {
+      "id": "bz005",
+      "albumId": "belize",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Belize/belize-bulletfalls.jpg",
+      "caption": "Belize Bulletfalls",
+      "locationId": "Belize",
+      "coordinates": {
+        "lng": -88.4976,
+        "lat": 17.1899
+      },
+      "dateCreated": "2024-04-01",
+      "tags": ["bulletfalls", "Belize", "waterfall", "nature"]
+    },
+    {
+      "id": "bz006",
+      "albumId": "belize",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Belize/belize-cayecaulker-boat.jpg",
+      "caption": "Belize Cayecaulker Boat",
+      "locationId": "Belize",
+      "coordinates": {
+        "lng": -88.4976,
+        "lat": 17.1899
+      },
+      "dateCreated": "2024-04-01",
+      "tags": ["Cayecaulker", "boat", "Belize", "marine"]
+    },
+    {
+      "id": "bz007",
+      "albumId": "belize",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Belize/belize-cayecaulker-mainstreet.jpg",
+      "caption": "Belize Cayecaulker Main Street",
+      "locationId": "Belize",
+      "coordinates": {
+        "lng": -88.4976,
+        "lat": 17.1899
+      },
+      "dateCreated": "2024-04-01",
+      "tags": ["Cayecaulker", "main street", "Belize", "road"]
+    },
+    {
+      "id": "bz008",
+      "albumId": "belize",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Belize/belize-cayecaulker-road.jpg",
+      "caption": "Belize Cayecaulker Road",
+      "locationId": "Belize",
+      "coordinates": {
+        "lng": -88.4976,
+        "lat": 17.1899
+      },
+      "dateCreated": "2024-04-01",
+      "tags": ["Cayecaulker", "road", "Belize", "scenery"]
+    },
+    {
+      "id": "bz009",
+      "albumId": "belize",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Belize/belize-cayecaulker-view.jpg",
+      "caption": "Belize Cayecaulker View",
+      "locationId": "Belize",
+      "coordinates": {
+        "lng": -88.4976,
+        "lat": 17.1899
+      },
+      "dateCreated": "2024-04-01",
+      "tags": ["Cayecaulker", "view", "Belize", "panorama"]
+    },
+    {
+      "id": "bz010",
+      "albumId": "belize",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Belize/belize-cayecaulker.jpg",
+      "caption": "Belize Cayecaulker",
+      "locationId": "Belize",
+      "coordinates": {
+        "lng": -88.4976,
+        "lat": 17.1899
+      },
+      "dateCreated": "2024-04-01",
+      "tags": ["Cayecaulker", "Belize", "island", "travel"]
+    },
+    {
+      "id": "bz011",
+      "albumId": "belize",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Belize/belize-dock.jpg",
+      "caption": "Belize Dock",
+      "locationId": "Belize",
+      "coordinates": {
+        "lng": -88.4976,
+        "lat": 17.1899
+      },
+      "dateCreated": "2024-04-01",
+      "tags": ["dock", "Belize", "boats", "water"]
+    },
+    {
+      "id": "bz012",
+      "albumId": "belize",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Belize/belize-greenwater-boat.jpg",
+      "caption": "Belize Greenwater Boat",
+      "locationId": "Belize",
+      "coordinates": {
+        "lng": -88.4976,
+        "lat": 17.1899
+      },
+      "dateCreated": "2024-04-01",
+      "tags": ["Greenwater", "boat", "Belize", "marine"]
+    },
+    {
+      "id": "bz013",
+      "albumId": "belize",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Belize/belize-greenwater.jpg",
+      "caption": "Belize Greenwater",
+      "locationId": "Belize",
+      "coordinates": {
+        "lng": -88.4976,
+        "lat": 17.1899
+      },
+      "dateCreated": "2024-04-01",
+      "tags": ["Greenwater", "Belize", "water", "nature"]
+    },
+    {
+      "id": "bz014",
+      "albumId": "belize",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Belize/belize-horizon-sunset.jpg",
+      "caption": "Belize Horizon Sunset",
+      "locationId": "Belize",
+      "coordinates": {
+        "lng": -88.4976,
+        "lat": 17.1899
+      },
+      "dateCreated": "2024-04-01",
+      "tags": ["horizon", "sunset", "Belize", "sky"]
+    },
+    {
+      "id": "bz015",
+      "albumId": "belize",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Belize/belize-hut-sun-horizon.jpg",
+      "caption": "Belize Hut Sun Horizon",
+      "locationId": "Belize",
+      "coordinates": {
+        "lng": -88.4976,
+        "lat": 17.1899
+      },
+      "dateCreated": "2024-04-01",
+      "tags": ["hut", "sun", "horizon", "Belize"]
+    },
+    {
+      "id": "bz016",
+      "albumId": "belize",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Belize/belize-hut.jpg",
+      "caption": "Belize Hut",
+      "locationId": "Belize",
+      "coordinates": {
+        "lng": -88.4976,
+        "lat": 17.1899
+      },
+      "dateCreated": "2024-04-01",
+      "tags": ["hut", "Belize", "architecture", "village"]
+    },
+    {
+      "id": "bz017",
+      "albumId": "belize",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Belize/belize-jungle.jpg",
+      "caption": "Belize Jungle",
+      "locationId": "Belize",
+      "coordinates": {
+        "lng": -88.4976,
+        "lat": 17.1899
+      },
+      "dateCreated": "2024-04-01",
+      "tags": ["jungle", "Belize", "forest", "nature"]
+    },
+    {
+      "id": "bz018",
+      "albumId": "belize",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Belize/belize-landing.jpg",
+      "caption": "Belize Landing",
+      "locationId": "Belize",
+      "coordinates": {
+        "lng": -88.4976,
+        "lat": 17.1899
+      },
+      "dateCreated": "2024-04-01",
+      "tags": ["landing", "Belize", "shore", "water"]
+    },
+    {
+      "id": "bz019",
+      "albumId": "belize",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Belize/belize-mainroad-sin.jpg",
+      "caption": "Belize Mainroad Sin",
+      "locationId": "Belize",
+      "coordinates": {
+        "lng": -88.4976,
+        "lat": 17.1899
+      },
+      "dateCreated": "2024-04-01",
+      "tags": ["mainroad", "Sin", "Belize", "street"]
+    },
+    {
+      "id": "bz020",
+      "albumId": "belize",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Belize/belize-mainstreet.jpg",
+      "caption": "Belize Main Street",
+      "locationId": "Belize",
+      "coordinates": {
+        "lng": -88.4976,
+        "lat": 17.1899
+      },
+      "dateCreated": "2024-04-01",
+      "tags": ["main street", "Belize", "road", "shopping"]
+    },
+    {
+      "id": "bz021",
+      "albumId": "belize",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Belize/belize-palmtree.jpg",
+      "caption": "Belize Palm Tree",
+      "locationId": "Belize",
+      "coordinates": {
+        "lng": -88.4976,
+        "lat": 17.1899
+      },
+      "dateCreated": "2024-04-01",
+      "tags": ["palm tree", "Belize", "nature", "tropical"]
+    },
+    {
+      "id": "bz022",
+      "albumId": "belize",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Belize/belize-palmtrees.jpg",
+      "caption": "Belize Palm Trees",
+      "locationId": "Belize",
+      "coordinates": {
+        "lng": -88.4976,
+        "lat": 17.1899
+      },
+      "dateCreated": "2024-04-01",
+      "tags": ["palm trees", "Belize", "nature", "tropical"]
+    },
+    {
+      "id": "bz023",
+      "albumId": "belize",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Belize/belize-sail-sun.jpg",
+      "caption": "Belize Sail Sun",
+      "locationId": "Belize",
+      "coordinates": {
+        "lng": -88.4976,
+        "lat": 17.1899
+      },
+      "dateCreated": "2024-04-01",
+      "tags": ["sail", "sun", "Belize", "boats"]
+    },
+    {
+      "id": "bz024",
+      "albumId": "belize",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Belize/belize-sun-bird-orange.jpg",
+      "caption": "Belize Sun Bird Orange",
+      "locationId": "Belize",
+      "coordinates": {
+        "lng": -88.4976,
+        "lat": 17.1899
+      },
+      "dateCreated": "2024-04-01",
+      "tags": ["sun", "bird", "orange", "Belize", "nature"]
+    },
+    {
+      "id": "bz025",
+      "albumId": "belize",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Belize/belize-sun-birds.jpg",
+      "caption": "Belize Sun Birds",
+      "locationId": "Belize",
+      "coordinates": {
+        "lng": -88.4976,
+        "lat": 17.1899
+      },
+      "dateCreated": "2024-04-01",
+      "tags": ["sun", "birds", "Belize", "nature"]
+    },
+    {
+      "id": "bz026",
+      "albumId": "belize",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Belize/belize-sun-horizon.jpg",
+      "caption": "Belize Sun Horizon",
+      "locationId": "Belize",
+      "coordinates": {
+        "lng": -88.4976,
+        "lat": 17.1899
+      },
+      "dateCreated": "2024-04-01",
+      "tags": ["sun", "horizon", "Belize", "sunset"]
+    },
+    {
+      "id": "bz027",
+      "albumId": "belize",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Belize/belize-sun-hut-horizon.JPG",
+      "caption": "Belize Sun Hut Horizon",
+      "locationId": "Belize",
+      "coordinates": {
+        "lng": -88.4976,
+        "lat": 17.1899
+      },
+      "dateCreated": "2024-04-01",
+      "tags": ["sun", "hut", "horizon", "Belize", "sunset"]
+    },
+    {
+      "id": "bz028",
+      "albumId": "belize",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Belize/belize-sun-hut-palm.jpg",
+      "caption": "Belize Sun Hut Palm",
+      "locationId": "Belize",
+      "coordinates": {
+        "lng": -88.4976,
+        "lat": 17.1899
+      },
+      "dateCreated": "2024-04-01",
+      "tags": ["sun", "hut", "palm", "Belize", "tropical"]
+    },
+    {
+      "id": "bz029",
+      "albumId": "belize",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Belize/belize-sun-hut.jpg",
+      "caption": "Belize Sun Hut",
+      "locationId": "Belize",
+      "coordinates": {
+        "lng": -88.4976,
+        "lat": 17.1899
+      },
+      "dateCreated": "2024-04-01",
+      "tags": ["sun", "hut", "Belize", "architecture"]
+    },
+    {
+      "id": "bz030",
+      "albumId": "belize",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Belize/belize-sun-orb.jpg",
+      "caption": "Belize Sun Orb",
+      "locationId": "Belize",
+      "coordinates": {
+        "lng": -88.4976,
+        "lat": 17.1899
+      },
+      "dateCreated": "2024-04-01",
+      "tags": ["sun", "orb", "Belize", "sky"]
+    },
+    {
+      "id": "bz031",
+      "albumId": "belize",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Belize/belize-sun-palm-horizon.jpg",
+      "caption": "Belize Sun Palm Horizon",
+      "locationId": "Belize",
+      "coordinates": {
+        "lng": -88.4976,
+        "lat": 17.1899
+      },
+      "dateCreated": "2024-04-01",
+      "tags": ["sun", "palm", "horizon", "Belize", "sunset"]
+    },
+    {
+      "id": "bz032",
+      "albumId": "belize",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Belize/belize-sun-palm-hut.JPG",
+      "caption": "Belize Sun Palm Hut",
+      "locationId": "Belize",
+      "coordinates": {
+        "lng": -88.4976,
+        "lat": 17.1899
+      },
+      "dateCreated": "2024-04-01",
+      "tags": ["sun", "palm", "hut", "Belize", "tropical"]
+    },
+    {
+      "id": "bz033",
+      "albumId": "belize",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Belize/belize-sun-pink.jpg",
+      "caption": "Belize Sun Pink",
+      "locationId": "Belize",
+      "coordinates": {
+        "lng": -88.4976,
+        "lat": 17.1899
+      },
+      "dateCreated": "2024-04-01",
+      "tags": ["sun", "pink", "Belize", "sunset"]
+    },
+    {
+      "id": "bz034",
+      "albumId": "belize",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Belize/belize-sun-sail.jpg",
+      "caption": "Belize Sun Sail",
+      "locationId": "Belize",
+      "coordinates": {
+        "lng": -88.4976,
+        "lat": 17.1899
+      },
+      "dateCreated": "2024-04-01",
+      "tags": ["sun", "sail", "Belize", "boats"]
+    },
+    {
+      "id": "bz035",
+      "albumId": "belize",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Belize/belize-sun-zoom-sail.jpg",
+      "caption": "Belize Sun Zoom Sail",
+      "locationId": "Belize",
+      "coordinates": {
+        "lng": -88.4976,
+        "lat": 17.1899
+      },
+      "dateCreated": "2024-04-01",
+      "tags": ["sun", "zoom", "sail", "Belize", "boats"]
+    },
+    {
+      "id": "bz036",
+      "albumId": "belize",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Belize/belize-sun.jpg",
+      "caption": "Belize Sun",
+      "locationId": "Belize",
+      "coordinates": {
+        "lng": -88.4976,
+        "lat": 17.1899
+      },
+      "dateCreated": "2024-04-01",
+      "tags": ["sun", "Belize", "sky", "daytime"]
+    },
+    {
+      "id": "bz037",
+      "albumId": "belize",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Belize/belize-sundown-horizon.jpg",
+      "caption": "Belize Sundown Horizon",
+      "locationId": "Belize",
+      "coordinates": {
+        "lng": -88.4976,
+        "lat": 17.1899
+      },
+      "dateCreated": "2024-04-01",
+      "tags": ["sundown", "horizon", "Belize", "sunset"]
+    },
+    {
+      "id": "bz038",
+      "albumId": "belize",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Belize/belize-sunorb-horizon.jpg",
+      "caption": "Belize Sunorb Horizon",
+      "locationId": "Belize",
+      "coordinates": {
+        "lng": -88.4976,
+        "lat": 17.1899
+      },
+      "dateCreated": "2024-04-01",
+      "tags": ["sunorb", "horizon", "Belize", "sunset"]
+    },
+    {
+      "id": "bz039",
+      "albumId": "belize",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Belize/belize-sunset-clouds.jpg",
+      "caption": "Belize Sunset Clouds",
+      "locationId": "Belize",
+      "coordinates": {
+        "lng": -88.4976,
+        "lat": 17.1899
+      },
+      "dateCreated": "2024-04-01",
+      "tags": ["sunset", "clouds", "Belize", "sky"]
+    },
+    {
+      "id": "bz040",
+      "albumId": "belize",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Belize/belize-sunset-orange-bird.jpg",
+      "caption": "Belize Sunset Orange Bird",
+      "locationId": "Belize",
+      "coordinates": {
+        "lng": -88.4976,
+        "lat": 17.1899
+      },
+      "dateCreated": "2024-04-01",
+      "tags": ["sunset", "orange", "bird", "Belize", "nature"]
+    },
+    {
+      "id": "bz041",
+      "albumId": "belize",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Belize/belize-sunset-palmfronds.jpg",
+      "caption": "Belize Sunset Palm Fronds",
+      "locationId": "Belize",
+      "coordinates": {
+        "lng": -88.4976,
+        "lat": 17.1899
+      },
+      "dateCreated": "2024-04-01",
+      "tags": ["sunset", "palm fronds", "Belize", "trees"]
+    },
+    {
+      "id": "bz042",
+      "albumId": "belize",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Belize/belize-sunset-pink.jpg",
+      "caption": "Belize Sunset Pink",
+      "locationId": "Belize",
+      "coordinates": {
+        "lng": -88.4976,
+        "lat": 17.1899
+      },
+      "dateCreated": "2024-04-01",
+      "tags": ["sunset", "pink", "Belize", "sky"]
+    },
+    {
+      "id": "bz043",
+      "albumId": "belize",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Belize/belize-sunset-pool.jpg",
+      "caption": "Belize Sunset Pool",
+      "locationId": "Belize",
+      "coordinates": {
+        "lng": -88.4976,
+        "lat": 17.1899
+      },
+      "dateCreated": "2024-04-01",
+      "tags": ["sunset", "pool", "Belize", "water"]
+    },
+    {
+      "id": "bz044",
+      "albumId": "belize",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Belize/belize-sunset-sail-huts.jpg",
+      "caption": "Belize Sunset Sail Huts",
+      "locationId": "Belize",
+      "coordinates": {
+        "lng": -88.4976,
+        "lat": 17.1899
+      },
+      "dateCreated": "2024-04-01",
+      "tags": ["sunset", "sail huts", "Belize", "boats"]
+    },
+    {
+      "id": "bz045",
+      "albumId": "belize",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Belize/belize-sunset-sail.jpg",
+      "caption": "Belize Sunset Sail",
+      "locationId": "Belize",
+      "coordinates": {
+        "lng": -88.4976,
+        "lat": 17.1899
+      },
+      "dateCreated": "2024-04-01",
+      "tags": ["sunset", "sail", "Belize", "boats"]
     }
   ]
 }

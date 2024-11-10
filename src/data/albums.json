@@ -2,253 +2,253 @@
   "albums": [
     {
       "id": "chile",
-      "name": "Chilean Chronicles",
+      "name": "🇨🇱 Chilean Charms",
       "countryId": "CL",
       "year": "2024"
     },
     {
       "id": "france",
-      "name": "Adventures in France",
+      "name": "🇫🇷 French Fantasies",
       "countryId": "FR",
       "year": "2024"
     },
     {
       "id": "italy",
-      "name": "Italian Journey",
+      "name": "🇮🇹 Italian Impressions",
       "countryId": "IT",
       "year": "2024"
     },
     {
       "id": "portugal",
-      "name": "Portuguese Perspectives",
+      "name": "🇵🇹 Portuguese Passages",
       "countryId": "PT",
       "year": "2024"
     },
     {
       "id": "spain",
-      "name": "Spanish Sojourn",
+      "name": "🇪🇸 Spanish Splendors",
       "countryId": "ES",
       "year": "2024"
     },
     {
       "id": "uruguay",
-      "name": "Uruguay Unveiled",
+      "name": "🇺🇾 Uruguayan Unfoldings",
       "countryId": "UY",
       "year": "2024"
     },
     {
       "id": "argentina",
-      "name": "Argentine Adventures",
+      "name": "🇦🇷 Argentine Allure",
       "countryId": "AR",
       "year": "2023"
     },
     {
       "id": "brazil",
-      "name": "Brazilian Beauty",
+      "name": "🇧🇷 Brazilian Brilliance",
       "countryId": "BR",
       "year": "2023"
     },
     {
       "id": "hongkong",
-      "name": "Exploring Hong Kong",
+      "name": "🇭🇰 Hong Kong Horizons",
       "countryId": "HK",
       "year": "2023"
     },
     {
       "id": "slovenia",
-      "name": "Slovenian Stories",
+      "name": "🇸🇮 Slovenian Serenity",
       "countryId": "SI",
       "year": "2023"
     },
     {
       "id": "switzerland",
-      "name": "Swiss Scenes",
+      "name": "🇨🇭 Swiss Serenity",
       "countryId": "CH",
       "year": "2023"
     },
     {
       "id": "vietnam",
-      "name": "Vietnam Ventures",
+      "name": "🇻🇳 Vietnamese Vistas",
       "countryId": "VN",
       "year": "2023"
     },
     {
       "id": "malaysia",
-      "name": "Malaysian Moments",
+      "name": "🇲🇾 Malaysian Marvels",
       "countryId": "MY",
       "year": "2022"
     },
     {
       "id": "monaco",
-      "name": "Monaco Moments",
+      "name": "🇲🇨 Monaco Mystique",
       "countryId": "MC",
       "year": "2022"
     },
     {
       "id": "singapore",
-      "name": "Singapore Stories",
+      "name": "🇸🇬 Singapore Spectacles",
       "countryId": "SG",
       "year": "2022"
     },
     {
       "id": "belgium",
-      "name": "Belgian Beauty",
+      "name": "🇧🇪 Belgian Bliss",
       "countryId": "BE",
       "year": "2019"
     },
     {
       "id": "bosnia-herzegovina",
-      "name": "Bosnia and Herzegovina Highlights",
+      "name": "🇧🇦 Bosnian Beauty",
       "countryId": "BA",
       "year": "2019"
     },
     {
       "id": "croatia",
-      "name": "Croatian Chronicles",
+      "name": "🇭🇷 Croatian Creations",
       "countryId": "HR",
       "year": "2019"
     },
     {
       "id": "montenegro",
-      "name": "Montenegro Memories",
+      "name": "🇲🇪 Montenegrin Moments",
       "countryId": "ME",
       "year": "2019"
     },
     {
       "id": "botswana",
-      "name": "Botswana Beauty",
+      "name": "🇧🇼 Botswanan Brilliance",
       "countryId": "BW",
       "year": "2018"
     },
     {
       "id": "mauritius",
-      "name": "Mauritius Magic",
+      "name": "🇲🇺 Mauritian Majesty",
       "countryId": "MU",
       "year": "2018"
     },
     {
-      "id": "saint-barthelemy",
-      "name": "Saint Barthélemy Scenes",
+      "id": "stbarts",
+      "name": "🇧🇱 Barthélemy Breezes",
       "countryId": "BL",
       "year": "2018"
     },
     {
       "id": "southafrica",
-      "name": "South African Safari",
+      "name": "🇿🇦 South African Splendors",
       "countryId": "ZA",
       "year": "2018"
     },
     {
       "id": "belize",
-      "name": "Belize Beauty",
+      "name": "🇧🇿 Belizean Bliss",
       "countryId": "BZ",
       "year": "2017"
     },
     {
       "id": "guatemala",
-      "name": "Guatemalan Getaway",
+      "name": "🇬🇹 Guatemalan Gems",
       "countryId": "GT",
       "year": "2017"
     },
     {
       "id": "australia",
-      "name": "Australian Odyssey",
+      "name": "🇦🇺 Australian Ambitions",
       "countryId": "AU",
       "year": "2015"
     },
     {
       "id": "china",
-      "name": "China Chronicles",
+      "name": "🇨🇳 Chinese Chronicles",
       "countryId": "CN",
       "year": "2013"
     },
     {
       "id": "japan",
-      "name": "Japanese Journey",
+      "name": "🇯🇵 Japanese Journeys",
       "countryId": "JP",
       "year": "2013"
     },
     {
       "id": "vatican-city",
-      "name": "Vatican Vistas",
+      "name": "🇻🇦 Vatican Visions",
       "countryId": "VA",
       "year": "2013"
     },
     {
       "id": "canada",
-      "name": "Canadian Chronicles",
+      "name": "🇨🇦 Canadian Canvases",
       "countryId": "CA",
       "year": "2012"
     },
     {
       "id": "thailand",
-      "name": "Thai Tales",
+      "name": "🇹🇭 Thai Treasures",
       "countryId": "TH",
       "year": "2012"
     },
     {
       "id": "indonesia",
-      "name": "Indonesian Islands",
+      "name": "🇮🇩 Indonesian Inspirations",
       "countryId": "ID",
       "year": "2013"
     },
     {
       "id": "austria",
-      "name": "Austrian Adventures",
+      "name": "🇦🇹 Austrian Artistry",
       "countryId": "AT",
       "year": "2009"
     },
     {
       "id": "czech-republic",
-      "name": "Czech Charm",
+      "name": "🇨🇿 Czech Celebrations",
       "countryId": "CZ",
       "year": "2009"
     },
     {
       "id": "germany",
-      "name": "German Glimpses",
+      "name": "🇩🇪 German Grandeur",
       "countryId": "DE",
       "year": "2009"
     },
     {
       "id": "hungary",
-      "name": "Hungarian Heritage",
+      "name": "🇭🇺 Hungarian Harmony",
       "countryId": "HU",
       "year": "2009"
     },
     {
       "id": "netherlands",
-      "name": "Netherlands Notes",
+      "name": "🇳🇱 Netherlands Narratives",
       "countryId": "NL",
       "year": "2009"
     },
     {
       "id": "slovakia",
-      "name": "Slovak Stories",
+      "name": "🇸🇰 Slovak Serenity",
       "countryId": "SK",
       "year": "2009"
     },
     {
       "id": "uk",
-      "name": "British Adventures",
+      "name": "🇬🇧 British Brilliance",
       "countryId": "GB",
       "year": "2009"
     },
     {
       "id": "estonia",
-      "name": "Estonian Explorations",
+      "name": "🇪🇪 Estonian Echoes",
       "countryId": "EE",
       "year": "2006"
     },
     {
       "id": "finland",
-      "name": "Finnish Frontiers",
+      "name": "🇫🇮 Finnish Flourish",
       "countryId": "FI",
       "year": "2006"
     },
     {
       "id": "usa",
-      "name": "American Adventures",
+      "name": "🇺🇸 American Ambitions",
       "countryId": "US",
       "year": "1987"
     }

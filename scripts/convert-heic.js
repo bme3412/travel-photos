@@ -59,7 +59,8 @@ async function main() {
   const albums = [
     'France', 'Monaco', 'Brazil', 'Vietnam', 'Singapore',
     'Malaysia', 'Slovenia', 'Italy', 'Switzerland',
-    'Uruguay', 'Chile', 'Portugal','Spain','Argentina','Belgium','Bosnia','Croatia','Montenegro','Mauritius','Botswana','South-Africa'
+    'Uruguay', 'Chile', 'Portugal','Spain','Argentina','Belgium','Bosnia','Croatia','Montenegro','Mauritius','Botswana','South-Africa','St-Barts',
+    'Belize'
   ];
 
   console.log('Starting HEIC conversion...');

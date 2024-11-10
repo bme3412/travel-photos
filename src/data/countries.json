@@ -87,8 +87,15 @@
     {
       "id": "south-africa",
       "name": "South Africa"
+    },
+    {
+      "id": "saintbarthelemy",
+      "name": "Saint Barthelemy"
+    },
+    {
+      "id": "belize",
+      "name": "Belize"
     }
-
 
   ]
 }
