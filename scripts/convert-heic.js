@@ -1,16 +1,19 @@
-// scripts/convert-heic.js
 const fs = require('fs').promises;
 const path = require('path');
-const heicConvert = require('heic-convert');
+
+// First, we need to install the required package
+// Run: npm install heic-convert
 
 async function convertHeicToJpeg(filePath) {
   try {
-    const outputPath = filePath.replace('.HEIC', '.jpg');
+    // Import heic-convert dynamically to handle potential loading issues
+    const heicConvert = require('heic-convert');
+    const outputPath = filePath.replace(/\.HEIC$/i, '.jpg');
     console.log(`Converting: ${path.basename(filePath)} to jpg`);
 
     // Read the HEIC file
     const inputBuffer = await fs.readFile(filePath);
-    
+
     // Convert to JPEG
     const jpegBuffer = await heicConvert({
       buffer: inputBuffer,
@@ -20,7 +23,7 @@ async function convertHeicToJpeg(filePath) {
 
     // Write the JPEG file
     await fs.writeFile(outputPath, jpegBuffer);
-    
+
     console.log(`Successfully converted: ${path.basename(filePath)}`);
     return true;
   } catch (error) {
@@ -29,38 +32,56 @@ async function convertHeicToJpeg(filePath) {
   }
 }
 
-async function main() {
+async function processDirectory(directoryPath) {
   try {
-    const francePath = path.join(process.cwd(), 'public', 'images', 'albums', 'France');
-    const monacoPath = path.join(process.cwd(), 'public', 'images', 'albums', 'Monaco');
-    const brazilPath = path.join(process.cwd(), 'public', 'images', 'albums', 'Brazil');
-    const vietnamPath = path.join(process.cwd(), 'public', 'images', 'albums', 'Vietnam');
-    const singaporePath = path.join(process.cwd(), 'public', 'images', 'albums', 'Singapore');
-    const malaysiaPath = path.join(process.cwd(), 'public', 'images', 'albums', 'Malaysia');
-    const sloveniaPath = path.join(process.cwd(), 'public', 'images', 'albums', 'Slovenia');
-    const italyPath = path.join(process.cwd(), 'public', 'images', 'albums', 'Italy');
-    const switzerlandPath = path.join(process.cwd(), 'public', 'images', 'albums', 'Switzerland');
-    const uruguayPath = path.join(process.cwd(), 'public', 'images', 'albums', 'Uruguay');
-    const chilePath = path.join(process.cwd(), 'public', 'images', 'albums', 'Chile');
-
-
-    const files = await fs.readdir(chilePath);
+    const files = await fs.readdir(directoryPath);
     let convertedCount = 0;
-    
-    console.log('Starting HEIC conversion...');
-    
+
+    console.log(`Processing directory: ${path.basename(directoryPath)}`);
+
     for (const file of files) {
       if (file.toUpperCase().endsWith('.HEIC')) {
-        const filePath = path.join(chilePath, file);
+        const filePath = path.join(directoryPath, file);
         const success = await convertHeicToJpeg(filePath);
         if (success) convertedCount++;
       }
     }
-    
-    console.log(`Conversion complete! Successfully converted ${convertedCount} files`);
+
+    return convertedCount;
   } catch (error) {
-    console.error('Error:', error);
+    console.error(`Error processing directory ${directoryPath}:`, error);
+    return 0;
   }
 }
 
-main();
+async function main() {
+  const baseDir = path.join(process.cwd(), 'public', 'images', 'albums');
+  const albums = [
+    'France', 'Monaco', 'Brazil', 'Vietnam', 'Singapore',
+    'Malaysia', 'Slovenia', 'Italy', 'Switzerland',
+    'Uruguay', 'Chile', 'Portugal','Spain','Argentina','Belgium','Bosnia','Croatia'
+  ];
+
+  console.log('Starting HEIC conversion...');
+  let totalConverted = 0;
+
+  for (const album of albums) {
+    const albumPath = path.join(baseDir, album);
+    try {
+      // Check if directory exists before processing
+      await fs.access(albumPath);
+      const converted = await processDirectory(albumPath);
+      totalConverted += converted;
+      console.log(`Completed ${album}: ${converted} files converted`);
+    } catch (error) {
+      console.log(`Skipping ${album} - directory not found`);
+    }
+  }
+
+  console.log(`\nConversion complete! Successfully converted ${totalConverted} files total`);
+}
+
+main().catch(error => {
+  console.error('Fatal error:', error);
+  process.exit(1);
+});

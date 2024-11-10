@@ -1,4 +1,3 @@
-
 {
   "countries": [
     {
@@ -48,6 +47,30 @@
     {
       "id": "malaysia",
       "name": "Malaysia"
+    },
+    {
+      "id": "portugal",
+      "name": "Portugal"
+    },
+    {
+      "id": "spain",
+      "name": "Spain"
+    },
+    {
+      "id": "argentina",
+      "name": "Argentina"
+    },
+    {
+      "id": "belgium",
+      "name": "Belgium"
+    },
+    {
+      "id": "bosnia-herzegovina",
+      "name": "Bosnia and Herzegovina"
+    },
+    {
+      "id": "croatia",
+      "name": "Croatia"
     }
   ]
 }

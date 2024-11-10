@@ -3907,6 +3907,1429 @@
         "backlit",
         "silhouette"
       ]
-    }
+    },
+    {
+      "id": "pt1",
+      "albumId": "portugal",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Portugal/lisbon-arch-close.jpg",
+      "caption": "Close View of Lisbon Arch",
+      "locationId": "Lisbon",
+      "coordinates": {
+        "lng": -9.1393,
+        "lat": 38.7223
+      },
+      "dateCreated": "2024-03-18",
+      "tags": [
+        "architecture",
+        "arch",
+        "city",
+        "historic"
+      ]
+    },
+    {
+      "id": "pt2",
+      "albumId": "portugal",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Portugal/lisbon-arch-ronaldo.jpg",
+      "caption": "Arch with Ronaldo Advertisement",
+      "locationId": "Lisbon",
+      "coordinates": {
+        "lng": -9.1393,
+        "lat": 38.7223
+      },
+      "dateCreated": "2024-03-18",
+      "tags": [
+        "architecture",
+        "advertising",
+        "city",
+        "sports"
+      ]
+    },
+    {
+      "id": "pt3",
+      "albumId": "portugal",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Portugal/lisbon-arch.jpg",
+      "caption": "Rua Augusta Arch",
+      "locationId": "Lisbon",
+      "coordinates": {
+        "lng": -9.1393,
+        "lat": 38.7223
+      },
+      "dateCreated": "2024-03-18",
+      "tags": [
+        "architecture",
+        "landmark",
+        "historic",
+        "arch"
+      ]
+    },
+    {
+      "id": "pt4",
+      "albumId": "portugal",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Portugal/lisbon-augusta-arch.jpg",
+      "caption": "Rua Augusta Arch from Below",
+      "locationId": "Lisbon",
+      "coordinates": {
+        "lng": -9.1393,
+        "lat": 38.7223
+      },
+      "dateCreated": "2024-03-18",
+      "tags": [
+        "architecture",
+        "landmark",
+        "perspective",
+        "historic"
+      ]
+    },
+    {
+      "id": "pt5",
+      "albumId": "portugal",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Portugal/lisbon-bridge-rooftops.jpg",
+      "caption": "Bridge and Rooftops Panorama",
+      "locationId": "Lisbon",
+      "coordinates": {
+        "lng": -9.1333,
+        "lat": 38.7167
+      },
+      "dateCreated": "2024-03-18",
+      "tags": [
+        "cityscape",
+        "bridge",
+        "rooftops",
+        "panorama"
+      ]
+    },
+    {
+      "id": "pt6",
+      "albumId": "portugal",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Portugal/lisbon-bridges-roofs.jpg",
+      "caption": "Bridges and Traditional Roofs",
+      "locationId": "Lisbon",
+      "coordinates": {
+        "lng": -9.1333,
+        "lat": 38.7167
+      },
+      "dateCreated": "2024-03-18",
+      "tags": [
+        "cityscape",
+        "bridge",
+        "architecture",
+        "urban"
+      ]
+    },
+    {
+      "id": "pt7",
+      "albumId": "portugal",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Portugal/lisbon-castle-entrance.jpg",
+      "caption": "São Jorge Castle Entrance",
+      "locationId": "Lisbon",
+      "coordinates": {
+        "lng": -9.1334,
+        "lat": 38.7139
+      },
+      "dateCreated": "2024-03-18",
+      "tags": [
+        "castle",
+        "historic",
+        "architecture",
+        "entrance"
+      ]
+    },
+    {
+      "id": "pt8",
+      "albumId": "portugal",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Portugal/lisbon-castle-flag.jpg",
+      "caption": "Portuguese Flag at São Jorge Castle",
+      "locationId": "Lisbon",
+      "coordinates": {
+        "lng": -9.1334,
+        "lat": 38.7139
+      },
+      "dateCreated": "2024-03-18",
+      "tags": [
+        "castle",
+        "flag",
+        "historic",
+        "national"
+      ]
+    },
+    {
+      "id": "pt9",
+      "albumId": "portugal",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Portugal/lisbon-castle-roof.jpg",
+      "caption": "View from São Jorge Castle",
+      "locationId": "Lisbon",
+      "coordinates": {
+        "lng": -9.1334,
+        "lat": 38.7139
+      },
+      "dateCreated": "2024-03-18",
+      "tags": [
+        "castle",
+        "cityscape",
+        "viewpoint",
+        "rooftops"
+      ]
+    },
+    {
+      "id": "pt10",
+      "albumId": "portugal",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Portugal/lisbon-castle.jpg",
+      "caption": "São Jorge Castle Walls",
+      "locationId": "Lisbon",
+      "coordinates": {
+        "lng": -9.1334,
+        "lat": 38.7139
+      },
+      "dateCreated": "2024-03-18",
+      "tags": [
+        "castle",
+        "historic",
+        "architecture",
+        "walls"
+      ]
+    },
+    {
+      "id": "pt11",
+      "albumId": "portugal",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Portugal/lisbon-elevator.jpg",
+      "caption": "Santa Justa Lift",
+      "locationId": "Lisbon",
+      "coordinates": {
+        "lng": -9.1394,
+        "lat": 38.7121
+      },
+      "dateCreated": "2024-03-18",
+      "tags": [
+        "elevator",
+        "architecture",
+        "historic",
+        "urban"
+      ]
+    },
+    {
+      "id": "pt12",
+      "albumId": "portugal",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Portugal/lisbon-hill-tram.jpg",
+      "caption": "Tram on Lisbon Hill",
+      "locationId": "Lisbon",
+      "coordinates": {
+        "lng": -9.1333,
+        "lat": 38.7167
+      },
+      "dateCreated": "2024-03-18",
+      "tags": [
+        "tram",
+        "transport",
+        "street",
+        "urban"
+      ]
+    },
+    {
+      "id": "pt13",
+      "albumId": "portugal",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Portugal/lisbon-peacock.jpg",
+      "caption": "Peacock at São Jorge Castle",
+      "locationId": "Lisbon",
+      "coordinates": {
+        "lng": -9.1334,
+        "lat": 38.7139
+      },
+      "dateCreated": "2024-03-18",
+      "tags": [
+        "wildlife",
+        "peacock",
+        "castle",
+        "nature"
+      ]
+    },
+    {
+      "id": "pt14",
+      "albumId": "portugal",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Portugal/lisbon-redroofs.jpg",
+      "caption": "Traditional Red Roofs of Lisbon",
+      "locationId": "Lisbon",
+      "coordinates": {
+        "lng": -9.1333,
+        "lat": 38.7167
+      },
+      "dateCreated": "2024-03-18",
+      "tags": [
+        "rooftops",
+        "cityscape",
+        "architecture",
+        "urban"
+      ]
+    },
+    {
+      "id": "pt15",
+      "albumId": "portugal",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Portugal/lisbon-road-hill.jpg",
+      "caption": "Steep Street in Lisbon",
+      "locationId": "Lisbon",
+      "coordinates": {
+        "lng": -9.1333,
+        "lat": 38.7167
+      },
+      "dateCreated": "2024-03-18",
+      "tags": [
+        "street",
+        "urban",
+        "hill",
+        "cityscape"
+      ]
+    },
+    {
+      "id": "pt16",
+      "albumId": "portugal",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Portugal/lisbon-roof-bridge.jpg",
+      "caption": "Bridge View Over Rooftops",
+      "locationId": "Lisbon",
+      "coordinates": {
+        "lng": -9.1333,
+        "lat": 38.7167
+      },
+      "dateCreated": "2024-03-18",
+      "tags": [
+        "bridge",
+        "rooftops",
+        "cityscape",
+        "urban"
+      ]
+    },
+    {
+      "id": "pt17",
+      "albumId": "portugal",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Portugal/lisbon-roofs.jpg",
+      "caption": "Lisbon Rooftop Panorama",
+      "locationId": "Lisbon",
+      "coordinates": {
+        "lng": -9.1333,
+        "lat": 38.7167
+      },
+      "dateCreated": "2024-03-18",
+      "tags": [
+        "rooftops",
+        "cityscape",
+        "panorama",
+        "urban"
+      ]
+    },
+    {
+      "id": "pt18",
+      "albumId": "portugal",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Portugal/lisbon-rooftops-bridge.jpg",
+      "caption": "Bridge and City Rooftops",
+      "locationId": "Lisbon",
+      "coordinates": {
+        "lng": -9.1333,
+        "lat": 38.7167
+      },
+      "dateCreated": "2024-03-18",
+      "tags": [
+        "bridge",
+        "rooftops",
+        "cityscape",
+        "urban"
+      ]
+    },
+    {
+      "id": "pt19",
+      "albumId": "portugal",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Portugal/lisbon-statue.jpg",
+      "caption": "Historic Statue in Lisbon",
+      "locationId": "Lisbon",
+      "coordinates": {
+        "lng": -9.1333,
+        "lat": 38.7167
+      },
+      "dateCreated": "2024-03-18",
+      "tags": [
+        "statue",
+        "art",
+        "historic",
+        "sculpture"
+      ]
+    },
+    {
+      "id": "pt20",
+      "albumId": "portugal",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Portugal/lisbon-street-flowers.jpg",
+      "caption": "Flowering Street in Lisbon",
+      "locationId": "Lisbon",
+      "coordinates": {
+        "lng": -9.1333,
+        "lat": 38.7167
+      },
+      "dateCreated": "2024-03-18",
+      "tags": [
+        "street",
+        "flowers",
+        "urban",
+        "nature"
+      ]
+    },
+    {
+      "id": "pt21",
+      "albumId": "portugal",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Portugal/lisbon-tram-hill.jpg",
+      "caption": "Historic Tram on Hill",
+      "locationId": "Lisbon",
+      "coordinates": {
+        "lng": -9.1333,
+        "lat": 38.7167
+      },
+      "dateCreated": "2024-03-18",
+      "tags": [
+        "tram",
+        "transport",
+        "hill",
+        "historic"
+      ]
+    },
+    {
+      "id": "pt22",
+      "albumId": "portugal",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Portugal/lisbon-tram.jpg",
+      "caption": "Yellow Tram of Lisbon",
+      "locationId": "Lisbon",
+      "coordinates": {
+        "lng": -9.1333,
+        "lat": 38.7167
+      },
+      "dateCreated": "2024-03-18",
+      "tags": [
+        "tram",
+        "transport",
+        "yellow",
+        "urban"
+      ]
+    },
+    {
+      "id": "pt23",
+      "albumId": "portugal",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Portugal/lisbon-umbrellas.jpg",
+      "caption": "Colorful Umbrellas Display",
+      "locationId": "Lisbon",
+      "coordinates": {
+        "lng": -9.1333,
+        "lat": 38.7167
+      },
+      "dateCreated": "2024-03-18",
+      "tags": [
+        "art",
+        "umbrellas",
+        "colorful",
+        "installation"
+      ]
+    },
+    {
+      "id": "pt24",
+      "albumId": "portugal",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Portugal/lisbon-under-arch.jpg",
+      "caption": "Under the Rua Augusta Arch",
+      "locationId": "Lisbon",
+      "coordinates": {
+        "lng": -9.1393,
+        "lat": 38.7223
+      },
+      "dateCreated": "2024-03-18",
+      "tags": [
+        "architecture",
+        "arch",
+        "historic",
+        "perspective"
+      ]
+    },{
+      "id": "es1",
+      "albumId": "spain",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Spain/madrid-architecture.jpg",
+      "caption": "Madrid Architectural Details",
+      "locationId": "Madrid",
+      "coordinates": { "lng": -3.7038, "lat": 40.4168 },
+      "dateCreated": "2024-03-18",
+      "tags": ["architecture", "historic", "city", "detail"]
+    },
+    {
+      "id": "es2",
+      "albumId": "spain",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Spain/madrid-castle-flags.jpg",
+      "caption": "Royal Palace of Madrid with Flags",
+      "locationId": "Madrid",
+      "coordinates": { "lng": -3.7138, "lat": 40.4183 },
+      "dateCreated": "2024-03-18",
+      "tags": ["castle", "palace", "flags", "royal"]
+    },
+    {
+      "id": "es3",
+      "albumId": "spain",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Spain/madrid-castle.jpg",
+      "caption": "Royal Palace of Madrid",
+      "locationId": "Madrid",
+      "coordinates": { "lng": -3.7138, "lat": 40.4183 },
+      "dateCreated": "2024-03-18",
+      "tags": ["castle", "palace", "architecture", "historic"]
+    },
+    {
+      "id": "es4",
+      "albumId": "spain",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Spain/madrid-metropolis.jpg",
+      "caption": "Metropolis Building",
+      "locationId": "Madrid",
+      "coordinates": { "lng": -3.7038, "lat": 40.4168 },
+      "dateCreated": "2024-03-18",
+      "tags": ["building", "architecture", "urban", "landmark"]
+    },
+    {
+      "id": "es5",
+      "albumId": "spain",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Spain/madrid-sidestreet.jpg",
+      "caption": "Madrid Side Street",
+      "locationId": "Madrid",
+      "coordinates": { "lng": -3.7038, "lat": 40.4168 },
+      "dateCreated": "2024-03-18",
+      "tags": ["street", "urban", "city", "architecture"]
+    },
+    {
+      "id": "es6",
+      "albumId": "spain",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Spain/madrid-statue-horse.jpg",
+      "caption": "Equestrian Statue in Madrid",
+      "locationId": "Madrid",
+      "coordinates": { "lng": -3.7038, "lat": 40.4168 },
+      "dateCreated": "2024-03-18",
+      "tags": ["statue", "horse", "art", "monument"]
+    },
+    {
+      "id": "es7",
+      "albumId": "spain",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Spain/pamplona-bull-crowd.jpg",
+      "caption": "Bull Run Crowd in Pamplona",
+      "locationId": "Pamplona",
+      "coordinates": { "lng": -1.6444, "lat": 42.8196 },
+      "dateCreated": "2024-03-18",
+      "tags": ["festival", "crowd", "sanfermin", "bullrun"]
+    },
+    {
+      "id": "es8",
+      "albumId": "spain",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Spain/pamplona-bull-runner.jpg",
+      "caption": "Bull Runner at San Fermin",
+      "locationId": "Pamplona",
+      "coordinates": { "lng": -1.6444, "lat": 42.8196 },
+      "dateCreated": "2024-03-18",
+      "tags": ["festival", "runner", "bullrun", "action"]
+    },
+    {
+      "id": "es9",
+      "albumId": "spain",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Spain/pamplona-bull-runners.jpg",
+      "caption": "Group of Bull Runners",
+      "locationId": "Pamplona",
+      "coordinates": { "lng": -1.6444, "lat": 42.8196 },
+      "dateCreated": "2024-03-18",
+      "tags": ["festival", "runners", "bullrun", "group"]
+    },
+    {
+      "id": "es10",
+      "albumId": "spain",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Spain/pamplona-bull-start.jpg",
+      "caption": "Start of the Bull Run",
+      "locationId": "Pamplona",
+      "coordinates": { "lng": -1.6444, "lat": 42.8196 },
+      "dateCreated": "2024-03-18",
+      "tags": ["festival", "start", "bullrun", "morning"]
+    },
+    {
+      "id": "es11",
+      "albumId": "spain",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Spain/pamplona-bulls-balcony.jpg",
+      "caption": "Bull Run View from Balcony",
+      "locationId": "Pamplona",
+      "coordinates": { "lng": -1.6444, "lat": 42.8196 },
+      "dateCreated": "2024-03-18",
+      "tags": ["festival", "balcony", "viewpoint", "bullrun"]
+    },
+    {
+      "id": "es12",
+      "albumId": "spain",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Spain/pamplona-bulls-barricade.jpg",
+      "caption": "Bull Run Barricade",
+      "locationId": "Pamplona",
+      "coordinates": { "lng": -1.6444, "lat": 42.8196 },
+      "dateCreated": "2024-03-18",
+      "tags": ["festival", "safety", "barrier", "bullrun"]
+    },
+    {
+      "id": "es13",
+      "albumId": "spain",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Spain/pamplona-bullsrun-start.jpg",
+      "caption": "Starting Point of Bull Run",
+      "locationId": "Pamplona",
+      "coordinates": { "lng": -1.6444, "lat": 42.8196 },
+      "dateCreated": "2024-03-18",
+      "tags": ["festival", "starting point", "bullrun", "morning"]
+    },
+    {
+      "id": "es14",
+      "albumId": "spain",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Spain/pamplona-burger-king.jpg",
+      "caption": "Modern Meets Traditional in Pamplona",
+      "locationId": "Pamplona",
+      "coordinates": { "lng": -1.6444, "lat": 42.8196 },
+      "dateCreated": "2024-03-18",
+      "tags": ["urban", "contrast", "modern", "street"]
+    },
+    {
+      "id": "es15",
+      "albumId": "spain",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Spain/pamplona-crowds-start.jpg",
+      "caption": "San Fermin Festival Crowds",
+      "locationId": "Pamplona",
+      "coordinates": { "lng": -1.6444, "lat": 42.8196 },
+      "dateCreated": "2024-03-18",
+      "tags": ["festival", "crowd", "sanfermin", "people"]
+    },
+    {
+      "id": "es16",
+      "albumId": "spain",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Spain/pamplona-run-start.jpg",
+      "caption": "Beginning of the Run",
+      "locationId": "Pamplona",
+      "coordinates": { "lng": -1.6444, "lat": 42.8196 },
+      "dateCreated": "2024-03-18",
+      "tags": ["festival", "start", "running", "event"]
+    },
+    {
+      "id": "es17",
+      "albumId": "spain",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Spain/pamplona-san-fermin.jpg",
+      "caption": "San Fermin Festival Scene",
+      "locationId": "Pamplona",
+      "coordinates": { "lng": -1.6444, "lat": 42.8196 },
+      "dateCreated": "2024-03-18",
+      "tags": ["festival", "celebration", "sanfermin", "tradition"]
+    },
+    {
+      "id": "es18",
+      "albumId": "spain",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Spain/pamplona-sanfermin-cafe.jpg",
+      "caption": "Café During San Fermin",
+      "locationId": "Pamplona",
+      "coordinates": { "lng": -1.6444, "lat": 42.8196 },
+      "dateCreated": "2024-03-18",
+      "tags": ["cafe", "festival", "urban", "dining"]
+    },
+    {
+      "id": "es19",
+      "albumId": "spain",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Spain/pamplona-sanfermin-clocktower.jpg",
+      "caption": "Clock Tower During Festival",
+      "locationId": "Pamplona",
+      "coordinates": { "lng": -1.6444, "lat": 42.8196 },
+      "dateCreated": "2024-03-18",
+      "tags": ["clocktower", "architecture", "landmark", "historic"]
+    },
+    {
+      "id": "es20",
+      "albumId": "spain",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Spain/pamplona-sanfermin-crowd.jpg",
+      "caption": "Festival Crowd Gathering",
+      "locationId": "Pamplona",
+      "coordinates": { "lng": -1.6444, "lat": 42.8196 },
+      "dateCreated": "2024-03-18",
+      "tags": ["festival", "crowd", "gathering", "celebration"]
+    },
+    {
+      "id": "es21",
+      "albumId": "spain",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Spain/pamplona-sanfermin-crowds.jpg",
+      "caption": "San Fermin Street Crowds",
+      "locationId": "Pamplona",
+      "coordinates": { "lng": -1.6444, "lat": 42.8196 },
+      "dateCreated": "2024-03-18",
+      "tags": ["festival", "crowd", "street", "people"]
+    },
+    {
+      "id": "es22",
+      "albumId": "spain",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Spain/pamplona-sanfermin-oldbuilding.jpg",
+      "caption": "Historic Building During Festival",
+      "locationId": "Pamplona",
+      "coordinates": { "lng": -1.6444, "lat": 42.8196 },
+      "dateCreated": "2024-03-18",
+      "tags": ["architecture", "historic", "building", "festival"]
+    },
+    {
+      "id": "es23",
+      "albumId": "spain",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Spain/pamplona-sanfermin-restaurant.jpg",
+      "caption": "Restaurant During San Fermin",
+      "locationId": "Pamplona",
+      "coordinates": { "lng": -1.6444, "lat": 42.8196 },
+      "dateCreated": "2024-03-18",
+      "tags": ["restaurant", "dining", "festival", "urban"]
+    },
+    {
+      "id": "es24",
+      "albumId": "spain",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Spain/pamplona-sanfermin-sidestreet.jpg",
+      "caption": "Festival Side Street",
+      "locationId": "Pamplona",
+      "coordinates": { "lng": -1.6444, "lat": 42.8196 },
+      "dateCreated": "2024-03-18",
+      "tags": ["street", "festival", "urban", "alley"]
+    },
+    {
+      "id": "es25",
+      "albumId": "spain",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Spain/pamplona-sanfermin-street.jpg",
+      "caption": "Festival Street Scene",
+      "locationId": "Pamplona",
+      "coordinates": { "lng": -1.6444, "lat": 42.8196 },
+      "dateCreated": "2024-03-18",
+      "tags": ["street", "festival", "urban", "scene"]
+    },
+    {
+      "id": "es26",
+      "albumId": "spain",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Spain/pamplona-sanfermin-townsquare.jpg",
+      "caption": "Town Square During San Fermin",
+      "locationId": "Pamplona",
+      "coordinates": { "lng": -1.6444, "lat": 42.8196 },
+      "dateCreated": "2024-03-18",
+      "tags": ["square", "festival", "town", "gathering"]
+    },
+    {
+      "id": "es27",
+      "albumId": "spain",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Spain/pamplona-sanfermin-white.jpg",
+      "caption": "Traditional White Clothing at San Fermin",
+      "locationId": "Pamplona",
+      "coordinates": { "lng": -1.6444, "lat": 42.8196 },
+      "dateCreated": "2024-03-18",
+      "tags": ["tradition", "clothing", "white", "festival"]
+    },
+    {
+      "id": "es28",
+      "albumId": "spain",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Spain/pamplona-townsquare.jpg",
+      "caption": "Pamplona Town Square",
+      "locationId": "Pamplona",
+      "coordinates": { "lng": -1.6444, "lat": 42.8196 },
+      "dateCreated": "2024-03-18",
+      "tags": ["square", "town", "urban", "architecture"]
+    },
+    {
+      "id": "ar1",
+      "albumId": "argentina",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Argentina/buenosaires-center.jpg",
+      "caption": "Buenos Aires City Center",
+      "locationId": "Buenos Aires",
+      "coordinates": { "lng": -58.3816, "lat": -34.6037 },
+      "dateCreated": "2024-03-18",
+      "tags": ["city", "urban", "architecture", "downtown"]
+    },
+    {
+      "id": "ar2",
+      "albumId": "argentina",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Argentina/buenosaires-flag.jpg",
+      "caption": "Argentine Flag Display",
+      "locationId": "Buenos Aires",
+      "coordinates": { "lng": -58.3816, "lat": -34.6037 },
+      "dateCreated": "2024-03-18",
+      "tags": ["flag", "national", "symbol", "patriotic"]
+    },
+    {
+      "id": "ar3",
+      "albumId": "argentina",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Argentina/buenosaires-ginobili.jpg",
+      "caption": "Manu Ginobili Tribute",
+      "locationId": "Buenos Aires",
+      "coordinates": { "lng": -58.3816, "lat": -34.6037 },
+      "dateCreated": "2024-03-18",
+      "tags": ["sports", "basketball", "tribute", "athlete"]
+    },
+    {
+      "id": "ar4",
+      "albumId": "argentina",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Argentina/buenosaires-laboca-buildings.jpg",
+      "caption": "La Boca Colorful Buildings",
+      "locationId": "Buenos Aires",
+      "coordinates": { "lng": -58.3816, "lat": -34.6037 },
+      "dateCreated": "2024-03-18",
+      "tags": ["laboca", "colorful", "architecture", "neighborhood"]
+    },
+    {
+      "id": "ar5",
+      "albumId": "argentina",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Argentina/buenosaires-laboca-colors.jpg",
+      "caption": "Vibrant Colors of La Boca",
+      "locationId": "Buenos Aires",
+      "coordinates": { "lng": -58.3816, "lat": -34.6037 },
+      "dateCreated": "2024-03-18",
+      "tags": ["laboca", "colors", "street", "culture"]
+    },
+    {
+      "id": "ar6",
+      "albumId": "argentina",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Argentina/buenosaires-laboca-messi.jpg",
+      "caption": "Messi Mural in La Boca",
+      "locationId": "Buenos Aires",
+      "coordinates": { "lng": -58.3816, "lat": -34.6037 },
+      "dateCreated": "2024-03-18",
+      "tags": ["messi", "mural", "art", "football"]
+    },
+    {
+      "id": "ar7",
+      "albumId": "argentina",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Argentina/buenosaires-laboca-wallart.jpg",
+      "caption": "La Boca Street Art",
+      "locationId": "Buenos Aires",
+      "coordinates": { "lng": -58.3816, "lat": -34.6037 },
+      "dateCreated": "2024-03-18",
+      "tags": ["art", "street art", "mural", "culture"]
+    },
+    {
+      "id": "ar8",
+      "albumId": "argentina",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Argentina/buenosaires-laboca.jpg",
+      "caption": "La Boca District",
+      "locationId": "Buenos Aires",
+      "coordinates": { "lng": -58.3816, "lat": -34.6037 },
+      "dateCreated": "2024-03-18",
+      "tags": ["laboca", "district", "urban", "colorful"]
+    },
+    {
+      "id": "ar9",
+      "albumId": "argentina",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Argentina/buenosaires-messi-plaque.jpg",
+      "caption": "Messi Commemorative Plaque",
+      "locationId": "Buenos Aires",
+      "coordinates": { "lng": -58.3816, "lat": -34.6037 },
+      "dateCreated": "2024-03-18",
+      "tags": ["messi", "plaque", "memorial", "tribute"]
+    },
+    {
+      "id": "ar10",
+      "albumId": "argentina",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Argentina/buenosaires-messi-statue.jpg",
+      "caption": "Messi Statue Monument",
+      "locationId": "Buenos Aires",
+      "coordinates": { "lng": -58.3816, "lat": -34.6037 },
+      "dateCreated": "2024-03-18",
+      "tags": ["messi", "statue", "monument", "tribute"]
+    },
+    {
+      "id": "ar11",
+      "albumId": "argentina",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Argentina/buenosaires-messi-wall.jpg",
+      "caption": "Messi Wall Tribute",
+      "locationId": "Buenos Aires",
+      "coordinates": { "lng": -58.3816, "lat": -34.6037 },
+      "dateCreated": "2024-03-18",
+      "tags": ["messi", "mural", "art", "tribute"]
+    },
+    {
+      "id": "ar12",
+      "albumId": "argentina",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Argentina/buenosaires-messi.jpg",
+      "caption": "Messi Street Art",
+      "locationId": "Buenos Aires",
+      "coordinates": { "lng": -58.3816, "lat": -34.6037 },
+      "dateCreated": "2024-03-18",
+      "tags": ["messi", "art", "mural", "street art"]
+    },
+    {
+      "id": "ar13",
+      "albumId": "argentina",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Argentina/buenosaires-messiwall.jpg",
+      "caption": "Large Messi Mural",
+      "locationId": "Buenos Aires",
+      "coordinates": { "lng": -58.3816, "lat": -34.6037 },
+      "dateCreated": "2024-03-18",
+      "tags": ["messi", "mural", "large", "art"]
+    },
+    {
+      "id": "ar14",
+      "albumId": "argentina",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Argentina/buenosaires-obelisk-flag.jpg",
+      "caption": "Obelisk with Argentine Flag",
+      "locationId": "Buenos Aires",
+      "coordinates": { "lng": -58.3816, "lat": -34.6037 },
+      "dateCreated": "2024-03-18",
+      "tags": ["obelisk", "flag", "landmark", "monument"]
+    },
+    {
+      "id": "ar15",
+      "albumId": "argentina",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Argentina/buenosaires-obelisk.jpg",
+      "caption": "Buenos Aires Obelisk",
+      "locationId": "Buenos Aires",
+      "coordinates": { "lng": -58.3816, "lat": -34.6037 },
+      "dateCreated": "2024-03-18",
+      "tags": ["obelisk", "landmark", "monument", "architecture"]
+    },
+    {
+      "id": "ar16",
+      "albumId": "argentina",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Argentina/buenosaires-panorama.jpg",
+      "caption": "Buenos Aires City Panorama",
+      "locationId": "Buenos Aires",
+      "coordinates": { "lng": -58.3816, "lat": -34.6037 },
+      "dateCreated": "2024-03-18",
+      "tags": ["panorama", "cityscape", "skyline", "urban"]
+    },
+    {
+      "id": "ar17",
+      "albumId": "argentina",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Argentina/buenosiares-pope.jpg",
+      "caption": "Pope Francis Tribute",
+      "locationId": "Buenos Aires",
+      "coordinates": { "lng": -58.3816, "lat": -34.6037 },
+      "dateCreated": "2024-03-18",
+      "tags": ["pope", "religious", "tribute", "catholic"]
+    },
+    {
+      "id": "be1",
+      "albumId": "belgium",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Belgium/bruges-beer.jpg",
+      "caption": "Belgian Beer Selection",
+      "locationId": "Bruges",
+      "coordinates": { "lng": 3.2247, "lat": 51.2093 },
+      "dateCreated": "2024-03-18",
+      "tags": ["beer", "drinks", "belgian", "culture"]
+    },
+    {
+      "id": "be2",
+      "albumId": "belgium",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Belgium/bruges-canal-tower.jpg",
+      "caption": "Bruges Canal and Belfry Tower",
+      "locationId": "Bruges",
+      "coordinates": { "lng": 3.2247, "lat": 51.2093 },
+      "dateCreated": "2024-03-18",
+      "tags": ["canal", "tower", "historic", "reflection"]
+    },
+    {
+      "id": "be3",
+      "albumId": "belgium",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Belgium/bruges-canal-tree-tower.jpg",
+      "caption": "Canal View with Tree and Belfry",
+      "locationId": "Bruges",
+      "coordinates": { "lng": 3.2247, "lat": 51.2093 },
+      "dateCreated": "2024-03-18",
+      "tags": ["canal", "tower", "tree", "cityscape"]
+    },
+    {
+      "id": "be4",
+      "albumId": "belgium",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Belgium/bruges-canal-tree.jpg",
+      "caption": "Tree-lined Canal",
+      "locationId": "Bruges",
+      "coordinates": { "lng": 3.2247, "lat": 51.2093 },
+      "dateCreated": "2024-03-18",
+      "tags": ["canal", "tree", "water", "scenic"]
+    },
+    {
+      "id": "be5",
+      "albumId": "belgium",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Belgium/bruges-canal.jpg",
+      "caption": "Bruges Canal Scene",
+      "locationId": "Bruges",
+      "coordinates": { "lng": 3.2247, "lat": 51.2093 },
+      "dateCreated": "2024-03-18",
+      "tags": ["canal", "water", "historic", "architecture"]
+    },
+    {
+      "id": "be6",
+      "albumId": "belgium",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Belgium/bruges-chocolate.jpg",
+      "caption": "Belgian Chocolate Display",
+      "locationId": "Bruges",
+      "coordinates": { "lng": 3.2247, "lat": 51.2093 },
+      "dateCreated": "2024-03-18",
+      "tags": ["chocolate", "food", "belgian", "sweets"]
+    },
+    {
+      "id": "be7",
+      "albumId": "belgium",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Belgium/bruges-cremebrulee.jpg",
+      "caption": "Crème Brûlée Dessert",
+      "locationId": "Bruges",
+      "coordinates": { "lng": 3.2247, "lat": 51.2093 },
+      "dateCreated": "2024-03-18",
+      "tags": ["dessert", "food", "culinary", "sweet"]
+    },
+    {
+      "id": "be8",
+      "albumId": "belgium",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Belgium/bruges-flags.jpg",
+      "caption": "Belgian Flags Display",
+      "locationId": "Bruges",
+      "coordinates": { "lng": 3.2247, "lat": 51.2093 },
+      "dateCreated": "2024-03-18",
+      "tags": ["flags", "national", "belgium", "patriotic"]
+    },
+    {
+      "id": "be9",
+      "albumId": "belgium",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Belgium/bruges-godiva.jpg",
+      "caption": "Godiva Chocolate Shop",
+      "locationId": "Bruges",
+      "coordinates": { "lng": 3.2247, "lat": 51.2093 },
+      "dateCreated": "2024-03-18",
+      "tags": ["chocolate", "shop", "godiva", "retail"]
+    },
+    {
+      "id": "be10",
+      "albumId": "belgium",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Belgium/bruges-moulesfrites.jpg",
+      "caption": "Traditional Moules-Frites",
+      "locationId": "Bruges",
+      "coordinates": { "lng": 3.2247, "lat": 51.2093 },
+      "dateCreated": "2024-03-18",
+      "tags": ["food", "mussels", "belgian", "traditional"]
+    },
+    {
+      "id": "be11",
+      "albumId": "belgium",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Belgium/bruges-statue.jpg",
+      "caption": "Historic Statue in Bruges",
+      "locationId": "Bruges",
+      "coordinates": { "lng": 3.2247, "lat": 51.2093 },
+      "dateCreated": "2024-03-18",
+      "tags": ["statue", "art", "historic", "sculpture"]
+    },
+    {
+      "id": "be12",
+      "albumId": "belgium",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Belgium/bruges-tower-close.jpg",
+      "caption": "Belfry Tower Close-up",
+      "locationId": "Bruges",
+      "coordinates": { "lng": 3.2247, "lat": 51.2093 },
+      "dateCreated": "2024-03-18",
+      "tags": ["tower", "belfry", "architecture", "historic"]
+    },
+    {
+      "id": "be13",
+      "albumId": "belgium",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Belgium/bruges-tower.jpg",
+      "caption": "Bruges Belfry Tower",
+      "locationId": "Bruges",
+      "coordinates": { "lng": 3.2247, "lat": 51.2093 },
+      "dateCreated": "2024-03-18",
+      "tags": ["tower", "landmark", "historic", "architecture"]
+    },
+    {
+      "id": "ba1",
+      "albumId": "bosnia-herzegovina",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Bosnia/mostar-bridge-mountain.jpg",
+      "caption": "Stari Most with Mountain Background",
+      "locationId": "Mostar",
+      "coordinates": { "lng": 17.8078, "lat": 43.3429 },
+      "dateCreated": "2024-03-18",
+      "tags": ["bridge", "mountain", "historic", "landscape"]
+    },
+    {
+      "id": "ba2",
+      "albumId": "bosnia-herzegovina",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Bosnia/mostar-bridge-pano.jpg",
+      "caption": "Panoramic View of Stari Most",
+      "locationId": "Mostar",
+      "coordinates": { "lng": 17.8078, "lat": 43.3429 },
+      "dateCreated": "2024-03-18",
+      "tags": ["bridge", "panorama", "historic", "cityscape"]
+    },
+    {
+      "id": "ba3",
+      "albumId": "bosnia-herzegovina",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Bosnia/mostar-bridge-trees.jpg",
+      "caption": "Old Bridge with Tree Framing",
+      "locationId": "Mostar",
+      "coordinates": { "lng": 17.8078, "lat": 43.3429 },
+      "dateCreated": "2024-03-18",
+      "tags": ["bridge", "trees", "nature", "historic"]
+    },
+    {
+      "id": "ba4",
+      "albumId": "bosnia-herzegovina",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Bosnia/mostar-bridge-vertical.jpg",
+      "caption": "Vertical Shot of Stari Most",
+      "locationId": "Mostar",
+      "coordinates": { "lng": 17.8078, "lat": 43.3429 },
+      "dateCreated": "2024-03-18",
+      "tags": ["bridge", "architecture", "vertical", "historic"]
+    },
+    {
+      "id": "ba5",
+      "albumId": "bosnia-herzegovina",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Bosnia/mostar-bridge-water.jpg",
+      "caption": "Stari Most Over Neretva River",
+      "locationId": "Mostar",
+      "coordinates": { "lng": 17.8078, "lat": 43.3429 },
+      "dateCreated": "2024-03-18",
+      "tags": ["bridge", "river", "water", "reflection"]
+    },
+    {
+      "id": "ba6",
+      "albumId": "bosnia-herzegovina",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Bosnia/mostar-pano.jpg",
+      "caption": "Mostar City Panorama",
+      "locationId": "Mostar",
+      "coordinates": { "lng": 17.8078, "lat": 43.3429 },
+      "dateCreated": "2024-03-18",
+      "tags": ["panorama", "cityscape", "urban", "landscape"]
+    },
+    {
+      "id": "ba7",
+      "albumId": "bosnia-herzegovina",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Bosnia/mostar-river-tower.jpg",
+      "caption": "River View with Tower",
+      "locationId": "Mostar",
+      "coordinates": { "lng": 17.8078, "lat": 43.3429 },
+      "dateCreated": "2024-03-18",
+      "tags": ["river", "tower", "historic", "architecture"]
+    },
+    {
+      "id": "ba8",
+      "albumId": "bosnia-herzegovina",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Bosnia/mostar-turrets.jpg",
+      "caption": "Historic Turrets of Mostar",
+      "locationId": "Mostar",
+      "coordinates": { "lng": 17.8078, "lat": 43.3429 },
+      "dateCreated": "2024-03-18",
+      "tags": ["turrets", "architecture", "historic", "defense"]
+    },
+    {
+      "id": "ba9",
+      "albumId": "bosnia-herzegovina",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Bosnia/mostar-under-bridge.jpg",
+      "caption": "View from Below Stari Most",
+      "locationId": "Mostar",
+      "coordinates": { "lng": 17.8078, "lat": 43.3429 },
+      "dateCreated": "2024-03-18",
+      "tags": ["bridge", "perspective", "architecture", "underneath"]
+    },
+    {
+      "id": "hr1",
+      "albumId": "croatia",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/croatia/dubrovnik-GoT-tree.jpg",
+      "caption": "Game of Thrones Filming Location with Tree",
+      "locationId": "Dubrovnik",
+      "coordinates": { "lng": 18.0944, "lat": 42.6507 },
+      "dateCreated": "2024-03-18",
+      "tags": ["game of thrones", "tree", "film location", "historic"]
+  },
+  {
+      "id": "hr2",
+      "albumId": "croatia",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/croatia/dubrovnik-GoT.jpg",
+      "caption": "Game of Thrones Filming Location",
+      "locationId": "Dubrovnik",
+      "coordinates": { "lng": 18.0944, "lat": 42.6507 },
+      "dateCreated": "2024-03-18",
+      "tags": ["game of thrones", "film location", "historic"]
+  },
+  {
+      "id": "hr3",
+      "albumId": "croatia",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/croatia/dubrovnik-beach.jpg",
+      "caption": "Dubrovnik Beach View",
+      "locationId": "Dubrovnik",
+      "coordinates": { "lng": 18.0944, "lat": 42.6507 },
+      "dateCreated": "2024-03-18",
+      "tags": ["beach", "coastline", "ocean"]
+  },
+  {
+      "id": "hr4",
+      "albumId": "croatia",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/croatia/dubrovnik-boats.jpg",
+      "caption": "Boats in Dubrovnik Harbor",
+      "locationId": "Dubrovnik",
+      "coordinates": { "lng": 18.0944, "lat": 42.6507 },
+      "dateCreated": "2024-03-18",
+      "tags": ["boats", "harbor", "maritime", "water"]
+  },
+  {
+      "id": "hr5",
+      "albumId": "croatia",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/croatia/dubrovnik-got-flowers.jpg",
+      "caption": "Floral Scene at Game of Thrones Location",
+      "locationId": "Dubrovnik",
+      "coordinates": { "lng": 18.0944, "lat": 42.6507 },
+      "dateCreated": "2024-03-18",
+      "tags": ["game of thrones", "flowers", "film location", "nature"]
+  },
+  {
+      "id": "hr6",
+      "albumId": "croatia",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/croatia/dubrovnik-steps.jpg",
+      "caption": "Historic Steps in Dubrovnik",
+      "locationId": "Dubrovnik",
+      "coordinates": { "lng": 18.0944, "lat": 42.6507 },
+      "dateCreated": "2024-03-18",
+      "tags": ["steps", "architecture", "historic", "urban"]
+  },
+  {
+      "id": "hr7",
+      "albumId": "croatia",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/croatia/dubrovnik-tower-ocean.jpg",
+      "caption": "Tower Overlooking the Ocean",
+      "locationId": "Dubrovnik",
+      "coordinates": { "lng": 18.0944, "lat": 42.6507 },
+      "dateCreated": "2024-03-18",
+      "tags": ["tower", "ocean", "historic", "architecture"]
+  },
+  {
+      "id": "hr8",
+      "albumId": "croatia",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/croatia/dubrovnik-tower.jpg",
+      "caption": "Dubrovnik Tower",
+      "locationId": "Dubrovnik",
+      "coordinates": { "lng": 18.0944, "lat": 42.6507 },
+      "dateCreated": "2024-03-18",
+      "tags": ["tower", "architecture", "historic"]
+  },
+  {
+      "id": "hr9",
+      "albumId": "croatia",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/croatia/split-archway.jpg",
+      "caption": "Historic Archway in Split",
+      "locationId": "Split",
+      "coordinates": { "lng": 16.4402, "lat": 43.5081 },
+      "dateCreated": "2024-03-18",
+      "tags": ["archway", "architecture", "historic"]
+  },
+  {
+      "id": "hr10",
+      "albumId": "croatia",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/croatia/split-beach.jpg",
+      "caption": "Split Beach",
+      "locationId": "Split",
+      "coordinates": { "lng": 16.4402, "lat": 43.5081 },
+      "dateCreated": "2024-03-18",
+      "tags": ["beach", "coastline", "ocean"]
+  },
+  {
+      "id": "hr11",
+      "albumId": "croatia",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/croatia/split-beachside.jpg",
+      "caption": "Beachside View in Split",
+      "locationId": "Split",
+      "coordinates": { "lng": 16.4402, "lat": 43.5081 },
+      "dateCreated": "2024-03-18",
+      "tags": ["beach", "coastline", "seaside"]
+  },
+  {
+      "id": "hr12",
+      "albumId": "croatia",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/croatia/split-boardwalk.jpg",
+      "caption": "Split Boardwalk",
+      "locationId": "Split",
+      "coordinates": { "lng": 16.4402, "lat": 43.5081 },
+      "dateCreated": "2024-03-18",
+      "tags": ["boardwalk", "waterfront", "promenade"]
+  },
+  {
+      "id": "hr13",
+      "albumId": "croatia",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/croatia/split-boat-waves.jpg",
+      "caption": "Boat on Waves in Split",
+      "locationId": "Split",
+      "coordinates": { "lng": 16.4402, "lat": 43.5081 },
+      "dateCreated": "2024-03-18",
+      "tags": ["boat", "waves", "ocean", "maritime"]
+  },
+  {
+      "id": "hr14",
+      "albumId": "croatia",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/croatia/split-boats-tower.jpg",
+      "caption": "Boats and Tower in Split Harbor",
+      "locationId": "Split",
+      "coordinates": { "lng": 16.4402, "lat": 43.5081 },
+      "dateCreated": "2024-03-18",
+      "tags": ["boats", "tower", "harbor", "maritime"]
+  },
+  {
+      "id": "hr15",
+      "albumId": "croatia",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/croatia/split-harbor-boats.jpg",
+      "caption": "Split Harbor with Boats",
+      "locationId": "Split",
+      "coordinates": { "lng": 16.4402, "lat": 43.5081 },
+      "dateCreated": "2024-03-18",
+      "tags": ["harbor", "boats", "maritime", "waterfront"]
+  },
+  {
+      "id": "hr16",
+      "albumId": "croatia",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/croatia/split-harbor-palmtrees.jpg",
+      "caption": "Palm Trees at Split Harbor",
+      "locationId": "Split",
+      "coordinates": { "lng": 16.4402, "lat": 43.5081 },
+      "dateCreated": "2024-03-18",
+      "tags": ["harbor", "palm trees", "waterfront", "tropical"]
+  },
+  {
+      "id": "hr17",
+      "albumId": "croatia",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/croatia/split-harbor.jpg",
+      "caption": "Split Harbor View",
+      "locationId": "Split",
+      "coordinates": { "lng": 16.4402, "lat": 43.5081 },
+      "dateCreated": "2024-03-18",
+      "tags": ["harbor", "waterfront", "maritime"]
+  },
+  {
+      "id": "hr18",
+      "albumId": "croatia",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/croatia/split-menacing-statue.jpg",
+      "caption": "Dramatic Statue in Split",
+      "locationId": "Split",
+      "coordinates": { "lng": 16.4402, "lat": 43.5081 },
+      "dateCreated": "2024-03-18",
+      "tags": ["statue", "art", "sculpture", "historic"]
+  },
+  {
+      "id": "hr19",
+      "albumId": "croatia",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/croatia/split-palm-sunset.jpg",
+      "caption": "Sunset with Palm Trees in Split",
+      "locationId": "Split",
+      "coordinates": { "lng": 16.4402, "lat": 43.5081 },
+      "dateCreated": "2024-03-18",
+      "tags": ["sunset", "palm trees", "silhouette", "nature"]
+  },
+  {
+      "id": "hr20",
+      "albumId": "croatia",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/croatia/split-palmtree.jpg",
+      "caption": "Palm Tree in Split",
+      "locationId": "Split",
+      "coordinates": { "lng": 16.4402, "lat": 43.5081 },
+      "dateCreated": "2024-03-18",
+      "tags": ["palm tree", "nature", "tropical"]
+  },
+  {
+      "id": "hr21",
+      "albumId": "croatia",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/croatia/split-pano.jpg",
+      "caption": "Panoramic View of Split",
+      "locationId": "Split",
+      "coordinates": { "lng": 16.4402, "lat": 43.5081 },
+      "dateCreated": "2024-03-18",
+      "tags": ["panorama", "cityscape", "landscape"]
+  },
+  {
+      "id": "hr22",
+      "albumId": "croatia",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/croatia/split-panorama.jpg",
+      "caption": "Split Panoramic Landscape",
+      "locationId": "Split",
+      "coordinates": { "lng": 16.4402, "lat": 43.5081 },
+      "dateCreated": "2024-03-18",
+      "tags": ["panorama", "cityscape", "landscape", "wide view"]
+  },
+  {
+      "id": "hr23",
+      "albumId": "croatia",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/croatia/split-sailboat.jpg",
+      "caption": "Sailboat in Split Waters",
+      "locationId": "Split",
+      "coordinates": { "lng": 16.4402, "lat": 43.5081 },
+      "dateCreated": "2024-03-18",
+      "tags": ["sailboat", "ocean", "maritime", "sailing"]
+  },
+  {
+      "id": "hr24",
+      "albumId": "croatia",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/croatia/split-summerblues.jpg",
+      "caption": "Summer Blues in Split",
+      "locationId": "Split",
+      "coordinates": { "lng": 16.4402, "lat": 43.5081 },
+      "dateCreated": "2024-03-18",
+      "tags": ["summer", "ocean", "blue", "scenic"]
+  },
+  {
+      "id": "hr25",
+      "albumId": "croatia",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/croatia/split-tower.jpg",
+      "caption": "Historic Tower in Split",
+      "locationId": "Split",
+      "coordinates": { "lng": 16.4402, "lat": 43.5081 },
+      "dateCreated": "2024-03-18",
+      "tags": ["tower", "architecture", "historic"]
+  },
+  {
+      "id": "hr26",
+      "albumId": "croatia",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/croatia/split-water-skyline.jpg",
+      "caption": "Split Waterfront Skyline",
+      "locationId": "Split",
+      "coordinates": { "lng": 16.4402, "lat": 43.5081 },
+      "dateCreated": "2024-03-18",
+      "tags": ["skyline", "waterfront", "cityscape"]
+  },
+  {
+      "id": "hr27",
+      "albumId": "croatia",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/croatia/zlatnirat-beach-mountain.jpg",
+      "caption": "Zlatni Rat Beach with Mountain View",
+      "locationId": "Zlatni Rat",
+      "coordinates": { "lng": 16.6340, "lat": 43.2578 },
+      "dateCreated": "2024-03-18",
+      "tags": ["beach", "mountain", "landscape", "nature"]
+  },
+  {
+      "id": "hr28",
+      "albumId": "croatia",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/croatia/zlatnirat-beach-people.jpg",
+      "caption": "Beachgoers at Zlatni Rat",
+      "locationId": "Zlatni Rat",
+      "coordinates": { "lng": 16.6340, "lat": 43.2578 },
+      "dateCreated": "2024-03-18",
+      "tags": ["beach", "people", "summer", "leisure"]
+  },
+  {
+    "id": "hr29",
+    "albumId": "croatia",
+    "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/croatia/zlatnirat-beach.jpg",
+    "caption": "Zlatni Rat Beach",
+    "locationId": "Zlatni Rat",
+    "coordinates": { "lng": 16.6340, "lat": 43.2578 },
+    "dateCreated": "2024-03-18",
+    "tags": ["beach", "coastline", "paradise", "nature"]
+},
+{
+    "id": "hr30",
+    "albumId": "croatia",
+    "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/croatia/zlatnirat-boat-clear.jpg",
+    "caption": "Boat in Crystal Clear Waters",
+    "locationId": "Zlatni Rat",
+    "coordinates": { "lng": 16.6340, "lat": 43.2578 },
+    "dateCreated": "2024-03-18",
+    "tags": ["boat", "clear water", "ocean", "maritime"]
+},
+{
+    "id": "hr31",
+    "albumId": "croatia",
+    "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/croatia/zlatnirat-greenwater.jpg",
+    "caption": "Emerald Waters at Zlatni Rat",
+    "locationId": "Zlatni Rat",
+    "coordinates": { "lng": 16.6340, "lat": 43.2578 },
+    "dateCreated": "2024-03-18",
+    "tags": ["ocean", "clear water", "turquoise", "nature"]
+},
+{
+    "id": "hr32",
+    "albumId": "croatia",
+    "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/croatia/zlatnirat-ocean.jpg",
+    "caption": "Ocean View at Zlatni Rat",
+    "locationId": "Zlatni Rat",
+    "coordinates": { "lng": 16.6340, "lat": 43.2578 },
+    "dateCreated": "2024-03-18",
+    "tags": ["ocean", "seascape", "water", "horizon"]
+}
+
+
   ]
 }

@@ -81,7 +81,13 @@ const PhotoAlbumExplorer = () => {
         p.url.includes("zurich-river-bridge.jpg")
       ),
       uruguay: photos.find((p) => p.url.includes("montevideo-palmtree.jpg")),
+      portugal: photos.find((p) => p.url.includes("lisbon-arch-close.jpg")),
+      spain: photos.find((p) => p.url.includes("madrid-castle.jpg")),
+      argentina: photos.find((p) => p.url.includes("buenosaires-panorama.jpg")),
       chile: photos.find((p) => p.url.includes("easterisland-moai-hat.jpg")),
+      belgium: photos.find((p) => p.url.includes("bruges-canal-tree-tower.jpg")),
+      bosnia: photos.find((p) => p.url.includes("mostar-pano.jpg")),
+      croatia: photos.find((p) => p.url.includes("dubrovnik-steps.jpg")),
       brazil: photos.find(
         (p) =>
           p.url.includes("helicopter-beach-sugarloaf.jpg") ||

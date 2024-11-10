@@ -161,6 +161,78 @@
       "name": "Easter Island",
       "countryId": "CL",
       "coordinates": { "lng": -109.3497, "lat": -27.1127 }
-    }
+    },
+    {
+      "id": "loc29",
+      "name": "Lisbon",
+      "countryId": "PT",
+      "coordinates": { "lng": -9.1333, "lat": 38.7167 }
+    },
+    {
+      "id": "loc30",
+      "name": "Barcelona",
+      "countryId": "ES",
+      "coordinates": { "lng": 2.1734, "lat": 41.3851 }
+    },
+    {
+      "id": "loc31",
+      "name": "Madrid",
+      "countryId": "ES", 
+      "coordinates": { "lng": -3.7038, "lat": 40.4168 }
+    },
+    {
+      "id": "loc32",
+      "name": "Ibiza",
+      "countryId": "ES",
+      "coordinates": { "lng": 1.4283, "lat": 38.9067 }
+    },
+    {
+      "id": "loc33", 
+      "name": "Mallorca",
+      "countryId": "ES",
+      "coordinates": { "lng": 2.6502, "lat": 39.6953 }
+    },
+    {
+      "id": "loc34",
+      "name": "Pamplona",
+      "countryId": "ES",
+      "coordinates": { "lng": -1.6444, "lat": 42.8196 }
+    },
+    {
+      "id": "loc35",
+      "name": "Buenos Aires",
+      "countryId": "AR",
+      "coordinates": { "lng": -58.3816, "lat": -34.6037 }
+    },
+    {
+      "id": "loc36",
+      "name": "Bruges",
+      "countryId": "BE",
+      "coordinates": { "lng": 3.2247, "lat": 51.2093 }
+    },
+    {
+      "id": "loc37",
+      "name": "Mostar",
+      "countryId": "BA",
+      "coordinates": { "lng": 17.8078, "lat": 43.3429 }
+    },
+    {
+      "id": "loc38",
+      "name": "Dubrovnik",
+      "countryId": "HR",
+      "coordinates": { "lng": 18.0944, "lat": 42.6507 }
+  },
+  {
+      "id": "loc39",
+      "name": "Split",
+      "countryId": "HR",
+      "coordinates": { "lng": 16.4402, "lat": 43.5081 }
+  },
+  {
+      "id": "loc40",
+      "name": "Zlatni Rat",
+      "countryId": "HR",
+      "coordinates": { "lng": 16.6340, "lat": 43.2578 }
+  }
   ]
 }
