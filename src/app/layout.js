@@ -59,12 +59,12 @@ export default function RootLayout({ children }) {
                 </span>
               </Link>
               <Link
-                href="/stories"
+                href="/writing"
                 className="group flex items-center px-6 py-6 text-gray-700 hover:text-teal-600 font-medium transition-all duration-200 hover:border-t-2 hover:border-teal-600 -mt-[1px] relative"
               >
                 <BookOpen className="w-5 h-5 mr-2 group-hover:text-teal-600 transition-colors" />
                 <span className="relative">
-                  Stories
+                  Writing
                   <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-teal-600 group-hover:w-full transition-all duration-300"></span>
                 </span>
               </Link>
