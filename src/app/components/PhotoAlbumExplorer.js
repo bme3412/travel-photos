@@ -108,6 +108,7 @@ const PhotoAlbumExplorer = () => {
     const coverPhotoMap = {
       monaco: photos.find((p) => p.url.includes("monaco-panorama.jpg")),
       france: photos.find((p) => p.url.includes("eiffel-tower-straight-on.jpg")),
+      italy: photos.find((p) => p.url.includes("venice-gondolas.jpg")),
       hongkong: photos.find((p) => p.url.includes("hongkong-skyline2.jpeg")),
       vietnam: photos.find((p) => p.url.includes("temple.jpg")),
       singapore: photos.find((p) => p.url.includes("singapore-pool-night.jpg")),
@@ -124,6 +125,7 @@ const PhotoAlbumExplorer = () => {
       montenegro: photos.find((p) => p.url.includes("perast-contrast.jpg")),
       mauritius: photos.find((p) => p.url.includes("mauritius-beach-house.jpg")),
       botswana: photos.find((p) => p.url.includes("chobe-three-giraffes-pose.jpg")),
+      southafrica: photos.find((p) => p.url.includes("capetown-beach-sunset.jpg")),
       brazil: photos.find(
         (p) => p.url.includes("helicopter-beach-sugarloaf.jpg") ||
               p.url.includes("/Brazil/helicopter-beach-sugarloaf.jpg")

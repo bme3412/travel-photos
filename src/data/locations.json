@@ -395,6 +395,51 @@
         "lng": 25.1479,
         "lat": -17.8292
       }
+    },
+    {
+      "id": "loc46",
+      "name": "Florence",
+      "countryId": "IT",
+      "coordinates": {
+        "lng": 11.2558,
+        "lat": 43.7696
+      }
+    },
+    {
+      "id": "loc47",
+      "name": "San Gimignano",
+      "countryId": "IT",
+      "coordinates": {
+        "lng": 11.0434,
+        "lat": 43.4677
+      }
+    },
+    {
+      "id": "loc48",
+      "name": "Costa Smeralda",
+      "countryId": "IT",
+      "coordinates": {
+        "lng": 9.5377,
+        "lat": 41.0819
+      }
+    },
+    {
+      "id": "loc49",
+      "name": "Corsica",
+      "countryId": "FR",
+      "coordinates": {
+        "lng": 9.2013,
+        "lat": 42.0396
+      }
+    },
+    {
+      "id": "loc50",
+      "name": "Cape Town",
+      "countryId": "ZA",
+      "coordinates": {
+        "lng": 18.4241,
+        "lat": -33.9249
+      }
     }
   ]
 }

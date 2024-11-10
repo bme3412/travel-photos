@@ -1138,6 +1138,600 @@
       ]
     },
     {
+      "id": "france66",
+      "albumId": "france",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/France/corsica-beach-boats.jpg",
+      "caption": "Corsica Beach with Boats",
+      "locationId": "Corsica",
+      "coordinates": {
+        "lng": 9.0117,
+        "lat": 42.0396
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "beach",
+        "boats",
+        "water",
+        "nature"
+      ]
+    },
+    {
+      "id": "france67",
+      "albumId": "france",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/France/corsica-beach-dock.jpg",
+      "caption": "Corsica Beach Dock",
+      "locationId": "Corsica",
+      "coordinates": {
+        "lng": 9.0117,
+        "lat": 42.0396
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "beach",
+        "dock",
+        "water",
+        "architecture"
+      ]
+    },
+    {
+      "id": "france68",
+      "albumId": "france",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/France/corsica-beach-ocean.jpg",
+      "caption": "Corsica Beach and Ocean",
+      "locationId": "Corsica",
+      "coordinates": {
+        "lng": 9.0117,
+        "lat": 42.0396
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "beach",
+        "ocean",
+        "water",
+        "nature"
+      ]
+    },
+    {
+      "id": "france69",
+      "albumId": "france",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/France/corsica-beach.jpg",
+      "caption": "Corsica Beach",
+      "locationId": "Corsica",
+      "coordinates": {
+        "lng": 9.0117,
+        "lat": 42.0396
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "beach",
+        "sand",
+        "sea",
+        "nature"
+      ]
+    },
+    {
+      "id": "france70",
+      "albumId": "france",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/France/corsica-beachside.jpg",
+      "caption": "Corsica Beachside",
+      "locationId": "Corsica",
+      "coordinates": {
+        "lng": 9.0117,
+        "lat": 42.0396
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "beachside",
+        "nature",
+        "landscape",
+        "sea"
+      ]
+    },
+    {
+      "id": "france71",
+      "albumId": "france",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/France/corsica-citadel-boats.jpg",
+      "caption": "Corsica Citadel with Boats",
+      "locationId": "Corsica",
+      "coordinates": {
+        "lng": 9.0117,
+        "lat": 42.0396
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "citadel",
+        "boats",
+        "architecture",
+        "water"
+      ]
+    },
+    {
+      "id": "france72",
+      "albumId": "france",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/France/corsica-cliffs.jpg",
+      "caption": "Corsica Cliffs",
+      "locationId": "Corsica",
+      "coordinates": {
+        "lng": 9.0117,
+        "lat": 42.0396
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "cliffs",
+        "landscape",
+        "nature",
+        "rock"
+      ]
+    },
+    {
+      "id": "france73",
+      "albumId": "france",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/France/corsica-hyannisport-restaurant.jpg",
+      "caption": "Corsica Hyannisport Restaurant",
+      "locationId": "Corsica",
+      "coordinates": {
+        "lng": 9.0117,
+        "lat": 42.0396
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "restaurant",
+        "dining",
+        "local",
+        "architecture"
+      ]
+    },
+    {
+      "id": "france74",
+      "albumId": "france",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/France/corsica-sunset.jpg",
+      "caption": "Corsica Sunset",
+      "locationId": "Corsica",
+      "coordinates": {
+        "lng": 9.0117,
+        "lat": 42.0396
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "sunset",
+        "nature",
+        "landscape",
+        "sky"
+      ]
+    },
+    {
+      "id": "france75",
+      "albumId": "france",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/France/paris-cafe-waiter.jpg",
+      "caption": "Paris Cafe Waiter",
+      "locationId": "Paris",
+      "coordinates": {
+        "lng": 2.3522,
+        "lat": 48.8566
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "cafe",
+        "waiter",
+        "dining",
+        "local"
+      ]
+    },
+    {
+      "id": "france76",
+      "albumId": "france",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/France/paris-cafe.jpg",
+      "caption": "Paris Cafe",
+      "locationId": "Paris",
+      "coordinates": {
+        "lng": 2.3522,
+        "lat": 48.8566
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "cafe",
+        "dining",
+        "local",
+        "architecture"
+      ]
+    },
+    {
+      "id": "france77",
+      "albumId": "france",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/France/paris-moules-restaurant.jpg",
+      "caption": "Paris Moules Restaurant",
+      "locationId": "Paris",
+      "coordinates": {
+        "lng": 2.3522,
+        "lat": 48.8566
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "restaurant",
+        "moules",
+        "dining",
+        "local"
+      ]
+    },
+    {
+      "id": "france78",
+      "albumId": "france",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/France/paris-pre-aux-clercs.jpg",
+      "caption": "Paris Pré Aux Clercs",
+      "locationId": "Paris",
+      "coordinates": {
+        "lng": 2.3522,
+        "lat": 48.8566
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "restaurant",
+        "dining",
+        "local",
+        "historic"
+      ]
+    },
+    {
+      "id": "france79",
+      "albumId": "france",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/France/paris-rude-buci.jpg",
+      "caption": "Paris Rue de Buci",
+      "locationId": "Paris",
+      "coordinates": {
+        "lng": 2.3522,
+        "lat": 48.8566
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "restaurant",
+        "dining",
+        "local",
+        "urban"
+      ]
+    },
+    {
+      "id": "france80",
+      "albumId": "france",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/France/maybourne-riviera-pool.jpg",
+      "caption": "Maybourne Riviera Pool",
+      "locationId": "Roquebrune-Cap-Martin",
+      "coordinates": {
+        "lng": 7.4276,
+        "lat": 43.7800
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "hotel",
+        "luxury",
+        "pool",
+        "riviera"
+      ]
+    },
+    {
+      "id": "france81",
+      "albumId": "france",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/France/maybourne-riviera.jpg",
+      "caption": "Maybourne Riviera Hotel",
+      "locationId": "Roquebrune-Cap-Martin",
+      "coordinates": {
+        "lng": 7.4276,
+        "lat": 43.7800
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "hotel",
+        "luxury",
+        "architecture",
+        "riviera"
+      ]
+    },
+    {
+      "id": "france82",
+      "albumId": "france",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/France/paris-eiffel-tower-night.jpg",
+      "caption": "Eiffel Tower at Night",
+      "locationId": "Paris",
+      "coordinates": {
+        "lng": 2.2945,
+        "lat": 48.8584
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "landmark",
+        "night",
+        "eiffel tower",
+        "illuminated"
+      ]
+    },
+    {
+      "id": "france83",
+      "albumId": "france",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/France/paris-eiffeltower-balcony.jpg",
+      "caption": "Eiffel Tower View from Balcony",
+      "locationId": "Paris",
+      "coordinates": {
+        "lng": 2.2945,
+        "lat": 48.8584
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "landmark",
+        "view",
+        "eiffel tower",
+        "balcony"
+      ]
+    },
+    {
+      "id": "france84",
+      "albumId": "france",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/France/paris-louvre.jpg",
+      "caption": "The Louvre Museum",
+      "locationId": "Paris",
+      "coordinates": {
+        "lng": 2.3376,
+        "lat": 48.8606
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "museum",
+        "art",
+        "architecture",
+        "landmark"
+      ]
+    },
+    {
+      "id": "france85",
+      "albumId": "france",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/France/paris-sacrecoeur.jpg",
+      "caption": "Sacré-Cœur Basilica",
+      "locationId": "Paris",
+      "coordinates": {
+        "lng": 2.3431,
+        "lat": 48.8867
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "church",
+        "architecture",
+        "landmark",
+        "montmartre"
+      ]
+    },
+    {
+      "id": "france86",
+      "albumId": "france",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/France/paris-bridge.jpg",
+      "caption": "Paris Bridge",
+      "locationId": "Paris",
+      "coordinates": {
+        "lng": 2.3522,
+        "lat": 48.8566
+      },
+      "dateCreated": "2019-06-17",
+      "tags": [
+        "bridge",
+        "architecture",
+        "cityscape",
+        "landmark"
+      ]
+    },
+    {
+      "id": "france87",
+      "albumId": "france",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/France/paris-eiffeltower-boat.jpg",
+      "caption": "Eiffel Tower with Boat",
+      "locationId": "Paris",
+      "coordinates": {
+        "lng": 2.3522,
+        "lat": 48.8566
+      },
+      "dateCreated": "2019-06-17",
+      "tags": [
+        "Eiffel Tower",
+        "boat",
+        "water",
+        "architecture"
+      ]
+    },
+    {
+      "id": "france88",
+      "albumId": "france",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/France/paris-eiffeltower-trees.jpg",
+      "caption": "Eiffel Tower and Trees",
+      "locationId": "Paris",
+      "coordinates": {
+        "lng": 2.3522,
+        "lat": 48.8566
+      },
+      "dateCreated": "2019-06-17",
+      "tags": [
+        "Eiffel Tower",
+        "trees",
+        "nature",
+        "architecture"
+      ]
+    },
+    {
+      "id": "france89",
+      "albumId": "france",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/France/paris-evening.jpg",
+      "caption": "Evening in Paris",
+      "locationId": "Paris",
+      "coordinates": {
+        "lng": 2.3522,
+        "lat": 48.8566
+      },
+      "dateCreated": "2019-06-18",
+      "tags": [
+        "evening",
+        "cityscape",
+        "lights",
+        "night"
+      ]
+    },
+    {
+      "id": "france90",
+      "albumId": "france",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/France/paris-ladefense.jpg",
+      "caption": "La Défense District",
+      "locationId": "Paris",
+      "coordinates": {
+        "lng": 2.2280,
+        "lat": 48.8938
+      },
+      "dateCreated": "2019-06-18",
+      "tags": [
+        "La Défense",
+        "business district",
+        "architecture",
+        "urban"
+      ]
+    },
+    {
+      "id": "france91",
+      "albumId": "france",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/France/paris-luxembourg-pool.jpg",
+      "caption": "Luxembourg Pool",
+      "locationId": "Paris",
+      "coordinates": {
+        "lng": 2.3372,
+        "lat": 48.8462
+      },
+      "dateCreated": "2019-06-18",
+      "tags": [
+        "Luxembourg Gardens",
+        "pool",
+        "park",
+        "nature"
+      ]
+    },
+    {
+      "id": "france92",
+      "albumId": "france",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/France/paris-montmartre-eiffeltower.jpg",
+      "caption": "Montmartre with Eiffel Tower",
+      "locationId": "Paris",
+      "coordinates": {
+        "lng": 2.3431,
+        "lat": 48.8867
+      },
+      "dateCreated": "2019-06-19",
+      "tags": [
+        "Montmartre",
+        "Eiffel Tower",
+        "hill",
+        "architecture"
+      ]
+    },
+    {
+      "id": "france93",
+      "albumId": "france",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/France/paris-pontdesarts.jpg",
+      "caption": "Pont des Arts Bridge",
+      "locationId": "Paris",
+      "coordinates": {
+        "lng": 2.3333,
+        "lat": 48.8600
+      },
+      "dateCreated": "2019-06-19",
+      "tags": [
+        "Pont des Arts",
+        "bridge",
+        "architecture",
+        "river"
+      ]
+    },
+    {
+      "id": "france94",
+      "albumId": "france",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/France/paris-sacrecoeur-direct.jpg",
+      "caption": "Sacré-Cœur Direct View",
+      "locationId": "Paris",
+      "coordinates": {
+        "lng": 2.3431,
+        "lat": 48.8867
+      },
+      "dateCreated": "2019-06-19",
+      "tags": [
+        "Sacré-Cœur",
+        "church",
+        "architecture",
+        "landmark"
+      ]
+    },
+    {
+      "id": "france95",
+      "albumId": "france",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/France/paris-sacrecoeur-music.jpg",
+      "caption": "Sacré-Cœur with Music",
+      "locationId": "Paris",
+      "coordinates": {
+        "lng": 2.3431,
+        "lat": 48.8867
+      },
+      "dateCreated": "2019-06-20",
+      "tags": [
+        "Sacré-Cœur",
+        "music",
+        "culture",
+        "architecture"
+      ]
+    },
+    {
+      "id": "france96",
+      "albumId": "france",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/France/paris-sacrecoeur-steps-profile.jpg",
+      "caption": "Sacré-Cœur Steps Profile",
+      "locationId": "Paris",
+      "coordinates": {
+        "lng": 2.3431,
+        "lat": 48.8867
+      },
+      "dateCreated": "2019-06-20",
+      "tags": [
+        "Sacré-Cœur",
+        "steps",
+        "profile",
+        "architecture"
+      ]
+    },
+    {
+      "id": "france97",
+      "albumId": "france",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/France/paris-sacrecoeur-stepsview.jpg",
+      "caption": "Sacré-Cœur Steps View",
+      "locationId": "Paris",
+      "coordinates": {
+        "lng": 2.3431,
+        "lat": 48.8867
+      },
+      "dateCreated": "2019-06-20",
+      "tags": [
+        "Sacré-Cœur",
+        "steps",
+        "view",
+        "architecture"
+      ]
+    },
+    {
+      "id": "france98",
+      "albumId": "france",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/France/paris-statueliberty.jpg",
+      "caption": "Statue of Liberty in Paris",
+      "locationId": "Paris",
+      "coordinates": {
+        "lng": 2.2986,
+        "lat": 48.8584
+      },
+      "dateCreated": "2019-06-20",
+      "tags": [
+        "Statue of Liberty",
+        "replica",
+        "landmark",
+        "architecture"
+      ]
+    },
+    {
       "id": "hk1",
       "albumId": "hongkong",
       "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Hong-Kong/highrise-towers.jpeg",
@@ -2754,6 +3348,942 @@
         "architecture",
         "historic",
         "perspective"
+      ]
+    },
+    {
+      "id": "it06",
+      "albumId": "italy",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Italy/florence-duomo-bird.jpg",
+      "caption": "Florence Duomo Bird's Eye View",
+      "locationId": "Florence",
+      "coordinates": {
+        "lng": 11.2558,
+        "lat": 43.7696
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "duomo",
+        "architecture",
+        "cityscape",
+        "bird's eye view"
+      ]
+    },
+    {
+      "id": "it07",
+      "albumId": "italy",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Italy/florence-duomo-clocktower.jpg",
+      "caption": "Florence Duomo Clocktower",
+      "locationId": "Florence",
+      "coordinates": {
+        "lng": 11.2558,
+        "lat": 43.7696
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "duomo",
+        "clocktower",
+        "architecture",
+        "landmark"
+      ]
+    },
+    {
+      "id": "it08",
+      "albumId": "italy",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Italy/florence-duomo-light.jpg",
+      "caption": "Florence Duomo Illuminated",
+      "locationId": "Florence",
+      "coordinates": {
+        "lng": 11.2558,
+        "lat": 43.7696
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "duomo",
+        "night",
+        "lighting",
+        "architecture"
+      ]
+    },
+    {
+      "id": "it09",
+      "albumId": "italy",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Italy/florence-duomo-pano.jpg",
+      "caption": "Florence Duomo Panoramic View",
+      "locationId": "Florence",
+      "coordinates": {
+        "lng": 11.2558,
+        "lat": 43.7696
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "duomo",
+        "panoramic",
+        "architecture",
+        "cityscape"
+      ]
+    },
+    {
+      "id": "it10",
+      "albumId": "italy",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Italy/florence-duomo-sunset.jpg",
+      "caption": "Florence Duomo at Sunset",
+      "locationId": "Florence",
+      "coordinates": {
+        "lng": 11.2558,
+        "lat": 43.7696
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "duomo",
+        "sunset",
+        "architecture",
+        "landscape"
+      ]
+    },
+    {
+      "id": "it11",
+      "albumId": "italy",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Italy/florence-duomo-tower-distance.jpg",
+      "caption": "Florence Duomo Tower Distance View",
+      "locationId": "Florence",
+      "coordinates": {
+        "lng": 11.2558,
+        "lat": 43.7696
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "duomo",
+        "tower",
+        "distance view",
+        "architecture"
+      ]
+    },
+    {
+      "id": "it12",
+      "albumId": "italy",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Italy/florence-duomo-tower-view.jpg",
+      "caption": "Florence Duomo Tower View",
+      "locationId": "Florence",
+      "coordinates": {
+        "lng": 11.2558,
+        "lat": 43.7696
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "duomo",
+        "tower view",
+        "architecture",
+        "landmark"
+      ]
+    },
+    {
+      "id": "it13",
+      "albumId": "italy",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Italy/florence-duomo-tower.jpg",
+      "caption": "Florence Duomo Tower",
+      "locationId": "Florence",
+      "coordinates": {
+        "lng": 11.2558,
+        "lat": 43.7696
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "duomo",
+        "tower",
+        "architecture",
+        "landmark"
+      ]
+    },
+    {
+      "id": "it14",
+      "albumId": "italy",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Italy/florence-duomo.jpg",
+      "caption": "Florence Duomo",
+      "locationId": "Florence",
+      "coordinates": {
+        "lng": 11.2558,
+        "lat": 43.7696
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "duomo",
+        "architecture",
+        "landmark",
+        "historic"
+      ]
+    },
+    {
+      "id": "it15",
+      "albumId": "italy",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Italy/florence-piazza-tower.jpg",
+      "caption": "Florence Piazza Tower",
+      "locationId": "Florence",
+      "coordinates": {
+        "lng": 11.2558,
+        "lat": 43.7696
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "piazza",
+        "tower",
+        "architecture",
+        "urban"
+      ]
+    },
+    {
+      "id": "it16",
+      "albumId": "italy",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Italy/florence-piazza.jpg",
+      "caption": "Florence Main Piazza",
+      "locationId": "Florence",
+      "coordinates": {
+        "lng": 11.2558,
+        "lat": 43.7696
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "piazza",
+        "urban",
+        "cityscape",
+        "architecture"
+      ]
+    },
+    {
+      "id": "it17",
+      "albumId": "italy",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Italy/florence-pontevechio-angle.jpg",
+      "caption": "Florence Ponte Vecchio Angle",
+      "locationId": "Florence",
+      "coordinates": {
+        "lng": 11.2558,
+        "lat": 43.7696
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "ponte vecchio",
+        "bridge",
+        "architecture",
+        "urban"
+      ]
+    },
+    {
+      "id": "it18",
+      "albumId": "italy",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Italy/florence-pontevechio.jpg",
+      "caption": "Florence Ponte Vecchio",
+      "locationId": "Florence",
+      "coordinates": {
+        "lng": 11.2558,
+        "lat": 43.7696
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "ponte vecchio",
+        "bridge",
+        "architecture",
+        "historic"
+      ]
+    },
+    {
+      "id": "it19",
+      "albumId": "italy",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Italy/florence-roof-tower.jpg",
+      "caption": "Florence Roof Tower",
+      "locationId": "Florence",
+      "coordinates": {
+        "lng": 11.2558,
+        "lat": 43.7696
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "roof",
+        "tower",
+        "architecture",
+        "cityscape"
+      ]
+    },
+    {
+      "id": "it20",
+      "albumId": "italy",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Italy/san-gimignano-hillside.jpg",
+      "caption": "San Gimignano Hillside",
+      "locationId": "San Gimignano",
+      "coordinates": {
+        "lng": 11.0417,
+        "lat": 43.4672
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "hillside",
+        "landscape",
+        "architecture",
+        "vineyard"
+      ]
+    },
+    {
+      "id": "it21",
+      "albumId": "italy",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Italy/san-gimignano-house.jpg",
+      "caption": "San Gimignano House",
+      "locationId": "San Gimignano",
+      "coordinates": {
+        "lng": 11.0417,
+        "lat": 43.4672
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "house",
+        "architecture",
+        "historic",
+        "urban"
+      ]
+    },
+    {
+      "id": "it22",
+      "albumId": "italy",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Italy/san-gimignano-pano.jpg",
+      "caption": "San Gimignano Panoramic View",
+      "locationId": "San Gimignano",
+      "coordinates": {
+        "lng": 11.0417,
+        "lat": 43.4672
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "panoramic",
+        "landscape",
+        "architecture",
+        "cityscape"
+      ]
+    },
+    {
+      "id": "it23",
+      "albumId": "italy",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Italy/san-gimignano-skyline.jpg",
+      "caption": "San Gimignano Skyline",
+      "locationId": "San Gimignano",
+      "coordinates": {
+        "lng": 11.0417,
+        "lat": 43.4672
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "skyline",
+        "cityscape",
+        "architecture",
+        "historic"
+      ]
+    },
+    {
+      "id": "it24",
+      "albumId": "italy",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Italy/san-gimignano-towers-hill.jpg",
+      "caption": "San Gimignano Towers on Hill",
+      "locationId": "San Gimignano",
+      "coordinates": {
+        "lng": 11.0417,
+        "lat": 43.4672
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "towers",
+        "hill",
+        "architecture",
+        "landscape"
+      ]
+    },
+    {
+      "id": "it25",
+      "albumId": "italy",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Italy/san-gimignano-trees.jpg",
+      "caption": "San Gimignano Trees",
+      "locationId": "San Gimignano",
+      "coordinates": {
+        "lng": 11.0417,
+        "lat": 43.4672
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "trees",
+        "nature",
+        "landscape",
+        "garden"
+      ]
+    },
+    {
+      "id": "it26",
+      "albumId": "italy",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Italy/san-gimignano-vineyard.jpg",
+      "caption": "San Gimignano Vineyard",
+      "locationId": "San Gimignano",
+      "coordinates": {
+        "lng": 11.0417,
+        "lat": 43.4672
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "vineyard",
+        "agriculture",
+        "landscape",
+        "nature"
+      ]
+    },
+    {
+      "id": "it27",
+      "albumId": "italy",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Italy/tuscan-hillside.jpg",
+      "caption": "Tuscan Hillside",
+      "locationId": "Tuscany",
+      "coordinates": {
+        "lng": 11.2105,
+        "lat": 43.8938
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "hillside",
+        "landscape",
+        "nature",
+        "agriculture"
+      ]
+    },
+    {
+      "id": "it28",
+      "albumId": "italy",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Italy/tuscany-garden.jpg",
+      "caption": "Tuscany Garden",
+      "locationId": "Tuscany",
+      "coordinates": {
+        "lng": 11.2105,
+        "lat": 43.8938
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "garden",
+        "flowers",
+        "nature",
+        "horticulture"
+      ]
+    },
+    {
+      "id": "it29",
+      "albumId": "italy",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Italy/tuscany-homes.jpg",
+      "caption": "Tuscany Homes",
+      "locationId": "Tuscany",
+      "coordinates": {
+        "lng": 11.2105,
+        "lat": 43.8938
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "homes",
+        "architecture",
+        "residential",
+        "historic"
+      ]
+    },
+    {
+      "id": "it30",
+      "albumId": "italy",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Italy/tuscany-trees.jpg",
+      "caption": "Tuscany Trees",
+      "locationId": "Tuscany",
+      "coordinates": {
+        "lng": 11.2105,
+        "lat": 43.8938
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "trees",
+        "nature",
+        "landscape",
+        "forest"
+      ]
+    },
+    {
+      "id": "it31",
+      "albumId": "italy",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Italy/tuscany-vineyards.jpg",
+      "caption": "Tuscany Vineyards",
+      "locationId": "Tuscany",
+      "coordinates": {
+        "lng": 11.2105,
+        "lat": 43.8938
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "vineyards",
+        "agriculture",
+        "landscape",
+        "wine"
+      ]
+    },
+    {
+      "id": "it32",
+      "albumId": "italy",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Italy/venice-bridge.jpg",
+      "caption": "Venice Bridge",
+      "locationId": "Venice",
+      "coordinates": {
+        "lng": 12.3155,
+        "lat": 45.4408
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "bridge",
+        "architecture",
+        "water",
+        "landmark"
+      ]
+    },
+    {
+      "id": "it33",
+      "albumId": "italy",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Italy/venice-canal-boat.jpg",
+      "caption": "Venice Canal Boat",
+      "locationId": "Venice",
+      "coordinates": {
+        "lng": 12.3155,
+        "lat": 45.4408
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "canal",
+        "boat",
+        "water",
+        "transportation"
+      ]
+    },
+    {
+      "id": "it34",
+      "albumId": "italy",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Italy/venice-canal-yellowbuilding.jpg",
+      "caption": "Venice Canal with Yellow Building",
+      "locationId": "Venice",
+      "coordinates": {
+        "lng": 12.3155,
+        "lat": 45.4408
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "canal",
+        "yellow building",
+        "architecture",
+        "urban"
+      ]
+    },
+    {
+      "id": "it35",
+      "albumId": "italy",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Italy/venice-canal.jpg",
+      "caption": "Venice Canal",
+      "locationId": "Venice",
+      "coordinates": {
+        "lng": 12.3155,
+        "lat": 45.4408
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "canal",
+        "water",
+        "architecture",
+        "cityscape"
+      ]
+    },
+    {
+      "id": "it36",
+      "albumId": "italy",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Italy/venice-dome.jpg",
+      "caption": "Venice Dome",
+      "locationId": "Venice",
+      "coordinates": {
+        "lng": 12.3155,
+        "lat": 45.4408
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "dome",
+        "architecture",
+        "historic",
+        "landmark"
+      ]
+    },
+    {
+      "id": "it37",
+      "albumId": "italy",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Italy/venice-gondola.jpg",
+      "caption": "Venice Gondola",
+      "locationId": "Venice",
+      "coordinates": {
+        "lng": 12.3155,
+        "lat": 45.4408
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "gondola",
+        "boat",
+        "water",
+        "transportation"
+      ]
+    },
+    {
+      "id": "it38",
+      "albumId": "italy",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Italy/venice-gondolas.jpg",
+      "caption": "Venice Gondolas",
+      "locationId": "Venice",
+      "coordinates": {
+        "lng": 12.3155,
+        "lat": 45.4408
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "gondolas",
+        "boats",
+        "water",
+        "transportation"
+      ]
+    },
+    {
+      "id": "it39",
+      "albumId": "italy",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Italy/venice-harbor-tower.jpg",
+      "caption": "Venice Harbor Tower",
+      "locationId": "Venice",
+      "coordinates": {
+        "lng": 12.3155,
+        "lat": 45.4408
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "harbor",
+        "tower",
+        "architecture",
+        "landmark"
+      ]
+    },
+    {
+      "id": "it40",
+      "albumId": "italy",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Italy/venice-harbor.jpg",
+      "caption": "Venice Harbor",
+      "locationId": "Venice",
+      "coordinates": {
+        "lng": 12.3155,
+        "lat": 45.4408
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "harbor",
+        "water",
+        "boats",
+        "landscape"
+      ]
+    },
+    {
+      "id": "it41",
+      "albumId": "italy",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Italy/venice-sailboat.jpg",
+      "caption": "Venice Sailboat",
+      "locationId": "Venice",
+      "coordinates": {
+        "lng": 12.3155,
+        "lat": 45.4408
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "sailboat",
+        "water",
+        "boat",
+        "transportation"
+      ]
+    },
+    {
+      "id": "it42",
+      "albumId": "italy",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Italy/venice-stmarks.jpg",
+      "caption": "Venice St. Mark's Square",
+      "locationId": "Venice",
+      "coordinates": {
+        "lng": 12.3155,
+        "lat": 45.4408
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "st marks",
+        "square",
+        "architecture",
+        "landmark"
+      ]
+    },
+    {
+      "id": "it43",
+      "albumId": "italy",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Italy/venice-tall-tower.jpg",
+      "caption": "Venice Tall Tower",
+      "locationId": "Venice",
+      "coordinates": {
+        "lng": 12.3155,
+        "lat": 45.4408
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "tower",
+        "architecture",
+        "historic",
+        "landmark"
+      ]
+    },
+    {
+      "id": "it44",
+      "albumId": "italy",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Italy/venice-tower-stmarks.jpg",
+      "caption": "Venice Tower at St. Mark's",
+      "locationId": "Venice",
+      "coordinates": {
+        "lng": 12.3155,
+        "lat": 45.4408
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "tower",
+        "st marks",
+        "architecture",
+        "landmark"
+      ]
+    },
+    {
+      "id": "it45",
+      "albumId": "italy",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Italy/venice-tower.jpg",
+      "caption": "Venice Tower",
+      "locationId": "Venice",
+      "coordinates": {
+        "lng": 12.3155,
+        "lat": 45.4408
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "tower",
+        "architecture",
+        "landmark",
+        "historic"
+      ]
+    },
+    {
+      "id": "it46",
+      "albumId": "italy",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Italy/sardinia-beach-boats.jpg",
+      "caption": "Sardinia Beach with Boats",
+      "locationId": "Sardinia",
+      "coordinates": {
+        "lng": 9.1217,
+        "lat": 39.2238
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "beach",
+        "boats",
+        "water",
+        "nature"
+      ]
+    },
+    {
+      "id": "it47",
+      "albumId": "italy",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Italy/sardinia-beach-rocks.jpg",
+      "caption": "Sardinia Beach with Rocks",
+      "locationId": "Sardinia",
+      "coordinates": {
+        "lng": 9.1217,
+        "lat": 39.2238
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "beach",
+        "rocks",
+        "nature",
+        "landscape"
+      ]
+    },
+    {
+      "id": "it48",
+      "albumId": "italy",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Italy/sardinia-beach.jpg",
+      "caption": "Sardinia Beach",
+      "locationId": "Sardinia",
+      "coordinates": {
+        "lng": 9.1217,
+        "lat": 39.2238
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "beach",
+        "nature",
+        "sand",
+        "sea"
+      ]
+    },
+    {
+      "id": "it49",
+      "albumId": "italy",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Italy/sardinia-bluebeach.jpg",
+      "caption": "Sardinia Blue Beach",
+      "locationId": "Sardinia",
+      "coordinates": {
+        "lng": 9.1217,
+        "lat": 39.2238
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "beach",
+        "blue water",
+        "sea",
+        "nature"
+      ]
+    },
+    {
+      "id": "it50",
+      "albumId": "italy",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Italy/sardinia-bluewater-boats.jpg",
+      "caption": "Sardinia Bluewater with Boats",
+      "locationId": "Sardinia",
+      "coordinates": {
+        "lng": 9.1217,
+        "lat": 39.2238
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "blue water",
+        "boats",
+        "sea",
+        "nature"
+      ]
+    },
+    {
+      "id": "it51",
+      "albumId": "italy",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Italy/sardinia-boats.jpg",
+      "caption": "Sardinia Boats",
+      "locationId": "Sardinia",
+      "coordinates": {
+        "lng": 9.1217,
+        "lat": 39.2238
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "boats",
+        "water",
+        "transportation",
+        "sea"
+      ]
+    },
+    {
+      "id": "it52",
+      "albumId": "italy",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Italy/sardinia-coast.jpg",
+      "caption": "Sardinia Coast",
+      "locationId": "Sardinia",
+      "coordinates": {
+        "lng": 9.1217,
+        "lat": 39.2238
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "coast",
+        "landscape",
+        "sea",
+        "nature"
+      ]
+    },
+    {
+      "id": "it53",
+      "albumId": "italy",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Italy/sardinia-flag-boat.jpg",
+      "caption": "Sardinia Flag Boat",
+      "locationId": "Sardinia",
+      "coordinates": {
+        "lng": 9.1217,
+        "lat": 39.2238
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "flag",
+        "boat",
+        "transportation",
+        "water"
+      ]
+    },
+    {
+      "id": "it54",
+      "albumId": "italy",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Italy/sardinia-rooftop-view.jpg",
+      "caption": "Sardinia Rooftop View",
+      "locationId": "Sardinia",
+      "coordinates": {
+        "lng": 9.1217,
+        "lat": 39.2238
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "rooftop",
+        "view",
+        "architecture",
+        "cityscape"
+      ]
+    },
+    {
+      "id": "it55",
+      "albumId": "italy",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Italy/sardinia-teal-boats.jpg",
+      "caption": "Sardinia Teal Boats",
+      "locationId": "Sardinia",
+      "coordinates": {
+        "lng": 9.1217,
+        "lat": 39.2238
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "teal",
+        "boats",
+        "water",
+        "colorful"
+      ]
+    },
+    {
+      "id": "it56",
+      "albumId": "italy",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Italy/sardinia-villa.jpg",
+      "caption": "Sardinia Villa",
+      "locationId": "Sardinia",
+      "coordinates": {
+        "lng": 9.1217,
+        "lat": 39.2238
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "villa",
+        "architecture",
+        "residential",
+        "historic"
+      ]
+    },
+    {
+      "id": "it57",
+      "albumId": "italy",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Italy/sardinia-water-boats.jpg",
+      "caption": "Sardinia Water Boats",
+      "locationId": "Sardinia",
+      "coordinates": {
+        "lng": 9.1217,
+        "lat": 39.2238
+      },
+      "dateCreated": "2024-03-17",
+      "tags": [
+        "water",
+        "boats",
+        "transportation",
+        "sea"
       ]
     },
     {
@@ -9037,6 +10567,747 @@
       },
       "dateCreated": "2024-03-18",
       "tags": ["two leopards", "coat", "chobe", "wildlife", "camouflage"]
+    },
+    {
+      "id": "sa001",
+      "albumId": "southafrica",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/South-Africa/capetown-beach-cliff.jpg",
+      "caption": "Cape Town Beach Cliff",
+      "locationId": "Cape Town",
+      "coordinates": {
+        "lng": 18.4241,
+        "lat": -33.9249
+      },
+      "dateCreated": "2018-09-16",
+      "tags": [
+        "beach",
+        "cliff",
+        "Cape Town",
+        "nature",
+        "rock"
+      ]
+    },
+    {
+      "id": "sa002",
+      "albumId": "southafrica",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/South-Africa/capetown-beach-cliffs.jpg",
+      "caption": "Cape Town Beach Cliffs",
+      "locationId": "Cape Town",
+      "coordinates": {
+        "lng": 18.4241,
+        "lat": -33.9249
+      },
+      "dateCreated": "2018-09-16",
+      "tags": [
+        "beach",
+        "cliffs",
+        "Cape Town",
+        "nature",
+        "landscape"
+      ]
+    },
+    {
+      "id": "sa003",
+      "albumId": "southafrica",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/South-Africa/capetown-beach-rocks.jpg",
+      "caption": "Cape Town Beach Rocks",
+      "locationId": "Cape Town",
+      "coordinates": {
+        "lng": 18.4241,
+        "lat": -33.9249
+      },
+      "dateCreated": "2018-09-16",
+      "tags": [
+        "beach",
+        "rocks",
+        "Cape Town",
+        "nature",
+        "landscape"
+      ]
+    },
+    {
+      "id": "sa004",
+      "albumId": "southafrica",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/South-Africa/capetown-beach-sundown.jpg",
+      "caption": "Cape Town Beach Sundown",
+      "locationId": "Cape Town",
+      "coordinates": {
+        "lng": 18.4241,
+        "lat": -33.9249
+      },
+      "dateCreated": "2018-09-16",
+      "tags": [
+        "beach",
+        "sundown",
+        "Cape Town",
+        "sunset",
+        "nature"
+      ]
+    },
+    {
+      "id": "sa005",
+      "albumId": "southafrica",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/South-Africa/capetown-beach-sunset.jpg",
+      "caption": "Cape Town Beach Sunset",
+      "locationId": "Cape Town",
+      "coordinates": {
+        "lng": 18.4241,
+        "lat": -33.9249
+      },
+      "dateCreated": "2018-09-16",
+      "tags": [
+        "beach",
+        "sunset",
+        "Cape Town",
+        "nature",
+        "landscape"
+      ]
+    },
+    {
+      "id": "sa006",
+      "albumId": "southafrica",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/South-Africa/capetown-beachside-cliff.jpg",
+      "caption": "Cape Town Beachside Cliff",
+      "locationId": "Cape Town",
+      "coordinates": {
+        "lng": 18.4241,
+        "lat": -33.9249
+      },
+      "dateCreated": "2018-09-16",
+      "tags": [
+        "beachside",
+        "cliff",
+        "Cape Town",
+        "nature",
+        "rock"
+      ]
+    },
+    {
+      "id": "sa007",
+      "albumId": "southafrica",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/South-Africa/capetown-boulder-stones.jpg",
+      "caption": "Cape Town Boulder Stones",
+      "locationId": "Cape Town",
+      "coordinates": {
+        "lng": 18.4241,
+        "lat": -33.9249
+      },
+      "dateCreated": "2018-09-16",
+      "tags": [
+        "boulder",
+        "stones",
+        "Cape Town",
+        "rock",
+        "nature"
+      ]
+    },
+    {
+      "id": "sa008",
+      "albumId": "southafrica",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/South-Africa/capetown-boulder.jpg",
+      "caption": "Cape Town Boulder",
+      "locationId": "Cape Town",
+      "coordinates": {
+        "lng": 18.4241,
+        "lat": -33.9249
+      },
+      "dateCreated": "2018-09-17",
+      "tags": [
+        "boulder",
+        "Cape Town",
+        "rock",
+        "nature",
+        "landscape"
+      ]
+    },
+    {
+      "id": "sa009",
+      "albumId": "southafrica",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/South-Africa/capetown-cliffs-beach.jpg",
+      "caption": "Cape Town Cliffs Beach",
+      "locationId": "Cape Town",
+      "coordinates": {
+        "lng": 18.4241,
+        "lat": -33.9249
+      },
+      "dateCreated": "2018-09-17",
+      "tags": [
+        "cliffs",
+        "beach",
+        "Cape Town",
+        "nature",
+        "landscape"
+      ]
+    },
+    {
+      "id": "sa010",
+      "albumId": "southafrica",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/South-Africa/capetown-cliffs-path.jpg",
+      "caption": "Cape Town Cliffs Path",
+      "locationId": "Cape Town",
+      "coordinates": {
+        "lng": 18.4241,
+        "lat": -33.9249
+      },
+      "dateCreated": "2018-09-17",
+      "tags": [
+        "cliffs",
+        "path",
+        "Cape Town",
+        "nature",
+        "hiking"
+      ]
+    },
+    {
+      "id": "sa011",
+      "albumId": "southafrica",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/South-Africa/capetown-cliffs.jpg",
+      "caption": "Cape Town Cliffs",
+      "locationId": "Cape Town",
+      "coordinates": {
+        "lng": 18.4241,
+        "lat": -33.9249
+      },
+      "dateCreated": "2018-09-17",
+      "tags": [
+        "cliffs",
+        "Cape Town",
+        "nature",
+        "rock",
+        "landscape"
+      ]
+    },
+    {
+      "id": "sa012",
+      "albumId": "southafrica",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/South-Africa/capetown-coast-beach.jpg",
+      "caption": "Cape Town Coast Beach",
+      "locationId": "Cape Town",
+      "coordinates": {
+        "lng": 18.4241,
+        "lat": -33.9249
+      },
+      "dateCreated": "2018-09-17",
+      "tags": [
+        "coast",
+        "beach",
+        "Cape Town",
+        "nature",
+        "landscape"
+      ]
+    },
+    {
+      "id": "sa013",
+      "albumId": "southafrica",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/South-Africa/capetown-coast.JPG",
+      "caption": "Cape Town Coast",
+      "locationId": "Cape Town",
+      "coordinates": {
+        "lng": 18.4241,
+        "lat": -33.9249
+      },
+      "dateCreated": "2018-09-17",
+      "tags": [
+        "coast",
+        "Cape Town",
+        "nature",
+        "landscape",
+        "water"
+      ]
+    },
+    {
+      "id": "sa014",
+      "albumId": "southafrica",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/South-Africa/capetown-goldcoast.jpg",
+      "caption": "Cape Town Gold Coast",
+      "locationId": "Cape Town",
+      "coordinates": {
+        "lng": 18.4241,
+        "lat": -33.9249
+      },
+      "dateCreated": "2018-09-17",
+      "tags": [
+        "Gold Coast",
+        "beach",
+        "Cape Town",
+        "nature",
+        "sunset"
+      ]
+    },
+    {
+      "id": "sa015",
+      "albumId": "southafrica",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/South-Africa/capetown-hike.jpg",
+      "caption": "Cape Town Hike",
+      "locationId": "Cape Town",
+      "coordinates": {
+        "lng": 18.4241,
+        "lat": -33.9249
+      },
+      "dateCreated": "2018-09-17",
+      "tags": [
+        "hike",
+        "Cape Town",
+        "nature",
+        "outdoor",
+        "adventure"
+      ]
+    },
+    {
+      "id": "sa016",
+      "albumId": "southafrica",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/South-Africa/capetown-muizenberg.jpg",
+      "caption": "Cape Town Muizenberg",
+      "locationId": "Cape Town",
+      "coordinates": {
+        "lng": 18.4750,
+        "lat": -34.0167
+      },
+      "dateCreated": "2018-09-18",
+      "tags": [
+        "Muizenberg",
+        "beach",
+        "surfing",
+        "Cape Town",
+        "coastal"
+      ]
+    },
+    {
+      "id": "sa017",
+      "albumId": "southafrica",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/South-Africa/capetown-muizenburg-shacks.jpg",
+      "caption": "Cape Town Muizenberg Shacks",
+      "locationId": "Cape Town",
+      "coordinates": {
+        "lng": 18.4750,
+        "lat": -34.0167
+      },
+      "dateCreated": "2018-09-18",
+      "tags": [
+        "Muizenberg",
+        "shacks",
+        "architecture",
+        "beach",
+        "Cape Town"
+      ]
+    },
+    {
+      "id": "sa018",
+      "albumId": "southafrica",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/South-Africa/capetown-ocean-highway.jpg",
+      "caption": "Cape Town Ocean Highway",
+      "locationId": "Cape Town",
+      "coordinates": {
+        "lng": 18.4667,
+        "lat": -33.9167
+      },
+      "dateCreated": "2018-09-18",
+      "tags": [
+        "Ocean Highway",
+        "road",
+        "Cape Town",
+        "nature",
+        "scenic"
+      ]
+    },
+    {
+      "id": "sa019",
+      "albumId": "southafrica",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/South-Africa/capetown-ocean.jpg",
+      "caption": "Cape Town Ocean",
+      "locationId": "Cape Town",
+      "coordinates": {
+        "lng": 18.4241,
+        "lat": -33.9249
+      },
+      "dateCreated": "2018-09-18",
+      "tags": [
+        "ocean",
+        "water",
+        "Cape Town",
+        "nature",
+        "sea"
+      ]
+    },
+    {
+      "id": "sa020",
+      "albumId": "southafrica",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/South-Africa/capetown-pano.jpg",
+      "caption": "Cape Town Panoramic View",
+      "locationId": "Cape Town",
+      "coordinates": {
+        "lng": 18.4241,
+        "lat": -33.9249
+      },
+      "dateCreated": "2018-09-18",
+      "tags": [
+        "panoramic",
+        "view",
+        "Cape Town",
+        "landscape",
+        "nature"
+      ]
+    },
+    {
+      "id": "sa021",
+      "albumId": "southafrica",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/South-Africa/capetown-penguin-crowd.jpg",
+      "caption": "Cape Town Penguin Crowd",
+      "locationId": "Cape Town",
+      "coordinates": {
+        "lng": 18.4232,
+        "lat": -34.0128
+      },
+      "dateCreated": "2018-09-18",
+      "tags": [
+        "penguins",
+        "crowd",
+        "Cape Town",
+        "wildlife",
+        "nature"
+      ]
+    },
+    {
+      "id": "sa022",
+      "albumId": "southafrica",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/South-Africa/capetown-penguinbeach.jpg",
+      "caption": "Cape Town Penguin Beach",
+      "locationId": "Cape Town",
+      "coordinates": {
+        "lng": 18.4232,
+        "lat": -34.0128
+      },
+      "dateCreated": "2018-09-18",
+      "tags": [
+        "penguins",
+        "beach",
+        "Cape Town",
+        "wildlife",
+        "nature"
+      ]
+    },
+    {
+      "id": "sa023",
+      "albumId": "southafrica",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/South-Africa/capetown-penguins-rocks.jpg",
+      "caption": "Cape Town Penguins Rocks",
+      "locationId": "Cape Town",
+      "coordinates": {
+        "lng": 18.4232,
+        "lat": -34.0128
+      },
+      "dateCreated": "2018-09-18",
+      "tags": [
+        "penguins",
+        "rocks",
+        "Cape Town",
+        "wildlife",
+        "nature"
+      ]
+    },
+    {
+      "id": "sa024",
+      "albumId": "southafrica",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/South-Africa/capetown-penguins.jpg",
+      "caption": "Cape Town Penguins",
+      "locationId": "Cape Town",
+      "coordinates": {
+        "lng": 18.4232,
+        "lat": -34.0128
+      },
+      "dateCreated": "2018-09-19",
+      "tags": [
+        "penguins",
+        "wildlife",
+        "Cape Town",
+        "nature",
+        "animals"
+      ]
+    },
+    {
+      "id": "sa025",
+      "albumId": "southafrica",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/South-Africa/capetown-rocks-ocean.jpg",
+      "caption": "Cape Town Rocks and Ocean",
+      "locationId": "Cape Town",
+      "coordinates": {
+        "lng": 18.4241,
+        "lat": -33.9249
+      },
+      "dateCreated": "2018-09-19",
+      "tags": [
+        "rocks",
+        "ocean",
+        "Cape Town",
+        "nature",
+        "landscape"
+      ]
+    },
+    {
+      "id": "sa026",
+      "albumId": "southafrica",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/South-Africa/capetown-tablemountain-animal.jpg",
+      "caption": "Cape Town Table Mountain Animal",
+      "locationId": "Cape Town",
+      "coordinates": {
+        "lng": 18.4241,
+        "lat": -33.9249
+      },
+      "dateCreated": "2018-09-19",
+      "tags": [
+        "Table Mountain",
+        "animal",
+        "Cape Town",
+        "wildlife",
+        "nature"
+      ]
+    },
+    {
+      "id": "sa027",
+      "albumId": "southafrica",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/South-Africa/capetown-tablemountain-cablecar.jpg",
+      "caption": "Cape Town Table Mountain Cable Car",
+      "locationId": "Cape Town",
+      "coordinates": {
+        "lng": 18.4256,
+        "lat": -33.9626
+      },
+      "dateCreated": "2018-09-19",
+      "tags": [
+        "Table Mountain",
+        "cable car",
+        "Cape Town",
+        "transportation",
+        "landmark"
+      ]
+    },
+    {
+      "id": "sa028",
+      "albumId": "southafrica",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/South-Africa/capetown-tablemountain-cables.jpg",
+      "caption": "Cape Town Table Mountain Cables",
+      "locationId": "Cape Town",
+      "coordinates": {
+        "lng": 18.4256,
+        "lat": -33.9626
+      },
+      "dateCreated": "2018-09-19",
+      "tags": [
+        "Table Mountain",
+        "cables",
+        "Cape Town",
+        "transportation",
+        "landmark"
+      ]
+    },
+    {
+      "id": "sa029",
+      "albumId": "southafrica",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/South-Africa/capetown-tablemountain-face.jpg",
+      "caption": "Cape Town Table Mountain Face",
+      "locationId": "Cape Town",
+      "coordinates": {
+        "lng": 18.4256,
+        "lat": -33.9626
+      },
+      "dateCreated": "2018-09-19",
+      "tags": [
+        "Table Mountain",
+        "face",
+        "Cape Town",
+        "landscape",
+        "nature"
+      ]
+    },
+    {
+      "id": "sa030",
+      "albumId": "southafrica",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/South-Africa/capetown-tablemountain-fog.jpg",
+      "caption": "Cape Town Table Mountain Fog",
+      "locationId": "Cape Town",
+      "coordinates": {
+        "lng": 18.4256,
+        "lat": -33.9626
+      },
+      "dateCreated": "2018-09-19",
+      "tags": [
+        "Table Mountain",
+        "fog",
+        "Cape Town",
+        "nature",
+        "atmosphere"
+      ]
+    },
+    {
+      "id": "sa031",
+      "albumId": "southafrica",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/South-Africa/capetown-tablemountain-pano.jpg",
+      "caption": "Cape Town Table Mountain Panoramic View",
+      "locationId": "Cape Town",
+      "coordinates": {
+        "lng": 18.4256,
+        "lat": -33.9626
+      },
+      "dateCreated": "2018-09-20",
+      "tags": [
+        "Table Mountain",
+        "panoramic",
+        "Cape Town",
+        "landscape",
+        "nature"
+      ]
+    },
+    {
+      "id": "sa032",
+      "albumId": "southafrica",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/South-Africa/capetown-tablemountain.jpg",
+      "caption": "Cape Town Table Mountain",
+      "locationId": "Cape Town",
+      "coordinates": {
+        "lng": 18.4256,
+        "lat": -33.9626
+      },
+      "dateCreated": "2018-09-20",
+      "tags": [
+        "Table Mountain",
+        "Cape Town",
+        "landmark",
+        "nature",
+        "mountain"
+      ]
+    },
+    {
+      "id": "sa033",
+      "albumId": "southafrica",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/South-Africa/capetown-vineyard-red.jpg",
+      "caption": "Cape Town Vineyard Red",
+      "locationId": "Cape Town",
+      "coordinates": {
+        "lng": 18.4241,
+        "lat": -33.9249
+      },
+      "dateCreated": "2018-09-20",
+      "tags": [
+        "vineyard",
+        "red wine",
+        "Cape Town",
+        "agriculture",
+        "nature"
+      ]
+    },
+    {
+      "id": "sa034",
+      "albumId": "southafrica",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/South-Africa/capetown-vineyard-white.jpg",
+      "caption": "Cape Town Vineyard White",
+      "locationId": "Cape Town",
+      "coordinates": {
+        "lng": 18.4241,
+        "lat": -33.9249
+      },
+      "dateCreated": "2018-09-20",
+      "tags": [
+        "vineyard",
+        "white wine",
+        "Cape Town",
+        "agriculture",
+        "nature"
+      ]
+    },
+    {
+      "id": "sa035",
+      "albumId": "southafrica",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/South-Africa/capetown-vineyard.jpg",
+      "caption": "Cape Town Vineyard",
+      "locationId": "Cape Town",
+      "coordinates": {
+        "lng": 18.4241,
+        "lat": -33.9249
+      },
+      "dateCreated": "2018-09-20",
+      "tags": [
+        "vineyard",
+        "Cape Town",
+        "agriculture",
+        "nature",
+        "wine"
+      ]
+    },
+    {
+      "id": "sa036",
+      "albumId": "southafrica",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/South-Africa/capetown-vineyards.jpg",
+      "caption": "Cape Town Vineyards",
+      "locationId": "Cape Town",
+      "coordinates": {
+        "lng": 18.4241,
+        "lat": -33.9249
+      },
+      "dateCreated": "2018-09-20",
+      "tags": [
+        "vineyards",
+        "Cape Town",
+        "agriculture",
+        "nature",
+        "wine"
+      ]
+    },
+    {
+      "id": "sa037",
+      "albumId": "southafrica",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/South-Africa/capetown-vista.jpg",
+      "caption": "Cape Town Vista",
+      "locationId": "Cape Town",
+      "coordinates": {
+        "lng": 18.4241,
+        "lat": -33.9249
+      },
+      "dateCreated": "2018-09-20",
+      "tags": [
+        "vista",
+        "view",
+        "Cape Town",
+        "landscape",
+        "nature"
+      ]
+    },
+    {
+      "id": "sa038",
+      "albumId": "southafrica",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/South-Africa/capetown-waves-beach.jpg",
+      "caption": "Cape Town Waves Beach",
+      "locationId": "Cape Town",
+      "coordinates": {
+        "lng": 18.4241,
+        "lat": -33.9249
+      },
+      "dateCreated": "2018-09-21",
+      "tags": [
+        "waves",
+        "beach",
+        "Cape Town",
+        "nature",
+        "sea"
+      ]
+    },
+    {
+      "id": "sa039",
+      "albumId": "southafrica",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/South-Africa/capetown-waves.jpg",
+      "caption": "Cape Town Waves",
+      "locationId": "Cape Town",
+      "coordinates": {
+        "lng": 18.4241,
+        "lat": -33.9249
+      },
+      "dateCreated": "2018-09-21",
+      "tags": [
+        "waves",
+        "Cape Town",
+        "nature",
+        "sea",
+        "water"
+      ]
     }
   ]
 }

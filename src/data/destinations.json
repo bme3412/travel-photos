@@ -679,6 +679,38 @@
         "description": "Explored the medieval old town, enjoyed local Provençal cuisine, and visited the weekly markets.",
         "latitude": 43.6947,
         "longitude": 5.5047
+      },
+      {
+        "id": "86",
+        "name": "Johannesburg",
+        "country": "South Africa",
+        "description": "Vibrant metropolis featuring the Apartheid Museum, Constitution Hill, and bustling neighborhoods like Maboneng and Sandton.",
+        "latitude": -26.2041,
+        "longitude": 28.0473
+      },
+      {
+        "id": "87",
+        "name": "Cape Town",
+        "country": "South Africa",
+        "description": "Coastal city known for Table Mountain, Robben Island, Victoria & Alfred Waterfront, and stunning beaches along the Cape Peninsula.",
+        "latitude": -33.9249,
+        "longitude": 18.4241
+      },
+      {
+        "id": "88",
+        "name": "Nantucket",
+        "country": "United States",
+        "description": "Historic New England island featuring pristine beaches, cobblestone streets, whaling history, and charming lighthouses.",
+        "latitude": 41.2835,
+        "longitude": -70.0995
+      },
+      {
+        "id": "89",
+        "name": "Orlando",
+        "country": "United States",
+        "description": "Home to world-famous theme parks including Walt Disney World and Universal Studios, with vibrant downtown arts and culture scene.",
+        "latitude": 28.5384,
+        "longitude": -81.3789
       }
     ]
   }
