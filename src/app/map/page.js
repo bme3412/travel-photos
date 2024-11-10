@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect, useCallback } from 'react';
 import Map, { Source, Layer, Marker, Popup } from 'react-map-gl';
-import { MapPin, CircleDot } from 'lucide-react';
+import { MapPin, CircleDot, Maximize2, Minimize2 } from 'lucide-react';
 import Link from 'next/link';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import { countryToISO } from '../utils/countryMapping';
@@ -24,10 +24,7 @@ const CustomMarker = ({ onClick, onMouseEnter, onMouseLeave, isHovered }) => (
     onMouseEnter={onMouseEnter}
     onMouseLeave={onMouseLeave}
   >
-    {/* Outer ring with pulse animation */}
     <div className="absolute -inset-1 bg-indigo-500/30 rounded-full animate-pulse" />
-    
-    {/* Main marker with gradient background */}
     <div className={`relative p-1 rounded-full shadow-lg transform transition-all duration-200 ${
       isHovered ? 'scale-125' : 'hover:scale-110'
     }`}
@@ -36,8 +33,6 @@ const CustomMarker = ({ onClick, onMouseEnter, onMouseLeave, isHovered }) => (
          }}>
       <CircleDot className="h-2 w-2 text-white" />
     </div>
-    
-    {/* Inner dot */}
     <div className="absolute inset-0 flex items-center justify-center">
       <div className="h-1 w-1 bg-white rounded-full shadow-inner" />
     </div>
@@ -47,12 +42,12 @@ const CustomMarker = ({ onClick, onMouseEnter, onMouseLeave, isHovered }) => (
 const MapPage = () => {
   const [mapRef, setMapRef] = useState(null);
   const [viewport, setViewport] = useState({
-    latitude: 30,
+    latitude: 20,
     longitude: 0,
-    zoom: 1.7,
+    zoom: 1.2,
     projection: 'mercator'
   });
-
+  const [isPoppedOut, setIsPoppedOut] = useState(false);
   const [destinations, setDestinations] = useState([]);
   const [visitedCountries, setVisitedCountries] = useState({});
   const [hoveredDestination, setHoveredDestination] = useState(null);
@@ -82,6 +77,22 @@ const MapPage = () => {
     });
   }, [mapRef]);
 
+  useEffect(() => {
+    // Resize map after pop-out animation completes
+    const timer = setTimeout(() => {
+      if (mapRef) {
+        mapRef.resize();
+      }
+    }, 300);
+    return () => clearTimeout(timer);
+  }, [isPoppedOut, mapRef]);
+
+  const togglePopOut = () => {
+    setIsPoppedOut(!isPoppedOut);
+    // Prevent scroll when popped out
+    document.body.style.overflow = !isPoppedOut ? 'hidden' : 'auto';
+  };
+
   const countryLayer = {
     id: 'country-layer',
     type: 'fill',
@@ -105,8 +116,8 @@ const MapPage = () => {
     }
   };
 
-  return (
-    <div className="h-screen w-screen relative">
+  const mapContent = (
+    <>
       <div className="absolute top-4 right-4 z-10 flex flex-col gap-2">
         {Object.keys(REGIONS).map((region) => (
           <button
@@ -119,16 +130,36 @@ const MapPage = () => {
             {region}
           </button>
         ))}
+        <button
+          onClick={togglePopOut}
+          className="bg-white/90 backdrop-blur-sm px-4 py-2 rounded-lg text-indigo-600 
+                   hover:text-indigo-800 hover:bg-white shadow-md transition-all duration-200 
+                   whitespace-nowrap text-sm font-medium flex items-center gap-2"
+        >
+          {isPoppedOut ? (
+            <>
+              <Minimize2 className="h-4 w-4" />
+              <span>Close Pop-out</span>
+            </>
+          ) : (
+            <>
+              <Maximize2 className="h-4 w-4" />
+              <span>Pop-out Map</span>
+            </>
+          )}
+        </button>
       </div>
 
-      <Link 
-        href="/" 
-        className="absolute top-4 left-4 z-10 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full 
-                   text-indigo-600 hover:text-indigo-800 shadow-md transition-colors duration-200 
-                   flex items-center gap-2"
-      >
-        ← Back
-      </Link>
+      {!isPoppedOut && (
+        <Link 
+          href="/" 
+          className="absolute top-4 left-4 z-10 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full 
+                     text-indigo-600 hover:text-indigo-800 shadow-md transition-colors duration-200 
+                     flex items-center gap-2"
+        >
+          ← Back
+        </Link>
+      )}
 
       <Map
         ref={setMapRef}
@@ -194,6 +225,22 @@ const MapPage = () => {
           </React.Fragment>
         ))}
       </Map>
+    </>
+  );
+
+  if (isPoppedOut) {
+    return (
+      <div className="fixed inset-0 z-50 bg-gray-950/20 backdrop-blur-sm">
+        <div className="absolute inset-4 bg-white rounded-xl shadow-2xl overflow-hidden transition-all duration-300 ease-in-out transform">
+          {mapContent}
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div className="h-screen w-screen relative">
+      {mapContent}
     </div>
   );
 };
