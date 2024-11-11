@@ -127,6 +127,16 @@ const PhotoAlbumExplorer = () => {
       botswana: photos.find((p) => p.url.includes("chobe-three-giraffes-pose.jpg")),
       southafrica: photos.find((p) => p.url.includes("capetown-beach-sunset.jpg")),
       belize: photos.find((p) => p.url.includes("belize-sun-hut-palm.jpg")),
+      guatemala: photos.find((p) => p.url.includes("guatemala-tikal-5_rotated.jpg")),
+      australia: photos.find((p) => p.url.includes("sydney-opera-house2.jpg")),
+      china: photos.find((p) => p.url.includes("shanghai-skyline.jpg")),
+      japan: photos.find((p) => p.url.includes("tokyo-tower.jpg")),
+      thailand: photos.find((p) => p.url.includes("phuket-boat.jpg")),
+      vatican: photos.find((p) => p.url.includes("vatican-view.jpg")),
+      austria: photos.find((p) => p.url.includes("austria-palace.jpg")),
+      hungary: photos.find((p) => p.url.includes("budapest-bath.jpg")),
+      netherlands: photos.find((p) => p.url.includes("amsterdam-canals.jpg")),
+      finland: photos.find((p) => p.url.includes("helsinki-cathedral-clean.jpg")),
       brazil: photos.find(
         (p) => p.url.includes("helicopter-beach-sugarloaf.jpg") ||
               p.url.includes("/Brazil/helicopter-beach-sugarloaf.jpg")

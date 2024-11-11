@@ -12465,6 +12465,1618 @@
       },
       "dateCreated": "2024-04-01",
       "tags": ["sunset", "sail", "Belize", "boats"]
+    },
+    {
+      "id": "gt001",
+      "albumId": "guatemala",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Guatemala/guatemala-tikal-3_rotated.jpg",
+      "caption": "Guatemala Tikal 3",
+      "locationId": "Guatemala",
+      "coordinates": {
+        "lat": 17.2231,
+        "lng": -89.6237
+      },
+      "dateCreated": "2024-04-01",
+      "tags": ["Tikal", "Guatemala", "archaeology", "ruins"]
+    },
+    {
+      "id": "gt002",
+      "albumId": "guatemala",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Guatemala/guatemala-tikal-4_rotated.jpg",
+      "caption": "Guatemala Tikal 4",
+      "locationId": "Guatemala",
+      "coordinates": {
+        "lat": 17.2231,
+        "lng": -89.6237
+      },
+      "dateCreated": "2024-04-02",
+      "tags": ["Tikal", "Guatemala", "temple", "historic site"]
+    },
+    {
+      "id": "gt003",
+      "albumId": "guatemala",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Guatemala/guatemala-tikal-5_rotated.jpg",
+      "caption": "Guatemala Tikal 5",
+      "locationId": "Guatemala",
+      "coordinates": {
+        "lat": 17.2231,
+        "lng": -89.6237
+      },
+      "dateCreated": "2024-04-03",
+      "tags": ["Tikal", "Guatemala", "jungle", "exploration"]
+    },
+    {
+      "id": "gt004",
+      "albumId": "guatemala",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Guatemala/guatemala-tikal-6_rotated.jpg",
+      "caption": "Guatemala Tikal 6",
+      "locationId": "Guatemala",
+      "coordinates": {
+        "lat": 17.2231,
+        "lng": -89.6237
+      },
+      "dateCreated": "2024-04-04",
+      "tags": ["Tikal", "Guatemala", "sunrise", "nature"]
+    },
+    {
+      "id": "gt005",
+      "albumId": "guatemala",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Guatemala/guatemala-tikal-center.jpg",
+      "caption": "Guatemala Tikal Center",
+      "locationId": "Guatemala",
+      "coordinates": {
+        "lat": 17.2231,
+        "lng": -89.6237
+      },
+      "dateCreated": "2024-04-05",
+      "tags": ["Tikal", "Guatemala", "central plaza", "architecture"]
+    },
+    {
+      "id": "gt006",
+      "albumId": "guatemala",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Guatemala/guatemala-tikal-floor.jpg",
+      "caption": "Guatemala Tikal Floor",
+      "locationId": "Guatemala",
+      "coordinates": {
+        "lat": 17.2231,
+        "lng": -89.6237
+      },
+      "dateCreated": "2024-04-06",
+      "tags": ["Tikal", "Guatemala", "floor mosaic", "detail"]
+    },
+    {
+      "id": "gt007",
+      "albumId": "guatemala",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Guatemala/guatemala-tikal-pano_rotated.jpg",
+      "caption": "Guatemala Tikal Panorama",
+      "locationId": "Guatemala",
+      "coordinates": {
+        "lat": 17.2231,
+        "lng": -89.6237
+      },
+      "dateCreated": "2024-04-07",
+      "tags": ["Tikal", "Guatemala", "panorama", "view"]
+    },
+    {
+      "id": "gt008",
+      "albumId": "guatemala",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Guatemala/guatemala-tikal-side.jpg",
+      "caption": "Guatemala Tikal Side View",
+      "locationId": "Guatemala",
+      "coordinates": {
+        "lat": 17.2231,
+        "lng": -89.6237
+      },
+      "dateCreated": "2024-04-08",
+      "tags": ["Tikal", "Guatemala", "side view", "structure"]
+    },
+    {
+      "id": "gt009",
+      "albumId": "guatemala",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Guatemala/guatemala-tikal-upclose_rotated.jpg",
+      "caption": "Guatemala Tikal Up Close",
+      "locationId": "Guatemala",
+      "coordinates": {
+        "lat": 17.2231,
+        "lng": -89.6237
+      },
+      "dateCreated": "2024-04-09",
+      "tags": ["Tikal", "Guatemala", "close-up", "details"]
+    },
+    {
+      "id": "gt010",
+      "albumId": "guatemala",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Guatemala/guatemala-tikal_rotated.jpg",
+      "caption": "Guatemala Tikal Main View",
+      "locationId": "Guatemala",
+      "coordinates": {
+        "lat": 17.2231,
+        "lng": -89.6237
+      },
+      "dateCreated": "2024-04-10",
+      "tags": ["Tikal", "Guatemala", "main view", "landscape"]
+    },
+    {
+      "id": "gt011",
+      "albumId": "guatemala",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Guatemala/guatemala-tikal2.jpg",
+      "caption": "Guatemala Tikal Alternate View",
+      "locationId": "Guatemala",
+      "coordinates": {
+        "lat": 17.2231,
+        "lng": -89.6237
+      },
+      "dateCreated": "2024-04-11",
+      "tags": ["Tikal", "Guatemala", "alternate view", "exploration"]
+    },
+    {
+      "id": "au001",
+      "albumId": "australia",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Australia/cairns-crocodile.jpg",
+      "caption": "Cairns Crocodile",
+      "locationId": "Cairns",
+      "coordinates": {
+        "lat": -16.9186,
+        "lng": 145.7781
+      },
+      "dateCreated": "2024-01-15",
+      "tags": ["Cairns", "Crocodile", "Wildlife", "Nature"]
+    },
+    {
+      "id": "au002",
+      "albumId": "australia",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Australia/cairns-green-island.jpg",
+      "caption": "Cairns Green Island",
+      "locationId": "Green Island",
+      "coordinates": {
+        "lat": -16.7363,
+        "lng": 145.7565
+      },
+      "dateCreated": "2024-01-16",
+      "tags": ["Cairns", "Green Island", "Island", "Beach"]
+    },
+    {
+      "id": "au003",
+      "albumId": "australia",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Australia/cairns-harbor.jpg",
+      "caption": "Cairns Harbor",
+      "locationId": "Cairns Harbor",
+      "coordinates": {
+        "lat": -16.9203,
+        "lng": 145.7781
+      },
+      "dateCreated": "2024-01-17",
+      "tags": ["Cairns", "Harbor", "Cityscape", "Waterfront"]
+    },
+    {
+      "id": "au004",
+      "albumId": "australia",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Australia/cairns-pool.jpg",
+      "caption": "Cairns Pool",
+      "locationId": "Cairns",
+      "coordinates": {
+        "lat": -16.9186,
+        "lng": 145.7781
+      },
+      "dateCreated": "2024-01-18",
+      "tags": ["Cairns", "Pool", "Relaxation", "Resort"]
+    },
+    {
+      "id": "au005",
+      "albumId": "australia",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Australia/cairns-seafood.jpg",
+      "caption": "Cairns Seafood",
+      "locationId": "Cairns",
+      "coordinates": {
+        "lat": -16.9186,
+        "lng": 145.7781
+      },
+      "dateCreated": "2024-01-19",
+      "tags": ["Cairns", "Seafood", "Cuisine", "Dining"]
+    },
+    {
+      "id": "au006",
+      "albumId": "australia",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Australia/great-barrier-reef-sailing.jpg",
+      "caption": "Great Barrier Reef Sailing",
+      "locationId": "Great Barrier Reef",
+      "coordinates": {
+        "lat": -18.2871,
+        "lng": 147.6992
+      },
+      "dateCreated": "2024-02-10",
+      "tags": ["Great Barrier Reef", "Sailing", "Marine Life", "Adventure"]
+    },
+    {
+      "id": "au007",
+      "albumId": "australia",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Australia/sydney-harbor-bridge-2.jpg",
+      "caption": "Sydney Harbor Bridge 2",
+      "locationId": "Sydney",
+      "coordinates": {
+        "lat": -33.8523,
+        "lng": 151.2108
+      },
+      "dateCreated": "2024-03-05",
+      "tags": ["Sydney", "Harbor Bridge", "Landmark", "Cityscape"]
+    },
+    {
+      "id": "au008",
+      "albumId": "australia",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Australia/sydney-harbor-bridge-under.jpg",
+      "caption": "Sydney Harbor Bridge Under",
+      "locationId": "Sydney Harbor",
+      "coordinates": {
+        "lat": -33.8523,
+        "lng": 151.2108
+      },
+      "dateCreated": "2024-03-06",
+      "tags": ["Sydney", "Harbor Bridge", "Under Bridge", "Architecture"]
+    },
+    {
+      "id": "au009",
+      "albumId": "australia",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Australia/sydney-opera-house2.jpg",
+      "caption": "Sydney Opera House 2",
+      "locationId": "Sydney",
+      "coordinates": {
+        "lat": -33.8568,
+        "lng": 151.2153
+      },
+      "dateCreated": "2024-03-07",
+      "tags": ["Sydney", "Opera House", "Architecture", "Cultural"]
+    },
+    {
+      "id": "au010",
+      "albumId": "australia",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Australia/sydney-harbor-bridge.jpg",
+      "caption": "Sydney Harbor Bridge",
+      "locationId": "Sydney",
+      "coordinates": {
+        "lat": -33.8523,
+        "lng": 151.2108
+      },
+      "dateCreated": "2024-03-08",
+      "tags": ["Sydney", "Harbor Bridge", "Landmark", "Sunset"]
+    },
+    {
+      "id": "au011",
+      "albumId": "australia",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Australia/sydney-opera-house.jpg",
+      "caption": "Sydney Opera House",
+      "locationId": "Sydney",
+      "coordinates": {
+        "lat": -33.8568,
+        "lng": 151.2153
+      },
+      "dateCreated": "2024-03-09",
+      "tags": ["Sydney", "Opera House", "Iconic", "Nightscape"]
+    },
+    {
+      "id": "cn001",
+      "albumId": "china",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/China/beijing-bird-nest.jpg",
+      "caption": "Beijing Bird's Nest",
+      "locationId": "Beijing National Stadium",
+      "coordinates": {
+        "lat": 39.9923,
+        "lng": 116.3967
+      },
+      "dateCreated": "2024-04-15",
+      "tags": ["Beijing", "Bird's Nest", "Stadium", "Architecture"]
+    },
+    {
+      "id": "cn002",
+      "albumId": "china",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/China/beijing-gold-tower.jpg",
+      "caption": "Beijing Gold Tower",
+      "locationId": "Beijing",
+      "coordinates": {
+        "lat": 39.9042,
+        "lng": 116.4074
+      },
+      "dateCreated": "2024-04-16",
+      "tags": ["Beijing", "Gold Tower", "Skyscraper", "Cityscape"]
+    },
+    {
+      "id": "cn003",
+      "albumId": "china",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/China/beijing-mao.jpg",
+      "caption": "Beijing Mao",
+      "locationId": "Beijing",
+      "coordinates": {
+        "lat": 39.9042,
+        "lng": 116.4074
+      },
+      "dateCreated": "2024-04-17",
+      "tags": ["Beijing", "Mao", "Statue", "Historical"]
+    },
+    {
+      "id": "cn004",
+      "albumId": "china",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/China/beijing-pool-olympics.jpg",
+      "caption": "Beijing Olympic Pool",
+      "locationId": "Beijing Olympic Park",
+      "coordinates": {
+        "lat": 39.9896,
+        "lng": 116.3131
+      },
+      "dateCreated": "2024-04-18",
+      "tags": ["Beijing", "Olympic Pool", "Aquatics", "Sports"]
+    },
+    {
+      "id": "cn005",
+      "albumId": "china",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/China/beijing-pool.jpg",
+      "caption": "Beijing Pool",
+      "locationId": "Beijing",
+      "coordinates": {
+        "lat": 39.9042,
+        "lng": 116.4074
+      },
+      "dateCreated": "2024-04-19",
+      "tags": ["Beijing", "Pool", "Relaxation", "Resort"]
+    },
+    {
+      "id": "cn006",
+      "albumId": "china",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/China/beijing-temple-heaven.jpg",
+      "caption": "Beijing Temple of Heaven",
+      "locationId": "Temple of Heaven",
+      "coordinates": {
+        "lat": 39.8834,
+        "lng": 116.4142
+      },
+      "dateCreated": "2024-04-20",
+      "tags": ["Beijing", "Temple of Heaven", "Temple", "Cultural"]
+    },
+    {
+      "id": "cn007",
+      "albumId": "china",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/China/beijing-water-cube.jpg",
+      "caption": "Beijing Water Cube",
+      "locationId": "Beijing National Aquatics Center",
+      "coordinates": {
+        "lat": 39.9450,
+        "lng": 116.3885
+      },
+      "dateCreated": "2024-04-21",
+      "tags": ["Beijing", "Water Cube", "Aquatics Center", "Architecture"]
+    },
+    {
+      "id": "cn008",
+      "albumId": "china",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/China/shanghai-nights.jpg",
+      "caption": "Shanghai Nights",
+      "locationId": "Shanghai",
+      "coordinates": {
+        "lat": 31.2304,
+        "lng": 121.4737
+      },
+      "dateCreated": "2024-05-01",
+      "tags": ["Shanghai", "Nightscape", "City Lights", "Skyline"]
+    },
+    {
+      "id": "cn009",
+      "albumId": "china",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/China/shanghai-skyline.jpg",
+      "caption": "Shanghai Skyline",
+      "locationId": "Lujiazui, Shanghai",
+      "coordinates": {
+        "lat": 31.2345,
+        "lng": 121.5014
+      },
+      "dateCreated": "2024-05-02",
+      "tags": ["Shanghai", "Skyline", "Skyscrapers", "Modern Architecture"]
+    },
+    {
+      "id": "cn010",
+      "albumId": "china",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/China/shanghai-tower.jpg",
+      "caption": "Shanghai Tower",
+      "locationId": "Shanghai Tower",
+      "coordinates": {
+        "lat": 31.2336,
+        "lng": 121.5055
+      },
+      "dateCreated": "2024-05-03",
+      "tags": ["Shanghai", "Shanghai Tower", "Skyscraper", "Architecture"]
+    },
+    {
+      "id": "jp001",
+      "albumId": "japan",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Japan/sensoji-shrine.jpg",
+      "caption": "Sensoji Shrine",
+      "locationId": "Sensoji Temple",
+      "coordinates": {
+        "lat": 35.7148,
+        "lng": 139.7967
+      },
+      "dateCreated": "2024-06-01",
+      "tags": ["Tokyo", "Sensoji Shrine", "Temple", "Cultural"]
+    },
+    {
+      "id": "jp002",
+      "albumId": "japan",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Japan/sushi.jpg",
+      "caption": "Delicious Sushi",
+      "locationId": "Tokyo",
+      "coordinates": {
+        "lat": 35.6895,
+        "lng": 139.6917
+      },
+      "dateCreated": "2024-06-02",
+      "tags": ["Tokyo", "Sushi", "Cuisine", "Japanese Food"]
+    },
+    {
+      "id": "jp003",
+      "albumId": "japan",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Japan/tokyo-tower.jpg",
+      "caption": "Tokyo Tower",
+      "locationId": "Tokyo Tower",
+      "coordinates": {
+        "lat": 35.6586,
+        "lng": 139.7454
+      },
+      "dateCreated": "2024-06-03",
+      "tags": ["Tokyo", "Tokyo Tower", "Landmark", "Cityscape"]
+    },
+    {
+      "id": "id001",
+      "albumId": "indonesia",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Indonesia/gili-meno-beach.jpg",
+      "caption": "Gili Meno Beach",
+      "locationId": "Gili Meno Beach",
+      "coordinates": {
+        "lat": -8.5167,
+        "lng": 116.1
+      },
+      "dateCreated": "2024-06-04",
+      "tags": ["Indonesia", "Lombok", "Gili Meno", "Beach", "Paradise"]
+    },
+    {
+      "id": "id002",
+      "albumId": "indonesia",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Indonesia/gili-meno-bungalow.jpg",
+      "caption": "Gili Meno Bungalow",
+      "locationId": "Gili Meno Bungalow",
+      "coordinates": {
+        "lat": -8.5167,
+        "lng": 116.1
+      },
+      "dateCreated": "2024-06-05",
+      "tags": ["Indonesia", "Lombok", "Gili Meno", "Bungalow", "Relaxation"]
+    },
+    {
+      "id": "id003",
+      "albumId": "indonesia",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Indonesia/gili-meno-hut.jpg",
+      "caption": "Gili Meno Hut",
+      "locationId": "Gili Meno Hut",
+      "coordinates": {
+        "lat": -8.5167,
+        "lng": 116.1
+      },
+      "dateCreated": "2024-06-06",
+      "tags": ["Indonesia", "Lombok", "Gili Meno", "Hut", "Seaside"]
+    },
+    {
+      "id": "id004",
+      "albumId": "indonesia",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Indonesia/gilimeno.jpg",
+      "caption": "Gili Meno Panorama",
+      "locationId": "Gili Meno",
+      "coordinates": {
+        "lat": -8.5167,
+        "lng": 116.1
+      },
+      "dateCreated": "2024-06-07",
+      "tags": ["Indonesia", "Lombok", "Gili Meno", "Panorama", "Scenery"]
+    },
+    {
+      "id": "id005",
+      "albumId": "indonesia",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Indonesia/kuta-lombok.jpg",
+      "caption": "Kuta Lombok",
+      "locationId": "Kuta, Lombok",
+      "coordinates": {
+        "lat": -8.7130,
+        "lng": 116.3116
+      },
+      "dateCreated": "2024-06-08",
+      "tags": ["Indonesia", "Lombok", "Kuta", "Beach", "Surfing"]
+    },
+    {
+      "id": "id006",
+      "albumId": "indonesia",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Indonesia/lombok.jpg",
+      "caption": "Lombok Island",
+      "locationId": "Lombok",
+      "coordinates": {
+        "lat": -8.4,
+        "lng": 116.3
+      },
+      "dateCreated": "2024-06-09",
+      "tags": ["Indonesia", "Lombok", "Island", "Nature", "Adventure"]
+    },
+    {
+      "id": "id001",
+      "albumId": "thailand",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Thailand/phuket-beach-sail.jpg",
+      "caption": "Phuket Beach Sail",
+      "locationId": "Phuket",
+      "coordinates": {
+        "lat": 7.8804,
+        "lng": 98.3923
+      },
+      "dateCreated": "2024-11-10",
+      "tags": ["Thailand", "Phuket", "Beach", "Sailing", "Nature"]
+    },
+    {
+      "id": "id002",
+      "albumId": "thailand",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Thailand/phuket-beach-sand.jpg",
+      "caption": "Phuket Beach Sand",
+      "locationId": "Phuket",
+      "coordinates": {
+        "lat": 7.8804,
+        "lng": 98.3923
+      },
+      "dateCreated": "2024-11-10",
+      "tags": ["Thailand", "Phuket", "Beach", "Sand", "Relaxation"]
+    },
+    {
+      "id": "id003",
+      "albumId": "thailand",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Thailand/phuket-beach.jpg",
+      "caption": "Phuket Beach",
+      "locationId": "Phuket",
+      "coordinates": {
+        "lat": 7.8804,
+        "lng": 98.3923
+      },
+      "dateCreated": "2024-11-10",
+      "tags": ["Thailand", "Phuket", "Beach", "Sunset", "Travel"]
+    },
+    {
+      "id": "id004",
+      "albumId": "thailand",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Thailand/phuket-boat.jpg",
+      "caption": "Phuket Boat",
+      "locationId": "Phuket",
+      "coordinates": {
+        "lat": 7.8804,
+        "lng": 98.3923
+      },
+      "dateCreated": "2024-11-10",
+      "tags": ["Thailand", "Phuket", "Boat", "Adventure", "Water"]
+    },
+    {
+      "id": "id005",
+      "albumId": "thailand",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Thailand/phuket-boats.jpg",
+      "caption": "Phuket Boats",
+      "locationId": "Phuket",
+      "coordinates": {
+        "lat": 7.8804,
+        "lng": 98.3923
+      },
+      "dateCreated": "2024-11-10",
+      "tags": ["Thailand", "Phuket", "Boats", "Marina", "Travel"]
+    },
+    {
+      "id": "id006",
+      "albumId": "thailand",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Thailand/phuket-green-water.jpg",
+      "caption": "Phuket Green Water",
+      "locationId": "Phuket",
+      "coordinates": {
+        "lat": 7.8804,
+        "lng": 98.3923
+      },
+      "dateCreated": "2024-11-10",
+      "tags": ["Thailand", "Phuket", "Green Water", "Nature", "Scenery"]
+    },
+    {
+      "id": "id001",
+      "albumId": "vatican",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Vatican/vatican-dome.jpg",
+      "caption": "Vatican Dome",
+      "locationId": "Vatican City",
+      "coordinates": {
+        "lat": 41.9029,
+        "lng": 12.4534
+      },
+      "dateCreated": "2024-11-10",
+      "tags": ["Vatican City", "Dome", "Architecture", "Landmark", "Religion"]
+    },
+    {
+      "id": "id002",
+      "albumId": "vatican",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Vatican/vatican-face-mosaic.jpg",
+      "caption": "Vatican Face Mosaic",
+      "locationId": "Vatican City",
+      "coordinates": {
+        "lat": 41.9029,
+        "lng": 12.4534
+      },
+      "dateCreated": "2024-11-10",
+      "tags": ["Vatican City", "Mosaic", "Art", "Interior", "Design"]
+    },
+    {
+      "id": "id003",
+      "albumId": "vatican",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Vatican/vatican-fountain.jpg",
+      "caption": "Vatican Fountain",
+      "locationId": "Vatican City",
+      "coordinates": {
+        "lat": 41.9029,
+        "lng": 12.4534
+      },
+      "dateCreated": "2024-11-10",
+      "tags": ["Vatican City", "Fountain", "Water Feature", "Gardens", "Scenery"]
+    },
+    {
+      "id": "id004",
+      "albumId": "vatican",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Vatican/vatican-guards.jpg",
+      "caption": "Vatican Guards",
+      "locationId": "Vatican City",
+      "coordinates": {
+        "lat": 41.9029,
+        "lng": 12.4534
+      },
+      "dateCreated": "2024-11-10",
+      "tags": ["Vatican City", "Guards", "Security", "Uniform", "Tradition"]
+    },
+    {
+      "id": "id005",
+      "albumId": "vatican",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Vatican/vatican-pope.jpg",
+      "caption": "Pope in Vatican",
+      "locationId": "Vatican City",
+      "coordinates": {
+        "lat": 41.9029,
+        "lng": 12.4534
+      },
+      "dateCreated": "2024-11-10",
+      "tags": ["Vatican City", "Pope", "Religious Leader", "Ceremony", "Faith"]
+    },
+    {
+      "id": "id006",
+      "albumId": "vatican",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Vatican/vatican-view-statues.jpg",
+      "caption": "Vatican View with Statues",
+      "locationId": "Vatican City",
+      "coordinates": {
+        "lat": 41.9029,
+        "lng": 12.4534
+      },
+      "dateCreated": "2024-11-10",
+      "tags": ["Vatican City", "Statues", "View", "Art", "Architecture"]
+    },
+    {
+      "id": "id007",
+      "albumId": "vatican",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Vatican/vatican-view.jpg",
+      "caption": "View of Vatican City",
+      "locationId": "Vatican City",
+      "coordinates": {
+        "lat": 41.9029,
+        "lng": 12.4534
+      },
+      "dateCreated": "2024-11-10",
+      "tags": ["Vatican City", "View", "Landscape", "Architecture", "Cityscape"]
+    },
+    {
+      "id": "id008",
+      "albumId": "vatican",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Vatican/vatican.jpg",
+      "caption": "Vatican City",
+      "locationId": "Vatican City",
+      "coordinates": {
+        "lat": 41.9029,
+        "lng": 12.4534
+      },
+      "dateCreated": "2024-11-10",
+      "tags": ["Vatican City", "City", "Landmark", "Historic", "Travel"]
+    },
+    {
+      "id": "cz001",
+      "albumId": "czech-republic",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Czech/prague-abstract-building.jpg",
+      "caption": "Prague Abstract Building",
+      "locationId": "Prague, Czech Republic",
+      "coordinates": {
+        "lat": 50.0755,
+        "lng": 14.4378
+      },
+      "dateCreated": "2024-11-10",
+      "tags": ["Prague", "Czech Republic", "City", "Architecture", "Travel"]
+    },
+    {
+      "id": "cz002",
+      "albumId": "czech-republic",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Czech/prague-bridge.jpg",
+      "caption": "Prague Bridge",
+      "locationId": "Prague, Czech Republic",
+      "coordinates": {
+        "lat": 50.0865,
+        "lng": 14.4114
+      },
+      "dateCreated": "2024-11-10",
+      "tags": ["Prague", "Bridge", "Charles Bridge", "Historic", "Travel"]
+    },
+    {
+      "id": "cz003",
+      "albumId": "czech-republic",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Czech/prague-castle-roof.jpg",
+      "caption": "Prague Castle Roof",
+      "locationId": "Prague Castle, Czech Republic",
+      "coordinates": {
+        "lat": 50.0907,
+        "lng": 14.3989
+      },
+      "dateCreated": "2024-11-10",
+      "tags": ["Prague Castle", "Roof", "Architecture", "Historic", "Travel"]
+    },
+    {
+      "id": "cz004",
+      "albumId": "czech-republic",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Czech/prague-castle-tower.jpg",
+      "caption": "Prague Castle Tower",
+      "locationId": "Prague Castle, Czech Republic",
+      "coordinates": {
+        "lat": 50.0907,
+        "lng": 14.3989
+      },
+      "dateCreated": "2024-11-10",
+      "tags": ["Prague Castle", "Tower", "Architecture", "Historic", "Travel"]
+    },
+    {
+      "id": "cz005",
+      "albumId": "czech-republic",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Czech/prague-castle.jpg",
+      "caption": "Prague Castle",
+      "locationId": "Prague Castle, Czech Republic",
+      "coordinates": {
+        "lat": 50.0907,
+        "lng": 14.3989
+      },
+      "dateCreated": "2024-11-10",
+      "tags": ["Prague Castle", "Historic", "Landmark", "Architecture", "Travel"]
+    },
+    {
+      "id": "cz006",
+      "albumId": "czech-republic",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Czech/prague-imagine.jpg",
+      "caption": "Imagine Prague",
+      "locationId": "Prague, Czech Republic",
+      "coordinates": {
+        "lat": 50.0755,
+        "lng": 14.4378
+      },
+      "dateCreated": "2024-11-10",
+      "tags": ["Prague", "Cityscape", "Imagine", "Travel"]
+    },
+    {
+      "id": "cz007",
+      "albumId": "czech-republich",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Czech/prague-red-tower.jpg",
+      "caption": "Prague Red Tower",
+      "locationId": "Prague, Czech Republic",
+      "coordinates": {
+        "lat": 50.0870,
+        "lng": 14.4208
+      },
+      "dateCreated": "2024-11-10",
+      "tags": ["Prague", "Red Tower", "Landmark", "Architecture", "Travel"]
+    },
+    {
+      "id": "cz008",
+      "albumId": "czech-republic",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Czech/prague-rooftops.jpg",
+      "caption": "Prague Rooftops",
+      "locationId": "Prague, Czech Republic",
+      "coordinates": {
+        "lat": 50.0755,
+        "lng": 14.4378
+      },
+      "dateCreated": "2024-11-10",
+      "tags": ["Prague", "Rooftops", "Cityscape", "Architecture", "Travel"]
+    },
+    {
+      "id": "cz009",
+      "albumId": "czech-republic",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Czech/prague-square-tower.jpg",
+      "caption": "Prague Square Tower",
+      "locationId": "Old Town Square, Prague, Czech Republic",
+      "coordinates": {
+        "lat": 50.0875,
+        "lng": 14.4214
+      },
+      "dateCreated": "2024-11-10",
+      "tags": ["Prague", "Old Town Square", "Tower", "Historic", "Travel"]
+    },
+    {
+      "id": "cz010",
+      "albumId": "czech-republic",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Czech/prague-tower-square.jpg",
+      "caption": "Prague Tower Square",
+      "locationId": "Prague Tower Square, Czech Republic",
+      "coordinates": {
+        "lat": 50.0870,
+        "lng": 14.4208
+      },
+      "dateCreated": "2024-11-10",
+      "tags": ["Prague", "Tower Square", "Landmark", "Architecture", "Travel"]
+    },
+    {
+      "id": "at001",
+      "albumId": "austria",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Austria/austria-abstract.jpg",
+      "caption": "Austria Abstract",
+      "locationId": "Austria",
+      "coordinates": {
+        "lat": 47.5162,
+        "lng": 14.5501
+      },
+      "dateCreated": "2024-11-10",
+      "tags": ["Austria", "Abstract", "Art", "Travel"]
+    },
+    {
+      "id": "at002",
+      "albumId": "austria",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Austria/austria-bach.jpg",
+      "caption": "Austria Bach",
+      "locationId": "Vienna, Austria",
+      "coordinates": {
+        "lat": 48.2082,
+        "lng": 16.3738
+      },
+      "dateCreated": "2024-11-10",
+      "tags": ["Austria", "Bach", "Music", "Vienna", "Travel"]
+    },
+    {
+      "id": "at003",
+      "albumId": "austria",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Austria/austria-concert-hall.jpg",
+      "caption": "Austria Concert Hall",
+      "locationId": "Vienna Concert Hall, Vienna, Austria",
+      "coordinates": {
+        "lat": 48.2083,
+        "lng": 16.3735
+      },
+      "dateCreated": "2024-11-10",
+      "tags": ["Austria", "Concert Hall", "Music Venue", "Vienna", "Architecture"]
+    },
+    {
+      "id": "at004",
+      "albumId": "austria",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Austria/austria-palace-3.jpg",
+      "caption": "Austria Palace 3",
+      "locationId": "Schönbrunn Palace, Vienna, Austria",
+      "coordinates": {
+        "lat": 48.1845,
+        "lng": 16.3122
+      },
+      "dateCreated": "2024-11-10",
+      "tags": ["Austria", "Palace", "Schönbrunn", "Historical", "Architecture"]
+    },
+    {
+      "id": "at005",
+      "albumId": "austria",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Austria/austria-palace-grass.jpg",
+      "caption": "Austria Palace Grass",
+      "locationId": "Schönbrunn Palace Gardens, Vienna, Austria",
+      "coordinates": {
+        "lat": 48.1845,
+        "lng": 16.3122
+      },
+      "dateCreated": "2024-11-10",
+      "tags": ["Austria", "Palace Gardens", "Schönbrunn", "Nature", "Travel"]
+    },
+    {
+      "id": "at006",
+      "albumId": "austria",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Austria/austria-palace.jpg",
+      "caption": "Austria Palace",
+      "locationId": "Hofburg Palace, Vienna, Austria",
+      "coordinates": {
+        "lat": 48.2063,
+        "lng": 16.3697
+      },
+      "dateCreated": "2024-11-10",
+      "tags": ["Austria", "Hofburg Palace", "Historical", "Architecture", "Vienna"]
+    },
+    {
+      "id": "at007",
+      "albumId": "austria",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Austria/austria-pub.jpg",
+      "caption": "Austria Pub",
+      "locationId": "Vienna Pub, Vienna, Austria",
+      "coordinates": {
+        "lat": 48.2082,
+        "lng": 16.3738
+      },
+      "dateCreated": "2024-11-10",
+      "tags": ["Austria", "Pub", "Vienna", "Nightlife", "Travel"]
+    },
+    {
+      "id": "at008",
+      "albumId": "austria",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Austria/austria-tower.jpg",
+      "caption": "Austria Tower",
+      "locationId": "Danube Tower, Vienna, Austria",
+      "coordinates": {
+        "lat": 48.2247,
+        "lng": 16.4283
+      },
+      "dateCreated": "2024-11-10",
+      "tags": ["Austria", "Tower", "Danube Tower", "Architecture", "Vienna"]
+    },
+    {
+      "id": "at009",
+      "albumId": "austria",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Austria/austria-tunnel.jpg",
+      "caption": "Austria Tunnel",
+      "locationId": "Vienna Tunnel, Vienna, Austria",
+      "coordinates": {
+        "lat": 48.2082,
+        "lng": 16.3738
+      },
+      "dateCreated": "2024-11-10",
+      "tags": ["Austria", "Tunnel", "Vienna", "Architecture", "Infrastructure"]
+    },
+    {
+      "id": "at010",
+      "albumId": "austria",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Austria/vienna-buttress.jpg",
+      "caption": "Vienna Buttress",
+      "locationId": "St. Stephen's Cathedral, Vienna, Austria",
+      "coordinates": {
+        "lat": 48.2084,
+        "lng": 16.3731
+      },
+      "dateCreated": "2024-11-10",
+      "tags": ["Austria", "Buttress", "St. Stephen's Cathedral", "Architecture", "Vienna"]
+    },
+    {
+      "id": "at011",
+      "albumId": "austria",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Austria/vienna-church.jpg",
+      "caption": "Vienna Church",
+      "locationId": "Karlskirche, Vienna, Austria",
+      "coordinates": {
+        "lat": 48.2008,
+        "lng": 16.3616
+      },
+      "dateCreated": "2024-11-10",
+      "tags": ["Austria", "Church", "Karlskirche", "Architecture", "Vienna"]
+    },
+    {
+      "id": "at012",
+      "albumId": "austria",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Austria/vienna-palace.jpg",
+      "caption": "Vienna Palace",
+      "locationId": "Belvedere Palace, Vienna, Austria",
+      "coordinates": {
+        "lat": 48.1917,
+        "lng": 16.3811
+      },
+      "dateCreated": "2024-11-10",
+      "tags": ["Austria", "Belvedere Palace", "Historical", "Architecture", "Vienna"]
+    },
+    {
+      "id": "at013",
+      "albumId": "austria",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Austria/vienna-statue.jpg",
+      "caption": "Vienna Statue",
+      "locationId": "Heldenplatz, Vienna, Austria",
+      "coordinates": {
+        "lat": 48.2063,
+        "lng": 16.3697
+      },
+      "dateCreated": "2024-11-10",
+      "tags": ["Austria", "Statue", "Heldenplatz", "Monument", "Vienna"]
+    },
+    {
+      "id": "at014",
+      "albumId": "austria",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Austria/vienna-tower-profile.jpg",
+      "caption": "Vienna Tower Profile",
+      "locationId": "Danube Tower, Vienna, Austria",
+      "coordinates": {
+        "lat": 48.2247,
+        "lng": 16.4283
+      },
+      "dateCreated": "2024-11-10",
+      "tags": ["Austria", "Tower", "Danube Tower", "Profile View", "Vienna"]
+    },
+    {
+      "id": "at015",
+      "albumId": "austria",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Austria/vienna-tower.jpg",
+      "caption": "Vienna Tower",
+      "locationId": "Donauturm, Vienna, Austria",
+      "coordinates": {
+        "lat": 48.2247,
+        "lng": 16.4283
+      },
+      "dateCreated": "2024-11-10",
+      "tags": ["Austria", "Tower", "Donauturm", "Architecture", "Vienna"]
+    },
+    {
+      "id": "de001",
+      "albumId": "germany",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Germany/neuschwanstein.jpg",
+      "caption": "Neuschwanstein Castle",
+      "locationId": "Neuschwanstein Castle, Bavaria, Germany",
+      "coordinates": {
+        "lat": 47.5576,
+        "lng": 10.7498
+      },
+      "dateCreated": "2024-11-10",
+      "tags": ["Germany", "Neuschwanstein", "Castle", "Architecture", "Travel"]
+    },
+    {
+      "id": "hu001",
+      "albumId": "hungary",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Hungary/abstract-statue.jpg",
+      "caption": "Abstract Statue",
+      "locationId": "Budapest, Hungary",
+      "coordinates": {
+        "lat": 47.4979,
+        "lng": 19.0402
+      },
+      "dateCreated": "2024-11-10",
+      "tags": ["Hungary", "Abstract", "Statue", "Art", "Budapest"]
+    },
+    {
+      "id": "hu002",
+      "albumId": "hungary",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Hungary/budapest-arch.jpg",
+      "caption": "Budapest Arch",
+      "locationId": "Chain Bridge, Budapest, Hungary",
+      "coordinates": {
+        "lat": 47.4960,
+        "lng": 19.0514
+      },
+      "dateCreated": "2024-11-10",
+      "tags": ["Hungary", "Arch", "Chain Bridge", "Architecture", "Budapest"]
+    },
+    {
+      "id": "hu003",
+      "albumId": "hungary",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Hungary/budapest-bath-statue.jpg",
+      "caption": "Budapest Bath Statue",
+      "locationId": "Széchenyi Thermal Bath, Budapest, Hungary",
+      "coordinates": {
+        "lat": 47.5165,
+        "lng": 19.1026
+      },
+      "dateCreated": "2024-11-10",
+      "tags": ["Hungary", "Bath", "Statue", "Thermal Bath", "Budapest"]
+    },
+    {
+      "id": "hu004",
+      "albumId": "hungary",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Hungary/budapest-bath.jpg",
+      "caption": "Budapest Thermal Bath",
+      "locationId": "Széchenyi Thermal Bath, Budapest, Hungary",
+      "coordinates": {
+        "lat": 47.5165,
+        "lng": 19.1026
+      },
+      "dateCreated": "2024-11-10",
+      "tags": ["Hungary", "Thermal Bath", "Spa", "Relaxation", "Budapest"]
+    },
+    {
+      "id": "hu005",
+      "albumId": "hungary",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Hungary/budapest-castle.jpg",
+      "caption": "Budapest Castle",
+      "locationId": "Buda Castle, Budapest, Hungary",
+      "coordinates": {
+        "lat": 47.4969,
+        "lng": 19.0402
+      },
+      "dateCreated": "2024-11-10",
+      "tags": ["Hungary", "Castle", "Buda Castle", "Historical", "Budapest"]
+    },
+    {
+      "id": "hu006",
+      "albumId": "hungary",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Hungary/budapest-pool-bench.jpg",
+      "caption": "Budapest Pool Bench",
+      "locationId": "Gellért Baths, Budapest, Hungary",
+      "coordinates": {
+        "lat": 47.4810,
+        "lng": 19.0574
+      },
+      "dateCreated": "2024-11-10",
+      "tags": ["Hungary", "Pool", "Bench", "Gellért Baths", "Budapest"]
+    },
+    {
+      "id": "hu007",
+      "albumId": "hungary",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Hungary/budapest-pool-clear.jpg",
+      "caption": "Budapest Clear Pool",
+      "locationId": "Rudas Baths, Budapest, Hungary",
+      "coordinates": {
+        "lat": 47.5022,
+        "lng": 19.0485
+      },
+      "dateCreated": "2024-11-10",
+      "tags": ["Hungary", "Pool", "Clear Water", "Rudas Baths", "Budapest"]
+    },
+    {
+      "id": "hu008",
+      "albumId": "hungary",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Hungary/budapest-pool.jpg",
+      "caption": "Budapest Public Pool",
+      "locationId": "Budapest, Hungary",
+      "coordinates": {
+        "lat": 47.4979,
+        "lng": 19.0402
+      },
+      "dateCreated": "2024-11-10",
+      "tags": ["Hungary", "Pool", "Public Pool", "Swimming", "Budapest"]
+    },
+    {
+      "id": "hu009",
+      "albumId": "hungary",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Hungary/budapest-roof.jpg",
+      "caption": "Budapest Rooftop",
+      "locationId": "Fisherman's Bastion, Budapest, Hungary",
+      "coordinates": {
+        "lat": 47.5023,
+        "lng": 19.0479
+      },
+      "dateCreated": "2024-11-10",
+      "tags": ["Hungary", "Rooftop", "Fisherman's Bastion", "Viewpoint", "Budapest"]
+    },
+    {
+      "id": "hu010",
+      "albumId": "hungary",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Hungary/budapest-saint-statue.jpg",
+      "caption": "Budapest Saint Statue",
+      "locationId": "St. Stephen's Basilica, Budapest, Hungary",
+      "coordinates": {
+        "lat": 47.4981,
+        "lng": 19.0514
+      },
+      "dateCreated": "2024-11-10",
+      "tags": ["Hungary", "Saint Statue", "St. Stephen's Basilica", "Religious", "Budapest"]
+    },
+    {
+      "id": "hu011",
+      "albumId": "hungary",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Hungary/budapest-statue.jpg",
+      "caption": "Budapest Statue",
+      "locationId": "Heroes' Square, Budapest, Hungary",
+      "coordinates": {
+        "lat": 47.5070,
+        "lng": 19.0500
+      },
+      "dateCreated": "2024-11-10",
+      "tags": ["Hungary", "Statue", "Heroes' Square", "Monument", "Budapest"]
+    },
+    {
+      "id": "nl001",
+      "albumId": "netherlands",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Netherlands/amsterdam-bikes.jpg",
+      "caption": "Amsterdam Bikes",
+      "locationId": "Amsterdam, Netherlands",
+      "coordinates": {
+        "lat": 52.3676,
+        "lng": 4.9041
+      },
+      "dateCreated": "2024-11-10",
+      "tags": ["Netherlands", "Amsterdam", "Bikes", "Cycling", "Transportation"]
+    },
+    {
+      "id": "nl002",
+      "albumId": "netherlands",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Netherlands/amsterdam-canal-bridge.jpg",
+      "caption": "Amsterdam Canal Bridge",
+      "locationId": "Magere Brug (Skinny Bridge), Amsterdam, Netherlands",
+      "coordinates": {
+        "lat": 52.3721,
+        "lng": 4.9003
+      },
+      "dateCreated": "2024-11-10",
+      "tags": ["Netherlands", "Amsterdam", "Canal", "Bridge", "Architecture", "Landmark"]
+    },
+    {
+      "id": "nl003",
+      "albumId": "netherlands",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Netherlands/amsterdam-canal.jpg",
+      "caption": "Amsterdam Canal",
+      "locationId": "Prinsengracht, Amsterdam, Netherlands",
+      "coordinates": {
+        "lat": 52.3680,
+        "lng": 4.8970
+      },
+      "dateCreated": "2024-11-10",
+      "tags": ["Netherlands", "Amsterdam", "Canal", "Waterway", "Scenic", "Travel"]
+    },
+    {
+      "id": "nl004",
+      "albumId": "netherlands",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Netherlands/amsterdam-canals.jpg",
+      "caption": "Amsterdam Canals",
+      "locationId": "Amsterdam Canals Ring, Amsterdam, Netherlands",
+      "coordinates": {
+        "lat": 52.3738,
+        "lng": 4.8910
+      },
+      "dateCreated": "2024-11-10",
+      "tags": ["Netherlands", "Amsterdam", "Canals", "Waterways", "Heritage", "UNESCO"]
+    },
+    {
+      "id": "nl005",
+      "albumId": "netherlands",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Netherlands/amsterdam-street.jpg",
+      "caption": "Amsterdam Street",
+      "locationId": "Damrak, Amsterdam, Netherlands",
+      "coordinates": {
+        "lat": 52.3731,
+        "lng": 4.8952
+      },
+      "dateCreated": "2024-11-10",
+      "tags": ["Netherlands", "Amsterdam", "Street", "Urban", "City Life", "Travel"]
+    },
+    {
+      "id": "nl006",
+      "albumId": "netherlands",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Netherlands/amsterdam-tram.jpg",
+      "caption": "Amsterdam Tram",
+      "locationId": "Amsterdam Central Station, Amsterdam, Netherlands",
+      "coordinates": {
+        "lat": 52.3792,
+        "lng": 4.8994
+      },
+      "dateCreated": "2024-11-10",
+      "tags": ["Netherlands", "Amsterdam", "Tram", "Public Transport", "Transportation", "Urban"]
+    },
+    {
+      "id": "uk001",
+      "albumId": "uk",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/uk/london-bigben.jpg",
+      "caption": "Big Ben",
+      "locationId": "Big Ben, London, United Kingdom",
+      "coordinates": {
+        "lat": 51.5007,
+        "lng": -0.1246
+      },
+      "dateCreated": "2024-11-10",
+      "tags": ["UK", "London", "Big Ben", "Landmark", "Architecture", "Travel"]
+    },
+    {
+      "id": "fi001",
+      "albumId": "finland",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/finland/helsinki-cathedral-clean.jpg",
+      "caption": "Helsinki Cathedral",
+      "locationId": "Helsinki Cathedral, Helsinki, Finland",
+      "coordinates": {
+        "lat": 60.1699,
+        "lng": 24.9524
+      },
+      "dateCreated": "2024-11-10",
+      "tags": ["Finland", "Helsinki", "Cathedral", "Architecture", "Landmark"]
+    },
+    {
+      "id": "fi002",
+      "albumId": "finland",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/finland/helsinki-cathedral.jpg",
+      "caption": "Helsinki Cathedral - Original",
+      "locationId": "Helsinki Cathedral, Helsinki, Finland",
+      "coordinates": {
+        "lat": 60.1699,
+        "lng": 24.9524
+      },
+      "dateCreated": "2024-11-10",
+      "tags": ["Finland", "Helsinki", "Cathedral", "Architecture", "Landmark"]
+    },
+    {
+      "id": "fi003",
+      "albumId": "finland",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/finland/helsinki-harrypotter.jpg",
+      "caption": "Helsinki Harry Potter Theme",
+      "locationId": "Helsinki, Finland",
+      "coordinates": {
+        "lat": 60.1699,
+        "lng": 24.9524
+      },
+      "dateCreated": "2024-11-10",
+      "tags": ["Finland", "Helsinki", "Harry Potter", "Fantasy", "Art"]
+    },
+    {
+      "id": "fi004",
+      "albumId": "finland",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/finland/helsinki-island-bottle.jpg",
+      "caption": "Helsinki Island with Bottle",
+      "locationId": "Suomenlinna, Helsinki, Finland",
+      "coordinates": {
+        "lat": 60.1432,
+        "lng": 24.9733
+      },
+      "dateCreated": "2024-11-10",
+      "tags": ["Finland", "Helsinki", "Island", "Bottle", "Nature"]
+    },
+    {
+      "id": "fi005",
+      "albumId": "finland",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/finland/helsinki-island-houses.jpg",
+      "caption": "Helsinki Island Houses",
+      "locationId": "Suomenlinna, Helsinki, Finland",
+      "coordinates": {
+        "lat": 60.1432,
+        "lng": 24.9733
+      },
+      "dateCreated": "2024-11-10",
+      "tags": ["Finland", "Helsinki", "Island", "Houses", "Architecture"]
+    },
+    {
+      "id": "fi006",
+      "albumId": "finland",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/finland/helsinki-island.jpg",
+      "caption": "Helsinki Island",
+      "locationId": "Suomenlinna, Helsinki, Finland",
+      "coordinates": {
+        "lat": 60.1432,
+        "lng": 24.9733
+      },
+      "dateCreated": "2024-11-10",
+      "tags": ["Finland", "Helsinki", "Island", "Nature", "Travel"]
+    },
+    {
+      "id": "fi007",
+      "albumId": "finland",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/finland/helsinki-orthodox-cathedral.jpg",
+      "caption": "Helsinki Orthodox Cathedral",
+      "locationId": "Uspenski Cathedral, Helsinki, Finland",
+      "coordinates": {
+        "lat": 60.1718,
+        "lng": 24.9336
+      },
+      "dateCreated": "2024-11-10",
+      "tags": ["Finland", "Helsinki", "Orthodox Cathedral", "Architecture", "Religion"]
+    },
+    {
+      "id": "fi008",
+      "albumId": "finland",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/finland/helsinki-sign.jpg",
+      "caption": "Helsinki City Sign",
+      "locationId": "Helsinki, Finland",
+      "coordinates": {
+        "lat": 60.1699,
+        "lng": 24.9524
+      },
+      "dateCreated": "2024-11-10",
+      "tags": ["Finland", "Helsinki", "Sign", "Cityscape", "Travel"]
+    },
+    {
+      "id": "fi009",
+      "albumId": "finland",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/finland/helsinki-statue.jpg",
+      "caption": "Helsinki Statue",
+      "locationId": "Esplanadi Park, Helsinki, Finland",
+      "coordinates": {
+        "lat": 60.1695,
+        "lng": 24.9534
+      },
+      "dateCreated": "2024-11-10",
+      "tags": ["Finland", "Helsinki", "Statue", "Art", "Public Art"]
+    },
+    {
+      "id": "fi010",
+      "albumId": "finland",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/finland/helsinki-suoemlina.jpg",
+      "caption": "Helsinki Suoemlina",
+      "locationId": "Suoemlina, Helsinki, Finland",
+      "coordinates": {
+        "lat": 60.1650,
+        "lng": 24.9400
+      },
+      "dateCreated": "2024-11-10",
+      "tags": ["Finland", "Helsinki", "Suoemlina", "Nature", "Scenic"]
+    },
+    {
+      "id": "ee001",
+      "albumId": "estonia",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Estonia/tallin-cafe.jpg",
+      "caption": "Tallinn Cafe",
+      "locationId": "Tallinn, Estonia",
+      "coordinates": {
+        "lat": 59.4370,
+        "lng": 24.7536
+      },
+      "dateCreated": "2024-11-10",
+      "tags": ["Estonia", "Tallinn", "Cafe", "Coffee Shop", "Urban"]
+    },
+    {
+      "id": "ee002",
+      "albumId": "estonia",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Estonia/tallin-entry.jpg",
+      "caption": "Tallinn Entry",
+      "locationId": "Tallinn Old Town Entrance, Tallinn, Estonia",
+      "coordinates": {
+        "lat": 59.4369,
+        "lng": 24.7536
+      },
+      "dateCreated": "2024-11-10",
+      "tags": ["Estonia", "Tallinn", "Entry Gate", "Old Town", "Historic"]
+    },
+    {
+      "id": "ee003",
+      "albumId": "estonia",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Estonia/tallin-oldtown.jpg",
+      "caption": "Tallinn Old Town",
+      "locationId": "Tallinn Old Town, Tallinn, Estonia",
+      "coordinates": {
+        "lat": 59.4369,
+        "lng": 24.7536
+      },
+      "dateCreated": "2024-11-10",
+      "tags": ["Estonia", "Tallinn", "Old Town", "Medieval", "UNESCO"]
+    },
+    {
+      "id": "ee004",
+      "albumId": "estonia",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Estonia/tallin-palace.jpg",
+      "caption": "Tallinn Palace",
+      "locationId": "Tallinn Town Hall, Tallinn, Estonia",
+      "coordinates": {
+        "lat": 59.4369,
+        "lng": 24.7536
+      },
+      "dateCreated": "2024-11-10",
+      "tags": ["Estonia", "Tallinn", "Palace", "Architecture", "Historic Building"]
+    },
+    {
+      "id": "ee005",
+      "albumId": "estonia",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Estonia/tallin-residential.jpg",
+      "caption": "Tallinn Residential Area",
+      "locationId": "Tallinn, Estonia",
+      "coordinates": {
+        "lat": 59.4370,
+        "lng": 24.7536
+      },
+      "dateCreated": "2024-11-10",
+      "tags": ["Estonia", "Tallinn", "Residential", "Neighborhood", "Urban Life"]
+    },
+    {
+      "id": "ee006",
+      "albumId": "estonia",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Estonia/tallin-roofs.jpg",
+      "caption": "Tallinn Roofs",
+      "locationId": "Tallinn Old Town, Tallinn, Estonia",
+      "coordinates": {
+        "lat": 59.4369,
+        "lng": 24.7536
+      },
+      "dateCreated": "2024-11-10",
+      "tags": ["Estonia", "Tallinn", "Roofs", "Architecture", "Scenic"]
+    },
+    {
+      "id": "ee007",
+      "albumId": "estonia",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Estonia/tallin-rooftops.jpg",
+      "caption": "Tallinn Rooftops",
+      "locationId": "Tallinn Old Town, Tallinn, Estonia",
+      "coordinates": {
+        "lat": 59.4369,
+        "lng": 24.7536
+      },
+      "dateCreated": "2024-11-10",
+      "tags": ["Estonia", "Tallinn", "Rooftops", "Cityscape", "Urban"]
+    },
+    {
+      "id": "ee008",
+      "albumId": "estonia",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Estonia/tallin-skyline.jpg",
+      "caption": "Tallinn Skyline",
+      "locationId": "Tallinn, Estonia",
+      "coordinates": {
+        "lat": 59.4370,
+        "lng": 24.7536
+      },
+      "dateCreated": "2024-11-10",
+      "tags": ["Estonia", "Tallinn", "Skyline", "Cityscape", "Panorama"]
+    },
+    {
+      "id": "ee009",
+      "albumId": "estonia",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Estonia/tallin-street-tower.jpg",
+      "caption": "Tallinn Street Tower",
+      "locationId": "Tallinn Old Town, Tallinn, Estonia",
+      "coordinates": {
+        "lat": 59.4369,
+        "lng": 24.7536
+      },
+      "dateCreated": "2024-11-10",
+      "tags": ["Estonia", "Tallinn", "Street Tower", "Architecture", "Historic"]
+    },
+    {
+      "id": "ee010",
+      "albumId": "estonia",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Estonia/tallin-tower.jpg",
+      "caption": "Tallinn Tower",
+      "locationId": "Tallinn TV Tower, Tallinn, Estonia",
+      "coordinates": {
+        "lat": 59.4202,
+        "lng": 24.7695
+      },
+      "dateCreated": "2024-11-10",
+      "tags": ["Estonia", "Tallinn", "Tower", "Landmark", "Viewpoint"]
+    },
+    {
+      "id": "us001",
+      "albumId": "usa",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/usa/boston-beaconhill.jpg",
+      "caption": "Beacon Hill, Boston",
+      "locationId": "Beacon Hill, Boston, Massachusetts, USA",
+      "coordinates": {
+        "lat": 42.3523,
+        "lng": -71.0656
+      },
+      "dateCreated": "2024-11-10",
+      "tags": ["USA", "Boston", "Beacon Hill", "Historic District", "Architecture", "Travel"]
+    },
+    {
+      "id": "us002",
+      "albumId": "usa",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/usa/boston-customhouse.jpg",
+      "caption": "Boston Custom House",
+      "locationId": "Boston Custom House, Boston, Massachusetts, USA",
+      "coordinates": {
+        "lat": 42.3601,
+        "lng": -71.0589
+      },
+      "dateCreated": "2024-11-10",
+      "tags": ["USA", "Boston", "Custom House", "Historic Building", "Architecture", "Landmark"]
+    },
+    {
+      "id": "us003",
+      "albumId": "usa",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/usa/nantucket.jpg",
+      "caption": "Nantucket Island",
+      "locationId": "Nantucket, Massachusetts, USA",
+      "coordinates": {
+        "lat": 41.2833,
+        "lng": -70.0995
+      },
+      "dateCreated": "2024-11-10",
+      "tags": ["USA", "Nantucket", "Island", "Beaches", "Vacation", "Travel"]
+    },
+    {
+      "id": "us004",
+      "albumId": "usa",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/usa/newyork-empire.jpg",
+      "caption": "Empire State Building, New York",
+      "locationId": "Empire State Building, New York, New York, USA",
+      "coordinates": {
+        "lat": 40.7484,
+        "lng": -73.9857
+      },
+      "dateCreated": "2024-11-10",
+      "tags": ["USA", "New York", "Empire State Building", "Skyscraper", "Landmark", "Architecture"]
+    },
+    {
+      "id": "us005",
+      "albumId": "usa",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/usa/newyork-emprie-state.jpg",
+      "caption": "Empire State Building - Alternate View",
+      "locationId": "Empire State Building, New York, New York, USA",
+      "coordinates": {
+        "lat": 40.7484,
+        "lng": -73.9857
+      },
+      "dateCreated": "2024-11-10",
+      "tags": ["USA", "New York", "Empire State Building", "Skyscraper", "Landmark", "Architecture"]
     }
   ]
 }

@@ -62,7 +62,7 @@
     },
     {
       "id": "switzerland",
-      "name": "🇨🇭 Swiss Serenity",
+      "name": "🇨🇭 Swiss Stylin'",
       "countryId": "CH",
       "year": "2023"
     },
@@ -128,7 +128,7 @@
     },
     {
       "id": "stbarts",
-      "name": "🇧🇱 Barthélemy Breezes",
+      "name": "🇧🇱 St. Barthélemy Breezes",
       "countryId": "BL",
       "year": "2018"
     },
@@ -169,17 +169,12 @@
       "year": "2013"
     },
     {
-      "id": "vatican-city",
+      "id": "vatican",
       "name": "🇻🇦 Vatican Visions",
       "countryId": "VA",
       "year": "2013"
     },
-    {
-      "id": "canada",
-      "name": "🇨🇦 Canadian Canvases",
-      "countryId": "CA",
-      "year": "2012"
-    },
+    
     {
       "id": "thailand",
       "name": "🇹🇭 Thai Treasures",
@@ -222,12 +217,7 @@
       "countryId": "NL",
       "year": "2009"
     },
-    {
-      "id": "slovakia",
-      "name": "🇸🇰 Slovak Serenity",
-      "countryId": "SK",
-      "year": "2009"
-    },
+    
     {
       "id": "uk",
       "name": "🇬🇧 British Brilliance",

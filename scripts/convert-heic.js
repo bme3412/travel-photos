@@ -60,7 +60,7 @@ async function main() {
     'France', 'Monaco', 'Brazil', 'Vietnam', 'Singapore',
     'Malaysia', 'Slovenia', 'Italy', 'Switzerland',
     'Uruguay', 'Chile', 'Portugal','Spain','Argentina','Belgium','Bosnia','Croatia','Montenegro','Mauritius','Botswana','South-Africa','St-Barts',
-    'Belize'
+    'Belize','USA'
   ];
 
   console.log('Starting HEIC conversion...');
