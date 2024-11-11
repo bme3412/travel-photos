@@ -5,12 +5,10 @@ import Image from 'next/image';
 import { useParams } from 'next/navigation';
 import usePhotoStore from '../../store/usePhotoStore';
 import AlbumMap from '../../components/AlbumMap';
-import AlbumStats from '../../components/AlbumStats';
 import ImageLightbox from '../../components/ImageLightbox';
 import { ArrowLeft, Grid, Map as MapIcon, Loader, MapPin, Camera } from 'lucide-react';
 import Link from 'next/link';
 
-// Add transformToCloudFront utility
 const transformToCloudFront = (url) => {
   if (!url) return '';
   const path = url
@@ -20,27 +18,7 @@ const transformToCloudFront = (url) => {
   return `https://d1mnon53ja4k10.cloudfront.net/${path}`;
 };
 
-const shimmer = (w, h) => `
-<svg width="${w}" height="${h}" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-  <defs>
-    <linearGradient id="g">
-      <stop stop-color="#eee" offset="20%" />
-      <stop stop-color="#f5f5f5" offset="50%" />
-      <stop stop-color="#eee" offset="70%" />
-    </linearGradient>
-  </defs>
-  <rect width="${w}" height="${h}" fill="#eee" />
-  <rect id="r" width="${w}" height="${h}" fill="url(#g)" />
-  <animate xlink:href="#r" attributeName="x" from="-${w}" to="${w}" dur="1s" repeatCount="indefinite"  />
-</svg>`;
-
-const toBase64 = (str) =>
-  typeof window === 'undefined'
-    ? Buffer.from(str).toString('base64')
-    : window.btoa(str);
-
 const PhotoCard = React.memo(({ photo, index, onPhotoClick }) => {
-  // Transform the URL to CloudFront
   const cloudFrontUrl = transformToCloudFront(photo.url);
 
   return (
@@ -52,30 +30,17 @@ const PhotoCard = React.memo(({ photo, index, onPhotoClick }) => {
       <div className="absolute inset-0 bg-black/5 group-hover:bg-black/0 transition-colors duration-300" />
       <Image
         src={cloudFrontUrl}
-        alt={photo.title || photo.description || 'Album photo'}
+        alt={photo.title || 'Album photo'}
         fill
         sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
         className="object-cover transition-transform duration-300 group-hover:scale-105"
-        placeholder="blur"
-        blurDataURL={`data:image/svg+xml;base64,${toBase64(shimmer(700, 475))}`}
         priority={index < 4}
       />
       <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent 
                       p-4 translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
-        <h3 className="text-white font-medium text-lg mb-1 drop-shadow-sm">
+        <h3 className="text-white font-medium text-lg">
           {photo.title}
         </h3>
-        {photo.description && (
-          <p className="text-white/90 text-sm mb-2">
-            {photo.description}
-          </p>
-        )}
-        {photo.locationId && (
-          <p className="text-white/90 text-sm flex items-center gap-1">
-            <MapPin className="h-4 w-4" aria-hidden="true" />
-            {photo.locationId}
-          </p>
-        )}
       </div>
     </div>
   );
@@ -96,7 +61,7 @@ export default function AlbumPage() {
     setError,
     loading,
   } = usePhotoStore();
-  const [view, setView] = useState('grid');
+  const [view, setView] = useState('map');
 
   useEffect(() => {
     const fetchAlbumData = async (id) => {
@@ -106,11 +71,10 @@ export default function AlbumPage() {
         if (!response.ok) throw new Error('Failed to fetch album data.');
         const data = await response.json();
 
-        // Transform URLs in the album data
         if (data.photos) {
           data.photos = data.photos.map(photo => ({
             ...photo,
-            originalUrl: photo.url, // Keep original URL for reference
+            originalUrl: photo.url,
             url: transformToCloudFront(photo.url)
           }));
         }
@@ -127,6 +91,7 @@ export default function AlbumPage() {
       fetchAlbumData(params.id);
     }
   }, [params.id, setCurrentAlbum, setLoading, setError]);
+
   if (loading) {
     return (
       <div className="flex flex-col items-center justify-center min-h-screen gap-4">
@@ -154,77 +119,89 @@ export default function AlbumPage() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Header */}
-      <div className="bg-white border-b sticky top-0 z-10 shadow-sm">
-        <div className="max-w-7xl mx-auto p-6">
-          <Link 
-            href="/albums" 
-            className="inline-flex items-center text-teal-600 hover:text-teal-700 
-                       transition-colors duration-200 mb-6 group"
-          >
-            <ArrowLeft className="h-5 w-5 mr-2 transform group-hover:-translate-x-1 transition-transform duration-200" />
-            Back to Albums
-          </Link>
-
-          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-            <div>
-              <h1 className="text-4xl font-bold text-gray-800">{currentAlbum.name}</h1>
-              <p className="text-gray-600 flex items-center mt-2">
-                <MapPin className="h-4 w-4 mr-1 text-teal-600" aria-hidden="true" />
-                {currentAlbum.countryId}
-              </p>
+      <div className="bg-white border-b sticky top-0 z-10">
+        <div className="max-w-7xl mx-auto px-6 py-3">
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-4">
+              <Link 
+                href="/albums" 
+                className="text-teal-600 hover:text-teal-700 transition-colors duration-200 group"
+              >
+                <ArrowLeft className="h-5 w-5 transform group-hover:-translate-x-1 transition-transform duration-200" />
+              </Link>
+              <h1 className="text-xl font-bold text-gray-800">{currentAlbum.name}</h1>
             </div>
 
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-3">
               <button
                 onClick={() => setView('grid')}
-                className={`p-3 rounded-full transition-all duration-200 ${
+                className={`px-3 py-2 rounded-full transition-all duration-200 flex items-center gap-2 ${
                   view === 'grid'
                     ? 'bg-teal-600 text-white shadow-md'
                     : 'text-gray-500 hover:bg-gray-100'
                 }`}
                 aria-label="Grid View"
               >
-                <Grid size={22} />
+                <Grid size={20} />
+                <span className="text-sm font-medium">Photos</span>
               </button>
               <button
                 onClick={() => setView('map')}
-                className={`p-3 rounded-full transition-all duration-200 ${
+                className={`px-3 py-2 rounded-full transition-all duration-200 flex items-center gap-2 ${
                   view === 'map'
                     ? 'bg-teal-600 text-white shadow-md'
                     : 'text-gray-500 hover:bg-gray-100'
                 }`}
                 aria-label="Map View"
               >
-                <MapIcon size={22} />
+                <MapIcon size={20} />
+                <span className="text-sm font-medium">Map</span>
               </button>
             </div>
           </div>
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto p-6">
-        <AlbumStats album={currentAlbum} />
-
-        {view === 'grid' ? (
-  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
-    {currentAlbum.photos?.map((photo, index) => (
-      <PhotoCard
-        key={photo.id}
-        photo={photo}
-        index={index}
-        onPhotoClick={openLightbox}
-      />
-    ))}
-  </div>
-) : (
-  <div className="mt-8 h-[600px]">
-    <AlbumMap album={currentAlbum} onLocationSelect={(location) => console.log(location)} />
-  </div>
-)}
+      <div className="max-w-7xl mx-auto px-6">
+        {view === 'map' ? (
+          <div className="space-y-4 pt-4">
+            <div className="overflow-x-auto">
+              <div className="flex gap-4 min-w-min pb-4">
+                {currentAlbum.photos?.map((photo, index) => (
+                  <div 
+                    key={photo.id} 
+                    className="w-72 flex-shrink-0 transform transition-all duration-300 hover:scale-105"
+                  >
+                    <PhotoCard
+                      photo={photo}
+                      index={index}
+                      onPhotoClick={openLightbox}
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
+            
+            <div className="bg-white rounded-xl overflow-hidden shadow-lg border border-gray-200">
+              <div className="h-[calc(100vh-160px)]">
+                <AlbumMap album={currentAlbum} />
+              </div>
+            </div>
+          </div>
+        ) : (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 pt-6">
+            {currentAlbum.photos?.map((photo, index) => (
+              <PhotoCard
+                key={photo.id}
+                photo={photo}
+                index={index}
+                onPhotoClick={openLightbox}
+              />
+            ))}
+          </div>
+        )}
       </div>
 
-      {/* Lightbox */}
       {isLightboxOpen && selectedPhoto && (
         <ImageLightbox
           images={currentAlbum.photos}

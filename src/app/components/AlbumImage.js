@@ -1,17 +1,21 @@
-// src/app/components/AlbumImage.js
+'use client';
 
 import React, { useState } from 'react';
 import Image from 'next/image';
 import { AlertTriangle } from 'lucide-react';
+import ImageLightbox from './ImageLightbox';
 
-const AlbumImage = ({ 
-  imageUrl, 
-  altText = 'Album image', 
-  className = '', 
-  priority = false 
+const AlbumImage = ({
+  imageUrl,
+  altText = 'Album image',
+  className = '',
+  priority = false,
+  images = [], // Array of all images in the album
+  currentIndex = 0 // Index of this image in the array
 }) => {
   const [imageError, setImageError] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
+  const [isLightboxOpen, setIsLightboxOpen] = useState(false);
 
   if (!imageUrl) {
     return (
@@ -36,30 +40,44 @@ const AlbumImage = ({
   }
 
   return (
-    <div className={`relative ${className}`}>
-      {isLoading && (
-        <div className="absolute inset-0 bg-gray-100 animate-pulse rounded-md" />
-      )}
-      <div className="relative w-full h-full min-h-[200px]">
-        <Image
-          src={imageUrl}
-          alt={altText}
-          fill
-          className={`
-            object-cover rounded-md
-            ${isLoading ? 'opacity-0' : 'opacity-100'}
-            transition-opacity duration-300 ease-in-out
-          `}
-          onError={() => setImageError(true)}
-          onLoadingComplete={() => setIsLoading(false)}
-          sizes="(max-width: 640px) 100vw,
-                 (max-width: 1024px) 50vw,
-                 33vw"
-          priority={priority}
-          quality={85}
-        />
+    <>
+      <div 
+        className={`relative ${className} cursor-pointer`}
+        onClick={() => setIsLightboxOpen(true)}
+      >
+        {isLoading && (
+          <div className="absolute inset-0 bg-gray-100 animate-pulse rounded-md" />
+        )}
+        <div className="relative w-full h-full min-h-[200px]">
+          <Image
+            src={imageUrl}
+            alt={altText}
+            fill
+            className={`
+              object-cover rounded-md
+              ${isLoading ? 'opacity-0' : 'opacity-100'}
+              transition-opacity duration-300 ease-in-out
+            `}
+            onError={() => setImageError(true)}
+            onLoadingComplete={() => setIsLoading(false)}
+            sizes="(max-width: 640px) 100vw,
+                   (max-width: 1024px) 50vw,
+                   33vw"
+            priority={priority}
+            quality={85}
+          />
+        </div>
       </div>
-    </div>
+
+      {isLightboxOpen && (
+        <ImageLightbox
+          images={images}
+          currentIndex={currentIndex}
+          isOpen={isLightboxOpen}
+          onClose={() => setIsLightboxOpen(false)}
+        />
+      )}
+    </>
   );
 };
 
