@@ -154,6 +154,7 @@ export default function RootLayout({ children }) {
             </div>
           </div>
         </footer>
+        <Analytics />
       </body>
     </html>
   );
