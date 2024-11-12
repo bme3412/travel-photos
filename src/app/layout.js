@@ -1,7 +1,7 @@
 import './globals.css';
 import Link from 'next/link';
 import { MapPin, Camera, BookOpen, Mail, Home } from 'lucide-react';
-import { Analytics } from "@vercel/analytics/react"
+import { Analytics } from "@vercel/analytics/react";
 
 export const metadata = {
   title: '🛫 Passport & Ponder 🌎',
