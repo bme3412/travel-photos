@@ -12,74 +12,57 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className="h-full">
       <body className="min-h-full flex flex-col bg-gray-50">
-        {/* Header Section */}
-        <header className="bg-white shadow-lg sticky top-0 z-50 transition-shadow duration-300">
-          <div className="max-w-7xl mx-auto px-6">
-            {/* Logo and Title Section */}
-            <div className="text-center py-10">
-              <Link href="/" className="inline-block group">
-                <h1 className="text-6xl font-extrabold text-gray-900 mb-3 tracking-tight group-hover:text-teal-600 transition-all duration-300 ease-in-out">
-                  🌎 Passport & Ponder 🛫
+        {/* Compact Header Section */}
+        <header className="bg-white shadow-sm sticky top-0 z-50 transition-shadow duration-300" style={{ zIndex: 50 }}>
+          <div className="max-w-7xl mx-auto px-4">
+            {/* Compact Logo and Navigation Row */}
+            <div className="flex items-center justify-between py-3">
+              {/* Compact Logo */}
+              <Link href="/" className="group flex items-center">
+                <h1 className="text-2xl font-bold text-gray-900 tracking-tight group-hover:text-teal-600 transition-colors duration-300">
+                  🌎 Passport & Ponder
                 </h1>
-                <p className="text-lg text-gray-600 font-medium tracking-wide transform transition-all duration-300 group-hover:text-teal-600">
-                  Exploring the world, one two-week trip at a time
-                </p>
               </Link>
-            </div>
 
-            {/* Navigation Links */}
-            <nav className="flex justify-center space-x-12 border-t border-b border-gray-100">
-              <Link
-                href="/"
-                className="group flex items-center px-6 py-6 text-gray-700 hover:text-teal-600 font-medium transition-all duration-200 hover:border-t-2 hover:border-teal-600 -mt-[1px] relative"
-              >
-                <Home className="w-5 h-5 mr-2 group-hover:text-teal-600 transition-colors" />
-                <span className="relative">
-                  Home
-                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-teal-600 group-hover:w-full transition-all duration-300"></span>
-                </span>
-              </Link>
-              <Link
-                href="/map"
-                className="group flex items-center px-6 py-6 text-gray-700 hover:text-teal-600 font-medium transition-all duration-200 hover:border-t-2 hover:border-teal-600 -mt-[1px] relative"
-              >
-                <MapPin className="w-5 h-5 mr-2 group-hover:text-teal-600 transition-colors" />
-                <span className="relative">
-                  Where I've Been
-                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-teal-600 group-hover:w-full transition-all duration-300"></span>
-                </span>
-              </Link>
-              <Link
-                href="/photo-of-the-day"
-                className="group flex items-center px-6 py-6 text-gray-700 hover:text-teal-600 font-medium transition-all duration-200 hover:border-t-2 hover:border-teal-600 -mt-[1px] relative"
-              >
-                <Camera className="w-5 h-5 mr-2 group-hover:text-teal-600 transition-colors" />
-                <span className="relative">
-                  Photo of the Day
-                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-teal-600 group-hover:w-full transition-all duration-300"></span>
-                </span>
-              </Link>
-              <Link
-                href="/writing"
-                className="group flex items-center px-6 py-6 text-gray-700 hover:text-teal-600 font-medium transition-all duration-200 hover:border-t-2 hover:border-teal-600 -mt-[1px] relative"
-              >
-                <BookOpen className="w-5 h-5 mr-2 group-hover:text-teal-600 transition-colors" />
-                <span className="relative">
-                  Writing
-                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-teal-600 group-hover:w-full transition-all duration-300"></span>
-                </span>
-              </Link>
-              <Link
-                href="/contact"
-                className="group flex items-center px-6 py-6 text-gray-700 hover:text-teal-600 font-medium transition-all duration-200 hover:border-t-2 hover:border-teal-600 -mt-[1px] relative"
-              >
-                <Mail className="w-5 h-5 mr-2 group-hover:text-teal-600 transition-colors" />
-                <span className="relative">
-                  Contact
-                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-teal-600 group-hover:w-full transition-all duration-300"></span>
-                </span>
-              </Link>
-            </nav>
+              {/* Compact Navigation Links */}
+              <nav className="flex items-center space-x-6">
+                <Link
+                  href="/"
+                  className="group flex items-center px-3 py-2 text-sm text-gray-700 hover:text-teal-600 font-medium transition-all duration-200 rounded-lg hover:bg-teal-50"
+                >
+                  <Home className="w-4 h-4 mr-1.5 group-hover:text-teal-600 transition-colors" />
+                  <span>Home</span>
+                </Link>
+                <Link
+                  href="/map"
+                  className="group flex items-center px-3 py-2 text-sm text-gray-700 hover:text-teal-600 font-medium transition-all duration-200 rounded-lg hover:bg-teal-50"
+                >
+                  <MapPin className="w-4 h-4 mr-1.5 group-hover:text-teal-600 transition-colors" />
+                  <span>Where I&apos;ve Been</span>
+                </Link>
+                <Link
+                  href="/photo-of-the-day"
+                  className="group flex items-center px-3 py-2 text-sm text-gray-700 hover:text-teal-600 font-medium transition-all duration-200 rounded-lg hover:bg-teal-50"
+                >
+                  <Camera className="w-4 h-4 mr-1.5 group-hover:text-teal-600 transition-colors" />
+                  <span>Photos</span>
+                </Link>
+                <Link
+                  href="/writing"
+                  className="group flex items-center px-3 py-2 text-sm text-gray-700 hover:text-teal-600 font-medium transition-all duration-200 rounded-lg hover:bg-teal-50"
+                >
+                  <BookOpen className="w-4 h-4 mr-1.5 group-hover:text-teal-600 transition-colors" />
+                  <span>Writing</span>
+                </Link>
+                <Link
+                  href="/contact"
+                  className="group flex items-center px-3 py-2 text-sm text-gray-700 hover:text-teal-600 font-medium transition-all duration-200 rounded-lg hover:bg-teal-50"
+                >
+                  <Mail className="w-4 h-4 mr-1.5 group-hover:text-teal-600 transition-colors" />
+                  <span>Contact</span>
+                </Link>
+              </nav>
+            </div>
           </div>
         </header>
 
@@ -89,44 +72,47 @@ export default function RootLayout({ children }) {
         </main>
 
         {/* Footer */}
-        <footer className="bg-gray-900 text-white py-16">
-          <div className="max-w-7xl mx-auto px-6">
+        <footer className="bg-gray-900 text-white">
+          <div className="max-w-7xl mx-auto px-6 py-16">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
               {/* About Section */}
               <div className="space-y-4">
                 <h3 className="text-2xl font-semibold text-white mb-6 relative inline-block">
-                  About
+                  About Passport & Ponder
                   <span className="absolute bottom-0 left-0 w-1/2 h-0.5 bg-teal-500"></span>
                 </h3>
                 <p className="text-gray-300 leading-relaxed">
-                  Documenting my journey around the world through photographs and stories.
+                  Documenting adventures across continents with a focus on authentic experiences, 
+                  local cultures, and the stories that make each destination unique.
                 </p>
+                <div className="flex space-x-4 mt-6">
+                  <span className="inline-block px-3 py-1 bg-teal-600 text-white text-sm rounded-full">
+                    🌍 25+ Countries
+                  </span>
+                  <span className="inline-block px-3 py-1 bg-indigo-600 text-white text-sm rounded-full">
+                    📸 500+ Photos
+                  </span>
+                </div>
               </div>
 
-              {/* Quick Links */}
+              {/* Recent Adventures */}
               <div className="space-y-4">
                 <h3 className="text-2xl font-semibold text-white mb-6 relative inline-block">
-                  Quick Links
+                  Recent Adventures
                   <span className="absolute bottom-0 left-0 w-1/2 h-0.5 bg-teal-500"></span>
                 </h3>
-                <ul className="space-y-3">
-                  <li>
-                    <Link href="/map" className="text-gray-300 hover:text-teal-400 transition-colors duration-200 flex items-center">
-                      <MapPin className="w-4 h-4 mr-2" />
-                      Interactive Map
-                    </Link>
+                <ul className="space-y-3 text-gray-300">
+                  <li className="flex items-center">
+                    <span className="w-2 h-2 bg-teal-500 rounded-full mr-3"></span>
+                    Portugal: Coastal gems and historic cities
                   </li>
-                  <li>
-                    <Link href="/albums" className="text-gray-300 hover:text-teal-400 transition-colors duration-200 flex items-center">
-                      <Camera className="w-4 h-4 mr-2" />
-                      Photo Albums
-                    </Link>
+                  <li className="flex items-center">
+                    <span className="w-2 h-2 bg-teal-500 rounded-full mr-3"></span>
+                    Japan: Cherry blossoms and cultural immersion
                   </li>
-                  <li>
-                    <Link href="/stories" className="text-gray-300 hover:text-teal-400 transition-colors duration-200 flex items-center">
-                      <BookOpen className="w-4 h-4 mr-2" />
-                      Travel Stories
-                    </Link>
+                  <li className="flex items-center">
+                    <span className="w-2 h-2 bg-teal-500 rounded-full mr-3"></span>
+                    Iceland: Fire, ice, and Nordic landscapes
                   </li>
                 </ul>
               </div>
@@ -138,7 +124,7 @@ export default function RootLayout({ children }) {
                   <span className="absolute bottom-0 left-0 w-1/2 h-0.5 bg-teal-500"></span>
                 </h3>
                 <p className="text-gray-300 leading-relaxed">
-                  Share your own travel experiences or get in touch for collaborations. Let's explore together!
+                  Share your own travel experiences or get in touch for collaborations. Let&apos;s explore together!
                 </p>
                 <Link
                   href="/contact"

@@ -55,7 +55,8 @@
 
   /* Enhanced Popups */
   .mapboxgl-popup {
-    @apply max-w-[420px] z-10;
+    @apply max-w-[420px];
+    z-index: 60 !important; /* Above header but below modals */
     filter: drop-shadow(0 25px 50px rgba(0, 0, 0, 0.15));
   }
 
@@ -66,6 +67,7 @@
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     animation: popup-appear 0.3s ease-out;
+    z-index: 60 !important;
   }
 
   .mapboxgl-popup-tip {
@@ -77,6 +79,7 @@
     background: rgba(255, 255, 255, 0.8);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
+    z-index: 61 !important;
   }
 
   .mapboxgl-popup-close-button:hover {

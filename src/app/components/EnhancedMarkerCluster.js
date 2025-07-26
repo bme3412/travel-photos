@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { Eye, Filter, MapPin, Calendar, X, Camera } from 'lucide-react';
 import { getClusterThreshold } from '../utils/smartZoom';
 import { getSmartPopupPosition, getPopupClasses, getPopupStyles } from '../utils/smartPopupPosition';
+import { transformToCloudFront } from '../utils/imageUtils';
 
 // Optimized distance calculation with caching
 const distanceCache = new Map();
@@ -35,30 +36,39 @@ const PhotoPreview = ({ photo, onClick, className = "", size = "md" }) => {
   const sizes = {
     sm: "w-16 h-16",
     md: "w-20 h-20", 
-    lg: "w-24 h-24",
-    xl: "w-32 h-32"
+    lg: "w-28 h-28",
+    xl: "w-36 h-36"
+  };
+
+  const iconSizes = {
+    sm: "h-4 w-4",
+    md: "h-5 w-5",
+    lg: "h-6 w-6",
+    xl: "h-7 w-7"
   };
   
   return (
     <div 
-      className={`relative cursor-pointer group overflow-hidden rounded-xl shadow-md hover:shadow-lg transition-all duration-200 ${sizes[size]} ${className}`}
+      className={`relative cursor-pointer group overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 ${sizes[size]} ${className}`}
       onClick={() => onClick(photo)}
     >
       {!imageLoaded && !imageError && (
-        <div className="absolute inset-0 bg-gray-200 animate-pulse flex items-center justify-center">
-          <div className="w-6 h-6 bg-gray-300 rounded"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-gray-200 via-gray-300 to-gray-400 animate-pulse flex items-center justify-center">
+          <div className="p-2 bg-white/70 rounded-lg">
+            <Camera className={`${iconSizes[size]} text-gray-500`} />
+          </div>
         </div>
       )}
       
       {!imageError && (
         <Image
-          src={photo.url}
+          src={transformToCloudFront(photo.url)}
           alt={photo.caption || 'Photo'}
           fill
-          className={`object-cover transition-transform duration-300 group-hover:scale-110 ${
+          className={`object-cover transition-all duration-500 group-hover:scale-110 ${
             imageLoaded ? 'opacity-100' : 'opacity-0'
           }`}
-          sizes="150px"
+          sizes="140px"
           onLoad={() => setImageLoaded(true)}
           onError={() => setImageError(true)}
           loading="lazy"
@@ -66,28 +76,35 @@ const PhotoPreview = ({ photo, onClick, className = "", size = "md" }) => {
       )}
       
       {imageError && (
-        <div className="absolute inset-0 bg-gray-100 flex items-center justify-center">
-          <MapPin className="h-6 w-6 text-gray-400" />
-        </div>
-      )}
-      
-      {imageLoaded && (
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-          <div className="absolute bottom-2 left-2 right-2">
-            <div className="flex items-center justify-between">
-              <Eye className="h-4 w-4 text-white drop-shadow-lg" />
-              {photo.caption && (
-                <div className="text-xs text-white font-medium truncate ml-2 drop-shadow-lg">
-                  {photo.caption}
-                </div>
-              )}
-            </div>
+        <div className="absolute inset-0 bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center">
+          <div className="p-2 bg-white/80 rounded-lg">
+            <MapPin className={`${iconSizes[size]} text-gray-400`} />
           </div>
         </div>
       )}
       
-      <div className="absolute top-2 right-2 w-6 h-6 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-        <div className="w-2 h-2 bg-white rounded-full" />
+      {/* Enhanced hover overlay */}
+      {imageLoaded && (
+        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300">
+          <div className="absolute inset-0 flex items-center justify-center">
+            <div className="p-2 bg-white/90 rounded-xl transform scale-75 group-hover:scale-100 transition-all duration-300">
+              <Eye className="h-5 w-5 text-gray-700" />
+            </div>
+          </div>
+          
+          {photo.caption && (
+            <div className="absolute bottom-2 left-2 right-2 p-2 bg-black/60 rounded-lg backdrop-blur-sm">
+              <div className="text-xs text-white font-medium line-clamp-2 leading-tight">
+                {photo.caption}
+              </div>
+            </div>
+          )}
+        </div>
+      )}
+      
+      {/* Enhanced photo indicator */}
+      <div className="absolute top-2 right-2 p-1 bg-black/30 backdrop-blur-sm rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300 transform scale-75 group-hover:scale-100">
+        <Camera className="h-3 w-3 text-white" />
       </div>
     </div>
   );

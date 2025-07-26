@@ -29,9 +29,14 @@ export const getSmartPopupPosition = (latitude, longitude, viewport, mapRef) => 
     // Project the marker's geographic coordinates to screen pixels
     const markerPixels = mapRef.project([longitude, latitude]);
     
-    // Calculate relative position within the container (0-1)
+    // Account for header height (approximately 60px based on new compact header)
+    const HEADER_HEIGHT = 70; // Add some buffer
+    const SAFE_MARGIN = 20; // Additional safe margin
+    
+    // Calculate relative position within the container, accounting for header
+    const effectiveHeight = containerRect.height - HEADER_HEIGHT;
     const relativeX = markerPixels.x / containerRect.width;
-    const relativeY = markerPixels.y / containerRect.height;
+    const relativeY = (markerPixels.y - HEADER_HEIGHT) / effectiveHeight;
     
     // Define positioning thresholds
     const EDGE_THRESHOLD = 0.25; // 25% from edge
@@ -39,7 +44,7 @@ export const getSmartPopupPosition = (latitude, longitude, viewport, mapRef) => 
     let anchor = 'bottom';
     let offsetX = 0;
     let offsetY = 25;
-    let maxHeight = '400px';
+    let maxHeight = '350px';
     
     // Determine best anchor based on position
     const isNearTop = relativeY < EDGE_THRESHOLD;
@@ -51,11 +56,11 @@ export const getSmartPopupPosition = (latitude, longitude, viewport, mapRef) => 
     if (isNearTop && isNearLeft) {
       anchor = 'top-right';
       offsetX = 20;
-      offsetY = 20;
+      offsetY = Math.max(25, HEADER_HEIGHT - markerPixels.y + SAFE_MARGIN);
     } else if (isNearTop && isNearRight) {
       anchor = 'top-left';
       offsetX = -20;
-      offsetY = 20;
+      offsetY = Math.max(25, HEADER_HEIGHT - markerPixels.y + SAFE_MARGIN);
     } else if (isNearBottom && isNearLeft) {
       anchor = 'bottom-right';
       offsetX = 20;
@@ -65,10 +70,10 @@ export const getSmartPopupPosition = (latitude, longitude, viewport, mapRef) => 
       offsetX = -20;
       offsetY = -20;
     }
-    // Edge cases
-    else if (isNearTop) {
+    // Edge cases - prioritize avoiding header
+    else if (isNearTop || markerPixels.y < HEADER_HEIGHT + 100) {
       anchor = 'top';
-      offsetY = 25;
+      offsetY = Math.max(30, HEADER_HEIGHT - markerPixels.y + SAFE_MARGIN);
     } else if (isNearBottom) {
       anchor = 'bottom';
       offsetY = -25;
@@ -79,19 +84,24 @@ export const getSmartPopupPosition = (latitude, longitude, viewport, mapRef) => 
       anchor = 'right';
       offsetX = -25;
     }
-    // Default center positioning
-    else {
+    // Default center positioning - check if too close to header
+    else if (markerPixels.y < HEADER_HEIGHT + 80) {
+      anchor = 'top';
+      offsetY = Math.max(30, HEADER_HEIGHT - markerPixels.y + SAFE_MARGIN);
+    } else {
       anchor = 'bottom';
       offsetY = 25;
     }
     
-    // Adjust max height based on available space
-    if (isNearTop || isNearBottom) {
-      // Reduce max height when near top/bottom edges
-      const availableHeight = isNearTop 
-        ? (containerRect.height * (1 - relativeY)) - 60
-        : (containerRect.height * relativeY) - 60;
-      maxHeight = `${Math.min(400, Math.max(200, availableHeight))}px`;
+    // Adjust max height based on available space and header constraints
+    if (isNearTop || markerPixels.y < HEADER_HEIGHT + 100) {
+      // Reduce max height when near header area
+      const availableHeight = effectiveHeight - Math.max(0, HEADER_HEIGHT - markerPixels.y) - 60;
+      maxHeight = `${Math.min(350, Math.max(200, availableHeight))}px`;
+    } else if (isNearBottom) {
+      // Reduce max height when near bottom
+      const availableHeight = (containerRect.height * relativeY) - 40;
+      maxHeight = `${Math.min(350, Math.max(200, availableHeight))}px`;
     }
     
     return {
@@ -105,7 +115,7 @@ export const getSmartPopupPosition = (latitude, longitude, viewport, mapRef) => 
     return {
       anchor: 'bottom',
       offset: 25,
-      maxHeight: '400px'
+      maxHeight: '350px'
     };
   }
 };
@@ -118,8 +128,9 @@ export const getPopupClasses = () => {
   const baseClasses = 'bg-white rounded-2xl shadow-2xl border-0 overflow-hidden backdrop-blur-sm';
   const animationClasses = 'animate-in fade-in-0 zoom-in-95 duration-300';
   const scrollClasses = 'overflow-y-auto';
+  const positionClasses = 'relative z-[60]'; // Higher z-index to stay above header
   
-  return `${baseClasses} ${animationClasses} ${scrollClasses}`;
+  return `${baseClasses} ${animationClasses} ${scrollClasses} ${positionClasses}`;
 };
 
 /**
@@ -132,5 +143,6 @@ export const getPopupStyles = (maxHeight) => ({
   minWidth: '300px',
   maxWidth: '420px',
   boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(255, 255, 255, 0.8)',
-  background: 'linear-gradient(135deg, #ffffff 0%, #f8fafc 100%)'
+  background: 'linear-gradient(135deg, #ffffff 0%, #f8fafc 100%)',
+  zIndex: 60 // Ensure it stays above header
 }); 

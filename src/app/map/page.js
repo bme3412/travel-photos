@@ -2,7 +2,7 @@
 
 import React, { useState, useCallback, useEffect } from 'react';
 import Map, { Source, Layer } from 'react-map-gl';
-import { Maximize2, Minimize2 } from 'lucide-react';
+import { Maximize2, Minimize2, ChevronLeft, Globe } from 'lucide-react';
 import Link from 'next/link';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import { useDestinationData } from '../utils/useDestinationData';
@@ -20,8 +20,6 @@ const REGIONS = {
   'Oceania': { latitude: -25, longitude: 135, zoom: 3 }
 };
 
-
-
 const MapPage = () => {
   const [mapRef, setMapRef] = useState(null);
   const [viewport, setViewport] = useState({
@@ -35,6 +33,7 @@ const MapPage = () => {
   const [mapLoaded, setMapLoaded] = useState(false);
   const [selectedSidePanelLocation, setSelectedSidePanelLocation] = useState(null);
   const [isSidePanelOpen, setIsSidePanelOpen] = useState(false);
+  const [showRegionMenu, setShowRegionMenu] = useState(false);
   
   // Use memoized destination processing with photos
   const { destinations, visitedCountries } = useDestinationData(destinationsData, photosData);
@@ -48,6 +47,7 @@ const MapPage = () => {
       duration: 2000,
       essential: true
     });
+    setShowRegionMenu(false);
   }, [mapRef]);
 
   useEffect(() => {
@@ -101,46 +101,55 @@ const MapPage = () => {
 
   const mapContent = (
     <>
-      <div className="absolute top-4 right-4 z-10 flex flex-col gap-2">
-        {Object.keys(REGIONS).map((region) => (
+      {/* Minimal floating controls */}
+      <div className="absolute top-3 right-3 z-10 flex flex-col gap-1">
+        {/* Compact region selector */}
+        <div className="relative">
           <button
-            key={region}
-            onClick={() => flyToRegion(region)}
-            className="bg-white/90 backdrop-blur-sm px-4 py-2 rounded-lg text-indigo-600 
-                     hover:text-indigo-800 hover:bg-white shadow-md transition-all duration-200 
-                     whitespace-nowrap text-sm font-medium"
+            onClick={() => setShowRegionMenu(!showRegionMenu)}
+            className="bg-black/20 backdrop-blur-md hover:bg-black/30 text-white px-2 py-1.5 rounded-lg transition-all duration-200 flex items-center gap-1 text-xs font-medium shadow-sm"
           >
-            {region}
+            <Globe className="h-3 w-3" />
+            Regions
           </button>
-        ))}
+          
+          {showRegionMenu && (
+            <div className="absolute top-full right-0 mt-1 bg-white/95 backdrop-blur-md rounded-lg shadow-lg border border-white/20 overflow-hidden min-w-[120px]">
+              {Object.keys(REGIONS).map((region) => (
+                <button
+                  key={region}
+                  onClick={() => flyToRegion(region)}
+                  className="block w-full text-left px-3 py-2 text-xs text-gray-700 hover:bg-indigo-50 hover:text-indigo-600 transition-colors duration-150"
+                >
+                  {region}
+                </button>
+              ))}
+            </div>
+          )}
+        </div>
+
+        {/* Compact pop-out toggle */}
         <button
           onClick={togglePopOut}
-          className="bg-white/90 backdrop-blur-sm px-4 py-2 rounded-lg text-indigo-600 
-                   hover:text-indigo-800 hover:bg-white shadow-md transition-all duration-200 
-                   whitespace-nowrap text-sm font-medium flex items-center gap-2"
+          className="bg-black/20 backdrop-blur-md hover:bg-black/30 text-white p-1.5 rounded-lg transition-all duration-200 shadow-sm"
+          title={isPoppedOut ? "Close Pop-out" : "Pop-out Map"}
         >
           {isPoppedOut ? (
-            <>
-              <Minimize2 className="h-4 w-4" />
-              <span>Close Pop-out</span>
-            </>
+            <Minimize2 className="h-3 w-3" />
           ) : (
-            <>
-              <Maximize2 className="h-4 w-4" />
-              <span>Pop-out Map</span>
-            </>
+            <Maximize2 className="h-3 w-3" />
           )}
         </button>
       </div>
 
+      {/* Minimal back button */}
       {!isPoppedOut && (
         <Link 
           href="/" 
-          className="absolute top-4 left-4 z-10 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full 
-                     text-indigo-600 hover:text-indigo-800 shadow-md transition-colors duration-200 
-                     flex items-center gap-2"
+          className="absolute top-3 left-3 z-10 bg-black/20 backdrop-blur-md hover:bg-black/30 text-white p-1.5 rounded-lg transition-all duration-200 shadow-sm"
+          title="Back to Home"
         >
-          ← Back
+          <ChevronLeft className="h-3 w-3" />
         </Link>
       )}
 
@@ -157,6 +166,7 @@ const MapPage = () => {
         maxBounds={[[-180, -85], [180, 85]]}
         dragRotate={false}
         touchPitch={false}
+        onClick={() => setShowRegionMenu(false)}
       >
         <Source
           id="countries"

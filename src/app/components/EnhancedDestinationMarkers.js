@@ -1,11 +1,16 @@
 import React, { useRef, useCallback } from 'react';
 import { Marker, Popup } from 'react-map-gl';
 import Link from 'next/link';
-import { CircleDot, MapPin, ExternalLink, Camera } from 'lucide-react';
+import Image from 'next/image';
+import { CircleDot, MapPin, ExternalLink, Camera, Image as ImageIcon } from 'lucide-react';
 import { getSmartPopupPosition, getPopupClasses, getPopupStyles } from '../utils/smartPopupPosition';
+import { transformToCloudFront } from '../utils/imageUtils';
 
 const EnhancedDestinationPopup = ({ destination, onMouseEnter, onMouseLeave, popupStyle, onOpenSidePanel }) => {
   const { name, country, description, photos, photoCount } = destination;
+  
+  // Get up to 3 photos for preview
+  const previewPhotos = photos?.slice(0, 3) || [];
 
   return (
     <div 
@@ -54,6 +59,48 @@ const EnhancedDestinationPopup = ({ destination, onMouseEnter, onMouseLeave, pop
           </p>
         )}
       </div>
+
+      {/* Photo Preview Section */}
+      {previewPhotos.length > 0 && (
+        <div className="p-4 bg-gradient-to-br from-gray-50 to-blue-50/30">
+          <div className="flex items-center gap-2 mb-3">
+            <div className="p-1.5 bg-blue-100 rounded-lg">
+              <ImageIcon className="h-4 w-4 text-blue-600" />
+            </div>
+            <span className="text-sm font-semibold text-gray-700">Photo Preview</span>
+          </div>
+          
+          <div className="grid grid-cols-3 gap-2">
+            {previewPhotos.map((photo, index) => (
+              <div
+                key={photo.id || index}
+                className="relative aspect-square rounded-xl overflow-hidden cursor-pointer hover:scale-105 transition-all duration-300 shadow-md hover:shadow-lg group"
+                onClick={() => onOpenSidePanel({ ...destination, name, photos })}
+              >
+                <Image
+                  src={transformToCloudFront(photo.url)}
+                  alt={photo.caption || `${name} photo ${index + 1}`}
+                  fill
+                  className="object-cover group-hover:scale-110 transition-transform duration-500"
+                  sizes="120px"
+                />
+                
+                {/* Hover overlay */}
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300 flex items-center justify-center">
+                  <Camera className="h-5 w-5 text-white opacity-0 group-hover:opacity-100 transition-all duration-300 transform scale-75 group-hover:scale-100" />
+                </div>
+                
+                {/* Photo counter for first image */}
+                {index === 0 && photoCount > 3 && (
+                  <div className="absolute bottom-1 right-1 px-2 py-1 bg-black/70 text-white text-xs font-medium rounded-md backdrop-blur-sm">
+                    +{photoCount - 3}
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
 
       {/* Actions with enhanced styling */}
       <div className="p-5 bg-gradient-to-br from-gray-50 to-white">
