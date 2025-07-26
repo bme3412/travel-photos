@@ -26,7 +26,7 @@
   pointer-events: none;
 }
 
-/* Mapbox Styles */
+/* Enhanced Mapbox Styles */
 @layer components {
   /* Mapbox container and canvas */
   .mapboxgl-map {
@@ -42,19 +42,30 @@
     @apply w-full h-full;
   }
 
-  /* Markers */
+  /* Enhanced Markers */
   .marker-container {
     @apply cursor-pointer w-8 h-8;
     transform: translate(-50%, -50%);
+    transition: transform 0.3s ease;
   }
 
-  /* Popups */
+  .marker-container:hover {
+    transform: translate(-50%, -50%) scale(1.1);
+  }
+
+  /* Enhanced Popups */
   .mapboxgl-popup {
-    @apply max-w-[240px] z-10;
+    @apply max-w-[420px] z-10;
+    filter: drop-shadow(0 25px 50px rgba(0, 0, 0, 0.15));
   }
 
   .mapboxgl-popup-content {
-    @apply p-0 rounded-xl overflow-hidden shadow-lg bg-white;
+    @apply p-0 rounded-2xl overflow-hidden shadow-none bg-transparent border-0;
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    animation: popup-appear 0.3s ease-out;
   }
 
   .mapboxgl-popup-tip {
@@ -62,24 +73,34 @@
   }
 
   .mapboxgl-popup-close-button {
-    @apply right-2 top-2 p-1 text-gray-600 text-base rounded transition-all duration-200;
+    @apply right-3 top-3 p-2 text-gray-600 text-lg rounded-xl transition-all duration-300;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
   }
 
   .mapboxgl-popup-close-button:hover {
-    @apply bg-black/5 text-gray-800;
+    @apply bg-white text-gray-800 shadow-md scale-105;
   }
 
-  /* Controls */
+  /* Enhanced Controls */
   .mapboxgl-ctrl-top-right {
-    @apply top-3 right-3;
+    @apply top-4 right-4;
   }
 
   .mapboxgl-ctrl-group {
-    @apply rounded-lg overflow-hidden shadow-sm bg-white;
+    @apply rounded-xl overflow-hidden shadow-lg bg-white border-0;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.95);
   }
 
   .mapboxgl-ctrl-group button {
-    @apply w-8 h-8;
+    @apply w-10 h-10 transition-all duration-200;
+  }
+
+  .mapboxgl-ctrl-group button:hover {
+    @apply bg-gray-50 scale-105;
   }
 
   .mapboxgl-ctrl-group button.mapboxgl-ctrl-zoom-in .mapboxgl-ctrl-icon {
@@ -92,25 +113,95 @@
     background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6 12H18' stroke='%23374151' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
   }
 
-  /* Attribution */
-  .mapboxgl-ctrl-attrib {
-    @apply hidden;
+  /* Navigation controls */
+  .mapboxgl-ctrl-group .mapboxgl-ctrl-compass .mapboxgl-ctrl-icon {
+    @apply bg-no-repeat bg-center;
+    background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 2L13.09 8.26L20 12L13.09 15.74L12 22L10.91 15.74L4 12L10.91 8.26L12 2Z' stroke='%23374151' stroke-width='1.5'/%3E%3C/svg%3E");
   }
 
-  /* Map container wrapper */
-  .map-wrapper {
-    @apply relative w-full h-[500px] min-h-[500px] bg-gray-50 rounded-lg overflow-hidden;
+  /* Enhanced photo grid animations */
+  .photo-grid-item {
+    @apply transition-all duration-300 ease-out;
+  }
+
+  .photo-grid-item:hover {
+    @apply shadow-xl scale-105;
+    transform: translateY(-2px) scale(1.05);
   }
 }
 
-/* Custom utilities */
-@layer utilities {
-  .scrollbar-hide {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
+/* Custom animations */
+@keyframes popup-appear {
+  0% {
+    opacity: 0;
+    transform: scale(0.9) translateY(10px);
   }
-  
-  .scrollbar-hide::-webkit-scrollbar {
-    display: none;
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes slide-in-right {
+  0% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fade-in-up {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Utility classes for enhanced animations */
+@layer utilities {
+  .animate-popup-appear {
+    animation: popup-appear 0.3s ease-out;
+  }
+
+  .animate-slide-in-right {
+    animation: slide-in-right 0.5s ease-out;
+  }
+
+  .animate-fade-in-up {
+    animation: fade-in-up 0.3s ease-out;
+  }
+
+  .backdrop-blur-glass {
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+
+  /* Enhanced gradients */
+  .bg-glass {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+
+  .bg-glass-dark {
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+
+  /* Professional shadows */
+  .shadow-glass {
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(255, 255, 255, 0.8);
+  }
+
+  .shadow-glass-lg {
+    box-shadow: 0 32px 64px -12px rgba(0, 0, 0, 0.35), 0 0 0 1px rgba(255, 255, 255, 0.9);
   }
 }

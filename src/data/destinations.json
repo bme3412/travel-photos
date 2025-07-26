@@ -711,6 +711,70 @@
         "description": "Home to world-famous theme parks including Walt Disney World and Universal Studios, with vibrant downtown arts and culture scene.",
         "latitude": 28.5384,
         "longitude": -81.3789
+      },
+      {
+        "id": "90",
+        "name": "Stockholm",
+        "country": "Sweden",
+        "description": "Sweden's capital featuring beautiful archipelagos, historic Gamla Stan old town, and the impressive Vasa Museum.",
+        "latitude": 59.3293,
+        "longitude": 18.0686
+      },
+      {
+        "id": "91",
+        "name": "Oslo",
+        "country": "Norway",
+        "description": "Norway's capital known for the Viking Ship Museum, modern Opera House, and stunning fjord access.",
+        "latitude": 59.9139,
+        "longitude": 10.7522
+      },
+      {
+        "id": "92",
+        "name": "Bergen",
+        "country": "Norway",
+        "description": "Gateway to the Norwegian fjords, featuring colorful wooden houses at Bryggen wharf and scenic mountain railways.",
+        "latitude": 60.3913,
+        "longitude": 5.3221
+      },
+      {
+        "id": "93",
+        "name": "Copenhagen",
+        "country": "Denmark",
+        "description": "Denmark's vibrant capital featuring fairy-tale castles, the colorful Nyhavn harbor, and world-class design culture.",
+        "latitude": 55.6761,
+        "longitude": 12.5683
+      },
+      {
+        "id": "94",
+        "name": "Húsavík",
+        "country": "Iceland",
+        "description": "Charming whale watching capital of Iceland, known for incredible marine wildlife and dramatic northern landscapes.",
+        "latitude": 66.0449,
+        "longitude": -17.3389
+      },
+      {
+        "id": "95",
+        "name": "Seychelles",
+        "country": "Seychelles",
+        "description": "Tropical paradise featuring pristine beaches, unique granite formations, and exceptional marine biodiversity.",
+        "latitude": -4.6796,
+        "longitude": 55.4920
+      },
+      {
+        "id": "96",
+        "name": "Cairo",
+        "country": "Egypt",
+        "description": "Ancient capital featuring the Great Pyramids of Giza, the Sphinx, and the world-renowned Egyptian Museum.",
+        "latitude": 30.0444,
+        "longitude": 31.2357
+      },
+      {
+        "id": "97",
+        "name": "Luxor",
+        "country": "Egypt",
+        "description": "Ancient city of Thebes featuring the Valley of the Kings, Karnak Temple complex, and incredible pharaonic monuments.",
+        "latitude": 25.6872,
+        "longitude": 32.6396
       }
     ]
   }

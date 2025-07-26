@@ -1,12 +1,15 @@
 'use client';
 
-import React, { useState, useEffect, useCallback } from 'react';
-import Map, { Source, Layer, Marker, Popup } from 'react-map-gl';
-import { MapPin, CircleDot, Maximize2, Minimize2 } from 'lucide-react';
+import React, { useState, useCallback, useEffect } from 'react';
+import Map, { Source, Layer } from 'react-map-gl';
+import { Maximize2, Minimize2 } from 'lucide-react';
 import Link from 'next/link';
 import 'mapbox-gl/dist/mapbox-gl.css';
-import { countryToISO } from '../utils/countryMapping';
+import { useDestinationData } from '../utils/useDestinationData';
+import { EnhancedDestinationMarkers } from '../components/EnhancedDestinationMarkers';
+import PhotoSidePanel from '../components/PhotoSidePanel';
 import destinationsData from '../../data/destinations.json';
+import photosData from '../../data/photos.json';
 
 const REGIONS = {
   'North America': { latitude: 45, longitude: -100, zoom: 2.5 },
@@ -17,27 +20,7 @@ const REGIONS = {
   'Oceania': { latitude: -25, longitude: 135, zoom: 3 }
 };
 
-const CustomMarker = ({ onClick, onMouseEnter, onMouseLeave, isHovered }) => (
-  <div 
-    className="relative cursor-pointer group"
-    onClick={onClick}
-    onMouseEnter={onMouseEnter}
-    onMouseLeave={onMouseLeave}
-  >
-    <div className="absolute -inset-1 bg-indigo-500/30 rounded-full animate-pulse" />
-    <div className={`relative p-1 rounded-full shadow-lg transform transition-all duration-200 ${
-      isHovered ? 'scale-125' : 'hover:scale-110'
-    }`}
-         style={{
-           background: 'linear-gradient(45deg, #6366f1, #8b5cf6)',
-         }}>
-      <CircleDot className="h-2 w-2 text-white" />
-    </div>
-    <div className="absolute inset-0 flex items-center justify-center">
-      <div className="h-1 w-1 bg-white rounded-full shadow-inner" />
-    </div>
-  </div>
-);
+
 
 const MapPage = () => {
   const [mapRef, setMapRef] = useState(null);
@@ -48,23 +31,13 @@ const MapPage = () => {
     projection: 'mercator'
   });
   const [isPoppedOut, setIsPoppedOut] = useState(false);
-  const [destinations, setDestinations] = useState([]);
-  const [visitedCountries, setVisitedCountries] = useState({});
   const [hoveredDestination, setHoveredDestination] = useState(null);
   const [mapLoaded, setMapLoaded] = useState(false);
-
-  useEffect(() => {
-    setDestinations(destinationsData.destinations);
-    const countryCodes = {};
-    destinationsData.destinations.forEach(dest => {
-      if (countryToISO[dest.country]) {
-        countryCodes[countryToISO[dest.country]] = true;
-      } else {
-        console.warn(`No ISO code found for country: ${dest.country}`);
-      }
-    });
-    setVisitedCountries(countryCodes);
-  }, []);
+  const [selectedSidePanelLocation, setSelectedSidePanelLocation] = useState(null);
+  const [isSidePanelOpen, setIsSidePanelOpen] = useState(false);
+  
+  // Use memoized destination processing with photos
+  const { destinations, visitedCountries } = useDestinationData(destinationsData, photosData);
 
   const flyToRegion = useCallback((region) => {
     if (!mapRef) return;
@@ -92,6 +65,16 @@ const MapPage = () => {
     // Prevent scroll when popped out
     document.body.style.overflow = !isPoppedOut ? 'hidden' : 'auto';
   };
+
+  const handleOpenSidePanel = useCallback((location) => {
+    setSelectedSidePanelLocation(location);
+    setIsSidePanelOpen(true);
+  }, []);
+
+  const handleCloseSidePanel = useCallback(() => {
+    setIsSidePanelOpen(false);
+    setSelectedSidePanelLocation(null);
+  }, []);
 
   const countryLayer = {
     id: 'country-layer',
@@ -166,7 +149,7 @@ const MapPage = () => {
         initialViewState={viewport}
         style={{ width: '100%', height: '100%' }}
         mapStyle="mapbox://styles/mapbox/light-v11"
-        mapboxAccessToken={process.env.NEXT_PUBLIC_MAPBOX_TOKEN}
+        mapboxAccessToken={process.env.NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN}
         onMove={evt => setViewport(evt.viewState)}
         onLoad={() => setMapLoaded(true)}
         projection="mercator"
@@ -190,40 +173,15 @@ const MapPage = () => {
           />
         </Source>
 
-        {mapLoaded && destinations.map((dest) => (
-          <React.Fragment key={dest.id}>
-            <Marker
-              latitude={dest.latitude}
-              longitude={dest.longitude}
-              anchor="center"
-            >
-              <CustomMarker
-                isHovered={hoveredDestination?.id === dest.id}
-                onMouseEnter={() => setHoveredDestination(dest)}
-                onMouseLeave={() => setHoveredDestination(null)}
-              />
-            </Marker>
-            {hoveredDestination?.id === dest.id && (
-              <Popup
-                latitude={dest.latitude}
-                longitude={dest.longitude}
-                anchor="top"
-                closeButton={false}
-                closeOnClick={false}
-                className="z-50"
-                offset={12}
-              >
-                <div className="p-2 bg-white rounded-lg shadow-lg border border-indigo-100 min-w-[150px]">
-                  <h2 className="text-sm font-semibold text-gray-900">{dest.name}</h2>
-                  <p className="text-xs text-gray-600">{dest.country}</p>
-                  {dest.description && (
-                    <p className="mt-1 text-xs text-gray-700 line-clamp-2">{dest.description}</p>
-                  )}
-                </div>
-              </Popup>
-            )}
-          </React.Fragment>
-        ))}
+        <EnhancedDestinationMarkers
+          destinations={destinations}
+          mapLoaded={mapLoaded}
+          hoveredDestination={hoveredDestination}
+          setHoveredDestination={setHoveredDestination}
+          onOpenSidePanel={handleOpenSidePanel}
+          mapRef={mapRef}
+          viewport={viewport}
+        />
       </Map>
     </>
   );
@@ -234,6 +192,12 @@ const MapPage = () => {
         <div className="absolute inset-4 bg-white rounded-xl shadow-2xl overflow-hidden transition-all duration-300 ease-in-out transform">
           {mapContent}
         </div>
+        <PhotoSidePanel
+          location={selectedSidePanelLocation}
+          isOpen={isSidePanelOpen}
+          onClose={handleCloseSidePanel}
+          onPhotoClick={(photo) => console.log('Side panel photo clicked:', photo)}
+        />
       </div>
     );
   }
@@ -241,6 +205,12 @@ const MapPage = () => {
   return (
     <div className="h-screen w-screen relative">
       {mapContent}
+      <PhotoSidePanel
+        location={selectedSidePanelLocation}
+        isOpen={isSidePanelOpen}
+        onClose={handleCloseSidePanel}
+        onPhotoClick={(photo) => console.log('Side panel photo clicked:', photo)}
+      />
     </div>
   );
 };

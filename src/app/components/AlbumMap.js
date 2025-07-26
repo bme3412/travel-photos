@@ -1,186 +1,107 @@
 'use client';
 
-import React, { useEffect, useRef, useState } from 'react';
-import { Map as MapIcon, Loader2 } from 'lucide-react';
-
-const debug = (message, data = null) => {
-  if (data) {
-    console.log(`[MapDebug] ${message}`, data);
-  } else {
-    console.log(`[MapDebug] ${message}`);
-  }
-};
+import React, { useState, useCallback, useMemo, useRef } from 'react';
+import Map from 'react-map-gl';
+import { Map as MapIcon, Loader2, Route, Filter, X, Target } from 'lucide-react';
+import 'mapbox-gl/dist/mapbox-gl.css';
+import { useLocationData, useMapBounds } from '../utils/useLocationData';
+import { EnhancedMarkerCluster } from './EnhancedMarkerCluster';
+import { RouteVisualization } from './RouteVisualization';
+import usePhotoStore from '../store/usePhotoStore';
+import { useSmartZoom } from '../utils/smartZoom';
 
 export default function AlbumMap({ album, onLocationSelect }) {
-  const mapContainer = useRef(null);
-  const mapInstance = useRef(null);
-  const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
+  const [viewport, setViewport] = useState({
+    latitude: 20,
+    longitude: 0,
+    zoom: 2
+  });
+  const [showRoutes, setShowRoutes] = useState(false);
+  const [filteredLocation, setFilteredLocation] = useState(null);
+  
+  // Refs for cluster component and map
+  const clusterRef = useRef(null);
+  const mapRef = useRef(null);
+  
+  // Photo store for lightbox integration
+  const { openLightbox } = usePhotoStore();
+  
+  // Use memoized location processing
+  const allLocations = useLocationData(album?.photos);
+  const locations = useMemo(() => 
+    filteredLocation 
+      ? allLocations.filter(loc => loc.id === filteredLocation.id)
+      : allLocations,
+    [allLocations, filteredLocation]
+  );
+  const bounds = useMapBounds(locations);
+  
+  // Smart zoom functionality
+  const { adjustZoom, isOptimalZoom } = useSmartZoom(locations, viewport, setViewport);
 
-  useEffect(() => {
-    let mounted = true;
-    let mapboxgl = null;
+  // Initialize map with proper bounds when locations are available
+  const handleMapLoad = useCallback(() => {
+    setIsLoading(false);
+    
+    // Fit to bounds if we have locations
+    if (bounds && locations.length > 0) {
+      const newViewport = {
+        latitude: (bounds.north + bounds.south) / 2,
+        longitude: (bounds.east + bounds.west) / 2,
+        zoom: Math.min(12, 10 - Math.log2(Math.max(bounds.east - bounds.west, bounds.north - bounds.south)))
+      };
+      setViewport(newViewport);
+    }
+  }, [bounds, locations.length]);
 
-    // Dynamically add Mapbox CSS
-    const addMapboxCSS = () => {
-      const link = document.createElement('link');
-      link.href = 'https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.css';
-      link.rel = 'stylesheet';
-      document.head.appendChild(link);
-      return link;
-    };
+  const handleLocationSelect = useCallback((location) => {
+    onLocationSelect?.(location);
+  }, [onLocationSelect]);
 
-    const initializeMap = async () => {
-      try {
-        debug('Starting map initialization');
+  const handlePhotoClick = useCallback((photo) => {
+    // Find the index of this photo in the album
+    const photoIndex = album?.photos?.findIndex(p => p.id === photo.id);
+    if (photoIndex !== -1) {
+      openLightbox({ ...photo, index: photoIndex });
+    }
+  }, [album?.photos, openLightbox]);
 
-        if (!mapContainer.current) {
-          throw new Error('Container not available');
-        }
+  const handleFilterByLocation = useCallback((location) => {
+    setFilteredLocation(location);
+  }, []);
 
-        if (!album?.photos?.length) {
-          throw new Error('No photos available');
-        }
+  const handleViewAllPhotos = useCallback((location) => {
+    // Open lightbox with first photo from this location
+    if (location.photos?.length > 0) {
+      handlePhotoClick(location.photos[0]);
+    }
+  }, [handlePhotoClick]);
 
-        // Add Mapbox CSS
-        const cssLink = addMapboxCSS();
+  const clearLocationFilter = useCallback(() => {
+    setFilteredLocation(null);
+  }, []);
 
-        // Wait for container to be ready
-        await new Promise(resolve => setTimeout(resolve, 500));
+  const toggleRoutes = useCallback(() => {
+    setShowRoutes(prev => !prev);
+  }, []);
 
-        if (!mounted) {
-          cssLink.remove();
-          return;
-        }
+  const handleAutoFit = useCallback(() => {
+    adjustZoom(true);
+  }, [adjustZoom]);
 
-        debug('Container dimensions:', {
-          width: mapContainer.current.offsetWidth,
-          height: mapContainer.current.offsetHeight
-        });
+  // Memoize map move handler
+  const handleMapMove = useCallback((evt) => {
+    setViewport(evt.viewState);
+  }, []);
 
-        // Import and setup Mapbox
-        const mapboxModule = await import('mapbox-gl');
-        mapboxgl = mapboxModule.default;
-
-        if (!process.env.NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN) {
-          throw new Error('Mapbox token missing');
-        }
-
-        mapboxgl.accessToken = process.env.NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN;
-
-        // Process locations from photos
-        const locationMap = new Map();
-        album.photos.forEach(photo => {
-          if (!photo.coordinates || !photo.locationId) return;
-          
-          const key = photo.locationId;
-          if (!locationMap.has(key)) {
-            locationMap.set(key, {
-              name: photo.locationId,
-              coordinates: photo.coordinates,
-              photoCount: 1
-            });
-          } else {
-            const location = locationMap.get(key);
-            location.photoCount += 1;
-          }
-        });
-
-        const locations = Array.from(locationMap.values());
-
-        if (!locations.length) {
-          throw new Error('No locations available');
-        }
-
-        debug('Valid locations:', locations);
-
-        // Calculate bounds
-        const bounds = new mapboxgl.LngLatBounds();
-        locations.forEach(location => {
-          bounds.extend([location.coordinates.lng, location.coordinates.lat]);
-        });
-
-        // Create map
-        mapInstance.current = new mapboxgl.Map({
-          container: mapContainer.current,
-          style: 'mapbox://styles/mapbox/streets-v12',
-          bounds: bounds,
-          fitBoundsOptions: { 
-            padding: 50,
-            maxZoom: 12 
-          },
-          attributionControl: false,
-          preserveDrawingBuffer: true
-        });
-
-        // Add navigation control
-        mapInstance.current.addControl(
-          new mapboxgl.NavigationControl({ showCompass: false }),
-          'top-right'
-        );
-
-        // Add markers on load
-        mapInstance.current.on('load', () => {
-          if (!mounted) return;
-
-          locations.forEach(location => {
-            const el = document.createElement('div');
-            el.className = 'marker-container';
-            el.innerHTML = `
-              <div class="flex items-center justify-center w-8 h-8 rounded-full 
-                          bg-teal-600 text-white border-2 border-white shadow-lg">
-                <span class="text-sm font-medium">${location.photoCount}</span>
-              </div>
-            `;
-
-            // Create and add marker
-            new mapboxgl.Marker(el)
-              .setLngLat([location.coordinates.lng, location.coordinates.lat])
-              .setPopup(
-                new mapboxgl.Popup({ offset: 25 })
-                  .setHTML(`
-                    <div class="p-3">
-                      <h3 class="font-semibold text-gray-900">${location.name}</h3>
-                      <p class="text-sm text-gray-600 mt-1">${location.photoCount} photos</p>
-                    </div>
-                  `)
-              )
-              .addTo(mapInstance.current);
-
-            if (onLocationSelect) {
-              el.addEventListener('click', () => {
-                onLocationSelect(location);
-              });
-            }
-          });
-
-          setIsLoading(false);
-        });
-
-      } catch (err) {
-        debug('Error:', err);
-        if (mounted) {
-          setError(err.message);
-          setIsLoading(false);
-        }
-      }
-    };
-
-    initializeMap();
-
-    return () => {
-      mounted = false;
-      if (mapInstance.current) {
-        mapInstance.current.remove();
-        mapInstance.current = null;
-      }
-      // Remove the Mapbox CSS link if it exists
-      const cssLink = document.querySelector('link[href*="mapbox-gl.css"]');
-      if (cssLink) {
-        cssLink.remove();
-      }
-    };
-  }, [album, onLocationSelect]);
+  // Handle map container clicks to close popups
+  const handleMapClick = useCallback(() => {
+    // Check if the cluster component has a method to close popups
+    if (clusterRef.current && clusterRef.current.closePopup) {
+      clusterRef.current.closePopup();
+    }
+  }, []);
 
   if (!album?.photos?.length) {
     return (
@@ -201,15 +122,59 @@ export default function AlbumMap({ album, onLocationSelect }) {
 
   return (
     <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
-      <div className="p-6 border-b flex justify-between items-center">
-        <h2 className="text-2xl font-semibold text-gray-800">Photo Locations</h2>
-        <div className="flex items-center space-x-2 text-sm text-gray-600">
-          <MapIcon className="h-4 w-4" />
-          <span>{album?.photos?.length || 0} photos</span>
+      <div className="p-6 border-b">
+        <div className="flex justify-between items-start mb-4">
+          <h2 className="text-2xl font-semibold text-gray-800">Photo Locations</h2>
+          <div className="flex items-center space-x-2 text-sm text-gray-600">
+            <MapIcon className="h-4 w-4" />
+            <span>{locations.length} locations • {album?.photos?.length || 0} photos</span>
+          </div>
+        </div>
+        
+        {/* Controls */}
+        <div className="flex gap-2 items-center flex-wrap">
+          <button
+            onClick={toggleRoutes}
+            className={`flex items-center gap-2 px-3 py-2 text-sm font-medium rounded-lg transition-colors duration-200 ${
+              showRoutes 
+                ? 'text-white bg-indigo-600 hover:bg-indigo-700' 
+                : 'text-indigo-600 bg-indigo-50 hover:bg-indigo-100'
+            }`}
+          >
+            <Route className="h-3 w-3" />
+            Routes
+          </button>
+          
+          {!isOptimalZoom && (
+            <button
+              onClick={handleAutoFit}
+              className="flex items-center gap-2 px-3 py-2 text-sm font-medium text-gray-600 bg-gray-50 hover:bg-gray-100 rounded-lg transition-colors duration-200"
+            >
+              <Target className="h-3 w-3" />
+              Auto Fit
+            </button>
+          )}
+          
+          <div className="text-xs text-gray-500 bg-gray-50 px-2 py-1 rounded">
+            Zoom: {Math.round(viewport.zoom)}
+          </div>
+          
+          {filteredLocation && (
+            <div className="flex items-center gap-2 px-3 py-2 text-sm bg-teal-50 border border-teal-200 rounded-lg">
+              <Filter className="h-3 w-3 text-teal-600" />
+              <span className="text-teal-700">{filteredLocation.name}</span>
+              <button 
+                onClick={clearLocationFilter}
+                className="text-teal-600 hover:text-teal-800"
+              >
+                <X className="h-3 w-3" />
+              </button>
+            </div>
+          )}
         </div>
       </div>
 
-      <div className="relative">
+      <div className="relative h-96">
         {isLoading && (
           <div className="absolute inset-0 z-10 flex flex-col items-center justify-center bg-gray-50/80">
             <Loader2 className="h-8 w-8 animate-spin text-teal-600 mb-4" />
@@ -217,19 +182,38 @@ export default function AlbumMap({ album, onLocationSelect }) {
           </div>
         )}
 
-        {error && (
-          <div className="absolute inset-0 z-10 flex items-center justify-center bg-gray-50/80">
-            <div className="text-red-500 text-center px-4">
-              <p className="font-medium mb-1">Error loading map</p>
-              <p className="text-sm">{error}</p>
-            </div>
-          </div>
+        {locations.length > 0 && (
+          <Map
+            ref={mapRef}
+            {...viewport}
+            style={{ width: '100%', height: '100%' }}
+            mapStyle="mapbox://styles/mapbox/streets-v12"
+            mapboxAccessToken={process.env.NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN}
+            onMove={handleMapMove}
+            onLoad={handleMapLoad}
+            onClick={handleMapClick}
+            attributionControl={false}
+            dragRotate={false}
+            touchPitch={false}
+          >
+            <RouteVisualization 
+              locations={allLocations}
+              showRoutes={showRoutes}
+            />
+            <EnhancedMarkerCluster
+              ref={clusterRef}
+              locations={locations}
+              zoom={viewport.zoom}
+              onLocationSelect={handleLocationSelect}
+              onPhotoClick={handlePhotoClick}
+              onFilterByLocation={handleFilterByLocation}
+              onViewAllPhotos={handleViewAllPhotos}
+              showFilters={!filteredLocation}
+              mapRef={mapRef.current}
+              viewport={viewport}
+            />
+          </Map>
         )}
-
-        <div 
-          ref={mapContainer}
-          className="map-wrapper h-96"
-        />
       </div>
     </div>
   );

@@ -59,6 +59,7 @@ export const countryToISO = {
     'Estonia': 'EST',
     'Slovenia': 'SVN',  
     'Czech Republic': 'CZE',
-    'Monaco': 'MCO'
+    'Monaco': 'MCO',
+    'Seychelles': 'SYC'
 
   };
