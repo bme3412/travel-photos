@@ -53,11 +53,24 @@
     transform: translate(-50%, -50%) scale(1.1);
   }
 
-  /* Enhanced Popups */
+  /* Enhanced Popups with proper z-index hierarchy and stability fixes */
   .mapboxgl-popup {
     @apply max-w-[420px];
-    z-index: 60 !important; /* Above header but below modals */
     filter: drop-shadow(0 25px 50px rgba(0, 0, 0, 0.15));
+    /* Prevent flickering by ensuring stable positioning */
+    will-change: transform;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+  }
+
+  /* Destination popups (lower priority) */
+  .mapboxgl-popup.destination-popup {
+    z-index: 70 !important;
+  }
+
+  /* Location/cluster popups (higher priority) */
+  .mapboxgl-popup.location-popup {
+    z-index: 80 !important;
   }
 
   .mapboxgl-popup-content {
@@ -67,7 +80,10 @@
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     animation: popup-appear 0.3s ease-out;
-    z-index: 60 !important;
+    pointer-events: auto;
+    /* Stability improvements */
+    transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
   }
 
   .mapboxgl-popup-tip {
@@ -96,6 +112,64 @@
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     background: rgba(255, 255, 255, 0.95);
+  }
+
+  /* Enhanced Popup Animations */
+  @keyframes popup-appear {
+    0% {
+      opacity: 0;
+      transform: scale(0.9) translateY(10px);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+    }
+  }
+
+  @keyframes popup-disappear {
+    0% {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+    }
+    100% {
+      opacity: 0;
+      transform: scale(0.9) translateY(10px);
+    }
+  }
+
+  /* Marker hover states with better transitions */
+  .marker-hover-blocker {
+    pointer-events: none !important;
+    opacity: 0.7;
+    transition: opacity 0.2s ease-out;
+  }
+
+  /* Prevent rapid state changes during transitions */
+  .popup-transitioning {
+    pointer-events: none;
+  }
+
+  .popup-transitioning * {
+    pointer-events: none;
+  }
+
+  /* Custom popup content wrapper with improved stability */
+  .popup-content-wrapper {
+    position: relative;
+    z-index: 1;
+    /* Create a stable hover area around the popup content */
+    padding: 8px;
+    margin: -8px;
+  }
+
+  /* Override Mapbox popup defaults for consistent styling */
+  .mapboxgl-popup-content {
+    padding: 0 !important;
+    border-radius: 16px !important;
+    overflow: hidden !important;
+    box-shadow: none !important;
+    background: transparent !important;
+    border: none !important;
   }
 
   .mapboxgl-ctrl-group button {
@@ -130,6 +204,34 @@
   .photo-grid-item:hover {
     @apply shadow-xl scale-105;
     transform: translateY(-2px) scale(1.05);
+  }
+
+  /* Stable marker hover areas - simplified to prevent conflicts */
+  .marker-hover-area {
+    position: relative;
+    /* Ensure stable pointer events without pseudo-elements that can interfere */
+    pointer-events: auto;
+  }
+
+  /* Simplified popup hover stability */
+  .popup-hover-stable {
+    position: relative;
+    pointer-events: auto;
+  }
+
+  /* Line clamp utilities for text truncation */
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
 }
 
@@ -206,5 +308,15 @@
 
   .shadow-glass-lg {
     box-shadow: 0 32px 64px -12px rgba(0, 0, 0, 0.35), 0 0 0 1px rgba(255, 255, 255, 0.9);
+  }
+
+  /* Hide scrollbar utility */
+  .hide-scrollbar {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
   }
 }

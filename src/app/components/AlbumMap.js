@@ -1,17 +1,40 @@
 'use client';
 
-import React, { useState, useCallback, useMemo, useRef } from 'react';
-import Map from 'react-map-gl';
+import React, { useState, useCallback, useMemo, useRef, useEffect } from 'react';
 import { Map as MapIcon, Loader2, Route, Filter, X, Target } from 'lucide-react';
-import 'mapbox-gl/dist/mapbox-gl.css';
 import { useLocationData, useMapBounds } from '../utils/useLocationData';
 import { EnhancedMarkerCluster } from './EnhancedMarkerCluster';
 import { RouteVisualization } from './RouteVisualization';
 import usePhotoStore from '../store/usePhotoStore';
 import { useSmartZoom } from '../utils/smartZoom';
 
+// Dynamically import react-map-gl
+let MapComponent = null;
+let mapboxCSSLoaded = false;
+
+const loadMapboxResources = async () => {
+  // Load CSS if not already loaded
+  if (!mapboxCSSLoaded && typeof window !== 'undefined') {
+    const cssLink = document.createElement('link');
+    cssLink.href = 'https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.css';
+    cssLink.rel = 'stylesheet';
+    document.head.appendChild(cssLink);
+    mapboxCSSLoaded = true;
+  }
+
+  // Dynamically import react-map-gl
+  if (!MapComponent) {
+    const reactMapGL = await import('react-map-gl');
+    MapComponent = reactMapGL.default;
+  }
+
+  return MapComponent;
+};
+
 export default function AlbumMap({ album, onLocationSelect }) {
   const [isLoading, setIsLoading] = useState(true);
+  const [mapLoaded, setMapLoaded] = useState(false);
+  const [MapGL, setMapGL] = useState(null);
   const [viewport, setViewport] = useState({
     latitude: 20,
     longitude: 0,
@@ -39,6 +62,22 @@ export default function AlbumMap({ album, onLocationSelect }) {
   
   // Smart zoom functionality
   const { adjustZoom, isOptimalZoom } = useSmartZoom(locations, viewport, setViewport);
+
+  // Load Mapbox resources when component mounts
+  useEffect(() => {
+    const loadMap = async () => {
+      try {
+        const Map = await loadMapboxResources();
+        setMapGL(() => Map);
+        setMapLoaded(true);
+      } catch (error) {
+        console.error('Failed to load map resources:', error);
+        setIsLoading(false);
+      }
+    };
+
+    loadMap();
+  }, []);
 
   // Initialize map with proper bounds when locations are available
   const handleMapLoad = useCallback(() => {
@@ -175,15 +214,17 @@ export default function AlbumMap({ album, onLocationSelect }) {
       </div>
 
       <div className="relative h-96">
-        {isLoading && (
+        {(isLoading || !mapLoaded) && (
           <div className="absolute inset-0 z-10 flex flex-col items-center justify-center bg-gray-50/80">
             <Loader2 className="h-8 w-8 animate-spin text-teal-600 mb-4" />
-            <p className="text-gray-600">Loading map...</p>
+            <p className="text-gray-600">
+              {!mapLoaded ? 'Loading map resources...' : 'Loading map...'}
+            </p>
           </div>
         )}
 
-        {locations.length > 0 && (
-          <Map
+        {mapLoaded && MapGL && locations.length > 0 && (
+          <MapGL
             ref={mapRef}
             {...viewport}
             style={{ width: '100%', height: '100%' }}
@@ -212,7 +253,7 @@ export default function AlbumMap({ album, onLocationSelect }) {
               mapRef={mapRef.current}
               viewport={viewport}
             />
-          </Map>
+          </MapGL>
         )}
       </div>
     </div>

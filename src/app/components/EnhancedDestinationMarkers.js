@@ -1,4 +1,4 @@
-import React, { useRef, useCallback } from 'react';
+import React, { useRef, useCallback, useEffect } from 'react';
 import { Marker, Popup } from 'react-map-gl';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -15,7 +15,10 @@ const EnhancedDestinationPopup = ({ destination, onMouseEnter, onMouseLeave, pop
   return (
     <div 
       className={getPopupClasses()}
-      style={popupStyle}
+      style={{
+        ...popupStyle,
+        pointerEvents: 'auto'
+      }}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
     >
@@ -116,9 +119,13 @@ const EnhancedDestinationPopup = ({ destination, onMouseEnter, onMouseLeave, pop
   );
 };
 
-const CustomDestinationMarker = ({ onClick, onMouseEnter, onMouseLeave, isHovered }) => (
+const CustomDestinationMarker = ({ onClick, onMouseEnter, onMouseLeave, isHovered, isBlocked }) => (
   <div 
-    className="relative cursor-pointer group"
+    className="relative cursor-pointer group marker-hover-area"
+    style={{
+      pointerEvents: isBlocked ? 'none' : 'auto',
+      zIndex: isHovered ? 65 : 50
+    }}
     onClick={onClick}
     onMouseEnter={onMouseEnter}
     onMouseLeave={onMouseLeave}
@@ -143,47 +150,100 @@ export const EnhancedDestinationMarkers = ({
   mapRef,
   viewport
 }) => {
-  const hideTimeoutRef = useRef(null);
+  const timeoutRef = useRef(null);
+  const enterTimeoutRef = useRef(null);
+  const activeMarkerRef = useRef(null);
+  const popupStateRef = useRef({ isOverMarker: false, isOverPopup: false });
+  const lastUpdateRef = useRef(0);
 
-  const handleMarkerMouseEnter = useCallback((dest) => {
-    // Cancel any pending hide operation
-    if (hideTimeoutRef.current) {
-      clearTimeout(hideTimeoutRef.current);
-      hideTimeoutRef.current = null;
+  const clearTimeouts = useCallback(() => {
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+      timeoutRef.current = null;
     }
-    setHoveredDestination(dest);
-  }, [setHoveredDestination]);
-
-  const handleMarkerMouseLeave = useCallback(() => {
-    // Add a delay before hiding the popup
-    hideTimeoutRef.current = setTimeout(() => {
-      setHoveredDestination(null);
-      hideTimeoutRef.current = null;
-    }, 150); // 150ms delay
-  }, [setHoveredDestination]);
-
-  const handlePopupMouseEnter = useCallback(() => {
-    // Cancel the hide operation when mouse enters popup
-    if (hideTimeoutRef.current) {
-      clearTimeout(hideTimeoutRef.current);
-      hideTimeoutRef.current = null;
+    if (enterTimeoutRef.current) {
+      clearTimeout(enterTimeoutRef.current);
+      enterTimeoutRef.current = null;
     }
   }, []);
 
+  const scheduleHide = useCallback((delay = 250) => {
+    clearTimeouts();
+    timeoutRef.current = setTimeout(() => {
+      if (!popupStateRef.current.isOverMarker && !popupStateRef.current.isOverPopup) {
+        setHoveredDestination(null);
+        activeMarkerRef.current = null;
+      }
+    }, delay);
+  }, [clearTimeouts, setHoveredDestination]);
+
+  const handleMarkerMouseEnter = useCallback((dest) => {
+    const now = Date.now();
+    
+    // Prevent rapid fire events (debounce with minimum interval)
+    if (now - lastUpdateRef.current < 50) {
+      return;
+    }
+    lastUpdateRef.current = now;
+    
+    // Prevent interference if another popup is already active
+    if (activeMarkerRef.current && activeMarkerRef.current !== dest.id) {
+      return;
+    }
+    
+    clearTimeouts();
+    popupStateRef.current.isOverMarker = true;
+    activeMarkerRef.current = dest.id;
+    
+    // Longer delay to prevent rapid flickering and ensure stability
+    enterTimeoutRef.current = setTimeout(() => {
+      if (popupStateRef.current.isOverMarker && activeMarkerRef.current === dest.id) {
+        setHoveredDestination(dest);
+      }
+    }, 150); // Increased from 100ms for more stability
+  }, [clearTimeouts, setHoveredDestination]);
+
+  const handleMarkerMouseLeave = useCallback(() => {
+    popupStateRef.current.isOverMarker = false;
+    scheduleHide(400); // Longer delay to allow moving to popup
+  }, [scheduleHide]);
+
+  const handlePopupMouseEnter = useCallback(() => {
+    clearTimeouts();
+    popupStateRef.current.isOverPopup = true;
+  }, [clearTimeouts]);
+
   const handlePopupMouseLeave = useCallback(() => {
-    // Hide popup when mouse leaves popup area
-    hideTimeoutRef.current = setTimeout(() => {
-      setHoveredDestination(null);
-      hideTimeoutRef.current = null;
-    }, 100); // Shorter delay when leaving popup
-  }, [setHoveredDestination]);
+    popupStateRef.current.isOverPopup = false;
+    scheduleHide(200);
+  }, [scheduleHide]);
+
+  // Reset state when hovered destination changes externally
+  useEffect(() => {
+    if (!hoveredDestination) {
+      activeMarkerRef.current = null;
+      popupStateRef.current = { isOverMarker: false, isOverPopup: false };
+    }
+  }, [hoveredDestination]);
+
+  // Cleanup on unmount
+  useEffect(() => {
+    return () => {
+      clearTimeouts();
+    };
+  }, [clearTimeouts]);
 
   if (!mapLoaded || !destinations?.length) return null;
+
+  const hasActivePopup = !!hoveredDestination;
 
   return (
     <>
       {destinations.map((dest) => {
-        // Calculate smart positioning for this destination's popup
+        const isCurrentlyHovered = hoveredDestination?.id === dest.id;
+        const isBlocked = hasActivePopup && !isCurrentlyHovered;
+        
+        // Calculate smart positioning for this destination's popup (memoized internally)
         const smartPosition = getSmartPopupPosition(
           dest.latitude, 
           dest.longitude, 
@@ -199,7 +259,8 @@ export const EnhancedDestinationMarkers = ({
               anchor="center"
             >
               <CustomDestinationMarker
-                isHovered={hoveredDestination?.id === dest.id}
+                isHovered={isCurrentlyHovered}
+                isBlocked={isBlocked}
                 onMouseEnter={() => handleMarkerMouseEnter(dest)}
                 onMouseLeave={handleMarkerMouseLeave}
                 onClick={() => {
@@ -208,23 +269,24 @@ export const EnhancedDestinationMarkers = ({
                 }}
               />
             </Marker>
-            {hoveredDestination?.id === dest.id && (
+            {isCurrentlyHovered && (
               <Popup
                 latitude={dest.latitude}
                 longitude={dest.longitude}
                 anchor={smartPosition.anchor}
                 closeButton={false}
                 closeOnClick={false}
-                className="z-50"
+                className="destination-popup"
                 offset={smartPosition.offset}
                 focusAfterOpen={false}
+                style={{ zIndex: 70 }}
               >
                 <EnhancedDestinationPopup 
                   destination={hoveredDestination}
                   onMouseEnter={handlePopupMouseEnter}
                   onMouseLeave={handlePopupMouseLeave}
                   onOpenSidePanel={onOpenSidePanel}
-                  popupStyle={getPopupStyles(smartPosition.maxHeight)}
+                  popupStyle={getPopupStyles(smartPosition.maxHeight, 'destination')}
                 />
               </Popup>
             )}

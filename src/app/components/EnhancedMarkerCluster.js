@@ -1,9 +1,9 @@
-import React, { useMemo, useCallback, useState, forwardRef, useImperativeHandle } from 'react';
+import React, { useMemo, useCallback, useState, forwardRef, useImperativeHandle, useRef, useEffect } from 'react';
 import { Marker, Popup } from 'react-map-gl';
 import Image from 'next/image';
 import { Eye, Filter, MapPin, Calendar, X, Camera } from 'lucide-react';
 import { getClusterThreshold } from '../utils/smartZoom';
-import { getSmartPopupPosition, getPopupClasses, getPopupStyles } from '../utils/smartPopupPosition';
+import { getSmartPopupPosition, getPopupStyles } from '../utils/smartPopupPosition';
 import { transformToCloudFront } from '../utils/imageUtils';
 
 // Optimized distance calculation with caching
@@ -126,10 +126,12 @@ const LocationPopup = ({
   );
 
   return (
-    <div className="bg-white rounded-2xl shadow-2xl border-0 overflow-hidden min-w-[340px] max-w-[400px] backdrop-blur-sm" style={{
-      background: 'linear-gradient(135deg, #ffffff 0%, #f8fafc 100%)',
-      boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(255, 255, 255, 0.8)'
-    }}>
+    <div 
+      style={{
+        ...getPopupStyles('400px', 'location'),
+        pointerEvents: 'auto'
+      }}
+    >
       {/* Header with gradient background */}
       <div className="p-6 border-b border-gray-100 bg-gradient-to-br from-teal-50 via-cyan-50 to-blue-50">
         <div className="flex justify-between items-start mb-3">
@@ -237,7 +239,12 @@ const ClusterPopup = ({ cluster, onLocationSelect, onPhotoClick, onClose }) => {
   );
 
   return (
-    <div className="bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden min-w-[320px] max-w-[360px]">
+    <div 
+      style={{
+        ...getPopupStyles('350px', 'cluster'),
+        pointerEvents: 'auto'
+      }}
+    >
       {/* Header with close button */}
       <div className="p-4 border-b border-gray-100">
         <div className="flex items-center justify-between mb-3">
@@ -294,13 +301,21 @@ const ClusterPopup = ({ cluster, onLocationSelect, onPhotoClick, onClose }) => {
   );
 };
 
-const ClusterMarker = React.memo(({ cluster, isSelected, onClick }) => {
+const ClusterMarker = React.memo(({ cluster, isSelected, onClick, onMouseEnter, onMouseLeave, isBlocked }) => {
   const { locations, coordinates, totalPhotos } = cluster;
   
   const handleClick = useCallback((e) => {
     e.stopPropagation();
     onClick(locations.length === 1 ? locations[0] : cluster);
   }, [onClick, locations, cluster]);
+
+  const handleMouseEnter = useCallback(() => {
+    onMouseEnter?.(locations.length === 1 ? locations[0] : cluster);
+  }, [onMouseEnter, locations, cluster]);
+
+  const handleMouseLeave = useCallback(() => {
+    onMouseLeave?.();
+  }, [onMouseLeave]);
   
   if (locations.length === 1) {
     // Single location marker
@@ -312,10 +327,16 @@ const ClusterMarker = React.memo(({ cluster, isSelected, onClick }) => {
         anchor="center"
       >
         <div 
-          className={`cursor-pointer transition-transform duration-200 ease-out ${
+          className={`cursor-pointer transition-transform duration-200 ease-out marker-hover-area ${
             isSelected ? 'scale-110' : 'hover:scale-105'
           }`}
+          style={{
+            pointerEvents: isBlocked ? 'none' : 'auto',
+            zIndex: isSelected ? 75 : 55
+          }}
           onClick={handleClick}
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
         >
           <div className="relative">
             {/* Simple, clean marker with selection state */}
@@ -343,10 +364,16 @@ const ClusterMarker = React.memo(({ cluster, isSelected, onClick }) => {
       anchor="center"
     >
       <div 
-        className={`cursor-pointer transition-transform duration-200 ease-out ${
+        className={`cursor-pointer transition-transform duration-200 ease-out marker-hover-area ${
           isSelected ? 'scale-110' : 'hover:scale-105'
         }`}
+        style={{
+          pointerEvents: isBlocked ? 'none' : 'auto',
+          zIndex: isSelected ? 75 : 55
+        }}
         onClick={handleClick}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
       >
         <div className="relative">
           {/* Clean cluster marker with selection state */}
@@ -442,8 +469,90 @@ export const EnhancedMarkerCluster = forwardRef(({
   mapRef,
   viewport
 }, ref) => {
-  // Click-based popup state instead of hover
   const [selectedLocation, setSelectedLocation] = useState(null);
+  const timeoutRef = useRef(null);
+  const activeMarkerRef = useRef(null);
+  const popupStateRef = useRef({ isOverMarker: false, isOverPopup: false });
+
+  const clearTimeouts = useCallback(() => {
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+      timeoutRef.current = null;
+    }
+  }, []);
+
+  const scheduleHide = useCallback((delay = 250) => {
+    clearTimeouts();
+    timeoutRef.current = setTimeout(() => {
+      if (!popupStateRef.current.isOverMarker && !popupStateRef.current.isOverPopup) {
+        setSelectedLocation(null);
+        activeMarkerRef.current = null;
+      }
+    }, delay);
+  }, [clearTimeouts]);
+
+  const handleMarkerClick = useCallback((location) => {
+    clearTimeouts();
+    setSelectedLocation(location);
+    onLocationSelect?.(location);
+  }, [onLocationSelect, clearTimeouts]);
+
+  const handleMarkerMouseEnter = useCallback((location) => {
+    const locationId = location.id || (location.locations ? `cluster-${location.locations[0]?.id}` : null);
+    
+    // Prevent interference if another popup is already active
+    if (activeMarkerRef.current && activeMarkerRef.current !== locationId) {
+      return;
+    }
+    
+    clearTimeouts();
+    popupStateRef.current.isOverMarker = true;
+    activeMarkerRef.current = locationId;
+    
+    // Increased delay to prevent rapid flickering and ensure stability
+    timeoutRef.current = setTimeout(() => {
+      if (popupStateRef.current.isOverMarker && activeMarkerRef.current === locationId) {
+        setSelectedLocation(location);
+      }
+    }, 150); // Increased from 100ms for more stability
+  }, [clearTimeouts]);
+
+  const handleMarkerMouseLeave = useCallback(() => {
+    popupStateRef.current.isOverMarker = false;
+    scheduleHide(400); // Increased delay to allow moving to popup
+  }, [scheduleHide]);
+
+  const handlePopupMouseEnter = useCallback(() => {
+    clearTimeouts();
+    popupStateRef.current.isOverPopup = true;
+  }, [clearTimeouts]);
+
+  const handlePopupMouseLeave = useCallback(() => {
+    popupStateRef.current.isOverPopup = false;
+    scheduleHide(200); // Increased delay for stability
+  }, [scheduleHide]);
+
+  const handleClosePopup = useCallback(() => {
+    clearTimeouts();
+    setSelectedLocation(null);
+    activeMarkerRef.current = null;
+    popupStateRef.current = { isOverMarker: false, isOverPopup: false };
+  }, [clearTimeouts]);
+
+  // Reset state when selected location changes externally
+  useEffect(() => {
+    if (!selectedLocation) {
+      activeMarkerRef.current = null;
+      popupStateRef.current = { isOverMarker: false, isOverPopup: false };
+    }
+  }, [selectedLocation]);
+
+  // Cleanup on unmount
+  useEffect(() => {
+    return () => {
+      clearTimeouts();
+    };
+  }, [clearTimeouts]);
 
   const clusters = useMemo(() => {
     if (!locations?.length) return [];
@@ -452,18 +561,12 @@ export const EnhancedMarkerCluster = forwardRef(({
     return optimizedClustering(locations, clusterRadius);
   }, [locations, zoom]);
 
-  const handleMarkerClick = useCallback((locationOrCluster) => {
-    setSelectedLocation(locationOrCluster);
-  }, []);
-
-  const handleClosePopup = useCallback(() => {
-    setSelectedLocation(null);
-  }, []);
-
   // Expose methods to parent component
   useImperativeHandle(ref, () => ({
     closePopup: handleClosePopup
   }), [handleClosePopup]);
+
+  const hasActivePopup = !!selectedLocation;
 
   // Calculate smart positioning for the selected location/cluster
   const smartPosition = selectedLocation 
@@ -477,18 +580,26 @@ export const EnhancedMarkerCluster = forwardRef(({
 
   return (
     <>
-      {clusters.map((cluster, index) => (
-        <ClusterMarker
-          key={`cluster-${index}-${cluster.locations[0]?.id}`}
-          cluster={cluster}
-          isSelected={selectedLocation && (
-            cluster.locations.length === 1 
-              ? selectedLocation.id === cluster.locations[0].id
-              : selectedLocation === cluster
-          )}
-          onClick={handleMarkerClick}
-        />
-      ))}
+      {clusters.map((cluster, index) => {
+        const isCurrentlySelected = selectedLocation && (
+          cluster.locations.length === 1 
+            ? selectedLocation.id === cluster.locations[0].id
+            : selectedLocation === cluster
+        );
+        const isBlocked = hasActivePopup && !isCurrentlySelected;
+        
+        return (
+          <ClusterMarker
+            key={`cluster-${index}-${cluster.locations[0]?.id}`}
+            cluster={cluster}
+            isSelected={isCurrentlySelected}
+            isBlocked={isBlocked}
+            onClick={handleMarkerClick}
+            onMouseEnter={handleMarkerMouseEnter}
+            onMouseLeave={handleMarkerMouseLeave}
+          />
+        );
+      })}
       
       {selectedLocation && smartPosition && (
         <Popup
@@ -499,13 +610,14 @@ export const EnhancedMarkerCluster = forwardRef(({
           closeButton={false}
           closeOnClick={false}
           closeOnMove={false}
-          className="z-50"
+          className="location-popup"
           focusAfterOpen={false}
+          style={{ zIndex: 80 }}
+          onMouseEnter={handlePopupMouseEnter}
+          onMouseLeave={handlePopupMouseLeave}
         >
           <div 
             onClick={(e) => e.stopPropagation()}
-            className={getPopupClasses()}
-            style={getPopupStyles(smartPosition.maxHeight)}
           >
             {selectedLocation.locations ? (
               <ClusterPopup

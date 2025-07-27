@@ -2,6 +2,38 @@
 
 import { readAlbums, readPhotos, readLocations } from '../../../utils/fileHandler';
 
+// Cache for storing data in memory
+let dataCache = null;
+let cacheTimestamp = null;
+const CACHE_DURATION = 5 * 60 * 1000; // 5 minutes
+
+async function getCachedData() {
+  const now = Date.now();
+  
+  // Check if cache is valid
+  if (dataCache && cacheTimestamp && (now - cacheTimestamp) < CACHE_DURATION) {
+    return dataCache;
+  }
+  
+  // Fetch fresh data
+  const [albumsData, photosData, locationsData] = await Promise.all([
+    readAlbums(),
+    readPhotos(),
+    readLocations()
+  ]);
+  
+  // Validate data
+  if (!albumsData || !photosData || !locationsData) {
+    throw new Error('Failed to load required data files');
+  }
+  
+  // Update cache
+  dataCache = { albumsData, photosData, locationsData };
+  cacheTimestamp = now;
+  
+  return dataCache;
+}
+
 export async function GET(request) {
   try {
     // Extract album ID from the URL
@@ -15,32 +47,8 @@ export async function GET(request) {
       });
     }
 
-    // Read data from all necessary JSON files
-    const albumsData = await readAlbums();
-    const photosData = await readPhotos();
-    const locationsData = await readLocations();
-
-    // Validate data fetching
-    if (!albumsData) {
-      return new Response(JSON.stringify({ error: 'No albums data found.' }), {
-        status: 500,
-        headers: { 'Content-Type': 'application/json' },
-      });
-    }
-
-    if (!photosData) {
-      return new Response(JSON.stringify({ error: 'No photos data found.' }), {
-        status: 500,
-        headers: { 'Content-Type': 'application/json' },
-      });
-    }
-
-    if (!locationsData) {
-      return new Response(JSON.stringify({ error: 'No locations data found.' }), {
-        status: 500,
-        headers: { 'Content-Type': 'application/json' },
-      });
-    }
+    // Get cached data
+    const { albumsData, photosData, locationsData } = await getCachedData();
 
     // Find the album by ID
     const album = albumsData.albums.find((album) => album.id === id);
@@ -87,7 +95,10 @@ export async function GET(request) {
 
     return new Response(JSON.stringify(detailedAlbum), {
       status: 200,
-      headers: { 'Content-Type': 'application/json' },
+      headers: { 
+        'Content-Type': 'application/json',
+        'Cache-Control': 'public, max-age=300' // Cache for 5 minutes
+      },
     });
 
   } catch (error) {

@@ -1,13 +1,15 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Suspense } from 'react';
 import Image from 'next/image';
 import { useParams } from 'next/navigation';
 import usePhotoStore from '../../store/usePhotoStore';
-import AlbumMap from '../../components/AlbumMap';
 import ImageLightbox from '../../components/ImageLightbox';
-import { ArrowLeft, Grid, Map as MapIcon, Loader, MapPin, Camera } from 'lucide-react';
+import { ArrowLeft, Grid, Map as MapIcon, Loader, Camera } from 'lucide-react';
 import Link from 'next/link';
+
+// Lazy load the AlbumMap component
+const AlbumMap = React.lazy(() => import('../../components/AlbumMap'));
 
 const transformToCloudFront = (url) => {
   if (!url) return '';
@@ -48,6 +50,18 @@ const PhotoCard = React.memo(({ photo, index, onPhotoClick }) => {
 
 PhotoCard.displayName = 'PhotoCard';
 
+// Loading component for the map
+const MapLoading = () => (
+  <div className="bg-white rounded-xl overflow-hidden shadow-lg border border-gray-200">
+    <div className="h-[calc(100vh-160px)] flex items-center justify-center">
+      <div className="flex flex-col items-center gap-4">
+        <Loader className="h-8 w-8 text-teal-600 animate-spin" />
+        <p className="text-gray-600">Loading map...</p>
+      </div>
+    </div>
+  </div>
+);
+
 export default function AlbumPage() {
   const params = useParams();
   const {
@@ -61,7 +75,7 @@ export default function AlbumPage() {
     setError,
     loading,
   } = usePhotoStore();
-  const [view, setView] = useState('map');
+  const [view, setView] = useState('grid'); // Start with grid view to avoid loading map initially
 
   useEffect(() => {
     const fetchAlbumData = async (id) => {
@@ -182,11 +196,9 @@ export default function AlbumPage() {
               </div>
             </div>
             
-            <div className="bg-white rounded-xl overflow-hidden shadow-lg border border-gray-200">
-              <div className="h-[calc(100vh-160px)]">
-                <AlbumMap album={currentAlbum} />
-              </div>
-            </div>
+            <Suspense fallback={<MapLoading />}>
+              <AlbumMap album={currentAlbum} />
+            </Suspense>
           </div>
         ) : (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 pt-6">
