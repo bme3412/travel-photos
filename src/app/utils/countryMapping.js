@@ -62,4 +62,6 @@ export const countryToISO = {
     'Monaco': 'MCO',
     'Seychelles': 'SYC'
 
+    , 'Belize': 'BLZ'
+    , 'Malaysia': 'MYS'
   };
