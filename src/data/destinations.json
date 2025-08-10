@@ -756,7 +756,7 @@
         "id": "95",
         "name": "Seychelles",
         "country": "Seychelles",
-        "description": "Tropical paradise featuring pristine beaches, unique granite formations, and exceptional marine biodiversity.",
+        "description": "Tropical paradise featuring pristine beaches, unique granite formations, and exceptional marine biodiversity across its 115 islands.",
         "latitude": -4.6796,
         "longitude": 55.4920
       },
@@ -775,6 +775,46 @@
         "description": "Ancient city of Thebes featuring the Valley of the Kings, Karnak Temple complex, and incredible pharaonic monuments.",
         "latitude": 25.6872,
         "longitude": 32.6396
+      },
+      {
+        "id": "98",
+        "name": "Reykjavik",
+        "country": "Iceland",
+        "description": "Iceland's capital featuring geothermal wonders, the iconic Hallgrímskirkja church, and vibrant cultural scene.",
+        "latitude": 64.1466,
+        "longitude": -21.9426
+      },
+      {
+        "id": "99",
+        "name": "Akureyri",
+        "country": "Iceland",
+        "description": "Northern Iceland's cultural capital featuring the iconic Akureyrarkirkja church and stunning fjord landscapes.",
+        "latitude": 65.6839,
+        "longitude": -18.1105
+      },
+      {
+        "id": "100",
+        "name": "Mahe",
+        "country": "Seychelles",
+        "description": "Seychelles' largest island featuring pristine beaches, lush mountains, and the vibrant capital Victoria.",
+        "latitude": -4.6796,
+        "longitude": 55.4920
+      },
+      {
+        "id": "101",
+        "name": "Praslin",
+        "country": "Seychelles",
+        "description": "Home to the UNESCO-listed Vallée de Mai nature reserve and some of the world's most beautiful beaches.",
+        "latitude": -4.3223,
+        "longitude": 55.7354
+      },
+      {
+        "id": "102",
+        "name": "La Digue",
+        "country": "Seychelles",
+        "description": "Charming island known for Anse Source d'Argent beach, traditional ox-cart transport, and laid-back atmosphere.",
+        "latitude": -4.3590,
+        "longitude": 55.8360
       }
     ]
   }

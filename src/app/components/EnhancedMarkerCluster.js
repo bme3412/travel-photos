@@ -305,21 +305,46 @@ const ClusterMarker = React.memo(({ cluster, isSelected, onClick, onMouseEnter, 
   const { locations, coordinates, totalPhotos } = cluster;
   
   const handleClick = useCallback((e) => {
-    e.stopPropagation();
-    onClick(locations.length === 1 ? locations[0] : cluster);
+    try {
+      e.stopPropagation();
+      onClick(locations.length === 1 ? locations[0] : cluster);
+    } catch (error) {
+      console.error('Error in marker click handler:', error);
+    }
   }, [onClick, locations, cluster]);
 
   const handleMouseEnter = useCallback(() => {
-    onMouseEnter?.(locations.length === 1 ? locations[0] : cluster);
+    try {
+      onMouseEnter?.(locations.length === 1 ? locations[0] : cluster);
+    } catch (error) {
+      console.error('Error in marker mouse enter handler:', error);
+    }
   }, [onMouseEnter, locations, cluster]);
 
   const handleMouseLeave = useCallback(() => {
-    onMouseLeave?.();
+    try {
+      onMouseLeave?.();
+    } catch (error) {
+      console.error('Error in marker mouse leave handler:', error);
+    }
   }, [onMouseLeave]);
+  
+  // Safety check for valid coordinates
+  if (!coordinates || typeof coordinates.lat !== 'number' || typeof coordinates.lng !== 'number') {
+    console.warn('Invalid coordinates for cluster:', cluster);
+    return null;
+  }
   
   if (locations.length === 1) {
     // Single location marker
     const location = locations[0];
+    
+    // Additional safety check for single location
+    if (!location.coordinates || typeof location.coordinates.lat !== 'number' || typeof location.coordinates.lng !== 'number') {
+      console.warn('Invalid coordinates for single location:', location);
+      return null;
+    }
+    
     return (
       <Marker
         latitude={location.coordinates.lat}
@@ -407,8 +432,21 @@ const optimizedClustering = (locations, clusterRadius) => {
     }));
   }
 
+  // Filter out locations with invalid coordinates
+  const validLocations = locations.filter(loc => 
+    loc.coordinates && 
+    typeof loc.coordinates.lat === 'number' && 
+    typeof loc.coordinates.lng === 'number' &&
+    !isNaN(loc.coordinates.lat) && 
+    !isNaN(loc.coordinates.lng)
+  );
+
+  if (validLocations.length === 0) {
+    return [];
+  }
+
   // Sort locations by latitude for spatial optimization
-  const sortedLocations = [...locations].sort((a, b) => a.coordinates.lat - b.coordinates.lat);
+  const sortedLocations = [...validLocations].sort((a, b) => a.coordinates.lat - b.coordinates.lat);
   const clustered = [];
   const processed = new Set();
 
@@ -578,9 +616,20 @@ export const EnhancedMarkerCluster = forwardRef(({
       )
     : null;
 
+  // Safety check for valid smart position
+  const isValidPosition = smartPosition && 
+    typeof smartPosition.anchor === 'string' && 
+    typeof smartPosition.offset === 'object';
+
   return (
     <>
       {clusters.map((cluster, index) => {
+        // Safety check for valid cluster coordinates
+        if (!cluster.coordinates || typeof cluster.coordinates.lat !== 'number' || typeof cluster.coordinates.lng !== 'number') {
+          console.warn('Skipping cluster with invalid coordinates:', cluster);
+          return null;
+        }
+        
         const isCurrentlySelected = selectedLocation && (
           cluster.locations.length === 1 
             ? selectedLocation.id === cluster.locations[0].id
@@ -601,7 +650,7 @@ export const EnhancedMarkerCluster = forwardRef(({
         );
       })}
       
-      {selectedLocation && smartPosition && (
+      {selectedLocation && isValidPosition && (
         <Popup
           latitude={selectedLocation.coordinates?.lat || selectedLocation.locations?.[0]?.coordinates?.lat}
           longitude={selectedLocation.coordinates?.lng || selectedLocation.locations?.[0]?.coordinates?.lng}
