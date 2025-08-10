@@ -21,6 +21,7 @@ const REGIONS = {
 };
 
 const MapPage = () => {
+  const MAPBOX_TOKEN = process.env.NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN || process.env.NEXT_PUBLIC_MAPBOX_TOKEN;
   const [mapRef, setMapRef] = useState(null);
   const [viewport, setViewport] = useState({
     latitude: 20,
@@ -153,12 +154,13 @@ const MapPage = () => {
         </Link>
       )}
 
+      {MAPBOX_TOKEN ? (
       <Map
         ref={setMapRef}
         initialViewState={viewport}
         style={{ width: '100%', height: '100%' }}
         mapStyle="mapbox://styles/mapbox/light-v11"
-        mapboxAccessToken={process.env.NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN}
+        mapboxAccessToken={MAPBOX_TOKEN}
         onMove={evt => setViewport(evt.viewState)}
         onLoad={() => setMapLoaded(true)}
         projection="mercator"
@@ -193,6 +195,13 @@ const MapPage = () => {
           viewport={viewport}
         />
       </Map>
+      ) : (
+        <div className="absolute inset-0 flex items-center justify-center">
+          <div className="text-sm text-red-600 bg-red-50 border border-red-200 rounded-md px-3 py-2">
+            Missing Mapbox access token. Set NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN in your .env file.
+          </div>
+        </div>
+      )}
     </>
   );
 

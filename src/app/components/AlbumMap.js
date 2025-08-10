@@ -32,9 +32,11 @@ const loadMapboxResources = async () => {
 };
 
 export default function AlbumMap({ album, onLocationSelect }) {
+  const MAPBOX_TOKEN = process.env.NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN || process.env.NEXT_PUBLIC_MAPBOX_TOKEN;
   const [isLoading, setIsLoading] = useState(true);
   const [mapLoaded, setMapLoaded] = useState(false);
   const [MapGL, setMapGL] = useState(null);
+  const [mapError, setMapError] = useState(null);
   const [viewport, setViewport] = useState({
     latitude: 20,
     longitude: 0,
@@ -67,30 +69,44 @@ export default function AlbumMap({ album, onLocationSelect }) {
   useEffect(() => {
     const loadMap = async () => {
       try {
+        if (!MAPBOX_TOKEN) {
+          setMapError('Missing Mapbox access token. Set NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN in your .env file.');
+          setIsLoading(false);
+          return;
+        }
         const Map = await loadMapboxResources();
         setMapGL(() => Map);
         setMapLoaded(true);
+        setMapError(null);
       } catch (error) {
         console.error('Failed to load map resources:', error);
+        setMapError(error.message);
         setIsLoading(false);
       }
     };
 
     loadMap();
-  }, []);
+  }, [MAPBOX_TOKEN]);
 
   // Initialize map with proper bounds when locations are available
   const handleMapLoad = useCallback(() => {
-    setIsLoading(false);
-    
-    // Fit to bounds if we have locations
-    if (bounds && locations.length > 0) {
-      const newViewport = {
-        latitude: (bounds.north + bounds.south) / 2,
-        longitude: (bounds.east + bounds.west) / 2,
-        zoom: Math.min(12, 10 - Math.log2(Math.max(bounds.east - bounds.west, bounds.north - bounds.south)))
-      };
-      setViewport(newViewport);
+    try {
+      setIsLoading(false);
+      setMapError(null);
+      
+      // Fit to bounds if we have locations
+      if (bounds && locations.length > 0) {
+        const newViewport = {
+          latitude: (bounds.north + bounds.south) / 2,
+          longitude: (bounds.east + bounds.west) / 2,
+          zoom: Math.min(12, 10 - Math.log2(Math.max(bounds.east - bounds.west, bounds.north - bounds.south)))
+        };
+        setViewport(newViewport);
+      }
+    } catch (error) {
+      console.error('Error in handleMapLoad:', error);
+      setMapError(error.message);
+      setIsLoading(false);
     }
   }, [bounds, locations.length]);
 
@@ -129,17 +145,33 @@ export default function AlbumMap({ album, onLocationSelect }) {
     adjustZoom(true);
   }, [adjustZoom]);
 
-  // Memoize map move handler
+  // Memoize map move handler with error handling
   const handleMapMove = useCallback((evt) => {
-    setViewport(evt.viewState);
+    try {
+      if (evt && evt.viewState) {
+        setViewport(evt.viewState);
+      }
+    } catch (error) {
+      console.error('Error in handleMapMove:', error);
+    }
   }, []);
 
   // Handle map container clicks to close popups
   const handleMapClick = useCallback(() => {
-    // Check if the cluster component has a method to close popups
-    if (clusterRef.current && clusterRef.current.closePopup) {
-      clusterRef.current.closePopup();
+    try {
+      // Check if the cluster component has a method to close popups
+      if (clusterRef.current && clusterRef.current.closePopup) {
+        clusterRef.current.closePopup();
+      }
+    } catch (error) {
+      console.error('Error in handleMapClick:', error);
     }
+  }, []);
+
+  // Handle map errors
+  const handleMapError = useCallback((error) => {
+    console.error('Map error:', error);
+    setMapError(error.message || 'An error occurred with the map');
   }, []);
 
   if (!album?.photos?.length) {
@@ -154,6 +186,27 @@ export default function AlbumMap({ album, onLocationSelect }) {
         </div>
         <div className="h-96 flex items-center justify-center text-gray-500">
           No photos available to display on map
+        </div>
+      </div>
+    );
+  }
+
+  // Show error state if map failed to load
+  if (mapError) {
+    return (
+      <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
+        <div className="p-6 border-b">
+          <h2 className="text-2xl font-semibold text-gray-800">Photo Locations</h2>
+        </div>
+        <div className="h-96 flex flex-col items-center justify-center text-gray-500">
+          <div className="text-red-500 mb-4">⚠️ Map failed to load</div>
+          <div className="text-sm text-gray-600 mb-4">{mapError}</div>
+          <button 
+            onClick={() => window.location.reload()} 
+            className="px-4 py-2 bg-teal-600 text-white rounded-lg hover:bg-teal-700"
+          >
+            Reload Page
+          </button>
         </div>
       </div>
     );
@@ -229,13 +282,18 @@ export default function AlbumMap({ album, onLocationSelect }) {
             {...viewport}
             style={{ width: '100%', height: '100%' }}
             mapStyle="mapbox://styles/mapbox/streets-v12"
-            mapboxAccessToken={process.env.NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN}
+            mapboxAccessToken={MAPBOX_TOKEN}
             onMove={handleMapMove}
             onLoad={handleMapLoad}
             onClick={handleMapClick}
+            onError={handleMapError}
             attributionControl={false}
             dragRotate={false}
             touchPitch={false}
+            maxZoom={20}
+            minZoom={0}
+            maxPitch={0}
+            maxBounds={[[-180, -85], [180, 85]]}
           >
             <RouteVisualization 
               locations={allLocations}
