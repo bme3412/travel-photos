@@ -4,28 +4,43 @@ import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { RefreshCw } from 'lucide-react';
 
-const formatCaption = (photo) => {
+const formatCaption = (photo, albums, locations) => {
   const today = new Date().toLocaleDateString('en-US', {
     month: '2-digit',
     day: '2-digit',
     year: 'numeric'
   });
 
+  // Resolve location name from ID
+  let locationName = photo.locationId;
+  if (photo.locationId?.startsWith('loc') && locations.length > 0) {
+    const location = locations.find(loc => loc.id === photo.locationId);
+    locationName = location?.name || photo.locationId;
+  }
+
+  // Get album details
+  const album = albums.find(alb => alb.id === photo.albumId);
+  const albumName = album?.title || photo.albumId;
+  const country = album?.country || '';
+  const flag = album?.flag || '';
+
   return {
     date: today,
-    location: photo.locationId,
-    country: photo.albumId
+    location: locationName,
+    albumTitle: albumName,
+    country: country,
+    flag: flag
   };
 };
 
-const PhotoOfTheDay = () => {
-  const [photo, setPhoto] = useState(null);
-  const [loading, setLoading] = useState(true);
+const PhotoOfTheDay = ({ initialPhoto = null, albums = [], locations = [] }) => {
+  const [photo, setPhoto] = useState(initialPhoto);
+  const [loading, setLoading] = useState(!initialPhoto);
 
   const getRandomPhoto = async () => {
     setLoading(true);
     try {
-      const response = await fetch('/api/random-photo');
+      const response = await fetch('/api/random-photo?random=true');
       const data = await response.json();
       if (response.ok) setPhoto(data);
     } catch (error) {
@@ -36,8 +51,15 @@ const PhotoOfTheDay = () => {
   };
 
   useEffect(() => {
-    getRandomPhoto();
-  }, []);
+    // If initialPhoto is provided from SSR, use it
+    if (initialPhoto) {
+      setPhoto(initialPhoto);
+      setLoading(false);
+    } else {
+      // Otherwise fetch from API (fallback)
+      getRandomPhoto();
+    }
+  }, [initialPhoto]);
 
   if (loading) {
     return (
@@ -57,16 +79,26 @@ const PhotoOfTheDay = () => {
     );
   }
 
-  const caption = formatCaption(photo);
+  const caption = formatCaption(photo, albums, locations);
 
   return (
     <div className="container mx-auto px-6 py-8 max-w-7xl">
+      {/* Header */}
+      <div className="mb-8">
+        <h1 className="text-4xl md:text-5xl font-light text-gray-900 mb-2">
+          📸 Photo of the Day
+        </h1>
+        <p className="text-gray-500 text-sm">
+          Discover a new stunning travel photo every day from my collection
+        </p>
+      </div>
+
       <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
         {/* Photo Section */}
         <div className="lg:col-span-3 relative h-[70vh] lg:h-[85vh] rounded-3xl overflow-hidden shadow-2xl">
           <Image
             src={photo.url}
-            alt={`${photo.locationId}, ${photo.albumId}`}
+            alt={`${caption.location}, ${caption.country}`}
             fill
             className="object-cover hover:scale-105 transition-transform duration-700"
             priority
@@ -78,16 +110,21 @@ const PhotoOfTheDay = () => {
         <div className="lg:col-span-2 p-6">
           <div className="space-y-8">
             {/* Caption Section */}
-            <div className="space-y-1">
-              <p className="text-sm tracking-wider text-gray-500 font-light">
+            <div className="space-y-4">
+              <p className="text-sm tracking-wider text-gray-500 font-light uppercase">
                 {caption.date}
               </p>
-              <h3 className="text-2xl font-light text-gray-800">
+              <h2 className="text-4xl font-light text-gray-900">
                 {caption.location}
-              </h3>
-              <p className="text-lg text-gray-600 font-light tracking-wide">
-                {caption.country}
+              </h2>
+              <p className="text-xl text-gray-600 font-light tracking-wide">
+                {caption.flag} {caption.country}
               </p>
+              <div className="pt-4 border-t border-gray-200">
+                <p className="text-base text-gray-700 leading-relaxed">
+                  {photo.caption || `A stunning moment captured in ${caption.location}, ${caption.country}. This photo is part of my ${caption.albumTitle} collection, showcasing the beauty and character of this incredible destination.`}
+                </p>
+              </div>
             </div>
 
             {/* Button */}
@@ -95,11 +132,15 @@ const PhotoOfTheDay = () => {
               onClick={getRandomPhoto}
               className="w-full inline-flex items-center justify-center px-6 py-3 bg-gray-900 text-white rounded-lg 
                        hover:bg-gray-800 transition-all duration-300 transform hover:scale-105
-                       text-sm tracking-wider font-light"
+                       text-sm tracking-wider font-light disabled:opacity-50"
+              disabled={loading}
             >
-              <RefreshCw className="w-3 h-3 mr-2" />
-              Discover Another Photo
+              <RefreshCw className={`w-3 h-3 mr-2 ${loading ? 'animate-spin' : ''}`} />
+              {loading ? 'Loading...' : 'See Another Photo'}
             </button>
+            <p className="text-xs text-gray-500 text-center mt-2">
+              Click to explore random photos from all my travels
+            </p>
           </div>
         </div>
       </div>

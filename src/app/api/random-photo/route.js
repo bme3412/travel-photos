@@ -1,29 +1,59 @@
 import { NextResponse } from 'next/server';
-import photosData from '@/data/photos.json';  // Import the entire JSON file
+import photosData from '@/data/photos.json';
 
-export async function GET() {
+// Get consistent daily photo index based on date
+function getDailyPhotoIndex(photos) {
+  const today = new Date();
+  // Create a seed from the date (YYYYMMDD format)
+  const seed = today.getFullYear() * 10000 + 
+               (today.getMonth() + 1) * 100 + 
+               today.getDate();
+  // Use seed to get consistent index for the day
+  return seed % photos.length;
+}
+
+export async function GET(request) {
   try {
-    const photos = photosData.photos;  // Access the photos array
+    const photos = photosData.photos;
     
     if (!Array.isArray(photos) || photos.length === 0) {
       return NextResponse.json({ error: 'No photos available' }, { status: 404 });
     }
 
-    const randomIndex = Math.floor(Math.random() * photos.length);
-    const randomPhoto = photos[randomIndex];
+    // Check if user wants truly random photo (via query param)
+    const { searchParams } = new URL(request.url);
+    const isRandom = searchParams.get('random') === 'true';
     
-    // Format the photo data based on the actual structure
+    let photoIndex;
+    let cacheControl;
+    
+    if (isRandom) {
+      // Truly random photo each time
+      photoIndex = Math.floor(Math.random() * photos.length);
+      cacheControl = 'no-cache, no-store, must-revalidate';
+    } else {
+      // Daily photo (same for everyone on this day)
+      photoIndex = getDailyPhotoIndex(photos);
+      cacheControl = 'public, max-age=3600, stale-while-revalidate=86400';
+    }
+    
+    const selectedPhoto = photos[photoIndex];
+    
+    // Format the photo data
     const photoData = {
-      ...randomPhoto,
-      location: randomPhoto.locationId,
-      description: randomPhoto.caption,
-      // Use the provided URL directly
-      url: randomPhoto.url
+      ...selectedPhoto,
+      location: selectedPhoto.locationId,
+      description: selectedPhoto.caption,
+      url: selectedPhoto.url
     };
 
-    return NextResponse.json(photoData);
+    return NextResponse.json(photoData, {
+      headers: {
+        'Cache-Control': cacheControl
+      }
+    });
   } catch (error) {
-    console.error('Error getting random photo:', error);
-    return NextResponse.json({ error: 'Failed to get random photo' }, { status: 500 });
+    console.error('Error getting photo:', error);
+    return NextResponse.json({ error: 'Failed to get photo' }, { status: 500 });
   }
 }

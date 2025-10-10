@@ -174,7 +174,6 @@
       "countryId": "VA",
       "year": "2013"
     },
-    
     {
       "id": "thailand",
       "name": "🇹🇭 Thai Treasures",
@@ -217,7 +216,6 @@
       "countryId": "NL",
       "year": "2009"
     },
-    
     {
       "id": "uk",
       "name": "🇬🇧 British Brilliance",
@@ -241,6 +239,42 @@
       "name": "🇺🇸 American Ambitions",
       "countryId": "US",
       "year": "1987"
+    },
+    {
+      "id": "egypt",
+      "name": "🇪🇬 Egyptian Explorations",
+      "countryId": "EG",
+      "year": "2025"
+    },
+    {
+      "id": "superb-seychelles",
+      "name": "🇸🇨 Superb Seychelles",
+      "countryId": "SC",
+      "year": "2025"
+    },
+    {
+      "id": "sublime-sweden",
+      "name": "🇸🇪 Sublime Sweden",
+      "countryId": "SE",
+      "year": "2025"
+    },
+    {
+      "id": "norway-nostalgia",
+      "name": "🇳🇴 Norway Nostalgia",
+      "countryId": "NO",
+      "year": "2025"
+    },
+    {
+      "id": "denmark-dreams",
+      "name": "🇩🇰 Denmark Dreams",
+      "countryId": "DK",
+      "year": "2025"
+    },
+    {
+      "id": "icelandic-inspirations",
+      "name": "🇮🇸 Icelandic Inspirations",
+      "countryId": "IS",
+      "year": "2025"
     }
   ]
 }

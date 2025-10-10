@@ -108,7 +108,7 @@ const EnhancedDestinationPopup = ({ destination, onMouseEnter, onMouseLeave, pop
       {/* Actions with enhanced styling */}
       <div className="p-5 bg-gradient-to-br from-gray-50 to-white">
         <Link 
-          href={`/albums`}
+          href={`/`}
           className="group flex items-center justify-center gap-3 w-full px-4 py-3 text-sm font-semibold text-white bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-[1.02]"
         >
           <ExternalLink className="h-4 w-4 group-hover:scale-110 transition-transform duration-300" />

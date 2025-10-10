@@ -1,13 +1,20 @@
 import { useMemo } from 'react';
 import { countryToISO } from './countryMapping';
 
-export const useDestinationData = (destinationsData, photosData = null) => {
+export const useDestinationData = (destinationsData, photosData = null, locationsData = []) => {
   return useMemo(() => {
-    if (!destinationsData?.destinations) return { destinations: [], visitedCountries: {} };
+    // Handle both array and object formats
+    const destinationsArray = Array.isArray(destinationsData) 
+      ? destinationsData 
+      : destinationsData?.destinations;
+    
+    if (!destinationsArray || destinationsArray.length === 0) {
+      return { destinations: [], visitedCountries: {} };
+    }
 
     // Create visited countries object for map coloring
     const visitedCountries = {};
-    destinationsData.destinations.forEach(dest => {
+    destinationsArray.forEach(dest => {
       const isoCode = countryToISO[dest.country];
       if (isoCode) {
         visitedCountries[isoCode] = true;
@@ -16,17 +23,32 @@ export const useDestinationData = (destinationsData, photosData = null) => {
       }
     });
 
+    // Helper function to resolve location name from ID
+    const getLocationName = (locationId) => {
+      if (!locationId) return '';
+      // If it starts with 'loc', look it up in locations array
+      if (locationId.startsWith('loc') && locationsData.length > 0) {
+        const location = locationsData.find(loc => loc.id === locationId);
+        return location?.name || locationId;
+      }
+      // Otherwise, it's already a location name
+      return locationId;
+    };
+
     // Enhanced destinations with photo data if provided
-    let enhancedDestinations = destinationsData.destinations;
+    let enhancedDestinations = destinationsArray;
     
     if (photosData?.photos) {
-      enhancedDestinations = destinationsData.destinations.map(dest => {
+      enhancedDestinations = destinationsArray.map(dest => {
         // Find photos that match this destination
         const matchingPhotos = photosData.photos.filter(photo => {
           if (!photo.locationId) return false;
           
+          // Resolve location name from ID if needed
+          const locationName = getLocationName(photo.locationId);
+          
           const destNameLower = dest.name.toLowerCase();
-          const locationIdLower = photo.locationId.toLowerCase();
+          const locationIdLower = locationName.toLowerCase();
           
           // More precise matching logic
           // 1. Exact match of destination name
@@ -85,5 +107,5 @@ export const useDestinationData = (destinationsData, photosData = null) => {
       destinations: enhancedDestinations,
       visitedCountries
     };
-  }, [destinationsData, photosData]);
+  }, [destinationsData, photosData, locationsData]);
 }; 

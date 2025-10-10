@@ -25,17 +25,20 @@ async function getCachedAlbumsData() {
     throw new Error('Failed to load required data files');
   }
   
-  // Process albums data
-  const albumsWithStats = albumsData.albums.map((album) => {
-    const albumPhotos = photosData.photos.filter((photo) => photo.albumId === album.id);
+  // Process albums data - merge photos with albums
+  const albumsWithPhotos = albumsData.albums.map((album) => {
+    const albumPhotos = photosData.photos.filter(
+      (photo) => photo.albumId.toLowerCase() === album.id.toLowerCase()
+    );
     return {
       ...album,
+      photos: albumPhotos,
       photoCount: albumPhotos.length,
     };
   });
   
   // Update cache
-  albumsCache = albumsWithStats;
+  albumsCache = albumsWithPhotos;
   albumsCacheTimestamp = now;
   
   return albumsCache;
@@ -49,7 +52,8 @@ export async function GET() {
       status: 200,
       headers: { 
         'Content-Type': 'application/json',
-        'Cache-Control': 'public, max-age=300' // Cache for 5 minutes
+        // Cache for 1 hour, serve stale while revalidating for 1 day
+        'Cache-Control': 'public, max-age=3600, stale-while-revalidate=86400'
       },
     });
   } catch (error) {

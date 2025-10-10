@@ -8,14 +8,12 @@ import {
   MapPin, 
   Calendar,
   X,
-  Search,
   ArrowRight,
   Image as ImageIcon,
   Grid3X3,
   List
 } from 'lucide-react';
 import usePhotoStore from '../store/usePhotoStore';
-import photosData from '../../data/photos.json';
 
 const transformToCloudFront = (url) => {
   if (!url) return '';
@@ -27,15 +25,22 @@ const transformToCloudFront = (url) => {
 };
 
 // Enhanced Professional Album Card
-const AlbumCard = ({ album, photo, viewMode = 'grid' }) => {
+const AlbumCard = ({ album, photo, viewMode = 'grid', locations = [] }) => {
   const coverPhotoUrl = photo?.url ? transformToCloudFront(photo.url) : null;
   const photoCount = album.photos?.length || 0;
+  
+  // Look up location name from locations array
+  const getLocationName = (locationId) => {
+    if (!locationId || !locations.length) return locationId;
+    const location = locations.find(loc => loc.id === locationId);
+    return location?.name || locationId;
+  };
   
 
 
   if (viewMode === 'list') {
     return (
-      <Link href={`/albums/${album.id}`} className="group block">
+      <Link href={`/albums/${album.id}`} className="group block" prefetch={true}>
         <article className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
           <div className="flex">
             {/* Image */}
@@ -89,7 +94,7 @@ const AlbumCard = ({ album, photo, viewMode = 'grid' }) => {
 
   // Grid view (default)
   return (
-    <Link href={`/albums/${album.id}`} className="group block">
+    <Link href={`/albums/${album.id}`} className="group block" prefetch={true}>
       <article className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 transform">
         {/* Image Container with Overlay */}
         <div className="relative h-72 bg-gradient-to-br from-gray-100 to-gray-200 overflow-hidden">
@@ -151,7 +156,7 @@ const AlbumCard = ({ album, photo, viewMode = 'grid' }) => {
               {photo?.locationId && (
                 <div className="flex items-center gap-1">
                   <MapPin className="h-4 w-4" />
-                  <span>{photo.locationId}</span>
+                  <span>{getLocationName(photo.locationId)}</span>
                 </div>
               )}
             </div>
@@ -163,14 +168,13 @@ const AlbumCard = ({ album, photo, viewMode = 'grid' }) => {
   );
 };
 
-// Streamlined Filter Component - Focus on Photos
-const StreamlinedControls = ({ 
+// Enhanced Header with Controls
+const AlbumHeader = ({ 
   onSortChange,
   sortBy,
-  onSearchChange,
-  searchTerm,
   viewMode,
-  onViewModeChange
+  onViewModeChange,
+  stats
 }) => {
   const sortOptions = [
     { value: 'name', label: 'Name A-Z' },
@@ -179,35 +183,31 @@ const StreamlinedControls = ({
     { value: 'photos-desc', label: 'Most Photos' },
   ];
 
-  const hasFilters = searchTerm || sortBy !== 'name';
+  const hasFilters = sortBy !== 'year-desc';
 
   const handleClearFilters = React.useCallback(() => {
-    onSearchChange('');
-    onSortChange('name');
-  }, [onSearchChange, onSortChange]);
+    onSortChange('year-desc');
+  }, [onSortChange]);
 
   return (
-    <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-4 mb-6">
-      <div className="flex flex-col sm:flex-row gap-4 items-stretch sm:items-center">
-        {/* Search */}
-        <div className="relative flex-1">
-          <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400" />
-          <input
-            type="text"
-            placeholder="Search albums..."
-            value={searchTerm}
-            onChange={(e) => onSearchChange(e.target.value)}
-            className="w-full pl-10 pr-4 py-2.5 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 text-sm"
-          />
-        </div>
+    <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 mb-8">
+      {/* Stats */}
+      <div className="text-gray-600 text-sm font-medium">
+        {stats.countries} countries; {stats.photos.toLocaleString()} photos
+      </div>
 
-        {/* Controls */}
-        <div className="flex items-center gap-3">
-          {/* Sort */}
+      {/* Controls */}
+      <div className="flex items-center gap-3 w-full sm:w-auto">
+        {/* Sort Dropdown */}
+        <div className="flex items-center gap-2 flex-1 sm:flex-initial">
+          <label htmlFor="sort-select" className="text-sm font-medium text-gray-700 whitespace-nowrap">
+            Sort by:
+          </label>
           <select
+            id="sort-select"
             value={sortBy}
             onChange={(e) => onSortChange(e.target.value)}
-            className="px-3 py-2.5 border border-gray-200 rounded-lg text-sm focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white min-w-[130px]"
+            className="flex-1 sm:flex-initial px-4 py-2 border border-gray-300 rounded-lg text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-all duration-200 shadow-sm min-w-[140px]"
           >
             {sortOptions.map(option => (
               <option key={option.value} value={option.value}>
@@ -215,50 +215,53 @@ const StreamlinedControls = ({
               </option>
             ))}
           </select>
-
-          {/* View Mode */}
-          <div className="flex bg-gray-100 rounded-lg p-0.5">
-            <button
-              onClick={() => onViewModeChange('grid')}
-              className={`p-2 rounded-md transition-colors duration-200 ${
-                viewMode === 'grid' 
-                  ? 'bg-white text-blue-600 shadow-sm' 
-                  : 'text-gray-600 hover:text-gray-800'
-              }`}
-              title="Grid view"
-            >
-              <Grid3X3 className="h-4 w-4" />
-            </button>
-            <button
-              onClick={() => onViewModeChange('list')}
-              className={`p-2 rounded-md transition-colors duration-200 ${
-                viewMode === 'list' 
-                  ? 'bg-white text-blue-600 shadow-sm' 
-                  : 'text-gray-600 hover:text-gray-800'
-              }`}
-              title="List view"
-            >
-              <List className="h-4 w-4" />
-            </button>
-          </div>
-
-          {/* Clear */}
-          {hasFilters && (
-            <button
-              onClick={handleClearFilters}
-              className="p-2.5 text-gray-500 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors duration-200"
-              title="Clear filters"
-            >
-              <X className="h-4 w-4" />
-            </button>
-          )}
         </div>
+
+        {/* View Mode Toggle */}
+        <div className="flex bg-gray-100 rounded-lg p-1 shadow-sm">
+          <button
+            onClick={() => onViewModeChange('grid')}
+            className={`p-2 rounded-md transition-all duration-200 ${
+              viewMode === 'grid' 
+                ? 'bg-white text-teal-600 shadow-md' 
+                : 'text-gray-600 hover:text-gray-900'
+            }`}
+            title="Grid view"
+            aria-label="Grid view"
+          >
+            <Grid3X3 className="h-4 w-4" />
+          </button>
+          <button
+            onClick={() => onViewModeChange('list')}
+            className={`p-2 rounded-md transition-all duration-200 ${
+              viewMode === 'list' 
+                ? 'bg-white text-teal-600 shadow-md' 
+                : 'text-gray-600 hover:text-gray-900'
+            }`}
+            title="List view"
+            aria-label="List view"
+          >
+            <List className="h-4 w-4" />
+          </button>
+        </div>
+
+        {/* Reset Filter Button */}
+        {hasFilters && (
+          <button
+            onClick={handleClearFilters}
+            className="p-2 text-gray-500 hover:text-teal-600 hover:bg-teal-50 rounded-lg transition-all duration-200"
+            title="Reset to default sort"
+            aria-label="Reset filters"
+          >
+            <X className="h-4 w-4" />
+          </button>
+        )}
       </div>
     </div>
   );
 };
 
-const PhotoAlbumExplorer = () => {
+const PhotoAlbumExplorer = ({ initialAlbums = null, locations = [] }) => {
   // Store state
   const albums = usePhotoStore((state) => state.albums);
   const loading = usePhotoStore((state) => state.loading);
@@ -267,11 +270,18 @@ const PhotoAlbumExplorer = () => {
   const setError = usePhotoStore((state) => state.setError);
 
   // Local state
-  const [searchTerm, setSearchTerm] = useState('');
-  const [sortBy, setSortBy] = useState('name');
+  const [sortBy, setSortBy] = useState('year-desc');
   const [viewMode, setViewMode] = useState('grid');
 
   useEffect(() => {
+    // If initialAlbums provided (from SSR), use them directly
+    if (initialAlbums) {
+      setAlbums(initialAlbums);
+      setLoading(false);
+      return;
+    }
+
+    // Otherwise, fetch from API (fallback for client-side navigation)
     const fetchAlbums = async () => {
       setLoading(true);
       try {
@@ -281,14 +291,8 @@ const PhotoAlbumExplorer = () => {
         }
         const data = await response.json();
 
-        const mergedAlbums = data.map((album) => ({
-          ...album,
-          photos: photosData.photos.filter(
-            (photo) => photo.albumId.toLowerCase() === album.id.toLowerCase()
-          ),
-        }));
-
-        setAlbums(mergedAlbums);
+        // Albums now come with photos already merged from the API
+        setAlbums(data);
       } catch (error) {
         setError(error.message);
         console.error("Error fetching albums:", error);
@@ -298,7 +302,7 @@ const PhotoAlbumExplorer = () => {
     };
 
     fetchAlbums();
-  }, [setAlbums, setLoading, setError]);
+  }, [initialAlbums, setAlbums, setLoading, setError]);
 
   const getSpecificPhoto = (albumId, photos) => {
     if (!albumId || !Array.isArray(photos)) return null;
@@ -346,17 +350,9 @@ const PhotoAlbumExplorer = () => {
            photos.find((photo) => photo.albumId.toLowerCase() === albumId.toLowerCase());
   };
 
-  // Filter and sort albums
+  // Sort albums
   const processedAlbums = React.useMemo(() => {
     let result = [...albums];
-    
-    // Apply search filter
-    if (searchTerm) {
-      result = result.filter((album) =>
-        album.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        album.description?.toLowerCase().includes(searchTerm.toLowerCase())
-      );
-    }
     
     // Apply sorting
     result.sort((a, b) => {
@@ -374,7 +370,16 @@ const PhotoAlbumExplorer = () => {
     });
     
     return result;
-  }, [albums, searchTerm, sortBy]);
+  }, [albums, sortBy]);
+
+  // Calculate stats for display
+  const stats = React.useMemo(() => {
+    const totalPhotos = processedAlbums.reduce((acc, album) => acc + (album.photos?.length || 0), 0);
+    return {
+      countries: 54, // Total countries/territories from travel century list
+      photos: totalPhotos
+    };
+  }, [processedAlbums]);
 
   if (loading) {
     return (
@@ -391,27 +396,14 @@ const PhotoAlbumExplorer = () => {
     <div className="min-h-screen bg-gray-50">
       {/* Main Content */}
       <div className="max-w-7xl mx-auto px-6 py-8">
-
-
-        {/* Streamlined Controls */}
-        <StreamlinedControls
+        {/* Enhanced Header with Controls */}
+        <AlbumHeader
           onSortChange={setSortBy}
           sortBy={sortBy}
-          onSearchChange={setSearchTerm}
-          searchTerm={searchTerm}
           viewMode={viewMode}
           onViewModeChange={setViewMode}
+          stats={stats}
         />
-
-        {/* Results Summary */}
-        <div className="mb-6">
-          <p className="text-gray-600 text-sm">
-            {processedAlbums.length === albums.length 
-              ? `Showing all ${albums.length} albums`
-              : `Showing ${processedAlbums.length} of ${albums.length} albums`
-            }
-          </p>
-        </div>
 
         {/* Albums Grid/List */}
         {processedAlbums.length > 0 ? (
@@ -429,6 +421,7 @@ const PhotoAlbumExplorer = () => {
                   album={album}
                   photo={albumPhoto}
                   viewMode={viewMode}
+                  locations={locations}
                 />
               );
             })}
@@ -438,17 +431,16 @@ const PhotoAlbumExplorer = () => {
             <CameraIcon className="h-20 w-20 mb-6 text-gray-300" />
             <h3 className="text-2xl font-semibold mb-2">No albums found</h3>
             <p className="text-lg mb-6">
-              Try adjusting your search or filters
+              Try adjusting your filters
             </p>
             <button
               onClick={() => {
-                setSearchTerm('');
-                setSortBy('name');
+                setSortBy('year-desc');
               }}
               className="flex items-center gap-2 px-6 py-3 bg-blue-600 text-white rounded-xl hover:bg-blue-700 transition-colors duration-200"
             >
               <X className="h-4 w-4" />
-              Clear filters
+              Reset filters
             </button>
           </div>
         )}
