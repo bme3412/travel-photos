@@ -1,36 +1,42 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Passport & Ponder · Travel Photo Hub
 
-## Getting Started
+An immersive Next.js 15 experience for cataloging travel photography, mapping every stop on the journey, and sharing a curated “photo of the day.” Albums, data files, and helper scripts all live side by side so you can keep the storytelling layer (the UI) and the source of truth (JSON + S3) in sync.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## ✨ Highlights
+- **Album explorer** with grid/list layouts, rich cover art, and quick stats powered by merged album + photo data (`src/app/components/PhotoAlbumExplorer.js`).
+- **Dynamic album pages** that pre-render via ISR, hydrate with CloudFront-friendly URLs, and expose related location facts.
+- **Interactive Mapbox GL world map** that shades visited countries, clusters destinations, and opens a side panel with contextual photos (`/map`).
+- **Photo of the Day** service (`/photo-of-the-day` + `/api/random-photo`) that can serve either a deterministic daily shot or a true random pick.
+- **Bucket list tracker** with progress metrics, filters, and country flag badges (`/bucket-list`).
+- **AWS-based media pipeline** (S3 + CloudFront + sharp) with CLI helpers for converting HEIC files, uploading, validating credentials, and keeping JSON data tidy (see `scripts/`).
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🧱 Tech Stack
+- **Framework**: Next.js 15 App Router (React 18, Server Components + ISR)
+- **Styling**: Tailwind CSS + custom global styles
+- **State & Data**: Zustand store on the client, JSON files in `src/data/` read via server utilities (`fileHandler.js`)
+- **Maps & Visualization**: Mapbox GL JS 3.x with a CSP worker (`src/workers/mapbox-gl-csp-worker.js`)
+- **Media & Infra**: AWS S3, CloudFront CDN, `sharp` for image manipulation, Vercel deployment helpers
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## 📁 Key Directories
+- `src/app/` – App Router routes (`/`, `/albums/[id]`, `/map`, `/photo-of-the-day`, `/bucket-list`, API routes, shared UI components, Zustand store, utilities).
+- `src/data/` – JSON sources (`albums.json`, `photos.json`, `destinations.json`, `locations.json`, plus `travel-century-list.txt` used for stats).
+- `scripts/` – Node utilities for importing photos, converting HEIC images, migrating assets, and validating AWS credentials (full docs in `scripts/README.md`).
+- `public/` – Static assets, SVG icons, and any legacy images that still live locally.
+- `loaders/` & `workers/` – Custom Webpack + Mapbox worker glue needed for Mapbox GL in Next.js 15.
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🌍 Core Pages
+- `/` – Album explorer fed by server-side data merge + client-side sorting, view toggles, and stats via Zustand.
+- `/albums/[id]` – Detail layouts, CloudFront URL rewriting, dynamic Open Graph metadata, static params generation.
+- `/map` – Full-screen Mapbox view with region fly-to controls, visited-country shading, destination markers, and a photo side panel.
+- `/photo-of-the-day` – Fetches a random photo on each request; pairs with the `/api/random-photo` endpoint for client polling.
+- `/bucket-list` – Client-only experience backed by `bucketListData.js`, with search + filters + progress meters.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
