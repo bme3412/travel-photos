@@ -6,18 +6,10 @@ import usePhotoStore from '../../store/usePhotoStore';
 import ImageLightbox from '../../components/ImageLightbox';
 import { ArrowLeft, Grid, Map as MapIcon, Loader, Camera } from 'lucide-react';
 import Link from 'next/link';
+import { transformToCloudFront } from '../../utils/imageUtils';
 
 // Lazy load the AlbumMap component
 const AlbumMap = React.lazy(() => import('../../components/AlbumMap'));
-
-const transformToCloudFront = (url) => {
-  if (!url) return '';
-  const path = url
-    .replace('https://global-travel.s3.us-east-1.amazonaws.com/', '')
-    .replace('https://d1mnon53ja4k10.cloudfront.net/', '')
-    .replace(/\.HEIC$/i, '.jpg');
-  return `https://d1mnon53ja4k10.cloudfront.net/${path}`;
-};
 
 const PhotoCard = React.memo(({ photo, index, onPhotoClick }) => {
   const cloudFrontUrl = transformToCloudFront(photo.url);
@@ -66,23 +58,19 @@ const MapLoading = () => (
 );
 
 export default function AlbumPageClient({ initialAlbum }) {
-  const {
-    isLightboxOpen,
-    selectedPhoto,
-    openLightbox,
-    closeLightbox,
-    setCurrentAlbum,
-  } = usePhotoStore();
-  
+  const isLightboxOpen = usePhotoStore((state) => state.isLightboxOpen);
+  const selectedPhoto = usePhotoStore((state) => state.selectedPhoto);
+  const openLightbox = usePhotoStore((state) => state.openLightbox);
+  const closeLightbox = usePhotoStore((state) => state.closeLightbox);
+
   const [view, setView] = useState('grid');
   const [currentAlbum, setAlbum] = useState(initialAlbum);
 
   useEffect(() => {
     if (initialAlbum) {
       setAlbum(initialAlbum);
-      setCurrentAlbum(initialAlbum);
     }
-  }, [initialAlbum, setCurrentAlbum]);
+  }, [initialAlbum]);
 
   if (!currentAlbum) {
     return (

@@ -1,32 +1,18 @@
 'use client';
 
 import React, { useState, useCallback, useMemo, useRef, useEffect } from 'react';
+import MapGL from 'react-map-gl';
+import 'mapbox-gl/dist/mapbox-gl.css';
 import { Map as MapIcon, Loader2, Filter, X, Target, Maximize2, Minimize2, Navigation } from 'lucide-react';
 import { useLocationData, useMapBounds } from '../utils/useLocationData';
+import { getClusterThreshold } from '../utils/smartZoom';
 import { EnhancedMarkerCluster } from './EnhancedMarkerCluster';
 import usePhotoStore from '../store/usePhotoStore';
 
-// Dynamically import react-map-gl
-let MapComponent = null;
-let mapboxCSSLoaded = false;
-
-const loadMapboxResources = async () => {
-  // Load CSS if not already loaded
-  if (!mapboxCSSLoaded && typeof window !== 'undefined') {
-    const cssLink = document.createElement('link');
-    cssLink.href = 'https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.css';
-    cssLink.rel = 'stylesheet';
-    document.head.appendChild(cssLink);
-    mapboxCSSLoaded = true;
-  }
-
-  // Dynamically import react-map-gl
-  if (!MapComponent) {
-    const reactMapGL = await import('react-map-gl');
-    MapComponent = reactMapGL.default;
-  }
-
-  return MapComponent;
+const INITIAL_VIEW_STATE = {
+  latitude: 20,
+  longitude: 0,
+  zoom: 2
 };
 
 const MAP_STYLES = [
@@ -39,14 +25,11 @@ const MAP_STYLES = [
 export default function AlbumMap({ album, onLocationSelect }) {
   const MAPBOX_TOKEN = process.env.NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN || process.env.NEXT_PUBLIC_MAPBOX_TOKEN;
   const [isLoading, setIsLoading] = useState(true);
-  const [mapLoaded, setMapLoaded] = useState(false);
-  const [MapGL, setMapGL] = useState(null);
   const [mapError, setMapError] = useState(null);
-  const [viewport, setViewport] = useState({
-    latitude: 20,
-    longitude: 0,
-    zoom: 2
-  });
+  // The map is uncontrolled; React only tracks the rounded zoom badge and the
+  // bucketed cluster radius, so panning/zooming doesn't re-render per frame.
+  const [displayZoom, setDisplayZoom] = useState(Math.round(INITIAL_VIEW_STATE.zoom));
+  const [clusterRadius, setClusterRadius] = useState(() => getClusterThreshold(INITIAL_VIEW_STATE.zoom));
   const [filteredLocation, setFilteredLocation] = useState(null);
   const [isFullScreen, setIsFullScreen] = useState(false);
   const [mapStyle, setMapStyle] = useState(MAP_STYLES[0].style);
@@ -57,7 +40,7 @@ export default function AlbumMap({ album, onLocationSelect }) {
   const mapRef = useRef(null);
   
   // Photo store for lightbox integration
-  const { openLightbox } = usePhotoStore();
+  const openLightbox = usePhotoStore((state) => state.openLightbox);
   
   // Use memoized location processing
   const allLocations = useLocationData(album?.photos);
@@ -69,27 +52,11 @@ export default function AlbumMap({ album, onLocationSelect }) {
   );
   const bounds = useMapBounds(locations);
 
-  // Load Mapbox resources when component mounts
   useEffect(() => {
-    const loadMap = async () => {
-      try {
-        if (!MAPBOX_TOKEN) {
-          setMapError('Missing Mapbox access token. Set NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN in your .env file.');
-          setIsLoading(false);
-          return;
-        }
-        const Map = await loadMapboxResources();
-        setMapGL(() => Map);
-        setMapLoaded(true);
-        setMapError(null);
-      } catch (error) {
-        console.error('Failed to load map resources:', error);
-        setMapError(error.message);
-        setIsLoading(false);
-      }
-    };
-
-    loadMap();
+    if (!MAPBOX_TOKEN) {
+      setMapError('Missing Mapbox access token. Set NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN in your .env file.');
+      setIsLoading(false);
+    }
   }, [MAPBOX_TOKEN]);
 
   // Initialize map with proper bounds when locations are available
@@ -200,15 +167,15 @@ export default function AlbumMap({ album, onLocationSelect }) {
     };
   }, []);
 
-  // Memoize map move handler with error handling
+  // Only commit state when the rounded zoom or cluster bucket actually
+  // changes — conditional setState keeps pan/zoom frames render-free.
   const handleMapMove = useCallback((evt) => {
-    try {
-      if (evt && evt.viewState) {
-        setViewport(evt.viewState);
-      }
-    } catch (error) {
-      console.error('Error in handleMapMove:', error);
-    }
+    if (!evt?.viewState) return;
+    const { zoom } = evt.viewState;
+    const rounded = Math.round(zoom);
+    setDisplayZoom(prev => (prev === rounded ? prev : rounded));
+    const threshold = getClusterThreshold(zoom);
+    setClusterRadius(prev => (prev === threshold ? prev : threshold));
   }, []);
 
   // Handle map container clicks to close popups
@@ -325,7 +292,7 @@ export default function AlbumMap({ album, onLocationSelect }) {
           </button>
           
           <div className="text-xs text-gray-500 bg-gray-50 px-2 py-1 rounded">
-            Zoom: {Math.round(viewport.zoom)}
+            Zoom: {displayZoom}
           </div>
           
           {filteredLocation && (
@@ -378,7 +345,7 @@ export default function AlbumMap({ album, onLocationSelect }) {
         <div className={`relative flex-1 ${
           isFullScreen ? 'h-[calc(100vh-180px)]' : 'h-[500px] sm:h-[600px] lg:h-[700px]'
         }`}>
-          {(isLoading || !mapLoaded) && (
+          {isLoading && (
             <div className="absolute inset-0 z-10 bg-gray-100">
               <div className="h-full w-full relative">
                 {/* Animated loading skeleton */}
@@ -390,17 +357,17 @@ export default function AlbumMap({ album, onLocationSelect }) {
                 <div className="absolute inset-0 flex flex-col items-center justify-center bg-gray-50/50">
                   <Loader2 className="h-8 w-8 animate-spin text-teal-600 mb-4" />
                   <p className="text-sm text-gray-600 font-medium">
-                    {!mapLoaded ? 'Loading map resources...' : 'Loading map...'}
+                    Loading map...
                   </p>
                 </div>
               </div>
             </div>
           )}
 
-          {mapLoaded && MapGL && locations.length > 0 && (
+          {!mapError && locations.length > 0 && (
             <MapGL
               ref={mapRef}
-              {...viewport}
+              initialViewState={INITIAL_VIEW_STATE}
               style={{ width: '100%', height: '100%' }}
               mapStyle={mapStyle}
               mapboxAccessToken={MAPBOX_TOKEN}
@@ -419,14 +386,13 @@ export default function AlbumMap({ album, onLocationSelect }) {
               <EnhancedMarkerCluster
                 ref={clusterRef}
                 locations={locations}
-                zoom={viewport.zoom}
+                clusterRadius={clusterRadius}
                 onLocationSelect={handleLocationSelect}
                 onPhotoClick={handlePhotoClick}
                 onFilterByLocation={handleFilterByLocation}
                 onViewAllPhotos={handleViewAllPhotos}
                 showFilters={!filteredLocation}
-                mapRef={mapRef.current}
-                viewport={viewport}
+                mapRef={mapRef}
               />
             </MapGL>
           )}

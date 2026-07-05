@@ -8,11 +8,5 @@
     "env": {
       "NEXT_PUBLIC_AWS_BUCKET_NAME": "global-travel",
       "NEXT_PUBLIC_AWS_REGION": "us-east-1"
-    },
-    "builds": [
-      {
-        "src": "package.json",
-        "use": "@vercel/next"
-      }
-    ]
+    }
   }

@@ -2,12 +2,10 @@
 'use client';
 
 import React, { useState, useMemo } from 'react';
-import { MapPin, Globe, Check, Filter, Search, MapIcon } from 'lucide-react';
+import { MapPin, Globe, Check, Filter, Search } from 'lucide-react';
 import { bucketListData } from './bucketListData';
 
-const getCountryCode = (location) => {
-    const country = location.split(',').pop().trim();
-    const countryMap = {
+const countryMap = {
       // North America
       'USA': 'US',
       'Canada': 'CA',
@@ -97,10 +95,12 @@ const getCountryCode = (location) => {
       'North Korea': 'KP',
       'Russia': 'RU',
       'Russian Federation': 'RU'
-    };
-    
-    return countryMap[country] || '';
-  };
+};
+
+const getCountryCode = (location) => {
+  const country = location.split(',').pop().trim();
+  return countryMap[country] || '';
+};
 
 const BucketListItem = ({ title, location, description, checked }) => {
   const countryCode = getCountryCode(location);
@@ -116,6 +116,7 @@ const BucketListItem = ({ title, location, description, checked }) => {
                 src={`https://flagcdn.com/w40/${countryCode.toLowerCase()}.png`}
                 alt={`${location} flag`}
                 className="h-5 rounded"
+                loading="lazy"
               />
             )}
             {checked && (

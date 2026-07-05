@@ -141,10 +141,10 @@ const CustomDestinationMarker = ({ onClick, onMouseEnter, onMouseLeave, isHovere
   </div>
 );
 
-export const EnhancedDestinationMarkers = ({ 
-  destinations, 
-  mapLoaded, 
-  hoveredDestination, 
+const EnhancedDestinationMarkersComponent = ({
+  destinations,
+  mapLoaded,
+  hoveredDestination,
   setHoveredDestination,
   onOpenSidePanel,
   mapRef,
@@ -237,19 +237,22 @@ export const EnhancedDestinationMarkers = ({
 
   const hasActivePopup = !!hoveredDestination;
 
+  // Only the hovered destination's popup needs positioning — computing it per
+  // marker forces a layout read (getBoundingClientRect) for every destination.
+  const smartPosition = hoveredDestination
+    ? getSmartPopupPosition(
+        hoveredDestination.latitude,
+        hoveredDestination.longitude,
+        viewport,
+        mapRef
+      )
+    : null;
+
   return (
     <>
       {destinations.map((dest) => {
         const isCurrentlyHovered = hoveredDestination?.id === dest.id;
         const isBlocked = hasActivePopup && !isCurrentlyHovered;
-        
-        // Calculate smart positioning for this destination's popup (memoized internally)
-        const smartPosition = getSmartPopupPosition(
-          dest.latitude, 
-          dest.longitude, 
-          viewport, 
-          mapRef
-        );
 
         return (
           <React.Fragment key={dest.id}>
@@ -263,10 +266,7 @@ export const EnhancedDestinationMarkers = ({
                 isBlocked={isBlocked}
                 onMouseEnter={() => handleMarkerMouseEnter(dest)}
                 onMouseLeave={handleMarkerMouseLeave}
-                onClick={() => {
-                  // Optional: Add click behavior for destinations
-                  console.log('Clicked destination:', dest.name);
-                }}
+                onClick={() => handleMarkerMouseEnter(dest)}
               />
             </Marker>
             {isCurrentlyHovered && (
@@ -295,4 +295,7 @@ export const EnhancedDestinationMarkers = ({
       })}
     </>
   );
-}; 
+};
+
+export const EnhancedDestinationMarkers = React.memo(EnhancedDestinationMarkersComponent);
+EnhancedDestinationMarkers.displayName = 'EnhancedDestinationMarkers';

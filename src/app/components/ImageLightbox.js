@@ -6,8 +6,7 @@ import { X as CloseIcon, ChevronLeft, ChevronRight, Loader2 } from 'lucide-react
 
 const LightboxImage = ({ src, alt, onLoadingComplete, ...props }) => {
   const [isLoading, setIsLoading] = useState(true);
-  const [error, setError] = useState(null);
-  
+
   const imageRef = useRef(null);
   
   const handleLoad = () => {
@@ -34,9 +33,9 @@ const LightboxImage = ({ src, alt, onLoadingComplete, ...props }) => {
           transition-all duration-500 ease-out
         `}
         onLoadingComplete={handleLoad}
-        onError={(e) => {
+        onError={() => {
           console.error(`Error loading image: ${src}`);
-          setError(new Error('Failed to load image'));
+          setIsLoading(false);
         }}
         quality={85}
       />
@@ -52,26 +51,6 @@ export default function ImageLightbox({
   onPrevious
 }) {
   const [isAnimating, setIsAnimating] = useState(false);
-  const [preloadedIndexes, setPreloadedIndexes] = useState(new Set([currentIndex]));
-  
-  // Preload adjacent images
-  useEffect(() => {
-    if (typeof window === 'undefined') return;
-
-    const indexesToPreload = [
-      currentIndex,
-      (currentIndex + 1) % images.length,
-      (currentIndex - 1 + images.length) % images.length
-    ];
-    
-    indexesToPreload.forEach(index => {
-      if (!preloadedIndexes.has(index)) {
-        const img = new window.Image();
-        img.src = images[index].url;
-        setPreloadedIndexes(prev => new Set([...prev, index]));
-      }
-    });
-  }, [currentIndex, images, preloadedIndexes]);
 
   const handleKeyDown = useCallback((e) => {
     if (isAnimating) return;

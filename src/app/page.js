@@ -2,6 +2,7 @@
 
 import PhotoAlbumExplorer from './components/PhotoAlbumExplorer';
 import { readAlbums, readPhotos, readLocations } from './utils/fileHandler';
+import { buildAlbumSummaries } from './utils/albumSummaries';
 
 export const metadata = {
   title: 'Photo Albums',
@@ -24,28 +25,17 @@ async function getAlbumsData() {
       throw new Error('Failed to load required data files');
     }
     
-    // Merge photos with albums on the server
-    const albumsWithPhotos = albumsData.albums.map((album) => {
-      const albumPhotos = photosData.photos.filter(
-        (photo) => photo.albumId.toLowerCase() === album.id.toLowerCase()
-      );
-      return {
-        ...album,
-        photos: albumPhotos,
-        photoCount: albumPhotos.length,
-      };
-    });
-    
-    return { albums: albumsWithPhotos, locations: locationsData || [] };
+    // Trim to summaries on the server — cover photo + count only, never the full photo list
+    return { albums: buildAlbumSummaries(albumsData, photosData, locationsData || []) };
   } catch (error) {
     console.error('Error fetching albums data:', error);
-    return { albums: [], locations: [] };
+    return { albums: [] };
   }
 }
 
 export default async function AlbumsPage() {
   // Fetch data at build time (SSG) and revalidate every hour (ISR)
-  const { albums, locations } = await getAlbumsData();
-  
-  return <PhotoAlbumExplorer initialAlbums={albums} locations={locations} />;
+  const { albums } = await getAlbumsData();
+
+  return <PhotoAlbumExplorer initialAlbums={albums} />;
 }

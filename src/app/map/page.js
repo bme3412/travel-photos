@@ -2,6 +2,7 @@ import { readPhotos, readLocations } from '../utils/fileHandler';
 import fs from 'fs/promises';
 import path from 'path';
 import MapPageClient from './MapPageClient';
+import { buildDestinationData } from '../utils/destinationData';
 
 // Read destinations separately since it's not in fileHandler
 async function readDestinations() {
@@ -25,17 +26,14 @@ async function getMapData() {
     ]);
 
     if (!destinationsData || !photosData) {
-      return { destinations: [], photos: [], locations: [] };
+      return { destinations: [], visitedCountries: {} };
     }
 
-    return {
-      destinations: destinationsData,
-      photos: photosData,
-      locations: locationsData || []
-    };
+    // Join photos to destinations here so the client never receives photos.json
+    return buildDestinationData(destinationsData, photosData, locationsData || []);
   } catch (error) {
     console.error('Error fetching map data:', error);
-    return { destinations: [], photos: [], locations: [] };
+    return { destinations: [], visitedCountries: {} };
   }
 }
 
@@ -49,7 +47,7 @@ export const metadata = {
 
 export default async function MapPage() {
   // Fetch data at build time (SSG) and revalidate hourly (ISR)
-  const { destinations, photos, locations } = await getMapData();
+  const { destinations, visitedCountries } = await getMapData();
 
-  return <MapPageClient initialDestinations={destinations} initialPhotos={photos} locations={locations} />;
+  return <MapPageClient initialDestinations={destinations} visitedCountries={visitedCountries} />;
 }

@@ -6,8 +6,8 @@ import { transformToCloudFront } from '../utils/imageUtils';
 const PhotoSidePanel = ({ location, isOpen, onClose, onPhotoClick }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   
-  const sortedPhotos = useMemo(() => 
-    location?.photos?.sort((a, b) => new Date(b.dateCreated) - new Date(a.dateCreated)) || [],
+  const sortedPhotos = useMemo(() =>
+    location?.photos ? [...location.photos].sort((a, b) => new Date(b.dateCreated) - new Date(a.dateCreated)) : [],
     [location?.photos]
   );
 

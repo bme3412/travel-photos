@@ -3,37 +3,27 @@
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { RefreshCw } from 'lucide-react';
+import { transformToCloudFront } from '../../utils/imageUtils';
 
-const formatCaption = (photo, albums, locations) => {
+// Display fields (locationName, albumTitle, country, flag) are resolved
+// server-side — by the page and by /api/random-photo — via photoEnrichment.js
+const formatCaption = (photo) => {
   const today = new Date().toLocaleDateString('en-US', {
     month: '2-digit',
     day: '2-digit',
     year: 'numeric'
   });
 
-  // Resolve location name from ID
-  let locationName = photo.locationId;
-  if (photo.locationId?.startsWith('loc') && locations.length > 0) {
-    const location = locations.find(loc => loc.id === photo.locationId);
-    locationName = location?.name || photo.locationId;
-  }
-
-  // Get album details
-  const album = albums.find(alb => alb.id === photo.albumId);
-  const albumName = album?.title || photo.albumId;
-  const country = album?.country || '';
-  const flag = album?.flag || '';
-
   return {
     date: today,
-    location: locationName,
-    albumTitle: albumName,
-    country: country,
-    flag: flag
+    location: photo.locationName || photo.locationId,
+    albumTitle: photo.albumTitle || photo.albumId,
+    country: photo.country || '',
+    flag: photo.flag || ''
   };
 };
 
-const PhotoOfTheDay = ({ initialPhoto = null, albums = [], locations = [] }) => {
+const PhotoOfTheDay = ({ initialPhoto = null }) => {
   const [photo, setPhoto] = useState(initialPhoto);
   const [loading, setLoading] = useState(!initialPhoto);
 
@@ -79,7 +69,7 @@ const PhotoOfTheDay = ({ initialPhoto = null, albums = [], locations = [] }) => 
     );
   }
 
-  const caption = formatCaption(photo, albums, locations);
+  const caption = formatCaption(photo);
 
   return (
     <div className="container mx-auto px-6 py-8 max-w-7xl">
@@ -97,7 +87,7 @@ const PhotoOfTheDay = ({ initialPhoto = null, albums = [], locations = [] }) => 
         {/* Photo Section */}
         <div className="lg:col-span-3 relative h-[70vh] lg:h-[85vh] rounded-3xl overflow-hidden shadow-2xl">
           <Image
-            src={photo.url}
+            src={transformToCloudFront(photo.url)}
             alt={`${caption.location}, ${caption.country}`}
             fill
             className="object-cover hover:scale-105 transition-transform duration-700"

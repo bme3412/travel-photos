@@ -1,8 +1,7 @@
 import React, { useMemo, useCallback, useState, forwardRef, useImperativeHandle, useRef, useEffect } from 'react';
 import { Marker, Popup } from 'react-map-gl';
 import Image from 'next/image';
-import { Eye, Filter, MapPin, Calendar, X, Camera } from 'lucide-react';
-import { getClusterThreshold } from '../utils/smartZoom';
+import { Eye, MapPin, Calendar, X, Camera } from 'lucide-react';
 import { getSmartPopupPosition, getPopupStyles } from '../utils/smartPopupPosition';
 import { transformToCloudFront } from '../utils/imageUtils';
 
@@ -29,7 +28,7 @@ const getDistance = (point1, point2, zoom) => {
   return distance;
 };
 
-const PhotoPreview = ({ photo, onClick, className = "", size = "md" }) => {
+const PhotoPreview = React.memo(({ photo, onClick, className = "", size = "md" }) => {
   const [imageLoaded, setImageLoaded] = useState(false);
   const [imageError, setImageError] = useState(false);
   
@@ -108,125 +107,118 @@ const PhotoPreview = ({ photo, onClick, className = "", size = "md" }) => {
       </div>
     </div>
   );
-};
+});
 
-const LocationPopup = ({ 
+PhotoPreview.displayName = 'PhotoPreview';
+
+const LocationPopup = React.memo(({ 
   location, 
   onPhotoClick, 
-  onFilterByLocation, 
-  onViewAllPhotos,
   onOpenSidePanel,
-  onClose,
-  showFilters = true
+  onClose
 }) => {
   const { name, photoCount, photos } = location;
-  const sortedPhotos = useMemo(() => 
-    photos?.sort((a, b) => new Date(b.dateCreated) - new Date(a.dateCreated)) || [],
+  const sortedPhotos = useMemo(() =>
+    photos ? [...photos].sort((a, b) => new Date(b.dateCreated) - new Date(a.dateCreated)) : [],
     [photos]
   );
+  
+  // Memoize the formatted date to prevent re-calculations
+  const formattedDate = useMemo(() => {
+    if (!sortedPhotos[0]?.dateCreated) return null;
+    return new Date(sortedPhotos[0].dateCreated).toLocaleDateString('en-US', {
+      month: 'numeric',
+      day: 'numeric',
+      year: 'numeric'
+    });
+  }, [sortedPhotos]);
+
+  // Prevent re-renders by not recalculating handlers
+  const handlePhotoClick = useCallback((photo) => {
+    onPhotoClick?.(photo);
+  }, [onPhotoClick]);
+
+  const handleOpenSidePanel = useCallback(() => {
+    onOpenSidePanel?.(location);
+  }, [onOpenSidePanel, location]);
+
+  const handleClose = useCallback(() => {
+    onClose?.();
+  }, [onClose]);
 
   return (
     <div 
       style={{
         ...getPopupStyles('400px', 'location'),
-        pointerEvents: 'auto'
+        pointerEvents: 'auto',
+        backfaceVisibility: 'hidden',
+        transform: 'translateZ(0)',
+        willChange: 'auto'
       }}
     >
-      {/* Header with gradient background */}
-      <div className="p-6 border-b border-gray-100 bg-gradient-to-br from-teal-50 via-cyan-50 to-blue-50">
-        <div className="flex justify-between items-start mb-3">
-          <h3 className="font-bold text-gray-900 text-xl leading-tight pr-3">
+      {/* Cleaner Header */}
+      <div className="p-4 border-b border-gray-200 bg-white">
+        <div className="flex justify-between items-center mb-2">
+          <h3 className="font-bold text-gray-900 text-lg">
             {name}
           </h3>
-          <div className="flex items-center gap-2">
-            {photoCount > 0 && (
-              <button
-                onClick={() => onOpenSidePanel(location)}
-                className="group p-2.5 hover:bg-white/70 rounded-xl transition-all duration-300 flex-shrink-0 shadow-sm hover:shadow-md transform hover:scale-105"
-                title="View photos in side panel"
-              >
-                <Camera className="h-6 w-6 text-teal-600 group-hover:text-teal-700 transition-colors duration-300" />
-              </button>
-            )}
-            <button
-              onClick={onClose}
-              className="group p-2.5 hover:bg-white/70 rounded-xl transition-all duration-300 flex-shrink-0 shadow-sm hover:shadow-md transform hover:scale-105"
-            >
-              <X className="h-5 w-5 text-gray-500 group-hover:text-gray-700 transition-colors duration-300" />
-            </button>
-          </div>
+          <button
+            onClick={handleClose}
+            className="p-1.5 hover:bg-gray-100 rounded-lg transition-colors"
+          >
+            <X className="h-4 w-4 text-gray-500" />
+          </button>
         </div>
         
-        <div className="flex items-center gap-4 text-sm text-gray-600">
-          <div className="flex items-center gap-2">
-            <div className="p-1 bg-white/70 rounded-lg">
-              <MapPin className="h-4 w-4" />
-            </div>
-            <span className="font-semibold text-teal-700">{photoCount} photos</span>
+        <div className="flex items-center gap-3 text-sm">
+          <div className="flex items-center gap-1.5 text-teal-600 font-semibold">
+            <MapPin className="h-4 w-4" />
+            <span>{photoCount} photos</span>
           </div>
-          {sortedPhotos[0]?.dateCreated && (
-            <div className="flex items-center gap-2">
-              <div className="p-1 bg-blue-100/70 rounded-lg">
-                <Calendar className="h-4 w-4" />
-              </div>
-              <span className="font-medium">{new Date(sortedPhotos[0].dateCreated).toLocaleDateString()}</span>
+          {formattedDate && (
+            <div className="flex items-center gap-1.5 text-gray-600">
+              <Calendar className="h-4 w-4" />
+              <span>{formattedDate}</span>
             </div>
           )}
         </div>
       </div>
 
-      {/* Photo Grid with enhanced styling */}
+      {/* Photo Grid */}
       {sortedPhotos.length > 0 && (
-        <div className="p-6">
-          <div className="grid grid-cols-3 gap-3 mb-4">
+        <div className="p-4">
+          <div className="grid grid-cols-3 gap-2">
             {sortedPhotos.slice(0, 6).map((photo) => (
               <PhotoPreview
                 key={photo.id}
                 photo={photo}
-                onClick={onPhotoClick}
+                onClick={handlePhotoClick}
                 size="lg"
               />
             ))}
           </div>
-          
-          {sortedPhotos.length > 6 && (
-            <div 
-              className="text-center py-3 text-sm font-medium text-gray-700 hover:text-gray-900 cursor-pointer border-t border-gray-100 hover:bg-gradient-to-r hover:from-gray-50 hover:to-blue-50 transition-all duration-300 rounded-lg"
-              onClick={() => onViewAllPhotos(location)}
-            >
-              <span className="flex items-center justify-center gap-2">
-                <Camera className="h-4 w-4" />
-                +{sortedPhotos.length - 6} more photos
-              </span>
-            </div>
-          )}
         </div>
       )}
 
-      {/* Enhanced Action Buttons */}
-      {showFilters && (
-        <div className="p-5 border-t border-gray-100 flex gap-3 bg-gradient-to-br from-gray-50 to-white">
-          <button
-            onClick={() => onFilterByLocation(location)}
-            className="group flex-1 flex items-center justify-center gap-2 px-4 py-3 text-sm font-semibold text-white bg-gradient-to-r from-teal-600 to-cyan-600 hover:from-teal-700 hover:to-cyan-700 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-[1.02]"
-          >
-            <Filter className="h-4 w-4 group-hover:scale-110 transition-transform duration-300" />
-            Filter
-          </button>
-          {sortedPhotos.length > 0 && (
-            <button
-              onClick={() => onViewAllPhotos(location)}
-              className="group flex-1 flex items-center justify-center gap-2 px-4 py-3 text-sm font-semibold text-teal-700 bg-gradient-to-r from-teal-50 to-cyan-50 hover:from-teal-100 hover:to-cyan-100 rounded-xl transition-all duration-300 shadow-md hover:shadow-lg transform hover:scale-[1.02] border border-teal-200"
-            >
-              <Eye className="h-4 w-4 group-hover:scale-110 transition-transform duration-300" />
-              View All
-            </button>
-          )}
-        </div>
-      )}
+      {/* Action Buttons */}
+      <div className="p-3 border-t border-gray-200 flex gap-2 bg-gray-50">
+        <button
+          onClick={handleOpenSidePanel}
+          className="flex-1 flex items-center justify-center gap-2 px-3 py-2 text-sm font-medium text-white bg-teal-600 hover:bg-teal-700 rounded-lg transition-colors"
+        >
+          <Camera className="h-4 w-4" />
+          View All
+        </button>
+      </div>
     </div>
   );
-};
+}, (prevProps, nextProps) => {
+  // Custom comparison function to prevent unnecessary re-renders
+  return prevProps.location?.id === nextProps.location?.id &&
+         prevProps.location?.photoCount === nextProps.location?.photoCount;
+});
+
+LocationPopup.displayName = 'LocationPopup';
 
 const ClusterPopup = ({ cluster, onLocationSelect, onPhotoClick, onClose }) => {
   const { locations, totalPhotos } = cluster;
@@ -357,7 +349,8 @@ const ClusterMarker = React.memo(({ cluster, isSelected, onClick, onMouseEnter, 
           }`}
           style={{
             pointerEvents: isBlocked ? 'none' : 'auto',
-            zIndex: isSelected ? 75 : 55
+            zIndex: isSelected ? 75 : 55,
+            padding: '8px' // Larger hover area
           }}
           onClick={handleClick}
           onMouseEnter={handleMouseEnter}
@@ -394,7 +387,8 @@ const ClusterMarker = React.memo(({ cluster, isSelected, onClick, onMouseEnter, 
         }`}
         style={{
           pointerEvents: isBlocked ? 'none' : 'auto',
-          zIndex: isSelected ? 75 : 55
+          zIndex: isSelected ? 75 : 55,
+          padding: '8px' // Larger hover area
         }}
         onClick={handleClick}
         onMouseEnter={handleMouseEnter}
@@ -495,22 +489,19 @@ const optimizedClustering = (locations, clusterRadius) => {
   return clustered;
 };
 
-export const EnhancedMarkerCluster = forwardRef(({ 
-  locations, 
-  zoom, 
-  onLocationSelect, 
+const EnhancedMarkerClusterComponent = forwardRef(({
+  locations,
+  clusterRadius,
+  onLocationSelect,
   onPhotoClick,
-  onFilterByLocation,
-  onViewAllPhotos,
   onOpenSidePanel,
-  showFilters = true,
-  mapRef,
-  viewport
+  mapRef
 }, ref) => {
   const [selectedLocation, setSelectedLocation] = useState(null);
   const timeoutRef = useRef(null);
   const activeMarkerRef = useRef(null);
   const popupStateRef = useRef({ isOverMarker: false, isOverPopup: false });
+  const selectedLocationRef = useRef(null);
 
   const clearTimeouts = useCallback(() => {
     if (timeoutRef.current) {
@@ -522,7 +513,9 @@ export const EnhancedMarkerCluster = forwardRef(({
   const scheduleHide = useCallback((delay = 250) => {
     clearTimeouts();
     timeoutRef.current = setTimeout(() => {
+      // Only hide if mouse is not over marker OR popup
       if (!popupStateRef.current.isOverMarker && !popupStateRef.current.isOverPopup) {
+        selectedLocationRef.current = null;
         setSelectedLocation(null);
         activeMarkerRef.current = null;
       }
@@ -531,7 +524,10 @@ export const EnhancedMarkerCluster = forwardRef(({
 
   const handleMarkerClick = useCallback((location) => {
     clearTimeouts();
-    setSelectedLocation(location);
+    if (selectedLocationRef.current?.id !== location?.id) {
+      selectedLocationRef.current = location;
+      setSelectedLocation(location);
+    }
     onLocationSelect?.(location);
   }, [onLocationSelect, clearTimeouts]);
 
@@ -547,17 +543,17 @@ export const EnhancedMarkerCluster = forwardRef(({
     popupStateRef.current.isOverMarker = true;
     activeMarkerRef.current = locationId;
     
-    // Increased delay to prevent rapid flickering and ensure stability
-    timeoutRef.current = setTimeout(() => {
-      if (popupStateRef.current.isOverMarker && activeMarkerRef.current === locationId) {
-        setSelectedLocation(location);
-      }
-    }, 150); // Increased from 100ms for more stability
+    // Show popup immediately if hovering over marker
+    if (selectedLocationRef.current?.id !== location?.id) {
+      selectedLocationRef.current = location;
+      setSelectedLocation(location);
+    }
   }, [clearTimeouts]);
 
   const handleMarkerMouseLeave = useCallback(() => {
     popupStateRef.current.isOverMarker = false;
-    scheduleHide(400); // Increased delay to allow moving to popup
+    // Give time to move mouse to popup
+    scheduleHide(300);
   }, [scheduleHide]);
 
   const handlePopupMouseEnter = useCallback(() => {
@@ -567,11 +563,13 @@ export const EnhancedMarkerCluster = forwardRef(({
 
   const handlePopupMouseLeave = useCallback(() => {
     popupStateRef.current.isOverPopup = false;
-    scheduleHide(200); // Increased delay for stability
+    // Shorter delay when leaving popup
+    scheduleHide(200);
   }, [scheduleHide]);
 
   const handleClosePopup = useCallback(() => {
     clearTimeouts();
+    selectedLocationRef.current = null;
     setSelectedLocation(null);
     activeMarkerRef.current = null;
     popupStateRef.current = { isOverMarker: false, isOverPopup: false };
@@ -592,12 +590,12 @@ export const EnhancedMarkerCluster = forwardRef(({
     };
   }, [clearTimeouts]);
 
+  // clusterRadius is already bucketed by the parent (getClusterThreshold), so
+  // this only recomputes when the zoom crosses a bucket boundary.
   const clusters = useMemo(() => {
     if (!locations?.length) return [];
-    
-    const clusterRadius = getClusterThreshold(zoom);
     return optimizedClustering(locations, clusterRadius);
-  }, [locations, zoom]);
+  }, [locations, clusterRadius]);
 
   // Expose methods to parent component
   useImperativeHandle(ref, () => ({
@@ -606,15 +604,33 @@ export const EnhancedMarkerCluster = forwardRef(({
 
   const hasActivePopup = !!selectedLocation;
 
-  // Calculate smart positioning for the selected location/cluster
-  const smartPosition = selectedLocation 
-    ? getSmartPopupPosition(
-        selectedLocation.coordinates?.lat || selectedLocation.locations?.[0]?.coordinates?.lat,
-        selectedLocation.coordinates?.lng || selectedLocation.locations?.[0]?.coordinates?.lng,
-        viewport,
-        mapRef
-      )
-    : null;
+  // Store position in a ref to prevent recalculation
+  const positionRef = useRef(null);
+  const lastLocationIdRef = useRef(null);
+
+  // Calculate position only once when location changes
+  const currentLocationId = selectedLocation?.id || selectedLocation?.locations?.[0]?.id || null;
+  
+  if (currentLocationId !== lastLocationIdRef.current) {
+    // Location changed - recalculate position
+    if (selectedLocation) {
+      const lat = selectedLocation.coordinates?.lat || selectedLocation.locations?.[0]?.coordinates?.lat;
+      const lng = selectedLocation.coordinates?.lng || selectedLocation.locations?.[0]?.coordinates?.lng;
+      // Derive the current view from the live map instance (the map is
+      // uncontrolled, so there is no viewport prop to read from)
+      const map = mapRef?.current || mapRef;
+      const center = map?.getCenter?.();
+      const currentView = center
+        ? { latitude: center.lat, longitude: center.lng, zoom: map.getZoom() }
+        : null;
+      positionRef.current = getSmartPopupPosition(lat, lng, currentView, map);
+    } else {
+      positionRef.current = null;
+    }
+    lastLocationIdRef.current = currentLocationId;
+  }
+
+  const smartPosition = positionRef.current;
 
   // Safety check for valid smart position
   const isValidPosition = smartPosition && 
@@ -623,7 +639,7 @@ export const EnhancedMarkerCluster = forwardRef(({
 
   return (
     <>
-      {clusters.map((cluster, index) => {
+      {clusters.map((cluster) => {
         // Safety check for valid cluster coordinates
         if (!cluster.coordinates || typeof cluster.coordinates.lat !== 'number' || typeof cluster.coordinates.lng !== 'number') {
           console.warn('Skipping cluster with invalid coordinates:', cluster);
@@ -639,7 +655,7 @@ export const EnhancedMarkerCluster = forwardRef(({
         
         return (
           <ClusterMarker
-            key={`cluster-${index}-${cluster.locations[0]?.id}`}
+            key={`cluster-${cluster.locations.map(l => l.id).join('|')}`}
             cluster={cluster}
             isSelected={isCurrentlySelected}
             isBlocked={isBlocked}
@@ -652,6 +668,7 @@ export const EnhancedMarkerCluster = forwardRef(({
       
       {selectedLocation && isValidPosition && (
         <Popup
+          key={currentLocationId}
           latitude={selectedLocation.coordinates?.lat || selectedLocation.locations?.[0]?.coordinates?.lat}
           longitude={selectedLocation.coordinates?.lng || selectedLocation.locations?.[0]?.coordinates?.lng}
           anchor={smartPosition.anchor}
@@ -659,9 +676,17 @@ export const EnhancedMarkerCluster = forwardRef(({
           closeButton={false}
           closeOnClick={false}
           closeOnMove={false}
+          maxWidth="none"
           className="location-popup"
           focusAfterOpen={false}
-          style={{ zIndex: 80 }}
+          captureScroll={false}
+          captureDrag={false}
+          captureDoubleClick={false}
+          style={{ 
+            zIndex: 80, 
+            willChange: 'auto',
+            pointerEvents: 'auto'
+          }}
           onMouseEnter={handlePopupMouseEnter}
           onMouseLeave={handlePopupMouseLeave}
         >
@@ -682,14 +707,8 @@ export const EnhancedMarkerCluster = forwardRef(({
               <LocationPopup
                 location={selectedLocation}
                 onPhotoClick={onPhotoClick}
-                onFilterByLocation={(location) => {
-                  onFilterByLocation(location);
-                  handleClosePopup();
-                }}
-                onViewAllPhotos={onViewAllPhotos}
                 onOpenSidePanel={onOpenSidePanel}
                 onClose={handleClosePopup}
-                showFilters={showFilters}
               />
             )}
           </div>
@@ -699,4 +718,7 @@ export const EnhancedMarkerCluster = forwardRef(({
   );
 });
 
-EnhancedMarkerCluster.displayName = 'EnhancedMarkerCluster'; 
+EnhancedMarkerClusterComponent.displayName = 'EnhancedMarkerClusterComponent';
+
+export const EnhancedMarkerCluster = React.memo(EnhancedMarkerClusterComponent);
+EnhancedMarkerCluster.displayName = 'EnhancedMarkerCluster';

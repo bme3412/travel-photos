@@ -15,27 +15,11 @@ import {
 } from 'lucide-react';
 import usePhotoStore from '../store/usePhotoStore';
 
-const transformToCloudFront = (url) => {
-  if (!url) return '';
-  const path = url
-    .replace('https://global-travel.s3.us-east-1.amazonaws.com/', '')
-    .replace('https://d1mnon53ja4k10.cloudfront.net/', '')
-    .replace(/\.HEIC$/i, '.jpg');
-  return `https://d1mnon53ja4k10.cloudfront.net/${path}`;
-};
-
 // Enhanced Professional Album Card
-const AlbumCard = ({ album, photo, viewMode = 'grid', locations = [] }) => {
-  const coverPhotoUrl = photo?.url ? transformToCloudFront(photo.url) : null;
-  const photoCount = album.photos?.length || 0;
-  
-  // Look up location name from locations array
-  const getLocationName = (locationId) => {
-    if (!locationId || !locations.length) return locationId;
-    const location = locations.find(loc => loc.id === locationId);
-    return location?.name || locationId;
-  };
-  
+const AlbumCard = ({ album, viewMode = 'grid' }) => {
+  const coverPhoto = album.coverPhoto;
+  const coverPhotoUrl = coverPhoto?.url || null;
+  const photoCount = album.photoCount || 0;
 
 
   if (viewMode === 'list') {
@@ -48,7 +32,7 @@ const AlbumCard = ({ album, photo, viewMode = 'grid', locations = [] }) => {
               {coverPhotoUrl ? (
                 <Image
                   src={coverPhotoUrl}
-                  alt={photo.caption || `Cover photo for ${album.name}`}
+                  alt={coverPhoto.caption || `Cover photo for ${album.name}`}
                   fill
                   className="object-cover"
                   sizes="128px"
@@ -102,7 +86,7 @@ const AlbumCard = ({ album, photo, viewMode = 'grid', locations = [] }) => {
             <>
               <Image
                 src={coverPhotoUrl}
-                alt={photo.caption || `Cover photo for ${album.name}`}
+                alt={coverPhoto.caption || `Cover photo for ${album.name}`}
                 fill
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 className="object-cover transition-transform duration-700 group-hover:scale-110"
@@ -153,10 +137,10 @@ const AlbumCard = ({ album, photo, viewMode = 'grid', locations = [] }) => {
                 <ImageIcon className="h-4 w-4" />
                 <span>{photoCount} photos</span>
               </div>
-              {photo?.locationId && (
+              {coverPhoto?.locationName && (
                 <div className="flex items-center gap-1">
                   <MapPin className="h-4 w-4" />
-                  <span>{getLocationName(photo.locationId)}</span>
+                  <span>{coverPhoto.locationName}</span>
                 </div>
               )}
             </div>
@@ -261,7 +245,7 @@ const AlbumHeader = ({
   );
 };
 
-const PhotoAlbumExplorer = ({ initialAlbums = null, locations = [] }) => {
+const PhotoAlbumExplorer = ({ initialAlbums = null }) => {
   // Store state
   const albums = usePhotoStore((state) => state.albums);
   const loading = usePhotoStore((state) => state.loading);
@@ -291,7 +275,7 @@ const PhotoAlbumExplorer = ({ initialAlbums = null, locations = [] }) => {
         }
         const data = await response.json();
 
-        // Albums now come with photos already merged from the API
+        // Albums arrive as summaries (coverPhoto + photoCount) from the API
         setAlbums(data);
       } catch (error) {
         setError(error.message);
@@ -303,52 +287,6 @@ const PhotoAlbumExplorer = ({ initialAlbums = null, locations = [] }) => {
 
     fetchAlbums();
   }, [initialAlbums, setAlbums, setLoading, setError]);
-
-  const getSpecificPhoto = (albumId, photos) => {
-    if (!albumId || !Array.isArray(photos)) return null;
-
-    const coverPhotoMap = {
-      monaco: photos.find((p) => p.url.includes("monaco-panorama.jpg")),
-      france: photos.find((p) => p.url.includes("eiffel-tower-straight-on.jpg")),
-      italy: photos.find((p) => p.url.includes("venice-gondolas.jpg")),
-      hongkong: photos.find((p) => p.url.includes("hongkong-skyline2.jpeg")),
-      vietnam: photos.find((p) => p.url.includes("temple.jpg")),
-      singapore: photos.find((p) => p.url.includes("singapore-pool-night.jpg")),
-      malaysia: photos.find((p) => p.url.includes("malaysia-petronas-couch.jpg")),
-      switzerland: photos.find((p) => p.url.includes("zurich-river-bridge.jpg")),
-      uruguay: photos.find((p) => p.url.includes("montevideo-palmtree.jpg")),
-      portugal: photos.find((p) => p.url.includes("lisbon-arch-close.jpg")),
-      spain: photos.find((p) => p.url.includes("madrid-castle.jpg")),
-      argentina: photos.find((p) => p.url.includes("buenosaires-panorama.jpg")),
-      chile: photos.find((p) => p.url.includes("easterisland-moai-hat.jpg")),
-      belgium: photos.find((p) => p.url.includes("bruges-canal-tree-tower.jpg")),
-      bosnia: photos.find((p) => p.url.includes("mostar-pano.jpg")),
-      croatia: photos.find((p) => p.url.includes("dubrovnik-steps.jpg")),
-      montenegro: photos.find((p) => p.url.includes("perast-contrast.jpg")),
-      mauritius: photos.find((p) => p.url.includes("mauritius-beach-house.jpg")),
-      botswana: photos.find((p) => p.url.includes("chobe-three-giraffes-pose.jpg")),
-      southafrica: photos.find((p) => p.url.includes("capetown-beach-sunset.jpg")),
-      belize: photos.find((p) => p.url.includes("belize-sun-hut-palm.jpg")),
-      guatemala: photos.find((p) => p.url.includes("guatemala-tikal-5_rotated.jpg")),
-      australia: photos.find((p) => p.url.includes("sydney-opera-house2.jpg")),
-      china: photos.find((p) => p.url.includes("shanghai-skyline.jpg")),
-      japan: photos.find((p) => p.url.includes("tokyo-tower.jpg")),
-      thailand: photos.find((p) => p.url.includes("phuket-boat.jpg")),
-      vatican: photos.find((p) => p.url.includes("vatican-view.jpg")),
-      austria: photos.find((p) => p.url.includes("austria-palace.jpg")),
-      hungary: photos.find((p) => p.url.includes("budapest-bath.jpg")),
-      netherlands: photos.find((p) => p.url.includes("amsterdam-canals.jpg")),
-      finland: photos.find((p) => p.url.includes("helsinki-cathedral-clean.jpg")),
-      brazil: photos.find(
-        (p) => p.url.includes("helicopter-beach-sugarloaf.jpg") ||
-              p.url.includes("/Brazil/helicopter-beach-sugarloaf.jpg")
-      ),
-      stbarts: photos.find((p) => p.url.includes("stbarts") || p.url.includes("barthélemy"))
-    };
-
-    return coverPhotoMap[albumId.toLowerCase()] ||
-           photos.find((photo) => photo.albumId.toLowerCase() === albumId.toLowerCase());
-  };
 
   // Sort albums
   const processedAlbums = React.useMemo(() => {
@@ -362,7 +300,7 @@ const PhotoAlbumExplorer = ({ initialAlbums = null, locations = [] }) => {
         case 'year-asc':
           return a.year - b.year;
         case 'photos-desc':
-          return (b.photos?.length || 0) - (a.photos?.length || 0);
+          return (b.photoCount || 0) - (a.photoCount || 0);
         case 'name':
         default:
           return a.name.localeCompare(b.name);
@@ -374,7 +312,7 @@ const PhotoAlbumExplorer = ({ initialAlbums = null, locations = [] }) => {
 
   // Calculate stats for display
   const stats = React.useMemo(() => {
-    const totalPhotos = processedAlbums.reduce((acc, album) => acc + (album.photos?.length || 0), 0);
+    const totalPhotos = processedAlbums.reduce((acc, album) => acc + (album.photoCount || 0), 0);
     return {
       countries: 54, // Total countries/territories from travel century list
       photos: totalPhotos
@@ -414,14 +352,11 @@ const PhotoAlbumExplorer = ({ initialAlbums = null, locations = [] }) => {
           }>
             {processedAlbums.map((album) => {
               if (!album?.id) return null;
-              const albumPhoto = getSpecificPhoto(album.id, album.photos || []);
               return (
                 <AlbumCard
                   key={album.id}
                   album={album}
-                  photo={albumPhoto}
                   viewMode={viewMode}
-                  locations={locations}
                 />
               );
             })}

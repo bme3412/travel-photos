@@ -1,15 +1,6 @@
 import { readAlbums, readPhotos } from '../../utils/fileHandler';
 import AlbumPageClient from './AlbumPageClient';
-
-// Transform S3 URLs to CloudFront URLs
-const transformToCloudFront = (url) => {
-  if (!url) return '';
-  const path = url
-    .replace('https://global-travel.s3.us-east-1.amazonaws.com/', '')
-    .replace('https://d1mnon53ja4k10.cloudfront.net/', '')
-    .replace(/\.HEIC$/i, '.jpg');
-  return `https://d1mnon53ja4k10.cloudfront.net/${path}`;
-};
+import { transformToCloudFront } from '../../utils/imageUtils';
 
 // Generate dynamic metadata for each album
 export async function generateMetadata({ params }) {

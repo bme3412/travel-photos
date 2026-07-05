@@ -1,5 +1,8 @@
 import { NextResponse } from 'next/server';
 import photosData from '@/data/photos.json';
+import albumsData from '@/data/albums.json';
+import locationsData from '@/data/locations.json';
+import { enrichPhotoForDisplay } from '../../utils/photoEnrichment';
 
 // Get consistent daily photo index based on date
 function getDailyPhotoIndex(photos) {
@@ -38,13 +41,13 @@ export async function GET(request) {
     }
     
     const selectedPhoto = photos[photoIndex];
-    
-    // Format the photo data
+
+    // Same enriched shape the /photo-of-the-day page passes as initialPhoto —
+    // the client's formatCaption reads these fields directly
     const photoData = {
-      ...selectedPhoto,
+      ...enrichPhotoForDisplay(selectedPhoto, albumsData.albums, locationsData),
       location: selectedPhoto.locationId,
-      description: selectedPhoto.caption,
-      url: selectedPhoto.url
+      description: selectedPhoto.caption
     };
 
     return NextResponse.json(photoData, {

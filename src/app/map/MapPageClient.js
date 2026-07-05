@@ -1,11 +1,10 @@
 'use client';
 
-import React, { useState, useCallback, useEffect } from 'react';
+import React, { useState, useCallback, useEffect, useMemo } from 'react';
 import Map, { Source, Layer } from 'react-map-gl';
 import { Maximize2, Minimize2, ChevronLeft, Globe } from 'lucide-react';
 import Link from 'next/link';
 import 'mapbox-gl/dist/mapbox-gl.css';
-import { useDestinationData } from '../utils/useDestinationData';
 import { EnhancedDestinationMarkers } from '../components/EnhancedDestinationMarkers';
 import PhotoSidePanel from '../components/PhotoSidePanel';
 
@@ -18,7 +17,7 @@ const REGIONS = {
   'Oceania': { latitude: -25, longitude: 135, zoom: 3 }
 };
 
-const MapPageClient = ({ initialDestinations, initialPhotos, locations = [] }) => {
+const MapPageClient = ({ initialDestinations = [], visitedCountries = {} }) => {
   const MAPBOX_TOKEN = process.env.NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN || process.env.NEXT_PUBLIC_MAPBOX_TOKEN;
   const [mapRef, setMapRef] = useState(null);
   const [viewport, setViewport] = useState({
@@ -33,9 +32,9 @@ const MapPageClient = ({ initialDestinations, initialPhotos, locations = [] }) =
   const [selectedSidePanelLocation, setSelectedSidePanelLocation] = useState(null);
   const [isSidePanelOpen, setIsSidePanelOpen] = useState(false);
   const [showRegionMenu, setShowRegionMenu] = useState(false);
-  
-  // Use memoized destination processing with photos from props
-  const { destinations, visitedCountries } = useDestinationData(initialDestinations, initialPhotos, locations);
+
+  // Destinations arrive pre-joined with their photos from the server
+  const destinations = initialDestinations;
 
   const flyToRegion = useCallback((region) => {
     if (!mapRef) return;
@@ -65,6 +64,13 @@ const MapPageClient = ({ initialDestinations, initialPhotos, locations = [] }) =
     document.body.style.overflow = !isPoppedOut ? 'hidden' : 'auto';
   };
 
+  // Restore body scroll if unmounted while popped out
+  useEffect(() => {
+    return () => {
+      document.body.style.overflow = 'auto';
+    };
+  }, []);
+
   const handleOpenSidePanel = useCallback((location) => {
     setSelectedSidePanelLocation(location);
     setIsSidePanelOpen(true);
@@ -75,7 +81,7 @@ const MapPageClient = ({ initialDestinations, initialPhotos, locations = [] }) =
     setSelectedSidePanelLocation(null);
   }, []);
 
-  const countryLayer = {
+  const countryLayer = useMemo(() => ({
     id: 'country-layer',
     type: 'fill',
     paint: {
@@ -87,16 +93,16 @@ const MapPageClient = ({ initialDestinations, initialPhotos, locations = [] }) =
       ],
       'fill-opacity': 0.6
     }
-  };
+  }), [visitedCountries]);
 
-  const countryOutlineLayer = {
+  const countryOutlineLayer = useMemo(() => ({
     id: 'country-outline-layer',
     type: 'line',
     paint: {
       'line-color': '#94a3b8',
       'line-width': 0.5
     }
-  };
+  }), []);
 
   const mapContent = (
     <>
@@ -159,7 +165,7 @@ const MapPageClient = ({ initialDestinations, initialPhotos, locations = [] }) =
         style={{ width: '100%', height: '100%' }}
         mapStyle="mapbox://styles/mapbox/light-v11"
         mapboxAccessToken={MAPBOX_TOKEN}
-        onMove={evt => setViewport(evt.viewState)}
+        onMoveEnd={evt => setViewport(evt.viewState)}
         onLoad={() => setMapLoaded(true)}
         projection="mercator"
         minZoom={1}
@@ -213,7 +219,6 @@ const MapPageClient = ({ initialDestinations, initialPhotos, locations = [] }) =
           location={selectedSidePanelLocation}
           isOpen={isSidePanelOpen}
           onClose={handleCloseSidePanel}
-          onPhotoClick={(photo) => console.log('Side panel photo clicked:', photo)}
         />
       </div>
     );
@@ -226,7 +231,6 @@ const MapPageClient = ({ initialDestinations, initialPhotos, locations = [] }) =
         location={selectedSidePanelLocation}
         isOpen={isSidePanelOpen}
         onClose={handleCloseSidePanel}
-        onPhotoClick={(photo) => console.log('Side panel photo clicked:', photo)}
       />
     </div>
   );
