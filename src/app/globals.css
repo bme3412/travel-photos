@@ -7,7 +7,32 @@
   body {
     @apply antialiased;
   }
+
+  ::selection {
+    background: #B4441C;
+    color: #FAF6EF;
+  }
 }
+
+/* Editorial entrance animation (homepage hero) */
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.fade-up {
+  animation: fade-up 0.9s cubic-bezier(0.2, 0.65, 0.3, 1) both;
+}
+
+.fade-up-1 { animation-delay: 0.12s; }
+.fade-up-2 { animation-delay: 0.24s; }
+.fade-up-3 { animation-delay: 0.36s; }
 
 /* Background map pattern */
 .bg-world-map {

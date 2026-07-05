@@ -1,68 +1,73 @@
 import './globals.css';
 import Link from 'next/link';
-import { MapPin, Camera, Home } from 'lucide-react';
+import { Fraunces, Archivo } from 'next/font/google';
 import { Analytics } from "@vercel/analytics/react";
 
+const fraunces = Fraunces({
+  subsets: ['latin'],
+  variable: '--font-fraunces',
+  display: 'swap',
+});
+
+const archivo = Archivo({
+  subsets: ['latin'],
+  variable: '--font-archivo',
+  display: 'swap',
+});
+
 export const metadata = {
-  title: '🛫 Passport & Ponder 🌎',
-  description: '🌍 Exploring the world, one story at a time ✏️',
+  title: 'Passport & Ponder — A Travel Journal',
+  description: 'Exploring the world, one story at a time',
 };
+
+const NAV_LINKS = [
+  { href: '/', label: 'Albums' },
+  { href: '/map', label: 'Map' },
+  { href: '/photo-of-the-day', label: 'Photo of the Day' },
+  { href: '/bucket-list', label: 'Bucket List' },
+];
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className="h-full">
-      <body className="min-h-full flex flex-col bg-gray-50">
-        {/* Compact Header Section */}
-        <header className="bg-white shadow-sm sticky top-0 z-50 transition-shadow duration-300" style={{ zIndex: 50 }}>
-          <div className="max-w-7xl mx-auto px-4">
-            {/* Compact Logo and Navigation Row */}
-            <div className="flex items-center justify-between py-3">
-              {/* Compact Logo */}
-              <Link href="/" className="group flex items-center">
-                <h1 className="text-2xl font-bold text-gray-900 tracking-tight group-hover:text-teal-600 transition-colors duration-300">
-                  🌎 Passport & Ponder
-                </h1>
+    <html lang="en" className={`${fraunces.variable} ${archivo.variable} h-full`}>
+      <body className="min-h-full flex flex-col bg-paper font-sans text-ink">
+        <header className="sticky top-0 z-50 bg-paper/90 backdrop-blur-sm border-b border-ink/10">
+          <div className="max-w-7xl mx-auto px-6">
+            <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-y-2 py-3 md:py-0 md:h-16">
+              <Link href="/" className="group flex items-baseline gap-3 min-w-0">
+                <span className="font-display text-xl sm:text-2xl tracking-tight whitespace-nowrap group-hover:text-accent transition-colors duration-300">
+                  Passport &amp; Ponder
+                </span>
+                <span className="hidden lg:inline text-[10px] uppercase tracking-[0.3em] text-muted">
+                  A travel journal
+                </span>
               </Link>
 
-              {/* Compact Navigation Links */}
-              <nav className="flex items-center space-x-3">
-                <Link
-                  href="/"
-                  className="group flex items-center px-4 py-2.5 text-sm font-semibold text-white bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 rounded-lg shadow-md hover:shadow-lg transition-all duration-200 transform hover:scale-105"
-                >
-                  <Home className="w-4 h-4 mr-2" />
-                  <span>Home</span>
-                </Link>
-                <Link
-                  href="/map"
-                  className="group flex items-center px-4 py-2.5 text-sm font-semibold text-white bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 rounded-lg shadow-md hover:shadow-lg transition-all duration-200 transform hover:scale-105"
-                >
-                  <MapPin className="w-4 h-4 mr-2" />
-                  <span>Where I&apos;ve Been</span>
-                </Link>
-                <Link
-                  href="/photo-of-the-day"
-                  className="group flex items-center px-4 py-2.5 text-sm font-semibold text-white bg-gradient-to-r from-purple-500 to-pink-600 hover:from-purple-600 hover:to-pink-700 rounded-lg shadow-md hover:shadow-lg transition-all duration-200 transform hover:scale-105"
-                >
-                  <Camera className="w-4 h-4 mr-2" />
-                  <span>Photo of the Day</span>
-                </Link>
+              <nav className="flex items-center gap-4 sm:gap-7 text-[11px] uppercase tracking-[0.18em]">
+                {NAV_LINKS.map(({ href, label }) => (
+                  <Link
+                    key={href}
+                    href={href}
+                    className="relative text-ink/60 hover:text-ink transition-colors duration-200
+                               after:absolute after:-bottom-1 after:left-0 after:h-px after:w-0 after:bg-accent
+                               after:transition-all after:duration-300 hover:after:w-full whitespace-nowrap"
+                  >
+                    {label}
+                  </Link>
+                ))}
               </nav>
             </div>
           </div>
         </header>
 
-        {/* Main Content */}
-        <main className="flex-grow bg-gradient-to-b from-gray-50 to-white">
+        <main className="flex-grow">
           {children}
         </main>
 
-        {/* Minimal Footer */}
-        <footer className="bg-white border-t border-gray-200">
-          <div className="max-w-7xl mx-auto px-6 py-4">
-            <div className="text-center text-gray-500 text-sm">
-              © {new Date().getFullYear()} Passport & Ponder
-            </div>
+        <footer className="border-t border-ink/10">
+          <div className="max-w-7xl mx-auto px-6 py-8 flex flex-col sm:flex-row items-center justify-between gap-2 text-[11px] uppercase tracking-[0.2em] text-muted">
+            <span>© {new Date().getFullYear()} Passport &amp; Ponder</span>
+            <span>54 countries &amp; territories · six continents</span>
           </div>
         </footer>
         <Analytics />

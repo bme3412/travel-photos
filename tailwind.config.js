@@ -9,9 +9,15 @@ module.exports = {
           700: '#0d9488',
           300: '#5eead4',
         },
+        paper: '#FAF6EF',
+        ink: '#1B1713',
+        accent: '#B4441C',
+        muted: '#8A8075',
       },
       fontFamily: {
         lora: ['Lora', 'serif'],
+        display: ['var(--font-fraunces)', 'Georgia', 'serif'],
+        sans: ['var(--font-archivo)', 'system-ui', 'sans-serif'],
       },
       backgroundImage: {
         'world-map': "url('/images/world-map-pattern.png')",
