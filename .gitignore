@@ -41,5 +41,7 @@ next-env.d.ts
 
 # photos
 /public/images/albums/*
-!/public/images/albums/.gitkeep.env*
-.env
+!/public/images/albums/.gitkeep
+
+# env files (all variants, incl. backups)
+.env*
