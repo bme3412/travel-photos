@@ -42,3 +42,11 @@ export async function readPhotos() {
 export async function readLocations() {
   return await readJsonFile('locations.json');
 }
+
+export async function readDestinations() {
+  return await readJsonFile('destinations.json');
+}
+
+export async function readNarratives() {
+  return await readJsonFile('narratives.json');
+}

@@ -9,6 +9,7 @@
     "lint": "next lint",
     "deploy": "vercel deploy --prod",
     "add-photos": "node scripts/add-photos.js",
+    "generate-narratives": "node scripts/generate-narratives.mjs",
     "migrate-s3": "node scripts/migrate-to-s3.js",
     "convert-heic": "node scripts/convert-heic.js",
     "convert-folder": "node scripts/convert-folder-heic.js",
@@ -29,6 +30,7 @@
     "zustand": "^5.0.1"
   },
   "devDependencies": {
+    "@anthropic-ai/sdk": "^0.110.0",
     "@aws-sdk/client-cloudfront": "^3.687.0",
     "@aws-sdk/client-iam": "^3.687.0",
     "@aws-sdk/client-s3": "^3.688.0",

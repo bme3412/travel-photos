@@ -1,0 +1,481 @@
+{
+  "norway-nostalgia": {
+    "intro": "Two Norwegian cities strung 305 kilometers apart: the capital on the fjord, then west to the gateway of the fjords themselves. A short journey between Oslo and Bergen, the second lingered over far longer than the first.",
+    "stops": {
+      "Oslo": "A capital at the head of the fjord — Norway's seat of Viking ships, the Opera House, and open water, seen briefly before the road turned west.",
+      "Bergen": "The longer stay: the gateway to the fjords, its colorful wooden houses at Bryggen wharf and the mountains that rise behind them."
+    },
+    "fingerprint": "55d146522ee4",
+    "model": "claude-opus-4-8",
+    "generatedAt": "2026-07-06T17:56:27.749Z",
+    "edited": false
+  },
+  "chile": {
+    "intro": "Four days in March, split between a Chilean capital and the loneliest inhabited island in the Pacific — a single afternoon in Santiago before 3,760 kilometers of ocean delivered us to the moai.",
+    "stops": {
+      "Santiago": "One afternoon between eras: the historic clock tower and a modern skyline tower, the old and new faces of Santiago photographed on the way to somewhere far stranger.",
+      "Easter Island": "Three days among the moai — rows of them on grassy hills, a solitary sentinel by the harbor, one crowned with its pukao topknot, the Rano Kau crater, and a dog asleep at their feet — many caught in profile against a red setting sun."
+    },
+    "fingerprint": "76f3e348f810",
+    "model": "claude-opus-4-8",
+    "generatedAt": "2026-07-06T17:56:27.842Z",
+    "edited": false
+  },
+  "portugal": {
+    "intro": "A single city, seen in full: 24 frames of Lisbon, from the arch on Rua Augusta to the castle on the hill, tracing the old capital across its rooftops and steep streets.",
+    "stops": {
+      "Lisbon": "Days among the historic quarters — the Rua Augusta Arch seen close and from below, the walls and peacock of São Jorge Castle, the Santa Justa Lift, and yellow trams climbing hills above red-tiled roofs and bridges."
+    },
+    "fingerprint": "0c8106b8fefd",
+    "model": "claude-opus-4-8",
+    "generatedAt": "2026-07-06T17:56:50.493Z",
+    "edited": false
+  },
+  "spain": {
+    "intro": "Two Spanish cities, 317 kilometers apart: a measured architectural prologue in Madrid, then straight into the roar of Pamplona's San Fermín, where tradition and crowd swallowed the streets.",
+    "stops": {
+      "Madrid": "An afternoon among the capital's stonework — the flagged facade of the Royal Palace, the Metropolis Building, an equestrian statue, and the quiet detail of a side street.",
+      "Pamplona": "Days given over to San Fermín: the bull run watched from a balcony and behind the barricades, runners in traditional white, and the festival crowds spilling through town squares, cafés, and streets."
+    },
+    "fingerprint": "8f994046ac89",
+    "model": "claude-opus-4-8",
+    "generatedAt": "2026-07-06T17:56:51.289Z",
+    "edited": false
+  },
+  "uruguay": {
+    "intro": "Three days in March given entirely to one city — Montevideo, where the historic and the everyday share the same coastline.",
+    "stops": {
+      "Montevideo": "Three days along the waterfront and through the old center: the Metropolitan Cathedral, statues before historic buildings, a town square monument, palm trees at the coast, and the colors of a street mural against the city sign."
+    },
+    "fingerprint": "0d1d521da637",
+    "model": "claude-opus-4-8",
+    "generatedAt": "2026-07-06T17:56:53.951Z",
+    "edited": false
+  },
+  "italy": {
+    "intro": "Four Italian impressions across roughly 1,100 kilometers — from the Renaissance streets of Ferrara to Florence and the Tuscan hills, the canals of Venice, and finally a long crossing to the blue coast of Sardinia. A journey that traded towers and domes for open sea.",
+    "stops": {
+      "Ferrara": "A brief prologue among Renaissance streets: the imposing Estense castle, the Communal Palace, the main square, and a tower seen from more than one angle.",
+      "Florence": "The longest stay, built around the Duomo — photographed at sunset, illuminated, and in panorama. Beyond the Ponte Vecchio and the main piazza lay the towers of San Gimignano and the vineyards, gardens, and hillsides of Tuscany.",
+      "Venice": "Canals and gondolas, a yellow building at the water's edge, the harbor and its sailboats, and the towers rising over St. Mark's Square.",
+      "Sardinia": "After 739 kilometers, an island coda of beaches and blue water: boats moored over teal shallows, rocks and sand, a villa, and a rooftop view of the sea."
+    },
+    "fingerprint": "dc1f79031495",
+    "model": "claude-opus-4-8",
+    "generatedAt": "2026-07-06T17:56:54.181Z",
+    "edited": false
+  },
+  "france": {
+    "intro": "A French arc that ran from the capital to the Mediterranean and out to sea — 965 kilometers from Paris's landmarks down to the Riviera's luxury coast, then across water to Corsica's beaches. A journey of architecture and edges.",
+    "stops": {
+      "Paris": "The city's greatest hits and quieter corners: the Eiffel Tower from Trocadéro and by night, dressed in Olympic rings; the steps and windows of Sacré-Cœur; the Louvre and La Défense; and cafés along Rue de Buci over moules.",
+      "Monaco": "Less casino than coastline — 690 kilometers south to the medieval citadel of Roquebrune, the bays and harbors of St Jean Cap Martin, and the villas and pools of the Maybourne Riviera looking toward Nice.",
+      "Cannes": "A short stop along La Croisette: beach clubs and coastal views, sunset over the water, and the Versace hotel in the golden Riviera light.",
+      "Corsica": "Across 234 kilometers of sea to the island's shores — beaches with boats, a clifftop citadel, and a sunset to close the journey."
+    },
+    "fingerprint": "5a6d44be9cd2",
+    "model": "claude-opus-4-8",
+    "generatedAt": "2026-07-06T17:56:54.259Z",
+    "edited": false
+  },
+  "argentina": {
+    "intro": "A single city, seventeen frames deep: Buenos Aires alone, where the capital's icons — from tango to steak — gave way to something more particular, a town telling its story in murals and monuments.",
+    "stops": {
+      "Buenos Aires": "From the Obelisk beneath the Argentine flag to the panorama of the city center, then into La Boca's vibrant, painted streets — a district thick with tributes, above all to Messi in mural, plaque, and statue, alongside nods to Ginobili and Pope Francis."
+    },
+    "fingerprint": "5b0c11bb8fbb",
+    "model": "claude-opus-4-8",
+    "generatedAt": "2026-07-06T17:56:56.284Z",
+    "edited": false
+  },
+  "brazil": {
+    "intro": "Three days in Rio de Janeiro, seen as much from the air as from the sand — a single-city study of Brazil's coastline, half beachfront and half helicopter.",
+    "stops": {
+      "Rio de Janeiro": "Colorful flags along Copacabana, the sweep of Leblon at sunset with its beachfront hotels and rock formations, and Christ the Redeemer glimpsed through clouds and morning mist. From above, the urban sprawl unfurled past Sugarloaf and the beaches below."
+    },
+    "fingerprint": "cd0b5c62e962",
+    "model": "claude-opus-4-8",
+    "generatedAt": "2026-07-06T17:56:58.392Z",
+    "edited": false
+  },
+  "hongkong": {
+    "intro": "Three days in March given entirely to a single vertical city — Hong Kong seen from above and after dark, a portrait of one skyline in all its hours.",
+    "stops": {
+      "Hong Kong": "Three days among towers: the ICC rising over the harbor, highrises stacked against Victoria Harbour, the Ritz-Carlton and its pool high above the streets, and the skyline traced from daylight through sunset into night."
+    },
+    "fingerprint": "4509d3086f05",
+    "model": "claude-opus-4-8",
+    "generatedAt": "2026-07-06T17:56:58.435Z",
+    "edited": false
+  },
+  "slovenia": {
+    "intro": "Two Slovenian stops, 93 kilometers apart: a river-laced capital and a Venetian coastal town — inland stone giving way to Adriatic rooftops.",
+    "stops": {
+      "Ljubljana": "Days in the old town: bridges and canals, a riverside café, and Ljubljana Castle seen both from a distance and up close, with the Slovenian mountains rising beyond.",
+      "Piran": "A picturesque coast of Venetian architecture — a beach and its tower, a historic courtyard, terracotta rooftops above the ocean, and evening settling over the town."
+    },
+    "fingerprint": "a17f30100a40",
+    "model": "claude-opus-4-8",
+    "generatedAt": "2026-07-06T17:56:58.849Z",
+    "edited": false
+  },
+  "switzerland": {
+    "intro": "A single city, savored slowly: fourteen frames of Zurich, where the Limmat River threads between Old Town towers, bridges, and boats drifting toward dusk.",
+    "stops": {
+      "Zurich": "A day along the Limmat — bridges crossing its water, boats gathering at dusk, the historic clock tower rising over the river, and Swiss flags strung above a café-lined street where a city tram rolled past."
+    },
+    "fingerprint": "25e46917b8b8",
+    "model": "claude-opus-4-8",
+    "generatedAt": "2026-07-06T17:57:00.588Z",
+    "edited": false
+  },
+  "monaco": {
+    "intro": "A single stop on the Mediterranean's edge, small enough to walk yet gilded at every turn — Monaco distilled into six frames of casino, harbor, and garden.",
+    "stops": {
+      "Monaco": "An afternoon among the principality's polished excess: the facade of the Monte Carlo Casino, a Ferrari at the curb, and Port Hercule below. Quieter interludes in the Japanese Gardens and Monte Carlo Gardens, before a panoramic view took in the whole rock at once."
+    },
+    "fingerprint": "1a85b5c0ab29",
+    "model": "claude-opus-4-8",
+    "generatedAt": "2026-07-06T17:57:03.174Z",
+    "edited": false
+  },
+  "vietnam": {
+    "intro": "Three days on Phu Quoc, Vietnam's island of pristine beaches and fishing villages — a single stop that folded palm-lined shore, tradition, and resort luxury into one stretch of Pacific horizon.",
+    "stops": {
+      "Phu Quoc": "Days spent between beach huts, palm trees, and a traditional boat drifting the horizon, then an infinity pool and penthouse view at dusk — parasailing against the sunset, a temple inland, and a Celtics fan on the sand."
+    },
+    "fingerprint": "1d06ff7ee9a4",
+    "model": "claude-opus-4-8",
+    "generatedAt": "2026-07-06T17:57:03.849Z",
+    "edited": false
+  },
+  "malaysia": {
+    "intro": "A single-city sojourn in Kuala Lumpur — eighteen frames circling one landmark from every angle, by clear sky and by night, with detours into temples, markets, and a hotel worth photographing.",
+    "stops": {
+      "Kuala Lumpur": "The Petronas Towers again and again: under blue sky, looking straight up, lit at night, glimpsed from a lounge and over dinner. Between viewings, a historic clock tower, a golden statue front and back, colorful temple detail, and quiet hours by the hotel pool."
+    },
+    "fingerprint": "b34868e58c63",
+    "model": "claude-opus-4-8",
+    "generatedAt": "2026-07-06T17:57:04.039Z",
+    "edited": false
+  },
+  "singapore": {
+    "intro": "Three days in a single city-state, March of 2024 — a compact stay orbiting Marina Bay Sands, from its infinity pool to the streets below.",
+    "stops": {
+      "Singapore": "Days spent between the Marina Bay Sands infinity pool — its skyline views by day and by night — and the city beyond it: the Little India district, a traditional mosque, an art installation, and the towers rising over the bay."
+    },
+    "fingerprint": "cd0dd253bb3a",
+    "model": "claude-opus-4-8",
+    "generatedAt": "2026-07-06T17:57:04.754Z",
+    "edited": false
+  },
+  "bosnia-herzegovina": {
+    "intro": "A single stop in Bosnia and Herzegovina, given over entirely to one bridge — Mostar and its storied Stari Most, seen from every angle.",
+    "stops": {
+      "Mostar": "A day circling the Stari Most: the old bridge over the Neretva against its mountain backdrop, framed by trees, shot vertically and from below, alongside the historic turrets and panorama of the old town."
+    },
+    "fingerprint": "9e61d0a949cf",
+    "model": "claude-opus-4-8",
+    "generatedAt": "2026-07-06T17:57:07.938Z",
+    "edited": false
+  },
+  "belgium": {
+    "intro": "A single-city sojourn in Bruges, where medieval canals and the belfry's shadow set the stage for Belgian pleasures — chocolate, beer, and moules-frites.",
+    "stops": {
+      "Bruges": "Days spent along the tree-lined canals beneath the Belfry Tower, past historic statues and Belgian flags — with pauses for chocolate at Godiva, a selection of local beers, moules-frites, and crème brûlée."
+    },
+    "fingerprint": "afb34af02585",
+    "model": "claude-opus-4-8",
+    "generatedAt": "2026-07-06T17:57:08.256Z",
+    "edited": false
+  },
+  "montenegro": {
+    "intro": "A single stay on the Bay of Kotor, where medieval Montenegro meets the water — mountains folding down to the shore, and the town of Perast anchoring the view.",
+    "stops": {
+      "Kotor": "A misty morning over the bay gave way to mountain-rimmed vistas and the towers of nearby Perast — its blue tower and historic spires, the little island church of Our Lady of the Rocks reached by boat, cruise ships gliding past traditional rooftops."
+    },
+    "fingerprint": "206f5181c37c",
+    "model": "claude-opus-4-8",
+    "generatedAt": "2026-07-06T17:57:09.004Z",
+    "edited": false
+  },
+  "croatia": {
+    "intro": "Two Croatian cities along 158 kilometers of Adriatic coast — Dubrovnik's ancient walls and towers, then Split's palace and beaches, all told in the blues of the sea.",
+    "stops": {
+      "Dubrovnik": "Walking the ancient walls above the Adriatic, past historic steps and towers overlooking the ocean, and the stone-and-tree corners made famous as Game of Thrones filming locations. Below, boats rode in the harbor and the beach view opened wide.",
+      "Split": "The heart of the trip: the historic archways of Diocletian's Palace, a boardwalk lined with palm trees, and a harbor of boats beneath an old tower. Beyond the waterfront skyline lay Zlatni Rat's emerald waters and mountain views."
+    },
+    "fingerprint": "3609e134ba4b",
+    "model": "claude-opus-4-8",
+    "generatedAt": "2026-07-06T17:57:09.802Z",
+    "edited": false
+  },
+  "botswana": {
+    "intro": "A single, saturated immersion in Botswana's Chobe — 138 frames from one park, all wildlife and water. No itinerary to speak of, just the river, the road, and whatever moved across it.",
+    "stops": {
+      "Chobe National Park": "Days along the Chobe: elephants wading and swimming the river in families, a leopard prowling the sand, five lions and a king among them, hippos grazing and crocodiles low in the shallows — punctuated, twice, by a flat tire on the horizon road."
+    },
+    "fingerprint": "1b649752fc74",
+    "model": "claude-opus-4-8",
+    "generatedAt": "2026-07-06T17:57:12.970Z",
+    "edited": false
+  },
+  "mauritius": {
+    "intro": "A single island, held in thirty-six frames — Mauritius from shoreline to summit, where pristine beaches gave way to the mineral swirl of colored earth and hillsides crowded with sacred statues.",
+    "stops": {
+      "Mauritius": "Days that ran from sandy shores and a traditional beach hut to the seven-colored earth of Chamarel and cloud-shrouded mountain peaks. Between them, a gallery of statues — pink and blue Buddhas, guardian lions, sacred cows, a green elephant — and valleys ending in cascading waterfalls."
+    },
+    "fingerprint": "b07786aeeac2",
+    "model": "claude-opus-4-8",
+    "generatedAt": "2026-07-06T17:57:13.040Z",
+    "edited": false
+  },
+  "stbarts": {
+    "intro": "A single Caribbean island, held for the length of an album — St. Barthélemy in 2018, all bays and sails and green water, a journey that never needed to leave its own shoreline.",
+    "stops": {
+      "Saint Barthélemy": "Days spent between beach and harbor: catamarans and yachts riding the bay, green waves breaking against rock, the road out to Gouverneur, a grotto, a rainbow, and boat after boat holding their line as the sun dropped to the horizon."
+    },
+    "fingerprint": "2a9597e3c4f7",
+    "model": "claude-opus-4-8",
+    "generatedAt": "2026-07-06T17:57:15.551Z",
+    "edited": false
+  },
+  "guatemala": {
+    "intro": "A single-destination journey in early April, given over entirely to Guatemala's rainforest and the ancient Maya city rising from it.",
+    "stops": {
+      "Tikal": "Days among the Mayan ruins of Tikal — temples and a central plaza framed by jungle, photographed from every angle, from panoramas to close details of stone and floor."
+    },
+    "fingerprint": "69edcb92de7e",
+    "model": "claude-opus-4-8",
+    "generatedAt": "2026-07-06T17:57:16.897Z",
+    "edited": false
+  },
+  "belize": {
+    "intro": "A single stretch of Belizean coast, given over entirely to the water's edge — San Pedro and a ferry's reach to Caye Caulker, where nearly every hour bent toward the horizon.",
+    "stops": {
+      "San Pedro": "Days measured in hammocks, docks, and palm-lined main streets, with boats drifting through greenwater and a bar slide by the sea. Above all, sunset after sunset: pink skies, silhouetted huts and sails, birds against the orange, the sun's orb sinking past the horizon."
+    },
+    "fingerprint": "afbfa3dda96d",
+    "model": "claude-opus-4-8",
+    "generatedAt": "2026-07-06T17:57:17.978Z",
+    "edited": false
+  },
+  "southafrica": {
+    "intro": "Six days in September, all of them in one place — Cape Town, where Table Mountain looms over a coastline of cliffs, beaches, and open ocean.",
+    "stops": {
+      "Cape Town": "Days spent along the coast: cliffs and boulders, waves breaking at Muizenberg with its bright shacks, penguins crowding the rocks, and sundowns over the water. The cable car climbed Table Mountain into fog, and the vineyards offered their reds and whites."
+    },
+    "fingerprint": "107fcd240c0f",
+    "model": "claude-opus-4-8",
+    "generatedAt": "2026-07-06T17:57:18.301Z",
+    "edited": false
+  },
+  "australia": {
+    "intro": "An Australian arc that ran from the tropical north to the harbor city of the south — 2,000 kilometers between Cairns and Sydney, with the Great Barrier Reef as the sailing pivot between them.",
+    "stops": {
+      "Cairns": "Days at the tropical edge: a crocodile, the green sweep of Green Island, the harbor and waterfront, and quieter time by the pool over seafood.",
+      "Great Barrier Reef": "A single day sailing the reef, out among the marine life.",
+      "Sydney": "The last stretch, spent circling two icons — the Harbour Bridge from beside and beneath it, and the Opera House caught at sunset and after dark."
+    },
+    "fingerprint": "7c93f28f0f2f",
+    "model": "claude-opus-4-8",
+    "generatedAt": "2026-07-06T17:57:21.050Z",
+    "edited": false
+  },
+  "japan": {
+    "intro": "A few days of June spent wholly in Tokyo — a single city holding both incense and neon, temple courtyards and steel towers.",
+    "stops": {
+      "Tokyo": "Three days moving between the old and the new: the Sensoji Shrine, a plate of sushi, and the Tokyo Tower rising over the cityscape."
+    },
+    "fingerprint": "26be3bd52d56",
+    "model": "claude-opus-4-8",
+    "generatedAt": "2026-07-06T17:57:21.214Z",
+    "edited": false
+  },
+  "china": {
+    "intro": "Two Chinese cities across a spring fortnight, joined by 1,071 kilometers — a week among Beijing's monuments and Olympic architecture, then a shorter turn toward Shanghai's skyline.",
+    "stops": {
+      "Beijing": "A week under the capital's contrasts: the Bird's Nest and Water Cube, the Olympic pool, a gold tower against the cityscape, Mao's portrait, and the Temple of Heaven.",
+      "Shanghai": "A brief close among skyscrapers — the skyline and Shanghai Tower by day, city lights by night."
+    },
+    "fingerprint": "a8ce496c7daf",
+    "model": "claude-opus-4-8",
+    "generatedAt": "2026-07-06T17:57:21.431Z",
+    "edited": false
+  },
+  "vatican": {
+    "intro": "A single day within the smallest state on Earth — St. Peter's Basilica, the Sistine Chapel, and the Vatican Museums gathered inside a few square walls.",
+    "stops": {
+      "Vatican City": "Beneath the great dome: a face in mosaic, a fountain at rest, the guards at their posts, and the Pope himself glimpsed among statues and sweeping views of the city."
+    },
+    "fingerprint": "0109d22e12a3",
+    "model": "claude-opus-4-8",
+    "generatedAt": "2026-07-06T17:57:22.335Z",
+    "edited": false
+  },
+  "indonesia": {
+    "intro": "Five days in June on a single Indonesian island, anchored to the quiet sands of Gili Meno — a stay of stillness, from beach to bungalow, with a look across to Lombok.",
+    "stops": {
+      "Gili Meno": "Five days on Gili Meno: its beach, a bungalow and a simple hut, the wide panorama of clear water — with glimpses of Kuta and the larger shore of Lombok beyond."
+    },
+    "fingerprint": "0e7f8d83e4b5",
+    "model": "claude-opus-4-8",
+    "generatedAt": "2026-07-06T17:57:24.922Z",
+    "edited": false
+  },
+  "thailand": {
+    "intro": "A single stretch of Thai coastline, spent entirely in Phuket — sand, boats, and green water, a journey that asked for nothing more than the shore itself.",
+    "stops": {
+      "Phuket": "Days on the beach: sails rigged and boats drawn up on the sand, the water a bright, unmistakable green."
+    },
+    "fingerprint": "af6225a5d6aa",
+    "model": "claude-opus-4-8",
+    "generatedAt": "2026-07-06T17:57:25.114Z",
+    "edited": false
+  },
+  "czech-republic": {
+    "intro": "A single city, seen from its towers and its rooftops — a compact turn through Prague, all architecture and old stone.",
+    "stops": {
+      "Prague": "A walk among the castle's roofs and towers, a bridge over the river, and the spires of the square — the historic skyline and one abstract facade catching the eye."
+    },
+    "fingerprint": "a5e7e86d6b57",
+    "model": "claude-opus-4-8",
+    "generatedAt": "2026-07-06T17:57:26.066Z",
+    "edited": false
+  },
+  "austria": {
+    "intro": "An Austrian study in two frames: a single abstract prologue, then 156 kilometers to Vienna, where palaces and concert halls carried the journey.",
+    "stops": {
+      "Austria": "A single abstract opening — Austria in the abstract before the country came into focus.",
+      "Vienna": "Days among grand palaces and classical music: Schönbrunn's facades and grass, churches and buttresses, the Danube Tower in profile, a concert hall and Bach, with time for a pub between towers."
+    },
+    "fingerprint": "fc37f2c7fac1",
+    "model": "claude-opus-4-8",
+    "generatedAt": "2026-07-06T17:57:26.480Z",
+    "edited": false
+  },
+  "germany": {
+    "intro": "A single glimpse of Bavaria, and of the castle that has come to stand for German grandeur.",
+    "stops": {
+      "Bavaria": "Neuschwanstein Castle, rising in stone against the Bavarian hills."
+    },
+    "fingerprint": "fd2f96ed87c3",
+    "model": "claude-opus-4-8",
+    "generatedAt": "2026-07-06T17:57:29.128Z",
+    "edited": false
+  },
+  "hungary": {
+    "intro": "A single city, held for its own sake — Budapest across eleven frames, half spent in the water and half among the stone.",
+    "stops": {
+      "Budapest": "Days divided between the thermal baths — clear pools, poolside benches, a bathing statue — and the stonework above: Buda Castle, an arch, a rooftop, and the saints and figures standing watch over the city."
+    },
+    "fingerprint": "a7ebc8ea1a72",
+    "model": "claude-opus-4-8",
+    "generatedAt": "2026-07-06T17:57:29.192Z",
+    "edited": false
+  },
+  "uk": {
+    "intro": "A single stop in the British capital — a brief encounter with London's landmarks, captured in passing.",
+    "stops": {
+      "London": "A glimpse of Big Ben, standing among the city's most familiar landmarks."
+    },
+    "fingerprint": "63ea2c50bdd2",
+    "model": "claude-opus-4-8",
+    "generatedAt": "2026-07-06T17:57:29.366Z",
+    "edited": false
+  },
+  "netherlands": {
+    "intro": "A single city, gathered along the water — Amsterdam in six frames, where the canals set the pace and the streets belonged to bikes and trams.",
+    "stops": {
+      "Amsterdam": "A day tracing the canals and their bridges, threading past parked bikes, passing trams, and quiet streets — the city's waterways doing most of the talking."
+    },
+    "fingerprint": "0c894a6fedfb",
+    "model": "claude-opus-4-8",
+    "generatedAt": "2026-07-06T17:57:30.169Z",
+    "edited": false
+  },
+  "estonia": {
+    "intro": "A single city, unhurried: ten frames of Tallinn and its medieval Old Town, a UNESCO warren of towers and tiled rooftops explored at street level.",
+    "stops": {
+      "Tallinn": "Through the entry gate into the Old Town — a palace, a cafe, residential lanes, and towers rising above the skyline, with rooftops and roofs stacked toward the horizon."
+    },
+    "fingerprint": "e01332b68e7c",
+    "model": "claude-opus-4-8",
+    "generatedAt": "2026-07-06T17:57:32.714Z",
+    "edited": false
+  },
+  "finland": {
+    "intro": "A single Finnish city, gathered in ten frames — Helsinki alone, from its cathedral steps to the island fortress across the water.",
+    "stops": {
+      "Helsinki": "A day among Helsinki's landmarks: the pale Cathedral and the Orthodox Cathedral, a city sign and a statue, then out to the island houses and the Suomenlinna sea fortress."
+    },
+    "fingerprint": "b09149a7a4dc",
+    "model": "claude-opus-4-8",
+    "generatedAt": "2026-07-06T17:57:32.919Z",
+    "edited": false
+  },
+  "usa": {
+    "intro": "A New England arc down the eastern seaboard — 475 kilometers from Boston's brick and cobblestone, out to an island of beaches, and back to Manhattan's skyline. A journey measured in historic districts and landmarks.",
+    "stops": {
+      "Boston": "Two moments in the old city: the row houses of Beacon Hill and the tower of the Custom House, historic architecture caught on foot.",
+      "Nantucket": "A crossing of 144 kilometers to the island itself — beaches and cobblestone streets steeped in whaling history.",
+      "New York City": "A turn back to the mainland and the Empire State Building, framed twice from different angles against the skyline."
+    },
+    "fingerprint": "539991101d6b",
+    "model": "claude-opus-4-8",
+    "generatedAt": "2026-07-06T17:57:35.014Z",
+    "edited": false
+  },
+  "egypt": {
+    "intro": "Two ancient capitals of Egypt, 504 kilometers apart along the Nile — from the pyramids and museums of Cairo south to the temple-lined banks of Luxor, once Thebes.",
+    "stops": {
+      "Cairo": "The old capital and its monuments: the Great Pyramids of Giza, the Sphinx, and the halls of the Egyptian Museum.",
+      "Luxor": "Five hundred kilometers upriver to ancient Thebes — the Valley of the Kings and the vast temple complex at Karnak."
+    },
+    "fingerprint": "159e5a250c03",
+    "model": "claude-opus-4-8",
+    "generatedAt": "2026-07-06T17:57:35.197Z",
+    "edited": false
+  },
+  "superb-seychelles": {
+    "intro": "A single chapter across three islands of the Seychelles — Mahé, Praslin, and La Digue gathered into one journey through the granite heart of the Indian Ocean.",
+    "stops": {
+      "Mahe/Praslin/La Digue": "Three of the archipelago's islands, moving from Mahé to Praslin to La Digue across the Indian Ocean."
+    },
+    "fingerprint": "8faa879f6438",
+    "model": "claude-opus-4-8",
+    "generatedAt": "2026-07-06T17:57:35.965Z",
+    "edited": false
+  },
+  "sublime-sweden": {
+    "intro": "A single city, held close: Sweden's capital across twenty-one frames, from the archipelago's edge to the lanes of Gamla Stan.",
+    "stops": {
+      "Stockholm": "A stay among the islands and old-town streets of Stockholm — a capital spread over water, with the salvaged Vasa waiting inside its museum."
+    },
+    "fingerprint": "7a06455a41e4",
+    "model": "claude-opus-4-8",
+    "generatedAt": "2026-07-06T17:57:36.206Z",
+    "edited": false
+  },
+  "denmark-dreams": {
+    "intro": "A single city, seen closely: Copenhagen, Denmark's capital of fairy-tale castles, harborside color, and design.",
+    "stops": {
+      "Copenhagen": "Time spent in Copenhagen — the colorful Nyhavn harbor, its castles, and the city's celebrated sense of design."
+    },
+    "fingerprint": "a73b70aab056",
+    "model": "claude-opus-4-8",
+    "generatedAt": "2026-07-06T17:57:38.037Z",
+    "edited": false
+  },
+  "icelandic-inspirations": {
+    "intro": "An Icelandic passage from the capital in the southwest to the northern coast — roughly 300 kilometers between two poles of the island, city and sea.",
+    "stops": {
+      "Reykjavik": "A long stay in Iceland's capital, in the shadow of Hallgrímskirkja and among the geothermal city's quiet streets.",
+      "Husavik": "North to Húsavík on the coast, some 300 kilometers on."
+    },
+    "fingerprint": "0f8122b910a2",
+    "model": "claude-opus-4-8",
+    "generatedAt": "2026-07-06T17:57:39.120Z",
+    "edited": false
+  }
+}

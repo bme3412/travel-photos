@@ -4,7 +4,7 @@ import React, { useState, useEffect, Suspense } from 'react';
 import Image from 'next/image';
 import usePhotoStore from '../../store/usePhotoStore';
 import ImageLightbox from '../../components/ImageLightbox';
-import { ArrowLeft, Grid, Map as MapIcon, Loader, Camera } from 'lucide-react';
+import { ArrowLeft, Grid, Map as MapIcon, Loader, Camera, Route } from 'lucide-react';
 import Link from 'next/link';
 import { transformToCloudFront } from '../../utils/imageUtils';
 
@@ -128,6 +128,15 @@ export default function AlbumPageClient({ initialAlbum }) {
                 <MapIcon size={20} />
                 <span className="text-sm font-medium">Map</span>
               </button>
+              <Link
+                href={`/trips/${currentAlbum.id}`}
+                className="px-3 py-2 rounded-full transition-all duration-200 flex items-center gap-2
+                           text-gray-500 hover:bg-gray-100"
+                aria-label="Replay this trip on the map"
+              >
+                <Route size={20} />
+                <span className="text-sm font-medium">Replay</span>
+              </Link>
             </div>
           </div>
         </div>
