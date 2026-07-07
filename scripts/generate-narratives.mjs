@@ -38,6 +38,8 @@ const SYSTEM_PROMPT = `You write narrative copy for "Passport & Ponder", a perso
 
 You will receive structured metadata for one trip: the album, its stops in itinerary order, and for each stop the dates, photo count, distance from the previous stop, a curated destination description, the photo captions (written by the traveler), and tag frequencies.
 
+An album can span several separate visits (returns to the same country months or years apart); each stop carries a "visit" label when its dates are known. The same place can appear as a stop in more than one visit — treat each as its own moment in time.
+
 Write:
 1. An "intro" — 2 or 3 sentences (at most 60 words) that frames the whole journey: its shape, its contrast, what made it distinctive.
 2. One beat per stop — 1 or 2 sentences (at most 40 words) capturing what the traveler saw and did there, drawing on the captions.
@@ -108,11 +110,14 @@ function buildBundle(trip, tagsByPhotoId) {
       order: i + 1,
       name: stop.name,
       country: stop.country,
+      visit: trip.visits?.[stop.visitIndex]?.label || null,
       destinationDescription: stop.description,
-      dateRange: trip.hasReliableDates ? stop.dateRange : null,
+      dateRange: stop.hasDates ? stop.dateRange : null,
       photoCount: stop.photos.length,
       kmFromPreviousStop:
-        i === 0 ? null : Math.round(haversineKm(trip.stops[i - 1].center, stop.center)),
+        i === 0 || trip.stops[i - 1].visitIndex !== stop.visitIndex
+          ? null
+          : Math.round(haversineKm(trip.stops[i - 1].center, stop.center)),
       captions:
         captions.length > MAX_CAPTIONS_PER_STOP
           ? [...captions.slice(0, MAX_CAPTIONS_PER_STOP), `(+${captions.length - MAX_CAPTIONS_PER_STOP} more)`]
@@ -127,7 +132,9 @@ function buildBundle(trip, tagsByPhotoId) {
     totalPhotos: trip.photoCount,
     totalKmBetweenStops: trip.totalKm,
     datesReliable: trip.hasReliableDates,
-    dateRange: trip.hasReliableDates ? trip.dateRange : null,
+    // The album-wide range mixes in bulk upload stamps unless every visit
+    // is dated — per-stop ranges carry the truth otherwise.
+    dateRange: trip.visits?.every((visit) => visit.hasDates) ? trip.dateRange : null,
     stops,
   };
 }

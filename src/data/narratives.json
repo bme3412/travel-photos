@@ -11,14 +11,14 @@
     "edited": false
   },
   "chile": {
-    "intro": "Four days in March, split between a Chilean capital and the loneliest inhabited island in the Pacific — a single afternoon in Santiago before 3,760 kilometers of ocean delivered us to the moai.",
+    "intro": "A journey of two scales: a brief capital prologue in Santiago, then 3,760 kilometers of Pacific to Easter Island, where forty frames were spent almost entirely among the moai.",
     "stops": {
-      "Santiago": "One afternoon between eras: the historic clock tower and a modern skyline tower, the old and new faces of Santiago photographed on the way to somewhere far stranger.",
-      "Easter Island": "Three days among the moai — rows of them on grassy hills, a solitary sentinel by the harbor, one crowned with its pukao topknot, the Rano Kau crater, and a dog asleep at their feet — many caught in profile against a red setting sun."
+      "Santiago": "A short pause in the capital, caught between eras — the historic clock tower and a modern skyline tower, old and new photographed on the way somewhere far stranger.",
+      "Easter Island": "Days circling the moai: five in a row at their ahu, one crowned with a pukao topknot, solitary sentinels and profiles by the blue ocean, the Rano Kau crater, a dog asleep at their feet, and figure after figure silhouetted against a red setting sun."
     },
     "fingerprint": "76f3e348f810",
     "model": "claude-opus-4-8",
-    "generatedAt": "2026-07-06T17:56:27.842Z",
+    "generatedAt": "2026-07-07T14:38:24.884Z",
     "edited": false
   },
   "portugal": {
@@ -43,13 +43,13 @@
     "edited": false
   },
   "uruguay": {
-    "intro": "Three days in March given entirely to one city — Montevideo, where the historic and the everyday share the same coastline.",
+    "intro": "A single-city sojourn in Uruguay's capital, tracing the line where historic stone meets the coast — one place, held long enough to see it clearly.",
     "stops": {
-      "Montevideo": "Three days along the waterfront and through the old center: the Metropolitan Cathedral, statues before historic buildings, a town square monument, palm trees at the coast, and the colors of a street mural against the city sign."
+      "Montevideo": "A day among the old facades: the Metropolitan Cathedral, a statue standing before a historic building, a town square monument, and palm trees along the waterfront, ending at a colorful street-art mural and the city sign."
     },
     "fingerprint": "0d1d521da637",
     "model": "claude-opus-4-8",
-    "generatedAt": "2026-07-06T17:56:53.951Z",
+    "generatedAt": "2026-07-07T14:38:22.742Z",
     "edited": false
   },
   "italy": {
@@ -66,16 +66,16 @@
     "edited": false
   },
   "france": {
-    "intro": "A French arc that ran from the capital to the Mediterranean and out to sea — 965 kilometers from Paris's landmarks down to the Riviera's luxury coast, then across water to Corsica's beaches. A journey of architecture and edges.",
+    "intro": "Five years of France returned to again and again — Paris as the recurring anchor, threaded across summers and a February winter, with detours south to the Riviera and out to Corsica. Nearly 1,900 kilometers between stops, and the Eiffel Tower always waiting at the center.",
     "stops": {
-      "Paris": "The city's greatest hits and quieter corners: the Eiffel Tower from Trocadéro and by night, dressed in Olympic rings; the steps and windows of Sacré-Cœur; the Louvre and La Défense; and cafés along Rue de Buci over moules.",
-      "Monaco": "Less casino than coastline — 690 kilometers south to the medieval citadel of Roquebrune, the bays and harbors of St Jean Cap Martin, and the villas and pools of the Maybourne Riviera looking toward Nice.",
-      "Cannes": "A short stop along La Croisette: beach clubs and coastal views, sunset over the water, and the Versace hotel in the golden Riviera light.",
-      "Corsica": "Across 234 kilometers of sea to the island's shores — beaches with boats, a clifftop citadel, and a sunset to close the journey."
+      "Paris": "919 kilometers back to the capital and its table this time — a café waiter, moules, Pré Aux Clercs and Rue de Buci — with the Louvre, Sacré-Cœur, and the Eiffel Tower lit at night from the balcony.",
+      "Monaco": "The longest lingering: St Jean Cap Martin's green-watered bay, its harbor and boats, a historic aqueduct and quarry, and a villa with garden, gazebo, fountain and ocean view — up to the Maybourne Riviera and its pool.",
+      "Cannes": "A day on La Croisette: beach clubs and coastline, a hotel and restaurant, the Versace name, a culinary stop, and a sunset over the water.",
+      "Corsica": "230 kilometers over water for beaches and docks, a citadel above the boats, cliffs, and a closing sunset."
     },
-    "fingerprint": "5a6d44be9cd2",
+    "fingerprint": "ffec562c207a",
     "model": "claude-opus-4-8",
-    "generatedAt": "2026-07-06T17:56:54.259Z",
+    "generatedAt": "2026-07-07T14:38:37.804Z",
     "edited": false
   },
   "argentina": {
@@ -89,13 +89,13 @@
     "edited": false
   },
   "brazil": {
-    "intro": "Three days in Rio de Janeiro, seen as much from the air as from the sand — a single-city study of Brazil's coastline, half beachfront and half helicopter.",
+    "intro": "A single, saturated chapter in Rio de Janeiro — the whole of a Brazilian album spent between beach and summit, much of it seen from above.",
     "stops": {
-      "Rio de Janeiro": "Colorful flags along Copacabana, the sweep of Leblon at sunset with its beachfront hotels and rock formations, and Christ the Redeemer glimpsed through clouds and morning mist. From above, the urban sprawl unfurled past Sugarloaf and the beaches below."
+      "Rio de Janeiro": "Colorful flags along Copacabana, the sweep of Leblon at sunset, luxury hotels tucked against rock formations — and, again and again, the city from a helicopter: coastline, urban sprawl, and Christ the Redeemer emerging through cloud and morning mist, once framed with a dancer."
     },
     "fingerprint": "cd0b5c62e962",
     "model": "claude-opus-4-8",
-    "generatedAt": "2026-07-06T17:56:58.392Z",
+    "generatedAt": "2026-07-07T14:38:22.614Z",
     "edited": false
   },
   "hongkong": {
@@ -130,23 +130,23 @@
     "edited": false
   },
   "monaco": {
-    "intro": "A single stop on the Mediterranean's edge, small enough to walk yet gilded at every turn — Monaco distilled into six frames of casino, harbor, and garden.",
+    "intro": "A single June day in Monaco, compact and gleaming — the whole of a principality folded into one afternoon between casino, harbor, and hillside garden.",
     "stops": {
-      "Monaco": "An afternoon among the principality's polished excess: the facade of the Monte Carlo Casino, a Ferrari at the curb, and Port Hercule below. Quieter interludes in the Japanese Gardens and Monte Carlo Gardens, before a panoramic view took in the whole rock at once."
+      "Monaco": "An afternoon from the Monte Carlo Casino to a Ferrari idling at the curb, then the calm of the Japanese Gardens and Monte Carlo greenery, the boats of Port Hercule below, and a panoramic view over it all."
     },
     "fingerprint": "1a85b5c0ab29",
     "model": "claude-opus-4-8",
-    "generatedAt": "2026-07-06T17:57:03.174Z",
+    "generatedAt": "2026-07-07T14:38:27.561Z",
     "edited": false
   },
   "vietnam": {
-    "intro": "Three days on Phu Quoc, Vietnam's island of pristine beaches and fishing villages — a single stop that folded palm-lined shore, tradition, and resort luxury into one stretch of Pacific horizon.",
+    "intro": "A single island interlude off Vietnam's southern coast — nine unhurried frames of Phu Quoc, where beach and horizon did most of the work.",
     "stops": {
-      "Phu Quoc": "Days spent between beach huts, palm trees, and a traditional boat drifting the horizon, then an infinity pool and penthouse view at dusk — parasailing against the sunset, a temple inland, and a Celtics fan on the sand."
+      "Phu Quoc": "Days along pristine sand: traditional beach huts and palm trees, a wooden boat on the horizon, a temple inland, and a run of sunsets — parasailing overhead, the view from an infinity pool and penthouse as the light fell."
     },
     "fingerprint": "1d06ff7ee9a4",
     "model": "claude-opus-4-8",
-    "generatedAt": "2026-07-06T17:57:03.849Z",
+    "generatedAt": "2026-07-07T14:38:27.388Z",
     "edited": false
   },
   "malaysia": {
@@ -160,13 +160,13 @@
     "edited": false
   },
   "singapore": {
-    "intro": "Three days in a single city-state, March of 2024 — a compact stay orbiting Marina Bay Sands, from its infinity pool to the streets below.",
+    "intro": "A single city held all thirteen frames: Singapore, seen from the height of the Marina Bay Sands and the streets below, a study in skyline and neighborhood.",
     "stops": {
-      "Singapore": "Days spent between the Marina Bay Sands infinity pool — its skyline views by day and by night — and the city beyond it: the Little India district, a traditional mosque, an art installation, and the towers rising over the bay."
+      "Singapore": "Days spent between the infinity pool—by day and lit at night, panorama after panorama across the Marina Bay Sands towers—and the streets below: Little India, a traditional mosque, an art installation, and the skyline stretched wide over the water."
     },
     "fingerprint": "cd0dd253bb3a",
     "model": "claude-opus-4-8",
-    "generatedAt": "2026-07-06T17:57:04.754Z",
+    "generatedAt": "2026-07-07T14:38:29.261Z",
     "edited": false
   },
   "bosnia-herzegovina": {
@@ -241,13 +241,13 @@
     "edited": false
   },
   "guatemala": {
-    "intro": "A single-destination journey in early April, given over entirely to Guatemala's rainforest and the ancient Maya city rising from it.",
+    "intro": "A single destination held this Guatemalan journey: Tikal, the great Mayan city rising from rainforest. Ten days among stone and jungle, returned to twice for the same ruins seen anew.",
     "stops": {
-      "Tikal": "Days among the Mayan ruins of Tikal — temples and a central plaza framed by jungle, photographed from every angle, from panoramas to close details of stone and floor."
+      "Tikal": "A brief return to the ruins, lingering once more over the archaeology of the Mayan city."
     },
-    "fingerprint": "69edcb92de7e",
+    "fingerprint": "700889e73619",
     "model": "claude-opus-4-8",
-    "generatedAt": "2026-07-06T17:57:16.897Z",
+    "generatedAt": "2026-07-07T14:38:33.680Z",
     "edited": false
   },
   "belize": {
@@ -271,15 +271,15 @@
     "edited": false
   },
   "australia": {
-    "intro": "An Australian arc that ran from the tropical north to the harbor city of the south — 2,000 kilometers between Cairns and Sydney, with the Great Barrier Reef as the sailing pivot between them.",
+    "intro": "An Australian arc across three months of 2024, from the tropical north to the harbor city south — reef dives and rainforest in January, a February day under sail, and Sydney's landmarks come March.",
     "stops": {
-      "Cairns": "Days at the tropical edge: a crocodile, the green sweep of Green Island, the harbor and waterfront, and quieter time by the pool over seafood.",
-      "Great Barrier Reef": "A single day sailing the reef, out among the marine life.",
-      "Sydney": "The last stretch, spent circling two icons — the Harbour Bridge from beside and beneath it, and the Opera House caught at sunset and after dark."
+      "Cairns": "Four days in the tropical north: a crocodile, the green fringe of Green Island, the working harbor and waterfront, an afternoon by the pool, and a plate of seafood — the gateway to reef and Daintree rainforest.",
+      "Great Barrier Reef": "A single February day sailing the reef, out among the marine life.",
+      "Sydney": "The final four days circling the icons — the Harbour Bridge from several angles and from underneath, and the Opera House at sunset and after dark."
     },
     "fingerprint": "7c93f28f0f2f",
     "model": "claude-opus-4-8",
-    "generatedAt": "2026-07-06T17:57:21.050Z",
+    "generatedAt": "2026-07-07T14:38:33.986Z",
     "edited": false
   },
   "japan": {
@@ -427,14 +427,14 @@
     "edited": false
   },
   "egypt": {
-    "intro": "Two ancient capitals of Egypt, 504 kilometers apart along the Nile — from the pyramids and museums of Cairo south to the temple-lined banks of Luxor, once Thebes.",
+    "intro": "Egypt in January — two ancient capitals along the Nile, from the pyramids of Cairo to the temples of Thebes, tracing the pharaohs across 133 frames.",
     "stops": {
-      "Cairo": "The old capital and its monuments: the Great Pyramids of Giza, the Sphinx, and the halls of the Egyptian Museum.",
-      "Luxor": "Five hundred kilometers upriver to ancient Thebes — the Valley of the Kings and the vast temple complex at Karnak."
+      "Cairo": "A day among the historic weight of the old capital: the Great Pyramids of Giza rising from the desert, and the sculpture and artifacts held within the city's museum walls.",
+      "Luxor": "The longest chapter, deep in ancient Thebes — hieroglyphs and murals, temple sculpture and interiors, and a hot air balloon drifting over the monuments at dawn."
     },
     "fingerprint": "159e5a250c03",
     "model": "claude-opus-4-8",
-    "generatedAt": "2026-07-06T17:57:35.197Z",
+    "generatedAt": "2026-07-07T14:38:34.504Z",
     "edited": false
   },
   "superb-seychelles": {

@@ -22,8 +22,15 @@ module.exports = {
       backgroundImage: {
         'world-map': "url('/images/world-map-pattern.png')",
       },
+      keyframes: {
+        'fade-in': {
+          from: { opacity: '0' },
+          to: { opacity: '1' },
+        },
+      },
       animation: {
         'spin-slow': 'spin 10s linear infinite',
+        'fade-in': 'fade-in 0.45s ease',
       },
     },
   },
