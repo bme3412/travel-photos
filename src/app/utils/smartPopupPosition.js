@@ -173,12 +173,11 @@ export const getPopupStyles = (maxHeight, type = 'destination') => {
   // Base styles for all popups
   const baseStyles = {
     maxHeight,
-    background: 'linear-gradient(135deg, #ffffff 0%, #f8fafc 100%)',
-    boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(255, 255, 255, 0.8)',
-    borderRadius: '16px',
+    background: '#FAF6EF',
+    boxShadow: '0 20px 40px -16px rgba(27, 23, 19, 0.35)',
+    borderRadius: '0',
     overflow: 'hidden',
-    backdropFilter: 'blur(10px)',
-    border: 'none',
+    border: '1px solid rgba(27, 23, 19, 0.1)',
     // Prevent flickering during animations
     willChange: 'auto',
     backfaceVisibility: 'hidden',

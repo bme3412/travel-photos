@@ -81,6 +81,8 @@ const MapPageClient = ({ initialDestinations = [], visitedCountries = {} }) => {
     setSelectedSidePanelLocation(null);
   }, []);
 
+  // Paper/ink/terracotta palette — visited countries take a washed terracotta,
+  // the rest a warm paper tone, to match the editorial design tokens.
   const countryLayer = useMemo(() => ({
     id: 'country-layer',
     type: 'fill',
@@ -88,10 +90,10 @@ const MapPageClient = ({ initialDestinations = [], visitedCountries = {} }) => {
       'fill-color': [
         'case',
         ['boolean', ['get', ['get', 'iso_3166_1_alpha_3'], ['literal', visitedCountries]], false],
-        '#34d399',
-        '#e5e7eb'
+        '#C4693F',
+        '#EDE7DB'
       ],
-      'fill-opacity': 0.6
+      'fill-opacity': 0.55
     }
   }), [visitedCountries]);
 
@@ -99,7 +101,7 @@ const MapPageClient = ({ initialDestinations = [], visitedCountries = {} }) => {
     id: 'country-outline-layer',
     type: 'line',
     paint: {
-      'line-color': '#94a3b8',
+      'line-color': '#8A8075',
       'line-width': 0.5
     }
   }), []);
@@ -107,24 +109,26 @@ const MapPageClient = ({ initialDestinations = [], visitedCountries = {} }) => {
   const mapContent = (
     <>
       {/* Minimal floating controls */}
-      <div className="absolute top-3 right-3 z-10 flex flex-col gap-1">
+      <div className="absolute top-3 right-3 z-10 flex flex-col items-end gap-1.5">
         {/* Compact region selector */}
         <div className="relative">
           <button
             onClick={() => setShowRegionMenu(!showRegionMenu)}
-            className="bg-black/20 backdrop-blur-md hover:bg-black/30 text-white px-2 py-1.5 rounded-lg transition-all duration-200 flex items-center gap-1 text-xs font-medium shadow-sm"
+            className="bg-paper/95 backdrop-blur-sm border border-ink/10 text-ink/80 hover:text-ink px-3 py-1.5
+                       transition-colors duration-200 flex items-center gap-1.5 text-[10px] uppercase tracking-[0.18em]"
           >
             <Globe className="h-3 w-3" />
             Regions
           </button>
-          
+
           {showRegionMenu && (
-            <div className="absolute top-full right-0 mt-1 bg-white/95 backdrop-blur-md rounded-lg shadow-lg border border-white/20 overflow-hidden min-w-[120px]">
+            <div className="absolute top-full right-0 mt-1 bg-paper border border-ink/10 overflow-hidden min-w-[140px]">
               {Object.keys(REGIONS).map((region) => (
                 <button
                   key={region}
                   onClick={() => flyToRegion(region)}
-                  className="block w-full text-left px-3 py-2 text-xs text-gray-700 hover:bg-indigo-50 hover:text-indigo-600 transition-colors duration-150"
+                  className="block w-full text-left px-3 py-2 text-[11px] uppercase tracking-[0.14em] text-ink/70
+                             hover:text-accent hover:bg-ink/5 transition-colors duration-150"
                 >
                   {region}
                 </button>
@@ -136,7 +140,8 @@ const MapPageClient = ({ initialDestinations = [], visitedCountries = {} }) => {
         {/* Compact pop-out toggle */}
         <button
           onClick={togglePopOut}
-          className="bg-black/20 backdrop-blur-md hover:bg-black/30 text-white p-1.5 rounded-lg transition-all duration-200 shadow-sm"
+          className="bg-paper/95 backdrop-blur-sm border border-ink/10 text-ink/80 hover:text-ink p-1.5
+                     transition-colors duration-200"
           title={isPoppedOut ? "Close Pop-out" : "Pop-out Map"}
         >
           {isPoppedOut ? (
@@ -149,9 +154,10 @@ const MapPageClient = ({ initialDestinations = [], visitedCountries = {} }) => {
 
       {/* Minimal back button */}
       {!isPoppedOut && (
-        <Link 
-          href="/" 
-          className="absolute top-3 left-3 z-10 bg-black/20 backdrop-blur-md hover:bg-black/30 text-white p-1.5 rounded-lg transition-all duration-200 shadow-sm"
+        <Link
+          href="/"
+          className="absolute top-3 left-3 z-10 bg-paper/95 backdrop-blur-sm border border-ink/10 text-ink/80
+                     hover:text-ink p-1.5 transition-colors duration-200"
           title="Back to Home"
         >
           <ChevronLeft className="h-3 w-3" />
@@ -201,8 +207,11 @@ const MapPageClient = ({ initialDestinations = [], visitedCountries = {} }) => {
       </Map>
       ) : (
         <div className="absolute inset-0 flex items-center justify-center">
-          <div className="text-sm text-red-600 bg-red-50 border border-red-200 rounded-md px-3 py-2">
-            Missing Mapbox access token. Set NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN in your .env file.
+          <div className="text-center space-y-2 border border-ink/10 bg-paper px-8 py-6">
+            <p className="font-display text-xl text-ink/80">The map is missing its key</p>
+            <p className="text-[11px] uppercase tracking-[0.18em] text-muted">
+              Set NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN in .env
+            </p>
           </div>
         </div>
       )}
@@ -211,8 +220,8 @@ const MapPageClient = ({ initialDestinations = [], visitedCountries = {} }) => {
 
   if (isPoppedOut) {
     return (
-      <div className="fixed inset-0 z-50 bg-gray-950/20 backdrop-blur-sm">
-        <div className="absolute inset-4 bg-white rounded-xl shadow-2xl overflow-hidden transition-all duration-300 ease-in-out transform">
+      <div className="fixed inset-0 z-50 bg-ink/40 backdrop-blur-sm">
+        <div className="absolute inset-4 bg-paper border border-ink/10 overflow-hidden transition-all duration-300 ease-in-out">
           {mapContent}
         </div>
         <PhotoSidePanel

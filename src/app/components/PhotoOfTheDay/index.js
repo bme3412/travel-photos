@@ -2,15 +2,16 @@
 
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
-import { RefreshCw } from 'lucide-react';
+import Link from 'next/link';
+import { RefreshCw, ArrowRight } from 'lucide-react';
 import { transformToCloudFront } from '../../utils/imageUtils';
 
 // Display fields (locationName, albumTitle, country, flag) are resolved
 // server-side — by the page and by /api/random-photo — via photoEnrichment.js
 const formatCaption = (photo) => {
   const today = new Date().toLocaleDateString('en-US', {
-    month: '2-digit',
-    day: '2-digit',
+    month: 'long',
+    day: 'numeric',
     year: 'numeric'
   });
 
@@ -54,8 +55,9 @@ const PhotoOfTheDay = ({ initialPhoto = null }) => {
   if (loading) {
     return (
       <div className="flex items-center justify-center h-[calc(100vh-200px)]">
-        <div className="animate-spin text-teal-600">
-          <RefreshCw className="w-8 h-8" />
+        <div className="text-center space-y-3">
+          <p className="font-display text-2xl text-ink/80">Choosing today&apos;s photograph…</p>
+          <p className="text-[11px] uppercase tracking-[0.2em] text-muted">Passport &amp; Ponder</p>
         </div>
       </div>
     );
@@ -63,8 +65,9 @@ const PhotoOfTheDay = ({ initialPhoto = null }) => {
 
   if (!photo) {
     return (
-      <div className="flex items-center justify-center h-[calc(100vh-200px)]">
-        <p className="text-gray-500">No photo available</p>
+      <div className="flex flex-col items-center justify-center h-[calc(100vh-200px)] text-center px-6">
+        <p className="font-display text-2xl text-ink/70 mb-2">Nothing developed today</p>
+        <p className="text-[11px] uppercase tracking-[0.2em] text-muted">Try again in a moment</p>
       </div>
     );
   }
@@ -72,65 +75,68 @@ const PhotoOfTheDay = ({ initialPhoto = null }) => {
   const caption = formatCaption(photo);
 
   return (
-    <div className="container mx-auto px-6 py-8 max-w-7xl">
+    <div className="max-w-7xl mx-auto px-6 pt-12 pb-20">
       {/* Header */}
-      <div className="mb-8">
-        <h1 className="text-4xl md:text-5xl font-light text-gray-900 mb-2">
-          📸 Photo of the Day
-        </h1>
-        <p className="text-gray-500 text-sm">
-          Discover a new stunning travel photo every day from my collection
-        </p>
+      <div className="mb-10">
+        <p className="text-[11px] uppercase tracking-[0.3em] text-accent mb-2">{caption.date}</p>
+        <h1 className="font-display text-4xl md:text-5xl tracking-tight">Photo of the day</h1>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
+      <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 lg:gap-14 items-start">
         {/* Photo Section */}
-        <div className="lg:col-span-3 relative h-[70vh] lg:h-[85vh] rounded-3xl overflow-hidden shadow-2xl">
+        <div className="lg:col-span-3 relative aspect-[3/2] lg:aspect-auto lg:h-[78vh] overflow-hidden bg-ink/5">
           <Image
             src={transformToCloudFront(photo.url)}
             alt={`${caption.location}, ${caption.country}`}
             fill
-            className="object-cover hover:scale-105 transition-transform duration-700"
+            className="object-cover"
             priority
             sizes="(max-width: 768px) 100vw, 60vw"
           />
         </div>
 
         {/* Info Section */}
-        <div className="lg:col-span-2 p-6">
+        <div className="lg:col-span-2 lg:pt-2">
           <div className="space-y-8">
-            {/* Caption Section */}
-            <div className="space-y-4">
-              <p className="text-sm tracking-wider text-gray-500 font-light uppercase">
-                {caption.date}
-              </p>
-              <h2 className="text-4xl font-light text-gray-900">
+            <div>
+              <h2 className="font-display text-3xl md:text-4xl tracking-tight leading-tight">
                 {caption.location}
               </h2>
-              <p className="text-xl text-gray-600 font-light tracking-wide">
-                {caption.flag} {caption.country}
+              <p className="text-[11px] uppercase tracking-[0.2em] text-muted mt-3">
+                {caption.flag && <span className="mr-1.5 tracking-normal">{caption.flag}</span>}
+                {caption.country}
               </p>
-              <div className="pt-4 border-t border-gray-200">
-                <p className="text-base text-gray-700 leading-relaxed">
-                  {photo.caption || `A stunning moment captured in ${caption.location}, ${caption.country}. This photo is part of my ${caption.albumTitle} collection, showcasing the beauty and character of this incredible destination.`}
-                </p>
-              </div>
             </div>
 
-            {/* Button */}
-            <button
-              onClick={getRandomPhoto}
-              className="w-full inline-flex items-center justify-center px-6 py-3 bg-gray-900 text-white rounded-lg 
-                       hover:bg-gray-800 transition-all duration-300 transform hover:scale-105
-                       text-sm tracking-wider font-light disabled:opacity-50"
-              disabled={loading}
-            >
-              <RefreshCw className={`w-3 h-3 mr-2 ${loading ? 'animate-spin' : ''}`} />
-              {loading ? 'Loading...' : 'See Another Photo'}
-            </button>
-            <p className="text-xs text-gray-500 text-center mt-2">
-              Click to explore random photos from all my travels
-            </p>
+            {photo.caption && (
+              <p className="text-base leading-relaxed text-ink/80 border-t border-ink/10 pt-6">
+                {photo.caption}
+              </p>
+            )}
+
+            <div className="flex flex-col gap-5 pt-2">
+              <button
+                onClick={getRandomPhoto}
+                disabled={loading}
+                className="group inline-flex items-center gap-2 self-start text-[11px] uppercase tracking-[0.2em]
+                           text-ink/70 border-b border-ink/20 pb-1 hover:border-accent hover:text-ink
+                           transition-colors duration-300 disabled:opacity-50"
+              >
+                <RefreshCw className={`h-3.5 w-3.5 ${loading ? 'animate-spin' : ''}`} />
+                {loading ? 'Developing…' : 'Draw another'}
+              </button>
+
+              {photo.albumId && (
+                <Link
+                  href={`/albums/${photo.albumId}`}
+                  className="group inline-flex items-center gap-2 self-start text-[11px] uppercase tracking-[0.2em]
+                             text-muted hover:text-ink transition-colors duration-300"
+                >
+                  From {caption.albumTitle}
+                  <ArrowRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1" />
+                </Link>
+              )}
+            </div>
           </div>
         </div>
       </div>

@@ -67,7 +67,7 @@ export async function generateMetadata({ params }) {
 
   if (!trip) {
     return {
-      title: 'Trip Not Found | 🛫 Passport & Ponder 🌎',
+      title: 'Trip Not Found | Passport & Ponder',
       description: 'This trip could not be found',
     };
   }
@@ -76,7 +76,7 @@ export async function generateMetadata({ params }) {
   const coverUrl = trip.stops[0]?.photos[0]?.url;
 
   return {
-    title: `Replay: ${trip.name} | 🛫 Passport & Ponder 🌎`,
+    title: `Replay: ${trip.name} | Passport & Ponder`,
     description: `Retrace the ${trip.year} journey — ${route}`,
     openGraph: {
       title: `Replay: ${trip.name}`,

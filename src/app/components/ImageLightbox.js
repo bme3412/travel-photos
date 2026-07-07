@@ -17,8 +17,8 @@ const LightboxImage = ({ src, alt, onLoadingComplete, ...props }) => {
   return (
     <div className="relative w-full h-full">
       {isLoading && (
-        <div className="absolute inset-0 flex items-center justify-center bg-black/40 backdrop-blur-sm">
-          <Loader2 className="w-8 h-8 text-white animate-spin" />
+        <div className="absolute inset-0 flex items-center justify-center bg-ink/40 backdrop-blur-sm">
+          <Loader2 className="w-8 h-8 text-paper animate-spin" />
         </div>
       )}
       
@@ -86,15 +86,15 @@ export default function ImageLightbox({
   };
 
   return (
-    <div className="fixed inset-0 z-[60] backdrop-blur-lg bg-black/95 transition-all duration-300">
+    <div className="fixed inset-0 z-[60] backdrop-blur-lg bg-ink/95 transition-all duration-300">
       <div className="absolute inset-0 flex items-center justify-center">
-        <div className="absolute inset-x-0 top-0 h-16 bg-gradient-to-b from-black/50 to-transparent" />
-        <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-black/50 to-transparent" />
+        <div className="absolute inset-x-0 top-0 h-16 bg-gradient-to-b from-ink/50 to-transparent" />
+        <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-ink/50 to-transparent" />
 
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 p-2 rounded-full bg-black/30 text-white hover:bg-black/50 
-                     transition-all duration-200 backdrop-blur-sm z-50"
+          className="absolute top-4 right-4 p-2 text-paper/70 hover:text-paper
+                     transition-colors duration-200 z-50"
           aria-label="Close lightbox"
         >
           <CloseIcon className="w-6 h-6" />
@@ -102,20 +102,20 @@ export default function ImageLightbox({
 
         <button
           onClick={() => handleTransition(onPrevious)}
-          className="absolute left-4 top-1/2 -translate-y-1/2 p-3 rounded-full bg-black/30 
-                     text-white hover:bg-black/50 transition-all duration-200 backdrop-blur-sm z-50"
+          className="absolute left-4 top-1/2 -translate-y-1/2 p-3 text-paper/70 hover:text-paper
+                     transition-colors duration-200 z-50"
           aria-label="Previous image"
         >
-          <ChevronLeft className="w-6 h-6" />
+          <ChevronLeft className="w-7 h-7" />
         </button>
 
         <button
           onClick={() => handleTransition(onNext)}
-          className="absolute right-4 top-1/2 -translate-y-1/2 p-3 rounded-full bg-black/30 
-                     text-white hover:bg-black/50 transition-all duration-200 backdrop-blur-sm z-50"
+          className="absolute right-4 top-1/2 -translate-y-1/2 p-3 text-paper/70 hover:text-paper
+                     transition-colors duration-200 z-50"
           aria-label="Next image"
         >
-          <ChevronRight className="w-6 h-6" />
+          <ChevronRight className="w-7 h-7" />
         </button>
 
         <div className="relative w-full h-full max-w-7xl max-h-[90vh] mx-auto px-4">
@@ -129,16 +129,15 @@ export default function ImageLightbox({
           />
           
           {(currentImage.caption || currentImage.locationId) && (
-            <div className="absolute bottom-4 left-4 right-4 p-6 bg-black/30 backdrop-blur-sm 
-                          rounded-xl border border-white/10">
-              <div className="max-w-3xl mx-auto">
+            <div className="absolute bottom-4 left-4 right-4 px-6 py-5 bg-ink/50 backdrop-blur-sm">
+              <div className="max-w-3xl mx-auto text-center">
                 {currentImage.caption && (
-                  <h3 className="text-white text-lg font-medium mb-1">
+                  <h3 className="font-display text-paper text-xl tracking-tight mb-1">
                     {currentImage.caption}
                   </h3>
                 )}
                 {currentImage.locationId && (
-                  <p className="text-gray-300 text-sm">
+                  <p className="text-[11px] uppercase tracking-[0.2em] text-paper/60">
                     {currentImage.locationId}
                   </p>
                 )}
@@ -147,8 +146,8 @@ export default function ImageLightbox({
           )}
         </div>
 
-        <div className="absolute bottom-4 right-4 px-3 py-1 rounded-full bg-black/30 backdrop-blur-sm 
-                      text-white text-sm z-50">
+        <div className="absolute bottom-4 right-4 px-3 py-1 bg-ink/50 backdrop-blur-sm
+                      text-paper/80 text-[12px] tracking-[0.14em] tabular-nums z-50">
           {currentIndex + 1} / {images.length}
         </div>
       </div>

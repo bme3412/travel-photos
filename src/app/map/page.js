@@ -41,8 +41,8 @@ async function getMapData() {
 export const revalidate = 3600;
 
 export const metadata = {
-  title: 'Travel Map | 🛫 Passport & Ponder 🌎',
-  description: '🗺️ Explore the places I\'ve visited around the world',
+  title: 'Travel Map | Passport & Ponder',
+  description: 'Every country and stop from the journal, mapped',
 };
 
 export default async function MapPage() {

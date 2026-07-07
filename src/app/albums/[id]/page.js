@@ -15,7 +15,7 @@ export async function generateMetadata({ params }) {
 
     if (!albumsData || !photosData) {
       return {
-        title: 'Album | 🛫 Passport & Ponder 🌎',
+        title: 'Album | Passport & Ponder',
         description: 'Travel photo album',
       };
     }
@@ -26,7 +26,7 @@ export async function generateMetadata({ params }) {
 
     if (!album) {
       return {
-        title: 'Album Not Found | 🛫 Passport & Ponder 🌎',
+        title: 'Album Not Found | Passport & Ponder',
         description: 'This album could not be found',
       };
     }
@@ -39,7 +39,7 @@ export async function generateMetadata({ params }) {
     const coverPhotoUrl = coverPhoto ? transformToCloudFront(coverPhoto.url) : null;
 
     return {
-      title: `${album.name} | 🛫 Passport & Ponder 🌎`,
+      title: `${album.name} | Passport & Ponder`,
       description: `View ${albumPhotos.length} photos from ${album.name} (${album.year})`,
       openGraph: {
         title: `${album.name}`,
@@ -63,7 +63,7 @@ export async function generateMetadata({ params }) {
   } catch (error) {
     console.error('Error generating metadata:', error);
     return {
-      title: 'Album | 🛫 Passport & Ponder 🌎',
+      title: 'Album | Passport & Ponder',
       description: 'Travel photo album',
     };
   }

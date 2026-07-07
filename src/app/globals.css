@@ -99,11 +99,11 @@
   }
 
   .mapboxgl-popup-content {
-    @apply p-0 rounded-2xl overflow-hidden shadow-none bg-transparent border-0;
-    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
-    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(255, 255, 255, 0.8);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    @apply p-0 overflow-hidden shadow-none border-0;
+    background: #FAF6EF;
+    box-shadow: 0 20px 40px -16px rgba(27, 23, 19, 0.35);
+    border: 1px solid rgba(27, 23, 19, 0.1);
+    border-radius: 0;
     animation: popup-appear 0.3s ease-out;
     pointer-events: auto;
     /* Stability improvements */
@@ -116,15 +116,15 @@
   }
 
   .mapboxgl-popup-close-button {
-    @apply right-3 top-3 p-2 text-gray-600 text-lg rounded-xl transition-all duration-300;
-    background: rgba(255, 255, 255, 0.8);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    @apply right-3 top-3 p-2 text-lg transition-colors duration-300;
+    color: rgba(27, 23, 19, 0.4);
+    background: transparent;
     z-index: 61 !important;
   }
 
   .mapboxgl-popup-close-button:hover {
-    @apply bg-white text-gray-800 shadow-md scale-105;
+    color: #1B1713;
+    background: transparent;
   }
 
   /* Enhanced Controls */
@@ -133,10 +133,12 @@
   }
 
   .mapboxgl-ctrl-group {
-    @apply rounded-xl overflow-hidden shadow-lg bg-white border-0;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    background: rgba(255, 255, 255, 0.95);
+    @apply overflow-hidden border-0;
+    border-radius: 0;
+    border: 1px solid rgba(27, 23, 19, 0.1);
+    background: rgba(250, 246, 239, 0.95);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
   }
 
   /* Enhanced Popup Animations */
@@ -190,7 +192,7 @@
   /* Override Mapbox popup defaults for consistent styling */
   .mapboxgl-popup-content {
     padding: 0 !important;
-    border-radius: 16px !important;
+    border-radius: 0 !important;
     overflow: hidden !important;
     box-shadow: none !important;
     background: transparent !important;
@@ -202,7 +204,7 @@
   }
 
   .mapboxgl-ctrl-group button:hover {
-    @apply bg-gray-50 scale-105;
+    background: rgba(27, 23, 19, 0.05);
   }
 
   .mapboxgl-ctrl-group button.mapboxgl-ctrl-zoom-in .mapboxgl-ctrl-icon {

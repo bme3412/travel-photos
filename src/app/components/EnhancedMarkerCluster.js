@@ -1,7 +1,7 @@
 import React, { useMemo, useCallback, useState, forwardRef, useImperativeHandle, useRef, useEffect } from 'react';
 import { Marker, Popup } from 'react-map-gl';
 import Image from 'next/image';
-import { Eye, MapPin, Calendar, X, Camera } from 'lucide-react';
+import { MapPin, X, Camera } from 'lucide-react';
 import { getSmartPopupPosition, getPopupStyles } from '../utils/smartPopupPosition';
 import { transformToCloudFront } from '../utils/imageUtils';
 
@@ -48,14 +48,12 @@ const PhotoPreview = React.memo(({ photo, onClick, className = "", size = "md" }
   
   return (
     <div 
-      className={`relative cursor-pointer group overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 ${sizes[size]} ${className}`}
+      className={`relative cursor-pointer group overflow-hidden bg-ink/5 transition-opacity duration-300 hover:opacity-90 ${sizes[size]} ${className}`}
       onClick={() => onClick(photo)}
     >
       {!imageLoaded && !imageError && (
-        <div className="absolute inset-0 bg-gradient-to-br from-gray-200 via-gray-300 to-gray-400 animate-pulse flex items-center justify-center">
-          <div className="p-2 bg-white/70 rounded-lg">
-            <Camera className={`${iconSizes[size]} text-gray-500`} />
-          </div>
+        <div className="absolute inset-0 bg-ink/5 animate-pulse flex items-center justify-center">
+          <Camera className={`${iconSizes[size]} text-ink/25`} />
         </div>
       )}
       
@@ -75,25 +73,17 @@ const PhotoPreview = React.memo(({ photo, onClick, className = "", size = "md" }
       )}
       
       {imageError && (
-        <div className="absolute inset-0 bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center">
-          <div className="p-2 bg-white/80 rounded-lg">
-            <MapPin className={`${iconSizes[size]} text-gray-400`} />
-          </div>
+        <div className="absolute inset-0 bg-ink/5 flex items-center justify-center">
+          <MapPin className={`${iconSizes[size]} text-ink/25`} />
         </div>
       )}
-      
-      {/* Enhanced hover overlay */}
+
+      {/* Hover overlay */}
       {imageLoaded && (
-        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300">
-          <div className="absolute inset-0 flex items-center justify-center">
-            <div className="p-2 bg-white/90 rounded-xl transform scale-75 group-hover:scale-100 transition-all duration-300">
-              <Eye className="h-5 w-5 text-gray-700" />
-            </div>
-          </div>
-          
+        <div className="absolute inset-0 bg-gradient-to-t from-ink/70 via-ink/15 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
           {photo.caption && (
-            <div className="absolute bottom-2 left-2 right-2 p-2 bg-black/60 rounded-lg backdrop-blur-sm">
-              <div className="text-xs text-white font-medium line-clamp-2 leading-tight">
+            <div className="absolute bottom-1.5 left-1.5 right-1.5">
+              <div className="text-[11px] text-paper line-clamp-2 leading-tight tracking-wide">
                 {photo.caption}
               </div>
             </div>
@@ -156,32 +146,25 @@ const LocationPopup = React.memo(({
         willChange: 'auto'
       }}
     >
-      {/* Cleaner Header */}
-      <div className="p-4 border-b border-gray-200 bg-white">
-        <div className="flex justify-between items-center mb-2">
-          <h3 className="font-bold text-gray-900 text-lg">
+      {/* Header */}
+      <div className="px-4 pt-4 pb-3 border-b border-ink/10">
+        <div className="flex justify-between items-center">
+          <h3 className="font-display text-lg text-ink tracking-tight">
             {name}
           </h3>
           <button
             onClick={handleClose}
-            className="p-1.5 hover:bg-gray-100 rounded-lg transition-colors"
+            className="p-1 text-ink/40 hover:text-ink transition-colors"
+            aria-label="Close popup"
           >
-            <X className="h-4 w-4 text-gray-500" />
+            <X className="h-4 w-4" />
           </button>
         </div>
-        
-        <div className="flex items-center gap-3 text-sm">
-          <div className="flex items-center gap-1.5 text-teal-600 font-semibold">
-            <MapPin className="h-4 w-4" />
-            <span>{photoCount} photos</span>
-          </div>
-          {formattedDate && (
-            <div className="flex items-center gap-1.5 text-gray-600">
-              <Calendar className="h-4 w-4" />
-              <span>{formattedDate}</span>
-            </div>
-          )}
-        </div>
+
+        <p className="text-[11px] uppercase tracking-[0.16em] text-muted mt-1.5">
+          {photoCount} photographs
+          {formattedDate && <> · {formattedDate}</>}
+        </p>
       </div>
 
       {/* Photo Grid */}
@@ -201,13 +184,14 @@ const LocationPopup = React.memo(({
       )}
 
       {/* Action Buttons */}
-      <div className="p-3 border-t border-gray-200 flex gap-2 bg-gray-50">
+      <div className="px-4 py-3 border-t border-ink/10">
         <button
           onClick={handleOpenSidePanel}
-          className="flex-1 flex items-center justify-center gap-2 px-3 py-2 text-sm font-medium text-white bg-teal-600 hover:bg-teal-700 rounded-lg transition-colors"
+          className="group inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.2em] text-ink/70
+                     border-b border-ink/20 pb-1 hover:border-accent hover:text-ink transition-colors duration-300"
         >
-          <Camera className="h-4 w-4" />
-          View All
+          <Camera className="h-3.5 w-3.5" />
+          View all photographs
         </button>
       </div>
     </div>
@@ -238,18 +222,19 @@ const ClusterPopup = ({ cluster, onLocationSelect, onPhotoClick, onClose }) => {
       }}
     >
       {/* Header with close button */}
-      <div className="p-4 border-b border-gray-100">
+      <div className="px-4 pt-4 pb-3 border-b border-ink/10">
         <div className="flex items-center justify-between mb-3">
-          <h3 className="font-semibold text-gray-900 text-base">
-            {locations.length} Locations
+          <h3 className="font-display text-base text-ink tracking-tight">
+            {locations.length} locations
           </h3>
           <div className="flex items-center gap-2">
-            <span className="text-sm text-indigo-600 font-medium">{totalPhotos} photos</span>
+            <span className="text-[11px] uppercase tracking-[0.16em] text-muted">{totalPhotos} photographs</span>
             <button
               onClick={onClose}
-              className="p-1 hover:bg-gray-100 rounded-full transition-colors duration-200"
+              className="p-1 text-ink/40 hover:text-ink transition-colors duration-200"
+              aria-label="Close popup"
             >
-              <X className="h-4 w-4 text-gray-500" />
+              <X className="h-4 w-4" />
             </button>
           </div>
         </div>
@@ -270,21 +255,18 @@ const ClusterPopup = ({ cluster, onLocationSelect, onPhotoClick, onClose }) => {
       </div>
 
       {/* Location List */}
-      <div className="max-h-48 overflow-y-auto">
+      <div className="max-h-48 overflow-y-auto divide-y divide-ink/10">
         {locations.map((location, i) => (
           <div
             key={i}
-            className="p-3 hover:bg-gray-50 cursor-pointer border-b border-gray-50 last:border-b-0 transition-colors duration-200"
+            className="px-4 py-3 hover:bg-ink/5 cursor-pointer transition-colors duration-200"
             onClick={() => onLocationSelect(location)}
           >
-            <div className="flex justify-between items-center">
-              <div>
-                <div className="font-medium text-gray-900 text-sm">{location.name}</div>
-                <div className="text-xs text-gray-600">{location.photoCount} photos</div>
-              </div>
-              <div className="w-6 h-6 bg-teal-100 rounded-full flex items-center justify-center">
-                <span className="text-xs font-medium text-teal-600">{location.photoCount}</span>
-              </div>
+            <div className="flex justify-between items-center gap-3">
+              <div className="font-display text-sm text-ink tracking-tight truncate">{location.name}</div>
+              <span className="text-[11px] text-muted tabular-nums flex-shrink-0">
+                {location.photoCount}
+              </span>
             </div>
           </div>
         ))}
@@ -358,16 +340,11 @@ const ClusterMarker = React.memo(({ cluster, isSelected, onClick, onMouseEnter, 
         >
           <div className="relative">
             {/* Simple, clean marker with selection state */}
-            <div className={`flex items-center justify-center w-8 h-8 rounded-full text-white border-2 border-white shadow-md ${
-              isSelected ? 'bg-teal-700' : 'bg-teal-600'
+            <div className={`flex items-center justify-center w-8 h-8 rounded-full text-paper border-2 border-paper shadow-md ${
+              isSelected ? 'bg-ink' : 'bg-accent'
             }`}>
               <span className="text-xs font-semibold">{location.photoCount}</span>
             </div>
-            
-            {/* Minimal photo indicator dot */}
-            <div className={`absolute -top-0.5 -right-0.5 w-3 h-3 rounded-full border border-white ${
-              isSelected ? 'bg-orange-600' : 'bg-orange-500'
-            }`}></div>
           </div>
         </div>
       </Marker>
@@ -396,17 +373,15 @@ const ClusterMarker = React.memo(({ cluster, isSelected, onClick, onMouseEnter, 
       >
         <div className="relative">
           {/* Clean cluster marker with selection state */}
-          <div className={`flex items-center justify-center w-10 h-10 rounded-full text-white border-2 border-white shadow-md ${
-            isSelected ? 'bg-indigo-700' : 'bg-indigo-600'
+          <div className={`flex items-center justify-center w-10 h-10 rounded-full text-paper border-2 border-paper shadow-md ${
+            isSelected ? 'bg-ink' : 'bg-accent'
           }`}>
             <span className="text-sm font-semibold">{totalPhotos}</span>
           </div>
-          
+
           {/* Simple location count */}
-          <div className={`absolute -top-0.5 -right-0.5 w-4 h-4 rounded-full flex items-center justify-center border border-white ${
-            isSelected ? 'bg-orange-600' : 'bg-orange-500'
-          }`}>
-            <span className="text-xs text-white font-bold">{locations.length}</span>
+          <div className="absolute -top-0.5 -right-0.5 w-4 h-4 rounded-full flex items-center justify-center border border-paper bg-ink">
+            <span className="text-[10px] text-paper font-bold">{locations.length}</span>
           </div>
         </div>
       </div>

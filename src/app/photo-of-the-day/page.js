@@ -3,8 +3,8 @@ import { readPhotos, readAlbums, readLocations } from '../utils/fileHandler';
 import { enrichPhotoForDisplay } from '../utils/photoEnrichment';
 
 export const metadata = {
-  title: '📸 Photo of the Day | 🛫 Passport & Ponder 🌎',
-  description: '✨ Discover a new stunning travel photo every day from our collection',
+  title: 'Photo of the Day | Passport & Ponder',
+  description: 'A new photograph from the archive every day',
 };
 
 // Disable static generation - we want a random photo on each visit

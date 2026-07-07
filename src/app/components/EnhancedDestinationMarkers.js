@@ -1,8 +1,7 @@
 import React, { useRef, useCallback, useEffect } from 'react';
 import { Marker, Popup } from 'react-map-gl';
-import Link from 'next/link';
 import Image from 'next/image';
-import { CircleDot, MapPin, ExternalLink, Camera, Image as ImageIcon } from 'lucide-react';
+import { CircleDot, Camera } from 'lucide-react';
 import { getSmartPopupPosition, getPopupClasses, getPopupStyles } from '../utils/smartPopupPosition';
 import { transformToCloudFront } from '../utils/imageUtils';
 
@@ -22,80 +21,44 @@ const EnhancedDestinationPopup = ({ destination, onMouseEnter, onMouseLeave, pop
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
     >
-      {/* Header with gradient background */}
-      <div className="p-6 border-b border-gray-100 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50">
-        <div className="flex justify-between items-start mb-3">
-          <h3 className="font-bold text-gray-900 text-xl leading-tight pr-3">
-            {name}
-          </h3>
-          {photoCount > 0 && photos && photos.length > 0 && (
-            <button
-              onClick={() => onOpenSidePanel({ ...destination, name, photos })}
-              className="group p-2.5 hover:bg-white/70 rounded-xl transition-all duration-300 flex-shrink-0 shadow-sm hover:shadow-md transform hover:scale-105"
-              title={`View ${photoCount} photos in side panel`}
-            >
-              <Camera className="h-6 w-6 text-blue-600 group-hover:text-blue-700 transition-colors duration-300" />
-            </button>
-          )}
-        </div>
-        
-        <div className="flex items-center gap-4 text-sm text-gray-600 mb-3">
-          <div className="flex items-center gap-2">
-            <div className="p-1 bg-white/70 rounded-lg">
-              <MapPin className="h-4 w-4 text-gray-500" />
-            </div>
-            <span className="font-medium">{country}</span>
-          </div>
-          {photoCount > 0 && photos && photos.length > 0 && (
-            <div className="flex items-center gap-2">
-              <div className="p-1 bg-blue-100/70 rounded-lg">
-                <Camera className="h-4 w-4 text-blue-600" />
-              </div>
-              <span className="font-medium text-blue-700">{photoCount} photos</span>
-            </div>
-          )}
-        </div>
-        
+      {/* Header */}
+      <div className="px-5 pt-5 pb-4 border-b border-ink/10">
+        <h3 className="font-display text-xl text-ink tracking-tight leading-tight pr-3">
+          {name}
+        </h3>
+        <p className="text-[11px] uppercase tracking-[0.18em] text-muted mt-2">
+          {country}
+          {photoCount > 0 && <> · {photoCount} photographs</>}
+        </p>
+
         {description && (
-          <p className="text-sm text-gray-700 leading-relaxed font-medium">
+          <p className="text-[13px] text-ink/75 leading-relaxed mt-3">
             {description}
           </p>
         )}
       </div>
 
-      {/* Photo Preview Section */}
+      {/* Photo preview */}
       {previewPhotos.length > 0 && (
-        <div className="p-4 bg-gradient-to-br from-gray-50 to-blue-50/30">
-          <div className="flex items-center gap-2 mb-3">
-            <div className="p-1.5 bg-blue-100 rounded-lg">
-              <ImageIcon className="h-4 w-4 text-blue-600" />
-            </div>
-            <span className="text-sm font-semibold text-gray-700">Photo Preview</span>
-          </div>
-          
+        <div className="px-5 py-4">
           <div className="grid grid-cols-3 gap-2">
             {previewPhotos.map((photo, index) => (
               <div
                 key={photo.id || index}
-                className="relative aspect-square rounded-xl overflow-hidden cursor-pointer hover:scale-105 transition-all duration-300 shadow-md hover:shadow-lg group"
+                className="relative aspect-square overflow-hidden cursor-pointer bg-ink/5 group"
                 onClick={() => onOpenSidePanel({ ...destination, name, photos })}
               >
                 <Image
                   src={transformToCloudFront(photo.url)}
                   alt={photo.caption || `${name} photo ${index + 1}`}
                   fill
-                  className="object-cover group-hover:scale-110 transition-transform duration-500"
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
                   sizes="120px"
                 />
-                
-                {/* Hover overlay */}
-                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300 flex items-center justify-center">
-                  <Camera className="h-5 w-5 text-white opacity-0 group-hover:opacity-100 transition-all duration-300 transform scale-75 group-hover:scale-100" />
-                </div>
-                
+
                 {/* Photo counter for first image */}
                 {index === 0 && photoCount > 3 && (
-                  <div className="absolute bottom-1 right-1 px-2 py-1 bg-black/70 text-white text-xs font-medium rounded-md backdrop-blur-sm">
+                  <div className="absolute bottom-1 right-1 px-1.5 py-0.5 bg-ink/70 text-paper text-[10px] tracking-[0.1em] backdrop-blur-sm">
                     +{photoCount - 3}
                   </div>
                 )}
@@ -105,16 +68,19 @@ const EnhancedDestinationPopup = ({ destination, onMouseEnter, onMouseLeave, pop
         </div>
       )}
 
-      {/* Actions with enhanced styling */}
-      <div className="p-5 bg-gradient-to-br from-gray-50 to-white">
-        <Link 
-          href={`/`}
-          className="group flex items-center justify-center gap-3 w-full px-4 py-3 text-sm font-semibold text-white bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-[1.02]"
-        >
-          <ExternalLink className="h-4 w-4 group-hover:scale-110 transition-transform duration-300" />
-          View Albums
-        </Link>
-      </div>
+      {/* Actions */}
+      {photoCount > 0 && photos && photos.length > 0 && (
+        <div className="px-5 pb-5">
+          <button
+            onClick={() => onOpenSidePanel({ ...destination, name, photos })}
+            className="group inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.2em] text-ink/70
+                       border-b border-ink/20 pb-1 hover:border-accent hover:text-ink transition-colors duration-300"
+          >
+            <Camera className="h-3.5 w-3.5" />
+            View all photographs
+          </button>
+        </div>
+      )}
     </div>
   );
 };
@@ -131,11 +97,11 @@ const CustomDestinationMarker = ({ onClick, onMouseEnter, onMouseLeave, isHovere
     onMouseLeave={onMouseLeave}
   >
     {/* Simple, clean marker */}
-    <div className={`w-6 h-6 rounded-full shadow-md transform transition-transform duration-200 ease-out ${
+    <div className={`w-5 h-5 rounded-full shadow-md transform transition-transform duration-200 ease-out ${
       isHovered ? 'scale-110' : 'hover:scale-105'
-    } border-2 border-white bg-indigo-600`}>
+    } border-2 border-paper bg-accent`}>
       <div className="absolute inset-0 flex items-center justify-center">
-        <CircleDot className="h-3 w-3 text-white" />
+        <CircleDot className="h-3 w-3 text-paper" />
       </div>
     </div>
   </div>
