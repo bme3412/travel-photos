@@ -24,7 +24,6 @@ const NAV_LINKS = [
   { href: '/', label: 'Albums' },
   { href: '/map', label: 'Map' },
   { href: '/photo-of-the-day', label: 'Photo of the Day' },
-  { href: '/bucket-list', label: 'Bucket List' },
 ];
 
 export default function RootLayout({ children }) {
