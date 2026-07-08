@@ -25,29 +25,22 @@ const formatMeta = (album) => {
 // Rotating multi-destination hero: crossfades between the featured albums,
 // auto-advances, and exposes a destination selector. Pauses on hover.
 
-const FeaturedHero = ({ albums }) => {
+// A brand / value-proposition front door — rotating cover imagery as an
+// ambient backdrop behind the journal's statement and primary CTAs. It no
+// longer spotlights a specific album (the dispatches feed below does that).
+const FeaturedHero = ({ albums, stats }) => {
   const [active, setActive] = useState(0);
-  const [paused, setPaused] = useState(false);
 
   useEffect(() => {
-    if (paused || albums.length < 2) return;
-    const timer = setInterval(() => {
-      setActive((index) => (index + 1) % albums.length);
-    }, 6000);
+    if (albums.length < 2) return undefined;
+    const timer = setInterval(() => setActive((index) => (index + 1) % albums.length), 6000);
     return () => clearInterval(timer);
-  }, [paused, albums.length, active]);
+  }, [albums.length]);
 
-  if (!albums.length) return null;
-
-  const album = albums[active];
-  const { flag, title } = splitFlag(album.name);
+  const latest = albums[0];
 
   return (
-    <section
-      className="relative w-full h-[72vh] min-h-[480px] overflow-hidden bg-ink"
-      onMouseEnter={() => setPaused(true)}
-      onMouseLeave={() => setPaused(false)}
-    >
+    <section className="relative w-full h-[78vh] min-h-[520px] overflow-hidden bg-ink">
       {albums.map((slide, index) => (
         <div
           key={slide.id}
@@ -57,7 +50,7 @@ const FeaturedHero = ({ albums }) => {
         >
           <Image
             src={slide.coverPhoto.url}
-            alt={slide.coverPhoto.caption || `Cover photo for ${slide.name}`}
+            alt=""
             fill
             priority={index === 0}
             sizes="100vw"
@@ -65,93 +58,46 @@ const FeaturedHero = ({ albums }) => {
           />
         </div>
       ))}
-      <div className="absolute inset-0 bg-gradient-to-t from-ink/80 via-ink/25 to-ink/10" />
+      <div className="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/45 to-ink/30" />
 
-      {/* Destination selector — desktop, bottom right */}
-      <div className="hidden md:flex flex-col items-end gap-2.5 absolute right-6 lg:right-10 bottom-14 z-10">
-        {albums.map((slide, index) => {
-          const slideTitle = splitFlag(slide.name).title;
-          return (
-            <button
-              key={slide.id}
-              onClick={() => setActive(index)}
-              className={`group/sel flex items-center gap-3 text-[11px] uppercase tracking-[0.2em] transition-colors duration-300 ${
-                index === active ? 'text-paper' : 'text-paper/45 hover:text-paper/80'
-              }`}
+      <div className="relative mx-auto flex h-full max-w-7xl flex-col justify-end px-6 pb-14 md:pb-20">
+        <p className="fade-up text-[11px] uppercase tracking-[0.35em] text-paper/70 mb-5">
+          Passport &amp; Ponder — a travel journal
+        </p>
+        <h1 className="fade-up fade-up-1 font-display text-4xl sm:text-6xl md:text-7xl text-paper leading-[1.03] tracking-tight max-w-4xl">
+          A photographic journal across {stats.countries} countries and six continents.
+        </h1>
+        <div className="fade-up fade-up-2 mt-8 flex flex-wrap items-center gap-x-5 gap-y-4">
+          {latest && (
+            <Link
+              href={`/journal/${latest.id}`}
+              className="group inline-flex items-center gap-2.5 rounded-full bg-accent px-6 py-3
+                         text-[11px] uppercase tracking-[0.2em] text-paper transition-colors duration-300 hover:bg-paper hover:text-ink"
             >
-              <span>{slideTitle}</span>
-              <span
-                className={`h-px transition-all duration-500 ${
-                  index === active ? 'w-10 bg-accent' : 'w-4 bg-paper/40 group-hover/sel:bg-paper/70'
-                }`}
-              />
-            </button>
-          );
-        })}
-      </div>
-
-      <div className="absolute inset-x-0 bottom-0">
-        <div className="max-w-7xl mx-auto px-6 pb-12 md:pb-16">
-          {/* Re-keyed so the entrance animation replays per destination */}
-          <div key={album.id}>
-            <p className="fade-up text-[11px] uppercase tracking-[0.3em] text-paper/70 mb-4">
-              Featured journal {flag && <span className="ml-1">{flag}</span>} — {album.year}
-            </p>
-            <h1 className="fade-up fade-up-1 font-display text-5xl md:text-7xl text-paper leading-[1.02] tracking-tight max-w-3xl">
-              {title}
-            </h1>
-            <div className="fade-up fade-up-2 mt-6 flex items-center gap-6">
-              <Link
-                href={`/journal/${album.id}`}
-                className="group inline-flex items-center gap-2 text-paper text-[12px] uppercase tracking-[0.2em]
-                           border-b border-paper/40 pb-1 hover:border-accent hover:text-paper transition-colors duration-300"
-              >
-                Read the dispatch
-                <ArrowRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1" />
-              </Link>
-              <span className="text-[11px] uppercase tracking-[0.2em] text-paper/60">
-                {album.photoCount} photographs
-              </span>
-            </div>
-          </div>
-
-          {/* Destination selector — mobile, tick marks */}
-          <div className="flex md:hidden items-center gap-2 mt-7">
-            {albums.map((slide, index) => (
-              <button
-                key={slide.id}
-                onClick={() => setActive(index)}
-                aria-label={`Show ${splitFlag(slide.name).title}`}
-                className="py-2"
-              >
-                <span
-                  className={`block h-px transition-all duration-500 ${
-                    index === active ? 'w-8 bg-accent' : 'w-4 bg-paper/40'
-                  }`}
-                />
-              </button>
-            ))}
-          </div>
+              Read the latest dispatch
+              <ArrowRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1" />
+            </Link>
+          )}
+          <Link
+            href="/map"
+            className="group inline-flex items-center gap-2 border-b border-paper/40 pb-1 text-[11px] uppercase
+                       tracking-[0.2em] text-paper transition-colors duration-300 hover:border-accent"
+          >
+            Explore the map
+            <ArrowRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1" />
+          </Link>
         </div>
+        <p className="fade-up fade-up-2 mt-7 text-[11px] uppercase tracking-[0.25em] text-paper/60">
+          <span className="text-paper">{stats.countries}</span> countries &amp; territories
+          <span className="mx-2.5 text-paper/30">·</span>
+          <span className="text-paper">{stats.photos.toLocaleString()}</span> photographs
+          <span className="mx-2.5 text-paper/30">·</span>
+          <span className="text-paper">{stats.albums}</span> journals
+        </p>
       </div>
     </section>
   );
 };
-
-// ——————————————————————————— Stats strip ———————————————————————————
-// A single slim line — present but quiet.
-
-const StatsStrip = ({ stats }) => (
-  <div className="border-b border-ink/10">
-    <div className="max-w-7xl mx-auto px-6 py-3 flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-[11px] uppercase tracking-[0.2em] text-muted">
-      <span><span className="text-ink">{stats.countries}</span> countries &amp; territories</span>
-      <span aria-hidden="true">·</span>
-      <span><span className="text-ink">{stats.photos.toLocaleString()}</span> photographs</span>
-      <span aria-hidden="true">·</span>
-      <span><span className="text-ink">{stats.albums}</span> albums</span>
-    </div>
-  </div>
-);
 
 // ————————————————————————————— Cards —————————————————————————————
 
@@ -518,8 +464,7 @@ const PhotoAlbumExplorer = ({ initialAlbums = null }) => {
 
   return (
     <div>
-      <FeaturedHero albums={featuredAlbums} />
-      <StatsStrip stats={stats} />
+      <FeaturedHero albums={featuredAlbums} stats={stats} />
 
       <div className="max-w-7xl mx-auto px-6 pt-14 pb-20">
         {/* Section header */}
