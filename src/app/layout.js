@@ -54,6 +54,16 @@ export default function RootLayout({ children }) {
                     {label}
                   </Link>
                 ))}
+                {/* Local authoring tool — never rendered in the production build */}
+                {process.env.NODE_ENV !== 'production' && (
+                  <Link
+                    href="/studio"
+                    className="inline-flex items-center gap-1.5 rounded-full border border-accent/40 text-accent
+                               px-2.5 py-1 hover:bg-accent hover:text-paper transition-colors duration-200 whitespace-nowrap"
+                  >
+                    Studio
+                  </Link>
+                )}
               </nav>
             </div>
           </div>
