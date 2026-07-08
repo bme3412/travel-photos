@@ -1,6 +1,12 @@
-import { readAlbums, readPhotos } from '../../utils/fileHandler';
+import {
+  readAlbums,
+  readPhotos,
+  readLocations,
+  readDestinations,
+} from '../../utils/fileHandler';
 import AlbumPageClient from './AlbumPageClient';
 import { transformToCloudFront } from '../../utils/imageUtils';
+import { buildTrip } from '../../utils/tripBuilder';
 
 // Generate dynamic metadata for each album
 export async function generateMetadata({ params }) {
@@ -90,9 +96,11 @@ export async function generateStaticParams() {
 // Server-side data fetching for album
 async function getAlbumData(id) {
   try {
-    const [albumsData, photosData] = await Promise.all([
+    const [albumsData, photosData, locationsData, destinationsData] = await Promise.all([
       readAlbums(),
-      readPhotos()
+      readPhotos(),
+      readLocations(),
+      readDestinations(),
     ]);
 
     if (!albumsData || !photosData) {
@@ -117,10 +125,19 @@ async function getAlbumData(id) {
         url: transformToCloudFront(photo.url)
       }));
 
+    // A lightweight summary of the replayable trip, so the album page can
+    // advertise the replay (stop count + distance) without shipping the full
+    // per-stop payload to the client.
+    const trip = buildTrip(album, photosData, locationsData, destinationsData);
+    const tripSummary = trip
+      ? { stopCount: trip.stops.length, totalKm: trip.totalKm, visitCount: trip.visits.length }
+      : null;
+
     return {
       ...album,
       photos: albumPhotos,
-      photoCount: albumPhotos.length
+      photoCount: albumPhotos.length,
+      tripSummary,
     };
   } catch (error) {
     console.error('Error fetching album data:', error);

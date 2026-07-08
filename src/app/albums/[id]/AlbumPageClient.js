@@ -4,7 +4,7 @@ import React, { useState, useEffect, Suspense } from 'react';
 import Image from 'next/image';
 import usePhotoStore from '../../store/usePhotoStore';
 import ImageLightbox from '../../components/ImageLightbox';
-import { ArrowLeft, Camera } from 'lucide-react';
+import { ArrowLeft, Camera, Play, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 import { transformToCloudFront } from '../../utils/imageUtils';
 
@@ -96,6 +96,19 @@ export default function AlbumPageClient({ initialAlbum }) {
 
   const { flag, title } = splitFlag(currentAlbum.name);
 
+  // Prominent replay call-to-action, shown on initial load above the grid.
+  const coverUrl = currentAlbum.photos?.[0]?.url || null;
+  const trip = currentAlbum.tripSummary;
+  const isMultiStop = trip && trip.stopCount > 1;
+  const replayMeta = trip
+    ? [
+        isMultiStop ? `${trip.stopCount} stops` : null,
+        trip.totalKm > 0 ? `~${trip.totalKm.toLocaleString()} km` : null,
+      ]
+        .filter(Boolean)
+        .join(' · ')
+    : '';
+
   return (
     <div className="min-h-screen">
       {/* Album masthead */}
@@ -137,19 +150,51 @@ export default function AlbumPageClient({ initialAlbum }) {
                   {label}
                 </button>
               ))}
-              <Link
-                href={`/trips/${currentAlbum.id}`}
-                className="pb-1 border-b border-transparent text-muted hover:text-ink transition-colors duration-200"
-                aria-label="Replay this trip on the map"
-              >
-                Replay
-              </Link>
             </div>
           </div>
         </div>
       </div>
 
       <div className="max-w-7xl mx-auto px-6 pb-20">
+        {/* Replay journey — prominent CTA into the trip replay */}
+        <Link
+          href={`/trips/${currentAlbum.id}`}
+          className="group relative block overflow-hidden rounded-2xl border border-ink/10 shadow-sm mt-8"
+          aria-label={`Replay ${title} on the map`}
+        >
+          {coverUrl && (
+            <div className="absolute inset-0">
+              <Image
+                src={coverUrl}
+                alt=""
+                fill
+                sizes="(min-width: 1280px) 1216px, 100vw"
+                className="object-cover object-center transition-transform duration-[1200ms] ease-out group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-r from-ink/90 via-ink/70 to-ink/35" />
+            </div>
+          )}
+          <div className="relative flex items-center gap-4 sm:gap-6 px-5 sm:px-9 py-7 sm:py-11">
+            <span
+              className="flex h-14 w-14 sm:h-16 sm:w-16 flex-shrink-0 items-center justify-center rounded-full
+                         bg-accent text-paper shadow-lg transition-transform duration-300 group-hover:scale-110"
+            >
+              <Play className="h-6 w-6 sm:h-7 sm:w-7 fill-current translate-x-0.5" />
+            </span>
+            <div className="min-w-0">
+              <p className="text-[11px] uppercase tracking-[0.3em] text-paper/70 mb-1.5">Trip replay</p>
+              <h2 className="font-display text-2xl sm:text-3xl md:text-4xl tracking-tight text-paper leading-tight">
+                Replay the journey
+              </h2>
+              <p className="mt-2 text-sm sm:text-[15px] text-paper/85">
+                Retrace {title} on the map, {isMultiStop ? 'stop by stop' : 'frame by frame'}
+                {replayMeta && <span className="text-paper/60"> · {replayMeta}</span>}
+              </p>
+            </div>
+            <ArrowRight className="ml-auto hidden sm:block h-6 w-6 flex-shrink-0 text-paper/70 transition-transform duration-300 group-hover:translate-x-1.5" />
+          </div>
+        </Link>
+
         {view === 'map' ? (
           <div className="space-y-6 pt-8">
             <div className="overflow-x-auto">
