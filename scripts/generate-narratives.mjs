@@ -41,21 +41,21 @@ You will receive structured metadata for one trip: the album, its stops in itine
 An album can span several separate visits (returns to the same country months or years apart); each stop carries a "visit" label when its dates are known. The same place can appear as a stop in more than one visit — treat each as its own moment in time.
 
 Write:
-1. An "intro" — 2 or 3 sentences (at most 60 words) that frames the whole journey: its shape, its contrast, what made it distinctive.
-2. One beat per stop — 1 or 2 sentences (at most 40 words) capturing what the traveler saw and did there, drawing on the captions.
+1. An "intro" — 3 or 4 sentences (at most 90 words) that frames the whole journey: its shape, its contrast, the arc from first stop to last, and what made it distinctive.
+2. One beat per stop — a small paragraph of 3 to 5 sentences (roughly 60 to 110 words) that gives the stop room to breathe: what the traveler saw and did there, the texture and rhythm of the place, moving from one concrete detail to the next. Draw richly on the captions and destination description; develop the moment rather than summarizing it in a single line. A stop that is the whole trip (the only stop in its album) deserves the fuller end of that range.
 
 Voice and rules:
 - Past tense, warm but spare. First-person-adjacent ("a short prologue", "three days among...") without overusing "I".
 - Ground EVERY detail strictly in the provided metadata. The captions are the traveler's own words — mine them for specifics. Never invent events, weather, food, emotions, companions, or landmarks not present in the data.
 - Numbers earn their place: distances, day counts, and photo counts can carry drama ("3,700 km of Pacific"), but don't recite them all.
-- When material is thin (placeholder captions like a bare city name, no tags), stay short and lean on the destination description and geography — do not pad with travel-brochure generalities.
+- When material is genuinely thin (placeholder captions like a bare city name, no tags), lean on the destination description and geography and stay proportionate — do not pad with travel-brochure generalities. But when captions and tags are plentiful, use them: a stop with dozens of photographs has a story worth telling at length.
 - Never mention photos, captions, tags, or metadata as such; write about the journey itself.
 - If dates are marked unreliable, do not mention specific dates or durations derived from them.
 
 Example of the register, for a trip with stops Santiago and Easter Island:
-intro: "Four days in March, split between a capital and the most remote inhabited island on Earth — a short city prologue in Santiago, then 3,700 kilometers of Pacific to reach the moai."
-Santiago: "One afternoon among clock towers and glass — the old and new skylines of Santiago, photographed on the way to somewhere much stranger."
-Easter Island: "Three days circling the moai: rows of them on grassy hills, lone sentinels in profile at sunset, the Rano Kau crater, and a dog asleep at the feet of statues that have watched the ocean for centuries."`;
+intro: "Four days in March, split between a capital and the most remote inhabited island on Earth. A short city prologue in Santiago gave way to 3,700 kilometers of open Pacific, and then the moai. The contrast was the whole point — glass towers and traffic on one end, wind-scoured volcanic grassland on the other — two places that could hardly be farther apart in feel while sharing a single country."
+Santiago: "An afternoon in the capital, spent among clock towers and mirrored glass where the old skyline and the new stand shoulder to shoulder. The streets carried the ordinary momentum of a working city — plazas, facades, the light coming off tall windows — all of it photographed in passing, on the way to somewhere much stranger. A prologue rather than a destination, but one worth slowing down for."
+Easter Island: "Three days circling the moai: rows of them lined along grassy hills, lone sentinels caught in profile as the sun dropped, the great open bowl of the Rano Kau crater holding its lake. The scale kept shifting — vast ocean horizons one moment, then a single carved face at close range the next. A dog slept at the feet of statues that have watched the water for centuries, indifferent to the weight of it all."`;
 
 const OUTPUT_SCHEMA = {
   type: 'object',
