@@ -1,6 +1,8 @@
 'use client';
 
 import { useState, useEffect, useRef, useCallback } from 'react';
+import BlockEditor from './BlockEditor';
+import { parseBlocks, serializeBlocks, makeBlock } from './blocks';
 
 const FRONTMATTER_FIELDS = [
   { key: 'title', label: 'Title', type: 'text' },
@@ -11,7 +13,7 @@ const FRONTMATTER_FIELDS = [
   { key: 'excerpt', label: 'Excerpt (feed)', type: 'textarea' },
 ];
 
-const SNIPPETS = [
+const RAW_SNIPPETS = [
   { label: 'H2', text: '\n## Heading\n\n' },
   { label: 'Quote', text: '\n<PullQuote>A line worth pulling out.</PullQuote>\n\n' },
   { label: 'Figure', text: '\n<Figure src="" caption="" />\n\n' },
@@ -22,23 +24,32 @@ export default function Studio() {
   const [posts, setPosts] = useState([]);
   const [selected, setSelected] = useState(null);
   const [fm, setFm] = useState(null);
-  const [body, setBody] = useState('');
+  const [blocks, setBlocks] = useState([]);
+  const [body, setBody] = useState(''); // raw-mode source
+  const [mode, setMode] = useState('blocks');
   const [photos, setPhotos] = useState([]);
   const [dirty, setDirty] = useState(false);
   const [saving, setSaving] = useState(false);
   const [status, setStatus] = useState('');
-  const [rightTab, setRightTab] = useState('preview');
+  const [rightTab, setRightTab] = useState('photos');
   const [previewKey, setPreviewKey] = useState(0);
   const bodyRef = useRef(null);
 
   const refreshList = useCallback(() => {
-    fetch('/api/journal/posts')
-      .then((r) => r.json())
-      .then(setPosts)
-      .catch(() => {});
+    fetch('/api/journal/posts').then((r) => r.json()).then(setPosts).catch(() => {});
   }, []);
-
   useEffect(refreshList, [refreshList]);
+
+  const photoUrl = useCallback(
+    (file) => {
+      if (!file) return null;
+      const hit =
+        photos.find((p) => p.file === file) ||
+        photos.find((p) => p.file.includes(file) || file.includes(p.file));
+      return hit ? hit.url : null;
+    },
+    [photos]
+  );
 
   const loadPost = useCallback(
     async (id) => {
@@ -52,7 +63,9 @@ export default function Studio() {
       setSelected(id);
       setFm(data.frontmatter || {});
       setBody(data.body || '');
+      setBlocks(parseBlocks(data.body || ''));
       setPhotos(data.photos || []);
+      setMode('blocks');
       setDirty(false);
       setStatus('');
       setPreviewKey((k) => k + 1);
@@ -64,19 +77,35 @@ export default function Studio() {
     setFm((prev) => ({ ...prev, [key]: value }));
     setDirty(true);
   };
+  const changeBlocks = (next) => {
+    setBlocks(next);
+    setDirty(true);
+  };
+  const addBlock = (block) => changeBlocks([...blocks, block]);
+
+  const toRaw = () => {
+    setBody(serializeBlocks(blocks));
+    setMode('raw');
+  };
+  const toBlocks = () => {
+    setBlocks(parseBlocks(body));
+    setMode('blocks');
+  };
 
   const save = useCallback(async () => {
     if (!selected || !fm) return;
+    const finalBody = mode === 'blocks' ? serializeBlocks(blocks) : body;
     setSaving(true);
     setStatus('Saving…');
     try {
       const res = await fetch(`/api/journal/post/${selected}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ frontmatter: fm, body }),
+        body: JSON.stringify({ frontmatter: fm, body: finalBody }),
       });
       const data = await res.json();
       if (!res.ok) throw new Error(data.error || 'Save failed');
+      setBody(finalBody);
       setDirty(false);
       setStatus('Saved ✓');
       setPreviewKey((k) => k + 1);
@@ -86,7 +115,7 @@ export default function Studio() {
     } finally {
       setSaving(false);
     }
-  }, [selected, fm, body, refreshList]);
+  }, [selected, fm, blocks, body, mode, refreshList]);
 
   useEffect(() => {
     const handler = (e) => {
@@ -108,14 +137,17 @@ export default function Studio() {
     }
     const start = ta.selectionStart;
     const end = ta.selectionEnd;
-    const next = body.slice(0, start) + text + body.slice(end);
-    setBody(next);
+    setBody(body.slice(0, start) + text + body.slice(end));
     setDirty(true);
     requestAnimationFrame(() => {
       ta.focus();
-      const pos = start + text.length;
-      ta.selectionStart = ta.selectionEnd = pos;
+      ta.selectionStart = ta.selectionEnd = start + text.length;
     });
+  };
+
+  const onPhotoActivate = (file) => {
+    if (mode === 'blocks') addBlock(makeBlock('figure', { src: file, caption: '', wide: false }));
+    else insertAtCursor(`\n<Figure src="${file}" caption="" />\n\n`);
   };
 
   const input =
@@ -123,23 +155,23 @@ export default function Studio() {
 
   return (
     <div className="flex h-[calc(100dvh-4rem)] min-h-[520px] bg-paper text-ink">
-      {/* Sidebar — post list */}
-      <aside className="w-60 flex-shrink-0 border-r border-ink/10 overflow-y-auto">
-        <div className="px-4 py-3 border-b border-ink/10 sticky top-0 bg-paper">
+      {/* Sidebar */}
+      <aside className="w-56 flex-shrink-0 overflow-y-auto border-r border-ink/10">
+        <div className="sticky top-0 border-b border-ink/10 bg-paper px-4 py-3">
           <p className="text-[11px] uppercase tracking-[0.25em] text-accent">Studio</p>
-          <p className="text-[11px] text-muted mt-0.5">{posts.length} posts</p>
+          <p className="mt-0.5 text-[11px] text-muted">{posts.length} posts</p>
         </div>
         <ul className="py-2">
           {posts.map((post) => (
             <li key={post.id}>
               <button
                 onClick={() => loadPost(post.id)}
-                className={`w-full text-left px-4 py-2 text-sm flex items-center gap-2 transition-colors ${
+                className={`flex w-full items-center gap-2 px-4 py-2 text-left text-sm transition-colors ${
                   selected === post.id ? 'bg-accent/10 text-ink' : 'text-ink/70 hover:bg-ink/5'
                 }`}
               >
                 <span
-                  className={`h-1.5 w-1.5 rounded-full flex-shrink-0 ${
+                  className={`h-1.5 w-1.5 flex-shrink-0 rounded-full ${
                     post.published ? 'bg-accent' : 'bg-ink/20'
                   }`}
                   title={post.published ? 'Published' : 'Draft'}
@@ -155,21 +187,21 @@ export default function Studio() {
       </aside>
 
       {/* Editor */}
-      <main className="flex-1 min-w-0 flex flex-col">
+      <main className="flex min-w-0 flex-1 flex-col">
         {!selected ? (
-          <div className="flex-1 flex items-center justify-center text-center px-6">
+          <div className="flex flex-1 items-center justify-center px-6 text-center">
             <div>
-              <p className="font-display text-2xl text-ink/70 mb-2">Journal Studio</p>
+              <p className="mb-2 font-display text-2xl text-ink/70">Journal Studio</p>
               <p className="text-sm text-muted">Choose a post on the left to start writing.</p>
             </div>
           </div>
         ) : (
           <>
             {/* Toolbar */}
-            <div className="flex items-center justify-between gap-3 px-4 py-2.5 border-b border-ink/10">
-              <div className="flex items-center gap-3 min-w-0">
-                <span className="text-sm font-medium truncate">{selected}.mdx</span>
-                <label className="flex items-center gap-1.5 text-[11px] uppercase tracking-[0.15em] text-ink/70 cursor-pointer">
+            <div className="flex items-center justify-between gap-3 border-b border-ink/10 px-4 py-2.5">
+              <div className="flex min-w-0 items-center gap-3">
+                <span className="truncate text-sm font-medium">{selected}.mdx</span>
+                <label className="flex cursor-pointer items-center gap-1.5 text-[11px] uppercase tracking-[0.15em] text-ink/70">
                   <input
                     type="checkbox"
                     checked={fm?.published !== false}
@@ -178,6 +210,22 @@ export default function Studio() {
                   />
                   Published
                 </label>
+                <div className="flex items-center rounded-full border border-ink/15 p-0.5 text-[10px] uppercase tracking-[0.12em]">
+                  {[
+                    ['blocks', 'Blocks', () => mode !== 'blocks' && toBlocks()],
+                    ['raw', 'Raw', () => mode !== 'raw' && toRaw()],
+                  ].map(([m, label, fn]) => (
+                    <button
+                      key={m}
+                      onClick={fn}
+                      className={`rounded-full px-2.5 py-0.5 transition-colors ${
+                        mode === m ? 'bg-ink text-paper' : 'text-ink/60 hover:text-ink'
+                      }`}
+                    >
+                      {label}
+                    </button>
+                  ))}
+                </div>
               </div>
               <div className="flex items-center gap-3">
                 {status && <span className="text-[11px] text-muted">{status}</span>}
@@ -193,28 +241,24 @@ export default function Studio() {
                 <button
                   onClick={save}
                   disabled={saving || !dirty}
-                  className="bg-accent text-paper text-[11px] uppercase tracking-[0.2em] rounded-full px-4 py-1.5
-                             hover:bg-ink transition-colors disabled:opacity-40"
+                  className="rounded-full bg-accent px-4 py-1.5 text-[11px] uppercase tracking-[0.2em] text-paper transition-colors hover:bg-ink disabled:opacity-40"
                 >
                   {saving ? 'Saving…' : 'Save'}
                 </button>
               </div>
             </div>
 
-            <div className="flex-1 min-h-0 flex">
-              {/* Left of editor: fields + body */}
-              <div className="flex-1 min-w-0 flex flex-col overflow-hidden">
-                {/* Frontmatter */}
-                <div className="px-4 py-3 border-b border-ink/10 grid grid-cols-2 gap-x-4 gap-y-2.5 overflow-y-auto max-h-[38%]">
-                  <div className="col-span-2 text-[10px] uppercase tracking-[0.2em] text-muted">
-                    Frontmatter
-                  </div>
+            <div className="flex min-h-0 flex-1">
+              {/* Fields + body */}
+              <div className="flex min-w-0 flex-1 flex-col overflow-hidden">
+                <div className="grid max-h-[36%] grid-cols-2 gap-x-4 gap-y-2.5 overflow-y-auto border-b border-ink/10 px-4 py-3">
+                  <div className="col-span-2 text-[10px] uppercase tracking-[0.2em] text-muted">Frontmatter</div>
                   {FRONTMATTER_FIELDS.map((field) => (
                     <div
                       key={field.key}
                       className={field.type === 'textarea' || field.width !== 'narrow' ? 'col-span-2' : ''}
                     >
-                      <label className="block text-[10px] uppercase tracking-[0.15em] text-ink/50 mb-1">
+                      <label className="mb-1 block text-[10px] uppercase tracking-[0.15em] text-ink/50">
                         {field.label}
                       </label>
                       {field.type === 'textarea' ? (
@@ -237,47 +281,73 @@ export default function Studio() {
                   ))}
                 </div>
 
-                {/* Snippet toolbar */}
-                <div className="px-4 py-1.5 border-b border-ink/10 flex items-center gap-2">
-                  <span className="text-[10px] uppercase tracking-[0.2em] text-muted mr-1">Insert</span>
-                  {SNIPPETS.map((s) => (
-                    <button
-                      key={s.label}
-                      onClick={() => insertAtCursor(s.text)}
-                      className="text-[11px] px-2 py-1 rounded border border-ink/15 text-ink/70 hover:border-accent hover:text-ink transition-colors"
-                    >
-                      {s.label}
-                    </button>
-                  ))}
+                {/* Add / insert toolbar */}
+                <div className="flex items-center gap-2 border-b border-ink/10 px-4 py-1.5">
+                  <span className="mr-1 text-[10px] uppercase tracking-[0.2em] text-muted">
+                    {mode === 'blocks' ? 'Add' : 'Insert'}
+                  </span>
+                  {mode === 'blocks' ? (
+                    <>
+                      {[
+                        ['Text', () => addBlock(makeBlock('text', { text: '' }))],
+                        ['Heading', () => addBlock(makeBlock('text', { text: '## ' }))],
+                        ['Quote', () => addBlock(makeBlock('pullquote', { text: '' }))],
+                        ['Gallery', () => addBlock(makeBlock('gallery', { srcs: [], caption: '' }))],
+                      ].map(([label, fn]) => (
+                        <button
+                          key={label}
+                          onClick={fn}
+                          className="rounded border border-ink/15 px-2 py-1 text-[11px] text-ink/70 transition-colors hover:border-accent hover:text-ink"
+                        >
+                          + {label}
+                        </button>
+                      ))}
+                      <span className="ml-1 text-[10px] text-muted">or drag photos in →</span>
+                    </>
+                  ) : (
+                    RAW_SNIPPETS.map((s) => (
+                      <button
+                        key={s.label}
+                        onClick={() => insertAtCursor(s.text)}
+                        className="rounded border border-ink/15 px-2 py-1 text-[11px] text-ink/70 transition-colors hover:border-accent hover:text-ink"
+                      >
+                        {s.label}
+                      </button>
+                    ))
+                  )}
                 </div>
 
-                {/* Body */}
-                <textarea
-                  ref={bodyRef}
-                  value={body}
-                  onChange={(e) => {
-                    setBody(e.target.value);
-                    setDirty(true);
-                  }}
-                  spellCheck
-                  className="flex-1 min-h-0 w-full resize-none px-4 py-4 font-mono text-[13px] leading-relaxed
-                             text-ink bg-paper focus:outline-none"
-                  placeholder="Write your post in Markdown / MDX…"
-                />
+                {/* Content */}
+                <div className="min-h-0 flex-1 overflow-y-auto">
+                  {mode === 'blocks' ? (
+                    <BlockEditor blocks={blocks} onChange={changeBlocks} photoUrl={photoUrl} />
+                  ) : (
+                    <textarea
+                      ref={bodyRef}
+                      value={body}
+                      onChange={(e) => {
+                        setBody(e.target.value);
+                        setDirty(true);
+                      }}
+                      spellCheck
+                      className="h-full w-full resize-none bg-paper px-4 py-4 font-mono text-[13px] leading-relaxed text-ink focus:outline-none"
+                    />
+                  )}
+                </div>
               </div>
 
               {/* Right: preview / photos */}
-              <div className="w-[42%] flex-shrink-0 border-l border-ink/10 flex flex-col">
-                <div className="flex items-center gap-1 px-3 py-1.5 border-b border-ink/10">
-                  {['preview', 'photos'].map((tab) => (
+              <div className="flex w-[40%] flex-shrink-0 flex-col border-l border-ink/10">
+                <div className="flex items-center gap-1 border-b border-ink/10 px-3 py-1.5">
+                  {['photos', 'preview'].map((tab) => (
                     <button
                       key={tab}
                       onClick={() => setRightTab(tab)}
-                      className={`text-[11px] uppercase tracking-[0.15em] px-2.5 py-1 rounded transition-colors ${
-                        rightTab === tab ? 'text-ink bg-ink/5' : 'text-muted hover:text-ink'
+                      className={`rounded px-2.5 py-1 text-[11px] uppercase tracking-[0.15em] transition-colors ${
+                        rightTab === tab ? 'bg-ink/5 text-ink' : 'text-muted hover:text-ink'
                       }`}
                     >
-                      {tab === 'preview' ? 'Preview' : `Photos (${photos.length})`}
+                      {tab === 'photos' ? `Photos (${photos.length})` : 'Preview'}
                     </button>
                   ))}
                   {rightTab === 'preview' && (
@@ -296,20 +366,23 @@ export default function Studio() {
                     key={previewKey}
                     src={`/journal/${selected}`}
                     title="Preview"
-                    className="flex-1 w-full border-0 bg-white"
+                    className="w-full flex-1 border-0 bg-white"
                   />
                 ) : (
                   <div className="flex-1 overflow-y-auto p-3">
-                    <p className="text-[11px] text-muted mb-2">
-                      Click a photo to insert a Figure at the cursor.
+                    <p className="mb-2 text-[11px] text-muted">
+                      Drag a photo into the editor to place it, or click to add at the end.
                     </p>
                     <div className="grid grid-cols-2 gap-2">
                       {photos.map((photo) => (
                         <button
                           key={photo.file}
-                          onClick={() =>
-                            insertAtCursor(`\n<Figure src="${photo.file}" caption="" />\n\n`)
-                          }
+                          draggable
+                          onDragStart={(e) => {
+                            e.dataTransfer.setData('application/x-photo', photo.file);
+                            e.dataTransfer.effectAllowed = 'copy';
+                          }}
+                          onClick={() => onPhotoActivate(photo.file)}
                           className="group text-left"
                           title={photo.file}
                         >
@@ -318,9 +391,9 @@ export default function Studio() {
                             src={photo.url}
                             alt={photo.caption || photo.file}
                             loading="lazy"
-                            className="w-full aspect-[3/2] object-cover rounded bg-ink/5"
+                            className="aspect-[3/2] w-full rounded bg-ink/5 object-cover"
                           />
-                          <span className="block mt-1 text-[10px] text-muted truncate group-hover:text-accent">
+                          <span className="mt-1 block truncate text-[10px] text-muted group-hover:text-accent">
                             {photo.file}
                           </span>
                         </button>
