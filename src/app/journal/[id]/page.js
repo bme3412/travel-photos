@@ -328,7 +328,12 @@ export default async function JournalPost({ params }) {
   const { id } = await params;
 
   const post = getJournalPost(id);
-  if (post) return <MdxArticle id={id} post={post} />;
+  // A draft (published: false) previews in dev but falls back to the narrative
+  // post in production until it's published — so the live link never shows a
+  // half-written scaffold.
+  const showPost =
+    post && (post.frontmatter.published !== false || process.env.NODE_ENV !== 'production');
+  if (showPost) return <MdxArticle id={id} post={post} />;
 
   const trip = await getTripData(id);
   if (!trip) notFound();
