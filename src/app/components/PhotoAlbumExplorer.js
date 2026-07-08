@@ -3,7 +3,8 @@
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Camera as CameraIcon, ArrowRight, ArrowUpRight } from 'lucide-react';
+import { useRouter } from 'next/navigation';
+import { Camera as CameraIcon, ArrowRight, ArrowUpRight, Play } from 'lucide-react';
 import usePhotoStore from '../store/usePhotoStore';
 
 // Album names carry a leading flag emoji ("🇪🇬 Egyptian Explorations") —
@@ -157,6 +158,15 @@ const StatsStrip = ({ stats }) => (
 const AlbumGridCard = ({ album, number, wide = false }) => {
   const { flag, title } = splitFlag(album.name);
   const cover = album.coverPhoto;
+  const router = useRouter();
+
+  // Jump straight into the trip replay. The card itself is a Link, so this
+  // must be a button (nested anchors are invalid) that intercepts the click.
+  const openReplay = (event) => {
+    event.preventDefault();
+    event.stopPropagation();
+    router.push(`/trips/${album.id}`);
+  };
 
   return (
     <Link
@@ -182,6 +192,22 @@ const AlbumGridCard = ({ album, number, wide = false }) => {
           </div>
         )}
         <div className="absolute inset-0 bg-ink/0 group-hover:bg-ink/10 transition-colors duration-500" />
+
+        {/* Replay affordance — visible on hover (desktop) and always on touch */}
+        <button
+          type="button"
+          onClick={openReplay}
+          aria-label={`Replay ${title} on the map`}
+          className="absolute bottom-3 right-3 z-10 inline-flex items-center gap-1.5 rounded-full bg-accent
+                     pl-2.5 pr-3 py-1.5 text-[10px] uppercase tracking-[0.15em] font-medium text-paper shadow-lg
+                     transition-all duration-300 hover:bg-ink hover:scale-105
+                     opacity-0 translate-y-1 group-hover:opacity-100 group-hover:translate-y-0
+                     focus-visible:opacity-100 focus-visible:translate-y-0
+                     max-sm:opacity-100 max-sm:translate-y-0"
+        >
+          <Play className="h-3 w-3 fill-current" />
+          Replay
+        </button>
       </div>
 
       <div className="mt-4 pt-3 border-t border-ink/15 flex items-start gap-4">
@@ -205,6 +231,13 @@ const AlbumGridCard = ({ album, number, wide = false }) => {
 const AlbumIndexRow = ({ album, number }) => {
   const { flag, title } = splitFlag(album.name);
   const cover = album.coverPhoto;
+  const router = useRouter();
+
+  const openReplay = (event) => {
+    event.preventDefault();
+    event.stopPropagation();
+    router.push(`/trips/${album.id}`);
+  };
 
   return (
     <li>
@@ -230,6 +263,16 @@ const AlbumIndexRow = ({ album, number }) => {
         <span className="hidden md:inline text-[11px] uppercase tracking-[0.18em] text-muted whitespace-nowrap">
           {formatMeta(album)}
         </span>
+        <button
+          type="button"
+          onClick={openReplay}
+          aria-label={`Replay ${title} on the map`}
+          className="hidden sm:inline-flex items-center gap-1.5 flex-shrink-0 text-[10px] uppercase tracking-[0.18em]
+                     text-muted hover:text-accent transition-colors duration-200"
+        >
+          <Play className="h-3 w-3 fill-current" />
+          Replay
+        </button>
         <ArrowUpRight className="h-4 w-4 text-ink/30 group-hover:text-accent transition-colors duration-300 flex-shrink-0" />
       </Link>
     </li>
