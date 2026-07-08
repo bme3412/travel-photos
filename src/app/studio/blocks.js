@@ -25,6 +25,13 @@ function parseGallery(str) {
   return makeBlock('gallery', { srcs, caption });
 }
 
+function parsePanorama(str) {
+  const src = (str.match(/src="([^"]*)"/) || [])[1] || '';
+  const caption = (str.match(/caption="([^"]*)"/) || [])[1] || '';
+  const controls = /(?:^|\s)controls(?:\s|=|\/|>)/.test(str);
+  return makeBlock('panorama', { src, caption, controls });
+}
+
 export function parseBlocks(body = '') {
   const lines = String(body).replace(/\r\n/g, '\n').split('\n');
   const blocks = [];
@@ -39,15 +46,17 @@ export function parseBlocks(body = '') {
     const line = lines[i];
     const t = line.trim();
 
-    // Figure / Gallery — self-closing, possibly wrapped across a few lines.
-    if (/^<(Figure|Gallery)\b/.test(t)) {
+    // Figure / Gallery / Panorama — self-closing, possibly wrapped over lines.
+    if (/^<(Figure|Gallery|Panorama)\b/.test(t)) {
       flush();
       let joined = t;
       while (!/\/>\s*$/.test(joined) && i + 1 < lines.length) {
         i += 1;
         joined += ` ${lines[i].trim()}`;
       }
-      blocks.push(joined.startsWith('<Figure') ? parseFigure(joined) : parseGallery(joined));
+      if (joined.startsWith('<Figure')) blocks.push(parseFigure(joined));
+      else if (joined.startsWith('<Gallery')) blocks.push(parseGallery(joined));
+      else blocks.push(parsePanorama(joined));
       continue;
     }
 
@@ -87,6 +96,10 @@ export function serializeBlocks(blocks) {
       if (b.type === 'gallery')
         return `<Gallery srcs={[${(b.srcs || []).map((s) => `"${esc(s)}"`).join(', ')}]}${
           b.caption ? ` caption="${esc(b.caption)}"` : ''
+        } />`;
+      if (b.type === 'panorama')
+        return `<Panorama src="${esc(b.src)}"${b.caption ? ` caption="${esc(b.caption)}"` : ''}${
+          b.controls ? ' controls' : ''
         } />`;
       if (b.type === 'pullquote') return `<PullQuote>${b.text.trim()}</PullQuote>`;
       return '';

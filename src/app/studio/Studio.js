@@ -18,6 +18,7 @@ const RAW_SNIPPETS = [
   { label: 'Quote', text: '\n<PullQuote>A line worth pulling out.</PullQuote>\n\n' },
   { label: 'Figure', text: '\n<Figure src="" caption="" />\n\n' },
   { label: 'Gallery', text: '\n<Gallery srcs={["", "", ""]} caption="" />\n\n' },
+  { label: 'Panorama', text: '\n<Panorama src="" caption="" />\n\n' },
 ];
 
 export default function Studio() {
@@ -293,6 +294,7 @@ export default function Studio() {
                         ['Heading', () => addBlock(makeBlock('text', { text: '## ' }))],
                         ['Quote', () => addBlock(makeBlock('pullquote', { text: '' }))],
                         ['Gallery', () => addBlock(makeBlock('gallery', { srcs: [], caption: '' }))],
+                        ['Panorama', () => addBlock(makeBlock('panorama', { src: '', caption: '', controls: false }))],
                       ].map(([label, fn]) => (
                         <button
                           key={label}

@@ -168,6 +168,57 @@ function BlockCard({ block, photoUrl, onUpdate, onRemove }) {
     );
   }
 
+  if (block.type === 'panorama') {
+    const url = photoUrl(block.src);
+    const isVideo = /\.(mp4|mov|webm|m4v)(\?|#|$)/i.test(block.src || '');
+    inner = (
+      <div
+        onDragOver={(e) => e.preventDefault()}
+        onDrop={(e) => {
+          e.preventDefault();
+          const p = e.dataTransfer.getData('application/x-photo');
+          if (p) patch({ src: p });
+        }}
+        className="flex gap-3"
+      >
+        <div className="relative h-16 w-28 flex-shrink-0 overflow-hidden rounded bg-ink/5">
+          {url && !isVideo ? (
+            // eslint-disable-next-line @next/next/no-img-element
+            <img src={url} alt="" className="h-full w-full object-cover" />
+          ) : (
+            <div className="flex h-full items-center justify-center px-1 text-center text-[10px] text-muted">
+              {isVideo ? '▶ video' : 'wide photo / video URL'}
+            </div>
+          )}
+        </div>
+        <div className="min-w-0 flex-1 space-y-1.5">
+          <div className="text-[10px] uppercase tracking-[0.15em] text-muted">Panorama</div>
+          <input
+            value={block.src || ''}
+            onChange={(e) => patch({ src: e.target.value })}
+            placeholder="filename or video URL"
+            className="w-full rounded border border-ink/15 bg-paper px-2 py-1 text-xs focus:border-accent focus:outline-none"
+          />
+          <input
+            value={block.caption || ''}
+            onChange={(e) => patch({ caption: e.target.value })}
+            placeholder="Caption"
+            className="w-full rounded border border-ink/15 bg-paper px-2 py-1 text-xs focus:border-accent focus:outline-none"
+          />
+          <label className="flex items-center gap-1.5 text-[10px] uppercase tracking-[0.15em] text-ink/60">
+            <input
+              type="checkbox"
+              checked={!!block.controls}
+              onChange={(e) => patch({ controls: e.target.checked })}
+              className="accent-[#B4441C]"
+            />
+            Video controls
+          </label>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="group/block relative flex gap-2 rounded-lg border border-transparent p-1.5 hover:border-ink/10 hover:bg-ink/[0.015]">
       <div className="pt-1">{handle}</div>

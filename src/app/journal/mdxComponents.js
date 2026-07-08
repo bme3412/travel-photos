@@ -1,5 +1,7 @@
 import Image from 'next/image';
 
+const VIDEO_RE = /\.(mp4|mov|webm|m4v)(\?|#|$)/i;
+
 // The component set handed to MDX posts. Prose elements are styled to the
 // site's editorial look (narrow reading column, serif headings). Figure and
 // Gallery let authors drop in photographs by filename — the resolver (bound
@@ -52,6 +54,49 @@ export function createMdxComponents({ resolveImage }) {
     </blockquote>
   );
 
+  // A wide panorama — a panning video clip (autoplay, muted, looped) or a
+  // wide still you scroll to explore. Breaks wider than the reading column.
+  const Panorama = ({ src, caption, controls = false }) => {
+    const url = resolveImage(src);
+    if (!url) return null;
+    const isVideo = VIDEO_RE.test(src || '') || VIDEO_RE.test(url);
+    return (
+      <figure className="my-10">
+        {isVideo ? (
+          <div className="relative h-72 sm:h-80 md:h-96 w-full overflow-hidden rounded-xl bg-ink">
+            {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
+            <video
+              src={url}
+              className="h-full w-full object-cover"
+              autoPlay
+              muted
+              loop
+              playsInline
+              controls={controls}
+              preload="metadata"
+            />
+          </div>
+        ) : (
+          <div className="h-72 sm:h-80 md:h-96 overflow-x-auto overflow-y-hidden rounded-xl bg-ink/5 [scrollbar-width:thin]">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={url}
+              alt={caption || ''}
+              draggable={false}
+              className="h-full w-auto max-w-none object-cover select-none"
+            />
+          </div>
+        )}
+        {caption && (
+          <figcaption className="mt-3 text-center text-[13px] italic text-muted">
+            {caption}
+            {!isVideo && <span className="text-ink/30"> · scroll to explore</span>}
+          </figcaption>
+        )}
+      </figure>
+    );
+  };
+
   return {
     h2: (props) => (
       <h2 className="max-w-2xl mx-auto mt-14 mb-4 font-display text-3xl sm:text-4xl tracking-tight leading-tight" {...props} />
@@ -79,5 +124,6 @@ export function createMdxComponents({ resolveImage }) {
     Figure,
     Gallery,
     PullQuote,
+    Panorama,
   };
 }
