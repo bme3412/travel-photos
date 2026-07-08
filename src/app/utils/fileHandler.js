@@ -54,3 +54,10 @@ export async function readNarratives() {
 export async function readVideos() {
   return (await readJsonFile('videos.json')) || { videos: [] };
 }
+
+// Drop the in-process cache so the next read reflects on-disk edits — used by
+// the Studio's write APIs (create trip, upload media) so changes appear
+// without restarting the dev server.
+export function clearFileCache() {
+  parsedFiles.clear();
+}

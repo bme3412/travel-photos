@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef, useCallback } from 'react';
 import BlockEditor from './BlockEditor';
+import NewTripModal from './NewTripModal';
 import { parseBlocks, serializeBlocks, makeBlock } from './blocks';
 
 const FRONTMATTER_FIELDS = [
@@ -35,6 +36,10 @@ export default function Studio() {
   const [status, setStatus] = useState('');
   const [rightTab, setRightTab] = useState('photos');
   const [previewKey, setPreviewKey] = useState(0);
+  const [showNewTrip, setShowNewTrip] = useState(false);
+  const [uploading, setUploading] = useState(false);
+  const [uploadMsg, setUploadMsg] = useState('');
+  const [fallbackCoords, setFallbackCoords] = useState('');
   const bodyRef = useRef(null);
 
   const refreshList = useCallback(() => {
@@ -160,6 +165,44 @@ export default function Studio() {
     else insertAtCursor(`\n<Panorama src="${file}" caption="" />\n\n`);
   };
 
+  const refreshMedia = useCallback(async () => {
+    if (!selected) return;
+    const res = await fetch(`/api/journal/post/${selected}`);
+    const data = await res.json();
+    if (res.ok) {
+      setPhotos(data.photos || []);
+      setVideos(data.videos || []);
+    }
+  }, [selected]);
+
+  const uploadFiles = async (fileList) => {
+    if (!selected || !fileList?.length) return;
+    setUploading(true);
+    setUploadMsg(`Uploading ${fileList.length} file(s)…`);
+    try {
+      const fd = new FormData();
+      for (const file of fileList) fd.append('files', file);
+      const [lat, lng] = fallbackCoords.split(',').map((s) => s.trim());
+      if (lat && lng) {
+        fd.append('lat', lat);
+        fd.append('lng', lng);
+      }
+      const res = await fetch(`/api/journal/upload/${selected}`, { method: 'POST', body: fd });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error || 'Upload failed');
+      const n = data.added?.length || 0;
+      setUploadMsg(
+        `Added ${n} file(s)${data.errors?.length ? ` · ${data.errors.length} skipped` : ''}`
+      );
+      await refreshMedia();
+      setPreviewKey((k) => k + 1);
+    } catch (e) {
+      setUploadMsg(e.message);
+    } finally {
+      setUploading(false);
+    }
+  };
+
   const input =
     'w-full bg-paper border border-ink/15 rounded px-2.5 py-1.5 text-sm text-ink focus:outline-none focus:border-accent';
 
@@ -169,7 +212,15 @@ export default function Studio() {
       <aside className="w-56 flex-shrink-0 overflow-y-auto border-r border-ink/10">
         <div className="sticky top-0 border-b border-ink/10 bg-paper px-4 py-3">
           <p className="text-[11px] uppercase tracking-[0.25em] text-accent">Studio</p>
-          <p className="mt-0.5 text-[11px] text-muted">{posts.length} posts</p>
+          <div className="mt-0.5 flex items-center justify-between">
+            <p className="text-[11px] text-muted">{posts.length} posts</p>
+            <button
+              onClick={() => setShowNewTrip(true)}
+              className="text-[11px] uppercase tracking-[0.15em] text-ink/60 hover:text-accent transition-colors"
+            >
+              + New trip
+            </button>
+          </div>
         </div>
         <ul className="py-2">
           {posts.map((post) => (
@@ -385,12 +436,28 @@ export default function Studio() {
                   />
                 ) : rightTab === 'videos' ? (
                   <div className="flex-1 overflow-y-auto p-3">
-                    {videos.length === 0 ? (
-                      <p className="text-[11px] text-muted">
-                        No videos for this trip yet. Add clips with{' '}
-                        <code className="rounded bg-ink/5 px-1">npm run add-videos -- {selected} &lt;folder&gt;</code>
-                        , then reload.
+                    <div className="mb-3 rounded border border-dashed border-ink/20 p-2.5">
+                      <label className="inline-block cursor-pointer whitespace-nowrap rounded-full bg-accent px-3 py-1 text-[11px] uppercase tracking-[0.15em] text-paper transition-colors hover:bg-ink">
+                        ⬆ Upload clips
+                        <input
+                          type="file"
+                          accept="video/*,.mov,.mp4,.m4v"
+                          multiple
+                          className="hidden"
+                          disabled={uploading}
+                          onChange={(e) => {
+                            uploadFiles(e.target.files);
+                            e.target.value = '';
+                          }}
+                        />
+                      </label>
+                      {uploadMsg && <p className="mt-1.5 text-[10px] text-muted">{uploadMsg}</p>}
+                      <p className="mt-1 text-[10px] text-muted">
+                        Transcoded with ffmpeg — large clips take a moment.
                       </p>
+                    </div>
+                    {videos.length === 0 ? (
+                      <p className="text-[11px] text-muted">No videos yet — upload clips above.</p>
                     ) : (
                       <>
                         <p className="mb-2 text-[11px] text-muted">
@@ -430,6 +497,31 @@ export default function Studio() {
                   </div>
                 ) : (
                   <div className="flex-1 overflow-y-auto p-3">
+                    <div className="mb-3 rounded border border-dashed border-ink/20 p-2.5">
+                      <div className="flex items-center gap-2">
+                        <label className="cursor-pointer whitespace-nowrap rounded-full bg-accent px-3 py-1 text-[11px] uppercase tracking-[0.15em] text-paper transition-colors hover:bg-ink">
+                          ⬆ Upload
+                          <input
+                            type="file"
+                            accept="image/*,.heic,.heif"
+                            multiple
+                            className="hidden"
+                            disabled={uploading}
+                            onChange={(e) => {
+                              uploadFiles(e.target.files);
+                              e.target.value = '';
+                            }}
+                          />
+                        </label>
+                        <input
+                          value={fallbackCoords}
+                          onChange={(e) => setFallbackCoords(e.target.value)}
+                          placeholder="fallback lat, lng (used if a photo has no GPS)"
+                          className="min-w-0 flex-1 rounded border border-ink/15 bg-paper px-2 py-1 text-[11px] focus:border-accent focus:outline-none"
+                        />
+                      </div>
+                      {uploadMsg && <p className="mt-1.5 text-[10px] text-muted">{uploadMsg}</p>}
+                    </div>
                     <p className="mb-2 text-[11px] text-muted">
                       Drag a photo into the editor to place it, or click to add at the end.
                     </p>
@@ -466,6 +558,17 @@ export default function Studio() {
           </>
         )}
       </main>
+
+      {showNewTrip && (
+        <NewTripModal
+          onClose={() => setShowNewTrip(false)}
+          onCreated={(id) => {
+            setShowNewTrip(false);
+            refreshList();
+            loadPost(id);
+          }}
+        />
+      )}
     </div>
   );
 }
