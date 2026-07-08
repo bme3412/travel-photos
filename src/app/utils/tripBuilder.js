@@ -105,13 +105,22 @@ function visitLabel([from, to], monthStyle) {
 }
 
 // Greedy geographic clustering with an incrementally updated centroid.
+//
+// A photo may carry an explicit `place` label to force separation that pure
+// geography can't resolve — e.g. Praslin and La Digue are only ~12 km apart,
+// inside CLUSTER_RADIUS_KM, so without this they collapse into one stop.
+// Photos with no `place` (the vast majority) cluster on geography alone, so
+// this is a no-op for every album that doesn't opt in.
 function clusterMembers(members) {
   const clusters = [];
   for (const member of members) {
     const point = { lat: member.photo.coordinates.lat, lng: member.photo.coordinates.lng };
-    let cluster = clusters.find((c) => haversineKm(c.center, point) <= CLUSTER_RADIUS_KM);
+    const place = member.photo.place || null;
+    let cluster = clusters.find(
+      (c) => c.place === place && haversineKm(c.center, point) <= CLUSTER_RADIUS_KM
+    );
     if (!cluster) {
-      cluster = { center: { ...point }, members: [] };
+      cluster = { center: { ...point }, members: [], place };
       clusters.push(cluster);
     }
     cluster.members.push(member);
@@ -136,12 +145,21 @@ function nameAndMergeClusters(clusters, locationsById, destinations) {
         matched = { dest, distance };
       }
     }
+    // An explicit place label wins the stop name (and takes its editorial
+    // description from a like-named destination when one exists) — this both
+    // names close-packed places correctly and sidesteps a country-level
+    // destination outranking a same-coordinate city (Seychelles vs Mahe).
+    const placedDest = cluster.place
+      ? destinations.find((d) => d.name === cluster.place)
+      : null;
+    const chosen = placedDest || matched?.dest || null;
     cluster.name =
+      cluster.place ||
       matched?.dest.name ||
       mostCommon(cluster.members.map((m) => placeLabel(m.photo.locationId, locationsById))) ||
       'Unknown stop';
-    cluster.description = matched?.dest.description || null;
-    cluster.country = matched?.dest.country || null;
+    cluster.description = chosen?.description || null;
+    cluster.country = chosen?.country || null;
   });
 
   const byName = new Map();
@@ -224,6 +242,17 @@ export function buildTrip(album, photosData, locationsData, destinationsData) {
         ...cluster.members.map((m) => haversineKm(cluster.center, m.photo.coordinates))
       );
 
+      // Geographic extent of the stop's photos, as a [[minLng,minLat],
+      // [maxLng,maxLat]] box. Lets the map frame each stop to its actual
+      // footprint (fitBounds) instead of a fixed centroid zoom. Degenerate
+      // (a single geocoded point) when every photo shares one coordinate.
+      const lats = cluster.members.map((m) => m.photo.coordinates.lat);
+      const lngs = cluster.members.map((m) => m.photo.coordinates.lng);
+      const bounds = [
+        [Number(Math.min(...lngs).toFixed(5)), Number(Math.min(...lats).toFixed(5))],
+        [Number(Math.max(...lngs).toFixed(5)), Number(Math.max(...lats).toFixed(5))],
+      ];
+
       const photos = [...cluster.members]
         .sort((a, b) =>
           a.photo.dateCreated === b.photo.dateCreated
@@ -248,6 +277,7 @@ export function buildTrip(album, photosData, locationsData, destinationsData) {
           lng: Number(cluster.center.lng.toFixed(5)),
         },
         zoom: zoomForSpreadKm(spreadKm),
+        bounds,
         dateRange: [dates[0], dates[dates.length - 1]],
         photos,
         sortKey: [dates[0], Math.min(...cluster.members.map((m) => m.index))],

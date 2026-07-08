@@ -19152,11 +19152,11 @@
       "id": "superb-seychelles1",
       "albumId": "superb-seychelles",
       "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Seychelles2025/IMG_1935 2.jpg",
-      "caption": "Mahe/Praslin/La Digue",
-      "locationId": "Mahe/Praslin/La Digue",
+      "caption": "Mahe",
+      "locationId": "Mahe",
       "coordinates": {
-        "lng": 55.72901977188562,
-        "lat": -4.743711153026259
+        "lng": 55.492,
+        "lat": -4.6796
       },
       "dateCreated": "2025-10-10",
       "tags": [
@@ -19166,17 +19166,18 @@
         "waves",
         "coast",
         "mountains"
-      ]
+      ],
+      "place": "Mahe"
     },
     {
       "id": "superb-seychelles2",
       "albumId": "superb-seychelles",
       "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Seychelles2025/IMG_1940 2.jpg",
-      "caption": "Mahe/Praslin/La Digue",
-      "locationId": "Mahe/Praslin/La Digue",
+      "caption": "Mahe",
+      "locationId": "Mahe",
       "coordinates": {
-        "lng": 55.72901977188562,
-        "lat": -4.743711153026259
+        "lng": 55.492,
+        "lat": -4.6796
       },
       "dateCreated": "2025-10-10",
       "tags": [
@@ -19186,17 +19187,18 @@
         "coastal",
         "clouds",
         "mountains"
-      ]
+      ],
+      "place": "Mahe"
     },
     {
       "id": "superb-seychelles3",
       "albumId": "superb-seychelles",
       "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Seychelles2025/IMG_1942.jpg",
-      "caption": "Mahe/Praslin/La Digue",
-      "locationId": "Mahe/Praslin/La Digue",
+      "caption": "Mahe",
+      "locationId": "Mahe",
       "coordinates": {
-        "lng": 55.72901977188562,
-        "lat": -4.743711153026259
+        "lng": 55.492,
+        "lat": -4.6796
       },
       "dateCreated": "2025-10-10",
       "tags": [
@@ -19206,17 +19208,18 @@
         "tropical",
         "palm trees",
         "leisure"
-      ]
+      ],
+      "place": "Mahe"
     },
     {
       "id": "superb-seychelles4",
       "albumId": "superb-seychelles",
       "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Seychelles2025/IMG_1944 2.jpg",
-      "caption": "Mahe/Praslin/La Digue",
-      "locationId": "Mahe/Praslin/La Digue",
+      "caption": "Mahe",
+      "locationId": "Mahe",
       "coordinates": {
-        "lng": 55.72901977188562,
-        "lat": -4.743711153026259
+        "lng": 55.492,
+        "lat": -4.6796
       },
       "dateCreated": "2025-10-10",
       "tags": [
@@ -19225,17 +19228,18 @@
         "nature",
         "close-up",
         "sand"
-      ]
+      ],
+      "place": "Mahe"
     },
     {
       "id": "superb-seychelles5",
       "albumId": "superb-seychelles",
       "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Seychelles2025/IMG_1946 2.jpg",
-      "caption": "Mahe/Praslin/La Digue",
-      "locationId": "Mahe/Praslin/La Digue",
+      "caption": "Mahe",
+      "locationId": "Mahe",
       "coordinates": {
-        "lng": 55.72901977188562,
-        "lat": -4.743711153026259
+        "lng": 55.492,
+        "lat": -4.6796
       },
       "dateCreated": "2025-10-10",
       "tags": [
@@ -19245,17 +19249,18 @@
         "coastal",
         "waves",
         "mountains"
-      ]
+      ],
+      "place": "Mahe"
     },
     {
       "id": "superb-seychelles6",
       "albumId": "superb-seychelles",
       "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Seychelles2025/IMG_1947 2.jpg",
-      "caption": "Mahe/Praslin/La Digue",
-      "locationId": "Mahe/Praslin/La Digue",
+      "caption": "Mahe",
+      "locationId": "Mahe",
       "coordinates": {
-        "lng": 55.72901977188562,
-        "lat": -4.743711153026259
+        "lng": 55.492,
+        "lat": -4.6796
       },
       "dateCreated": "2025-10-10",
       "tags": [
@@ -19265,17 +19270,18 @@
         "waves",
         "ocean",
         "sand"
-      ]
+      ],
+      "place": "Mahe"
     },
     {
       "id": "superb-seychelles7",
       "albumId": "superb-seychelles",
       "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Seychelles2025/IMG_1952 2.jpg",
-      "caption": "Mahe/Praslin/La Digue",
-      "locationId": "Mahe/Praslin/La Digue",
+      "caption": "Praslin",
+      "locationId": "Praslin",
       "coordinates": {
-        "lng": 55.72901977188562,
-        "lat": -4.743711153026259
+        "lng": 55.7354,
+        "lat": -4.3223
       },
       "dateCreated": "2025-10-10",
       "tags": [
@@ -19285,17 +19291,18 @@
         "tropical",
         "coastal",
         "rocks"
-      ]
+      ],
+      "place": "Praslin"
     },
     {
       "id": "superb-seychelles8",
       "albumId": "superb-seychelles",
       "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Seychelles2025/IMG_1953.jpg",
-      "caption": "Mahe/Praslin/La Digue",
-      "locationId": "Mahe/Praslin/La Digue",
+      "caption": "Praslin",
+      "locationId": "Praslin",
       "coordinates": {
-        "lng": 55.72901977188562,
-        "lat": -4.743711153026259
+        "lng": 55.7354,
+        "lat": -4.3223
       },
       "dateCreated": "2025-10-10",
       "tags": [
@@ -19305,17 +19312,18 @@
         "beach",
         "coastal",
         "sky"
-      ]
+      ],
+      "place": "Praslin"
     },
     {
       "id": "superb-seychelles9",
       "albumId": "superb-seychelles",
       "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Seychelles2025/IMG_1997.jpg",
-      "caption": "Mahe/Praslin/La Digue",
-      "locationId": "Mahe/Praslin/La Digue",
+      "caption": "Praslin",
+      "locationId": "Praslin",
       "coordinates": {
-        "lng": 55.72901977188562,
-        "lat": -4.743711153026259
+        "lng": 55.7354,
+        "lat": -4.3223
       },
       "dateCreated": "2025-10-10",
       "tags": [
@@ -19325,17 +19333,18 @@
         "palm trees",
         "coastal",
         "sand"
-      ]
+      ],
+      "place": "Praslin"
     },
     {
       "id": "superb-seychelles10",
       "albumId": "superb-seychelles",
       "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Seychelles2025/IMG_1998.jpg",
-      "caption": "Mahe/Praslin/La Digue",
-      "locationId": "Mahe/Praslin/La Digue",
+      "caption": "Praslin",
+      "locationId": "Praslin",
       "coordinates": {
-        "lng": 55.72901977188562,
-        "lat": -4.743711153026259
+        "lng": 55.7354,
+        "lat": -4.3223
       },
       "dateCreated": "2025-10-10",
       "tags": [
@@ -19345,17 +19354,18 @@
         "tropical",
         "waves",
         "palm trees"
-      ]
+      ],
+      "place": "Praslin"
     },
     {
       "id": "superb-seychelles11",
       "albumId": "superb-seychelles",
       "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Seychelles2025/IMG_1999.jpg",
-      "caption": "Mahe/Praslin/La Digue",
-      "locationId": "Mahe/Praslin/La Digue",
+      "caption": "Praslin",
+      "locationId": "Praslin",
       "coordinates": {
-        "lng": 55.72901977188562,
-        "lat": -4.743711153026259
+        "lng": 55.7354,
+        "lat": -4.3223
       },
       "dateCreated": "2025-10-10",
       "tags": [
@@ -19365,17 +19375,18 @@
         "coastal",
         "palm trees",
         "sand"
-      ]
+      ],
+      "place": "Praslin"
     },
     {
       "id": "superb-seychelles12",
       "albumId": "superb-seychelles",
       "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Seychelles2025/IMG_2002.jpg",
-      "caption": "Mahe/Praslin/La Digue",
-      "locationId": "Mahe/Praslin/La Digue",
+      "caption": "Praslin",
+      "locationId": "Praslin",
       "coordinates": {
-        "lng": 55.72901977188562,
-        "lat": -4.743711153026259
+        "lng": 55.7354,
+        "lat": -4.3223
       },
       "dateCreated": "2025-10-10",
       "tags": [
@@ -19385,17 +19396,18 @@
         "sand",
         "palm trees",
         "coastal"
-      ]
+      ],
+      "place": "Praslin"
     },
     {
       "id": "superb-seychelles13",
       "albumId": "superb-seychelles",
       "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Seychelles2025/IMG_2004.jpg",
-      "caption": "Mahe/Praslin/La Digue",
-      "locationId": "Mahe/Praslin/La Digue",
+      "caption": "Praslin",
+      "locationId": "Praslin",
       "coordinates": {
-        "lng": 55.72901977188562,
-        "lat": -4.743711153026259
+        "lng": 55.7354,
+        "lat": -4.3223
       },
       "dateCreated": "2025-10-10",
       "tags": [
@@ -19405,17 +19417,18 @@
         "flag",
         "tropical",
         "leisure"
-      ]
+      ],
+      "place": "Praslin"
     },
     {
       "id": "superb-seychelles14",
       "albumId": "superb-seychelles",
       "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Seychelles2025/IMG_2006.jpg",
-      "caption": "Mahe/Praslin/La Digue",
-      "locationId": "Mahe/Praslin/La Digue",
+      "caption": "Praslin",
+      "locationId": "Praslin",
       "coordinates": {
-        "lng": 55.72901977188562,
-        "lat": -4.743711153026259
+        "lng": 55.7354,
+        "lat": -4.3223
       },
       "dateCreated": "2025-10-10",
       "tags": [
@@ -19425,17 +19438,18 @@
         "tower",
         "building",
         "trees"
-      ]
+      ],
+      "place": "Praslin"
     },
     {
       "id": "superb-seychelles15",
       "albumId": "superb-seychelles",
       "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Seychelles2025/IMG_2017.jpg",
-      "caption": "Mahe/Praslin/La Digue",
-      "locationId": "Mahe/Praslin/La Digue",
+      "caption": "La Digue",
+      "locationId": "La Digue",
       "coordinates": {
-        "lng": 55.72901977188562,
-        "lat": -4.743711153026259
+        "lng": 55.836,
+        "lat": -4.359
       },
       "dateCreated": "2025-10-10",
       "tags": [
@@ -19445,17 +19459,18 @@
         "clouds",
         "boats",
         "coastal"
-      ]
+      ],
+      "place": "La Digue"
     },
     {
       "id": "superb-seychelles16",
       "albumId": "superb-seychelles",
       "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Seychelles2025/IMG_2018.jpg",
-      "caption": "Mahe/Praslin/La Digue",
-      "locationId": "Mahe/Praslin/La Digue",
+      "caption": "La Digue",
+      "locationId": "La Digue",
       "coordinates": {
-        "lng": 55.72901977188562,
-        "lat": -4.743711153026259
+        "lng": 55.836,
+        "lat": -4.359
       },
       "dateCreated": "2025-10-10",
       "tags": [
@@ -19465,17 +19480,18 @@
         "coastal",
         "ocean",
         "scenic"
-      ]
+      ],
+      "place": "La Digue"
     },
     {
       "id": "superb-seychelles17",
       "albumId": "superb-seychelles",
       "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Seychelles2025/IMG_2019.jpg",
-      "caption": "Mahe/Praslin/La Digue",
-      "locationId": "Mahe/Praslin/La Digue",
+      "caption": "La Digue",
+      "locationId": "La Digue",
       "coordinates": {
-        "lng": 55.72901977188562,
-        "lat": -4.743711153026259
+        "lng": 55.836,
+        "lat": -4.359
       },
       "dateCreated": "2025-10-10",
       "tags": [
@@ -19485,17 +19501,18 @@
         "ocean",
         "people",
         "tropical"
-      ]
+      ],
+      "place": "La Digue"
     },
     {
       "id": "superb-seychelles18",
       "albumId": "superb-seychelles",
       "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Seychelles2025/IMG_2022.jpg",
-      "caption": "Mahe/Praslin/La Digue",
-      "locationId": "Mahe/Praslin/La Digue",
+      "caption": "La Digue",
+      "locationId": "La Digue",
       "coordinates": {
-        "lng": 55.72901977188562,
-        "lat": -4.743711153026259
+        "lng": 55.836,
+        "lat": -4.359
       },
       "dateCreated": "2025-10-10",
       "tags": [
@@ -19505,17 +19522,18 @@
         "nature",
         "coastal",
         "trees"
-      ]
+      ],
+      "place": "La Digue"
     },
     {
       "id": "superb-seychelles19",
       "albumId": "superb-seychelles",
       "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Seychelles2025/IMG_2023.jpg",
-      "caption": "Mahe/Praslin/La Digue",
-      "locationId": "Mahe/Praslin/La Digue",
+      "caption": "La Digue",
+      "locationId": "La Digue",
       "coordinates": {
-        "lng": 55.72901977188562,
-        "lat": -4.743711153026259
+        "lng": 55.836,
+        "lat": -4.359
       },
       "dateCreated": "2025-10-10",
       "tags": [
@@ -19525,17 +19543,18 @@
         "water",
         "coastal",
         "trees"
-      ]
+      ],
+      "place": "La Digue"
     },
     {
       "id": "superb-seychelles20",
       "albumId": "superb-seychelles",
       "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Seychelles2025/IMG_2024.jpg",
-      "caption": "Mahe/Praslin/La Digue",
-      "locationId": "Mahe/Praslin/La Digue",
+      "caption": "La Digue",
+      "locationId": "La Digue",
       "coordinates": {
-        "lng": 55.72901977188562,
-        "lat": -4.743711153026259
+        "lng": 55.836,
+        "lat": -4.359
       },
       "dateCreated": "2025-10-10",
       "tags": [
@@ -19545,17 +19564,18 @@
         "tropical",
         "coastal",
         "scenic"
-      ]
+      ],
+      "place": "La Digue"
     },
     {
       "id": "superb-seychelles21",
       "albumId": "superb-seychelles",
       "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Seychelles2025/IMG_2026.jpg",
-      "caption": "Mahe/Praslin/La Digue",
-      "locationId": "Mahe/Praslin/La Digue",
+      "caption": "La Digue",
+      "locationId": "La Digue",
       "coordinates": {
-        "lng": 55.72901977188562,
-        "lat": -4.743711153026259
+        "lng": 55.836,
+        "lat": -4.359
       },
       "dateCreated": "2025-10-10",
       "tags": [
@@ -19565,17 +19585,18 @@
         "coastal",
         "water",
         "trees"
-      ]
+      ],
+      "place": "La Digue"
     },
     {
       "id": "superb-seychelles22",
       "albumId": "superb-seychelles",
       "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Seychelles2025/IMG_2030.jpg",
-      "caption": "Mahe/Praslin/La Digue",
-      "locationId": "Mahe/Praslin/La Digue",
+      "caption": "La Digue",
+      "locationId": "La Digue",
       "coordinates": {
-        "lng": 55.72901977188562,
-        "lat": -4.743711153026259
+        "lng": 55.836,
+        "lat": -4.359
       },
       "dateCreated": "2025-10-10",
       "tags": [
@@ -19585,17 +19606,18 @@
         "ocean",
         "sky",
         "scenic"
-      ]
+      ],
+      "place": "La Digue"
     },
     {
       "id": "superb-seychelles23",
       "albumId": "superb-seychelles",
       "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Seychelles2025/IMG_2032 2.jpg",
-      "caption": "Mahe/Praslin/La Digue",
-      "locationId": "Mahe/Praslin/La Digue",
+      "caption": "La Digue",
+      "locationId": "La Digue",
       "coordinates": {
-        "lng": 55.72901977188562,
-        "lat": -4.743711153026259
+        "lng": 55.836,
+        "lat": -4.359
       },
       "dateCreated": "2025-10-10",
       "tags": [
@@ -19605,17 +19627,18 @@
         "palm trees",
         "coastal",
         "sea"
-      ]
+      ],
+      "place": "La Digue"
     },
     {
       "id": "superb-seychelles24",
       "albumId": "superb-seychelles",
       "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Seychelles2025/IMG_2033.jpg",
-      "caption": "Mahe/Praslin/La Digue",
-      "locationId": "Mahe/Praslin/La Digue",
+      "caption": "La Digue",
+      "locationId": "La Digue",
       "coordinates": {
-        "lng": 55.72901977188562,
-        "lat": -4.743711153026259
+        "lng": 55.836,
+        "lat": -4.359
       },
       "dateCreated": "2025-10-10",
       "tags": [
@@ -19625,17 +19648,18 @@
         "palm trees",
         "coastal",
         "ocean"
-      ]
+      ],
+      "place": "La Digue"
     },
     {
       "id": "superb-seychelles25",
       "albumId": "superb-seychelles",
       "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Seychelles2025/IMG_2034.jpg",
-      "caption": "Mahe/Praslin/La Digue",
-      "locationId": "Mahe/Praslin/La Digue",
+      "caption": "La Digue",
+      "locationId": "La Digue",
       "coordinates": {
-        "lng": 55.72901977188562,
-        "lat": -4.743711153026259
+        "lng": 55.836,
+        "lat": -4.359
       },
       "dateCreated": "2025-10-10",
       "tags": [
@@ -19645,17 +19669,18 @@
         "coastal",
         "sand",
         "nature"
-      ]
+      ],
+      "place": "La Digue"
     },
     {
       "id": "superb-seychelles26",
       "albumId": "superb-seychelles",
       "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Seychelles2025/IMG_2036 2.jpg",
-      "caption": "Mahe/Praslin/La Digue",
-      "locationId": "Mahe/Praslin/La Digue",
+      "caption": "La Digue",
+      "locationId": "La Digue",
       "coordinates": {
-        "lng": 55.72901977188562,
-        "lat": -4.743711153026259
+        "lng": 55.836,
+        "lat": -4.359
       },
       "dateCreated": "2025-10-10",
       "tags": [
@@ -19665,17 +19690,18 @@
         "palm trees",
         "coastal",
         "ocean"
-      ]
+      ],
+      "place": "La Digue"
     },
     {
       "id": "superb-seychelles27",
       "albumId": "superb-seychelles",
       "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Seychelles2025/IMG_2037 2.jpg",
-      "caption": "Mahe/Praslin/La Digue",
-      "locationId": "Mahe/Praslin/La Digue",
+      "caption": "La Digue",
+      "locationId": "La Digue",
       "coordinates": {
-        "lng": 55.72901977188562,
-        "lat": -4.743711153026259
+        "lng": 55.836,
+        "lat": -4.359
       },
       "dateCreated": "2025-10-10",
       "tags": [
@@ -19685,17 +19711,18 @@
         "ocean",
         "palm trees",
         "coastal"
-      ]
+      ],
+      "place": "La Digue"
     },
     {
       "id": "superb-seychelles28",
       "albumId": "superb-seychelles",
       "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Seychelles2025/IMG_2038 2.jpg",
-      "caption": "Mahe/Praslin/La Digue",
-      "locationId": "Mahe/Praslin/La Digue",
+      "caption": "La Digue",
+      "locationId": "La Digue",
       "coordinates": {
-        "lng": 55.72901977188562,
-        "lat": -4.743711153026259
+        "lng": 55.836,
+        "lat": -4.359
       },
       "dateCreated": "2025-10-10",
       "tags": [
@@ -19705,17 +19732,18 @@
         "palm trees",
         "ocean",
         "coastal"
-      ]
+      ],
+      "place": "La Digue"
     },
     {
       "id": "superb-seychelles29",
       "albumId": "superb-seychelles",
       "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Seychelles2025/IMG_2040.jpg",
-      "caption": "Mahe/Praslin/La Digue",
-      "locationId": "Mahe/Praslin/La Digue",
+      "caption": "La Digue",
+      "locationId": "La Digue",
       "coordinates": {
-        "lng": 55.72901977188562,
-        "lat": -4.743711153026259
+        "lng": 55.836,
+        "lat": -4.359
       },
       "dateCreated": "2025-10-10",
       "tags": [
@@ -19725,17 +19753,18 @@
         "tropical",
         "coastal",
         "scenic"
-      ]
+      ],
+      "place": "La Digue"
     },
     {
       "id": "superb-seychelles30",
       "albumId": "superb-seychelles",
       "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Seychelles2025/IMG_2041 2.jpg",
-      "caption": "Mahe/Praslin/La Digue",
-      "locationId": "Mahe/Praslin/La Digue",
+      "caption": "La Digue",
+      "locationId": "La Digue",
       "coordinates": {
-        "lng": 55.72901977188562,
-        "lat": -4.743711153026259
+        "lng": 55.836,
+        "lat": -4.359
       },
       "dateCreated": "2025-10-10",
       "tags": [
@@ -19745,17 +19774,18 @@
         "water",
         "coastal",
         "palm trees"
-      ]
+      ],
+      "place": "La Digue"
     },
     {
       "id": "superb-seychelles31",
       "albumId": "superb-seychelles",
       "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Seychelles2025/IMG_2042 2.jpg",
-      "caption": "Mahe/Praslin/La Digue",
-      "locationId": "Mahe/Praslin/La Digue",
+      "caption": "La Digue",
+      "locationId": "La Digue",
       "coordinates": {
-        "lng": 55.72901977188562,
-        "lat": -4.743711153026259
+        "lng": 55.836,
+        "lat": -4.359
       },
       "dateCreated": "2025-10-10",
       "tags": [
@@ -19765,17 +19795,18 @@
         "sand",
         "rocks",
         "coastal"
-      ]
+      ],
+      "place": "La Digue"
     },
     {
       "id": "superb-seychelles32",
       "albumId": "superb-seychelles",
       "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Seychelles2025/IMG_2045.jpg",
-      "caption": "Mahe/Praslin/La Digue",
-      "locationId": "Mahe/Praslin/La Digue",
+      "caption": "La Digue",
+      "locationId": "La Digue",
       "coordinates": {
-        "lng": 55.72901977188562,
-        "lat": -4.743711153026259
+        "lng": 55.836,
+        "lat": -4.359
       },
       "dateCreated": "2025-10-10",
       "tags": [
@@ -19785,17 +19816,18 @@
         "ocean",
         "rocks",
         "coastal"
-      ]
+      ],
+      "place": "La Digue"
     },
     {
       "id": "superb-seychelles33",
       "albumId": "superb-seychelles",
       "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Seychelles2025/IMG_2046 2.jpg",
-      "caption": "Mahe/Praslin/La Digue",
-      "locationId": "Mahe/Praslin/La Digue",
+      "caption": "La Digue",
+      "locationId": "La Digue",
       "coordinates": {
-        "lng": 55.72901977188562,
-        "lat": -4.743711153026259
+        "lng": 55.836,
+        "lat": -4.359
       },
       "dateCreated": "2025-10-10",
       "tags": [
@@ -19805,17 +19837,18 @@
         "tropical",
         "coastal",
         "sailboat"
-      ]
+      ],
+      "place": "La Digue"
     },
     {
       "id": "superb-seychelles34",
       "albumId": "superb-seychelles",
       "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Seychelles2025/IMG_2060.jpg",
-      "caption": "Mahe/Praslin/La Digue",
-      "locationId": "Mahe/Praslin/La Digue",
+      "caption": "La Digue",
+      "locationId": "La Digue",
       "coordinates": {
-        "lng": 55.72901977188562,
-        "lat": -4.743711153026259
+        "lng": 55.836,
+        "lat": -4.359
       },
       "dateCreated": "2025-10-10",
       "tags": [
@@ -19825,17 +19858,18 @@
         "beach",
         "clouds",
         "coastal"
-      ]
+      ],
+      "place": "La Digue"
     },
     {
       "id": "superb-seychelles35",
       "albumId": "superb-seychelles",
       "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Seychelles2025/IMG_2062.jpg",
-      "caption": "Mahe/Praslin/La Digue",
-      "locationId": "Mahe/Praslin/La Digue",
+      "caption": "La Digue",
+      "locationId": "La Digue",
       "coordinates": {
-        "lng": 55.72901977188562,
-        "lat": -4.743711153026259
+        "lng": 55.836,
+        "lat": -4.359
       },
       "dateCreated": "2025-10-10",
       "tags": [
@@ -19845,17 +19879,18 @@
         "island",
         "water",
         "coastal"
-      ]
+      ],
+      "place": "La Digue"
     },
     {
       "id": "superb-seychelles36",
       "albumId": "superb-seychelles",
       "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Seychelles2025/IMG_2064.jpg",
-      "caption": "Mahe/Praslin/La Digue",
-      "locationId": "Mahe/Praslin/La Digue",
+      "caption": "La Digue",
+      "locationId": "La Digue",
       "coordinates": {
-        "lng": 55.72901977188562,
-        "lat": -4.743711153026259
+        "lng": 55.836,
+        "lat": -4.359
       },
       "dateCreated": "2025-10-10",
       "tags": [
@@ -19865,7 +19900,8 @@
         "waves",
         "clouds",
         "rainbow"
-      ]
+      ],
+      "place": "La Digue"
     },
     {
       "id": "sublime-sweden1",

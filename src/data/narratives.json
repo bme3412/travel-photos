@@ -438,14 +438,16 @@
     "edited": false
   },
   "superb-seychelles": {
-    "intro": "A single chapter across three islands of the Seychelles — Mahé, Praslin, and La Digue gathered into one journey through the granite heart of the Indian Ocean.",
+    "intro": "A single chapter written across three islands of the Seychelles — Mahé, then Praslin, then La Digue — gathered into one journey through the granite heart of the Indian Ocean. The days moved by boat and by water, from Mahé's mountainous, palm-lined coast out toward the quieter shores beyond. What held it all together was the shoreline itself: pale sand, warm shallows, and the smooth granite boulders that give these islands their unmistakable shape.",
     "stops": {
-      "Mahe/Praslin/La Digue": "Three of the archipelago's islands, moving from Mahé to Praslin to La Digue across the Indian Ocean."
+      "Mahe": "The journey began on Mahé, the largest island, along the wide grey-gold sweep of Beau Vallon — swimmers in the shore break and walkers strung out beneath steep green mountains. The days were unhurried: a hillside pool shaded by a broad old tree with the Indian Ocean flat beyond it, and a pair of giant tortoises grazing their enclosure with slow, prehistoric patience.",
+      "Praslin": "A crossing north to Praslin, where the coast turned to sculpted granite — the deep turquoise bay of Anse Lazio framed by warm boulders and forest, a catamaran riding at anchor offshore. There was time to sit in the shade with a cold drink as the Seychelles flag snapped over the sand, and a detour inland to a mustard-yellow church standing quiet among the palms.",
+      "La Digue": "The last and longest chapter belonged to La Digue, and to Anse Source d'Argent — a shallow, glass-clear lagoon threaded between low granite boulders worn into soft, improbable shapes, the sand pale as bone and Praslin's peaks blue across the water. Quiet lanes led between the coves; wider beaches like Grande Anse opened to rolling surf, a small boat rode the reef flat, and one evening a rainbow came down over the sea to close the trip."
     },
     "fingerprint": "8faa879f6438",
     "model": "claude-opus-4-8",
     "generatedAt": "2026-07-06T17:57:35.965Z",
-    "edited": false
+    "edited": true
   },
   "sublime-sweden": {
     "intro": "A single city, held close: Sweden's capital across twenty-one frames, from the archipelago's edge to the lanes of Gamla Stan.",
