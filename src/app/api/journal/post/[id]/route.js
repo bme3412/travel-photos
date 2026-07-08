@@ -58,6 +58,22 @@ function tripPhotos(tripId) {
   }
 }
 
+function tripVideos(tripId) {
+  try {
+    const all = JSON.parse(fs.readFileSync(path.join(DATA_DIR, 'videos.json'), 'utf8')).videos || [];
+    return all
+      .filter((v) => v.albumId?.toLowerCase() === String(tripId).toLowerCase())
+      .map((v) => ({
+        file: v.file,
+        url: transformToCloudFront(v.url),
+        poster: v.poster ? transformToCloudFront(v.poster) : null,
+        caption: v.caption || '',
+      }));
+  } catch {
+    return [];
+  }
+}
+
 export async function GET(_request, { params }) {
   const { id } = await params;
   if (!SLUG.test(id)) return Response.json({ error: 'Invalid id' }, { status: 400 });
@@ -76,6 +92,7 @@ export async function GET(_request, { params }) {
     frontmatter: { ...data, date: normalizeDate(data.date) },
     body: content,
     photos: tripPhotos(tripId),
+    videos: tripVideos(tripId),
   });
 }
 

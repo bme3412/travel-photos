@@ -29,6 +29,7 @@ export default function Studio() {
   const [body, setBody] = useState(''); // raw-mode source
   const [mode, setMode] = useState('blocks');
   const [photos, setPhotos] = useState([]);
+  const [videos, setVideos] = useState([]);
   const [dirty, setDirty] = useState(false);
   const [saving, setSaving] = useState(false);
   const [status, setStatus] = useState('');
@@ -47,9 +48,11 @@ export default function Studio() {
       const hit =
         photos.find((p) => p.file === file) ||
         photos.find((p) => p.file.includes(file) || file.includes(p.file));
-      return hit ? hit.url : null;
+      if (hit) return hit.url;
+      const vid = videos.find((v) => v.file === file);
+      return vid ? vid.poster : null;
     },
-    [photos]
+    [photos, videos]
   );
 
   const loadPost = useCallback(
@@ -66,6 +69,7 @@ export default function Studio() {
       setBody(data.body || '');
       setBlocks(parseBlocks(data.body || ''));
       setPhotos(data.photos || []);
+      setVideos(data.videos || []);
       setMode('blocks');
       setDirty(false);
       setStatus('');
@@ -149,6 +153,11 @@ export default function Studio() {
   const onPhotoActivate = (file) => {
     if (mode === 'blocks') addBlock(makeBlock('figure', { src: file, caption: '', wide: false }));
     else insertAtCursor(`\n<Figure src="${file}" caption="" />\n\n`);
+  };
+
+  const onVideoActivate = (file) => {
+    if (mode === 'blocks') addBlock(makeBlock('panorama', { src: file, caption: '', controls: false }));
+    else insertAtCursor(`\n<Panorama src="${file}" caption="" />\n\n`);
   };
 
   const input =
@@ -341,7 +350,7 @@ export default function Studio() {
               {/* Right: preview / photos */}
               <div className="flex w-[40%] flex-shrink-0 flex-col border-l border-ink/10">
                 <div className="flex items-center gap-1 border-b border-ink/10 px-3 py-1.5">
-                  {['photos', 'preview'].map((tab) => (
+                  {['photos', 'videos', 'preview'].map((tab) => (
                     <button
                       key={tab}
                       onClick={() => setRightTab(tab)}
@@ -349,7 +358,11 @@ export default function Studio() {
                         rightTab === tab ? 'bg-ink/5 text-ink' : 'text-muted hover:text-ink'
                       }`}
                     >
-                      {tab === 'photos' ? `Photos (${photos.length})` : 'Preview'}
+                      {tab === 'photos'
+                        ? `Photos (${photos.length})`
+                        : tab === 'videos'
+                          ? `Videos (${videos.length})`
+                          : 'Preview'}
                     </button>
                   ))}
                   {rightTab === 'preview' && (
@@ -370,6 +383,51 @@ export default function Studio() {
                     title="Preview"
                     className="w-full flex-1 border-0 bg-white"
                   />
+                ) : rightTab === 'videos' ? (
+                  <div className="flex-1 overflow-y-auto p-3">
+                    {videos.length === 0 ? (
+                      <p className="text-[11px] text-muted">
+                        No videos for this trip yet. Add clips with{' '}
+                        <code className="rounded bg-ink/5 px-1">npm run add-videos -- {selected} &lt;folder&gt;</code>
+                        , then reload.
+                      </p>
+                    ) : (
+                      <>
+                        <p className="mb-2 text-[11px] text-muted">
+                          Drag a clip into the editor to place it as a Panorama, or click to add.
+                        </p>
+                        <div className="grid grid-cols-2 gap-2">
+                          {videos.map((video) => (
+                            <button
+                              key={video.file}
+                              draggable
+                              onDragStart={(e) => {
+                                e.dataTransfer.setData('application/x-video', video.file);
+                                e.dataTransfer.effectAllowed = 'copy';
+                              }}
+                              onClick={() => onVideoActivate(video.file)}
+                              className="group relative text-left"
+                              title={video.file}
+                            >
+                              {/* eslint-disable-next-line @next/next/no-img-element */}
+                              <img
+                                src={video.poster || undefined}
+                                alt={video.caption || video.file}
+                                loading="lazy"
+                                className="aspect-[3/2] w-full rounded bg-ink/10 object-cover"
+                              />
+                              <span className="absolute left-1 top-1 rounded bg-ink/60 px-1 text-[9px] text-paper">
+                                ▶ video
+                              </span>
+                              <span className="mt-1 block truncate text-[10px] text-muted group-hover:text-accent">
+                                {video.file}
+                              </span>
+                            </button>
+                          ))}
+                        </div>
+                      </>
+                    )}
+                  </div>
                 ) : (
                   <div className="flex-1 overflow-y-auto p-3">
                     <p className="mb-2 text-[11px] text-muted">

@@ -50,3 +50,7 @@ export async function readDestinations() {
 export async function readNarratives() {
   return await readJsonFile('narratives.json');
 }
+
+export async function readVideos() {
+  return (await readJsonFile('videos.json')) || { videos: [] };
+}

@@ -176,7 +176,9 @@ function BlockCard({ block, photoUrl, onUpdate, onRemove }) {
         onDragOver={(e) => e.preventDefault()}
         onDrop={(e) => {
           e.preventDefault();
-          const p = e.dataTransfer.getData('application/x-photo');
+          const p =
+            e.dataTransfer.getData('application/x-photo') ||
+            e.dataTransfer.getData('application/x-video');
           if (p) patch({ src: p });
         }}
         className="flex gap-3"
@@ -256,8 +258,10 @@ export default function BlockEditor({ blocks, onChange, photoUrl }) {
     e.preventDefault();
     setDragOver(null);
     const photo = e.dataTransfer.getData('application/x-photo');
+    const video = e.dataTransfer.getData('application/x-video');
     const blockId = e.dataTransfer.getData('application/x-block');
     if (photo) insertAt(index, makeBlock('figure', { src: photo, caption: '', wide: false }));
+    else if (video) insertAt(index, makeBlock('panorama', { src: video, caption: '', controls: false }));
     else if (blockId) moveTo(blockId, index);
   };
 

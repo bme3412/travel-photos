@@ -9,6 +9,7 @@ import {
   readLocations,
   readDestinations,
   readNarratives,
+  readVideos,
 } from '../../utils/fileHandler';
 import { buildTrip } from '../../utils/tripBuilder';
 import { transformToCloudFront } from '../../utils/imageUtils';
@@ -47,24 +48,35 @@ const formatPostDate = (value) => {
     : date.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
 };
 
-// A filename substring ("IMG_1669.jpg") or full URL -> CloudFront URL.
-function buildImageResolver(rawPhotos) {
+// A filename substring ("IMG_1669.jpg", "clip.mp4") or full URL -> CloudFront
+// URL, resolved against the trip's photos and videos.
+function buildMediaResolver(rawPhotos, videos) {
   return (ref) => {
     if (!ref) return null;
     if (/^https?:\/\//.test(ref)) return ref;
-    const match = rawPhotos.find((p) => p.url && p.url.includes(ref));
-    return match ? transformToCloudFront(match.url) : null;
+    const photo = rawPhotos.find((p) => p.url && p.url.includes(ref));
+    if (photo) return transformToCloudFront(photo.url);
+    const video = (videos || []).find((v) => v.file === ref || (v.url && v.url.includes(ref)));
+    if (video) return transformToCloudFront(video.url);
+    return null;
   };
 }
 
 async function loadAlbum(id) {
-  const [albumsData, photosData] = await Promise.all([readAlbums(), readPhotos()]);
+  const [albumsData, photosData, videosData] = await Promise.all([
+    readAlbums(),
+    readPhotos(),
+    readVideos(),
+  ]);
   const album = albumsData?.albums?.find((a) => a.id.toLowerCase() === id.toLowerCase());
   if (!album) return null;
   const rawPhotos = photosData.photos.filter(
     (p) => p.albumId.toLowerCase() === album.id.toLowerCase()
   );
-  return { album, rawPhotos };
+  const videos = (videosData?.videos || []).filter(
+    (v) => v.albumId?.toLowerCase() === album.id.toLowerCase()
+  );
+  return { album, rawPhotos, videos };
 }
 
 async function getTripData(id) {
@@ -106,7 +118,7 @@ export async function generateMetadata({ params }) {
   if (post) {
     const fm = post.frontmatter;
     const loaded = await loadAlbum(fm.tripId || id);
-    const resolve = buildImageResolver(loaded?.rawPhotos || []);
+    const resolve = buildMediaResolver(loaded?.rawPhotos || [], loaded?.videos || []);
     const cover =
       resolve(fm.cover) ||
       (loaded?.rawPhotos[0] && transformToCloudFront(loaded.rawPhotos[0].url)) ||
@@ -220,7 +232,7 @@ async function MdxArticle({ id, post }) {
   const tripId = fm.tripId || id;
   const loaded = await loadAlbum(tripId);
   const rawPhotos = loaded?.rawPhotos || [];
-  const resolveImage = buildImageResolver(rawPhotos);
+  const resolveImage = buildMediaResolver(rawPhotos, loaded?.videos || []);
   const cover =
     resolveImage(fm.cover) ||
     (rawPhotos[0] && transformToCloudFront(rawPhotos[0].url)) ||
