@@ -9,7 +9,6 @@ An immersive Next.js 15 experience for cataloging travel photography, mapping ev
 - **Dynamic album pages** that pre-render via ISR, hydrate with CloudFront-friendly URLs, and expose related location facts.
 - **Interactive Mapbox GL world map** that shades visited countries, clusters destinations, and opens a side panel with contextual photos (`/map`).
 - **Photo of the Day** service (`/photo-of-the-day` + `/api/random-photo`) that can serve either a deterministic daily shot or a true random pick.
-- **Bucket list tracker** with progress metrics, filters, and country flag badges (`/bucket-list`).
 - **AWS-based media pipeline** (S3 + CloudFront + sharp) with CLI helpers for converting HEIC files, uploading, validating credentials, and keeping JSON data tidy (see `scripts/`).
 
 ---
@@ -24,7 +23,7 @@ An immersive Next.js 15 experience for cataloging travel photography, mapping ev
 ---
 
 ## 📁 Key Directories
-- `src/app/` – App Router routes (`/`, `/albums/[id]`, `/map`, `/photo-of-the-day`, `/bucket-list`, API routes, shared UI components, Zustand store, utilities).
+- `src/app/` – App Router routes (`/`, `/albums/[id]`, `/map`, `/photo-of-the-day`, API routes, shared UI components, Zustand store, utilities).
 - `src/data/` – JSON sources (`albums.json`, `photos.json`, `destinations.json`, `locations.json`, plus `travel-century-list.txt` used for stats).
 - `scripts/` – Node utilities for importing photos, converting HEIC images, migrating assets, and validating AWS credentials (full docs in `scripts/README.md`).
 - `public/` – Static assets, SVG icons, and any legacy images that still live locally.
@@ -37,6 +36,5 @@ An immersive Next.js 15 experience for cataloging travel photography, mapping ev
 - `/albums/[id]` – Detail layouts, CloudFront URL rewriting, dynamic Open Graph metadata, static params generation.
 - `/map` – Full-screen Mapbox view with region fly-to controls, visited-country shading, destination markers, and a photo side panel.
 - `/photo-of-the-day` – Fetches a random photo on each request; pairs with the `/api/random-photo` endpoint for client polling.
-- `/bucket-list` – Client-only experience backed by `bucketListData.js`, with search + filters + progress meters.
 
 ---
