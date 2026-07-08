@@ -102,11 +102,11 @@ const FeaturedHero = ({ albums }) => {
             </h1>
             <div className="fade-up fade-up-2 mt-6 flex items-center gap-6">
               <Link
-                href={`/albums/${album.id}`}
+                href={`/journal/${album.id}`}
                 className="group inline-flex items-center gap-2 text-paper text-[12px] uppercase tracking-[0.2em]
                            border-b border-paper/40 pb-1 hover:border-accent hover:text-paper transition-colors duration-300"
               >
-                Open the album
+                Read the dispatch
                 <ArrowRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1" />
               </Link>
               <span className="text-[11px] uppercase tracking-[0.2em] text-paper/60">
@@ -279,6 +279,110 @@ const AlbumIndexRow = ({ album, number }) => {
   );
 };
 
+// ——————————————————————————— Dispatches feed ———————————————————————————
+// Blog-style reading list: each album is a "dispatch" whose narrative intro
+// is the excerpt and whose stops are its chapters. Links to /journal/[id].
+
+const dispatchMeta = (album) =>
+  [
+    album.chapterCount > 1 ? `${album.chapterCount} chapters` : null,
+    `${album.photoCount} photographs`,
+    album.readMin ? `${album.readMin} min read` : null,
+  ]
+    .filter(Boolean)
+    .join('  ·  ');
+
+const FeaturedDispatch = ({ album }) => {
+  const { flag, title } = splitFlag(album.name);
+  const cover = album.coverPhoto;
+
+  return (
+    <Link href={`/journal/${album.id}`} className="group block" prefetch={false}>
+      <div className="relative aspect-[16/9] w-full overflow-hidden rounded-xl bg-ink/5">
+        {cover?.url && (
+          <Image
+            src={cover.url}
+            alt={cover.caption || title}
+            fill
+            priority
+            sizes="(min-width: 1024px) 960px, 100vw"
+            className="object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-[1.03]"
+          />
+        )}
+        <div className="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/25 to-transparent" />
+        <div className="absolute inset-x-0 bottom-0 p-6 sm:p-9">
+          <p className="text-[11px] uppercase tracking-[0.3em] text-paper/75 mb-3">
+            Latest dispatch {flag && <span className="mx-1">{flag}</span>} · {album.year}
+          </p>
+          <h3 className="font-display text-3xl sm:text-5xl text-paper leading-[1.05] tracking-tight max-w-2xl">
+            {title}
+          </h3>
+        </div>
+      </div>
+      <div className="mt-5 max-w-2xl">
+        {album.excerpt && (
+          <p className="text-ink/75 text-base sm:text-lg leading-relaxed line-clamp-3">{album.excerpt}</p>
+        )}
+        <div className="mt-4 flex flex-wrap items-center gap-x-4 gap-y-2">
+          <span className="inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.2em] text-ink group-hover:text-accent transition-colors duration-300">
+            Read the dispatch
+            <ArrowRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1" />
+          </span>
+          <span className="text-[11px] uppercase tracking-[0.18em] text-muted">{dispatchMeta(album)}</span>
+        </div>
+      </div>
+    </Link>
+  );
+};
+
+const DispatchRow = ({ album }) => {
+  const { flag, title } = splitFlag(album.name);
+  const cover = album.coverPhoto;
+
+  return (
+    <Link
+      href={`/journal/${album.id}`}
+      className="group grid grid-cols-1 sm:grid-cols-[minmax(0,2fr)_minmax(0,3fr)] gap-5 sm:gap-8 py-8 sm:py-10 items-center"
+      prefetch={false}
+    >
+      <div className="relative aspect-[4/3] overflow-hidden rounded-lg bg-ink/5">
+        {cover?.url ? (
+          <Image
+            src={cover.url}
+            alt={cover.caption || title}
+            fill
+            sizes="(min-width: 640px) 40vw, 100vw"
+            className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
+          />
+        ) : (
+          <div className="flex items-center justify-center h-full text-ink/20">
+            <CameraIcon className="h-8 w-8" />
+          </div>
+        )}
+      </div>
+      <div className="min-w-0">
+        <p className="text-[11px] uppercase tracking-[0.2em] text-muted mb-2">
+          {flag && <span className="mr-1.5 tracking-normal">{flag}</span>}
+          Dispatch · {album.year}
+        </p>
+        <h3 className="font-display text-2xl sm:text-3xl tracking-tight leading-snug group-hover:text-accent transition-colors duration-300">
+          {title}
+        </h3>
+        {album.excerpt && (
+          <p className="mt-2.5 text-ink/70 leading-relaxed line-clamp-2 sm:line-clamp-3">{album.excerpt}</p>
+        )}
+        <div className="mt-3.5 flex flex-wrap items-center gap-x-4 gap-y-1.5">
+          <span className="inline-flex items-center gap-1.5 text-[11px] uppercase tracking-[0.2em] text-ink group-hover:text-accent transition-colors duration-300">
+            Read the dispatch
+            <ArrowRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1" />
+          </span>
+          <span className="text-[11px] uppercase tracking-[0.18em] text-muted">{dispatchMeta(album)}</span>
+        </div>
+      </div>
+    </Link>
+  );
+};
+
 // ——————————————————————————— Controls ———————————————————————————
 
 const SORT_OPTIONS = [
@@ -304,7 +408,7 @@ const Controls = ({ sortBy, onSortChange, viewMode, onViewModeChange }) => (
     </select>
 
     <div className="flex items-center gap-3 text-[11px] uppercase tracking-[0.18em]">
-      {[['grid', 'Grid'], ['list', 'Index']].map(([mode, label]) => (
+      {[['feed', 'Journal'], ['grid', 'Grid'], ['list', 'Index']].map(([mode, label]) => (
         <button
           key={mode}
           onClick={() => onViewModeChange(mode)}
@@ -333,7 +437,7 @@ const PhotoAlbumExplorer = ({ initialAlbums = null }) => {
 
   // Local state
   const [sortBy, setSortBy] = useState('year-desc');
-  const [viewMode, setViewMode] = useState('grid');
+  const [viewMode, setViewMode] = useState('feed');
 
   useEffect(() => {
     // If initialAlbums provided (from SSR), use them directly
@@ -421,8 +525,10 @@ const PhotoAlbumExplorer = ({ initialAlbums = null }) => {
         {/* Section header */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-5 mb-10">
           <div>
-            <p className="text-[11px] uppercase tracking-[0.3em] text-accent mb-2">The collection</p>
-            <h2 className="font-display text-3xl md:text-4xl tracking-tight">All albums</h2>
+            <p className="text-[11px] uppercase tracking-[0.3em] text-accent mb-2">The journal</p>
+            <h2 className="font-display text-3xl md:text-4xl tracking-tight">
+              {viewMode === 'feed' ? 'Latest dispatches' : 'All albums'}
+            </h2>
           </div>
           <Controls
             sortBy={sortBy}
@@ -433,7 +539,18 @@ const PhotoAlbumExplorer = ({ initialAlbums = null }) => {
         </div>
 
         {processedAlbums.length > 0 ? (
-          viewMode === 'grid' ? (
+          viewMode === 'feed' ? (
+            <div className="max-w-5xl mx-auto">
+              <FeaturedDispatch album={processedAlbums[0]} />
+              {processedAlbums.length > 1 && (
+                <div className="mt-8 border-t border-ink/10 divide-y divide-ink/10">
+                  {processedAlbums.slice(1).map((album) => (
+                    <DispatchRow key={album.id} album={album} />
+                  ))}
+                </div>
+              )}
+            </div>
+          ) : viewMode === 'grid' ? (
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-14 items-start">
               {processedAlbums.map((album, index) => (
                 <AlbumGridCard

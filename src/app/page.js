@@ -1,7 +1,7 @@
 // src/app/page.js
 
 import PhotoAlbumExplorer from './components/PhotoAlbumExplorer';
-import { readAlbums, readPhotos, readLocations } from './utils/fileHandler';
+import { readAlbums, readPhotos, readLocations, readNarratives } from './utils/fileHandler';
 import { buildAlbumSummaries } from './utils/albumSummaries';
 
 export const metadata = {
@@ -15,18 +15,21 @@ export const revalidate = 3600;
 // Server-side data fetching
 async function getAlbumsData() {
   try {
-    const [albumsData, photosData, locationsData] = await Promise.all([
+    const [albumsData, photosData, locationsData, narrativesData] = await Promise.all([
       readAlbums(),
       readPhotos(),
-      readLocations()
+      readLocations(),
+      readNarratives(),
     ]);
-    
+
     if (!albumsData || !photosData) {
       throw new Error('Failed to load required data files');
     }
-    
+
     // Trim to summaries on the server — cover photo + count only, never the full photo list
-    return { albums: buildAlbumSummaries(albumsData, photosData, locationsData || []) };
+    return {
+      albums: buildAlbumSummaries(albumsData, photosData, locationsData || [], narrativesData),
+    };
   } catch (error) {
     console.error('Error fetching albums data:', error);
     return { albums: [] };

@@ -1,14 +1,15 @@
 // src/app/api/albums/route.js
 
-import { readAlbums, readPhotos, readLocations } from '../../utils/fileHandler';
+import { readAlbums, readPhotos, readLocations, readNarratives } from '../../utils/fileHandler';
 import { buildAlbumSummaries } from '../../utils/albumSummaries';
 
 export async function GET() {
   try {
-    const [albumsData, photosData, locationsData] = await Promise.all([
+    const [albumsData, photosData, locationsData, narrativesData] = await Promise.all([
       readAlbums(),
       readPhotos(),
-      readLocations()
+      readLocations(),
+      readNarratives(),
     ]);
 
     if (!albumsData || !photosData) {
@@ -17,7 +18,7 @@ export async function GET() {
 
     // Same trimmed shape the homepage passes as initialAlbums — this route is
     // the client-side fallback in PhotoAlbumExplorer and must stay in sync.
-    const albums = buildAlbumSummaries(albumsData, photosData, locationsData || []);
+    const albums = buildAlbumSummaries(albumsData, photosData, locationsData || [], narrativesData);
 
     return new Response(JSON.stringify(albums), {
       status: 200,

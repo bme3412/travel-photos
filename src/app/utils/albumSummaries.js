@@ -55,7 +55,9 @@ function findCoverPhoto(albumId, albumPhotos) {
   return albumPhotos[0] || null;
 }
 
-export function buildAlbumSummaries(albumsData, photosData, locationsData) {
+const READ_WPM = 220;
+
+export function buildAlbumSummaries(albumsData, photosData, locationsData, narrativesData = null) {
   const locations = Array.isArray(locationsData) ? locationsData : [];
 
   const getLocationName = (locationId) => {
@@ -70,6 +72,17 @@ export function buildAlbumSummaries(albumsData, photosData, locationsData) {
     );
     const cover = findCoverPhoto(album.id, albumPhotos);
 
+    // The trip narrative doubles as the dispatch: its intro is the feed
+    // excerpt, its stop beats give a chapter count and a reading estimate.
+    const narrative = narrativesData?.[album.id] || null;
+    const chapterCount = narrative?.stops ? Object.keys(narrative.stops).length : 0;
+    const words = narrative
+      ? [narrative.intro, ...Object.values(narrative.stops || {})]
+          .filter(Boolean)
+          .join(' ')
+          .split(/\s+/).length
+      : 0;
+
     return {
       ...album,
       photoCount: albumPhotos.length,
@@ -80,6 +93,9 @@ export function buildAlbumSummaries(albumsData, photosData, locationsData) {
             locationName: getLocationName(cover.locationId),
           }
         : null,
+      excerpt: narrative?.intro || null,
+      chapterCount,
+      readMin: words ? Math.max(1, Math.round(words / READ_WPM)) : null,
     };
   });
 }
