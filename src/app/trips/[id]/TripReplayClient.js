@@ -14,7 +14,7 @@ import {
   RotateCcw,
   Globe,
 } from 'lucide-react';
-import { greatCircleArc } from '../../utils/geo';
+import { greatCircleArc, haversineKm } from '../../utils/geo';
 import ImageLightbox from '../../components/ImageLightbox';
 
 const FLY_MS = 2800; // camera flight between stops
@@ -26,6 +26,10 @@ const ARC_POINTS = 56;
 // properties can't read the Tailwind config.
 const INK = '#1B1713';
 const ACCENT = '#B4441C';
+
+// Colored basemap — streets renders water, roads and place labels in full
+// color (unlike the muted light style), so the route reads as a real map.
+const MAP_STYLE = 'mapbox://styles/mapbox/streets-v12';
 
 // Album names carry a leading flag emoji ("🇪🇬 Egyptian Explorations") —
 // same split as the homepage so the serif title stays clean.
@@ -52,6 +56,16 @@ const multiLineData = (lines) =>
     : { type: 'FeatureCollection', features: [] };
 
 const easeInOut = (t) => (t < 0.5 ? 2 * t * t : 1 - (-2 * t + 2) ** 2 / 2);
+
+// Diagonal span of a [[minLng,minLat],[maxLng,maxLat]] box, in km.
+// ~0 for a stop whose photos share a single geocoded coordinate.
+const boundsSpanKm = (b) =>
+  b ? haversineKm({ lat: b[0][1], lng: b[0][0] }, { lat: b[1][1], lng: b[1][0] }) : 0;
+
+// A stop is worth framing with fitBounds once its photos spread beyond a
+// few km; below that (or a single point) fitBounds would slam to max zoom,
+// so we fall back to a moderate context zoom instead.
+const FIT_MIN_SPAN_KM = 3;
 
 export default function TripReplayClient({ trip }) {
   const MAPBOX_TOKEN =
@@ -155,24 +169,39 @@ export default function TripReplayClient({ trip }) {
     [arcs, setTraveled]
   );
 
+  // Frame a single stop: fit its photo bounds when they have real extent,
+  // otherwise ease to a moderate context zoom (a lone geocoded point can't
+  // be framed, and its stop.zoom is deliberately tight for dense clusters).
+  const frameStop = useCallback((stop, duration) => {
+    const map = mapRef.current?.getMap();
+    if (!map || !stop) return;
+    const motionDuration = reducedMotionRef.current ? 0 : duration;
+    if (stop.bounds && boundsSpanKm(stop.bounds) >= FIT_MIN_SPAN_KM) {
+      map.fitBounds(stop.bounds, {
+        padding: 60,
+        maxZoom: 12,
+        duration: motionDuration,
+        essential: true,
+      });
+    } else {
+      map.flyTo({
+        center: [stop.center.lng, stop.center.lat],
+        zoom: Math.min(stop.zoom, 9),
+        duration: motionDuration,
+        essential: true,
+      });
+    }
+  }, []);
+
   const goToStop = useCallback(
     (i) => {
       setIndex(i);
       setHeroIndex(0);
       setLightboxIndex(null);
-      const stop = stops[i];
-      const map = mapRef.current?.getMap();
-      if (map && stop) {
-        map.flyTo({
-          center: [stop.center.lng, stop.center.lat],
-          zoom: stop.zoom,
-          duration: reducedMotionRef.current ? 0 : FLY_MS,
-          essential: true,
-        });
-      }
+      frameStop(stops[i], FLY_MS);
       animateRoute(i);
     },
-    [stops, animateRoute]
+    [stops, animateRoute, frameStop]
   );
 
   const fitOverview = useCallback(
@@ -180,12 +209,7 @@ export default function TripReplayClient({ trip }) {
       const map = mapRef.current?.getMap();
       if (!map) return;
       if (stops.length === 1) {
-        const only = stops[0];
-        map.flyTo({
-          center: [only.center.lng, only.center.lat],
-          zoom: Math.min(only.zoom, 8),
-          duration,
-        });
+        frameStop(stops[0], duration);
         return;
       }
       const lats = stops.map((s) => s.center.lat);
@@ -196,13 +220,13 @@ export default function TripReplayClient({ trip }) {
           [Math.max(...lngs), Math.max(...lats)],
         ],
         {
-          padding: { top: 90, bottom: 300, left: 60, right: 60 },
+          padding: { top: 70, bottom: 70, left: 56, right: 56 },
           maxZoom: 9,
           duration: reducedMotionRef.current ? 0 : duration,
         }
       );
     },
-    [stops]
+    [stops, frameStop]
   );
 
   const goToOverview = useCallback(() => {
@@ -323,12 +347,14 @@ export default function TripReplayClient({ trip }) {
   const heroPhoto = currentStop?.photos[safeHero];
 
   return (
-    <div className="relative h-[calc(100dvh-4rem)] min-h-[540px] bg-paper overflow-hidden">
+    <div className="flex flex-col lg:flex-row h-[calc(100dvh-4rem)] min-h-[560px] bg-paper overflow-hidden">
+      {/* ——— Map panel ——— */}
+      <div className="relative h-[40vh] min-h-[240px] lg:h-full lg:flex-1 border-b lg:border-b-0 lg:border-r border-ink/10">
       <MapGL
         ref={mapRef}
         initialViewState={initialViewState}
         style={{ width: '100%', height: '100%' }}
-        mapStyle="mapbox://styles/mapbox/light-v11"
+        mapStyle={MAP_STYLE}
         mapboxAccessToken={MAPBOX_TOKEN}
         onLoad={handleMapLoad}
         attributionControl={false}
@@ -395,12 +421,12 @@ export default function TripReplayClient({ trip }) {
         </div>
       </div>
 
-      {/* Bottom panel */}
-      <div className="absolute inset-x-0 bottom-0 z-10 px-3 sm:px-6 pb-4 sm:pb-6 pointer-events-none">
-        <div
-          className="max-w-4xl mx-auto bg-paper/95 backdrop-blur-sm border border-ink/10 rounded-2xl
-                     shadow-xl p-4 sm:p-6 pointer-events-auto"
-        >
+      </div>
+      {/* ——— End map panel ——— */}
+
+      {/* ——— Content panel ——— */}
+      <aside className="relative flex-1 lg:h-full lg:flex-none lg:w-2/5 lg:max-w-2xl overflow-y-auto bg-paper">
+        <div className="p-5 sm:p-7 lg:p-8">
           {!currentStop ? (
             /* ——— Overview / intro ——— */
             <div>
@@ -455,118 +481,115 @@ export default function TripReplayClient({ trip }) {
           ) : (
             /* ——— Stop card ——— */
             <div>
-              <div className="flex flex-col sm:flex-row gap-4 sm:gap-5">
-                {/* Hero photo — click for the lightbox; rotates during autoplay */}
-                <button
-                  onClick={() => setLightboxIndex(safeHero)}
-                  aria-label={heroPhoto.caption || 'Open photo'}
-                  className="group relative h-44 w-full sm:h-52 sm:w-72 md:h-60 md:w-96 flex-shrink-0
-                             overflow-hidden rounded-xl bg-ink/5"
-                >
-                  <Image
-                    key={heroPhoto.id}
-                    src={heroPhoto.url}
-                    alt={heroPhoto.caption || 'Trip photo'}
-                    fill
-                    sizes="(min-width: 768px) 384px, (min-width: 640px) 288px, 100vw"
-                    quality={75}
-                    priority
-                    className="object-cover animate-fade-in transition-transform duration-500
-                               group-hover:scale-[1.02]"
-                  />
-                  {currentStop.photos.length > 1 && (
-                    <span
-                      className="absolute top-2.5 right-2.5 rounded-full bg-ink/60 px-2 py-0.5
-                                 font-sans text-[10px] text-paper"
-                    >
-                      {safeHero + 1} / {currentStop.photos.length}
-                    </span>
-                  )}
-                  {heroPhoto.caption && (
-                    <span
-                      className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink/70 to-transparent
-                                 px-3 pb-2.5 pt-10 text-left text-[11px] leading-snug text-paper/95
-                                 line-clamp-2"
-                    >
-                      {heroPhoto.caption}
-                    </span>
-                  )}
-                </button>
-
-                <div className="min-w-0 flex-1">
-                  <div className="flex items-start justify-between gap-4">
-                    <div className="min-w-0">
-                      <p className="text-[11px] uppercase tracking-[0.3em] text-muted mb-1.5">
-                        Stop {index + 1} of {stops.length}
-                        {currentStop.hasDates
-                          ? ` · ${formatRange(currentStop.dateRange)}`
-                          : multiVisit
-                            ? ''
-                            : ` · ${trip.year}`}
-                      </p>
-                      <h2 className="font-display text-2xl sm:text-3xl tracking-tight leading-tight truncate">
-                        {currentStop.name}
-                        {currentStop.country && currentStop.country !== currentStop.name && (
-                          <span className="text-ink/40 text-xl sm:text-2xl">
-                            {' '}
-                            — {currentStop.country}
-                          </span>
-                        )}
-                      </h2>
-                      {(currentStop.narrative || currentStop.description) && (
-                        <p className="mt-1.5 text-sm leading-relaxed text-ink/70 line-clamp-3 md:line-clamp-4">
-                          {currentStop.narrative || currentStop.description}
-                        </p>
-                      )}
-                    </div>
-
-                    <div className="flex items-center gap-2 flex-shrink-0 pt-1">
-                      <button
-                        onClick={() => {
-                          setPlaying(false);
-                          goToStop(index - 1);
-                        }}
-                        disabled={index === 0}
-                        aria-label="Previous stop"
-                        className="h-9 w-9 flex items-center justify-center rounded-full border border-ink/15
-                                   text-ink/70 hover:border-accent hover:text-ink transition-colors duration-200
-                                   disabled:opacity-30 disabled:hover:border-ink/15"
-                      >
-                        <ChevronLeft className="h-4 w-4" />
-                      </button>
-                      <button
-                        onClick={handlePlayPause}
-                        aria-label={
-                          playing ? 'Pause replay' : index >= lastIndex ? 'Replay trip' : 'Play replay'
-                        }
-                        className="h-9 w-9 flex items-center justify-center rounded-full bg-accent text-paper
-                                   hover:bg-ink transition-colors duration-200"
-                      >
-                        {playing ? (
-                          <Pause className="h-4 w-4 fill-current" />
-                        ) : index >= lastIndex ? (
-                          <RotateCcw className="h-4 w-4" />
-                        ) : (
-                          <Play className="h-4 w-4 fill-current" />
-                        )}
-                      </button>
-                      <button
-                        onClick={() => {
-                          setPlaying(false);
-                          goToStop(index + 1);
-                        }}
-                        disabled={index >= lastIndex}
-                        aria-label="Next stop"
-                        className="h-9 w-9 flex items-center justify-center rounded-full border border-ink/15
-                                   text-ink/70 hover:border-accent hover:text-ink transition-colors duration-200
-                                   disabled:opacity-30 disabled:hover:border-ink/15"
-                      >
-                        <ChevronRight className="h-4 w-4" />
-                      </button>
-                    </div>
-                  </div>
+              {/* Meta + navigation */}
+              <div className="flex items-start justify-between gap-3">
+                <p className="text-[11px] uppercase tracking-[0.3em] text-muted pt-2">
+                  Stop {index + 1} of {stops.length}
+                  {currentStop.hasDates
+                    ? ` · ${formatRange(currentStop.dateRange)}`
+                    : multiVisit
+                      ? ''
+                      : ` · ${trip.year}`}
+                </p>
+                <div className="flex items-center gap-2 flex-shrink-0">
+                  <button
+                    onClick={() => {
+                      setPlaying(false);
+                      goToStop(index - 1);
+                    }}
+                    disabled={index === 0}
+                    aria-label="Previous stop"
+                    className="h-9 w-9 flex items-center justify-center rounded-full border border-ink/15
+                               text-ink/70 hover:border-accent hover:text-ink transition-colors duration-200
+                               disabled:opacity-30 disabled:hover:border-ink/15"
+                  >
+                    <ChevronLeft className="h-4 w-4" />
+                  </button>
+                  <button
+                    onClick={handlePlayPause}
+                    aria-label={
+                      playing ? 'Pause replay' : index >= lastIndex ? 'Replay trip' : 'Play replay'
+                    }
+                    className="h-9 w-9 flex items-center justify-center rounded-full bg-accent text-paper
+                               hover:bg-ink transition-colors duration-200"
+                  >
+                    {playing ? (
+                      <Pause className="h-4 w-4 fill-current" />
+                    ) : index >= lastIndex ? (
+                      <RotateCcw className="h-4 w-4" />
+                    ) : (
+                      <Play className="h-4 w-4 fill-current" />
+                    )}
+                  </button>
+                  <button
+                    onClick={() => {
+                      setPlaying(false);
+                      goToStop(index + 1);
+                    }}
+                    disabled={index >= lastIndex}
+                    aria-label="Next stop"
+                    className="h-9 w-9 flex items-center justify-center rounded-full border border-ink/15
+                               text-ink/70 hover:border-accent hover:text-ink transition-colors duration-200
+                               disabled:opacity-30 disabled:hover:border-ink/15"
+                  >
+                    <ChevronRight className="h-4 w-4" />
+                  </button>
                 </div>
               </div>
+
+              {/* Title */}
+              <h2 className="mt-2 font-display text-2xl sm:text-3xl lg:text-[2rem] tracking-tight leading-[1.12] text-balance">
+                {currentStop.name}
+                {currentStop.country && currentStop.country !== currentStop.name && (
+                  <span className="text-ink/40 text-xl sm:text-2xl">
+                    {' '}
+                    — {currentStop.country}
+                  </span>
+                )}
+              </h2>
+
+              {/* Hero photo — full panel width; click for the lightbox; rotates during autoplay */}
+              <button
+                onClick={() => setLightboxIndex(safeHero)}
+                aria-label={heroPhoto.caption || 'Open photo'}
+                className="group relative mt-4 block h-60 sm:h-72 lg:h-80 w-full overflow-hidden rounded-xl bg-ink/5"
+              >
+                <Image
+                  key={heroPhoto.id}
+                  src={heroPhoto.url}
+                  alt={heroPhoto.caption || 'Trip photo'}
+                  fill
+                  sizes="(min-width: 1024px) 600px, (min-width: 640px) 60vw, 100vw"
+                  quality={82}
+                  priority
+                  className="object-cover animate-fade-in transition-transform duration-500
+                             group-hover:scale-[1.02]"
+                />
+                {currentStop.photos.length > 1 && (
+                  <span
+                    className="absolute top-2.5 right-2.5 rounded-full bg-ink/60 px-2 py-0.5
+                               font-sans text-[10px] text-paper"
+                  >
+                    {safeHero + 1} / {currentStop.photos.length}
+                  </span>
+                )}
+                {heroPhoto.caption && (
+                  <span
+                    className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink/70 to-transparent
+                               px-3 pb-2.5 pt-10 text-left text-[11px] leading-snug text-paper/95
+                               line-clamp-2"
+                  >
+                    {heroPhoto.caption}
+                  </span>
+                )}
+              </button>
+
+              {/* Narrative */}
+              {(currentStop.narrative || currentStop.description) && (
+                <p className="mt-4 text-[15px] sm:text-base leading-relaxed text-ink/75">
+                  {currentStop.narrative || currentStop.description}
+                </p>
+              )}
 
               {/* Filmstrip — selects the hero; click the selected thumb to open
                   the lightbox. Re-keyed per stop so it opens scrolled to the start. */}
@@ -588,7 +611,7 @@ export default function TripReplayClient({ trip }) {
                       setHeroIndex(photoIndex);
                     }}
                     aria-label={photo.caption || `Photo ${photoIndex + 1}`}
-                    className={`relative h-16 w-24 sm:h-20 sm:w-32 flex-shrink-0 rounded-lg overflow-hidden
+                    className={`relative h-20 w-28 sm:h-24 sm:w-40 flex-shrink-0 rounded-lg overflow-hidden
                                 bg-ink/5 transition-all duration-200 ${
                                   photoIndex === safeHero
                                     ? 'ring-2 ring-accent ring-offset-2 ring-offset-paper'
@@ -599,8 +622,8 @@ export default function TripReplayClient({ trip }) {
                       src={photo.url}
                       alt={photo.caption || 'Trip photo'}
                       fill
-                      sizes="128px"
-                      quality={55}
+                      sizes="160px"
+                      quality={60}
                       loading={photoIndex < 6 ? 'eager' : 'lazy'}
                       className="object-cover"
                     />
@@ -645,7 +668,7 @@ export default function TripReplayClient({ trip }) {
             </div>
           )}
         </div>
-      </div>
+      </aside>
 
       {currentStop && lightboxIndex !== null && (
         <ImageLightbox
