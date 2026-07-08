@@ -3,6 +3,7 @@
 import PhotoAlbumExplorer from './components/PhotoAlbumExplorer';
 import { readAlbums, readPhotos, readLocations, readNarratives } from './utils/fileHandler';
 import { buildAlbumSummaries } from './utils/albumSummaries';
+import { getJournalIndex } from './utils/journalContent';
 
 export const metadata = {
   title: 'Photo Albums',
@@ -28,7 +29,13 @@ async function getAlbumsData() {
 
     // Trim to summaries on the server — cover photo + count only, never the full photo list
     return {
-      albums: buildAlbumSummaries(albumsData, photosData, locationsData || [], narrativesData),
+      albums: buildAlbumSummaries(
+        albumsData,
+        photosData,
+        locationsData || [],
+        narrativesData,
+        getJournalIndex()
+      ),
     };
   } catch (error) {
     console.error('Error fetching albums data:', error);

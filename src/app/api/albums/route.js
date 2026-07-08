@@ -2,6 +2,7 @@
 
 import { readAlbums, readPhotos, readLocations, readNarratives } from '../../utils/fileHandler';
 import { buildAlbumSummaries } from '../../utils/albumSummaries';
+import { getJournalIndex } from '../../utils/journalContent';
 
 export async function GET() {
   try {
@@ -18,7 +19,13 @@ export async function GET() {
 
     // Same trimmed shape the homepage passes as initialAlbums — this route is
     // the client-side fallback in PhotoAlbumExplorer and must stay in sync.
-    const albums = buildAlbumSummaries(albumsData, photosData, locationsData || [], narrativesData);
+    const albums = buildAlbumSummaries(
+      albumsData,
+      photosData,
+      locationsData || [],
+      narrativesData,
+      getJournalIndex()
+    );
 
     return new Response(JSON.stringify(albums), {
       status: 200,

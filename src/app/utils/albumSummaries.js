@@ -57,7 +57,13 @@ function findCoverPhoto(albumId, albumPhotos) {
 
 const READ_WPM = 220;
 
-export function buildAlbumSummaries(albumsData, photosData, locationsData, narrativesData = null) {
+export function buildAlbumSummaries(
+  albumsData,
+  photosData,
+  locationsData,
+  narrativesData = null,
+  journalIndex = null
+) {
   const locations = Array.isArray(locationsData) ? locationsData : [];
 
   const getLocationName = (locationId) => {
@@ -83,6 +89,11 @@ export function buildAlbumSummaries(albumsData, photosData, locationsData, narra
           .split(/\s+/).length
       : 0;
 
+    // A hand-written post (content/journal/[id].mdx) overrides the generated
+    // excerpt and reading time; its chapters are free-form, so drop the count.
+    const post = journalIndex?.[album.id] || null;
+    const narrativeReadMin = words ? Math.max(1, Math.round(words / READ_WPM)) : null;
+
     return {
       ...album,
       photoCount: albumPhotos.length,
@@ -93,9 +104,10 @@ export function buildAlbumSummaries(albumsData, photosData, locationsData, narra
             locationName: getLocationName(cover.locationId),
           }
         : null,
-      excerpt: narrative?.intro || null,
-      chapterCount,
-      readMin: words ? Math.max(1, Math.round(words / READ_WPM)) : null,
+      excerpt: post?.excerpt || narrative?.intro || null,
+      chapterCount: post ? 0 : chapterCount,
+      readMin: post?.readMin ?? narrativeReadMin,
+      written: !!post,
     };
   });
 }
