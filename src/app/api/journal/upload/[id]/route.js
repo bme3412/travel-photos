@@ -16,7 +16,8 @@ import { clearFileCache } from '../../../../utils/fileHandler';
 
 export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
-export const maxDuration = 600;
+// Note: no maxDuration override — this route only runs locally (it 403s in
+// production), and Vercel Pro caps maxDuration at 300.
 
 const exec = promisify(execFile);
 const DATA = path.join(process.cwd(), 'src', 'data');
