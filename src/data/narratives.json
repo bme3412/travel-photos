@@ -511,13 +511,13 @@
     "edited": false
   },
   "menton-2026": {
-    "intro": "Two days at the far eastern edge of the French Riviera, in the last town before the border gives way to Italy. Menton was the whole of it — a single place, held close over one late-June weekend, gathered in more than fifty frames. No grand itinerary, no distance to cover, just a town and the light coming off the Mediterranean.",
+    "intro": "Two days at the eastern end of the French Riviera, in the last town before the coast slips over into Italy. Menton was the whole of the trip — no onward leg, no distance to cover, just a single place held close over one weekend at the end of June. Its old town climbs in tiers of ochre and rose above a bright curve of the Mediterranean, lemon light on the terraces and the Italian border only a short walk past the last houses.",
     "stops": {
-      "Menton": "The Riviera's final town before Italy, spent slowly over a single weekend at the end of June. Pastel façades stacked above the sea, lemon groves and Belle Époque gardens holding their ground on the slopes — the place seemed built for lingering. It was the sole destination of the trip, with nowhere else to be and nothing to catch, and it filled the days easily. Two unhurried days on the edge of France, Italy just beyond, the Mediterranean spread out below."
+      "Menton": "The heart of the town climbs the hillside in tiers — ochre, rose, and faded-yellow façades stacked above the sea, narrow stepped lanes threading up between them toward the Baroque churches at the top. This is lemon country, the fruit that gives Menton its emblem and its winter festival, and even in June the light seemed to carry it: a particular clarity coming off the water and the pale stone, warm on the Belle Époque gardens scattered across the slopes. Below all of it ran the Mediterranean — the port and its boats at one end, the pebble beach reaching toward the frontier at the other, Italy visible along the coast. Two unhurried days with nowhere else to be, the town unfolding at its own slow pace, the sea in view the whole time."
     },
     "fingerprint": "082781ab20b1",
     "model": "claude-opus-4-8",
     "generatedAt": "2026-07-09T16:19:11.584Z",
-    "edited": false
+    "edited": true
   }
 }
