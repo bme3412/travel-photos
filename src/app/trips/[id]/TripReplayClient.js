@@ -13,8 +13,16 @@ import {
   ChevronRight,
   RotateCcw,
   Globe,
+  Bed,
+  Compass,
+  MapPin,
+  Copy,
+  Check,
+  Map as MapIcon,
 } from 'lucide-react';
+import { track } from '@vercel/analytics/react';
 import { greatCircleArc, haversineKm } from '../../utils/geo';
+import { stopActions, itineraryText } from '../../utils/tripActions';
 import ImageLightbox from '../../components/ImageLightbox';
 
 const FLY_MS = 2800; // camera flight between stops
@@ -67,6 +75,9 @@ const boundsSpanKm = (b) =>
 // so we fall back to a moderate context zoom instead.
 const FIT_MIN_SPAN_KM = 3;
 
+// Copy-this-trip action buttons carry a small leading icon keyed by action.
+const ACTION_ICON = { stay: Bed, do: Compass, map: MapPin };
+
 export default function TripReplayClient({ trip }) {
   const MAPBOX_TOKEN =
     process.env.NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN || process.env.NEXT_PUBLIC_MAPBOX_TOKEN;
@@ -76,6 +87,10 @@ export default function TripReplayClient({ trip }) {
   const [playing, setPlaying] = useState(false);
   const [heroIndex, setHeroIndex] = useState(0);
   const [lightboxIndex, setLightboxIndex] = useState(null);
+  // Copy-this-trip experiment: `planning` shows the full actionable itinerary
+  // from the overview; `copied` flashes confirmation after a clipboard copy.
+  const [planning, setPlanning] = useState(false);
+  const [copied, setCopied] = useState(false);
 
   const mapRef = useRef(null);
   const rafRef = useRef(null);
@@ -234,8 +249,59 @@ export default function TripReplayClient({ trip }) {
     setPlaying(false);
     setIndex(-1);
     setLightboxIndex(null);
+    setPlanning(false);
     fitOverview();
   }, [fitOverview]);
+
+  // Log every outbound intent click so the copy-this-trip hypothesis is
+  // measurable: which stop, which provider, and whether it came from a single
+  // stop card or the full itinerary panel.
+  const trackAction = useCallback(
+    (provider, stopName, surface) => {
+      track('trip_action', { trip: trip.id, provider, stop: stopName, surface });
+    },
+    [trip.id]
+  );
+
+  const copyItinerary = useCallback(async () => {
+    const text = itineraryText(trip, process.env.NEXT_PUBLIC_SITE_URL);
+    try {
+      await navigator.clipboard.writeText(text);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+      track('trip_action', { trip: trip.id, provider: 'clipboard', surface: 'itinerary' });
+    } catch {
+      // Clipboard can be blocked (insecure context / permissions) — no-op.
+    }
+  }, [trip]);
+
+  // Stay / Do / Map links for one stop. `surface` distinguishes a click on a
+  // single stop card from one in the full itinerary list.
+  const ActionRow = useCallback(
+    ({ stop, surface }) => (
+      <div className="flex flex-wrap gap-2">
+        {stopActions(stop).map((action) => {
+          const Icon = ACTION_ICON[action.key];
+          return (
+            <a
+              key={action.key}
+              href={action.href}
+              target="_blank"
+              rel="noopener noreferrer sponsored"
+              onClick={() => trackAction(action.provider, stop.name, surface)}
+              className="inline-flex items-center gap-1.5 rounded-full border border-ink/15 bg-paper
+                         px-3 py-1.5 text-[11px] uppercase tracking-[0.14em] text-ink/70
+                         hover:border-accent hover:text-ink transition-colors duration-200"
+            >
+              {Icon && <Icon className="h-3.5 w-3.5" />}
+              {action.label}
+            </a>
+          );
+        })}
+      </div>
+    ),
+    [trackAction]
+  );
 
   const handleMapLoad = useCallback(() => {
     const map = mapRef.current?.getMap();
@@ -427,7 +493,58 @@ export default function TripReplayClient({ trip }) {
       {/* ——— Content panel ——— */}
       <aside className="relative flex-1 lg:h-full lg:flex-none lg:w-2/5 lg:max-w-2xl overflow-y-auto bg-paper">
         <div className="p-5 sm:p-7 lg:p-8">
-          {!currentStop ? (
+          {!currentStop && planning ? (
+            /* ——— Copy this trip: full actionable itinerary ——— */
+            <div>
+              <button
+                onClick={() => setPlanning(false)}
+                className="inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.2em]
+                           text-ink/60 hover:text-ink transition-colors duration-200"
+              >
+                <ArrowLeft className="h-3.5 w-3.5" />
+                Back to replay
+              </button>
+              <h1 className="mt-4 font-display text-3xl tracking-tight leading-tight">
+                Copy this trip
+              </h1>
+              <p className="mt-2 text-sm leading-relaxed text-ink/70 max-w-2xl">
+                Plan your own version of {title} — book a place to stay and find
+                things to do at every stop, in order.
+              </p>
+              <button
+                onClick={copyItinerary}
+                className="mt-4 inline-flex items-center gap-2 rounded-full bg-ink text-paper px-5 py-2.5
+                           text-[11px] uppercase tracking-[0.2em] hover:bg-accent transition-colors duration-300"
+              >
+                {copied ? <Check className="h-3.5 w-3.5" /> : <Copy className="h-3.5 w-3.5" />}
+                {copied ? 'Copied' : 'Copy itinerary'}
+              </button>
+              <ol className="mt-6 space-y-5">
+                {stops.map((stop, i) => (
+                  <li key={i} className="flex gap-3">
+                    <span className="mt-0.5 flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full
+                                     bg-ink/5 text-[11px] font-medium text-ink/60">
+                      {i + 1}
+                    </span>
+                    <div className="min-w-0">
+                      <p className="font-display text-lg leading-tight">
+                        {stop.name}
+                        {stop.country && stop.country !== stop.name && (
+                          <span className="text-ink/40"> — {stop.country}</span>
+                        )}
+                      </p>
+                      <div className="mt-2">
+                        <ActionRow stop={stop} surface="itinerary" />
+                      </div>
+                    </div>
+                  </li>
+                ))}
+              </ol>
+              <p className="mt-6 text-[11px] leading-relaxed text-muted">
+                Links open partner sites (Booking.com, GetYourGuide, Google Maps).
+              </p>
+            </div>
+          ) : !currentStop ? (
             /* ——— Overview / intro ——— */
             <div>
               <p className="text-[11px] uppercase tracking-[0.3em] text-muted mb-2">
@@ -469,6 +586,18 @@ export default function TripReplayClient({ trip }) {
                 >
                   <Play className="h-3.5 w-3.5 fill-current" />
                   Begin the journey
+                </button>
+                <button
+                  onClick={() => {
+                    setPlanning(true);
+                    track('trip_action', { trip: trip.id, provider: 'open', surface: 'itinerary' });
+                  }}
+                  className="inline-flex items-center gap-2.5 rounded-full border border-ink/20 px-6 py-3
+                             text-[11px] uppercase tracking-[0.2em] text-ink/75
+                             hover:border-accent hover:text-ink transition-colors duration-300"
+                >
+                  <MapIcon className="h-3.5 w-3.5" />
+                  Copy this trip
                 </button>
                 <span className="text-[11px] uppercase tracking-[0.2em] text-muted">
                   {multiVisit && <>{visits.length} visits · </>}
@@ -590,6 +719,14 @@ export default function TripReplayClient({ trip }) {
                   {currentStop.narrative || currentStop.description}
                 </p>
               )}
+
+              {/* Copy-this-trip: act on this stop */}
+              <div className="mt-4">
+                <p className="mb-2 text-[10px] uppercase tracking-[0.24em] text-muted">
+                  Copy this stop
+                </p>
+                <ActionRow stop={currentStop} surface="stop" />
+              </div>
 
               {/* Filmstrip — selects the hero; click the selected thumb to open
                   the lightbox. Re-keyed per stop so it opens scrolled to the start. */}

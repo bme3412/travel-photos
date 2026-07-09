@@ -7,6 +7,7 @@ import {
 import AlbumPageClient from './AlbumPageClient';
 import { transformToCloudFront } from '../../utils/imageUtils';
 import { buildTrip } from '../../utils/tripBuilder';
+import { bestPhoto } from '../../utils/photoRanking';
 
 // Generate dynamic metadata for each album
 export async function generateMetadata({ params }) {
@@ -41,7 +42,7 @@ export async function generateMetadata({ params }) {
       (photo) => photo.albumId.toLowerCase() === album.id.toLowerCase()
     );
 
-    const coverPhoto = albumPhotos[0];
+    const coverPhoto = bestPhoto(albumPhotos);
     const coverPhotoUrl = coverPhoto ? transformToCloudFront(coverPhoto.url) : null;
 
     return {

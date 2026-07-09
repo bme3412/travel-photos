@@ -136,6 +136,7 @@ const COUNTRY_CODES = {
   'netherlands': 'NL', 'portugal': 'PT', 'singapore': 'SG', 'slovenia': 'SI', 'spain': 'ES',
   'south africa': 'ZA', 'switzerland': 'CH', 'thailand': 'TH', 'uk': 'GB', 'united kingdom': 'GB',
   'usa': 'US', 'united states': 'US', 'uruguay': 'UY', 'vatican': 'VA', 'vietnam': 'VN',
+  'new zealand': 'NZ', 'cook islands': 'CK',
 };
 
 // Flag emoji lookup
@@ -145,7 +146,7 @@ const FLAG_EMOJIS = {
   'DE': '🇩🇪', 'GT': '🇬🇹', 'HK': '🇭🇰', 'HU': '🇭🇺', 'ID': '🇮🇩', 'IT': '🇮🇹', 'JP': '🇯🇵',
   'MY': '🇲🇾', 'MU': '🇲🇺', 'MC': '🇲🇨', 'ME': '🇲🇪', 'NL': '🇳🇱', 'PT': '🇵🇹', 'SG': '🇸🇬',
   'SI': '🇸🇮', 'ES': '🇪🇸', 'ZA': '🇿🇦', 'CH': '🇨🇭', 'TH': '🇹🇭', 'GB': '🇬🇧', 'US': '🇺🇸',
-  'UY': '🇺🇾', 'VA': '🇻🇦', 'VN': '🇻🇳',
+  'UY': '🇺🇾', 'VA': '🇻🇦', 'VN': '🇻🇳', 'NZ': '🇳🇿', 'CK': '🇨🇰',
 };
 
 async function main() {

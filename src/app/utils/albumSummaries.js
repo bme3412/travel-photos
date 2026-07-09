@@ -5,6 +5,7 @@
 // photo list — keeping photos.json out of the page payload.
 
 import { transformToCloudFront } from './imageUtils';
+import { bestPhoto } from './photoRanking';
 
 // Curated cover photos per album; each entry is a list of URL substrings to
 // try in order. Albums not listed fall back to their first photo.
@@ -52,7 +53,9 @@ function findCoverPhoto(albumId, albumPhotos) {
     );
     if (match) return match;
   }
-  return albumPhotos[0] || null;
+  // No hand-picked cover — use the highest-rated photo (falls back to the
+  // first photo for unrated albums).
+  return bestPhoto(albumPhotos);
 }
 
 const READ_WPM = 220;

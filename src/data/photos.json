@@ -23461,6 +23461,2286 @@
         "nature",
         "mountains"
       ]
+    },
+    {
+      "id": "cook-islands1",
+      "albumId": "cook-islands",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Rarotonga/IMG_2909.jpg",
+      "caption": "Rarotonga",
+      "locationId": "Rarotonga",
+      "coordinates": {
+        "lng": -159.7777,
+        "lat": -21.2367
+      },
+      "dateCreated": "2026-01-01",
+      "tags": [],
+      "rating": 2,
+      "ratingReason": "Sky-dominated tropical vista with flat overcast light and a distant, low-interest lagoon; the scene is pleasant but sprawling and lacks a focal point or striking color."
+    },
+    {
+      "id": "cook-islands2",
+      "albumId": "cook-islands",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Rarotonga/IMG_2910.jpg",
+      "caption": "Rarotonga",
+      "locationId": "Rarotonga",
+      "coordinates": {
+        "lng": -159.7777,
+        "lat": -21.2367
+      },
+      "dateCreated": "2026-01-01",
+      "tags": [],
+      "rating": 2,
+      "ratingReason": "Sky-dominated tropical view with a cramped strip of village and reef at the bottom; unbalanced composition and flat light make it a weak snapshot despite the appealing turquoise lagoon."
+    },
+    {
+      "id": "cook-islands3",
+      "albumId": "cook-islands",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Rarotonga/IMG_2912.jpg",
+      "caption": "Rarotonga",
+      "locationId": "Rarotonga",
+      "coordinates": {
+        "lng": -159.7777,
+        "lat": -21.2367
+      },
+      "dateCreated": "2026-01-01",
+      "tags": [],
+      "rating": 3,
+      "ratingReason": "Pleasant tropical overlook with vivid foreground foliage and turquoise lagoon, but the sky dominates too much and the composition lacks a clear focal hierarchy."
+    },
+    {
+      "id": "cook-islands4",
+      "albumId": "cook-islands",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Rarotonga/IMG_2913.jpg",
+      "caption": "Rarotonga",
+      "locationId": "Rarotonga",
+      "coordinates": {
+        "lng": -159.7777,
+        "lat": -21.2367
+      },
+      "dateCreated": "2026-01-01",
+      "tags": [],
+      "rating": 3,
+      "ratingReason": "Pleasant tropical scene with a leading road toward the sea and a flowering tree, but the composition is ordinary and the foreground clutter and dominant plain sky keep it from standing out."
+    },
+    {
+      "id": "cook-islands5",
+      "albumId": "cook-islands",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Rarotonga/IMG_2914.jpg",
+      "caption": "Rarotonga",
+      "locationId": "Rarotonga",
+      "coordinates": {
+        "lng": -159.7777,
+        "lat": -21.2367
+      },
+      "dateCreated": "2026-01-01",
+      "tags": [],
+      "rating": 3,
+      "ratingReason": "Pleasant tropical scene with a leading road toward the ocean and nice palm framing, but the composition is ordinary, the sky dominates emptily, and the light is flat midday—a solid keeper, not memorable."
+    },
+    {
+      "id": "cook-islands6",
+      "albumId": "cook-islands",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Rarotonga/IMG_2915.jpg",
+      "caption": "Rarotonga",
+      "locationId": "Rarotonga",
+      "coordinates": {
+        "lng": -159.7777,
+        "lat": -21.2367
+      },
+      "dateCreated": "2026-01-01",
+      "tags": [],
+      "rating": 3,
+      "ratingReason": "Idyllic palm-covered islet across a clear lagoon under blue sky, but sky-heavy framing and empty foreground water make it pleasant yet ordinary."
+    },
+    {
+      "id": "cook-islands7",
+      "albumId": "cook-islands",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Rarotonga/IMG_2916.jpg",
+      "caption": "Rarotonga",
+      "locationId": "Rarotonga",
+      "coordinates": {
+        "lng": -159.7777,
+        "lat": -21.2367
+      },
+      "dateCreated": "2026-01-01",
+      "tags": [],
+      "rating": 2,
+      "ratingReason": "Clear tropical shallows and blue sky, but sky-heavy framing and empty, featureless composition make it a flat snapshot lacking a focal point."
+    },
+    {
+      "id": "cook-islands8",
+      "albumId": "cook-islands",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Rarotonga/IMG_2918.jpg",
+      "caption": "Rarotonga",
+      "locationId": "Rarotonga",
+      "coordinates": {
+        "lng": -159.7777,
+        "lat": -21.2367
+      },
+      "dateCreated": "2026-01-01",
+      "tags": [],
+      "rating": 2,
+      "ratingReason": "Palm frond adds a nice framing touch, but the vast empty sand foreground dominates dully and the composition feels bottom-heavy and ordinary."
+    },
+    {
+      "id": "cook-islands9",
+      "albumId": "cook-islands",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Rarotonga/IMG_2920.jpg",
+      "caption": "Rarotonga",
+      "locationId": "Rarotonga",
+      "coordinates": {
+        "lng": -159.7777,
+        "lat": -21.2367
+      },
+      "dateCreated": "2026-01-01",
+      "tags": [],
+      "rating": 3,
+      "ratingReason": "Attractive turquoise water and dramatic clouds, but it's a fairly generic seascape lacking a focal point or standout moment."
+    },
+    {
+      "id": "cook-islands10",
+      "albumId": "cook-islands",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Rarotonga/IMG_2921.jpg",
+      "caption": "Rarotonga",
+      "locationId": "Rarotonga",
+      "coordinates": {
+        "lng": -159.7777,
+        "lat": -21.2367
+      },
+      "dateCreated": "2026-01-01",
+      "tags": [],
+      "rating": 3,
+      "ratingReason": "Appealing turquoise lagoon and palm-topped islet with dramatic clouds, but the sky dominates the frame and the water lacks a focal point, making it a pleasant yet ordinary tropical shot."
+    },
+    {
+      "id": "cook-islands11",
+      "albumId": "cook-islands",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Rarotonga/IMG_2923.jpg",
+      "caption": "Rarotonga",
+      "locationId": "Rarotonga",
+      "coordinates": {
+        "lng": -159.7777,
+        "lat": -21.2367
+      },
+      "dateCreated": "2026-01-01",
+      "tags": [],
+      "rating": 3,
+      "ratingReason": "Pretty turquoise water and palm-fringed island with nice clouds, but the empty foreground dominates and the composition is ordinary rather than striking."
+    },
+    {
+      "id": "cook-islands12",
+      "albumId": "cook-islands",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Rarotonga/IMG_2925.jpg",
+      "caption": "Rarotonga",
+      "locationId": "Rarotonga",
+      "coordinates": {
+        "lng": -159.7777,
+        "lat": -21.2367
+      },
+      "dateCreated": "2026-01-01",
+      "tags": [],
+      "rating": 3,
+      "ratingReason": "Pleasant tropical scene with turquoise water and a palm-lined island, but the empty foreground and ordinary composition make it a solid yet unmemorable snapshot."
+    },
+    {
+      "id": "cook-islands13",
+      "albumId": "cook-islands",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Rarotonga/IMG_2926.jpg",
+      "caption": "Rarotonga",
+      "locationId": "Rarotonga",
+      "coordinates": {
+        "lng": -159.7777,
+        "lat": -21.2367
+      },
+      "dateCreated": "2026-01-01",
+      "tags": [],
+      "rating": 3,
+      "ratingReason": "Pleasant turquoise lagoon with a palm-topped islet, but the foreground water dominates flatly and the composition lacks a strong focal point to elevate it beyond a nice vacation snapshot."
+    },
+    {
+      "id": "cook-islands14",
+      "albumId": "cook-islands",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Rarotonga/IMG_2930.jpg",
+      "caption": "Rarotonga",
+      "locationId": "Rarotonga",
+      "coordinates": {
+        "lng": -159.7777,
+        "lat": -21.2367
+      },
+      "dateCreated": "2026-01-01",
+      "tags": [],
+      "rating": 3,
+      "ratingReason": "A charming directional signpost against clear blue sky with decent light, but it's a common travel trope, cluttered, and lacks a strong focal point or memorable moment."
+    },
+    {
+      "id": "cook-islands15",
+      "albumId": "cook-islands",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Rarotonga/IMG_2931.jpg",
+      "caption": "Rarotonga",
+      "locationId": "Rarotonga",
+      "coordinates": {
+        "lng": -159.7777,
+        "lat": -21.2367
+      },
+      "dateCreated": "2026-01-01",
+      "tags": [],
+      "rating": 2,
+      "ratingReason": "Documentary snapshot of a sailing club building under flat overcast light, with a large empty foreground and dull gray sky that lack visual interest."
+    },
+    {
+      "id": "cook-islands16",
+      "albumId": "cook-islands",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Rarotonga/IMG_2932.jpg",
+      "caption": "Rarotonga",
+      "locationId": "Rarotonga",
+      "coordinates": {
+        "lng": -159.7777,
+        "lat": -21.2367
+      },
+      "dateCreated": "2026-01-01",
+      "tags": [],
+      "rating": 2,
+      "ratingReason": "A documentary snapshot of a tsunami evacuation sign with cluttered wires and background; informative but flat, un-composed, and not visually compelling."
+    },
+    {
+      "id": "cook-islands17",
+      "albumId": "cook-islands",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Rarotonga/IMG_2934.jpg",
+      "caption": "Rarotonga",
+      "locationId": "Rarotonga",
+      "coordinates": {
+        "lng": -159.7777,
+        "lat": -21.2367
+      },
+      "dateCreated": "2026-01-01",
+      "tags": [],
+      "rating": 2,
+      "ratingReason": "A laptop screen dominates and clutters the frame, blocking an otherwise nice tropical ocean view; it reads as a personal snapshot rather than an editorial travel image."
+    },
+    {
+      "id": "cook-islands18",
+      "albumId": "cook-islands",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Rarotonga/IMG_2935.jpg",
+      "caption": "Rarotonga",
+      "locationId": "Rarotonga",
+      "coordinates": {
+        "lng": -159.7777,
+        "lat": -21.2367
+      },
+      "dateCreated": "2026-01-02",
+      "tags": [],
+      "rating": 2,
+      "ratingReason": "Windswept palms and clear water are pleasant, but the vast empty blue sky dominates and the foreground sand is bland, leaving a flat, unbalanced snapshot."
+    },
+    {
+      "id": "cook-islands19",
+      "albumId": "cook-islands",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Rarotonga/IMG_2937.jpg",
+      "caption": "Rarotonga",
+      "locationId": "Rarotonga",
+      "coordinates": {
+        "lng": -159.7777,
+        "lat": -21.2367
+      },
+      "dateCreated": "2026-01-02",
+      "tags": [],
+      "rating": 3,
+      "ratingReason": "Pleasant tropical coastline with black volcanic rocks and palms, but flat midday light, a huge empty blue sky, and no focal point make it an ordinary snapshot."
+    },
+    {
+      "id": "cook-islands20",
+      "albumId": "cook-islands",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Rarotonga/IMG_2938.jpg",
+      "caption": "Rarotonga",
+      "locationId": "Rarotonga",
+      "coordinates": {
+        "lng": -159.7777,
+        "lat": -21.2367
+      },
+      "dateCreated": "2026-01-02",
+      "tags": [],
+      "rating": 3,
+      "ratingReason": "Classic tropical beach with nice palm framing and turquoise water, but the large empty sand foreground and ordinary composition make it pleasant yet unremarkable."
+    },
+    {
+      "id": "cook-islands21",
+      "albumId": "cook-islands",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Rarotonga/IMG_2939.jpg",
+      "caption": "Rarotonga",
+      "locationId": "Rarotonga",
+      "coordinates": {
+        "lng": -159.7777,
+        "lat": -21.2367
+      },
+      "dateCreated": "2026-01-02",
+      "tags": [],
+      "rating": 2,
+      "ratingReason": "Appealing tropical lagoon view, but window frame intrusions, an obscuring dark object at left, and awkwardly cropped beer glass make it a cluttered snapshot rather than a polished travel image."
+    },
+    {
+      "id": "cook-islands22",
+      "albumId": "cook-islands",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Rarotonga/IMG_2940.jpg",
+      "caption": "Rarotonga",
+      "locationId": "Rarotonga",
+      "coordinates": {
+        "lng": -159.7777,
+        "lat": -21.2367
+      },
+      "dateCreated": "2026-01-02",
+      "tags": [],
+      "rating": 3,
+      "ratingReason": "Pleasant tropical vista with turquoise lagoon and dramatic clouds, but the foreground jungle is cluttered and the sky dominates too much, leaving it scenic yet ordinary."
+    },
+    {
+      "id": "cook-islands23",
+      "albumId": "cook-islands",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Rarotonga/IMG_2941.jpg",
+      "caption": "Rarotonga",
+      "locationId": "Rarotonga",
+      "coordinates": {
+        "lng": -159.7777,
+        "lat": -21.2367
+      },
+      "dateCreated": "2026-01-02",
+      "tags": [],
+      "rating": 3,
+      "ratingReason": "Pretty tropical lagoon vista with vivid turquoise water, but the sky dominates two-thirds of the frame and the foreground foliage is undifferentiated, making it a solid yet ordinary scenic."
+    },
+    {
+      "id": "cook-islands24",
+      "albumId": "cook-islands",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Rarotonga/IMG_2942.jpg",
+      "caption": "Rarotonga",
+      "locationId": "Rarotonga",
+      "coordinates": {
+        "lng": -159.7777,
+        "lat": -21.2367
+      },
+      "dateCreated": "2026-01-02",
+      "tags": [],
+      "rating": 2,
+      "ratingReason": "Flat overcast light drains the tropical scene, with a large dull sky and cluttered midground of buildings and palms making it a forgettable snapshot despite the turquoise water."
+    },
+    {
+      "id": "cook-islands25",
+      "albumId": "cook-islands",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Rarotonga/IMG_2944.jpg",
+      "caption": "Rarotonga",
+      "locationId": "Rarotonga",
+      "coordinates": {
+        "lng": -159.7777,
+        "lat": -21.2367
+      },
+      "dateCreated": "2026-01-02",
+      "tags": [],
+      "rating": 2,
+      "ratingReason": "Turquoise lagoon is appealing but the flat overcast sky, cluttered shoreline buildings, and empty foreground water make it a dull snapshot."
+    },
+    {
+      "id": "cook-islands26",
+      "albumId": "cook-islands",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Rarotonga/IMG_2945.jpg",
+      "caption": "Rarotonga",
+      "locationId": "Rarotonga",
+      "coordinates": {
+        "lng": -159.7777,
+        "lat": -21.2367
+      },
+      "dateCreated": "2026-01-02",
+      "tags": [],
+      "rating": 2,
+      "ratingReason": "Flat overcast light mutes the scene, and the boxy houses clutter an otherwise pretty tropical shore, leaving a dull grey sky dominating the frame."
+    },
+    {
+      "id": "cook-islands27",
+      "albumId": "cook-islands",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Rarotonga/IMG_2946.jpg",
+      "caption": "Rarotonga",
+      "locationId": "Rarotonga",
+      "coordinates": {
+        "lng": -159.7777,
+        "lat": -21.2367
+      },
+      "dateCreated": "2026-01-02",
+      "tags": [],
+      "rating": 2,
+      "ratingReason": "Flat overcast light and a large expanse of dull grey sky mute the appeal, leaving the turquoise water and jungle coastline as an ordinary snapshot."
+    },
+    {
+      "id": "cook-islands28",
+      "albumId": "cook-islands",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Rarotonga/IMG_2947.jpg",
+      "caption": "Rarotonga",
+      "locationId": "Rarotonga",
+      "coordinates": {
+        "lng": -159.7777,
+        "lat": -21.2367
+      },
+      "dateCreated": "2026-01-02",
+      "tags": [],
+      "rating": 3,
+      "ratingReason": "The turquoise lagoon and palm-lined island are appealing, but the flat overcast sky dominates too much of the frame and the composition lacks a strong focal point or dramatic light."
+    },
+    {
+      "id": "cook-islands29",
+      "albumId": "cook-islands",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Rarotonga/IMG_2948.jpg",
+      "caption": "Rarotonga",
+      "locationId": "Rarotonga",
+      "coordinates": {
+        "lng": -159.7777,
+        "lat": -21.2367
+      },
+      "dateCreated": "2026-01-02",
+      "tags": [],
+      "rating": 2,
+      "ratingReason": "The turquoise water color is pretty, but there's no focal point—just empty sea, distant flat horizon, and dull clouds make it a generic snapshot."
+    },
+    {
+      "id": "cook-islands30",
+      "albumId": "cook-islands",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Rarotonga/IMG_2949.jpg",
+      "caption": "Rarotonga",
+      "locationId": "Rarotonga",
+      "coordinates": {
+        "lng": -159.7777,
+        "lat": -21.2367
+      },
+      "dateCreated": "2026-01-02",
+      "tags": [],
+      "rating": 3,
+      "ratingReason": "Appealing turquoise water and palm-lined shore, but the low horizon leaves a large empty sky and the tropical scene is pleasant yet unremarkable."
+    },
+    {
+      "id": "cook-islands31",
+      "albumId": "cook-islands",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Rarotonga/IMG_2950.jpg",
+      "caption": "Rarotonga",
+      "locationId": "Rarotonga",
+      "coordinates": {
+        "lng": -159.7777,
+        "lat": -21.2367
+      },
+      "dateCreated": "2026-01-02",
+      "tags": [],
+      "rating": 3,
+      "ratingReason": "Nice turquoise water and black volcanic rocks with distant reef break, but the sky dominates too much and the rocky foreground is cluttered and unfocused as a subject."
+    },
+    {
+      "id": "cook-islands32",
+      "albumId": "cook-islands",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Rarotonga/IMG_2951.jpg",
+      "caption": "Rarotonga",
+      "locationId": "Rarotonga",
+      "coordinates": {
+        "lng": -159.7777,
+        "lat": -21.2367
+      },
+      "dateCreated": "2026-01-02",
+      "tags": [],
+      "rating": 2,
+      "ratingReason": "The dominant dark volcanic rock is dull and eats up the foreground, and while the palms and turquoise water are nice, the composition is bottom-heavy and unbalanced."
+    },
+    {
+      "id": "cook-islands33",
+      "albumId": "cook-islands",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Rarotonga/IMG_2953.jpg",
+      "caption": "Rarotonga",
+      "locationId": "Rarotonga",
+      "coordinates": {
+        "lng": -159.7777,
+        "lat": -21.2367
+      },
+      "dateCreated": "2026-01-02",
+      "tags": [],
+      "rating": 2,
+      "ratingReason": "Pleasant turquoise water and volcanic rocks, but the dark foreground boulders dominate flatly and the composition is ordinary snapshot-grade with no clear focal point."
+    },
+    {
+      "id": "cook-islands34",
+      "albumId": "cook-islands",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Rarotonga/IMG_2954.jpg",
+      "caption": "Rarotonga",
+      "locationId": "Rarotonga",
+      "coordinates": {
+        "lng": -159.7777,
+        "lat": -21.2367
+      },
+      "dateCreated": "2026-01-02",
+      "tags": [],
+      "rating": 2,
+      "ratingReason": "Sky-heavy composition with a hazy, flat beach and scattered dark rocks; pleasant tropical scene but ordinary and lacking a strong focal point or striking light."
+    },
+    {
+      "id": "cook-islands35",
+      "albumId": "cook-islands",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Rarotonga/IMG_2955.jpg",
+      "caption": "Rarotonga",
+      "locationId": "Rarotonga",
+      "coordinates": {
+        "lng": -159.7777,
+        "lat": -21.2367
+      },
+      "dateCreated": "2026-01-02",
+      "tags": [],
+      "rating": 3,
+      "ratingReason": "The tropical beach with a walking dog offers a nice candid moment, but the flat light, foreground-heavy sand, and scattered rocks make it a pleasant but ordinary snapshot."
+    },
+    {
+      "id": "cook-islands36",
+      "albumId": "cook-islands",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Rarotonga/IMG_2956.jpg",
+      "caption": "Rarotonga",
+      "locationId": "Rarotonga",
+      "coordinates": {
+        "lng": -159.7777,
+        "lat": -21.2367
+      },
+      "dateCreated": "2026-01-02",
+      "tags": [],
+      "rating": 2,
+      "ratingReason": "Dark foreground rocks dominate and feel heavy, sky is oversized and empty, and the appealing turquoise lagoon and palm islet are relegated to a thin midground strip, resulting in an unbalanced snapshot."
+    },
+    {
+      "id": "cook-islands37",
+      "albumId": "cook-islands",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Rarotonga/IMG_2957.jpg",
+      "caption": "Rarotonga",
+      "locationId": "Rarotonga",
+      "coordinates": {
+        "lng": -159.7777,
+        "lat": -21.2367
+      },
+      "dateCreated": "2026-01-02",
+      "tags": [],
+      "rating": 3,
+      "ratingReason": "Charming dog gazing at a tropical island lagoon adds narrative interest, but the composition is snapshot-like with cluttered dark rocks and a large empty foreground of sand."
+    },
+    {
+      "id": "cook-islands38",
+      "albumId": "cook-islands",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Rarotonga/IMG_2959.jpg",
+      "caption": "Rarotonga",
+      "locationId": "Rarotonga",
+      "coordinates": {
+        "lng": -159.7777,
+        "lat": -21.2367
+      },
+      "dateCreated": "2026-01-02",
+      "tags": [],
+      "rating": 3,
+      "ratingReason": "A sharp, characterful golden dog on white sand with dark rocks and green vines makes a decent candid, but flat light and a somewhat cluttered foreground keep it ordinary rather than striking."
+    },
+    {
+      "id": "cook-islands39",
+      "albumId": "cook-islands",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Rarotonga/IMG_2962.jpg",
+      "caption": "Rarotonga",
+      "locationId": "Rarotonga",
+      "coordinates": {
+        "lng": -159.7777,
+        "lat": -21.2367
+      },
+      "dateCreated": "2026-01-02",
+      "tags": [],
+      "rating": 3,
+      "ratingReason": "Classic tropical scene with turquoise lagoon, distant palm islet, and framing palm frond, but the dark volcanic rocks dominate the foreground flatly and the composition feels ordinary rather than striking."
+    },
+    {
+      "id": "cook-islands40",
+      "albumId": "cook-islands",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Rarotonga/IMG_2964.jpg",
+      "caption": "Rarotonga",
+      "locationId": "Rarotonga",
+      "coordinates": {
+        "lng": -159.7777,
+        "lat": -21.2367
+      },
+      "dateCreated": "2026-01-02",
+      "tags": [],
+      "rating": 3,
+      "ratingReason": "Tropical beach with palms and a dog adds narrative interest, but the vast dull foreground of sand dominates and flat midday light keeps it ordinary."
+    },
+    {
+      "id": "cook-islands41",
+      "albumId": "cook-islands",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Rarotonga/IMG_2965.jpg",
+      "caption": "Rarotonga",
+      "locationId": "Rarotonga",
+      "coordinates": {
+        "lng": -159.7777,
+        "lat": -21.2367
+      },
+      "dateCreated": "2026-01-02",
+      "tags": [],
+      "rating": 3,
+      "ratingReason": "A picturesque palm-covered islet with clear turquoise water, but the drab foreground reef and sky-heavy composition make it a solid yet ordinary travel shot."
+    },
+    {
+      "id": "new-zealand1",
+      "albumId": "new-zealand",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Auckland/IMG_3143.jpg",
+      "caption": "Auckland",
+      "locationId": "Auckland",
+      "coordinates": {
+        "lng": 174.7633,
+        "lat": -36.8485
+      },
+      "dateCreated": "2026-01-09",
+      "tags": [],
+      "rating": 1,
+      "ratingReason": "A snapshot of promotional brochures and a coaster held in hand, cluttered and mundane with no scenic subject or editorial value."
+    },
+    {
+      "id": "new-zealand2",
+      "albumId": "new-zealand",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Auckland/IMG_3144.jpg",
+      "caption": "Auckland",
+      "locationId": "Auckland",
+      "coordinates": {
+        "lng": 174.7633,
+        "lat": -36.8485
+      },
+      "dateCreated": "2026-01-09",
+      "tags": [],
+      "rating": 2,
+      "ratingReason": "A well-lit but purely documentary shot of the Hobbiton sign against a cluttered green backdrop, sharp yet lacking composition or storytelling beyond location marker."
+    },
+    {
+      "id": "new-zealand3",
+      "albumId": "new-zealand",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Auckland/IMG_3145.jpg",
+      "caption": "Auckland",
+      "locationId": "Auckland",
+      "coordinates": {
+        "lng": 174.7633,
+        "lat": -36.8485
+      },
+      "dateCreated": "2026-01-09",
+      "tags": [],
+      "rating": 3,
+      "ratingReason": "Charming hobbit-hole subject with lush garden and blue sky, but the intruding hand/phone at left edge and slightly cluttered framing keep it from being a clean keeper."
+    },
+    {
+      "id": "new-zealand4",
+      "albumId": "new-zealand",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Auckland/IMG_3147.jpg",
+      "caption": "Auckland",
+      "locationId": "Auckland",
+      "coordinates": {
+        "lng": 174.7633,
+        "lat": -36.8485
+      },
+      "dateCreated": "2026-01-09",
+      "tags": [],
+      "rating": 4,
+      "ratingReason": "Iconic yellow Hobbiton door framed by lush flowers, chair with hat, and stone path under blue sky—well-composed, colorful, and instantly evocative, just slightly postcard-familiar to be a true hero."
+    },
+    {
+      "id": "new-zealand5",
+      "albumId": "new-zealand",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Auckland/IMG_3148.jpg",
+      "caption": "Auckland",
+      "locationId": "Auckland",
+      "coordinates": {
+        "lng": 174.7633,
+        "lat": -36.8485
+      },
+      "dateCreated": "2026-01-09",
+      "tags": [],
+      "rating": 3,
+      "ratingReason": "The charming round hobbit-style door with lush greenery is an appealing subject, but the foreground clutter and harsh midday light make it a solid documentary shot rather than a striking hero image."
+    },
+    {
+      "id": "new-zealand6",
+      "albumId": "new-zealand",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Auckland/IMG_3149.jpg",
+      "caption": "Auckland",
+      "locationId": "Auckland",
+      "coordinates": {
+        "lng": 174.7633,
+        "lat": -36.8485
+      },
+      "dateCreated": "2026-01-09",
+      "tags": [],
+      "rating": 3,
+      "ratingReason": "The iconic round hobbit door is a charming, well-known subject with vivid blue sky and lush greens, but the framing is cluttered with foreground debris and the overhanging leaves feel accidental rather than intentional."
+    },
+    {
+      "id": "new-zealand7",
+      "albumId": "new-zealand",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Auckland/IMG_3151.jpg",
+      "caption": "Auckland",
+      "locationId": "Auckland",
+      "coordinates": {
+        "lng": 174.7633,
+        "lat": -36.8485
+      },
+      "dateCreated": "2026-01-09",
+      "tags": [],
+      "rating": 3,
+      "ratingReason": "Charming Hobbiton scene with the iconic round doors and lush garden, but the composition is busy in the foreground and the harsh midday light flattens the interest."
+    },
+    {
+      "id": "new-zealand8",
+      "albumId": "new-zealand",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Auckland/IMG_3153.jpg",
+      "caption": "Auckland",
+      "locationId": "Auckland",
+      "coordinates": {
+        "lng": 174.7633,
+        "lat": -36.8485
+      },
+      "dateCreated": "2026-01-09",
+      "tags": [],
+      "rating": 3,
+      "ratingReason": "Charming Hobbiton scene with iconic round doors and lush garden foreground, but the composition is busy and the flat midday light and cluttered foreground keep it from standing out."
+    },
+    {
+      "id": "new-zealand9",
+      "albumId": "new-zealand",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Auckland/IMG_3154.jpg",
+      "caption": "Auckland",
+      "locationId": "Auckland",
+      "coordinates": {
+        "lng": 174.7633,
+        "lat": -36.8485
+      },
+      "dateCreated": "2026-01-09",
+      "tags": [],
+      "rating": 4,
+      "ratingReason": "The charming blue-doored hobbit hole with grass roof, framing vines, and quaint table detail makes a well-composed, iconic travel image under nice blue-sky light."
+    },
+    {
+      "id": "new-zealand10",
+      "albumId": "new-zealand",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Auckland/IMG_3155.jpg",
+      "caption": "Auckland",
+      "locationId": "Auckland",
+      "coordinates": {
+        "lng": 174.7633,
+        "lat": -36.8485
+      },
+      "dateCreated": "2026-01-09",
+      "tags": [],
+      "rating": 3,
+      "ratingReason": "The iconic Hobbiton hobbit-hole and garden with red door is a charming subject under blue skies, but the composition is snapshot-grade with a large empty sky and cluttered foreground lacking a strong focal point."
+    },
+    {
+      "id": "new-zealand11",
+      "albumId": "new-zealand",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Auckland/IMG_3156.jpg",
+      "caption": "Auckland",
+      "locationId": "Auckland",
+      "coordinates": {
+        "lng": 174.7633,
+        "lat": -36.8485
+      },
+      "dateCreated": "2026-01-09",
+      "tags": [],
+      "rating": 3,
+      "ratingReason": "Charming hobbit-hole subject with nice blue sky and greenery, but the composition is cluttered by foreground foliage and the framing feels casual rather than intentional."
+    },
+    {
+      "id": "new-zealand12",
+      "albumId": "new-zealand",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Auckland/IMG_3157.jpg",
+      "caption": "Auckland",
+      "locationId": "Auckland",
+      "coordinates": {
+        "lng": 174.7633,
+        "lat": -36.8485
+      },
+      "dateCreated": "2026-01-09",
+      "tags": [],
+      "rating": 3,
+      "ratingReason": "Charming, recognizable Hobbiton scene with nice detail and blue sky, but it's a straightforward documentary snapshot with flat midday light and a somewhat cluttered foreground, so it's solid rather than striking."
+    },
+    {
+      "id": "new-zealand13",
+      "albumId": "new-zealand",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Auckland/IMG_3158.jpg",
+      "caption": "Auckland",
+      "locationId": "Auckland",
+      "coordinates": {
+        "lng": 174.7633,
+        "lat": -36.8485
+      },
+      "dateCreated": "2026-01-09",
+      "tags": [],
+      "rating": 3,
+      "ratingReason": "Charming hobbit-hole subject with nice storytelling details and blue sky, but flat midday light and foreground foliage clutter keep it ordinary rather than striking."
+    },
+    {
+      "id": "new-zealand14",
+      "albumId": "new-zealand",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Auckland/IMG_3159.jpg",
+      "caption": "Auckland",
+      "locationId": "Auckland",
+      "coordinates": {
+        "lng": 174.7633,
+        "lat": -36.8485
+      },
+      "dateCreated": "2026-01-09",
+      "tags": [],
+      "rating": 3,
+      "ratingReason": "The iconic hobbit-hole door is a charming subject with nice greenery and blue sky, but the cluttered foreground and off-center bench weaken the composition, keeping it a solid tourist shot rather than a hero image."
+    },
+    {
+      "id": "new-zealand15",
+      "albumId": "new-zealand",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Auckland/IMG_3162.jpg",
+      "caption": "Auckland",
+      "locationId": "Auckland",
+      "coordinates": {
+        "lng": 174.7633,
+        "lat": -36.8485
+      },
+      "dateCreated": "2026-01-09",
+      "tags": [],
+      "rating": 3,
+      "ratingReason": "Iconic Hobbiton yellow door with charming garden detail, but harsh midday light, flat blue sky, and the intrusive foreground fence keep it a solid tourist shot rather than editorial-grade."
+    },
+    {
+      "id": "new-zealand16",
+      "albumId": "new-zealand",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Auckland/IMG_3163.jpg",
+      "caption": "Auckland",
+      "locationId": "Auckland",
+      "coordinates": {
+        "lng": 174.7633,
+        "lat": -36.8485
+      },
+      "dateCreated": "2026-01-09",
+      "tags": [],
+      "rating": 3,
+      "ratingReason": "The iconic yellow hobbit door and charming garden are appealing, but the foreground fence is intrusive and the harsh midday light and centered framing keep it snapshot-level."
+    },
+    {
+      "id": "new-zealand17",
+      "albumId": "new-zealand",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Auckland/IMG_3164.jpg",
+      "caption": "Auckland",
+      "locationId": "Auckland",
+      "coordinates": {
+        "lng": 174.7633,
+        "lat": -36.8485
+      },
+      "dateCreated": "2026-01-09",
+      "tags": [],
+      "rating": 2,
+      "ratingReason": "Fun tourist snapshot at the Hobbiton set with the iconic yellow door, but the harsh midday light, squinting subject, and standard souvenir-pose framing keep it snapshot-grade."
+    },
+    {
+      "id": "new-zealand18",
+      "albumId": "new-zealand",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Auckland/IMG_3165.jpg",
+      "caption": "Auckland",
+      "locationId": "Auckland",
+      "coordinates": {
+        "lng": 174.7633,
+        "lat": -36.8485
+      },
+      "dateCreated": "2026-01-09",
+      "tags": [],
+      "rating": 2,
+      "ratingReason": "Recognizable Hobbiton yellow door is charming but this is a standard tourist snapshot with harsh midday light, a posing subject, and distracting crowds on the hill."
+    },
+    {
+      "id": "new-zealand19",
+      "albumId": "new-zealand",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Auckland/IMG_3166.jpg",
+      "caption": "Auckland",
+      "locationId": "Auckland",
+      "coordinates": {
+        "lng": 174.7633,
+        "lat": -36.8485
+      },
+      "dateCreated": "2026-01-09",
+      "tags": [],
+      "rating": 3,
+      "ratingReason": "The iconic Hobbiton hobbit-hole with vine-framed round door and colorful flowers is charming, but the composition is cluttered, tilted, and shot in harsh midday light, keeping it solid but ordinary."
+    },
+    {
+      "id": "new-zealand20",
+      "albumId": "new-zealand",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Auckland/IMG_3167.jpg",
+      "caption": "Auckland",
+      "locationId": "Auckland",
+      "coordinates": {
+        "lng": 174.7633,
+        "lat": -36.8485
+      },
+      "dateCreated": "2026-01-09",
+      "tags": [],
+      "rating": 3,
+      "ratingReason": "Charming Hobbiton scene with clothesline detail and lush greenery, but the foreground grass dominates and the harsh midday light flattens the composition, keeping it pleasant but unremarkable."
+    },
+    {
+      "id": "new-zealand21",
+      "albumId": "new-zealand",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Auckland/IMG_3168.jpg",
+      "caption": "Auckland",
+      "locationId": "Auckland",
+      "coordinates": {
+        "lng": 174.7633,
+        "lat": -36.8485
+      },
+      "dateCreated": "2026-01-09",
+      "tags": [],
+      "rating": 4,
+      "ratingReason": "The iconic round hobbit-hole door framed by lush greenery and foreground pansies makes a charming, well-lit and compelling travel shot, though the harsh midday light and cluttered chair keep it from hero status."
+    },
+    {
+      "id": "new-zealand22",
+      "albumId": "new-zealand",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Auckland/IMG_3169.jpg",
+      "caption": "Auckland",
+      "locationId": "Auckland",
+      "coordinates": {
+        "lng": 174.7633,
+        "lat": -36.8485
+      },
+      "dateCreated": "2026-01-09",
+      "tags": [],
+      "rating": 3,
+      "ratingReason": "Charming iconic round hobbit door with a wheelbarrow prop, but harsh midday light, cluttered foreground, and casual framing keep it ordinary rather than striking."
+    },
+    {
+      "id": "new-zealand23",
+      "albumId": "new-zealand",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Auckland/IMG_3171.jpg",
+      "caption": "Auckland",
+      "locationId": "Auckland",
+      "coordinates": {
+        "lng": 174.7633,
+        "lat": -36.8485
+      },
+      "dateCreated": "2026-01-09",
+      "tags": [],
+      "rating": 3,
+      "ratingReason": "Charming iconic hobbit-hole subject with nice detail and props, but harsh midday light and flat framing keep it a solid documentary shot rather than a striking hero."
+    },
+    {
+      "id": "new-zealand24",
+      "albumId": "new-zealand",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Auckland/IMG_3174.jpg",
+      "caption": "Auckland",
+      "locationId": "Auckland",
+      "coordinates": {
+        "lng": 174.7633,
+        "lat": -36.8485
+      },
+      "dateCreated": "2026-01-09",
+      "tags": [],
+      "rating": 3,
+      "ratingReason": "Pleasant rolling green hills under a blue sky, but the composition is ordinary with a sky-heavy frame and no strong focal point to make it memorable."
+    },
+    {
+      "id": "new-zealand25",
+      "albumId": "new-zealand",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Auckland/IMG_3175.jpg",
+      "caption": "Auckland",
+      "locationId": "Auckland",
+      "coordinates": {
+        "lng": 174.7633,
+        "lat": -36.8485
+      },
+      "dateCreated": "2026-01-09",
+      "tags": [],
+      "rating": 3,
+      "ratingReason": "Lush rolling landscape with a striking lone tree and nice blue sky, but the composition is busy and lacks a clear focal anchor, keeping it a pleasant yet ordinary scenic shot."
+    },
+    {
+      "id": "new-zealand26",
+      "albumId": "new-zealand",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Auckland/IMG_3176.jpg",
+      "caption": "Auckland",
+      "locationId": "Auckland",
+      "coordinates": {
+        "lng": 174.7633,
+        "lat": -36.8485
+      },
+      "dateCreated": "2026-01-09",
+      "tags": [],
+      "rating": 4,
+      "ratingReason": "Iconic Hobbiton hobbit-hole with the open green door framed by lush wildflowers, stone steps, and blue sky make a compelling, well-composed travel shot."
+    },
+    {
+      "id": "new-zealand27",
+      "albumId": "new-zealand",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Auckland/IMG_3177.jpg",
+      "caption": "Auckland",
+      "locationId": "Auckland",
+      "coordinates": {
+        "lng": 174.7633,
+        "lat": -36.8485
+      },
+      "dateCreated": "2026-01-09",
+      "tags": [],
+      "rating": 3,
+      "ratingReason": "Charming garden nook with birdhouse, open book, and lush greenery tells a quiet story, but harsh midday light and cluttered framing keep it from being a standout hero image."
+    },
+    {
+      "id": "new-zealand28",
+      "albumId": "new-zealand",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Auckland/IMG_3178.jpg",
+      "caption": "Auckland",
+      "locationId": "Auckland",
+      "coordinates": {
+        "lng": 174.7633,
+        "lat": -36.8485
+      },
+      "dateCreated": "2026-01-09",
+      "tags": [],
+      "rating": 4,
+      "ratingReason": "Charming Hobbiton scene with strong leading stone steps, lush color, vivid blue sky, and delightful details like the pumpkin wheelbarrow and round door, making it a compelling travel keeper."
+    },
+    {
+      "id": "new-zealand29",
+      "albumId": "new-zealand",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Auckland/IMG_3179.jpg",
+      "caption": "Auckland",
+      "locationId": "Auckland",
+      "coordinates": {
+        "lng": 174.7633,
+        "lat": -36.8485
+      },
+      "dateCreated": "2026-01-09",
+      "tags": [],
+      "rating": 4,
+      "ratingReason": "Iconic Hobbiton green door framed by lush greenery, pumpkin, and stone steps under vivid blue sky makes a compelling, well-lit and colorful travel shot, though slightly cluttered foreground keeps it just short of a hero."
+    },
+    {
+      "id": "new-zealand30",
+      "albumId": "new-zealand",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Auckland/IMG_3180.jpg",
+      "caption": "Auckland",
+      "locationId": "Auckland",
+      "coordinates": {
+        "lng": 174.7633,
+        "lat": -36.8485
+      },
+      "dateCreated": "2026-01-09",
+      "tags": [],
+      "rating": 3,
+      "ratingReason": "Charming, recognizable hobbit-hole subject with nice detail, but the harsh midday light, cluttered framing, and stray flowers crossing the door keep it from being a standout hero shot."
+    },
+    {
+      "id": "new-zealand31",
+      "albumId": "new-zealand",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Auckland/IMG_3182.jpg",
+      "caption": "Auckland",
+      "locationId": "Auckland",
+      "coordinates": {
+        "lng": 174.7633,
+        "lat": -36.8485
+      },
+      "dateCreated": "2026-01-09",
+      "tags": [],
+      "rating": 2,
+      "ratingReason": "Pleasant green rolling hills but the vast empty blue sky dominates, the framing is unbalanced, and the distant thatched buildings are too small to serve as a compelling subject."
+    },
+    {
+      "id": "new-zealand32",
+      "albumId": "new-zealand",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Auckland/IMG_3183.jpg",
+      "caption": "Auckland",
+      "locationId": "Auckland",
+      "coordinates": {
+        "lng": 174.7633,
+        "lat": -36.8485
+      },
+      "dateCreated": "2026-01-09",
+      "tags": [],
+      "rating": 3,
+      "ratingReason": "The iconic Hobbiton hilltop tree and hobbit-hole with a leading path are charming, but harsh midday light, flat blue sky, and a distant small subject keep it ordinary rather than striking."
+    },
+    {
+      "id": "new-zealand33",
+      "albumId": "new-zealand",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Auckland/IMG_3184.jpg",
+      "caption": "Auckland",
+      "locationId": "Auckland",
+      "coordinates": {
+        "lng": 174.7633,
+        "lat": -36.8485
+      },
+      "dateCreated": "2026-01-09",
+      "tags": [],
+      "rating": 3,
+      "ratingReason": "The iconic hilltop tree and hobbit-hole path are charming, but the harsh midday light, blown highlights, and empty blue sky keep it ordinary rather than striking."
+    },
+    {
+      "id": "new-zealand34",
+      "albumId": "new-zealand",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Auckland/IMG_3185.jpg",
+      "caption": "Auckland",
+      "locationId": "Auckland",
+      "coordinates": {
+        "lng": 174.7633,
+        "lat": -36.8485
+      },
+      "dateCreated": "2026-01-09",
+      "tags": [],
+      "rating": 3,
+      "ratingReason": "The iconic blue hobbit door is charming and detailed, but harsh midday light, distracting shadows on the foreground path, and a slightly cluttered composition keep it at snapshot-plus level."
+    },
+    {
+      "id": "new-zealand35",
+      "albumId": "new-zealand",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Auckland/IMG_3186.jpg",
+      "caption": "Auckland",
+      "locationId": "Auckland",
+      "coordinates": {
+        "lng": 174.7633,
+        "lat": -36.8485
+      },
+      "dateCreated": "2026-01-09",
+      "tags": [],
+      "rating": 3,
+      "ratingReason": "The iconic red hobbit-hole door is charming and well-exposed under blue skies, but the busy foreground fence and greenery clutter the frame, making it a solid tourist shot rather than a standout hero image."
+    },
+    {
+      "id": "new-zealand36",
+      "albumId": "new-zealand",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Auckland/IMG_3187.jpg",
+      "caption": "Auckland",
+      "locationId": "Auckland",
+      "coordinates": {
+        "lng": 174.7633,
+        "lat": -36.8485
+      },
+      "dateCreated": "2026-01-09",
+      "tags": [],
+      "rating": 3,
+      "ratingReason": "Charming, warmly-lit hobbit-hole interior with rich detail, but the cluttered framing and flat documentary angle keep it a solid record shot rather than a striking hero image."
+    },
+    {
+      "id": "new-zealand37",
+      "albumId": "new-zealand",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Auckland/IMG_3188.jpg",
+      "caption": "Auckland",
+      "locationId": "Auckland",
+      "coordinates": {
+        "lng": 174.7633,
+        "lat": -36.8485
+      },
+      "dateCreated": "2026-01-09",
+      "tags": [],
+      "rating": 3,
+      "ratingReason": "Richly detailed, warmly lit fantasy-style study interior with charming props, but the framing is static and cluttered with no clear focal hierarchy, making it a solid documentary shot rather than a striking hero image."
+    },
+    {
+      "id": "new-zealand38",
+      "albumId": "new-zealand",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Auckland/IMG_3189.jpg",
+      "caption": "Auckland",
+      "locationId": "Auckland",
+      "coordinates": {
+        "lng": 174.7633,
+        "lat": -36.8485
+      },
+      "dateCreated": "2026-01-09",
+      "tags": [],
+      "rating": 3,
+      "ratingReason": "Charming Hobbiton-style round window and cozy writing nook with warm wood tones, but the blown-out window and cluttered, slightly awkward framing keep it from standing out."
+    },
+    {
+      "id": "new-zealand39",
+      "albumId": "new-zealand",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Auckland/IMG_3190.jpg",
+      "caption": "Auckland",
+      "locationId": "Auckland",
+      "coordinates": {
+        "lng": 174.7633,
+        "lat": -36.8485
+      },
+      "dateCreated": "2026-01-09",
+      "tags": [],
+      "rating": 3,
+      "ratingReason": "Charming, richly detailed fairytale bedroom interior with warm tones and a lovely stained-glass window, but the cluttered framing, dim lighting, and lack of a clear focal point keep it as a solid documentary shot rather than a hero image."
+    },
+    {
+      "id": "new-zealand40",
+      "albumId": "new-zealand",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Auckland/IMG_3191.jpg",
+      "caption": "Auckland",
+      "locationId": "Auckland",
+      "coordinates": {
+        "lng": 174.7633,
+        "lat": -36.8485
+      },
+      "dateCreated": "2026-01-09",
+      "tags": [],
+      "rating": 1,
+      "ratingReason": "Accidental-looking shot of a wooden floor with a blurry basket and book edge; no subject, poor focus, and no compositional intent."
+    },
+    {
+      "id": "new-zealand41",
+      "albumId": "new-zealand",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Auckland/IMG_3192.jpg",
+      "caption": "Auckland",
+      "locationId": "Auckland",
+      "coordinates": {
+        "lng": 174.7633,
+        "lat": -36.8485
+      },
+      "dateCreated": "2026-01-09",
+      "tags": [],
+      "rating": 2,
+      "ratingReason": "Interesting rustic themed interior with warm lamp glow, but the cramped framing, cluttered composition, and dim exposure make it a documentary snapshot rather than a compelling hero image."
+    },
+    {
+      "id": "new-zealand42",
+      "albumId": "new-zealand",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Auckland/IMG_3193.jpg",
+      "caption": "Auckland",
+      "locationId": "Auckland",
+      "coordinates": {
+        "lng": 174.7633,
+        "lat": -36.8485
+      },
+      "dateCreated": "2026-01-09",
+      "tags": [],
+      "rating": 3,
+      "ratingReason": "A charming, well-lit themed family-tree display with warm tones and interesting props, but it's a straightforward documentary shot lacking a strong compositional hook or standout moment."
+    },
+    {
+      "id": "new-zealand43",
+      "albumId": "new-zealand",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Auckland/IMG_3194.jpg",
+      "caption": "Auckland",
+      "locationId": "Auckland",
+      "coordinates": {
+        "lng": 174.7633,
+        "lat": -36.8485
+      },
+      "dateCreated": "2026-01-09",
+      "tags": [],
+      "rating": 2,
+      "ratingReason": "A documentary snapshot of a wooden historical toilet with flat lighting and monotone brown tones; interesting subject but cluttered framing and no compelling composition."
+    },
+    {
+      "id": "new-zealand44",
+      "albumId": "new-zealand",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Auckland/IMG_3195.jpg",
+      "caption": "Auckland",
+      "locationId": "Auckland",
+      "coordinates": {
+        "lng": 174.7633,
+        "lat": -36.8485
+      },
+      "dateCreated": "2026-01-09",
+      "tags": [],
+      "rating": 3,
+      "ratingReason": "Charming rustic bathroom scene with copper tub and warm textures, but the cluttered composition, dim lighting, and static documentary feel keep it solid rather than striking."
+    },
+    {
+      "id": "new-zealand45",
+      "albumId": "new-zealand",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Auckland/IMG_3196.jpg",
+      "caption": "Auckland",
+      "locationId": "Auckland",
+      "coordinates": {
+        "lng": 174.7633,
+        "lat": -36.8485
+      },
+      "dateCreated": "2026-01-09",
+      "tags": [],
+      "rating": 4,
+      "ratingReason": "Atmospheric, richly detailed rustic kitchen scene with warm lighting, strong brick-arch framing and abundant storytelling props that make it a compelling editorial keeper."
+    },
+    {
+      "id": "new-zealand46",
+      "albumId": "new-zealand",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Auckland/IMG_3197.jpg",
+      "caption": "Auckland",
+      "locationId": "Auckland",
+      "coordinates": {
+        "lng": 174.7633,
+        "lat": -36.8485
+      },
+      "dateCreated": "2026-01-09",
+      "tags": [],
+      "rating": 3,
+      "ratingReason": "Charming, richly detailed hobbit-style study interior with warm light, but the framing is a straightforward snapshot with a foreground floor dominating and no strong focal hierarchy."
+    },
+    {
+      "id": "new-zealand47",
+      "albumId": "new-zealand",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Auckland/IMG_3198.jpg",
+      "caption": "Auckland",
+      "locationId": "Auckland",
+      "coordinates": {
+        "lng": 174.7633,
+        "lat": -36.8485
+      },
+      "dateCreated": "2026-01-09",
+      "tags": [],
+      "rating": 3,
+      "ratingReason": "Charming, warmly-lit hobbit-style dining interior with nice detail, but the busy composition and ordinary snapshot framing keep it from being a standout hero image."
+    },
+    {
+      "id": "new-zealand48",
+      "albumId": "new-zealand",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Auckland/IMG_3200.jpg",
+      "caption": "Auckland",
+      "locationId": "Auckland",
+      "coordinates": {
+        "lng": 174.7633,
+        "lat": -36.8485
+      },
+      "dateCreated": "2026-01-09",
+      "tags": [],
+      "rating": 3,
+      "ratingReason": "A charming, warmly-lit display of rustic breads and produce with good detail, but the cluttered shelving and lack of a clear focal point keep it as a solid documentary shot rather than a hero image."
+    },
+    {
+      "id": "new-zealand49",
+      "albumId": "new-zealand",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Auckland/IMG_3201.jpg",
+      "caption": "Auckland",
+      "locationId": "Auckland",
+      "coordinates": {
+        "lng": 174.7633,
+        "lat": -36.8485
+      },
+      "dateCreated": "2026-01-09",
+      "tags": [],
+      "rating": 4,
+      "ratingReason": "Charming, atmospheric rustic cob-house kitchen with a lovely arched window, warm light, and rich storybook character, though slightly cluttered and dim in the shadows keeps it from hero status."
+    },
+    {
+      "id": "new-zealand50",
+      "albumId": "new-zealand",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Auckland/IMG_3203.jpg",
+      "caption": "Auckland",
+      "locationId": "Auckland",
+      "coordinates": {
+        "lng": 174.7633,
+        "lat": -36.8485
+      },
+      "dateCreated": "2026-01-09",
+      "tags": [],
+      "rating": 3,
+      "ratingReason": "Charming rustic cottage kitchen with an atmospheric arched window and antique pump, but cluttered framing and murky exposure keep it from being a standout hero image."
+    },
+    {
+      "id": "cook-islands42",
+      "albumId": "cook-islands",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Aitutaki/IMG_2968.jpg",
+      "caption": "Aitutaki",
+      "locationId": "Aitutaki",
+      "coordinates": {
+        "lng": -159.7853,
+        "lat": -18.8566
+      },
+      "dateCreated": "2026-01-04",
+      "tags": [],
+      "rating": 2,
+      "ratingReason": "The tropical atoll and turquoise reef are appealing, but the aircraft engine and fuselage dominate the lower half, cluttering the frame into a snapshot-grade window shot."
+    },
+    {
+      "id": "cook-islands43",
+      "albumId": "cook-islands",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Aitutaki/IMG_2969.jpg",
+      "caption": "Aitutaki",
+      "locationId": "Aitutaki",
+      "coordinates": {
+        "lng": -159.7853,
+        "lat": -18.8566
+      },
+      "dateCreated": "2026-01-04",
+      "tags": [],
+      "rating": 2,
+      "ratingReason": "A flatly-lit documentary snapshot of a welcome sign with a distracting rusty cone and cropped bystanders, informative but not aesthetically compelling."
+    },
+    {
+      "id": "cook-islands44",
+      "albumId": "cook-islands",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Aitutaki/IMG_2971.jpg",
+      "caption": "Aitutaki",
+      "locationId": "Aitutaki",
+      "coordinates": {
+        "lng": -159.7853,
+        "lat": -18.8566
+      },
+      "dateCreated": "2026-01-04",
+      "tags": [],
+      "rating": 1,
+      "ratingReason": "A documentary snapshot of an informational placard with glare and cluttered tourists in frame; no aesthetic or editorial value as a photo."
+    },
+    {
+      "id": "cook-islands45",
+      "albumId": "cook-islands",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Aitutaki/IMG_2973.jpg",
+      "caption": "Aitutaki",
+      "locationId": "Aitutaki",
+      "coordinates": {
+        "lng": -159.7853,
+        "lat": -18.8566
+      },
+      "dateCreated": "2026-01-04",
+      "tags": [],
+      "rating": 3,
+      "ratingReason": "Appealing tropical beachfront café scene with turquoise lagoon and palms, but the striped awning, tangled string lights, and empty foreground table clutter the frame into an ordinary snapshot."
+    },
+    {
+      "id": "cook-islands46",
+      "albumId": "cook-islands",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Aitutaki/IMG_2974.jpg",
+      "caption": "Aitutaki",
+      "locationId": "Aitutaki",
+      "coordinates": {
+        "lng": -159.7853,
+        "lat": -18.8566
+      },
+      "dateCreated": "2026-01-04",
+      "tags": [],
+      "rating": 2,
+      "ratingReason": "A centered snapshot portrait with nice blue sky and colorful lei, but harsh midday shadows across the face, cluttered background people, and no compelling composition make it snapshot-grade."
+    },
+    {
+      "id": "cook-islands47",
+      "albumId": "cook-islands",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Aitutaki/IMG_2976.jpg",
+      "caption": "Aitutaki",
+      "locationId": "Aitutaki",
+      "coordinates": {
+        "lng": -159.7853,
+        "lat": -18.8566
+      },
+      "dateCreated": "2026-01-04",
+      "tags": [],
+      "rating": 3,
+      "ratingReason": "Attractive tropical beach with palms, turquoise water and dramatic clouds, but the composition is generic and sky-heavy, making it a pleasant yet ordinary postcard shot."
+    },
+    {
+      "id": "cook-islands48",
+      "albumId": "cook-islands",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Aitutaki/IMG_2977.jpg",
+      "caption": "Aitutaki",
+      "locationId": "Aitutaki",
+      "coordinates": {
+        "lng": -159.7853,
+        "lat": -18.8566
+      },
+      "dateCreated": "2026-01-04",
+      "tags": [],
+      "rating": 3,
+      "ratingReason": "Pretty turquoise water and clear sky, but sky-heavy framing, empty flat composition, and only a distant floating platform for interest make it a pleasant yet ordinary beach snapshot."
+    },
+    {
+      "id": "cook-islands49",
+      "albumId": "cook-islands",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Aitutaki/IMG_2978.jpg",
+      "caption": "Aitutaki",
+      "locationId": "Aitutaki",
+      "coordinates": {
+        "lng": -159.7853,
+        "lat": -18.8566
+      },
+      "dateCreated": "2026-01-04",
+      "tags": [],
+      "rating": 2,
+      "ratingReason": "Pretty turquoise lagoon but sky-heavy composition with an empty, featureless beach foreground makes it a pleasant yet ordinary snapshot lacking a strong focal point."
+    },
+    {
+      "id": "cook-islands50",
+      "albumId": "cook-islands",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Aitutaki/IMG_2980.jpg",
+      "caption": "Aitutaki",
+      "locationId": "Aitutaki",
+      "coordinates": {
+        "lng": -159.7853,
+        "lat": -18.8566
+      },
+      "dateCreated": "2026-01-04",
+      "tags": [],
+      "rating": 3,
+      "ratingReason": "Appealing tropical beach view framed through a deck, but the large expanse of empty wooden foreground and slightly cluttered railing weaken it into a pleasant but ordinary vacation snapshot."
+    },
+    {
+      "id": "cook-islands51",
+      "albumId": "cook-islands",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Aitutaki/IMG_2985.jpg",
+      "caption": "Aitutaki",
+      "locationId": "Aitutaki",
+      "coordinates": {
+        "lng": -159.7853,
+        "lat": -18.8566
+      },
+      "dateCreated": "2026-01-04",
+      "tags": [],
+      "rating": 4,
+      "ratingReason": "Beautiful sunrise with dramatic sunbeams breaking through clouds and strong mirror reflections on the still tidal flat, though the muddy foreground rocks feel slightly cluttered."
+    },
+    {
+      "id": "cook-islands52",
+      "albumId": "cook-islands",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Aitutaki/IMG_2986.jpg",
+      "caption": "Aitutaki",
+      "locationId": "Aitutaki",
+      "coordinates": {
+        "lng": -159.7853,
+        "lat": -18.8566
+      },
+      "dateCreated": "2026-01-04",
+      "tags": [],
+      "rating": 2,
+      "ratingReason": "A small crab on cluttered sand shot from above; documentary interest but flat framing, distant subject, and muddled composition make it snapshot-grade."
+    },
+    {
+      "id": "cook-islands53",
+      "albumId": "cook-islands",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Aitutaki/IMG_2988.jpg",
+      "caption": "Aitutaki",
+      "locationId": "Aitutaki",
+      "coordinates": {
+        "lng": -159.7853,
+        "lat": -18.8566
+      },
+      "dateCreated": "2026-01-04",
+      "tags": [],
+      "rating": 4,
+      "ratingReason": "Well-composed beach sunset with dramatic sunbeams, strong foreground volcanic rocks and calm water leading the eye, though the light is somewhat common for the genre."
+    },
+    {
+      "id": "cook-islands54",
+      "albumId": "cook-islands",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Aitutaki/IMG_2989.jpg",
+      "caption": "Aitutaki",
+      "locationId": "Aitutaki",
+      "coordinates": {
+        "lng": -159.7853,
+        "lat": -18.8566
+      },
+      "dateCreated": "2026-01-05",
+      "tags": [],
+      "rating": 4,
+      "ratingReason": "Well-composed tropical beach sunset with a leading shoreline curve, warm sun rays through clouds, and a golden reflection on calm water, though the foreground sand is a touch bland."
+    },
+    {
+      "id": "cook-islands55",
+      "albumId": "cook-islands",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Aitutaki/IMG_2991.jpg",
+      "caption": "Aitutaki",
+      "locationId": "Aitutaki",
+      "coordinates": {
+        "lng": -159.7853,
+        "lat": -18.8566
+      },
+      "dateCreated": "2026-01-05",
+      "tags": [],
+      "rating": 3,
+      "ratingReason": "Pleasant tropical sunset with nice golden reflections and leading shoreline, but the foreground sand is a bit dull and cluttered and the composition is fairly standard."
+    },
+    {
+      "id": "cook-islands56",
+      "albumId": "cook-islands",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Aitutaki/IMG_2992.jpg",
+      "caption": "Aitutaki",
+      "locationId": "Aitutaki",
+      "coordinates": {
+        "lng": -159.7853,
+        "lat": -18.8566
+      },
+      "dateCreated": "2026-01-05",
+      "tags": [],
+      "rating": 4,
+      "ratingReason": "Well-composed beach sunset with a nice leading shoreline, glowing golden light and dramatic clouds; a strong keeper though the foreground sand is a touch cluttered and dull."
+    },
+    {
+      "id": "cook-islands57",
+      "albumId": "cook-islands",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Aitutaki/IMG_2993.jpg",
+      "caption": "Aitutaki",
+      "locationId": "Aitutaki",
+      "coordinates": {
+        "lng": -159.7853,
+        "lat": -18.8566
+      },
+      "dateCreated": "2026-01-06",
+      "tags": [],
+      "rating": 3,
+      "ratingReason": "The quirky thatched houseboat on turquoise lagoon is an interesting subject, but flat overcast light, murky foreground clutter, and dull sky keep it ordinary rather than striking."
+    },
+    {
+      "id": "cook-islands58",
+      "albumId": "cook-islands",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Aitutaki/IMG_2994.jpg",
+      "caption": "Aitutaki",
+      "locationId": "Aitutaki",
+      "coordinates": {
+        "lng": -159.7853,
+        "lat": -18.8566
+      },
+      "dateCreated": "2026-01-06",
+      "tags": [],
+      "rating": 3,
+      "ratingReason": "Vivid turquoise water and dramatic clouds are appealing, but the distant palm-lined island lacks a strong focal point, making it a pleasant yet ordinary tropical shot."
+    },
+    {
+      "id": "cook-islands59",
+      "albumId": "cook-islands",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Aitutaki/IMG_2995.jpg",
+      "caption": "Aitutaki",
+      "locationId": "Aitutaki",
+      "coordinates": {
+        "lng": -159.7853,
+        "lat": -18.8566
+      },
+      "dateCreated": "2026-01-06",
+      "tags": [],
+      "rating": 3,
+      "ratingReason": "Gorgeous turquoise lagoon and dramatic clouds, but the composition is ordinary with a distant featureless island and a large expanse of undifferentiated water and sky."
+    },
+    {
+      "id": "cook-islands60",
+      "albumId": "cook-islands",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Aitutaki/IMG_2996.jpg",
+      "caption": "Aitutaki",
+      "locationId": "Aitutaki",
+      "coordinates": {
+        "lng": -159.7853,
+        "lat": -18.8566
+      },
+      "dateCreated": "2026-01-06",
+      "tags": [],
+      "rating": 3,
+      "ratingReason": "Gorgeous turquoise water and dramatic clouds, but the composition is dominated by empty water and generic sky with a distant flat horizon, making it pleasant yet ordinary."
+    },
+    {
+      "id": "cook-islands61",
+      "albumId": "cook-islands",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Aitutaki/IMG_3002.jpg",
+      "caption": "Aitutaki",
+      "locationId": "Aitutaki",
+      "coordinates": {
+        "lng": -159.7853,
+        "lat": -18.8566
+      },
+      "dateCreated": "2026-01-06",
+      "tags": [],
+      "rating": 3,
+      "ratingReason": "Pretty tropical scene with turquoise water and palms, but the cluttered beach with scattered structures and flat midday light keep it ordinary rather than striking."
+    },
+    {
+      "id": "cook-islands62",
+      "albumId": "cook-islands",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Aitutaki/IMG_3003.jpg",
+      "caption": "Aitutaki",
+      "locationId": "Aitutaki",
+      "coordinates": {
+        "lng": -159.7853,
+        "lat": -18.8566
+      },
+      "dateCreated": "2026-01-06",
+      "tags": [],
+      "rating": 2,
+      "ratingReason": "Pleasant tropical beach with palms and a flag, but cluttered foreground with chairs and signage, flat midday light, and no clear focal point make it snapshot-grade."
+    },
+    {
+      "id": "cook-islands63",
+      "albumId": "cook-islands",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Aitutaki/IMG_3004.jpg",
+      "caption": "Aitutaki",
+      "locationId": "Aitutaki",
+      "coordinates": {
+        "lng": -159.7853,
+        "lat": -18.8566
+      },
+      "dateCreated": "2026-01-06",
+      "tags": [],
+      "rating": 2,
+      "ratingReason": "Tropical beach with palms and turquoise water has appeal, but cluttered midground signage, flat harsh light, and lack of a clear subject make it a snapshot."
+    },
+    {
+      "id": "cook-islands64",
+      "albumId": "cook-islands",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Aitutaki/IMG_3008.jpg",
+      "caption": "Aitutaki",
+      "locationId": "Aitutaki",
+      "coordinates": {
+        "lng": -159.7853,
+        "lat": -18.8566
+      },
+      "dateCreated": "2026-01-06",
+      "tags": [],
+      "rating": 3,
+      "ratingReason": "Gorgeous turquoise water and blue sky, but the composition is minimal with a distant tiny island and no strong focal point, making it pleasant yet ordinary."
+    },
+    {
+      "id": "cook-islands65",
+      "albumId": "cook-islands",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Aitutaki/IMG_3009.jpg",
+      "caption": "Aitutaki",
+      "locationId": "Aitutaki",
+      "coordinates": {
+        "lng": -159.7853,
+        "lat": -18.8566
+      },
+      "dateCreated": "2026-01-06",
+      "tags": [],
+      "rating": 2,
+      "ratingReason": "Pleasant tropical scene with blue sky and palms, but harsh midday light, cluttered foreground with signage and posts, and a flat central composition make it snapshot-grade."
+    },
+    {
+      "id": "cook-islands66",
+      "albumId": "cook-islands",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Aitutaki/IMG_3011.jpg",
+      "caption": "Aitutaki",
+      "locationId": "Aitutaki",
+      "coordinates": {
+        "lng": -159.7853,
+        "lat": -18.8566
+      },
+      "dateCreated": "2026-01-06",
+      "tags": [],
+      "rating": 4,
+      "ratingReason": "The sweeping curve of pristine beach leading to turquoise water with palms framing the left creates a compelling tropical scene with strong leading lines and vivid color, though the busy foreground footprints and slightly harsh light keep it just short of hero-grade."
+    },
+    {
+      "id": "cook-islands67",
+      "albumId": "cook-islands",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Aitutaki/IMG_3012.jpg",
+      "caption": "Aitutaki",
+      "locationId": "Aitutaki",
+      "coordinates": {
+        "lng": -159.7853,
+        "lat": -18.8566
+      },
+      "dateCreated": "2026-01-06",
+      "tags": [],
+      "rating": 3,
+      "ratingReason": "Gorgeous turquoise water and palms make an appealing tropical scene, but the composition is a straightforward snapshot with cluttered beach clutter and no strong focal point to elevate it."
+    },
+    {
+      "id": "cook-islands68",
+      "albumId": "cook-islands",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Aitutaki/IMG_3013.jpg",
+      "caption": "Aitutaki",
+      "locationId": "Aitutaki",
+      "coordinates": {
+        "lng": -159.7853,
+        "lat": -18.8566
+      },
+      "dateCreated": "2026-01-06",
+      "tags": [],
+      "rating": 3,
+      "ratingReason": "Attractive tropical beach with turquoise water and palms, but composition is ordinary with cluttered midground and no clear focal point, making it a pleasant but unremarkable postcard shot."
+    },
+    {
+      "id": "cook-islands69",
+      "albumId": "cook-islands",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Aitutaki/IMG_3014.jpg",
+      "caption": "Aitutaki",
+      "locationId": "Aitutaki",
+      "coordinates": {
+        "lng": -159.7853,
+        "lat": -18.8566
+      },
+      "dateCreated": "2026-01-06",
+      "tags": [],
+      "rating": 3,
+      "ratingReason": "Gorgeous turquoise lagoon color, but the composition is empty and static with only tiny distant islets as a focal point, making it a pleasant but ordinary tropical shot."
+    },
+    {
+      "id": "cook-islands70",
+      "albumId": "cook-islands",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Aitutaki/IMG_3016.jpg",
+      "caption": "Aitutaki",
+      "locationId": "Aitutaki",
+      "coordinates": {
+        "lng": -159.7853,
+        "lat": -18.8566
+      },
+      "dateCreated": "2026-01-06",
+      "tags": [],
+      "rating": 2,
+      "ratingReason": "Gorgeous turquoise water, but empty composition, intrusive boat edge top-right, and no focal subject make it snapshot-grade."
+    },
+    {
+      "id": "cook-islands71",
+      "albumId": "cook-islands",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Aitutaki/IMG_3017.jpg",
+      "caption": "Aitutaki",
+      "locationId": "Aitutaki",
+      "coordinates": {
+        "lng": -159.7853,
+        "lat": -18.8566
+      },
+      "dateCreated": "2026-01-06",
+      "tags": [],
+      "rating": 3,
+      "ratingReason": "Gorgeous turquoise lagoon color and clean tropical scene, but composition is empty with a distant flat horizon and large featureless foreground water, making it pleasant yet ordinary."
+    },
+    {
+      "id": "cook-islands72",
+      "albumId": "cook-islands",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Aitutaki/IMG_3018.jpg",
+      "caption": "Aitutaki",
+      "locationId": "Aitutaki",
+      "coordinates": {
+        "lng": -159.7853,
+        "lat": -18.8566
+      },
+      "dateCreated": "2026-01-06",
+      "tags": [],
+      "rating": 3,
+      "ratingReason": "Gorgeous turquoise lagoon color, but composition is dominated by empty water and distant featureless islets, making it pleasant yet ordinary."
+    },
+    {
+      "id": "cook-islands73",
+      "albumId": "cook-islands",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Aitutaki/IMG_3021.jpg",
+      "caption": "Aitutaki",
+      "locationId": "Aitutaki",
+      "coordinates": {
+        "lng": -159.7853,
+        "lat": -18.8566
+      },
+      "dateCreated": "2026-01-06",
+      "tags": [],
+      "rating": 3,
+      "ratingReason": "Gorgeous turquoise water and tropical islets, but the composition is static with empty foreground and the distant islands read as small, undramatic subjects."
+    },
+    {
+      "id": "cook-islands74",
+      "albumId": "cook-islands",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Aitutaki/IMG_3022.jpg",
+      "caption": "Aitutaki",
+      "locationId": "Aitutaki",
+      "coordinates": {
+        "lng": -159.7853,
+        "lat": -18.8566
+      },
+      "dateCreated": "2026-01-06",
+      "tags": [],
+      "rating": 3,
+      "ratingReason": "Gorgeous turquoise lagoon and tropical islets, but the composition is static with a large empty foreground and small distant subjects, keeping it pleasant rather than striking."
+    },
+    {
+      "id": "cook-islands75",
+      "albumId": "cook-islands",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Aitutaki/IMG_3023.jpg",
+      "caption": "Aitutaki",
+      "locationId": "Aitutaki",
+      "coordinates": {
+        "lng": -159.7853,
+        "lat": -18.8566
+      },
+      "dateCreated": "2026-01-06",
+      "tags": [],
+      "rating": 3,
+      "ratingReason": "Gorgeous turquoise lagoon and tropical islets, but the vast empty foreground water and small distant subjects leave the composition ordinary rather than striking."
+    },
+    {
+      "id": "cook-islands76",
+      "albumId": "cook-islands",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Aitutaki/IMG_3027.jpg",
+      "caption": "Aitutaki",
+      "locationId": "Aitutaki",
+      "coordinates": {
+        "lng": -159.7853,
+        "lat": -18.8566
+      },
+      "dateCreated": "2026-01-06",
+      "tags": [],
+      "rating": 3,
+      "ratingReason": "Vivid turquoise water and tropical islets are appealing, but the vast empty sky and foreground water dominate, leaving a small, undramatic subject and ordinary composition."
+    },
+    {
+      "id": "cook-islands77",
+      "albumId": "cook-islands",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Aitutaki/IMG_3029.jpg",
+      "caption": "Aitutaki",
+      "locationId": "Aitutaki",
+      "coordinates": {
+        "lng": -159.7853,
+        "lat": -18.8566
+      },
+      "dateCreated": "2026-01-06",
+      "tags": [],
+      "rating": 3,
+      "ratingReason": "Gorgeous turquoise water and a distant island lend tropical appeal, but the vast empty foreground and small subject make it pleasant yet unremarkable."
+    },
+    {
+      "id": "cook-islands78",
+      "albumId": "cook-islands",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Aitutaki/IMG_3030.jpg",
+      "caption": "Aitutaki",
+      "locationId": "Aitutaki",
+      "coordinates": {
+        "lng": -159.7853,
+        "lat": -18.8566
+      },
+      "dateCreated": "2026-01-06",
+      "tags": [],
+      "rating": 3,
+      "ratingReason": "Gorgeous turquoise water and palm-lined beach, but the composition is generic postcard tropical with an empty sky dominating the upper half and no unique focal point."
+    },
+    {
+      "id": "cook-islands79",
+      "albumId": "cook-islands",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Aitutaki/IMG_3031.jpg",
+      "caption": "Aitutaki",
+      "locationId": "Aitutaki",
+      "coordinates": {
+        "lng": -159.7853,
+        "lat": -18.8566
+      },
+      "dateCreated": "2026-01-06",
+      "tags": [],
+      "rating": 3,
+      "ratingReason": "Classic tropical beach with palms, turquoise water, and blue sky, but too much empty sky dominates and the foreground sand is bland, making it a pleasant yet ordinary shot."
+    },
+    {
+      "id": "cook-islands80",
+      "albumId": "cook-islands",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Aitutaki/IMG_3032.jpg",
+      "caption": "Aitutaki",
+      "locationId": "Aitutaki",
+      "coordinates": {
+        "lng": -159.7853,
+        "lat": -18.8566
+      },
+      "dateCreated": "2026-01-06",
+      "tags": [],
+      "rating": 2,
+      "ratingReason": "The small fluffy bird is a charming subject but it's lost in a cluttered tangle of dark branches with harsh contrast and no clean framing."
+    },
+    {
+      "id": "cook-islands81",
+      "albumId": "cook-islands",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Aitutaki/IMG_3033.jpg",
+      "caption": "Aitutaki",
+      "locationId": "Aitutaki",
+      "coordinates": {
+        "lng": -159.7853,
+        "lat": -18.8566
+      },
+      "dateCreated": "2026-01-06",
+      "tags": [],
+      "rating": 2,
+      "ratingReason": "The small white bird chick is nearly lost in a chaotic tangle of branches with flat backlighting, making the subject hard to spot and the frame cluttered."
+    },
+    {
+      "id": "cook-islands82",
+      "albumId": "cook-islands",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Aitutaki/IMG_3035.jpg",
+      "caption": "Aitutaki",
+      "locationId": "Aitutaki",
+      "coordinates": {
+        "lng": -159.7853,
+        "lat": -18.8566
+      },
+      "dateCreated": "2026-01-06",
+      "tags": [],
+      "rating": 3,
+      "ratingReason": "Pleasant tropical beach with turquoise water and dramatic sky, but the rocky, cluttered foreground and ordinary composition keep it solid rather than striking."
+    },
+    {
+      "id": "cook-islands83",
+      "albumId": "cook-islands",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Aitutaki/IMG_3036.jpg",
+      "caption": "Aitutaki",
+      "locationId": "Aitutaki",
+      "coordinates": {
+        "lng": -159.7853,
+        "lat": -18.8566
+      },
+      "dateCreated": "2026-01-06",
+      "tags": [],
+      "rating": 3,
+      "ratingReason": "Turquoise lagoon and palms with dramatic rock outcrop are appealing, but the sky dominates the frame and the debris-strewn rocky foreground is cluttered and flat, keeping it solid rather than striking."
+    },
+    {
+      "id": "cook-islands84",
+      "albumId": "cook-islands",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Aitutaki/IMG_3038.jpg",
+      "caption": "Aitutaki",
+      "locationId": "Aitutaki",
+      "coordinates": {
+        "lng": -159.7853,
+        "lat": -18.8566
+      },
+      "dateCreated": "2026-01-06",
+      "tags": [],
+      "rating": 3,
+      "ratingReason": "Vivid turquoise water and blue sky are appealing, but the drab exposed reef flat dominates the foreground and the composition lacks a clear focal subject."
+    },
+    {
+      "id": "cook-islands85",
+      "albumId": "cook-islands",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Aitutaki/IMG_3039.jpg",
+      "caption": "Aitutaki",
+      "locationId": "Aitutaki",
+      "coordinates": {
+        "lng": -159.7853,
+        "lat": -18.8566
+      },
+      "dateCreated": "2026-01-06",
+      "tags": [],
+      "rating": 3,
+      "ratingReason": "Gorgeous turquoise lagoon and tropical island, but sky-heavy framing and dark cluttered foreground rocks keep it a pleasant yet ordinary snapshot."
+    },
+    {
+      "id": "cook-islands86",
+      "albumId": "cook-islands",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Aitutaki/IMG_3041.jpg",
+      "caption": "Aitutaki",
+      "locationId": "Aitutaki",
+      "coordinates": {
+        "lng": -159.7853,
+        "lat": -18.8566
+      },
+      "dateCreated": "2026-01-06",
+      "tags": [],
+      "rating": 3,
+      "ratingReason": "Idyllic tropical beach with vivid turquoise water and lush palms, but the large empty sand foreground and scattered coconuts feel unbalanced and generic rather than a striking hero shot."
+    },
+    {
+      "id": "cook-islands87",
+      "albumId": "cook-islands",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Aitutaki/IMG_3042.jpg",
+      "caption": "Aitutaki",
+      "locationId": "Aitutaki",
+      "coordinates": {
+        "lng": -159.7853,
+        "lat": -18.8566
+      },
+      "dateCreated": "2026-01-06",
+      "tags": [],
+      "rating": 3,
+      "ratingReason": "Pretty tropical beach with vivid blue sky and turquoise water, but the large empty sandy foreground is flat and cluttered with debris, keeping it pleasant yet ordinary."
+    },
+    {
+      "id": "cook-islands88",
+      "albumId": "cook-islands",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Aitutaki/IMG_3045.jpg",
+      "caption": "Aitutaki",
+      "locationId": "Aitutaki",
+      "coordinates": {
+        "lng": -159.7853,
+        "lat": -18.8566
+      },
+      "dateCreated": "2026-01-06",
+      "tags": [],
+      "rating": 3,
+      "ratingReason": "Gorgeous turquoise water and a lush palm islet, but the composition is ordinary with a large empty sky and flat midday light, making it a pleasant but unremarkable postcard shot."
+    },
+    {
+      "id": "cook-islands89",
+      "albumId": "cook-islands",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Aitutaki/IMG_3046.jpg",
+      "caption": "Aitutaki",
+      "locationId": "Aitutaki",
+      "coordinates": {
+        "lng": -159.7853,
+        "lat": -18.8566
+      },
+      "dateCreated": "2026-01-06",
+      "tags": [],
+      "rating": 3,
+      "ratingReason": "Gorgeous turquoise water and tropical island under blue sky, but the composition is fairly ordinary with a large empty foreground and no strong focal point, making it a pleasant but generic beach shot."
+    },
+    {
+      "id": "cook-islands90",
+      "albumId": "cook-islands",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Aitutaki/IMG_3047.jpg",
+      "caption": "Aitutaki",
+      "locationId": "Aitutaki",
+      "coordinates": {
+        "lng": -159.7853,
+        "lat": -18.8566
+      },
+      "dateCreated": "2026-01-06",
+      "tags": [],
+      "rating": 3,
+      "ratingReason": "Gorgeous turquoise water and idyllic palm-covered islet, but the sky-heavy composition and dead-center placement make it a pleasant yet ordinary postcard shot."
+    },
+    {
+      "id": "cook-islands91",
+      "albumId": "cook-islands",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Aitutaki/IMG_3048.jpg",
+      "caption": "Aitutaki",
+      "locationId": "Aitutaki",
+      "coordinates": {
+        "lng": -159.7853,
+        "lat": -18.8566
+      },
+      "dateCreated": "2026-01-06",
+      "tags": [],
+      "rating": 2,
+      "ratingReason": "The turquoise water and blue sky are pleasant but the composition is empty and static, with a distracting boat corner and no strong focal point."
+    },
+    {
+      "id": "cook-islands92",
+      "albumId": "cook-islands",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Aitutaki/IMG_3049.jpg",
+      "caption": "Aitutaki",
+      "locationId": "Aitutaki",
+      "coordinates": {
+        "lng": -159.7853,
+        "lat": -18.8566
+      },
+      "dateCreated": "2026-01-06",
+      "tags": [],
+      "rating": 3,
+      "ratingReason": "Gorgeous turquoise water and blue sky, but the composition is ordinary with a distant flat island and empty foreground, making it a pleasant but unremarkable tropical snapshot."
+    },
+    {
+      "id": "cook-islands93",
+      "albumId": "cook-islands",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Aitutaki/IMG_3050.jpg",
+      "caption": "Aitutaki",
+      "locationId": "Aitutaki",
+      "coordinates": {
+        "lng": -159.7853,
+        "lat": -18.8566
+      },
+      "dateCreated": "2026-01-06",
+      "tags": [],
+      "rating": 3,
+      "ratingReason": "Gorgeous turquoise lagoon and tropical island, but the vast empty sky dominates and the small distant island lacks a compelling focal anchor, leaving it pleasant yet ordinary."
+    },
+    {
+      "id": "cook-islands94",
+      "albumId": "cook-islands",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Aitutaki/IMG_3052.jpg",
+      "caption": "Aitutaki",
+      "locationId": "Aitutaki",
+      "coordinates": {
+        "lng": -159.7853,
+        "lat": -18.8566
+      },
+      "dateCreated": "2026-01-06",
+      "tags": [],
+      "rating": 3,
+      "ratingReason": "Gorgeous turquoise lagoon and blue sky, but the composition is generic with a lot of empty water and no strong focal point beyond a murky reef patch."
+    },
+    {
+      "id": "cook-islands95",
+      "albumId": "cook-islands",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Aitutaki/IMG_3053.jpg",
+      "caption": "Aitutaki",
+      "locationId": "Aitutaki",
+      "coordinates": {
+        "lng": -159.7853,
+        "lat": -18.8566
+      },
+      "dateCreated": "2026-01-06",
+      "tags": [],
+      "rating": 3,
+      "ratingReason": "Gorgeous turquoise lagoon water and vivid blue sky, but the composition is generic with a distant flat island strip and no clear focal point, keeping it pleasant yet ordinary."
+    },
+    {
+      "id": "cook-islands96",
+      "albumId": "cook-islands",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Aitutaki/IMG_3058.jpg",
+      "caption": "Aitutaki",
+      "locationId": "Aitutaki",
+      "coordinates": {
+        "lng": -159.7853,
+        "lat": -18.8566
+      },
+      "dateCreated": "2026-01-06",
+      "tags": [],
+      "rating": 2,
+      "ratingReason": "Sharks in clear turquoise water is intriguing, but the subjects are murky and indistinct underwater, the composition is scattered with a distracting boat edge, and the flat overhead light yields snapshot-grade quality."
+    },
+    {
+      "id": "cook-islands97",
+      "albumId": "cook-islands",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Aitutaki/IMG_3059.jpg",
+      "caption": "Aitutaki",
+      "locationId": "Aitutaki",
+      "coordinates": {
+        "lng": -159.7853,
+        "lat": -18.8566
+      },
+      "dateCreated": "2026-01-06",
+      "tags": [],
+      "rating": 3,
+      "ratingReason": "The turquoise clarity and dark shark shapes give an intriguing subject, but murky water surface reflections, indistinct forms, and the intruding boat edge keep it snapshot-grade rather than crisp."
+    },
+    {
+      "id": "cook-islands98",
+      "albumId": "cook-islands",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Aitutaki/IMG_3061.jpg",
+      "caption": "Aitutaki",
+      "locationId": "Aitutaki",
+      "coordinates": {
+        "lng": -159.7853,
+        "lat": -18.8566
+      },
+      "dateCreated": "2026-01-06",
+      "tags": [],
+      "rating": 2,
+      "ratingReason": "Sharks in clear turquoise water is an intriguing subject, but the fish are murky and obscured beneath the surface with no sharp focal point, making it a snapshot-grade record shot rather than a compelling image."
+    },
+    {
+      "id": "cook-islands99",
+      "albumId": "cook-islands",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Aitutaki/IMG_3063.jpg",
+      "caption": "Aitutaki",
+      "locationId": "Aitutaki",
+      "coordinates": {
+        "lng": -159.7853,
+        "lat": -18.8566
+      },
+      "dateCreated": "2026-01-06",
+      "tags": [],
+      "rating": 2,
+      "ratingReason": "Turquoise water and swimming fish have appeal, but the fish are murky and unclear beneath the surface, the framing is casual, and the flat overhead light makes it a snapshot rather than a compelling hero image."
+    },
+    {
+      "id": "cook-islands100",
+      "albumId": "cook-islands",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Aitutaki/IMG_3066.jpg",
+      "caption": "Aitutaki",
+      "locationId": "Aitutaki",
+      "coordinates": {
+        "lng": -159.7853,
+        "lat": -18.8566
+      },
+      "dateCreated": "2026-01-06",
+      "tags": [],
+      "rating": 3,
+      "ratingReason": "Gorgeous turquoise lagoon water and clear tropical light, but the vast empty blue sky dominates and the composition lacks a strong focal point, making it pleasant yet ordinary."
+    },
+    {
+      "id": "cook-islands101",
+      "albumId": "cook-islands",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Aitutaki/IMG_3068.jpg",
+      "caption": "Aitutaki",
+      "locationId": "Aitutaki",
+      "coordinates": {
+        "lng": -159.7853,
+        "lat": -18.8566
+      },
+      "dateCreated": "2026-01-06",
+      "tags": [],
+      "rating": 3,
+      "ratingReason": "Gorgeous turquoise lagoon and small distant island make an appealing tropical scene, but the sky dominates too much of the frame and the lone platform is a weak focal point, keeping it pleasant rather than memorable."
+    },
+    {
+      "id": "cook-islands102",
+      "albumId": "cook-islands",
+      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Aitutaki/IMG_3069.jpg",
+      "caption": "Aitutaki",
+      "locationId": "Aitutaki",
+      "coordinates": {
+        "lng": -159.7853,
+        "lat": -18.8566
+      },
+      "dateCreated": "2026-01-06",
+      "tags": [],
+      "rating": 3,
+      "ratingReason": "Gorgeous turquoise water and clear tropical color, but the vast empty foreground and tiny distant island make it pleasant yet ordinary rather than a compelling hero shot."
     }
   ]
 }

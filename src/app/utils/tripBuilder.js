@@ -20,6 +20,7 @@
 // (scripts/generate-narratives.mjs) as well as the Next.js bundler.
 import { transformToCloudFront } from './imageUtils.js';
 import { haversineKm, zoomForSpreadKm } from './geo.js';
+import { curateStopPhotos } from './photoRanking.js';
 
 // Photos within this distance of a stop's centroid belong to that stop.
 // City-scale: merges Vienna's venues into one stop while keeping Cairo
@@ -253,18 +254,24 @@ export function buildTrip(album, photosData, locationsData, destinationsData) {
         [Number(Math.max(...lngs).toFixed(5)), Number(Math.max(...lats).toFixed(5))],
       ];
 
-      const photos = [...cluster.members]
-        .sort((a, b) =>
-          a.photo.dateCreated === b.photo.dateCreated
-            ? a.index - b.index
-            : a.photo.dateCreated.localeCompare(b.photo.dateCreated)
-        )
-        .map(({ photo }) => ({
-          id: photo.id,
-          url: transformToCloudFront(photo.url),
-          caption: photo.caption || '',
-          dateCreated: photo.dateCreated,
-        }));
+      // Chronological first (the natural order within a stop), then curated:
+      // curateStopPhotos reorders best-first and hides the weakest when the
+      // stop has quality ratings, and is a no-op otherwise.
+      const photos = curateStopPhotos(
+        [...cluster.members]
+          .sort((a, b) =>
+            a.photo.dateCreated === b.photo.dateCreated
+              ? a.index - b.index
+              : a.photo.dateCreated.localeCompare(b.photo.dateCreated)
+          )
+          .map(({ photo }) => ({
+            id: photo.id,
+            url: transformToCloudFront(photo.url),
+            caption: photo.caption || '',
+            dateCreated: photo.dateCreated,
+            rating: typeof photo.rating === 'number' ? photo.rating : null,
+          }))
+      );
 
       return {
         name: cluster.name,

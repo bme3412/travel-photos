@@ -275,6 +275,18 @@
       "name": "🇮🇸 Icelandic Inspirations",
       "countryId": "IS",
       "year": "2025"
+    },
+    {
+      "id": "cook-islands",
+      "name": "🇨🇰 Cook Islands",
+      "countryId": "CK",
+      "year": "2026"
+    },
+    {
+      "id": "new-zealand",
+      "name": "🇳🇿 New Zealand",
+      "countryId": "NZ",
+      "year": "2026"
     }
   ]
 }

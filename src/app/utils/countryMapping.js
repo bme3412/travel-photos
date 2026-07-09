@@ -30,6 +30,7 @@ export const countryToISO = {
     'Mexico': 'MEX',
     'Netherlands': 'NLD',
     'New Zealand': 'NZL',
+    'Cook Islands': 'COK',
     'Norway': 'NOR',
     'Poland': 'POL',
     'Portugal': 'PRT',

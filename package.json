@@ -11,6 +11,7 @@
     "add-photos": "node scripts/add-photos.js",
     "add-videos": "node scripts/add-videos.mjs",
     "generate-narratives": "node scripts/generate-narratives.mjs",
+    "score-photos": "node scripts/score-photos.mjs",
     "migrate-s3": "node scripts/migrate-to-s3.js",
     "convert-heic": "node scripts/convert-heic.js",
     "convert-folder": "node scripts/convert-folder-heic.js",

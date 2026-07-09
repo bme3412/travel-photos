@@ -7,6 +7,7 @@ import ImageLightbox from '../../components/ImageLightbox';
 import { ArrowLeft, Camera, Play, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 import { transformToCloudFront } from '../../utils/imageUtils';
+import { bestPhoto } from '../../utils/photoRanking';
 
 // Lazy load the AlbumMap component
 const AlbumMap = React.lazy(() => import('../../components/AlbumMap'));
@@ -97,7 +98,8 @@ export default function AlbumPageClient({ initialAlbum }) {
   const { flag, title } = splitFlag(currentAlbum.name);
 
   // Prominent replay call-to-action, shown on initial load above the grid.
-  const coverUrl = currentAlbum.photos?.[0]?.url || null;
+  // Lead with the highest-rated photo (falls back to the first when unrated).
+  const coverUrl = bestPhoto(currentAlbum.photos)?.url || null;
   const trip = currentAlbum.tripSummary;
   const isMultiStop = trip && trip.stopCount > 1;
   const replayMeta = trip

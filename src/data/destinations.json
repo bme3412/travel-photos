@@ -830,5 +830,29 @@
     "description": "",
     "latitude": 66.04701954679669,
     "longitude": -17.344644949341152
+  },
+  {
+    "id": "105",
+    "name": "Rarotonga",
+    "country": "Cook Islands",
+    "description": "Reef-ringed lagoons and volcanic peaks in the heart of the South Pacific.",
+    "latitude": -21.2367,
+    "longitude": -159.7777
+  },
+  {
+    "id": "106",
+    "name": "Auckland",
+    "country": "New Zealand",
+    "description": "Harbour city of sails, framed by twin coasts and volcanic cones.",
+    "latitude": -36.8485,
+    "longitude": 174.7633
+  },
+  {
+    "id": "107",
+    "name": "Aitutaki",
+    "country": "Cook Islands",
+    "description": "A turquoise lagoon ringed by motu, one of the South Pacific's most storied atolls.",
+    "latitude": -18.8566,
+    "longitude": -159.7853
   }
 ]
