@@ -488,7 +488,94 @@
     "fingerprint": "3bcb881ea009",
     "model": "claude-opus-4-8",
     "generatedAt": "2026-07-09T16:19:05.258Z",
-    "edited": false
+    "edited": true,
+    "scenes": [
+      {
+        "id": "opening",
+        "kicker": "Kraków · June 2026",
+        "title": "Poland’s medieval heart",
+        "text": "Three days at the end of June in Kraków, Poland’s old royal capital and one of the few great cities of the region to come through the war intact. No onward leg, no contrast of landscapes — just the slow work of getting to know one medieval city, whole and unhurried.",
+        "background": "IMG_0274.jpg",
+        "photos": [
+          "IMG_0267.jpg",
+          "IMG_0268.jpg",
+          "IMG_0269.jpg",
+          "IMG_0270.jpg",
+          "IMG_0272.jpg",
+          "IMG_0273.jpg",
+          "IMG_0274.jpg",
+          "IMG_0275.jpg",
+          "IMG_0277.jpg",
+          "IMG_0279.jpg",
+          "IMG_0283.jpg",
+          "IMG_0285.jpg",
+          "IMG_0286.jpg"
+        ]
+      },
+      {
+        "id": "square",
+        "kicker": "Chapter 01",
+        "title": "The Rynek Główny",
+        "text": "The days turned around the Rynek Główny, the vast market square at the center of the old town — one of the largest in Europe, ringed by townhouses and arcades, the Cloth Hall standing in its middle. It is the kind of space a whole city organizes itself around, and everything seemed to lead back to it.",
+        "background": "IMG_0294.jpg",
+        "photos": [
+          "IMG_0287.jpg",
+          "IMG_0288.jpg",
+          "IMG_0289.jpg",
+          "IMG_0290.jpg",
+          "IMG_0291.jpg",
+          "IMG_0293.jpg",
+          "IMG_0294.jpg",
+          "IMG_0295.jpg",
+          "IMG_0296.jpg",
+          "IMG_0297.jpg",
+          "IMG_0301.jpg",
+          "IMG_0302.jpg",
+          "IMG_0305.jpg"
+        ]
+      },
+      {
+        "id": "wawel",
+        "kicker": "Chapter 02",
+        "title": "Wawel, above the Vistula",
+        "text": "Above the river rose Wawel — the castle and cathedral on their hill, the old seat of Polish kings, the Vistula moving below. From up there the city laid itself out, red roofs and church towers, the medieval plan still legible under the present-day life running through it.",
+        "background": "IMG_0312.jpg",
+        "photos": [
+          "IMG_0306.jpg",
+          "IMG_0307.jpg",
+          "IMG_0308.jpg",
+          "IMG_0309.jpg",
+          "IMG_0310.jpg",
+          "IMG_0311.jpg",
+          "IMG_0312.jpg",
+          "IMG_0313.jpg",
+          "IMG_0314.jpg",
+          "IMG_0315.jpg",
+          "IMG_0316.jpg",
+          "IMG_0317.jpg",
+          "IMG_0319.jpg"
+        ]
+      },
+      {
+        "id": "oldtown",
+        "kicker": "Chapter 03",
+        "title": "An old city, whole",
+        "text": "And then the streets themselves — the churches, the gates, the stones of a royal city that history mostly spared. Kraków rewards slow walking: turning corners into small squares, the past close enough to touch, a place given the full attention it deserves rather than passed through.",
+        "background": "IMG_0327.jpg",
+        "photos": [
+          "IMG_0322.jpg",
+          "IMG_0323.jpg",
+          "IMG_0324.jpg",
+          "IMG_0325.jpg",
+          "IMG_0326.jpg",
+          "IMG_0327.jpg",
+          "IMG_0330.jpg",
+          "IMG_0336.jpg",
+          "IMG_0337.jpg",
+          "IMG_0340.jpg"
+        ]
+      }
+    ]
   },
   "paris-2026": {
     "intro": "Three days in Paris in the middle of June, a single city held close rather than a country crossed. The itinerary was simple — the Eiffel Tower, the table, the streets in between — and that focus was the point. One place, given room to unfold at its own pace.",
@@ -498,7 +585,85 @@
     "fingerprint": "93646558b754",
     "model": "claude-opus-4-8",
     "generatedAt": "2026-07-09T16:19:05.263Z",
-    "edited": false
+    "edited": true,
+    "scenes": [
+      {
+        "id": "opening",
+        "kicker": "Paris · June 2026",
+        "title": "Three days in Paris",
+        "text": "Three days in Paris in the middle of June, a single city held close rather than a country crossed. The itinerary was simple — the Tower, the table, the streets in between — and that focus was the point.",
+        "background": "IMG_0099.jpg",
+        "photos": [
+          "IMG_0077.jpg",
+          "IMG_0085.jpg",
+          "IMG_0088.jpg",
+          "IMG_0089.jpg",
+          "IMG_0092.jpg",
+          "IMG_0094.jpg",
+          "IMG_0096.jpg",
+          "IMG_0098.jpg",
+          "IMG_0099.jpg",
+          "IMG_0100.jpg",
+          "IMG_0101.jpg",
+          "IMG_0105.jpg",
+          "IMG_0108.jpg",
+          "IMG_0110.jpg",
+          "IMG_0111.jpg",
+          "IMG_0112.jpg",
+          "IMG_0113.jpg"
+        ]
+      },
+      {
+        "id": "tower",
+        "kicker": "Chapter 01",
+        "title": "The Tower",
+        "text": "The Eiffel Tower sat at the center of the days, that familiar iron silhouette returned to across the hours, caught from different streets and different angles. Some landmarks disappoint up close; this one keeps its scale, drawing the eye back again and again from across the city.",
+        "background": "IMG_0128.jpg",
+        "photos": [
+          "IMG_0114.jpg",
+          "IMG_0115.jpg",
+          "IMG_0117.jpg",
+          "IMG_0119.jpg",
+          "IMG_0120.jpg",
+          "IMG_0121.jpg",
+          "IMG_0122.jpg",
+          "IMG_0123.jpg",
+          "IMG_0128.jpg",
+          "IMG_0130.jpg",
+          "IMG_0132.jpg",
+          "IMG_0133.jpg",
+          "IMG_0134.jpg",
+          "IMG_0135.jpg",
+          "IMG_0136.jpg",
+          "IMG_0137.jpg",
+          "IMG_0138.jpg"
+        ]
+      },
+      {
+        "id": "table",
+        "kicker": "Chapter 02",
+        "title": "The table and the streets",
+        "text": "Between the landmarks came the ordinary pleasures — the local cuisine, the meals that anchor a day in Paris as much as any monument, and the long walks between them. No onward distance to cover, no next stop pulling ahead — just the unhurried business of being there.",
+        "background": "IMG_0147.jpg",
+        "photos": [
+          "IMG_0139.jpg",
+          "IMG_0141.jpg",
+          "IMG_0142.jpg",
+          "IMG_0143.jpg",
+          "IMG_0144.jpg",
+          "IMG_0145.jpg",
+          "IMG_0146.jpg",
+          "IMG_0147.jpg",
+          "IMG_0148.jpg",
+          "IMG_0150.jpg",
+          "IMG_0152.jpg",
+          "IMG_0153.jpg",
+          "IMG_0154.jpg",
+          "IMG_0156.jpg",
+          "IMG_0158.jpg"
+        ]
+      }
+    ]
   },
   "berlin-2026": {
     "intro": "Two days in late June, all of them given to a single city. Berlin was the whole trip — no side excursions, no prologue, just Germany's capital of history and reinvention held in close focus. What made it distinctive was that undivided attention: a place that carries the Brandenburg Gate, remnants of the Wall, and a restless modern arts scene, all crowded into one short midsummer stay.",
@@ -508,7 +673,100 @@
     "fingerprint": "93b4a9193980",
     "model": "claude-opus-4-8",
     "generatedAt": "2026-07-09T16:19:05.541Z",
-    "edited": false
+    "edited": true,
+    "scenes": [
+      {
+        "id": "opening",
+        "kicker": "Berlin · June 2026",
+        "title": "Germany’s restless capital",
+        "text": "Two days in Berlin at the end of June, a city given entirely to itself. Germany’s capital wears its history in the open and keeps reinventing over the top of it — the Brandenburg Gate, the last stretches of the Wall, and a restless modern pulse crowded into one short midsummer stay.",
+        "background": "IMG_0182.jpg",
+        "photos": [
+          "IMG_0169.jpg",
+          "IMG_0171.jpg",
+          "IMG_0173.jpg",
+          "IMG_0174.jpg",
+          "IMG_0175.jpg",
+          "IMG_0179.jpg",
+          "IMG_0181.jpg",
+          "IMG_0182.jpg",
+          "IMG_0183.jpg",
+          "IMG_0184.jpg",
+          "IMG_0185.jpg",
+          "IMG_0186.jpg",
+          "IMG_0187.jpg",
+          "IMG_0188.jpg"
+        ]
+      },
+      {
+        "id": "history",
+        "kicker": "Chapter 01",
+        "title": "History in plain sight",
+        "text": "Berlin leaves its past where you can see it. Remnants of the Wall run through the ordinary city, monuments and memorials set among working streets, so that a walk here is also a walk through the twentieth century. History isn’t cordoned off — it’s embedded in the everyday.",
+        "background": "IMG_0199.jpg",
+        "photos": [
+          "IMG_0189.jpg",
+          "IMG_0190.jpg",
+          "IMG_0191.jpg",
+          "IMG_0192.jpg",
+          "IMG_0193.jpg",
+          "IMG_0194.jpg",
+          "IMG_0198.jpg",
+          "IMG_0199.jpg",
+          "IMG_0200.jpg",
+          "IMG_0201.jpg",
+          "IMG_0202.jpg",
+          "IMG_0204.jpg",
+          "IMG_0205.jpg",
+          "IMG_0206.jpg"
+        ]
+      },
+      {
+        "id": "monuments",
+        "kicker": "Chapter 02",
+        "title": "Gates and monuments",
+        "text": "At the civic heart stand the great set pieces — the Brandenburg Gate first among them, the boulevards and squares opening out around it. These are the postcards of the city, but standing among them the scale registers differently: the weight of a capital that has been the center of so much.",
+        "background": "IMG_0224.jpg",
+        "photos": [
+          "IMG_0209.jpg",
+          "IMG_0212.jpg",
+          "IMG_0213.jpg",
+          "IMG_0215.jpg",
+          "IMG_0217.jpg",
+          "IMG_0221.jpg",
+          "IMG_0222.jpg",
+          "IMG_0224.jpg",
+          "IMG_0227.jpg",
+          "IMG_0230.jpg",
+          "IMG_0231.jpg",
+          "IMG_0233.jpg",
+          "IMG_0234.jpg",
+          "IMG_0235.jpg"
+        ]
+      },
+      {
+        "id": "modern",
+        "kicker": "Chapter 03",
+        "title": "A city still in motion",
+        "text": "Beyond the monuments runs the restless present — the arts, the streets, the sense of a place perpetually remaking itself. Berlin never quite settles, and the days took on that momentum, moving between the historic and the brand-new without any seam.",
+        "background": "IMG_0248.jpg",
+        "photos": [
+          "IMG_0237.jpg",
+          "IMG_0238.jpg",
+          "IMG_0240.jpg",
+          "IMG_0241.jpg",
+          "IMG_0246.jpg",
+          "IMG_0247.jpg",
+          "IMG_0248.jpg",
+          "IMG_0249.jpg",
+          "IMG_0250.jpg",
+          "IMG_0254.jpg",
+          "IMG_0255.jpg",
+          "IMG_0256.jpg",
+          "IMG_0257.jpg"
+        ]
+      }
+    ]
   },
   "menton-2026": {
     "intro": "Two days at the eastern end of the French Riviera, in the last town before the coast slips over into Italy. Menton was the whole of the trip — no onward leg, no distance to cover, just a single place held close over one weekend at the end of June. Its old town climbs in tiers of ochre and rose above a bright curve of the Mediterranean, lemon light on the terraces and the Italian border only a short walk past the last houses.",
