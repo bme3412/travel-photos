@@ -854,5 +854,29 @@
     "description": "A turquoise lagoon ringed by motu, one of the South Pacific's most storied atolls.",
     "latitude": -18.8566,
     "longitude": -159.7853
+  },
+  {
+    "id": "108",
+    "name": "Berlin",
+    "country": "Germany",
+    "description": "Germany's capital of history and reinvention — the Brandenburg Gate, remnants of the Wall, and a restless modern arts scene.",
+    "latitude": 52.52,
+    "longitude": 13.405
+  },
+  {
+    "id": "109",
+    "name": "Kraków",
+    "country": "Poland",
+    "description": "Poland's medieval heart — the vast Rynek Główny market square, Wawel Castle above the Vistula, and an old royal city spared the war.",
+    "latitude": 50.0647,
+    "longitude": 19.945
+  },
+  {
+    "id": "110",
+    "name": "Menton",
+    "country": "France",
+    "description": "The French Riviera's last town before Italy — lemon groves, pastel façades, and Belle Époque gardens above the Mediterranean.",
+    "latitude": 43.7765,
+    "longitude": 7.5
   }
 ]

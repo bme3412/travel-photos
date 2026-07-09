@@ -52,3 +52,6 @@ Malaysia
 Singapore
 Thailand
 Vietnam
+Poland
+New Zealand
+Cook Islands

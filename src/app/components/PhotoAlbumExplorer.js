@@ -446,7 +446,7 @@ const PhotoAlbumExplorer = ({ initialAlbums = null }) => {
   }, [albums, sortBy]);
 
   const stats = React.useMemo(() => ({
-    countries: 54, // Total countries/territories from travel century list
+    countries: 57, // Total countries/territories from travel century list
     photos: albums.reduce((acc, album) => acc + (album.photoCount || 0), 0),
     albums: albums.length,
   }), [albums]);
