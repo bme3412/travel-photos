@@ -287,6 +287,30 @@
       "name": "🇳🇿 New Zealand",
       "countryId": "NZ",
       "year": "2026"
+    },
+    {
+      "id": "berlin-2026",
+      "name": "🇩🇪 Berlin",
+      "countryId": "DE",
+      "year": "2026"
+    },
+    {
+      "id": "krakow-2026",
+      "name": "🇵🇱 Kraków",
+      "countryId": "PL",
+      "year": "2026"
+    },
+    {
+      "id": "menton-2026",
+      "name": "🇫🇷 Menton",
+      "countryId": "FR",
+      "year": "2026"
+    },
+    {
+      "id": "paris-2026",
+      "name": "🇫🇷 Paris",
+      "countryId": "FR",
+      "year": "2026"
     }
   ]
 }

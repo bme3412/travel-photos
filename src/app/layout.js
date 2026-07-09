@@ -76,7 +76,7 @@ export default function RootLayout({ children }) {
         <footer className="border-t border-ink/10">
           <div className="max-w-7xl mx-auto px-6 py-8 flex flex-col sm:flex-row items-center justify-between gap-2 text-[11px] uppercase tracking-[0.2em] text-muted">
             <span>© {new Date().getFullYear()} Passport &amp; Ponder</span>
-            <span>54 countries &amp; territories · six continents</span>
+            <span>57 countries &amp; territories · six continents</span>
           </div>
         </footer>
         <Analytics />

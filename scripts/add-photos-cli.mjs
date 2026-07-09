@@ -56,6 +56,7 @@ if (Number.isNaN(lat) || Number.isNaN(lng)) {
 
 const FLAG_EMOJIS = {
   NZ: '🇳🇿', CK: '🇨🇰', AU: '🇦🇺', US: '🇺🇸', FR: '🇫🇷', IT: '🇮🇹',
+  DE: '🇩🇪', PL: '🇵🇱',
 };
 const IMG_EXT = ['.jpg', '.jpeg', '.png', '.heic'];
 
