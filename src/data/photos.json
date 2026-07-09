@@ -24078,21 +24078,6 @@
       "ratingReason": "A picturesque palm-covered islet with clear turquoise water, but the drab foreground reef and sky-heavy composition make it a solid yet ordinary travel shot."
     },
     {
-      "id": "new-zealand1",
-      "albumId": "new-zealand",
-      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Auckland/IMG_3143.jpg",
-      "caption": "Auckland",
-      "locationId": "Auckland",
-      "coordinates": {
-        "lng": 174.7633,
-        "lat": -36.8485
-      },
-      "dateCreated": "2026-01-09",
-      "tags": [],
-      "rating": 1,
-      "ratingReason": "A snapshot of promotional brochures and a coaster held in hand, cluttered and mundane with no scenic subject or editorial value."
-    },
-    {
       "id": "new-zealand2",
       "albumId": "new-zealand",
       "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Auckland/IMG_3144.jpg",
@@ -24316,36 +24301,6 @@
       "tags": [],
       "rating": 3,
       "ratingReason": "The iconic yellow hobbit door and charming garden are appealing, but the foreground fence is intrusive and the harsh midday light and centered framing keep it snapshot-level."
-    },
-    {
-      "id": "new-zealand17",
-      "albumId": "new-zealand",
-      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Auckland/IMG_3164.jpg",
-      "caption": "Auckland",
-      "locationId": "Auckland",
-      "coordinates": {
-        "lng": 174.7633,
-        "lat": -36.8485
-      },
-      "dateCreated": "2026-01-09",
-      "tags": [],
-      "rating": 2,
-      "ratingReason": "Fun tourist snapshot at the Hobbiton set with the iconic yellow door, but the harsh midday light, squinting subject, and standard souvenir-pose framing keep it snapshot-grade."
-    },
-    {
-      "id": "new-zealand18",
-      "albumId": "new-zealand",
-      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Auckland/IMG_3165.jpg",
-      "caption": "Auckland",
-      "locationId": "Auckland",
-      "coordinates": {
-        "lng": 174.7633,
-        "lat": -36.8485
-      },
-      "dateCreated": "2026-01-09",
-      "tags": [],
-      "rating": 2,
-      "ratingReason": "Recognizable Hobbiton yellow door is charming but this is a standard tourist snapshot with harsh midday light, a posing subject, and distracting crowds on the hill."
     },
     {
       "id": "new-zealand19",
@@ -24663,21 +24618,6 @@
       "ratingReason": "Charming, richly detailed fairytale bedroom interior with warm tones and a lovely stained-glass window, but the cluttered framing, dim lighting, and lack of a clear focal point keep it as a solid documentary shot rather than a hero image."
     },
     {
-      "id": "new-zealand40",
-      "albumId": "new-zealand",
-      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Auckland/IMG_3191.jpg",
-      "caption": "Auckland",
-      "locationId": "Auckland",
-      "coordinates": {
-        "lng": 174.7633,
-        "lat": -36.8485
-      },
-      "dateCreated": "2026-01-09",
-      "tags": [],
-      "rating": 1,
-      "ratingReason": "Accidental-looking shot of a wooden floor with a blurry basket and book edge; no subject, poor focus, and no compositional intent."
-    },
-    {
       "id": "new-zealand41",
       "albumId": "new-zealand",
       "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Auckland/IMG_3192.jpg",
@@ -24828,21 +24768,6 @@
       "ratingReason": "Charming rustic cottage kitchen with an atmospheric arched window and antique pump, but cluttered framing and murky exposure keep it from being a standout hero image."
     },
     {
-      "id": "cook-islands42",
-      "albumId": "cook-islands",
-      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Aitutaki/IMG_2968.jpg",
-      "caption": "Aitutaki",
-      "locationId": "Aitutaki",
-      "coordinates": {
-        "lng": -159.7853,
-        "lat": -18.8566
-      },
-      "dateCreated": "2026-01-04",
-      "tags": [],
-      "rating": 2,
-      "ratingReason": "The tropical atoll and turquoise reef are appealing, but the aircraft engine and fuselage dominate the lower half, cluttering the frame into a snapshot-grade window shot."
-    },
-    {
       "id": "cook-islands43",
       "albumId": "cook-islands",
       "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Aitutaki/IMG_2969.jpg",
@@ -24886,21 +24811,6 @@
       "tags": [],
       "rating": 3,
       "ratingReason": "Appealing tropical beachfront café scene with turquoise lagoon and palms, but the striped awning, tangled string lights, and empty foreground table clutter the frame into an ordinary snapshot."
-    },
-    {
-      "id": "cook-islands46",
-      "albumId": "cook-islands",
-      "url": "https://global-travel.s3.us-east-1.amazonaws.com/albums/Aitutaki/IMG_2974.jpg",
-      "caption": "Aitutaki",
-      "locationId": "Aitutaki",
-      "coordinates": {
-        "lng": -159.7853,
-        "lat": -18.8566
-      },
-      "dateCreated": "2026-01-04",
-      "tags": [],
-      "rating": 2,
-      "ratingReason": "A centered snapshot portrait with nice blue sky and colorful lei, but harsh midday shadows across the face, cluttered background people, and no compelling composition make it snapshot-grade."
     },
     {
       "id": "cook-islands47",
