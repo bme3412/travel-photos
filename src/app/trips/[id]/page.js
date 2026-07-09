@@ -7,7 +7,9 @@ import {
   readNarratives,
 } from '../../utils/fileHandler';
 import { buildTrip } from '../../utils/tripBuilder';
+import { buildMediaResolver } from '../../utils/mediaResolver';
 import TripReplayClient from './TripReplayClient';
+import SceneReplayClient from './SceneReplayClient';
 
 // Enable ISR - revalidate every hour
 export const revalidate = 3600;
@@ -41,6 +43,36 @@ async function getTripData(id) {
       trip.stops.forEach((stop) => {
         stop.narrative = narrative.stops?.[stop.name] || null;
       });
+    }
+
+    // Scene-based scrollytelling replay — opt-in per album via narrative.scenes.
+    // Photos are authored by filename substring and resolved against the album's
+    // raw photos (same resolver the journal MDX uses). Trips without scenes fall
+    // through to the map-based TripReplayClient below.
+    if (narrative?.scenes?.length) {
+      const rawPhotos = photosData.photos.filter(
+        (p) => p.albumId.toLowerCase() === album.id.toLowerCase()
+      );
+      const resolve = buildMediaResolver(rawPhotos, []);
+      const scenes = narrative.scenes
+        .map((scene) => {
+          const photos = (scene.photos || [])
+            .map((ref) => {
+              const url = resolve(ref);
+              if (!url) return null;
+              const raw = rawPhotos.find((p) => p.url.includes(ref));
+              return { id: raw?.id ?? ref, url, caption: raw?.caption || '' };
+            })
+            .filter(Boolean);
+          const backgroundUrl =
+            (scene.background && resolve(scene.background)) || photos[0]?.url || null;
+          return { ...scene, photos, backgroundUrl };
+        })
+        .filter((scene) => scene.backgroundUrl);
+      if (scenes.length) {
+        trip.scenes = scenes;
+        trip.center = trip.stops[0]?.center || null;
+      }
     }
 
     return trip;
@@ -94,5 +126,8 @@ export default async function TripPage({ params }) {
     notFound();
   }
 
+  if (trip.scenes?.length) {
+    return <SceneReplayClient trip={trip} />;
+  }
   return <TripReplayClient trip={trip} />;
 }

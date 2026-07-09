@@ -13,6 +13,7 @@ import {
 } from '../../utils/fileHandler';
 import { buildTrip } from '../../utils/tripBuilder';
 import { transformToCloudFront } from '../../utils/imageUtils';
+import { buildMediaResolver } from '../../utils/mediaResolver';
 import { getJournalPost } from '../../utils/journalContent';
 import { createMdxComponents } from '../mdxComponents';
 import PostGallery from './PostGallery';
@@ -47,20 +48,6 @@ const formatPostDate = (value) => {
     ? String(value)
     : date.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
 };
-
-// A filename substring ("IMG_1669.jpg", "clip.mp4") or full URL -> CloudFront
-// URL, resolved against the trip's photos and videos.
-function buildMediaResolver(rawPhotos, videos) {
-  return (ref) => {
-    if (!ref) return null;
-    if (/^https?:\/\//.test(ref)) return ref;
-    const photo = rawPhotos.find((p) => p.url && p.url.includes(ref));
-    if (photo) return transformToCloudFront(photo.url);
-    const video = (videos || []).find((v) => v.file === ref || (v.url && v.url.includes(ref)));
-    if (video) return transformToCloudFront(video.url);
-    return null;
-  };
-}
 
 async function loadAlbum(id) {
   const [albumsData, photosData, videosData] = await Promise.all([

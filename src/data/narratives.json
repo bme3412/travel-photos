@@ -518,6 +518,68 @@
     "fingerprint": "082781ab20b1",
     "model": "claude-opus-4-8",
     "generatedAt": "2026-07-09T16:19:11.584Z",
-    "edited": true
+    "edited": true,
+    "scenes": [
+      {
+        "id": "opening",
+        "kicker": "Menton · June 2026",
+        "title": "Where France runs out",
+        "text": "Menton is where France runs out — the Riviera keeps going east until it reaches this one last town, and then the border, and then Italy. Two days at the end of June were enough to feel the whole of it: a place that faces the sun full-on, stacked in warm colour above a bright stretch of the Mediterranean.",
+        "background": "IMG_0343.jpg",
+        "photos": [
+          "IMG_0343.jpg",
+          "IMG_0367.jpg"
+        ]
+      },
+      {
+        "id": "old-town",
+        "kicker": "Chapter 01",
+        "title": "The old town, in tiers",
+        "text": "The heart of Menton climbs. Ochre and rose and faded-yellow façades rise in tiers up the hillside, narrow stepped lanes threading between them toward the Baroque churches at the top. It is a town built to be walked slowly and looked up at.",
+        "background": "IMG_0347.jpg",
+        "photos": [
+          "IMG_0342.jpg",
+          "IMG_0345.jpg",
+          "IMG_0347.jpg",
+          "IMG_0350.jpg",
+          "IMG_0352.jpg",
+          "IMG_0355.jpg"
+        ]
+      },
+      {
+        "id": "lemon-light",
+        "kicker": "Chapter 02",
+        "title": "Lemon light",
+        "text": "This is lemon country — the fruit that gives the town its emblem and its famous winter festival. Even in June the light seemed to carry it: a particular clarity coming off the water and the pale stone, warm on the Belle Époque gardens scattered across the hills above the centre.",
+        "background": "IMG_0368.jpg",
+        "photos": [
+          "IMG_0359.jpg",
+          "IMG_0362.jpg",
+          "IMG_0364.jpg",
+          "IMG_0366.jpg",
+          "IMG_0368.jpg",
+          "IMG_0372.jpg",
+          "IMG_0376.jpg",
+          "IMG_0379.jpg"
+        ]
+      },
+      {
+        "id": "the-water",
+        "kicker": "Chapter 03",
+        "title": "The water",
+        "text": "And then the sea, always just below. The old town gives onto a long curve of Mediterranean — the port and its boats at one end, the pebble beach running toward the frontier at the other, Italy visible along the coast. The days settled into the easy rhythm of a town with nowhere else to be.",
+        "background": "IMG_0390.jpg",
+        "photos": [
+          "IMG_0381.jpg",
+          "IMG_0384.jpg",
+          "IMG_0386.jpg",
+          "IMG_0390.jpg",
+          "IMG_0392.jpg",
+          "IMG_0396.jpg",
+          "IMG_0400.jpg",
+          "IMG_0405.jpg"
+        ]
+      }
+    ]
   }
 }
