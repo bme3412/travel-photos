@@ -479,5 +479,45 @@
     "model": "claude-opus-4-8",
     "generatedAt": "2026-07-08T14:47:53.673Z",
     "edited": false
+  },
+  "krakow-2026": {
+    "intro": "Three days at the end of June, spent entirely within a single city: Kraków, Poland's medieval heart. There was no onward leg, no contrast of landscapes — only the slow, deliberate work of getting to know one old royal capital, spared the war and left largely whole. The whole journey was its streets, its square, and the castle above the river.",
+    "stops": {
+      "Kraków": "Three days among the stones of Poland's medieval heart, an old royal city that came through the war intact. The days turned around the vast Rynek Główny, the great market square that anchors everything, and rose toward Wawel Castle standing above the Vistula. There was time enough to let the place unfold at its own pace — the sweep of the square, the weight of the castle on its hill, the river moving below. A single city, given the full attention it deserved, rather than passed through on the way to somewhere else."
+    },
+    "fingerprint": "3bcb881ea009",
+    "model": "claude-opus-4-8",
+    "generatedAt": "2026-07-09T16:19:05.258Z",
+    "edited": false
+  },
+  "paris-2026": {
+    "intro": "Three days in Paris in the middle of June, a single city held close rather than a country crossed. The itinerary was simple — the Eiffel Tower, the table, the streets in between — and that focus was the point. One place, given room to unfold at its own pace.",
+    "stops": {
+      "Paris": "Three days given wholly to one city, and the Eiffel Tower at the center of them — that familiar iron silhouette returned to across the hours, from different streets and different angles. Between the landmarks came the local cuisine, meals that anchored the days as much as any monument. Nearly fifty moments gathered from a short stay, the sign of a city walked slowly and lingered over. No onward distance to cover, no next stop pulling ahead — just Paris, and the unhurried business of being there."
+    },
+    "fingerprint": "93646558b754",
+    "model": "claude-opus-4-8",
+    "generatedAt": "2026-07-09T16:19:05.263Z",
+    "edited": false
+  },
+  "berlin-2026": {
+    "intro": "Two days in late June, all of them given to a single city. Berlin was the whole trip — no side excursions, no prologue, just Germany's capital of history and reinvention held in close focus. What made it distinctive was that undivided attention: a place that carries the Brandenburg Gate, remnants of the Wall, and a restless modern arts scene, all crowded into one short midsummer stay.",
+    "stops": {
+      "Berlin": "Two days at the heart of Germany's capital, a city that has made a habit of reinventing itself. The Brandenburg Gate stood at one end of the story, remnants of the Wall at another — history left in plain sight, embedded in the ordinary run of streets. Between the monuments ran the restless pulse of a modern arts scene, the sense of a place still very much in motion. It was a stay that asked for slow walking and open eyes, the kind of city that rewards lingering over rushing through."
+    },
+    "fingerprint": "93b4a9193980",
+    "model": "claude-opus-4-8",
+    "generatedAt": "2026-07-09T16:19:05.541Z",
+    "edited": false
+  },
+  "menton-2026": {
+    "intro": "Two days at the far eastern edge of the French Riviera, in the last town before the border gives way to Italy. Menton was the whole of it — a single place, held close over one late-June weekend, gathered in more than fifty frames. No grand itinerary, no distance to cover, just a town and the light coming off the Mediterranean.",
+    "stops": {
+      "Menton": "The Riviera's final town before Italy, spent slowly over a single weekend at the end of June. Pastel façades stacked above the sea, lemon groves and Belle Époque gardens holding their ground on the slopes — the place seemed built for lingering. It was the sole destination of the trip, with nowhere else to be and nothing to catch, and it filled the days easily. Two unhurried days on the edge of France, Italy just beyond, the Mediterranean spread out below."
+    },
+    "fingerprint": "082781ab20b1",
+    "model": "claude-opus-4-8",
+    "generatedAt": "2026-07-09T16:19:11.584Z",
+    "edited": false
   }
 }
