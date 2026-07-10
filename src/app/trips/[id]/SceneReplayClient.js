@@ -8,6 +8,8 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 import { ArrowLeft, BookOpen, ChevronLeft, ChevronRight, Clock, Route } from 'lucide-react';
 import ImageLightbox from '../../components/ImageLightbox';
 import TripViewSwitcher from '../../components/TripViewSwitcher';
+import { tripHasBlueprint } from '@/features/copy-trip/availability';
+import { AddToTripButton, AddToTripToast } from '@/features/copy-trip/AddToTrip';
 
 const ACCENT = '#B4441C';
 const MAP_STYLE = 'mapbox://styles/mapbox/streets-v12';
@@ -194,7 +196,7 @@ function ReflectionsBlock({ reflections }) {
 // The narrative card: kicker + title + prose, plus any trip-report blocks
 // (facts / day activities / reflections). Text only and sized to fit the
 // viewport — photos live in the PhotoStrip below, never scrolled inside.
-function SceneCard({ scene }) {
+function SceneCard({ scene, tripId }) {
   return (
     <article
       className="pointer-events-auto relative max-w-md w-full sm:max-w-lg
@@ -238,12 +240,22 @@ function SceneCard({ scene }) {
 
       {scene.activities?.length > 0 && (
         <ul className="mt-4 grid grid-cols-1 gap-x-5 gap-y-2 sm:grid-cols-2">
-          {scene.activities.map((a, i) => (
-            <li key={i} className="flex gap-2.5 text-[14px] text-ink/80 leading-snug">
-              <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
-              <span>{a}</span>
-            </li>
-          ))}
+          {scene.activities.map((a, i) => {
+            const action = scene.copyActions?.[i];
+            return (
+              <li key={i} className="flex gap-2.5 text-[14px] text-ink/80 leading-snug">
+                <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
+                <span className="min-w-0 flex-1">{a}</span>
+                {action && (
+                  <AddToTripButton
+                    tripId={tripId}
+                    experienceId={action.experienceId}
+                    experienceName={action.name}
+                  />
+                )}
+              </li>
+            );
+          })}
         </ul>
       )}
 
@@ -399,6 +411,17 @@ export default function SceneReplayClient({ trip }) {
           Browse all {trip.photoCount} photographs
         </Link>
       </div>
+      {tripHasBlueprint(trip.id) && (
+        <p className="mt-8 text-[11px] uppercase tracking-[0.2em] text-paper/60">
+          Or make it yours —{' '}
+          <Link
+            href={`/trips/${trip.id}/copy`}
+            className="text-paper underline decoration-accent underline-offset-4 hover:text-accent transition-colors"
+          >
+            copy this trip
+          </Link>
+        </p>
+      )}
     </div>
   );
 
@@ -438,13 +461,14 @@ export default function SceneReplayClient({ trip }) {
               </div>
             )}
             <div className="mt-6 flex flex-col gap-3">
-              <SceneCard scene={scene} />
+              <SceneCard scene={scene} tripId={trip.id} />
               <PhotoStrip scene={scene} sceneIndex={i} onOpen={openLightbox} />
             </div>
           </section>
         ))}
         {ClosingCta}
         {Lightbox}
+        <AddToTripToast tripId={trip.id} />
       </div>
     );
   }
@@ -536,7 +560,7 @@ export default function SceneReplayClient({ trip }) {
             className="min-h-[100svh] flex flex-col items-start justify-center gap-3 px-5 sm:px-6 pb-16 pointer-events-none"
           >
             <div className="w-full max-w-md sm:max-w-lg sm:ml-4 lg:ml-14">
-              <SceneCard scene={scene} />
+              <SceneCard scene={scene} tripId={trip.id} />
             </div>
             <div className="sm:ml-4 lg:ml-14">
               <PhotoStrip scene={scene} sceneIndex={i} onOpen={openLightbox} />
@@ -547,6 +571,7 @@ export default function SceneReplayClient({ trip }) {
 
       {ClosingCta}
       {Lightbox}
+      <AddToTripToast tripId={trip.id} />
     </div>
   );
 }

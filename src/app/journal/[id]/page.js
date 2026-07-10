@@ -18,6 +18,7 @@ import { getJournalPost } from '../../utils/journalContent';
 import { createMdxComponents } from '../mdxComponents';
 import PostGallery from './PostGallery';
 import TripViewSwitcher from '../../components/TripViewSwitcher';
+import { tripHasBlueprint } from '@/features/copy-trip/availability';
 
 // A trip's "dispatch" reads from content/journal/[id].mdx when the author has
 // written one; otherwise it's assembled from the trip narrative + photos. Both
@@ -191,6 +192,21 @@ function PostHero({ cover, flag, kickerParts, title, tripId, metaLine }) {
 function ClosingCta({ tripId }) {
   return (
     <div className="mt-20 sm:mt-28 max-w-2xl mx-auto text-center border-t border-ink/10 pt-12">
+      {tripHasBlueprint(tripId) && (
+        <div className="mb-14">
+          <p className="font-display text-2xl sm:text-3xl tracking-tight leading-snug text-ink max-w-md mx-auto">
+            Want to experience your own version of this trip?
+          </p>
+          <Link
+            href={`/trips/${tripId}/copy`}
+            className="mt-6 inline-flex items-center gap-2.5 bg-accent text-paper rounded-full px-7 py-3.5
+                       text-[11px] uppercase tracking-[0.2em] hover:bg-ink transition-colors duration-300"
+          >
+            Copy this trip
+            <ArrowRight className="h-3.5 w-3.5" />
+          </Link>
+        </div>
+      )}
       <p className="text-[11px] uppercase tracking-[0.3em] text-muted mb-4">Keep exploring</p>
       <div className="flex flex-wrap items-center justify-center gap-4">
         <Link

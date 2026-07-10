@@ -1,0 +1,781 @@
+{
+  "paris-2026": {
+    "id": "paris-2026",
+    "destination": "Paris, France",
+    "startDate": "2026-06-19",
+    "endDate": "2026-06-21",
+    "durationDays": 3,
+    "baseNeighborhood": "Saint-Germain-des-Prés",
+    "occasion": "Fête de la Musique",
+    "travelerType": "solo",
+    "pace": "fast",
+    "themes": [
+      "food",
+      "architecture",
+      "neighborhood wandering",
+      "bike tour",
+      "river cruise",
+      "night views",
+      "street music"
+    ],
+    "totalDistanceKm": 40.2,
+    "days": [
+      {
+        "id": "day-1",
+        "dayNumber": 1,
+        "title": "Arrival, and Montmartre in the heat",
+        "date": "2026-06-19",
+        "startTime": "10:30",
+        "endTime": "21:30",
+        "distanceKm": 3.8,
+        "neighborhoods": [
+          "Saint-Germain",
+          "Gare de l’Est",
+          "Montmartre"
+        ],
+        "summary": "Landed at CDG mid-morning, dropped bags on Rue Dauphine, then an afternoon running from Saint-Germain out to Gare de l’Est and up to Sacré-Cœur in 95°F heat.",
+        "weather": {
+          "highF": 95,
+          "lowF": 71,
+          "note": "Hot, hazy"
+        },
+        "experiences": [
+          {
+            "id": "d1-arrive-cdg",
+            "name": "Land at CDG and ride into Saint-Germain",
+            "category": "transport",
+            "placeName": "Charles de Gaulle Airport",
+            "approximateStartTime": "10:30",
+            "approximateDurationMinutes": 75,
+            "latitude": 49.0097,
+            "longitude": 2.5479,
+            "sourcePhotoIds": [],
+            "sourceDayId": "day-1",
+            "sourceNarrativeExcerpt": "Landed at CDG at half past ten and Ubered straight in."
+          },
+          {
+            "id": "d1-check-in-rue-dauphine",
+            "name": "Check in on Rue Dauphine",
+            "category": "rest",
+            "placeName": "Rue Dauphine apartment",
+            "neighborhood": "Saint-Germain",
+            "approximateStartTime": "12:00",
+            "approximateDurationMinutes": 30,
+            "latitude": 48.855,
+            "longitude": 2.339,
+            "sourcePhotoIds": [],
+            "sourceDayId": "day-1",
+            "sourceNarrativeExcerpt": "A quiet courtyard apartment, steps from Pont Neuf."
+          },
+          {
+            "id": "d1-saint-germain-wander",
+            "name": "Wander Saint-Germain-des-Prés",
+            "category": "neighborhood",
+            "neighborhood": "Saint-Germain",
+            "approximateStartTime": "12:45",
+            "approximateDurationMinutes": 60,
+            "latitude": 48.857,
+            "longitude": 2.34333,
+            "sourcePhotoIds": [
+              "paris-20261"
+            ],
+            "sourceDayId": "day-1",
+            "priority": "core"
+          },
+          {
+            "id": "d1-gare-de-lest-2009-flat",
+            "name": "Métro to Gare de l’Est — past the 2009 study-abroad flat",
+            "category": "neighborhood",
+            "neighborhood": "Gare de l’Est",
+            "approximateStartTime": "14:00",
+            "approximateDurationMinutes": 45,
+            "latitude": 48.87735,
+            "longitude": 2.3542,
+            "sourcePhotoIds": [
+              "paris-20262"
+            ],
+            "sourceDayId": "day-1",
+            "sourceNarrativeExcerpt": "The afternoon ran from Saint-Germain out to Gare de l’Est.",
+            "priority": "optional"
+          },
+          {
+            "id": "d1-sacre-coeur",
+            "name": "Climb to Sacré-Cœur",
+            "category": "landmark",
+            "placeName": "Sacré-Cœur",
+            "neighborhood": "Montmartre",
+            "approximateStartTime": "15:15",
+            "approximateDurationMinutes": 45,
+            "latitude": 48.88709,
+            "longitude": 2.34205,
+            "sourcePhotoIds": [
+              "paris-20263",
+              "paris-20264"
+            ],
+            "sourceDayId": "day-1",
+            "sourceNarrativeExcerpt": "So hot the steps, usually packed, sat almost empty.",
+            "priority": "core"
+          },
+          {
+            "id": "d1-maison-rose-vineyard",
+            "name": "La Maison Rose and the Montmartre vineyard",
+            "category": "landmark",
+            "placeName": "La Maison Rose",
+            "neighborhood": "Montmartre",
+            "approximateStartTime": "16:15",
+            "approximateDurationMinutes": 30,
+            "latitude": 48.8875,
+            "longitude": 2.3406,
+            "sourcePhotoIds": [],
+            "sourceDayId": "day-1",
+            "priority": "optional"
+          },
+          {
+            "id": "d1-sciences-po",
+            "name": "Pass the Sciences Po campus",
+            "category": "neighborhood",
+            "placeName": "Sciences Po",
+            "neighborhood": "Saint-Germain",
+            "approximateStartTime": "18:45",
+            "approximateDurationMinutes": 15,
+            "latitude": 48.854,
+            "longitude": 2.3283,
+            "sourcePhotoIds": [],
+            "sourceDayId": "day-1",
+            "sourceNarrativeExcerpt": "Passed the Sciences Po campus (study abroad).",
+            "priority": "optional"
+          },
+          {
+            "id": "d1-dinner-pre-aux-clercs",
+            "name": "Dinner at Le Pré aux Clercs",
+            "category": "food",
+            "placeName": "Le Pré aux Clercs",
+            "neighborhood": "Saint-Germain",
+            "approximateStartTime": "19:30",
+            "approximateDurationMinutes": 90,
+            "latitude": 48.8557,
+            "longitude": 2.3333,
+            "sourcePhotoIds": [],
+            "sourceDayId": "day-1",
+            "priority": "core"
+          }
+        ],
+        "route": [
+          {
+            "lat": 48.857,
+            "lng": 2.34333,
+            "time": "12:54",
+            "photoId": "paris-20261"
+          },
+          {
+            "lat": 48.87735,
+            "lng": 2.3542,
+            "time": "14:01",
+            "photoId": "paris-20262"
+          },
+          {
+            "lat": 48.88709,
+            "lng": 2.34205,
+            "time": "15:27",
+            "photoId": "paris-20263"
+          },
+          {
+            "lat": 48.88705,
+            "lng": 2.34222,
+            "time": "15:28",
+            "photoId": "paris-20264"
+          }
+        ]
+      },
+      {
+        "id": "day-2",
+        "dayNumber": 2,
+        "title": "Islands by day, the lit-up river by night",
+        "date": "2026-06-20",
+        "startTime": "11:30",
+        "endTime": "22:45",
+        "distanceKm": 28.8,
+        "neighborhoods": [
+          "Saint-Germain",
+          "Île Saint-Louis",
+          "Tuileries–Louvre",
+          "Champ de Mars"
+        ],
+        "summary": "The long day: breakfast at Café de Flore, a slow lunch of moules-frites and street jazz on Île Saint-Louis, then an evening group bike tour and a Bateau Mouche down a lit-up Seine.",
+        "weather": {
+          "highF": 91,
+          "lowF": 66,
+          "note": "Hot"
+        },
+        "experiences": [
+          {
+            "id": "d2-cafe-de-flore",
+            "name": "Breakfast at Café de Flore",
+            "category": "food",
+            "placeName": "Café de Flore",
+            "neighborhood": "Saint-Germain",
+            "approximateStartTime": "11:45",
+            "approximateDurationMinutes": 60,
+            "latitude": 48.85394,
+            "longitude": 2.33315,
+            "sourcePhotoIds": [
+              "paris-20265",
+              "paris-20266"
+            ],
+            "sourceDayId": "day-2",
+            "priority": "core"
+          },
+          {
+            "id": "d2-moules-frites-street-jazz",
+            "name": "Moules-frites and street jazz on Île Saint-Louis",
+            "category": "food",
+            "neighborhood": "Île Saint-Louis",
+            "approximateStartTime": "13:15",
+            "approximateDurationMinutes": 90,
+            "latitude": 48.8517,
+            "longitude": 2.357,
+            "sourcePhotoIds": [],
+            "sourceDayId": "day-2",
+            "sourceNarrativeExcerpt": "A street jazz band over moules-frites on Île Saint-Louis beat any concert hall.",
+            "priority": "core"
+          },
+          {
+            "id": "d2-central-paris-walk",
+            "name": "Walk through central Paris",
+            "category": "neighborhood",
+            "neighborhood": "Tuileries–Louvre",
+            "approximateStartTime": "15:00",
+            "approximateDurationMinutes": 90,
+            "latitude": 48.85681,
+            "longitude": 2.35126,
+            "sourcePhotoIds": [
+              "paris-20267",
+              "paris-20268",
+              "paris-20269",
+              "paris-202610",
+              "paris-202611"
+            ],
+            "sourceDayId": "day-2",
+            "priority": "optional"
+          },
+          {
+            "id": "d2-ile-saint-louis",
+            "name": "Explore Île Saint-Louis",
+            "category": "neighborhood",
+            "neighborhood": "Île Saint-Louis",
+            "approximateStartTime": "16:45",
+            "approximateDurationMinutes": 60,
+            "latitude": 48.85082,
+            "longitude": 2.35545,
+            "sourcePhotoIds": [
+              "paris-202612",
+              "paris-202613",
+              "paris-202614"
+            ],
+            "sourceDayId": "day-2",
+            "priority": "core"
+          },
+          {
+            "id": "d2-berthillon",
+            "name": "Berthillon ice cream",
+            "category": "food",
+            "placeName": "Berthillon",
+            "neighborhood": "Île Saint-Louis",
+            "approximateStartTime": "17:15",
+            "approximateDurationMinutes": 20,
+            "latitude": 48.8517,
+            "longitude": 2.3567,
+            "sourcePhotoIds": [],
+            "sourceDayId": "day-2",
+            "priority": "core"
+          },
+          {
+            "id": "d2-evening-bike-tour",
+            "name": "Evening group bike tour",
+            "category": "tour",
+            "approximateStartTime": "18:15",
+            "approximateDurationMinutes": 160,
+            "latitude": 48.85397,
+            "longitude": 2.31206,
+            "sourcePhotoIds": [
+              "paris-202615",
+              "paris-202616",
+              "paris-202617",
+              "paris-202618",
+              "paris-202619",
+              "paris-202620",
+              "paris-202621",
+              "paris-202622",
+              "paris-202623",
+              "paris-202624",
+              "paris-202625"
+            ],
+            "sourceDayId": "day-2",
+            "sourceNarrativeExcerpt": "The evening was a group bike tour — past the Tuileries, the Grand Palais, and along both banks.",
+            "bookingRequired": true,
+            "priority": "core"
+          },
+          {
+            "id": "d2-seine-cruise",
+            "name": "Bateau Mouche down the Seine",
+            "category": "tour",
+            "approximateStartTime": "21:45",
+            "approximateDurationMinutes": 60,
+            "latitude": 48.85564,
+            "longitude": 2.34198,
+            "sourcePhotoIds": [
+              "paris-202626",
+              "paris-202627",
+              "paris-202628",
+              "paris-202629",
+              "paris-202630"
+            ],
+            "sourceDayId": "day-2",
+            "sourceNarrativeExcerpt": "A Bateau Mouche down a lit-up Seine, past the Tuileries, the Eiffel, and Pont Neuf — the last frame near half past ten.",
+            "bookingRequired": true,
+            "priority": "core"
+          },
+          {
+            "id": "d2-eiffel-at-night",
+            "name": "The Eiffel Tower lit up at night",
+            "category": "landmark",
+            "placeName": "Eiffel Tower",
+            "neighborhood": "Champ de Mars",
+            "approximateStartTime": "22:35",
+            "approximateDurationMinutes": 15,
+            "latitude": 48.85667,
+            "longitude": 2.28876,
+            "sourcePhotoIds": [
+              "paris-202631",
+              "paris-202632",
+              "paris-202633",
+              "paris-202634"
+            ],
+            "sourceDayId": "day-2",
+            "priority": "core"
+          }
+        ],
+        "route": [
+          {
+            "lat": 48.85394,
+            "lng": 2.33315,
+            "time": "12:00",
+            "photoId": "paris-20265"
+          },
+          {
+            "lat": 48.8545,
+            "lng": 2.33356,
+            "time": "12:02",
+            "photoId": "paris-20266"
+          },
+          {
+            "lat": 48.85412,
+            "lng": 2.32839,
+            "time": "15:02",
+            "photoId": "paris-20267"
+          },
+          {
+            "lat": 48.85667,
+            "lng": 2.35119,
+            "time": "16:11",
+            "photoId": "paris-20268"
+          },
+          {
+            "lat": 48.85681,
+            "lng": 2.35126,
+            "time": "16:12",
+            "photoId": "paris-20269"
+          },
+          {
+            "lat": 48.86116,
+            "lng": 2.35162,
+            "time": "16:19",
+            "photoId": "paris-202610"
+          },
+          {
+            "lat": 48.86306,
+            "lng": 2.35261,
+            "time": "16:22",
+            "photoId": "paris-202611"
+          },
+          {
+            "lat": 48.85178,
+            "lng": 2.35666,
+            "time": "17:04",
+            "photoId": "paris-202612"
+          },
+          {
+            "lat": 48.85082,
+            "lng": 2.35545,
+            "time": "17:07",
+            "photoId": "paris-202613"
+          },
+          {
+            "lat": 48.85013,
+            "lng": 2.35494,
+            "time": "17:08",
+            "photoId": "paris-202614"
+          },
+          {
+            "lat": 48.85397,
+            "lng": 2.31206,
+            "time": "18:17",
+            "photoId": "paris-202615"
+          },
+          {
+            "lat": 48.85395,
+            "lng": 2.31209,
+            "time": "18:20",
+            "photoId": "paris-202616"
+          },
+          {
+            "lat": 48.85396,
+            "lng": 2.31206,
+            "time": "18:20",
+            "photoId": "paris-202617"
+          },
+          {
+            "lat": 48.86323,
+            "lng": 2.31052,
+            "time": "18:35",
+            "photoId": "paris-202618"
+          },
+          {
+            "lat": 48.86356,
+            "lng": 2.31327,
+            "time": "18:38",
+            "photoId": "paris-202619"
+          },
+          {
+            "lat": 48.85326,
+            "lng": 2.3488,
+            "time": "19:28",
+            "photoId": "paris-202620"
+          },
+          {
+            "lat": 48.85274,
+            "lng": 2.35416,
+            "time": "19:50",
+            "photoId": "paris-202621"
+          },
+          {
+            "lat": 48.85341,
+            "lng": 2.35384,
+            "time": "19:52",
+            "photoId": "paris-202622"
+          },
+          {
+            "lat": 48.86158,
+            "lng": 2.33486,
+            "time": "20:17",
+            "photoId": "paris-202623"
+          },
+          {
+            "lat": 48.86552,
+            "lng": 2.32099,
+            "time": "20:31",
+            "photoId": "paris-202624"
+          },
+          {
+            "lat": 48.85896,
+            "lng": 2.29175,
+            "time": "20:57",
+            "photoId": "paris-202625"
+          },
+          {
+            "lat": 48.85564,
+            "lng": 2.34198,
+            "time": "21:46",
+            "photoId": "paris-202626"
+          },
+          {
+            "lat": 48.85347,
+            "lng": 2.34593,
+            "time": "21:49",
+            "photoId": "paris-202627"
+          },
+          {
+            "lat": 48.84752,
+            "lng": 2.36229,
+            "time": "22:00",
+            "photoId": "paris-202628"
+          },
+          {
+            "lat": 48.85775,
+            "lng": 2.34284,
+            "time": "22:12",
+            "photoId": "paris-202629"
+          },
+          {
+            "lat": 48.8638,
+            "lng": 2.31557,
+            "time": "22:20",
+            "photoId": "paris-202630"
+          },
+          {
+            "lat": 48.85667,
+            "lng": 2.28865,
+            "time": "22:36",
+            "photoId": "paris-202631"
+          },
+          {
+            "lat": 48.85667,
+            "lng": 2.28876,
+            "time": "22:36",
+            "photoId": "paris-202632"
+          },
+          {
+            "lat": 48.85813,
+            "lng": 2.29019,
+            "time": "22:37",
+            "photoId": "paris-202633"
+          },
+          {
+            "lat": 48.85818,
+            "lng": 2.29024,
+            "time": "22:37",
+            "photoId": "paris-202634"
+          }
+        ]
+      },
+      {
+        "id": "day-3",
+        "dayNumber": 3,
+        "title": "Vert-Galant at dawn, the Arc, and the Fête",
+        "date": "2026-06-21",
+        "startTime": "09:00",
+        "endTime": "16:30",
+        "distanceKm": 7.6,
+        "neighborhoods": [
+          "Île de la Cité",
+          "Champs-Élysées",
+          "Le Marais",
+          "Saint-Germain"
+        ],
+        "summary": "Fête de la Musique on the hottest day at 99°F: the quiet Square du Vert-Galant early, the Arc de Triomphe and Champs-Élysées by late morning, street music in the Marais, and a last coffee in Saint-Germain.",
+        "weather": {
+          "highF": 99,
+          "lowF": 68,
+          "note": "Peak heat"
+        },
+        "experiences": [
+          {
+            "id": "d3-vert-galant",
+            "name": "Square du Vert-Galant, early",
+            "category": "landmark",
+            "placeName": "Square du Vert-Galant",
+            "neighborhood": "Île de la Cité",
+            "approximateStartTime": "09:15",
+            "approximateDurationMinutes": 30,
+            "latitude": 48.85778,
+            "longitude": 2.33932,
+            "sourcePhotoIds": [
+              "paris-202635",
+              "paris-202636"
+            ],
+            "sourceDayId": "day-3",
+            "sourceNarrativeExcerpt": "The Square du Vert-Galant is a different place at dawn, before the crowds.",
+            "priority": "core"
+          },
+          {
+            "id": "d3-seine-walk",
+            "name": "Walk along the Seine",
+            "category": "neighborhood",
+            "neighborhood": "Île de la Cité",
+            "approximateStartTime": "09:45",
+            "approximateDurationMinutes": 45,
+            "latitude": 48.857,
+            "longitude": 2.34,
+            "sourcePhotoIds": [],
+            "sourceDayId": "day-3",
+            "priority": "optional"
+          },
+          {
+            "id": "d3-champs-elysees",
+            "name": "Walk the Champs-Élysées",
+            "category": "neighborhood",
+            "neighborhood": "Champs-Élysées",
+            "approximateStartTime": "10:30",
+            "approximateDurationMinutes": 30,
+            "latitude": 48.87107,
+            "longitude": 2.30363,
+            "sourcePhotoIds": [
+              "paris-202637",
+              "paris-202638"
+            ],
+            "sourceDayId": "day-3",
+            "priority": "optional"
+          },
+          {
+            "id": "d3-arc-de-triomphe",
+            "name": "Up the Arc de Triomphe",
+            "category": "landmark",
+            "placeName": "Arc de Triomphe",
+            "neighborhood": "Champs-Élysées",
+            "approximateStartTime": "10:50",
+            "approximateDurationMinutes": 45,
+            "latitude": 48.87377,
+            "longitude": 2.29519,
+            "sourcePhotoIds": [
+              "paris-202639",
+              "paris-202640",
+              "paris-202641",
+              "paris-202642",
+              "paris-202643",
+              "paris-202644",
+              "paris-202645",
+              "paris-202646",
+              "paris-202647"
+            ],
+            "sourceDayId": "day-3",
+            "priority": "core"
+          },
+          {
+            "id": "d3-marais-fete",
+            "name": "Street music in Le Marais — Fête de la Musique",
+            "category": "nightlife",
+            "neighborhood": "Le Marais",
+            "approximateStartTime": "12:00",
+            "approximateDurationMinutes": 150,
+            "latitude": 48.8575,
+            "longitude": 2.362,
+            "sourcePhotoIds": [],
+            "sourceDayId": "day-3",
+            "sourceNarrativeExcerpt": "The Marais for street music on the day of the Fête de la Musique.",
+            "priority": "core"
+          },
+          {
+            "id": "d3-cafe-bismuth",
+            "name": "Coffee at Café Bismuth",
+            "category": "food",
+            "placeName": "Café Bismuth",
+            "neighborhood": "Saint-Germain",
+            "approximateStartTime": "15:00",
+            "approximateDurationMinutes": 45,
+            "latitude": 48.85455,
+            "longitude": 2.33336,
+            "sourcePhotoIds": [
+              "paris-202648"
+            ],
+            "sourceDayId": "day-3",
+            "priority": "optional"
+          },
+          {
+            "id": "d3-saint-germain-last-walk",
+            "name": "A last walk through Saint-Germain",
+            "category": "neighborhood",
+            "neighborhood": "Saint-Germain",
+            "approximateStartTime": "15:45",
+            "approximateDurationMinutes": 30,
+            "latitude": 48.85667,
+            "longitude": 2.33201,
+            "sourcePhotoIds": [
+              "paris-202649"
+            ],
+            "sourceDayId": "day-3",
+            "priority": "optional"
+          }
+        ],
+        "route": [
+          {
+            "lat": 48.85778,
+            "lng": 2.33932,
+            "time": "09:22",
+            "photoId": "paris-202635"
+          },
+          {
+            "lat": 48.85758,
+            "lng": 2.33881,
+            "time": "09:34",
+            "photoId": "paris-202636"
+          },
+          {
+            "lat": 48.87107,
+            "lng": 2.30363,
+            "time": "10:41",
+            "photoId": "paris-202637"
+          },
+          {
+            "lat": 48.87109,
+            "lng": 2.30366,
+            "time": "10:41",
+            "photoId": "paris-202638"
+          },
+          {
+            "lat": 48.87368,
+            "lng": 2.29646,
+            "time": "10:49",
+            "photoId": "paris-202639"
+          },
+          {
+            "lat": 48.87368,
+            "lng": 2.29647,
+            "time": "10:49",
+            "photoId": "paris-202640"
+          },
+          {
+            "lat": 48.87408,
+            "lng": 2.29501,
+            "time": "10:59",
+            "photoId": "paris-202641"
+          },
+          {
+            "lat": 48.87396,
+            "lng": 2.29525,
+            "time": "11:00",
+            "photoId": "paris-202642"
+          },
+          {
+            "lat": 48.87377,
+            "lng": 2.29519,
+            "time": "11:00",
+            "photoId": "paris-202643"
+          },
+          {
+            "lat": 48.87359,
+            "lng": 2.29505,
+            "time": "11:01",
+            "photoId": "paris-202644"
+          },
+          {
+            "lat": 48.8736,
+            "lng": 2.29494,
+            "time": "11:02",
+            "photoId": "paris-202645"
+          },
+          {
+            "lat": 48.87367,
+            "lng": 2.29478,
+            "time": "11:03",
+            "photoId": "paris-202646"
+          },
+          {
+            "lat": 48.87354,
+            "lng": 2.29561,
+            "time": "11:10",
+            "photoId": "paris-202647"
+          },
+          {
+            "lat": 48.85455,
+            "lng": 2.33336,
+            "time": "15:09",
+            "photoId": "paris-202648"
+          },
+          {
+            "lat": 48.85667,
+            "lng": 2.33201,
+            "time": "15:15",
+            "photoId": "paris-202649"
+          }
+        ],
+        "inferredBreaks": [
+          {
+            "startTime": "13:20",
+            "endTime": "15:00",
+            "note": "No photos between the Marais and the last Saint-Germain coffee — likely a slow festival afternoon out of the 99°F heat."
+          }
+        ]
+      }
+    ]
+  }
+}

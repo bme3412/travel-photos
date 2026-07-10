@@ -11,6 +11,8 @@ import { buildMediaResolver } from '../../utils/mediaResolver';
 import { transformToCloudFront } from '../../utils/imageUtils';
 import { haversineKm } from '../../utils/geo';
 import { nearestPlace } from '../../utils/parisPlaces';
+import { getTripBlueprint } from '@/features/copy-trip/blueprint';
+import { matchActivitiesToExperiences } from '@/features/copy-trip/replayMatch.mjs';
 import TripReplayClient from './TripReplayClient';
 import SceneReplayClient from './SceneReplayClient';
 
@@ -146,6 +148,21 @@ async function getTripData(id) {
             (d.background && resolve(d.background)) ||
             dayPhotos[Math.floor(dayPhotos.length / 2)]?.url ||
             heroBg;
+
+          // Copy-trip integration: match this day's activity lines to
+          // blueprint experiences so the replay can offer "+ Add to my trip"
+          // per line (null entries get no button).
+          const blueprintDay = getTripBlueprint(album.id)?.days.find((bd) => bd.id === d.id);
+          const copyActions = blueprintDay
+            ? matchActivitiesToExperiences(d.activities || [], blueprintDay.experiences).map(
+                (experienceId) => {
+                  if (!experienceId) return null;
+                  const exp = blueprintDay.experiences.find((e) => e.id === experienceId);
+                  return { experienceId, name: exp.name };
+                }
+              )
+            : null;
+
           return {
             id: d.id,
             kind: 'day',
@@ -153,6 +170,7 @@ async function getTripData(id) {
             title: d.title,
             text: d.text,
             activities: d.activities || [],
+            copyActions,
             photos: dayPhotos,
             backgroundUrl,
             timeWindow,
