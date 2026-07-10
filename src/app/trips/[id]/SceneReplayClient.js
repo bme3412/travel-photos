@@ -553,8 +553,10 @@ export default function SceneReplayClient({ trip }) {
         )}
       </div>
 
-      {/* Steps — pulled up over the pinned stage */}
-      <div className="relative z-10 -mt-[100svh]">
+      {/* Steps — pulled up over the pinned stage. The wrapper + sections are
+          click-transparent so the chrome/controls/map beneath stay interactive;
+          only the cards (pointer-events-auto) capture clicks. */}
+      <div className="relative z-10 -mt-[100svh] pointer-events-none">
         {scenes.map((scene, i) => (
           <section
             key={scene.id}
