@@ -663,7 +663,103 @@
           "IMG_0158.jpg"
         ]
       }
-    ]
+    ],
+    "report": {
+      "dek": "Fête de la Musique weekend — my annual trip to Paris, solo.",
+      "heroBackground": "IMG_0113.jpg",
+      "facts": {
+        "dates": "June 19–21, 2026",
+        "nights": 2,
+        "party": "Solo",
+        "occasion": "Fête de la Musique",
+        "stay": "Airbnb on Rue Dauphine, Saint-Germain-des-Prés — steps from the Seine and Pont Neuf (mid-installation, rocks strung over the bridge), with two courtyards where residents read in the shade.",
+        "gettingAround": "Métro and walking; Uber to and from CDG.",
+        "weather": [
+          {
+            "day": "Fri Jun 19",
+            "hi": "95°F",
+            "lo": "71°F",
+            "note": "Hot, hazy"
+          },
+          {
+            "day": "Sat Jun 20",
+            "hi": "91°F",
+            "lo": "66°F",
+            "note": "Hot"
+          },
+          {
+            "day": "Sun Jun 21",
+            "hi": "99°F",
+            "lo": "68°F",
+            "note": "Peak heat"
+          }
+        ]
+      },
+      "days": [
+        {
+          "id": "day-1",
+          "date": "2026-06-19",
+          "kicker": "Day 1 · Friday, June 19 · 95°F",
+          "title": "Arrival, and Montmartre in the heat",
+          "text": "Landed at CDG at half past ten and Ubered straight in, dropping bags on Rue Dauphine before the heat really set in. The first afternoon was for wandering Saint-Germain, then the métro out to Gare de l’Est to walk past the apartment from a study-abroad spring in 2009. From there, up to Montmartre and the long climb to Sacré-Cœur — so hot that the steps, usually packed, sat almost empty.",
+          "activities": [
+            "Landed CDG 10:30 AM · Uber into Saint-Germain",
+            "Checked in on Rue Dauphine",
+            "Wandered Saint-Germain-des-Prés",
+            "Métro to Gare de l’Est — past the 2009 study-abroad flat",
+            "Climbed to Sacré-Cœur (steps empty in the heat)",
+            "La Maison Rose & the Montmartre vineyard",
+            "Passed the Sciences Po campus (study abroad)",
+            "Dinner at Pré aux Clercs"
+          ]
+        },
+        {
+          "id": "day-2",
+          "date": "2026-06-20",
+          "kicker": "Day 2 · Saturday, June 20 · 91°F",
+          "title": "A slow day, then the river at night",
+          "text": "A slower start with breakfast at Café de Flore, then hours of walking with no particular route — the best way to take a hot Paris Saturday. The evening was booked: a group bike tour threading the city, followed by a Bateau Mouche gliding down the Seine as the light went.",
+          "activities": [
+            "Breakfast at Café de Flore",
+            "Long, unhurried walk through the city",
+            "Evening group bike tour",
+            "Bateau Mouche cruise on the Seine"
+          ]
+        },
+        {
+          "id": "day-3",
+          "date": "2026-06-21",
+          "kicker": "Day 3 · Sunday, June 21 · 99°F · Fête de la Musique",
+          "title": "Fête de la Musique, end to end",
+          "text": "The Fête de la Musique, and the hottest day of the three at 99°F. Early to the Square du Vert-Galant at the tip of the island while it was still quiet, then along the bridges to the Tuileries and Place des Vosges. Lunch was moules-frites on Île Saint-Louis with a jazz band playing in the street, Berthillon after. Le Marais for more music, coffee at Café Bismuth, then the long walk to the Eiffel Tower, the Champs-Élysées, and up to the top of the Arc de Triomphe.",
+          "activities": [
+            "Square du Vert-Galant, early",
+            "Bridges → Tuileries → Place des Vosges",
+            "Moules-frites on Île Saint-Louis + street jazz",
+            "Berthillon ice cream",
+            "Le Marais for Fête de la Musique",
+            "Coffee at Café Bismuth",
+            "Walked Île Saint-Louis → Eiffel Tower",
+            "Champs-Élysées + up the Arc de Triomphe"
+          ]
+        }
+      ],
+      "reflections": {
+        "seed": true,
+        "background": "IMG_0122.jpg",
+        "learned": [
+          "Paris in a heatwave empties its icons — the Sacré-Cœur steps, usually mobbed, were bare.",
+          "Go early: the Square du Vert-Galant is a different place at dawn, before the crowds.",
+          "On Fête de la Musique the whole city is the stage — a street jazz band over moules-frites on Île Saint-Louis beat any concert hall.",
+          "Basing yourself on Rue Dauphine puts the Seine, Pont Neuf, and both islands within a short walk.",
+          "The apartment’s shaded courtyards — residents reading, out of the sun — were their own quiet highlight."
+        ],
+        "highlight": "Lunch on Île Saint-Louis during Fête de la Musique — moules-frites and a street jazz band; the Bateau Mouche the night before a close second.",
+        "doDifferently": null,
+        "verdict": "It’s my annual trip — so yes, every year.",
+        "rating": null
+      }
+    }
   },
   "berlin-2026": {
     "intro": "Two days in late June, all of them given to a single city. Berlin was the whole trip — no side excursions, no prologue, just Germany's capital of history and reinvention held in close focus. What made it distinctive was that undivided attention: a place that carries the Brandenburg Gate, remnants of the Wall, and a restless modern arts scene, all crowded into one short midsummer stay.",

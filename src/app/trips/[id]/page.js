@@ -8,6 +8,7 @@ import {
 } from '../../utils/fileHandler';
 import { buildTrip } from '../../utils/tripBuilder';
 import { buildMediaResolver } from '../../utils/mediaResolver';
+import { transformToCloudFront } from '../../utils/imageUtils';
 import TripReplayClient from './TripReplayClient';
 import SceneReplayClient from './SceneReplayClient';
 
@@ -45,32 +46,92 @@ async function getTripData(id) {
       });
     }
 
-    // Scene-based scrollytelling replay — opt-in per album via narrative.scenes.
-    // Photos are authored by filename substring and resolved against the album's
-    // raw photos (same resolver the journal MDX uses). Trips without scenes fall
-    // through to the map-based TripReplayClient below.
-    if (narrative?.scenes?.length) {
+    // Scene-based scroll replay. Two authoring modes, both resolved server-side
+    // into trip.scenes (an ordered list of scenes with a background + optional
+    // photo cluster). Trips with neither fall through to TripReplayClient.
+    if (narrative?.report || narrative?.scenes?.length) {
       const rawPhotos = photosData.photos.filter(
         (p) => p.albumId.toLowerCase() === album.id.toLowerCase()
       );
       const resolve = buildMediaResolver(rawPhotos, []);
-      const scenes = narrative.scenes
-        .map((scene) => {
-          const photos = (scene.photos || [])
-            .map((ref) => {
-              const url = resolve(ref);
-              if (!url) return null;
-              const raw = rawPhotos.find((p) => p.url.includes(ref));
-              return { id: raw?.id ?? ref, url, caption: raw?.caption || '' };
-            })
-            .filter(Boolean);
+      const asPhoto = (raw) => ({
+        id: raw.id,
+        url: transformToCloudFront(raw.url),
+        caption: raw.caption || '',
+      });
+
+      if (narrative.report) {
+        // Trip-report mode: a facts/overview scene, one scene per day (photos
+        // bucketed by capture date), then a reflections scene.
+        const R = narrative.report;
+        const heroBg =
+          (R.heroBackground && resolve(R.heroBackground)) ||
+          (rawPhotos[0] && transformToCloudFront(rawPhotos[0].url)) ||
+          null;
+
+        const overview = {
+          id: 'overview',
+          kicker: `Trip report · ${R.facts?.dates || trip.year}`,
+          title: 'At a glance',
+          text: R.dek || trip.intro || '',
+          facts: R.facts || null,
+          backgroundUrl: heroBg,
+          photos: [],
+        };
+
+        const dayScenes = (R.days || []).map((d) => {
+          const dayPhotos = rawPhotos.filter((p) => p.dateCreated === d.date).map(asPhoto);
           const backgroundUrl =
-            (scene.background && resolve(scene.background)) || photos[0]?.url || null;
-          return { ...scene, photos, backgroundUrl };
-        })
-        .filter((scene) => scene.backgroundUrl);
-      if (scenes.length) {
-        trip.scenes = scenes;
+            (d.background && resolve(d.background)) ||
+            dayPhotos[Math.floor(dayPhotos.length / 2)]?.url ||
+            heroBg;
+          return {
+            id: d.id,
+            kicker: d.kicker,
+            title: d.title,
+            text: d.text,
+            activities: d.activities || [],
+            photos: dayPhotos,
+            backgroundUrl,
+          };
+        });
+
+        const refl = R.reflections;
+        const reflScene = refl
+          ? {
+              id: 'reflections',
+              kicker: 'Reflections · Paris',
+              title: '5 things I learned',
+              reflections: refl,
+              backgroundUrl: (refl.background && resolve(refl.background)) || heroBg,
+              photos: [],
+            }
+          : null;
+
+        trip.scenes = [overview, ...dayScenes, ...(reflScene ? [reflScene] : [])].filter(
+          (s) => s.backgroundUrl
+        );
+        trip.report = { facts: R.facts || null, reflections: refl || null };
+      } else {
+        // Scenes mode: photos authored by filename substring.
+        trip.scenes = narrative.scenes
+          .map((scene) => {
+            const photos = (scene.photos || [])
+              .map((ref) => {
+                const url = resolve(ref);
+                if (!url) return null;
+                const raw = rawPhotos.find((p) => p.url.includes(ref));
+                return { id: raw?.id ?? ref, url, caption: raw?.caption || '' };
+              })
+              .filter(Boolean);
+            const backgroundUrl =
+              (scene.background && resolve(scene.background)) || photos[0]?.url || null;
+            return { ...scene, photos, backgroundUrl };
+          })
+          .filter((scene) => scene.backgroundUrl);
+      }
+
+      if (trip.scenes?.length) {
         trip.center = trip.stops[0]?.center || null;
       }
     }

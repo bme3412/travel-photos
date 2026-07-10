@@ -5,7 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import MapGL, { Marker } from 'react-map-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
-import { ArrowLeft, BookOpen, ChevronDown, Play } from 'lucide-react';
+import { ArrowLeft, BookOpen, ChevronDown, Images, Play } from 'lucide-react';
 import ImageLightbox from '../../components/ImageLightbox';
 
 const ACCENT = '#B4441C';
@@ -50,12 +50,87 @@ function InsetMap({ center }) {
   );
 }
 
-// The narrative card: kicker + title + prose + a grouped thumbnail cluster.
+// A trip-report facts block: dates, nights, who, where, per-day weather.
+function FactsBlock({ facts }) {
+  const Row = ({ label, children, wide }) => (
+    <div className={wide ? 'col-span-2' : ''}>
+      <dt className="text-[10px] uppercase tracking-[0.2em] text-muted">{label}</dt>
+      <dd className="mt-0.5 text-[14px] text-ink/85 leading-snug">{children}</dd>
+    </div>
+  );
+  return (
+    <dl className="mt-5 grid grid-cols-2 gap-x-5 gap-y-3">
+      {facts.dates && <Row label="Dates">{facts.dates}</Row>}
+      {facts.nights != null && <Row label="Nights">{facts.nights}</Row>}
+      {facts.party && <Row label="Who">{facts.party}</Row>}
+      {facts.occasion && <Row label="Occasion">{facts.occasion}</Row>}
+      {facts.stay && <Row label="Stayed" wide>{facts.stay}</Row>}
+      {facts.gettingAround && <Row label="Getting around" wide>{facts.gettingAround}</Row>}
+      {facts.weather?.length > 0 && (
+        <Row label="Weather" wide>
+          <span className="flex flex-wrap gap-x-4 gap-y-1">
+            {facts.weather.map((w) => (
+              <span key={w.day}>
+                <span className="text-ink/60">{w.day}</span> {w.hi}
+                <span className="text-ink/40">/{w.lo}</span>
+              </span>
+            ))}
+          </span>
+        </Row>
+      )}
+    </dl>
+  );
+}
+
+// A trip-report reflections block: numbered takeaways + highlight + verdict.
+function ReflectionsBlock({ reflections }) {
+  return (
+    <div className="mt-4">
+      <ol className="space-y-3">
+        {reflections.learned.map((t, i) => (
+          <li key={i} className="flex gap-3">
+            <span className="font-display text-2xl text-accent leading-none tabular-nums">{i + 1}</span>
+            <span className="text-[15px] text-ink/80 leading-relaxed">{t}</span>
+          </li>
+        ))}
+      </ol>
+      {reflections.highlight && (
+        <p className="mt-6 text-[15px] text-ink/80 leading-relaxed">
+          <span className="block text-[10px] uppercase tracking-[0.2em] text-muted mb-1">Highlight</span>
+          {reflections.highlight}
+        </p>
+      )}
+      {reflections.doDifferently && (
+        <p className="mt-4 text-[15px] text-ink/80 leading-relaxed">
+          <span className="block text-[10px] uppercase tracking-[0.2em] text-muted mb-1">Next time</span>
+          {reflections.doDifferently}
+        </p>
+      )}
+      {reflections.verdict && (
+        <p className="mt-4 text-[15px] text-ink/80 leading-relaxed">
+          <span className="block text-[10px] uppercase tracking-[0.2em] text-muted mb-1">Verdict</span>
+          {reflections.verdict}
+          {reflections.rating ? ` · ${'★'.repeat(reflections.rating)}${'☆'.repeat(Math.max(0, 5 - reflections.rating))}` : ''}
+        </p>
+      )}
+      {reflections.seed && (
+        <p className="mt-5 text-[11px] italic text-muted">
+          Seed reflections drawn from your notes — rewrite in your own words.
+        </p>
+      )}
+    </div>
+  );
+}
+
+// The narrative card: kicker + title + prose, plus any trip-report blocks
+// (facts / day activities / reflections) and a grouped thumbnail cluster.
 function SceneCard({ scene, sceneIndex, onOpen }) {
+  const photos = scene.photos || [];
   return (
     <article
       className="max-w-md w-full sm:ml-4 lg:ml-14 rounded-2xl bg-paper/95 text-ink
-                 backdrop-blur-sm shadow-xl ring-1 ring-ink/5 p-6 sm:p-7"
+                 backdrop-blur-sm shadow-xl ring-1 ring-ink/5 p-6 sm:p-7
+                 max-h-[82svh] overflow-y-auto [scrollbar-width:thin]"
     >
       {scene.kicker && (
         <p className="text-[11px] uppercase tracking-[0.3em] text-accent mb-2">{scene.kicker}</p>
@@ -63,11 +138,28 @@ function SceneCard({ scene, sceneIndex, onOpen }) {
       <h2 className="font-display text-2xl sm:text-3xl tracking-tight leading-tight">
         {scene.title}
       </h2>
-      <p className="mt-3 text-[15px] leading-relaxed text-ink/80">{scene.text}</p>
+      {scene.text && (
+        <p className="mt-3 text-[15px] leading-relaxed text-ink/80">{scene.text}</p>
+      )}
 
-      {scene.photos.length > 0 && (
+      {scene.facts && <FactsBlock facts={scene.facts} />}
+
+      {scene.activities?.length > 0 && (
+        <ul className="mt-5 space-y-2">
+          {scene.activities.map((a, i) => (
+            <li key={i} className="flex gap-2.5 text-[15px] text-ink/80 leading-snug">
+              <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
+              <span>{a}</span>
+            </li>
+          ))}
+        </ul>
+      )}
+
+      {scene.reflections && <ReflectionsBlock reflections={scene.reflections} />}
+
+      {photos.length > 0 && (
         <div className="mt-5 grid grid-cols-3 gap-2">
-          {scene.photos.slice(0, 6).map((photo, pi) => (
+          {photos.slice(0, 6).map((photo, pi) => (
             <button
               key={photo.id}
               onClick={() => onOpen(sceneIndex, pi)}
@@ -131,15 +223,21 @@ export default function SceneReplayClient({ trip }) {
   );
 
   const TopChrome = (
-    <div className="max-w-5xl mx-auto flex items-center justify-between px-5 sm:px-6 pt-5">
-      <Link href={`/albums/${trip.id}`} className={PILL}>
+    <div className="max-w-5xl mx-auto flex items-center justify-between gap-3 px-5 sm:px-6 pt-5">
+      <Link href="/trips" className={PILL} aria-label="Back to all trip replays">
         <ArrowLeft className="h-3.5 w-3.5" />
-        Album
+        Trip Replays
       </Link>
-      <Link href={`/journal/${trip.id}`} className={PILL}>
-        <BookOpen className="h-3.5 w-3.5" />
-        Read the dispatch
-      </Link>
+      <div className="flex items-center gap-2 sm:gap-3">
+        <Link href={`/albums/${trip.id}`} className={PILL} aria-label="Browse all photographs">
+          <Images className="h-3.5 w-3.5" />
+          <span className="hidden sm:inline">All photos</span>
+        </Link>
+        <Link href={`/journal/${trip.id}`} className={PILL} aria-label="Read the written dispatch">
+          <BookOpen className="h-3.5 w-3.5" />
+          <span className="hidden sm:inline">Read the dispatch</span>
+        </Link>
+      </div>
     </div>
   );
 
