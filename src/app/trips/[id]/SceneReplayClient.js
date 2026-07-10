@@ -7,6 +7,7 @@ import MapGL, { Marker, Source, Layer } from 'react-map-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import { ArrowLeft, BookOpen, ChevronLeft, ChevronRight, Clock, Route } from 'lucide-react';
 import ImageLightbox from '../../components/ImageLightbox';
+import TripViewSwitcher from '../../components/TripViewSwitcher';
 
 const ACCENT = '#B4441C';
 const MAP_STYLE = 'mapbox://styles/mapbox/streets-v12';
@@ -361,12 +362,7 @@ export default function SceneReplayClient({ trip }) {
     if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }, []);
 
-  // Per-trip views. Global sections (Map, Photo of the Day) live in the header.
-  const TABS = [
-    { label: 'Replay', href: `/trips/${trip.id}`, active: true },
-    { label: 'Story', href: `/journal/${trip.id}` },
-    { label: 'Photos', href: `/albums/${trip.id}` },
-  ];
+  // Per-trip views live in the shared switcher; global sections stay in the header.
   const TopChrome = (
     <div className="max-w-5xl mx-auto flex items-center justify-between gap-3 px-5 sm:px-6 pt-5">
       <div className="flex items-center gap-3">
@@ -379,23 +375,7 @@ export default function SceneReplayClient({ trip }) {
           {title} · {trip.year}
         </span>
       </div>
-      <nav className="pointer-events-auto inline-flex items-center rounded-full bg-paper/90 p-1 text-[11px] uppercase tracking-[0.18em] shadow-sm backdrop-blur-sm">
-        {TABS.map((t) =>
-          t.active ? (
-            <span key={t.label} className="rounded-full bg-ink px-3.5 py-1.5 text-paper">
-              {t.label}
-            </span>
-          ) : (
-            <Link
-              key={t.label}
-              href={t.href}
-              className="rounded-full px-3.5 py-1.5 text-ink/60 transition-colors hover:text-ink"
-            >
-              {t.label}
-            </Link>
-          )
-        )}
-      </nav>
+      <TripViewSwitcher tripId={trip.id} active="replay" />
     </div>
   );
 

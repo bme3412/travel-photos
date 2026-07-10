@@ -8,6 +8,7 @@ import { ArrowLeft, Camera, Play, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 import { transformToCloudFront } from '../../utils/imageUtils';
 import { bestPhoto } from '../../utils/photoRanking';
+import TripViewSwitcher from '../../components/TripViewSwitcher';
 
 // Lazy load the AlbumMap component
 const AlbumMap = React.lazy(() => import('../../components/AlbumMap'));
@@ -116,14 +117,17 @@ export default function AlbumPageClient({ initialAlbum }) {
       {/* Album masthead */}
       <div className="border-b border-ink/10">
         <div className="max-w-7xl mx-auto px-6 pt-10 pb-8">
-          <Link
-            href="/"
-            className="group inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.2em] text-muted
-                       hover:text-ink transition-colors duration-200 mb-5"
-          >
-            <ArrowLeft className="h-3.5 w-3.5 transition-transform duration-300 group-hover:-translate-x-1" />
-            The collection
-          </Link>
+          <div className="mb-5 flex items-center justify-between gap-3">
+            <Link
+              href="/"
+              className="group inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.2em] text-muted
+                         hover:text-ink transition-colors duration-200"
+            >
+              <ArrowLeft className="h-3.5 w-3.5 transition-transform duration-300 group-hover:-translate-x-1" />
+              The collection
+            </Link>
+            <TripViewSwitcher tripId={currentAlbum.id} active="photos" variant="light" />
+          </div>
 
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
             <div>

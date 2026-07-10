@@ -17,6 +17,7 @@ import { buildMediaResolver } from '../../utils/mediaResolver';
 import { getJournalPost } from '../../utils/journalContent';
 import { createMdxComponents } from '../mdxComponents';
 import PostGallery from './PostGallery';
+import TripViewSwitcher from '../../components/TripViewSwitcher';
 
 // A trip's "dispatch" reads from content/journal/[id].mdx when the author has
 // written one; otherwise it's assembled from the trip narrative + photos. Both
@@ -146,7 +147,7 @@ function PostHero({ cover, flag, kickerParts, title, tripId, metaLine }) {
       <div className="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/45 to-ink/20" />
 
       <div className="absolute top-0 inset-x-0">
-        <div className="max-w-5xl mx-auto px-6 pt-6">
+        <div className="max-w-5xl mx-auto flex items-center justify-between gap-3 px-6 pt-6">
           <Link
             href="/"
             className="group inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.2em] text-paper/80
@@ -155,6 +156,7 @@ function PostHero({ cover, flag, kickerParts, title, tripId, metaLine }) {
             <ArrowLeft className="h-3.5 w-3.5 transition-transform duration-300 group-hover:-translate-x-1" />
             The journal
           </Link>
+          <TripViewSwitcher tripId={tripId} active="story" />
         </div>
       </div>
 

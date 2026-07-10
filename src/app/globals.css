@@ -34,6 +34,24 @@
 .fade-up-2 { animation-delay: 0.24s; }
 .fade-up-3 { animation-delay: 0.36s; }
 
+/* Route-transition fade: applied by segment template.js wrappers, which
+   remount per navigation. Opacity only — a transform here would change the
+   containing block under the replay's sticky stage and Mapbox inset. */
+@keyframes page-enter {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.page-enter {
+  animation: page-enter 0.3s ease-out both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-enter {
+    animation: none;
+  }
+}
+
 /* Background map pattern */
 .bg-world-map {
   position: relative;
