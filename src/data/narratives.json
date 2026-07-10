@@ -672,7 +672,7 @@
         "nights": 2,
         "party": "Solo",
         "occasion": "Fête de la Musique",
-        "stay": "Airbnb on Rue Dauphine, Saint-Germain-des-Prés — steps from the Seine and Pont Neuf (mid-installation, rocks strung over the bridge), with two courtyards where residents read in the shade.",
+        "stay": "Rue Dauphine, Saint-Germain-des-Prés",
         "gettingAround": "Métro and walking; Uber to and from CDG.",
         "weather": [
           {
@@ -693,7 +693,8 @@
             "lo": "68°F",
             "note": "Peak heat"
           }
-        ]
+        ],
+        "stayNote": "A quiet courtyard apartment, steps from Pont Neuf."
       },
       "days": [
         {

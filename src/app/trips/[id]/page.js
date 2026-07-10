@@ -73,6 +73,7 @@ async function getTripData(id) {
 
         const overview = {
           id: 'overview',
+          kind: 'overview',
           kicker: `Trip report · ${R.facts?.dates || trip.year}`,
           title: 'At a glance',
           text: R.dek || trip.intro || '',
@@ -147,6 +148,7 @@ async function getTripData(id) {
             heroBg;
           return {
             id: d.id,
+            kind: 'day',
             kicker: d.kicker,
             title: d.title,
             text: d.text,
@@ -165,6 +167,7 @@ async function getTripData(id) {
         const reflScene = refl
           ? {
               id: 'reflections',
+              kind: 'reflections',
               kicker: 'Reflections · Paris',
               title: '5 things I learned',
               reflections: refl,

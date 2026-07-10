@@ -5,7 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import MapGL, { Marker, Source, Layer } from 'react-map-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
-import { ArrowLeft, BookOpen, ChevronDown, Clock, Images, Play, Route } from 'lucide-react';
+import { ArrowLeft, BookOpen, ChevronLeft, ChevronRight, Clock, Route } from 'lucide-react';
 import ImageLightbox from '../../components/ImageLightbox';
 
 const ACCENT = '#B4441C';
@@ -125,7 +125,14 @@ function FactsBlock({ facts }) {
       {facts.nights != null && <Row label="Nights">{facts.nights}</Row>}
       {facts.party && <Row label="Who">{facts.party}</Row>}
       {facts.occasion && <Row label="Occasion">{facts.occasion}</Row>}
-      {facts.stay && <Row label="Stayed" wide>{facts.stay}</Row>}
+      {facts.stay && (
+        <Row label="Stayed" wide>
+          {facts.stay}
+          {facts.stayNote && (
+            <span className="mt-0.5 block text-[13px] text-ink/55">{facts.stayNote}</span>
+          )}
+        </Row>
+      )}
       {facts.gettingAround && <Row label="Getting around" wide>{facts.gettingAround}</Row>}
       {facts.weather?.length > 0 && (
         <Row label="Weather" wide>
@@ -187,9 +194,30 @@ function ReflectionsBlock({ reflections }) {
 // (facts / day activities / reflections) and a grouped thumbnail cluster.
 function SceneCard({ scene, sceneIndex, onOpen }) {
   const photos = scene.photos || [];
+  const cardRef = useRef(null);
+  const [moreBelow, setMoreBelow] = useState(false);
+
+  useEffect(() => {
+    const el = cardRef.current;
+    if (!el) return undefined;
+    const check = () =>
+      setMoreBelow(
+        el.scrollHeight - el.clientHeight > 12 &&
+          el.scrollTop < el.scrollHeight - el.clientHeight - 12
+      );
+    check();
+    el.addEventListener('scroll', check, { passive: true });
+    window.addEventListener('resize', check);
+    return () => {
+      el.removeEventListener('scroll', check);
+      window.removeEventListener('resize', check);
+    };
+  }, []);
+
   return (
     <article
-      className="max-w-md w-full sm:ml-4 lg:ml-14 rounded-2xl bg-paper/95 text-ink
+      ref={cardRef}
+      className="relative max-w-md w-full sm:ml-4 lg:ml-14 rounded-2xl bg-paper/95 text-ink
                  backdrop-blur-sm shadow-xl ring-1 ring-ink/5 p-6 sm:p-7
                  max-h-[82svh] overflow-y-auto [scrollbar-width:thin]"
     >
@@ -271,6 +299,16 @@ function SceneCard({ scene, sceneIndex, onOpen }) {
           ))}
         </div>
       )}
+
+      {moreBelow && (
+        <div className="sticky bottom-0 -mx-6 -mb-6 mt-3 sm:-mx-7 sm:-mb-7 pointer-events-none">
+          <div className="flex h-9 items-end justify-center rounded-b-2xl bg-gradient-to-t from-paper via-paper/90 to-transparent">
+            <span className="mb-1.5 text-[10px] uppercase tracking-[0.2em] text-ink/45">
+              Scroll for more ↓
+            </span>
+          </div>
+        </div>
+      )}
     </article>
   );
 }
@@ -313,22 +351,53 @@ export default function SceneReplayClient({ trip }) {
     [lightboxPhotos.length]
   );
 
+  const dayScenes = scenes.filter((s) => s.kind === 'day');
+  const chapterLabel = (() => {
+    const s = scenes[activeScene];
+    if (!s) return '';
+    if (s.kind === 'day') {
+      const idx = dayScenes.findIndex((d) => d.id === s.id);
+      return `Day ${idx + 1} of ${dayScenes.length}`;
+    }
+    if (s.kind === 'reflections') return 'Reflections';
+    if (s.kind === 'overview') return 'Overview';
+    return `${activeScene + 1} / ${scenes.length}`;
+  })();
+
+  const goToScene = useCallback((i) => {
+    const el = sectionRefs.current[i];
+    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }, []);
+
+  // Per-trip views. Global sections (Map, Photo of the Day) live in the header.
+  const TABS = [
+    { label: 'Replay', href: `/trips/${trip.id}`, active: true },
+    { label: 'Story', href: `/journal/${trip.id}` },
+    { label: 'Photos', href: `/albums/${trip.id}` },
+  ];
   const TopChrome = (
     <div className="max-w-5xl mx-auto flex items-center justify-between gap-3 px-5 sm:px-6 pt-5">
       <Link href="/trips" className={PILL} aria-label="Back to all trip replays">
         <ArrowLeft className="h-3.5 w-3.5" />
-        Trip Replays
+        <span className="hidden sm:inline">Trips</span>
       </Link>
-      <div className="flex items-center gap-2 sm:gap-3">
-        <Link href={`/albums/${trip.id}`} className={PILL} aria-label="Browse all photographs">
-          <Images className="h-3.5 w-3.5" />
-          <span className="hidden sm:inline">All photos</span>
-        </Link>
-        <Link href={`/journal/${trip.id}`} className={PILL} aria-label="Read the written dispatch">
-          <BookOpen className="h-3.5 w-3.5" />
-          <span className="hidden sm:inline">Read the dispatch</span>
-        </Link>
-      </div>
+      <nav className="pointer-events-auto inline-flex items-center rounded-full bg-paper/90 p-1 text-[11px] uppercase tracking-[0.18em] shadow-sm backdrop-blur-sm">
+        {TABS.map((t) =>
+          t.active ? (
+            <span key={t.label} className="rounded-full bg-ink px-3.5 py-1.5 text-paper">
+              {t.label}
+            </span>
+          ) : (
+            <Link
+              key={t.label}
+              href={t.href}
+              className="rounded-full px-3.5 py-1.5 text-ink/60 transition-colors hover:text-ink"
+            >
+              {t.label}
+            </Link>
+          )
+        )}
+      </nav>
     </div>
   );
 
@@ -448,15 +517,29 @@ export default function SceneReplayClient({ trip }) {
           <p className="mt-1 font-display text-2xl sm:text-3xl text-paper/95 tracking-tight">{title}</p>
         </div>
 
-        {/* Scroll hint on the first scene */}
-        <div
-          className={`absolute bottom-5 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center
-                      text-paper/70 transition-opacity duration-500 pointer-events-none ${
-                        activeScene === 0 ? 'opacity-100' : 'opacity-0'
-                      }`}
-        >
-          <span className="text-[10px] uppercase tracking-[0.3em]">Scroll</span>
-          <ChevronDown className="h-4 w-4 animate-bounce" />
+        {/* Chapter indicator + prev/next — one explicit control (native scroll) */}
+        <div className="absolute bottom-5 left-1/2 z-20 flex -translate-x-1/2 items-center gap-1 rounded-full bg-ink/55 px-1.5 py-1 backdrop-blur-sm pointer-events-auto">
+          <button
+            type="button"
+            onClick={() => goToScene(activeScene - 1)}
+            disabled={activeScene === 0}
+            aria-label="Previous chapter"
+            className="grid h-7 w-7 place-items-center rounded-full text-paper/90 transition-colors hover:bg-paper/15 disabled:opacity-30 disabled:hover:bg-transparent"
+          >
+            <ChevronLeft className="h-4 w-4" />
+          </button>
+          <span className="min-w-[92px] px-1 text-center text-[11px] uppercase tracking-[0.2em] text-paper/90">
+            {chapterLabel}
+          </span>
+          <button
+            type="button"
+            onClick={() => goToScene(activeScene + 1)}
+            disabled={activeScene === scenes.length - 1}
+            aria-label="Next chapter"
+            className="grid h-7 w-7 place-items-center rounded-full text-paper/90 transition-colors hover:bg-paper/15 disabled:opacity-30 disabled:hover:bg-transparent"
+          >
+            <ChevronRight className="h-4 w-4" />
+          </button>
         </div>
 
         {/* Inset locator map */}
