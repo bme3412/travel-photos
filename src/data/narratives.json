@@ -717,30 +717,29 @@
           "id": "day-2",
           "date": "2026-06-20",
           "kicker": "Day 2 · Saturday, June 20 · 91°F",
-          "title": "A slow day, then the river at night",
-          "text": "A slower start with breakfast at Café de Flore, then hours of walking with no particular route — the best way to take a hot Paris Saturday. The evening was booked: a group bike tour threading the city, followed by a Bateau Mouche gliding down the Seine as the light went.",
+          "title": "Islands by day, the lit-up river by night",
+          "text": "The long day. Breakfast at Café de Flore, then the afternoon on Île Saint-Louis — moules-frites with a street jazz band, and Berthillon after. In the evening a group bike tour and a Bateau Mouche down the Seine, gliding past the Tuileries, the Eiffel Tower, and Pont Neuf as the city lit up — the last frame at the Eiffel just before half past ten.",
           "activities": [
             "Breakfast at Café de Flore",
-            "Long, unhurried walk through the city",
+            "Île Saint-Louis — moules-frites + street jazz",
+            "Berthillon ice cream",
             "Evening group bike tour",
-            "Bateau Mouche cruise on the Seine"
+            "Bateau Mouche down the Seine",
+            "Past the Tuileries, Eiffel Tower & Pont Neuf by night"
           ]
         },
         {
           "id": "day-3",
           "date": "2026-06-21",
           "kicker": "Day 3 · Sunday, June 21 · 99°F · Fête de la Musique",
-          "title": "Fête de la Musique, end to end",
-          "text": "The Fête de la Musique, and the hottest day of the three at 99°F. Early to the Square du Vert-Galant at the tip of the island while it was still quiet, then along the bridges to the Tuileries and Place des Vosges. Lunch was moules-frites on Île Saint-Louis with a jazz band playing in the street, Berthillon after. Le Marais for more music, coffee at Café Bismuth, then the long walk to the Eiffel Tower, the Champs-Élysées, and up to the top of the Arc de Triomphe.",
+          "title": "Vert-Galant at dawn, the Arc, and the Fête",
+          "text": "Sunday, the Fête de la Musique, and the hottest day at 99°F. Early to the Square du Vert-Galant at the tip of the island while it was still quiet, then west to the Arc de Triomphe and the Champs-Élysées by late morning. Le Marais for the street music, a coffee back at Café Bismuth in Saint-Germain, and a last walk through the quarter before heading out mid-afternoon.",
           "activities": [
             "Square du Vert-Galant, early",
-            "Bridges → Tuileries → Place des Vosges",
-            "Moules-frites on Île Saint-Louis + street jazz",
-            "Berthillon ice cream",
+            "Up the Arc de Triomphe + Champs-Élysées",
             "Le Marais for Fête de la Musique",
             "Coffee at Café Bismuth",
-            "Walked Île Saint-Louis → Eiffel Tower",
-            "Champs-Élysées + up the Arc de Triomphe"
+            "A last walk through Saint-Germain"
           ]
         }
       ],
@@ -750,11 +749,11 @@
         "learned": [
           "Paris in a heatwave empties its icons — the Sacré-Cœur steps, usually mobbed, were bare.",
           "Go early: the Square du Vert-Galant is a different place at dawn, before the crowds.",
-          "On Fête de la Musique the whole city is the stage — a street jazz band over moules-frites on Île Saint-Louis beat any concert hall.",
+          "A street jazz band over moules-frites on Île Saint-Louis beat any concert hall.",
           "Basing yourself on Rue Dauphine puts the Seine, Pont Neuf, and both islands within a short walk.",
           "The apartment’s shaded courtyards — residents reading, out of the sun — were their own quiet highlight."
         ],
-        "highlight": "Lunch on Île Saint-Louis during Fête de la Musique — moules-frites and a street jazz band; the Bateau Mouche the night before a close second.",
+        "highlight": "Moules-frites and a street jazz band on Île Saint-Louis; the night bike tour and Bateau Mouche down a lit-up Seine a close second.",
         "doDifferently": null,
         "verdict": "It’s my annual trip — so yes, every year.",
         "rating": null

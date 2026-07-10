@@ -5,7 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import MapGL, { Marker } from 'react-map-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
-import { ArrowLeft, BookOpen, ChevronDown, Images, Play } from 'lucide-react';
+import { ArrowLeft, BookOpen, ChevronDown, Clock, Images, Play, Route } from 'lucide-react';
 import ImageLightbox from '../../components/ImageLightbox';
 
 const ACCENT = '#B4441C';
@@ -138,6 +138,23 @@ function SceneCard({ scene, sceneIndex, onOpen }) {
       <h2 className="font-display text-2xl sm:text-3xl tracking-tight leading-tight">
         {scene.title}
       </h2>
+
+      {(scene.timeWindow || scene.distanceKm != null) && (
+        <p className="mt-2 flex flex-wrap items-center gap-x-4 gap-y-1 text-[11px] uppercase tracking-[0.18em] text-muted">
+          {scene.timeWindow && (
+            <span className="inline-flex items-center gap-1.5">
+              <Clock className="h-3 w-3" />
+              {scene.timeWindow}
+            </span>
+          )}
+          {scene.distanceKm != null && (
+            <span className="inline-flex items-center gap-1.5" title="Distance traced between photo points (includes any transit)">
+              <Route className="h-3 w-3" />~{scene.distanceKm} km
+            </span>
+          )}
+        </p>
+      )}
+
       {scene.text && (
         <p className="mt-3 text-[15px] leading-relaxed text-ink/80">{scene.text}</p>
       )}

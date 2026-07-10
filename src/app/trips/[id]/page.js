@@ -9,6 +9,7 @@ import {
 import { buildTrip } from '../../utils/tripBuilder';
 import { buildMediaResolver } from '../../utils/mediaResolver';
 import { transformToCloudFront } from '../../utils/imageUtils';
+import { haversineKm } from '../../utils/geo';
 import TripReplayClient from './TripReplayClient';
 import SceneReplayClient from './SceneReplayClient';
 
@@ -79,8 +80,33 @@ async function getTripData(id) {
           photos: [],
         };
 
+        // Bucket by recovered local capture date (falls back to the flattened
+        // dateCreated), and order each day by real capture time.
+        const localDate = (p) => (p.takenAt ? p.takenAt.slice(0, 10) : p.dateCreated);
+        const fmtTime = (iso) => {
+          const m = /T(\d{2}):(\d{2})/.exec(iso || '');
+          if (!m) return null;
+          let h = +m[1];
+          const ap = h >= 12 ? 'PM' : 'AM';
+          h = h % 12 || 12;
+          return `${h}:${m[2]} ${ap}`;
+        };
         const dayScenes = (R.days || []).map((d) => {
-          const dayPhotos = rawPhotos.filter((p) => p.dateCreated === d.date).map(asPhoto);
+          const dayRaw = rawPhotos
+            .filter((p) => localDate(p) === d.date)
+            .sort((a, b) => (a.takenAt || '').localeCompare(b.takenAt || ''));
+          const dayPhotos = dayRaw.map(asPhoto);
+
+          // Ambient context recovered from EXIF: the day's active window and the
+          // distance traced between photo points (a floor, not true steps).
+          const times = dayRaw.map((p) => p.takenAt).filter(Boolean);
+          const timeWindow =
+            times.length > 1 ? `${fmtTime(times[0])} – ${fmtTime(times[times.length - 1])}` : null;
+          const gpsPts = dayRaw.map((p) => p.gps).filter(Boolean);
+          let km = 0;
+          for (let i = 1; i < gpsPts.length; i += 1) km += haversineKm(gpsPts[i - 1], gpsPts[i]);
+          const distanceKm = gpsPts.length > 1 ? Math.round(km * 10) / 10 : null;
+
           const backgroundUrl =
             (d.background && resolve(d.background)) ||
             dayPhotos[Math.floor(dayPhotos.length / 2)]?.url ||
@@ -93,6 +119,8 @@ async function getTripData(id) {
             activities: d.activities || [],
             photos: dayPhotos,
             backgroundUrl,
+            timeWindow,
+            distanceKm,
           };
         });
 
