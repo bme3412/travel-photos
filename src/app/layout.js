@@ -21,7 +21,7 @@ export const metadata = {
 };
 
 const NAV_LINKS = [
-  { href: '/', label: 'Albums' },
+  { href: '/trips', label: 'Trip Replays' },
   { href: '/map', label: 'Map' },
   { href: '/photo-of-the-day', label: 'Photo of the Day' },
 ];
