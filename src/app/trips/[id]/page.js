@@ -121,6 +121,7 @@ async function getTripData(id) {
             backgroundUrl,
             timeWindow,
             distanceKm,
+            route: gpsPts, // ordered {lat,lng} for the day's path on the inset map
           };
         });
 

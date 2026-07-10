@@ -3,7 +3,7 @@
 import { useState, useRef, useEffect, useCallback } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import MapGL, { Marker } from 'react-map-gl';
+import MapGL, { Marker, Source, Layer } from 'react-map-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import { ArrowLeft, BookOpen, ChevronDown, Clock, Images, Play, Route } from 'lucide-react';
 import ImageLightbox from '../../components/ImageLightbox';
@@ -25,11 +25,50 @@ const PILL =
   'text-[11px] uppercase tracking-[0.2em] text-ink backdrop-blur-sm ' +
   'border border-transparent hover:border-accent transition-colors duration-200';
 
-// A fixed "you are here" map — non-interactive, framing the city.
-function InsetMap({ center }) {
+// Non-interactive inset map. On day scenes it draws that day's actual GPS path
+// (start → end) and fits to it; otherwise it frames the city.
+function InsetMap({ center, route }) {
+  const mapRef = useRef(null);
+  const [loaded, setLoaded] = useState(false);
+  const reducedRef = useRef(false);
+
+  useEffect(() => {
+    reducedRef.current = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  }, []);
+
+  // Refit whenever the active day's route changes (or the map finishes loading).
+  useEffect(() => {
+    const map = mapRef.current;
+    const pts = route || [];
+    if (!map || !loaded || pts.length === 0) return;
+    const duration = reducedRef.current ? 0 : 900;
+    if (pts.length === 1) {
+      map.flyTo({ center: [pts[0].lng, pts[0].lat], zoom: 13, duration });
+      return;
+    }
+    let minLng = Infinity, minLat = Infinity, maxLng = -Infinity, maxLat = -Infinity;
+    for (const p of pts) {
+      minLng = Math.min(minLng, p.lng);
+      maxLng = Math.max(maxLng, p.lng);
+      minLat = Math.min(minLat, p.lat);
+      maxLat = Math.max(maxLat, p.lat);
+    }
+    map.fitBounds([[minLng, minLat], [maxLng, maxLat]], { padding: 22, maxZoom: 14, duration });
+  }, [route, loaded]);
+
   if (!MAPBOX_TOKEN || !center) return null;
+
+  const hasRoute = route && route.length > 1;
+  const lineData = hasRoute
+    ? { type: 'Feature', geometry: { type: 'LineString', coordinates: route.map((p) => [p.lng, p.lat]) } }
+    : null;
+  const start = route && route.length ? route[0] : null;
+  const end = hasRoute ? route[route.length - 1] : null;
+
   return (
     <MapGL
+      ref={mapRef}
+      onLoad={() => setLoaded(true)}
       initialViewState={{ latitude: center.lat, longitude: center.lng, zoom: 11 }}
       style={{ width: '100%', height: '100%' }}
       mapStyle={MAP_STYLE}
@@ -43,9 +82,31 @@ function InsetMap({ center }) {
       touchZoomRotate={false}
       maxPitch={0}
     >
-      <Marker longitude={center.lng} latitude={center.lat} anchor="center">
-        <span className="block h-3 w-3 rounded-full bg-accent ring-4 ring-accent/30 shadow" />
-      </Marker>
+      {lineData && (
+        <Source id="day-route" type="geojson" data={lineData}>
+          <Layer
+            id="day-route-line"
+            type="line"
+            layout={{ 'line-cap': 'round', 'line-join': 'round' }}
+            paint={{ 'line-color': ACCENT, 'line-width': 2.5, 'line-opacity': 0.9 }}
+          />
+        </Source>
+      )}
+      {start && (
+        <Marker longitude={start.lng} latitude={start.lat} anchor="center">
+          <span className="block h-2 w-2 rounded-full bg-paper ring-2 ring-accent shadow" />
+        </Marker>
+      )}
+      {end && (
+        <Marker longitude={end.lng} latitude={end.lat} anchor="center">
+          <span className="block h-2.5 w-2.5 rounded-full bg-accent ring-2 ring-paper shadow" />
+        </Marker>
+      )}
+      {!route?.length && (
+        <Marker longitude={center.lng} latitude={center.lat} anchor="center">
+          <span className="block h-3 w-3 rounded-full bg-accent ring-4 ring-accent/30 shadow" />
+        </Marker>
+      )}
     </MapGL>
   );
 }
@@ -389,7 +450,7 @@ export default function SceneReplayClient({ trip }) {
             className="absolute bottom-4 right-4 z-20 hidden sm:block h-32 w-44 lg:h-40 lg:w-56
                        rounded-xl overflow-hidden border border-paper/20 shadow-lg bg-ink/40"
           >
-            <InsetMap center={trip.center} />
+            <InsetMap center={trip.center} route={scenes[activeScene]?.route} />
           </div>
         )}
       </div>
