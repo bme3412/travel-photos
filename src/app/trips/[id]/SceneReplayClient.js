@@ -191,35 +191,14 @@ function ReflectionsBlock({ reflections }) {
 }
 
 // The narrative card: kicker + title + prose, plus any trip-report blocks
-// (facts / day activities / reflections) and a grouped thumbnail cluster.
-function SceneCard({ scene, sceneIndex, onOpen }) {
-  const photos = scene.photos || [];
-  const cardRef = useRef(null);
-  const [moreBelow, setMoreBelow] = useState(false);
-
-  useEffect(() => {
-    const el = cardRef.current;
-    if (!el) return undefined;
-    const check = () =>
-      setMoreBelow(
-        el.scrollHeight - el.clientHeight > 12 &&
-          el.scrollTop < el.scrollHeight - el.clientHeight - 12
-      );
-    check();
-    el.addEventListener('scroll', check, { passive: true });
-    window.addEventListener('resize', check);
-    return () => {
-      el.removeEventListener('scroll', check);
-      window.removeEventListener('resize', check);
-    };
-  }, []);
-
+// (facts / day activities / reflections). Text only and sized to fit the
+// viewport — photos live in the PhotoStrip below, never scrolled inside.
+function SceneCard({ scene }) {
   return (
     <article
-      ref={cardRef}
-      className="pointer-events-auto relative max-w-md w-full sm:max-w-lg sm:ml-4 lg:ml-14
+      className="pointer-events-auto relative max-w-md w-full sm:max-w-lg
                  rounded-2xl bg-paper/95 text-ink backdrop-blur-sm shadow-xl ring-1 ring-ink/5
-                 p-6 sm:p-7 max-h-[82svh] overflow-y-auto [scrollbar-width:thin]"
+                 p-6 sm:p-7"
     >
       {scene.kicker && (
         <p className="text-[11px] uppercase tracking-[0.3em] text-accent mb-2">{scene.kicker}</p>
@@ -275,41 +254,54 @@ function SceneCard({ scene, sceneIndex, onOpen }) {
       )}
 
       {scene.reflections && <ReflectionsBlock reflections={scene.reflections} />}
-
-      {photos.length > 0 && (
-        <div className="mt-5 grid grid-cols-3 gap-2">
-          {photos.slice(0, 6).map((photo, pi) => (
-            <button
-              key={photo.id}
-              onClick={() => onOpen(sceneIndex, pi)}
-              aria-label={photo.caption || `Photograph ${pi + 1}`}
-              className="group relative aspect-square overflow-hidden rounded-lg bg-ink/10
-                         focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
-            >
-              <Image
-                src={photo.url}
-                alt={photo.caption || scene.title}
-                fill
-                sizes="120px"
-                quality={60}
-                loading={sceneIndex === 0 ? 'eager' : 'lazy'}
-                className="object-cover transition-transform duration-500 group-hover:scale-105"
-              />
-            </button>
-          ))}
-        </div>
-      )}
-
-      {moreBelow && (
-        <div className="sticky bottom-0 -mx-6 -mb-6 mt-3 sm:-mx-7 sm:-mb-7 pointer-events-none">
-          <div className="flex h-9 items-end justify-center rounded-b-2xl bg-gradient-to-t from-paper via-paper/90 to-transparent">
-            <span className="mb-1.5 text-[10px] uppercase tracking-[0.2em] text-ink/45">
-              Scroll for more ↓
-            </span>
-          </div>
-        </div>
-      )}
     </article>
+  );
+}
+
+// The scene's photographs as a row of large tiles beneath the card — fixed
+// count (no scrolling), with a final tile opening the full set in the lightbox.
+function PhotoStrip({ scene, sceneIndex, onOpen }) {
+  const photos = scene.photos || [];
+  if (!photos.length) return null;
+  const shown = photos.slice(0, 5);
+  const rest = photos.length - shown.length;
+  return (
+    <div className="pointer-events-auto flex items-center gap-2">
+      {shown.map((photo, pi) => (
+        <button
+          key={photo.id}
+          onClick={() => onOpen(sceneIndex, pi)}
+          aria-label={photo.caption || `Photograph ${pi + 1}`}
+          className={`group relative h-20 w-28 sm:h-24 sm:w-32 lg:h-28 lg:w-40 shrink-0
+                     overflow-hidden rounded-lg ring-1 ring-paper/25 shadow-lg bg-ink/40
+                     focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent
+                     ${pi >= 3 ? 'hidden sm:block' : ''}`}
+        >
+          <Image
+            src={photo.url}
+            alt={photo.caption || scene.title}
+            fill
+            sizes="160px"
+            quality={65}
+            loading={sceneIndex === 0 ? 'eager' : 'lazy'}
+            className="object-cover transition-transform duration-500 group-hover:scale-105"
+          />
+        </button>
+      ))}
+      {rest > 0 && (
+        <button
+          onClick={() => onOpen(sceneIndex, 0)}
+          aria-label={`View all ${photos.length} photographs from this day`}
+          className="grid h-20 sm:h-24 lg:h-28 w-20 shrink-0 place-items-center rounded-lg
+                     bg-ink/55 ring-1 ring-paper/25 backdrop-blur-sm text-paper/90
+                     text-[11px] uppercase tracking-[0.15em] leading-tight
+                     transition-colors hover:bg-accent focus-visible:outline-none
+                     focus-visible:ring-2 focus-visible:ring-accent"
+        >
+          All {photos.length}
+        </button>
+      )}
+    </div>
   );
 }
 
@@ -377,10 +369,16 @@ export default function SceneReplayClient({ trip }) {
   ];
   const TopChrome = (
     <div className="max-w-5xl mx-auto flex items-center justify-between gap-3 px-5 sm:px-6 pt-5">
-      <Link href="/trips" className={PILL} aria-label="Back to all trip replays">
-        <ArrowLeft className="h-3.5 w-3.5" />
-        <span className="hidden sm:inline">Trips</span>
-      </Link>
+      <div className="flex items-center gap-3">
+        <Link href="/trips" className={PILL} aria-label="Back to all trip replays">
+          <ArrowLeft className="h-3.5 w-3.5" />
+          <span className="hidden sm:inline">Trips</span>
+        </Link>
+        <span className="hidden md:inline text-[11px] uppercase tracking-[0.25em] text-paper/85 drop-shadow">
+          {flag && <span className="mr-1.5">{flag}</span>}
+          {title} · {trip.year}
+        </span>
+      </div>
       <nav className="pointer-events-auto inline-flex items-center rounded-full bg-paper/90 p-1 text-[11px] uppercase tracking-[0.18em] shadow-sm backdrop-blur-sm">
         {TABS.map((t) =>
           t.active ? (
@@ -459,8 +457,9 @@ export default function SceneReplayClient({ trip }) {
                 />
               </div>
             )}
-            <div className="mt-6">
-              <SceneCard scene={scene} sceneIndex={i} onOpen={openLightbox} />
+            <div className="mt-6 flex flex-col gap-3">
+              <SceneCard scene={scene} />
+              <PhotoStrip scene={scene} sceneIndex={i} onOpen={openLightbox} />
             </div>
           </section>
         ))}
@@ -509,14 +508,6 @@ export default function SceneReplayClient({ trip }) {
         {/* Top chrome */}
         <div className="absolute top-0 inset-x-0 z-20 pointer-events-none">{TopChrome}</div>
 
-        {/* Trip title, lower-left */}
-        <div className="absolute bottom-6 left-5 sm:left-8 z-10 pointer-events-none max-w-xs">
-          <p className="text-[11px] uppercase tracking-[0.3em] text-paper/70">
-            Replay {flag && <span className="mx-1">{flag}</span>} · {trip.year}
-          </p>
-          <p className="mt-1 font-display text-2xl sm:text-3xl text-paper/95 tracking-tight">{title}</p>
-        </div>
-
         {/* Chapter indicator + prev/next — one explicit control (native scroll) */}
         <div className="absolute bottom-5 left-1/2 z-20 flex -translate-x-1/2 items-center gap-1 rounded-full bg-ink/55 px-1.5 py-1 backdrop-blur-sm pointer-events-auto">
           <button
@@ -562,9 +553,14 @@ export default function SceneReplayClient({ trip }) {
             key={scene.id}
             data-scene-index={i}
             ref={(el) => (sectionRefs.current[i] = el)}
-            className="min-h-[100svh] flex items-center px-5 sm:px-6 pointer-events-none"
+            className="min-h-[100svh] flex flex-col items-start justify-center gap-3 px-5 sm:px-6 pb-16 pointer-events-none"
           >
-            <SceneCard scene={scene} sceneIndex={i} onOpen={openLightbox} />
+            <div className="w-full max-w-md sm:max-w-lg sm:ml-4 lg:ml-14">
+              <SceneCard scene={scene} />
+            </div>
+            <div className="sm:ml-4 lg:ml-14">
+              <PhotoStrip scene={scene} sceneIndex={i} onOpen={openLightbox} />
+            </div>
           </section>
         ))}
       </div>
