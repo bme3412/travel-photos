@@ -10,6 +10,7 @@ import { buildTrip } from '../../utils/tripBuilder';
 import { buildMediaResolver } from '../../utils/mediaResolver';
 import { transformToCloudFront } from '../../utils/imageUtils';
 import { haversineKm } from '../../utils/geo';
+import { nearestPlace } from '../../utils/parisPlaces';
 import TripReplayClient from './TripReplayClient';
 import SceneReplayClient from './SceneReplayClient';
 
@@ -107,6 +108,39 @@ async function getTripData(id) {
           for (let i = 1; i < gpsPts.length; i += 1) km += haversineKm(gpsPts[i - 1], gpsPts[i]);
           const distanceKm = gpsPts.length > 1 ? Math.round(km * 10) / 10 : null;
 
+          // Step 4 — distinct neighborhoods touched, in first-seen order (a
+          // boat/bike leg zigzags many landmarks, so collapse to areas + cap).
+          const seenAreas = new Set();
+          const areas = [];
+          for (const p of dayRaw) {
+            const pl = p.gps ? nearestPlace(p.gps) : null;
+            if (pl && !seenAreas.has(pl.area)) {
+              seenAreas.add(pl.area);
+              areas.push(pl.area);
+            }
+          }
+          const placesTrail = areas.length > 6 ? [...areas.slice(0, 6), '…'] : areas;
+
+          // Step 5 — one inferred "moment": the longest low-movement pause.
+          const timed = dayRaw.filter((p) => p.takenAt);
+          let bestGap = 0;
+          let bestAt = null;
+          for (let i = 1; i < timed.length; i += 1) {
+            const mins = (new Date(timed[i].takenAt) - new Date(timed[i - 1].takenAt)) / 60000;
+            const movedM =
+              timed[i].gps && timed[i - 1].gps
+                ? haversineKm(timed[i - 1].gps, timed[i].gps) * 1000
+                : 0;
+            if (mins >= 50 && movedM < 450 && mins > bestGap) {
+              bestGap = mins;
+              bestAt = timed[i - 1].takenAt;
+            }
+          }
+          const gapLabel = bestGap >= 120 ? `${Math.round(bestGap / 60)}-hour` : `${Math.round(bestGap)}-minute`;
+          const moment = bestAt
+            ? `A ${gapLabel} pause around ${fmtTime(bestAt)} — likely a meal or a rest off-camera.`
+            : null;
+
           const backgroundUrl =
             (d.background && resolve(d.background)) ||
             dayPhotos[Math.floor(dayPhotos.length / 2)]?.url ||
@@ -122,6 +156,8 @@ async function getTripData(id) {
             timeWindow,
             distanceKm,
             route: gpsPts, // ordered {lat,lng} for the day's path on the inset map
+            placesTrail,
+            moment,
           };
         });
 

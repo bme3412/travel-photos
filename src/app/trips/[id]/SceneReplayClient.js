@@ -216,6 +216,12 @@ function SceneCard({ scene, sceneIndex, onOpen }) {
         </p>
       )}
 
+      {scene.placesTrail?.length > 1 && (
+        <p className="mt-2 text-[12px] leading-snug text-ink/55">
+          {scene.placesTrail.join('  ·  ')}
+        </p>
+      )}
+
       {scene.text && (
         <p className="mt-3 text-[15px] leading-relaxed text-ink/80">{scene.text}</p>
       )}
@@ -231,6 +237,13 @@ function SceneCard({ scene, sceneIndex, onOpen }) {
             </li>
           ))}
         </ul>
+      )}
+
+      {scene.moment && (
+        <p className="mt-4 flex gap-2 text-[13px] italic leading-snug text-ink/60">
+          <span aria-hidden className="not-italic text-accent">↳</span>
+          {scene.moment}
+        </p>
       )}
 
       {scene.reflections && <ReflectionsBlock reflections={scene.reflections} />}
@@ -419,8 +432,10 @@ export default function SceneReplayClient({ trip }) {
           );
         })}
 
-        {/* Legibility scrim */}
-        <div className="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/25 to-ink/55 pointer-events-none" />
+        {/* Localized scrims — darken behind the card (left) and top chrome only,
+            so the photograph keeps its color and contrast on the right. */}
+        <div className="absolute inset-0 pointer-events-none bg-gradient-to-r from-ink/70 via-ink/15 to-transparent" />
+        <div className="absolute inset-x-0 top-0 h-28 pointer-events-none bg-gradient-to-b from-ink/45 to-transparent" />
 
         {/* Top chrome */}
         <div className="absolute top-0 inset-x-0 z-20 pointer-events-none">{TopChrome}</div>
