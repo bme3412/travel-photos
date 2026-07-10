@@ -217,9 +217,9 @@ function SceneCard({ scene, sceneIndex, onOpen }) {
   return (
     <article
       ref={cardRef}
-      className="relative max-w-md w-full sm:ml-4 lg:ml-14 rounded-2xl bg-paper/95 text-ink
-                 backdrop-blur-sm shadow-xl ring-1 ring-ink/5 p-6 sm:p-7
-                 max-h-[82svh] overflow-y-auto [scrollbar-width:thin]"
+      className="pointer-events-auto relative max-w-md w-full sm:max-w-lg sm:ml-4 lg:ml-14
+                 rounded-2xl bg-paper/95 text-ink backdrop-blur-sm shadow-xl ring-1 ring-ink/5
+                 p-6 sm:p-7 max-h-[82svh] overflow-y-auto [scrollbar-width:thin]"
     >
       {scene.kicker && (
         <p className="text-[11px] uppercase tracking-[0.3em] text-accent mb-2">{scene.kicker}</p>
@@ -257,10 +257,10 @@ function SceneCard({ scene, sceneIndex, onOpen }) {
       {scene.facts && <FactsBlock facts={scene.facts} />}
 
       {scene.activities?.length > 0 && (
-        <ul className="mt-5 space-y-2">
+        <ul className="mt-4 grid grid-cols-1 gap-x-5 gap-y-2 sm:grid-cols-2">
           {scene.activities.map((a, i) => (
-            <li key={i} className="flex gap-2.5 text-[15px] text-ink/80 leading-snug">
-              <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
+            <li key={i} className="flex gap-2.5 text-[14px] text-ink/80 leading-snug">
+              <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
               <span>{a}</span>
             </li>
           ))}
@@ -268,7 +268,7 @@ function SceneCard({ scene, sceneIndex, onOpen }) {
       )}
 
       {scene.moment && (
-        <p className="mt-4 flex gap-2 text-[13px] italic leading-snug text-ink/60">
+        <p className="mt-3 flex gap-2 text-[13px] italic leading-snug text-ink/60">
           <span aria-hidden className="not-italic text-accent">↳</span>
           {scene.moment}
         </p>
@@ -560,7 +560,7 @@ export default function SceneReplayClient({ trip }) {
             key={scene.id}
             data-scene-index={i}
             ref={(el) => (sectionRefs.current[i] = el)}
-            className="min-h-[100svh] flex items-center px-5 sm:px-6"
+            className="min-h-[100svh] flex items-center px-5 sm:px-6 pointer-events-none"
           >
             <SceneCard scene={scene} sceneIndex={i} onOpen={openLightbox} />
           </section>
