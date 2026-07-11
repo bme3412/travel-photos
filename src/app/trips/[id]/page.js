@@ -186,7 +186,7 @@ async function getTripData(id) {
           ? {
               id: 'reflections',
               kind: 'reflections',
-              kicker: 'Reflections · Paris',
+              kicker: refl.kicker || 'Reflections',
               title: '5 things I learned',
               reflections: refl,
               backgroundUrl: (refl.background && resolve(refl.background)) || heroBg,

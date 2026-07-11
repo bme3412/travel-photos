@@ -575,7 +575,106 @@
           "IMG_0340.jpg"
         ]
       }
-    ]
+    ],
+    "report": {
+      "dek": "Three nights in the Old Town — the Rynek at every hour of the day, an afternoon of witness at Auschwitz-Birkenau, and an empty dawn square to close.",
+      "heroBackground": "IMG_0295.jpg",
+      "facts": {
+        "dates": "June 24–27, 2026",
+        "nights": 3,
+        "party": "Solo",
+        "occasion": "Third leg of the June swing — Berlin behind, the Riviera ahead",
+        "stay": "Old Town, just off the Rynek",
+        "stayNote": "Close enough to hear the hejnał sound from St. Mary's tower on the hour.",
+        "gettingAround": "The Old Town entirely on foot; a half-day out to Oświęcim and back.",
+        "weather": [
+          {
+            "day": "Thu Jun 25",
+            "hi": "82°F",
+            "lo": "61°F",
+            "note": "Warm"
+          },
+          {
+            "day": "Fri Jun 26",
+            "hi": "80°F",
+            "lo": "59°F",
+            "note": "Bright"
+          },
+          {
+            "day": "Sat Jun 27",
+            "hi": "78°F",
+            "lo": "58°F",
+            "note": "Clear dawn, then out"
+          }
+        ]
+      },
+      "days": [
+        {
+          "id": "day-1",
+          "date": "2026-06-25",
+          "kicker": "Day 1 · Thursday, June 25 · 82°F",
+          "title": "Into the Old Town",
+          "text": "A slow first morning after the long train day, then out into the medieval core mid-afternoon: the Rynek and its Cloth Hall, St. Mary's towers, and up Floriańska to the Gate and the Barbican. After a break, the evening ran the other way — down Grodzka past Sts. Peter & Paul to the Vistula boulevards below Wawel, and back up Kanonicza at dusk.",
+          "background": "IMG_0274.jpg",
+          "activities": [
+            "Slow first morning, off-camera",
+            "Rynek Główny mid-afternoon — the Cloth Hall and St. Mary's",
+            "Floriańska north to the Gate and the Barbican",
+            "Mały Rynek on the loop back",
+            "Break before dinner",
+            "Evening down Grodzka, past Sts. Peter & Paul",
+            "The Vistula boulevards below Wawel",
+            "Back up Kanonicza at dusk"
+          ]
+        },
+        {
+          "id": "day-2",
+          "date": "2026-06-26",
+          "kicker": "Day 2 · Friday, June 26",
+          "title": "The Rynek, then Oświęcim",
+          "text": "A late morning back on the square and a long lunch in the Old Town. Then the trip's necessary counterweight: out to Oświęcim in the early afternoon. Birkenau first — the ramp, the barracks, the long walk to the memorial at the far end — then Auschwitz I in the early evening, and the quiet ride back to Kraków.",
+          "background": "IMG_0312.jpg",
+          "activities": [
+            "Late morning on the Rynek",
+            "Long lunch in the Old Town",
+            "Out to Oświęcim in the early afternoon",
+            "Birkenau — the ramp, the barracks, the far memorial",
+            "Auschwitz I in the early evening",
+            "The quiet ride back"
+          ]
+        },
+        {
+          "id": "day-3",
+          "date": "2026-06-27",
+          "kicker": "Day 3 · Saturday, June 27 · Dawn",
+          "title": "Ten to five on the empty square",
+          "text": "Up before the sun for one last walk: the Rynek at 4:49 AM, completely empty, first light catching St. Mary's towers. Half an hour with the square to myself, then coffee, the bags, and the flight south to the Riviera.",
+          "background": "IMG_0336.jpg",
+          "activities": [
+            "Up at half past four — out in first light",
+            "The Rynek empty at ten to five",
+            "St. Mary's towers at 5 AM",
+            "Coffee, bags, and the flight south"
+          ]
+        }
+      ],
+      "reflections": {
+        "seed": true,
+        "kicker": "Reflections · Kraków",
+        "background": "IMG_0340.jpg",
+        "learned": [
+          "The Rynek runs on two clocks — packed at noon, entirely yours at ten to five, with the hejnał sounding to an empty square.",
+          "The Old Town is compact: Barbican to Wawel is twenty minutes down one street.",
+          "Give Auschwitz-Birkenau the full afternoon it demands; Birkenau's scale is the part no photograph prepares you for.",
+          "The Vistula boulevards below Wawel are the evening spot — castle above, river light below.",
+          "Three nights fit the city and the memorial; Kazimierz went untouched and argues for a return."
+        ],
+        "highlight": "First light on an empty Rynek Główny — half an hour alone in the middle of a medieval city before the flight south.",
+        "doDifferently": "Book a guided slot at the Memorial for earlier in the day, and keep an evening for Kazimierz.",
+        "verdict": "Kraków earned its reputation — and a return, for Kazimierz and more.",
+        "rating": null
+      }
+    }
   },
   "paris-2026": {
     "intro": "Three days in Paris in the middle of June, a single city held close rather than a country crossed. The itinerary was simple — the Eiffel Tower, the table, the streets in between — and that focus was the point. One place, given room to unfold at its own pace.",
@@ -757,7 +856,8 @@
         "highlight": "Moules-frites and a street jazz band on Île Saint-Louis; the night bike tour and Bateau Mouche down a lit-up Seine a close second.",
         "doDifferently": null,
         "verdict": "It’s my annual trip — so yes, every year.",
-        "rating": null
+        "rating": null,
+        "kicker": "Reflections · Paris"
       }
     }
   },
@@ -862,7 +962,86 @@
           "IMG_0257.jpg"
         ]
       }
-    ]
+    ],
+    "report": {
+      "dek": "One bright evening among the set pieces, one slow morning at the zoo — Berlin held in a day and a half, midway through a June swing across Europe.",
+      "heroBackground": "IMG_0171.jpg",
+      "facts": {
+        "dates": "June 22–24, 2026",
+        "nights": 2,
+        "party": "Solo",
+        "occasion": "The middle leg of a midsummer swing — Paris behind, Kraków ahead",
+        "stay": "Mitte, near the Tiergarten edge",
+        "stayNote": "Both walks started from the door — the Gate one way, the zoo the other.",
+        "gettingAround": "On foot the whole time; train out to Kraków on the 24th.",
+        "weather": [
+          {
+            "day": "Mon Jun 22",
+            "hi": "88°F",
+            "lo": "66°F",
+            "note": "Warm, light till late"
+          },
+          {
+            "day": "Tue Jun 23",
+            "hi": "84°F",
+            "lo": "64°F",
+            "note": "Bright"
+          }
+        ]
+      },
+      "days": [
+        {
+          "id": "day-1",
+          "date": "2026-06-22",
+          "kicker": "Day 1 · Monday, June 22 · 88°F",
+          "title": "An evening walk through the set pieces",
+          "text": "Arrived with hours of midsummer light still to spend and went straight for the icons. The Brandenburg Gate at half past seven, dinner somewhere along the way, then Potsdamer Platz, Checkpoint Charlie at nine — and back across to the Reichstag just in time for the 9:30 sunset, finishing on the Spree bend as the light went.",
+          "background": "IMG_0189.jpg",
+          "activities": [
+            "Arrived early evening — bags down, straight out",
+            "Brandenburg Gate at 7:36 PM, still full of light",
+            "Pariser Platz",
+            "Dinner on the walk south",
+            "Potsdamer Platz",
+            "Checkpoint Charlie at nine",
+            "Sunset on the Reichstag lawn, 9:35 PM",
+            "The Spree bend at the Chancellery to close the night"
+          ]
+        },
+        {
+          "id": "day-2",
+          "date": "2026-06-23",
+          "kicker": "Day 2 · Tuesday, June 23 · 84°F",
+          "title": "Morning with the animals",
+          "text": "A slow start, then a late morning at the Zoologischer Garten on the Tiergarten's west edge — an unhurried hour among the enclosures, camera out in bursts. Out past noon with the afternoon left off-camera, and the train to Kraków the next morning.",
+          "background": "IMG_0224.jpg",
+          "activities": [
+            "Slow morning, coffee in City West",
+            "Zoologischer Garten from late morning",
+            "A long stop at the western enclosures",
+            "Out past the gates after noon",
+            "Afternoon off-camera",
+            "Packed for the morning train to Kraków"
+          ]
+        }
+      ],
+      "reflections": {
+        "seed": true,
+        "kicker": "Reflections · Berlin",
+        "background": "IMG_0192.jpg",
+        "learned": [
+          "Late June gives Berlin daylight past 9:30 PM — a whole first evening that behaves like an afternoon.",
+          "The set pieces chain into one walk: Gate, Potsdamer Platz, Checkpoint Charlie, Reichstag — well under five kilometres.",
+          "Sunset from the Reichstag lawn is the free grandstand — the building glows and the crowd thins as the light drops.",
+          "History sits in the open here; you cross the Wall's line between dinner and dessert without a ticket.",
+          "A day and a half covers the icons and the zoo — the museums and the East are a separate trip."
+        ],
+        "highlight": "Reaching the Reichstag lawn at 9:35 PM, just as the sun went down behind the Spree bend.",
+        "doDifferently": "Book the Reichstag dome ahead of time — you can't just walk up on the day.",
+        "verdict": "A return is owed — the museums and the East went untouched.",
+        "rating": null
+      }
+    }
   },
   "menton-2026": {
     "intro": "Two days at the eastern end of the French Riviera, in the last town before the coast slips over into Italy. Menton was the whole of the trip — no onward leg, no distance to cover, just a single place held close over one weekend at the end of June. Its old town climbs in tiers of ochre and rose above a bright curve of the Mediterranean, lemon light on the terraces and the Italian border only a short walk past the last houses.",
@@ -934,6 +1113,87 @@
           "IMG_0405.jpg"
         ]
       }
-    ]
+    ],
+    "report": {
+      "dek": "One night in the last town in France — a tiered old town walked twice: once in the morning crowds and sunset, once alone at dawn.",
+      "heroBackground": "IMG_0367.jpg",
+      "facts": {
+        "dates": "June 28–29, 2026",
+        "nights": 1,
+        "party": "Solo",
+        "occasion": "A June weekend on the Riviera",
+        "stay": "Lower old town, near Rue Saint-Michel",
+        "stayNote": "A small flat in the pedestrian centre — the rampes and the seafront both two minutes away.",
+        "gettingAround": "Everything on foot; the train along the coast in and out.",
+        "weather": [
+          {
+            "day": "Sun Jun 28",
+            "hi": "84°F",
+            "lo": "73°F",
+            "note": "Bright, warm"
+          },
+          {
+            "day": "Mon Jun 29",
+            "hi": "82°F",
+            "lo": "72°F",
+            "note": "Clear dawn"
+          }
+        ]
+      },
+      "days": [
+        {
+          "id": "day-1",
+          "date": "2026-06-28",
+          "kicker": "Day 1 · Sunday, June 28 · 84°F",
+          "title": "The tiers, then the long wait for sunset",
+          "text": "The morning ran from Rue Saint-Michel down to the water by the Cocteau museum, then up the rampes into the old town — the parvis of Saint-Michel and its basilica hanging over the sea. The heat of the day passed off-camera, down at the water. Back out after nine for golden hour, and sunset from the parvis with Italy visible down the coast.",
+          "background": "IMG_0372.jpg",
+          "activities": [
+            "Morning down Rue Saint-Michel and past Les Halles",
+            "Seafront by the Musée Jean Cocteau",
+            "Up the Rampes Saint-Michel into the old town",
+            "Parvis Saint-Michel — the pebbled square over the sea",
+            "Basilique Saint-Michel-Archange",
+            "Afternoon at the beach, off-camera",
+            "Golden hour along Avenue Félix Faure",
+            "Sunset from the parvis, Italy down the coast"
+          ]
+        },
+        {
+          "id": "day-2",
+          "date": "2026-06-29",
+          "kicker": "Day 2 · Monday, June 29 · Dawn",
+          "title": "Six a.m., the town to myself",
+          "text": "Up before six and out into the blue hour — the lanes empty, the shutters closed, the light coming straight off the water. Climbed past the basilica to the cemetery at the top of the Vieux-Château, the highest terrace in town, and watched the sun come up over Garavan bay toward Italy. Down by half past six; breakfast, and the train back along the Riviera.",
+          "background": "IMG_0400.jpg",
+          "activities": [
+            "Up at 5:45 — out the door in first light",
+            "Empty lanes through the lower town",
+            "Climbed past the basilica in the blue hour",
+            "Cimetière du Vieux-Château — the town's highest terrace",
+            "Sunrise over Garavan bay, Italy along the coast",
+            "Back down the rampes by half past six",
+            "Breakfast on Rue Saint-Michel",
+            "Train out along the coast"
+          ]
+        }
+      ],
+      "reflections": {
+        "seed": true,
+        "kicker": "Reflections · Menton",
+        "background": "IMG_0405.jpg",
+        "learned": [
+          "Menton is a dawn town — at six the old town is empty and the light comes straight off the water.",
+          "The parvis of Saint-Michel is the best sunset seat on the coast, and it costs nothing.",
+          "One full day plus a dawn covers the old town; the gardens would need another.",
+          "Everything is fifteen minutes from everything: market to the top of the Vieux-Château on foot.",
+          "Italy is right there — the border sits just past the last houses, and you feel it in the colours."
+        ],
+        "highlight": "The dawn climb through the sleeping old town to the cemetery at the top — sunrise over Garavan bay, alone on the terrace.",
+        "doDifferently": "Book a second night. One sunset from the parvis wasn't enough.",
+        "verdict": "The best kind of small trip — one place, held close.",
+        "rating": null
+      }
+    }
   }
 }
