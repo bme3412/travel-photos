@@ -277,21 +277,9 @@
       "year": "2025"
     },
     {
-      "id": "cook-islands",
-      "name": "🇨🇰 Cook Islands",
-      "countryId": "CK",
-      "year": "2026"
-    },
-    {
-      "id": "new-zealand",
-      "name": "🇳🇿 New Zealand",
-      "countryId": "NZ",
-      "year": "2026"
-    },
-    {
-      "id": "berlin-2026",
-      "name": "🇩🇪 Berlin",
-      "countryId": "DE",
+      "id": "menton-2026",
+      "name": "🇫🇷 Menton",
+      "countryId": "FR",
       "year": "2026"
     },
     {
@@ -301,15 +289,27 @@
       "year": "2026"
     },
     {
-      "id": "menton-2026",
-      "name": "🇫🇷 Menton",
-      "countryId": "FR",
+      "id": "berlin-2026",
+      "name": "🇩🇪 Berlin",
+      "countryId": "DE",
       "year": "2026"
     },
     {
       "id": "paris-2026",
       "name": "🇫🇷 Paris",
       "countryId": "FR",
+      "year": "2026"
+    },
+    {
+      "id": "new-zealand",
+      "name": "🇳🇿 New Zealand",
+      "countryId": "NZ",
+      "year": "2026"
+    },
+    {
+      "id": "cook-islands",
+      "name": "🇨🇰 Cook Islands",
+      "countryId": "CK",
       "year": "2026"
     }
   ]

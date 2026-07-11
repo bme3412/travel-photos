@@ -238,49 +238,6 @@ const dispatchMeta = (album) =>
     .filter(Boolean)
     .join('  ·  ');
 
-const FeaturedDispatch = ({ album }) => {
-  const { flag, title } = splitFlag(album.name);
-  const cover = album.coverPhoto;
-
-  return (
-    <Link href={`/journal/${album.id}`} className="group block" prefetch={false}>
-      <div className="relative aspect-[16/9] w-full overflow-hidden rounded-xl bg-ink/5">
-        {cover?.url && (
-          <Image
-            src={cover.url}
-            alt={cover.caption || title}
-            fill
-            priority
-            sizes="(min-width: 1024px) 960px, 100vw"
-            className="object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-[1.03]"
-          />
-        )}
-        <div className="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/25 to-transparent" />
-        <div className="absolute inset-x-0 bottom-0 p-6 sm:p-9">
-          <p className="text-[11px] uppercase tracking-[0.3em] text-paper/75 mb-3">
-            Latest dispatch {flag && <span className="mx-1">{flag}</span>} · {album.year}
-          </p>
-          <h3 className="font-display text-3xl sm:text-5xl text-paper leading-[1.05] tracking-tight max-w-2xl">
-            {title}
-          </h3>
-        </div>
-      </div>
-      <div className="mt-5 max-w-2xl">
-        {album.excerpt && (
-          <p className="text-ink/75 text-base sm:text-lg leading-relaxed line-clamp-3">{album.excerpt}</p>
-        )}
-        <div className="mt-4 flex flex-wrap items-center gap-x-4 gap-y-2">
-          <span className="inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.2em] text-ink group-hover:text-accent transition-colors duration-300">
-            Read the dispatch
-            <ArrowRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1" />
-          </span>
-          <span className="text-[11px] uppercase tracking-[0.18em] text-muted">{dispatchMeta(album)}</span>
-        </div>
-      </div>
-    </Link>
-  );
-};
-
 const DispatchRow = ({ album }) => {
   const { flag, title } = splitFlag(album.name);
   const cover = album.coverPhoto;
@@ -486,14 +443,11 @@ const PhotoAlbumExplorer = ({ initialAlbums = null }) => {
         {processedAlbums.length > 0 ? (
           viewMode === 'feed' ? (
             <div className="max-w-5xl mx-auto">
-              <FeaturedDispatch album={processedAlbums[0]} />
-              {processedAlbums.length > 1 && (
-                <div className="mt-8 border-t border-ink/10 divide-y divide-ink/10">
-                  {processedAlbums.slice(1).map((album) => (
-                    <DispatchRow key={album.id} album={album} />
-                  ))}
-                </div>
-              )}
+              <div className="border-t border-ink/10 divide-y divide-ink/10">
+                {processedAlbums.map((album) => (
+                  <DispatchRow key={album.id} album={album} />
+                ))}
+              </div>
             </div>
           ) : viewMode === 'grid' ? (
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-14 items-start">
@@ -502,7 +456,7 @@ const PhotoAlbumExplorer = ({ initialAlbums = null }) => {
                   key={album.id}
                   album={album}
                   number={index + 1}
-                  wide={index % 7 === 0}
+                  wide={index > 0 && index % 7 === 0}
                 />
               ))}
             </div>
