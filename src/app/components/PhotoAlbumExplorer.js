@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
-import { Camera as CameraIcon, ArrowRight, ArrowUpRight, Play } from 'lucide-react';
+import { Camera as CameraIcon, ArrowRight, ArrowUpRight, ChevronDown, Play } from 'lucide-react';
 import usePhotoStore from '../store/usePhotoStore';
 
 // Album names carry a leading flag emoji ("🇪🇬 Egyptian Explorations") —
@@ -28,24 +28,45 @@ const formatMeta = (album) => {
 // A brand / value-proposition front door — rotating cover imagery as an
 // ambient backdrop behind the journal's statement and primary CTAs. It no
 // longer spotlights a specific album (the dispatches feed below does that).
+//
+// Composed like a magazine cover: masthead kicker, statement headline with an
+// italic serif emphasis, CTAs, and a hairline "folio" bar along the bottom
+// edge carrying the archive stats and a numbered index of the rotating covers.
+const HERO_INTERVAL_MS = 6000;
+
+const HeroStat = ({ value, label }) => (
+  <div>
+    <div className="font-display text-2xl sm:text-3xl leading-none text-paper tabular-nums">
+      {value}
+    </div>
+    <div className="mt-2 text-[10px] uppercase tracking-[0.22em] text-paper/55">{label}</div>
+  </div>
+);
+
 const FeaturedHero = ({ albums, stats }) => {
   const [active, setActive] = useState(0);
 
+  // One timeout per slide (not an interval) so a manual jump from the index
+  // restarts the full rotation — and stays in step with the progress hairline.
   useEffect(() => {
     if (albums.length < 2) return undefined;
-    const timer = setInterval(() => setActive((index) => (index + 1) % albums.length), 6000);
-    return () => clearInterval(timer);
-  }, [albums.length]);
+    const timer = setTimeout(
+      () => setActive((index) => (index + 1) % albums.length),
+      HERO_INTERVAL_MS
+    );
+    return () => clearTimeout(timer);
+  }, [active, albums.length]);
 
   const latest = albums[0];
+  const current = albums[active] ? splitFlag(albums[active].name) : null;
 
   return (
-    <section className="relative w-full h-[78vh] min-h-[520px] overflow-hidden bg-ink">
+    <section className="relative w-full h-[84vh] min-h-[560px] overflow-hidden bg-ink">
       {albums.map((slide, index) => (
         <div
           key={slide.id}
           className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
-            index === active ? 'opacity-100' : 'opacity-0'
+            index === active ? 'opacity-100 hero-drift' : 'opacity-0'
           }`}
         >
           <Image
@@ -58,16 +79,22 @@ const FeaturedHero = ({ albums, stats }) => {
           />
         </div>
       ))}
-      <div className="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/45 to-ink/30" />
+      {/* Bottom-weighted scrim + a soft pool of shade behind the text column,
+          so the photography stays bright where the type isn't. */}
+      <div className="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/30 to-ink/5" />
+      <div className="absolute inset-0 bg-[radial-gradient(110%_85%_at_18%_88%,rgba(27,23,19,0.5),transparent_62%)]" />
+      <div className="grain absolute inset-0 pointer-events-none" aria-hidden="true" />
 
-      <div className="relative mx-auto flex h-full max-w-7xl flex-col justify-end px-6 pb-14 md:pb-20">
-        <p className="fade-up text-[11px] uppercase tracking-[0.35em] text-paper/70 mb-5">
+      <div className="relative mx-auto flex h-full max-w-7xl flex-col justify-end px-6 pb-10 md:pb-12">
+        <p className="fade-up flex items-center gap-3.5 text-[11px] uppercase tracking-[0.35em] text-paper/70 mb-5">
+          <span className="h-px w-12 bg-accent" aria-hidden="true" />
           Passport &amp; Ponder — a travel journal
         </p>
-        <h1 className="fade-up fade-up-1 font-display text-4xl sm:text-6xl md:text-7xl text-paper leading-[1.03] tracking-tight max-w-4xl">
-          A photographic journal across {stats.countries} countries and six continents.
+        <h1 className="fade-up fade-up-1 font-display text-4xl sm:text-6xl md:text-7xl text-paper leading-[1.02] tracking-tight max-w-4xl [text-wrap:balance]">
+          A <em className="italic font-light">photographic journal</em> across{' '}
+          {stats.countries} countries and six continents.
         </h1>
-        <div className="fade-up fade-up-2 mt-8 flex flex-wrap items-center gap-x-5 gap-y-4">
+        <div className="fade-up fade-up-2 mt-8 flex flex-wrap items-center gap-x-6 gap-y-4">
           {latest && (
             <Link
               href={`/journal/${latest.id}`}
@@ -87,13 +114,47 @@ const FeaturedHero = ({ albums, stats }) => {
             <ArrowRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1" />
           </Link>
         </div>
-        <p className="fade-up fade-up-2 mt-7 text-[11px] uppercase tracking-[0.25em] text-paper/60">
-          <span className="text-paper">{stats.countries}</span> countries &amp; territories
-          <span className="mx-2.5 text-paper/30">·</span>
-          <span className="text-paper">{stats.photos.toLocaleString()}</span> photographs
-          <span className="mx-2.5 text-paper/30">·</span>
-          <span className="text-paper">{stats.albums}</span> journals
-        </p>
+
+        {/* Folio bar: archive stats on the left, the rotating-cover index on
+            the right — a printed footer line inside the cover. */}
+        <div className="fade-up fade-up-3 mt-10 flex flex-wrap items-end justify-between gap-x-10 gap-y-6 border-t border-paper/20 pt-6">
+          <div className="flex items-end gap-x-8 sm:gap-x-10">
+            <HeroStat value={stats.countries} label="Countries & territories" />
+            <HeroStat value={stats.photos.toLocaleString()} label="Photographs" />
+            <HeroStat value={stats.albums} label="Journals" />
+          </div>
+
+          {albums.length > 1 && current && (
+            <div className="hidden sm:flex flex-col items-end gap-3">
+              <p className="text-[11px] uppercase tracking-[0.22em] text-paper/75">
+                <span className="text-paper/45">№ {String(active + 1).padStart(2, '0')}</span>
+                <span className="mx-2 text-paper/30">—</span>
+                {current.title}
+                {albums[active].year && <span className="text-paper/45"> · {albums[active].year}</span>}
+              </p>
+              <div className="flex items-center gap-1.5">
+                {albums.map((slide, index) => (
+                  <button
+                    key={slide.id}
+                    type="button"
+                    onClick={() => setActive(index)}
+                    aria-label={`Show ${slide.name}`}
+                    aria-current={index === active}
+                    className="group/seg relative h-4 w-9"
+                  >
+                    <span className="absolute inset-x-0 top-1/2 h-px -translate-y-1/2 bg-paper/30 transition-colors group-hover/seg:bg-paper/60" />
+                    {index === active && (
+                      <span
+                        className="hero-progress absolute left-0 top-1/2 h-px -translate-y-1/2 bg-paper"
+                        style={{ animationDuration: `${HERO_INTERVAL_MS}ms` }}
+                      />
+                    )}
+                  </button>
+                ))}
+              </div>
+            </div>
+          )}
+        </div>
       </div>
     </section>
   );
@@ -295,30 +356,36 @@ const SORT_OPTIONS = [
   { value: 'photos-desc', label: 'Most photos' },
 ];
 
+// Sort reads as a quiet outlined control; the view switch reuses the segmented
+// pill from the trip pages (TripViewSwitcher) so the whole site shares one
+// switching idiom.
 const Controls = ({ sortBy, onSortChange, viewMode, onViewModeChange }) => (
-  <div className="flex items-center gap-6">
-    <select
-      id="sort-select"
-      value={sortBy}
-      onChange={(e) => onSortChange(e.target.value)}
-      aria-label="Sort albums"
-      className="bg-transparent text-[11px] uppercase tracking-[0.18em] text-ink/70 border-0 border-b border-ink/20
-                 pb-1 pr-6 focus:outline-none focus:border-accent cursor-pointer hover:text-ink transition-colors"
-    >
-      {SORT_OPTIONS.map((option) => (
-        <option key={option.value} value={option.value}>{option.label}</option>
-      ))}
-    </select>
+  <div className="flex flex-wrap items-center gap-3">
+    <div className="relative">
+      <select
+        id="sort-select"
+        value={sortBy}
+        onChange={(e) => onSortChange(e.target.value)}
+        aria-label="Sort albums"
+        className="appearance-none cursor-pointer rounded-full border border-ink/15 bg-transparent py-2 pl-4 pr-9
+                   text-[11px] uppercase tracking-[0.18em] text-ink/70 transition-colors
+                   hover:border-ink/40 hover:text-ink focus:border-accent focus:outline-none"
+      >
+        {SORT_OPTIONS.map((option) => (
+          <option key={option.value} value={option.value}>{option.label}</option>
+        ))}
+      </select>
+      <ChevronDown className="pointer-events-none absolute right-3.5 top-1/2 h-3 w-3 -translate-y-1/2 text-muted" />
+    </div>
 
-    <div className="flex items-center gap-3 text-[11px] uppercase tracking-[0.18em]">
+    <div className="inline-flex items-center rounded-full bg-ink/5 p-1 text-[11px] uppercase tracking-[0.18em] ring-1 ring-ink/10">
       {[['feed', 'Journal'], ['grid', 'Grid'], ['list', 'Index']].map(([mode, label]) => (
         <button
           key={mode}
           onClick={() => onViewModeChange(mode)}
-          className={`pb-1 border-b transition-colors duration-200 ${
-            viewMode === mode
-              ? 'text-ink border-accent'
-              : 'text-muted border-transparent hover:text-ink'
+          aria-pressed={viewMode === mode}
+          className={`rounded-full px-3.5 py-1.5 transition-colors duration-200 ${
+            viewMode === mode ? 'bg-ink text-paper' : 'text-ink/55 hover:text-ink'
           }`}
         >
           {label}
@@ -424,20 +491,30 @@ const PhotoAlbumExplorer = ({ initialAlbums = null }) => {
       <FeaturedHero albums={featuredAlbums} stats={stats} />
 
       <div className="max-w-7xl mx-auto px-6 pt-14 pb-20">
-        {/* Section header */}
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-5 mb-10">
-          <div>
-            <p className="text-[11px] uppercase tracking-[0.3em] text-accent mb-2">The journal</p>
-            <h2 className="font-display text-3xl md:text-4xl tracking-tight">
-              {viewMode === 'feed' ? 'Latest dispatches' : 'All albums'}
-            </h2>
+        {/* Section header — a printed department opening: thick-thin rule,
+            kicker, headline with a hanging count, controls on the same line */}
+        <div className="mb-12">
+          <div aria-hidden="true">
+            <div className="h-[3px] bg-ink" />
+            <div className="mt-[3px] h-px bg-ink/25" />
           </div>
-          <Controls
-            sortBy={sortBy}
-            onSortChange={setSortBy}
-            viewMode={viewMode}
-            onViewModeChange={setViewMode}
-          />
+          <div className="mt-6 flex flex-col sm:flex-row sm:items-end justify-between gap-6">
+            <div>
+              <p className="text-[11px] uppercase tracking-[0.3em] text-accent mb-2.5">The journal</p>
+              <h2 className="font-display text-3xl md:text-4xl tracking-tight">
+                {viewMode === 'feed' ? 'Latest dispatches' : 'All albums'}
+                <sup className="ml-2.5 font-sans text-xs tracking-[0.08em] text-muted tabular-nums">
+                  {processedAlbums.length}
+                </sup>
+              </h2>
+            </div>
+            <Controls
+              sortBy={sortBy}
+              onSortChange={setSortBy}
+              viewMode={viewMode}
+              onViewModeChange={setViewMode}
+            />
+          </div>
         </div>
 
         {processedAlbums.length > 0 ? (

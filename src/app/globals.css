@@ -34,6 +34,42 @@
 .fade-up-2 { animation-delay: 0.24s; }
 .fade-up-3 { animation-delay: 0.36s; }
 
+/* Hero photography treatment: a slow settle on the active slide and a film
+   grain wash so the full-bleed covers read as printed photographs. */
+@keyframes hero-drift {
+  from { transform: scale(1.06); }
+  to { transform: scale(1); }
+}
+
+.hero-drift {
+  animation: hero-drift 7s cubic-bezier(0.22, 0.6, 0.3, 1) both;
+}
+
+.grain {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='0.55'/%3E%3C/svg%3E");
+  background-size: 160px 160px;
+  opacity: 0.08;
+  mix-blend-mode: overlay;
+}
+
+/* The hero slide index: a hairline that fills across the active segment for
+   the length of one rotation (duration set inline to match the JS timer). */
+@keyframes hero-progress {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+.hero-progress {
+  animation: hero-progress linear both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fade-up,
+  .hero-drift {
+    animation: none;
+  }
+}
+
 /* Route-transition fade: applied by segment template.js wrappers, which
    remount per navigation. Opacity only — a transform here would change the
    containing block under the replay's sticky stage and Mapbox inset. */

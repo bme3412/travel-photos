@@ -5,6 +5,7 @@ import { Analytics } from "@vercel/analytics/react";
 
 const fraunces = Fraunces({
   subsets: ['latin'],
+  style: ['normal', 'italic'],
   variable: '--font-fraunces',
   display: 'swap',
 });
