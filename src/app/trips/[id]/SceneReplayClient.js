@@ -9,6 +9,7 @@ import { ArrowLeft, BookOpen, ChevronLeft, ChevronRight, Clock, Route } from 'lu
 import ImageLightbox from '../../components/ImageLightbox';
 import TripViewSwitcher from '../../components/TripViewSwitcher';
 import { tripHasBlueprint } from '@/features/copy-trip/availability';
+import { getTripNeighborhoods } from '@/features/neighborhoods/data';
 import { AddToTripButton, AddToTripToast } from '@/features/copy-trip/AddToTrip';
 
 const ACCENT = '#B4441C';
@@ -420,6 +421,22 @@ export default function SceneReplayClient({ trip }) {
           >
             copy this trip
           </Link>
+        </p>
+      )}
+      {getTripNeighborhoods(trip.id).length > 0 && (
+        <p className="mt-4 text-[11px] uppercase tracking-[0.2em] text-paper/60">
+          Neighborhoods from this trip —{' '}
+          {getTripNeighborhoods(trip.id).map((hood, i, all) => (
+            <span key={hood.id}>
+              <Link
+                href={`/neighborhoods/${hood.id}`}
+                className="text-paper underline decoration-accent underline-offset-4 hover:text-accent transition-colors"
+              >
+                {hood.name}
+              </Link>
+              {i < all.length - 1 && ' · '}
+            </span>
+          ))}
         </p>
       )}
     </div>

@@ -56,7 +56,9 @@ export const NeighborhoodSchema = z.object({
 export const NeighborhoodsFileSchema = z
   .record(z.string(), NeighborhoodSchema)
   .superRefine((entries, ctx) => {
-    const namesSeen = new Map(); // lowercased name/alias -> owning id
+    // Uniqueness is per city: Kraków and Menton can both have an "Old Town",
+    // but within one city a label must resolve to exactly one neighborhood.
+    const namesSeen = new Map(); // "city:label" (lowercased) -> owning id
     const refsSeen = new Map(); // "tripId/experienceId" -> owning id
 
     for (const [key, hood] of Object.entries(entries)) {
@@ -68,12 +70,12 @@ export const NeighborhoodsFileSchema = z
         });
       }
       for (const label of [hood.name, ...hood.aliases]) {
-        const norm = label.toLowerCase();
+        const norm = `${hood.city}:${label.toLowerCase()}`;
         if (namesSeen.has(norm) && namesSeen.get(norm) !== hood.id) {
           ctx.addIssue({
             code: 'custom',
             path: [key, 'aliases'],
-            message: `"${label}" is already claimed by "${namesSeen.get(norm)}"`,
+            message: `"${label}" is already claimed by "${namesSeen.get(norm)}" in ${hood.city}`,
           });
         }
         namesSeen.set(norm, hood.id);

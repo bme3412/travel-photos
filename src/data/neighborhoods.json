@@ -36,6 +36,22 @@
       { "tripId": "paris-2026", "experienceId": "d1-maison-rose-vineyard" }
     ]
   },
+  "ile-saint-louis": {
+    "id": "ile-saint-louis",
+    "name": "Île Saint-Louis",
+    "city": "paris",
+    "districts": ["4e arrondissement"],
+    "aliases": [],
+    "center": { "lat": 48.8513, "lng": 2.3562 },
+    "radiusKm": 0.3,
+    "summary": "The smaller island — moules-frites on the quayside, street jazz, and the Berthillon queue.",
+    "essay": "The island earns its afternoon slowly. Lunch was moules-frites at a quayside table while a street jazz band worked the crowd — better than any concert hall — and then the short walk to Berthillon, where the queue is part of the ritual. Two scoops, the stone lip of the quay, and the river doing the rest.",
+    "experienceRefs": [
+      { "tripId": "paris-2026", "experienceId": "d2-moules-frites-street-jazz" },
+      { "tripId": "paris-2026", "experienceId": "d2-ile-saint-louis" },
+      { "tripId": "paris-2026", "experienceId": "d2-berthillon" }
+    ]
+  },
   "le-marais": {
     "id": "le-marais",
     "name": "Le Marais",

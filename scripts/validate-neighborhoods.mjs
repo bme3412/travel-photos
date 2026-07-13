@@ -43,12 +43,15 @@ for (const [tripId, trip] of Object.entries(blueprints)) {
 }
 
 const claimed = new Set(); // "tripId/experienceId"
-const labelToHood = new Map(); // lowercased name/alias -> neighborhood id
+const labelToHood = new Map(); // "city:label" (lowercased) -> neighborhood id
+const cities = new Set();
 for (const hood of Object.values(neighborhoods)) {
+  cities.add(hood.city);
   for (const label of [hood.name, ...(hood.aliases ?? [])]) {
-    labelToHood.set(label.toLowerCase(), hood.id);
+    labelToHood.set(`${hood.city}:${label.toLowerCase()}`, hood.id);
   }
 }
+const cityOfTrip = (tripId) => [...cities].find((c) => tripId.startsWith(`${c}-`));
 
 for (const [key, hood] of Object.entries(neighborhoods)) {
   for (const ref of hood.experienceRefs ?? []) {
@@ -79,9 +82,10 @@ for (const [key, hood] of Object.entries(neighborhoods)) {
 // must be claimed by it; unregistered labels are surfaced as candidates.
 const unregistered = new Map(); // label -> count
 for (const [tripId, byId] of experiencesByTrip) {
+  const city = cityOfTrip(tripId);
   for (const exp of byId.values()) {
     if (!exp.neighborhood) continue;
-    const hoodId = labelToHood.get(exp.neighborhood.toLowerCase());
+    const hoodId = city && labelToHood.get(`${city}:${exp.neighborhood.toLowerCase()}`);
     if (hoodId) {
       if (!claimed.has(`${tripId}/${exp.id}`)) {
         problems.push(
@@ -90,7 +94,8 @@ for (const [tripId, byId] of experiencesByTrip) {
         );
       }
     } else {
-      unregistered.set(exp.neighborhood, (unregistered.get(exp.neighborhood) ?? 0) + 1);
+      const label = `${exp.neighborhood} (${city ?? tripId})`;
+      unregistered.set(label, (unregistered.get(label) ?? 0) + 1);
     }
   }
 }
@@ -110,7 +115,7 @@ for (const [key, hood] of Object.entries(neighborhoods)) {
 if (unregistered.size > 0) {
   const list = [...unregistered.entries()]
     .sort((a, b) => b[1] - a[1])
-    .map(([label, n]) => `${label} (${n})`)
+    .map(([label, n]) => `${label} ×${n}`)
     .join(', ');
   console.log(`ℹ unregistered neighborhood labels in blueprints: ${list}`);
 }

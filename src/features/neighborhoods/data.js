@@ -84,6 +84,15 @@ export function getNeighborhood(id, photos = []) {
   return { ...hood, trips, photos: matchedPhotos, visitYears };
 }
 
+// Neighborhoods this trip touched, for "keep exploring" links at the end of
+// a replay. Registry-only (no photo join), so it's safe in client bundles —
+// same pattern as tripHasBlueprint.
+export function getTripNeighborhoods(tripId) {
+  return Object.values(getRegistry() ?? {})
+    .filter((hood) => hood.experienceRefs.some((ref) => ref.tripId === tripId))
+    .map((hood) => ({ id: hood.id, name: hood.name }));
+}
+
 // Index model: every neighborhood enriched, grouped by city, richest first
 // within a city. Coverage is uneven by design — the counts are the point.
 export function getNeighborhoodsByCity(photos = []) {
