@@ -777,5 +777,2014 @@
         ]
       }
     ]
+  },
+  "menton-2026": {
+    "id": "menton-2026",
+    "destination": "Menton, France",
+    "startDate": "2026-06-28",
+    "endDate": "2026-06-29",
+    "durationDays": 2,
+    "baseNeighborhood": "Lower old town, Rue Saint-Michel",
+    "occasion": "A June weekend on the Riviera",
+    "travelerType": "solo",
+    "pace": "relaxed",
+    "themes": [
+      "old town lanes",
+      "sea views",
+      "golden hour",
+      "dawn walks",
+      "beach",
+      "baroque architecture"
+    ],
+    "totalDistanceKm": 3.3,
+    "days": [
+      {
+        "id": "day-1",
+        "dayNumber": 1,
+        "title": "The tiers, then the long wait for sunset",
+        "date": "2026-06-28",
+        "startTime": "09:45",
+        "endTime": "21:30",
+        "distanceKm": 2,
+        "neighborhoods": [
+          "Rue Saint-Michel",
+          "Seafront",
+          "Old town"
+        ],
+        "summary": "In on the morning train, then the old town twice over: down Rue Saint-Michel to the seafront by the Cocteau museum, up the rampes to the parvis and basilica, a beach afternoon off-camera, and back out for sunset with Italy down the coast.",
+        "weather": {
+          "highF": 84,
+          "lowF": 73,
+          "note": "Bright, warm"
+        },
+        "experiences": [
+          {
+            "id": "d1-train-into-menton",
+            "name": "Train along the coast into Menton",
+            "category": "transport",
+            "placeName": "Gare de Menton",
+            "approximateStartTime": "09:45",
+            "approximateDurationMinutes": 30,
+            "latitude": 43.7747,
+            "longitude": 7.4918,
+            "sourcePhotoIds": [],
+            "sourceDayId": "day-1",
+            "sourceNarrativeExcerpt": "Everything on foot; the train along the coast in and out."
+          },
+          {
+            "id": "d1-drop-bags-old-town",
+            "name": "Drop bags at the flat off Rue Saint-Michel",
+            "category": "rest",
+            "neighborhood": "Rue Saint-Michel",
+            "approximateStartTime": "10:15",
+            "approximateDurationMinutes": 15,
+            "latitude": 43.7752,
+            "longitude": 7.5035,
+            "sourcePhotoIds": [],
+            "sourceDayId": "day-1",
+            "sourceNarrativeExcerpt": "A small flat in the pedestrian centre — the rampes and the seafront both two minutes away."
+          },
+          {
+            "id": "d1-rue-saint-michel",
+            "name": "Down Rue Saint-Michel, past Les Halles",
+            "category": "neighborhood",
+            "neighborhood": "Rue Saint-Michel",
+            "approximateStartTime": "10:30",
+            "approximateDurationMinutes": 15,
+            "latitude": 43.77476,
+            "longitude": 7.50506,
+            "sourcePhotoIds": [
+              "menton-20262"
+            ],
+            "sourceDayId": "day-1",
+            "priority": "core"
+          },
+          {
+            "id": "d1-seafront-cocteau",
+            "name": "The seafront by the Musée Jean Cocteau",
+            "category": "landmark",
+            "placeName": "Musée Jean Cocteau",
+            "neighborhood": "Seafront",
+            "approximateStartTime": "10:33",
+            "approximateDurationMinutes": 15,
+            "latitude": 43.77443,
+            "longitude": 7.50563,
+            "sourcePhotoIds": [
+              "menton-20263",
+              "menton-20264",
+              "menton-20265",
+              "menton-20266",
+              "menton-20267"
+            ],
+            "sourceDayId": "day-1",
+            "sourceNarrativeExcerpt": "The morning ran from Rue Saint-Michel down to the water by the Cocteau museum.",
+            "priority": "optional"
+          },
+          {
+            "id": "d1-rampes-saint-michel",
+            "name": "Up the Rampes Saint-Michel into the old town",
+            "category": "neighborhood",
+            "neighborhood": "Old town",
+            "approximateStartTime": "10:40",
+            "approximateDurationMinutes": 10,
+            "latitude": 43.7764,
+            "longitude": 7.5081,
+            "sourcePhotoIds": [],
+            "sourceDayId": "day-1",
+            "priority": "core"
+          },
+          {
+            "id": "d1-parvis-saint-michel",
+            "name": "The parvis of Saint-Michel, hanging over the sea",
+            "category": "landmark",
+            "placeName": "Parvis Saint-Michel",
+            "neighborhood": "Old town",
+            "approximateStartTime": "10:45",
+            "approximateDurationMinutes": 20,
+            "latitude": 43.77713,
+            "longitude": 7.50925,
+            "sourcePhotoIds": [
+              "menton-20268",
+              "menton-20269",
+              "menton-202610",
+              "menton-202611",
+              "menton-202612",
+              "menton-202613",
+              "menton-202614"
+            ],
+            "sourceDayId": "day-1",
+            "sourceNarrativeExcerpt": "The parvis of Saint-Michel and its basilica hanging over the sea.",
+            "priority": "core"
+          },
+          {
+            "id": "d1-basilique-saint-michel",
+            "name": "Basilique Saint-Michel-Archange and the upper lanes",
+            "category": "landmark",
+            "placeName": "Basilique Saint-Michel-Archange",
+            "neighborhood": "Old town",
+            "approximateStartTime": "10:51",
+            "approximateDurationMinutes": 15,
+            "latitude": 43.77738,
+            "longitude": 7.50845,
+            "sourcePhotoIds": [
+              "menton-202615",
+              "menton-202616",
+              "menton-202617",
+              "menton-202618",
+              "menton-202619"
+            ],
+            "sourceDayId": "day-1",
+            "priority": "core"
+          },
+          {
+            "id": "d1-back-down-lanes",
+            "name": "Back down through the stepped lanes",
+            "category": "neighborhood",
+            "neighborhood": "Old town",
+            "approximateStartTime": "11:00",
+            "approximateDurationMinutes": 15,
+            "latitude": 43.77631,
+            "longitude": 7.50688,
+            "sourcePhotoIds": [
+              "menton-202620",
+              "menton-202621"
+            ],
+            "sourceDayId": "day-1",
+            "priority": "optional"
+          },
+          {
+            "id": "d1-beach-afternoon",
+            "name": "The heat of the day at the beach",
+            "category": "rest",
+            "placeName": "Plage des Sablettes",
+            "neighborhood": "Seafront",
+            "approximateStartTime": "13:00",
+            "approximateDurationMinutes": 240,
+            "latitude": 43.776,
+            "longitude": 7.511,
+            "sourcePhotoIds": [],
+            "sourceDayId": "day-1",
+            "sourceNarrativeExcerpt": "The heat of the day passed off-camera, down at the water.",
+            "priority": "optional"
+          },
+          {
+            "id": "d1-golden-hour-felix-faure",
+            "name": "Golden hour along Avenue Félix Faure",
+            "category": "neighborhood",
+            "neighborhood": "Seafront",
+            "approximateStartTime": "20:45",
+            "approximateDurationMinutes": 15,
+            "latitude": 43.77496,
+            "longitude": 7.50277,
+            "sourcePhotoIds": [
+              "menton-202622"
+            ],
+            "sourceDayId": "day-1",
+            "sourceNarrativeExcerpt": "Back out after nine for golden hour.",
+            "priority": "optional"
+          },
+          {
+            "id": "d1-sunset-parvis",
+            "name": "Sunset from the parvis, Italy down the coast",
+            "category": "landmark",
+            "placeName": "Parvis Saint-Michel",
+            "neighborhood": "Old town",
+            "approximateStartTime": "21:00",
+            "approximateDurationMinutes": 30,
+            "latitude": 43.77694,
+            "longitude": 7.50784,
+            "sourcePhotoIds": [
+              "menton-202623",
+              "menton-202624",
+              "menton-202625"
+            ],
+            "sourceDayId": "day-1",
+            "sourceNarrativeExcerpt": "Sunset from the parvis with Italy visible down the coast.",
+            "priority": "core"
+          }
+        ],
+        "route": [
+          {
+            "lat": 43.77476,
+            "lng": 7.50506,
+            "time": "10:32",
+            "photoId": "menton-20262"
+          },
+          {
+            "lat": 43.77443,
+            "lng": 7.50563,
+            "time": "10:33",
+            "photoId": "menton-20263"
+          },
+          {
+            "lat": 43.7741,
+            "lng": 7.50642,
+            "time": "10:34",
+            "photoId": "menton-20264"
+          },
+          {
+            "lat": 43.7738,
+            "lng": 7.50646,
+            "time": "10:35",
+            "photoId": "menton-20265"
+          },
+          {
+            "lat": 43.77379,
+            "lng": 7.50643,
+            "time": "10:35",
+            "photoId": "menton-20266"
+          },
+          {
+            "lat": 43.77369,
+            "lng": 7.50626,
+            "time": "10:36",
+            "photoId": "menton-20267"
+          },
+          {
+            "lat": 43.77713,
+            "lng": 7.50925,
+            "time": "10:46",
+            "photoId": "menton-20268"
+          },
+          {
+            "lat": 43.77723,
+            "lng": 7.50942,
+            "time": "10:46",
+            "photoId": "menton-20269"
+          },
+          {
+            "lat": 43.77721,
+            "lng": 7.5094,
+            "time": "10:47",
+            "photoId": "menton-202610"
+          },
+          {
+            "lat": 43.77721,
+            "lng": 7.5094,
+            "time": "10:47",
+            "photoId": "menton-202611"
+          },
+          {
+            "lat": 43.77721,
+            "lng": 7.5094,
+            "time": "10:47",
+            "photoId": "menton-202612"
+          },
+          {
+            "lat": 43.77724,
+            "lng": 7.50954,
+            "time": "10:48",
+            "photoId": "menton-202613"
+          },
+          {
+            "lat": 43.77738,
+            "lng": 7.50999,
+            "time": "10:49",
+            "photoId": "menton-202614"
+          },
+          {
+            "lat": 43.77738,
+            "lng": 7.50845,
+            "time": "10:51",
+            "photoId": "menton-202615"
+          },
+          {
+            "lat": 43.77738,
+            "lng": 7.50847,
+            "time": "10:51",
+            "photoId": "menton-202616"
+          },
+          {
+            "lat": 43.77726,
+            "lng": 7.50782,
+            "time": "10:54",
+            "photoId": "menton-202617"
+          },
+          {
+            "lat": 43.77736,
+            "lng": 7.50758,
+            "time": "10:55",
+            "photoId": "menton-202618"
+          },
+          {
+            "lat": 43.77726,
+            "lng": 7.50712,
+            "time": "10:57",
+            "photoId": "menton-202619"
+          },
+          {
+            "lat": 43.77631,
+            "lng": 7.50688,
+            "time": "11:02",
+            "photoId": "menton-202620"
+          },
+          {
+            "lat": 43.77639,
+            "lng": 7.50701,
+            "time": "11:02",
+            "photoId": "menton-202621"
+          },
+          {
+            "lat": 43.77496,
+            "lng": 7.50277,
+            "time": "20:50",
+            "photoId": "menton-202622"
+          },
+          {
+            "lat": 43.77694,
+            "lng": 7.50784,
+            "time": "21:02",
+            "photoId": "menton-202623"
+          },
+          {
+            "lat": 43.77721,
+            "lng": 7.50792,
+            "time": "21:03",
+            "photoId": "menton-202624"
+          },
+          {
+            "lat": 43.77739,
+            "lng": 7.50779,
+            "time": "21:04",
+            "photoId": "menton-202625"
+          }
+        ],
+        "inferredBreaks": [
+          {
+            "startTime": "11:15",
+            "endTime": "20:40",
+            "note": "No photos through the middle of the day — the heat passed at the beach, off-camera."
+          }
+        ]
+      },
+      {
+        "id": "day-2",
+        "dayNumber": 2,
+        "title": "Six a.m., the town to myself",
+        "date": "2026-06-29",
+        "startTime": "05:45",
+        "endTime": "09:45",
+        "distanceKm": 1.3,
+        "neighborhoods": [
+          "Old town",
+          "Vieux-Château",
+          "Rue Saint-Michel"
+        ],
+        "summary": "Up before six into the blue hour — empty lanes, the climb past the basilica to the cemetery at the top of the Vieux-Château, sunrise over Garavan bay toward Italy, and down by half past six for breakfast and the train out.",
+        "weather": {
+          "highF": 82,
+          "lowF": 72,
+          "note": "Clear dawn"
+        },
+        "experiences": [
+          {
+            "id": "d2-blue-hour-lanes",
+            "name": "Empty lanes in first light",
+            "category": "neighborhood",
+            "neighborhood": "Old town",
+            "approximateStartTime": "05:45",
+            "approximateDurationMinutes": 15,
+            "latitude": 43.77565,
+            "longitude": 7.50576,
+            "sourcePhotoIds": [
+              "menton-202626",
+              "menton-202627",
+              "menton-202628",
+              "menton-202629"
+            ],
+            "sourceDayId": "day-2",
+            "sourceNarrativeExcerpt": "Up before six and out into the blue hour — the lanes empty, the shutters closed.",
+            "priority": "core"
+          },
+          {
+            "id": "d2-climb-past-basilica",
+            "name": "The climb past the basilica",
+            "category": "neighborhood",
+            "neighborhood": "Old town",
+            "approximateStartTime": "06:00",
+            "approximateDurationMinutes": 10,
+            "latitude": 43.77671,
+            "longitude": 7.50831,
+            "sourcePhotoIds": [
+              "menton-202630",
+              "menton-202631",
+              "menton-202632",
+              "menton-202633"
+            ],
+            "sourceDayId": "day-2",
+            "priority": "optional"
+          },
+          {
+            "id": "d2-cimetiere-vieux-chateau",
+            "name": "Cimetière du Vieux-Château — the town’s highest terrace",
+            "category": "landmark",
+            "placeName": "Cimetière du Vieux-Château",
+            "neighborhood": "Vieux-Château",
+            "approximateStartTime": "06:04",
+            "approximateDurationMinutes": 15,
+            "latitude": 43.77768,
+            "longitude": 7.5077,
+            "sourcePhotoIds": [
+              "menton-202634",
+              "menton-202635",
+              "menton-202636"
+            ],
+            "sourceDayId": "day-2",
+            "sourceNarrativeExcerpt": "Climbed past the basilica to the cemetery at the top of the Vieux-Château, the highest terrace in town.",
+            "priority": "core"
+          },
+          {
+            "id": "d2-sunrise-garavan",
+            "name": "Sunrise over Garavan bay, Italy along the coast",
+            "category": "landmark",
+            "neighborhood": "Vieux-Château",
+            "approximateStartTime": "06:10",
+            "approximateDurationMinutes": 15,
+            "latitude": 43.77691,
+            "longitude": 7.50879,
+            "sourcePhotoIds": [
+              "menton-202637",
+              "menton-202638",
+              "menton-202639",
+              "menton-202640",
+              "menton-202641",
+              "menton-202642",
+              "menton-202643",
+              "menton-202644",
+              "menton-202645",
+              "menton-202646",
+              "menton-202647",
+              "menton-202648"
+            ],
+            "sourceDayId": "day-2",
+            "sourceNarrativeExcerpt": "Watched the sun come up over Garavan bay toward Italy.",
+            "priority": "core"
+          },
+          {
+            "id": "d2-down-the-rampes",
+            "name": "Back down the rampes by half past six",
+            "category": "neighborhood",
+            "neighborhood": "Old town",
+            "approximateStartTime": "06:25",
+            "approximateDurationMinutes": 10,
+            "latitude": 43.77699,
+            "longitude": 7.50909,
+            "sourcePhotoIds": [
+              "menton-202649",
+              "menton-202650",
+              "menton-202651"
+            ],
+            "sourceDayId": "day-2",
+            "priority": "optional"
+          },
+          {
+            "id": "d2-breakfast-rue-saint-michel",
+            "name": "Breakfast on Rue Saint-Michel",
+            "category": "food",
+            "neighborhood": "Rue Saint-Michel",
+            "approximateStartTime": "07:30",
+            "approximateDurationMinutes": 45,
+            "latitude": 43.7752,
+            "longitude": 7.503,
+            "sourcePhotoIds": [],
+            "sourceDayId": "day-2",
+            "sourceNarrativeExcerpt": "Down by half past six; breakfast, and the train back along the Riviera.",
+            "priority": "core"
+          },
+          {
+            "id": "d2-train-out",
+            "name": "Train back along the Riviera",
+            "category": "transport",
+            "placeName": "Gare de Menton",
+            "approximateStartTime": "09:15",
+            "approximateDurationMinutes": 30,
+            "latitude": 43.7747,
+            "longitude": 7.4918,
+            "sourcePhotoIds": [],
+            "sourceDayId": "day-2"
+          }
+        ],
+        "route": [
+          {
+            "lat": 43.77565,
+            "lng": 7.50576,
+            "time": "05:57",
+            "photoId": "menton-202626"
+          },
+          {
+            "lat": 43.77573,
+            "lng": 7.5061,
+            "time": "05:57",
+            "photoId": "menton-202627"
+          },
+          {
+            "lat": 43.77587,
+            "lng": 7.50765,
+            "time": "06:00",
+            "photoId": "menton-202628"
+          },
+          {
+            "lat": 43.77589,
+            "lng": 7.50761,
+            "time": "06:00",
+            "photoId": "menton-202629"
+          },
+          {
+            "lat": 43.77671,
+            "lng": 7.50831,
+            "time": "06:01",
+            "photoId": "menton-202630"
+          },
+          {
+            "lat": 43.77721,
+            "lng": 7.50795,
+            "time": "06:02",
+            "photoId": "menton-202631"
+          },
+          {
+            "lat": 43.77738,
+            "lng": 7.50781,
+            "time": "06:03",
+            "photoId": "menton-202632"
+          },
+          {
+            "lat": 43.77749,
+            "lng": 7.50781,
+            "time": "06:03",
+            "photoId": "menton-202633"
+          },
+          {
+            "lat": 43.77768,
+            "lng": 7.5077,
+            "time": "06:04",
+            "photoId": "menton-202634"
+          },
+          {
+            "lat": 43.778,
+            "lng": 7.50763,
+            "time": "06:04",
+            "photoId": "menton-202635"
+          },
+          {
+            "lat": 43.77848,
+            "lng": 7.50745,
+            "time": "06:05",
+            "photoId": "menton-202636"
+          },
+          {
+            "lat": 43.77691,
+            "lng": 7.50879,
+            "time": "06:10",
+            "photoId": "menton-202637"
+          },
+          {
+            "lat": 43.77698,
+            "lng": 7.50903,
+            "time": "06:10",
+            "photoId": "menton-202638"
+          },
+          {
+            "lat": 43.77726,
+            "lng": 7.50954,
+            "time": "06:11",
+            "photoId": "menton-202639"
+          },
+          {
+            "lat": 43.77738,
+            "lng": 7.50998,
+            "time": "06:12",
+            "photoId": "menton-202640"
+          },
+          {
+            "lat": 43.77739,
+            "lng": 7.51001,
+            "time": "06:12",
+            "photoId": "menton-202641"
+          },
+          {
+            "lat": 43.77786,
+            "lng": 7.50958,
+            "time": "06:16",
+            "photoId": "menton-202642"
+          },
+          {
+            "lat": 43.778,
+            "lng": 7.51034,
+            "time": "06:17",
+            "photoId": "menton-202643"
+          },
+          {
+            "lat": 43.778,
+            "lng": 7.51036,
+            "time": "06:17",
+            "photoId": "menton-202644"
+          },
+          {
+            "lat": 43.778,
+            "lng": 7.51035,
+            "time": "06:17",
+            "photoId": "menton-202645"
+          },
+          {
+            "lat": 43.778,
+            "lng": 7.51034,
+            "time": "06:17",
+            "photoId": "menton-202646"
+          },
+          {
+            "lat": 43.778,
+            "lng": 7.51036,
+            "time": "06:17",
+            "photoId": "menton-202647"
+          },
+          {
+            "lat": 43.778,
+            "lng": 7.51036,
+            "time": "06:18",
+            "photoId": "menton-202648"
+          },
+          {
+            "lat": 43.77699,
+            "lng": 7.50909,
+            "time": "06:25",
+            "photoId": "menton-202649"
+          },
+          {
+            "lat": 43.77732,
+            "lng": 7.50767,
+            "time": "06:28",
+            "photoId": "menton-202650"
+          },
+          {
+            "lat": 43.7778,
+            "lng": 7.50718,
+            "time": "06:29",
+            "photoId": "menton-202651"
+          }
+        ]
+      }
+    ]
+  },
+  "berlin-2026": {
+    "id": "berlin-2026",
+    "destination": "Berlin, Germany",
+    "startDate": "2026-06-22",
+    "endDate": "2026-06-24",
+    "durationDays": 2,
+    "baseNeighborhood": "Mitte, near the Tiergarten",
+    "occasion": "The middle leg of a midsummer swing — Paris behind, Kraków ahead",
+    "travelerType": "solo",
+    "pace": "moderate",
+    "themes": [
+      "history",
+      "landmarks",
+      "long evening light",
+      "the zoo",
+      "walking everywhere"
+    ],
+    "totalDistanceKm": 4.6,
+    "days": [
+      {
+        "id": "day-1",
+        "dayNumber": 1,
+        "title": "An evening walk through the set pieces",
+        "date": "2026-06-22",
+        "startTime": "18:15",
+        "endTime": "22:15",
+        "distanceKm": 4.1,
+        "neighborhoods": [
+          "Mitte",
+          "Potsdamer Platz",
+          "Friedrichstadt"
+        ],
+        "summary": "Arrived with hours of midsummer light left and went straight for the icons: the Brandenburg Gate at half past seven, dinner on the walk south, Potsdamer Platz, Checkpoint Charlie at nine, and back to the Reichstag lawn for the 9:30 sunset, finishing on the Spree bend as the light went.",
+        "weather": {
+          "highF": 88,
+          "lowF": 66,
+          "note": "Warm, light till late"
+        },
+        "experiences": [
+          {
+            "id": "d1-arrive-mitte",
+            "name": "Arrive and drop bags in Mitte",
+            "category": "transport",
+            "neighborhood": "Mitte",
+            "approximateStartTime": "18:15",
+            "approximateDurationMinutes": 45,
+            "latitude": 52.516,
+            "longitude": 13.373,
+            "sourcePhotoIds": [],
+            "sourceDayId": "day-1",
+            "sourceNarrativeExcerpt": "Both walks started from the door — the Gate one way, the zoo the other."
+          },
+          {
+            "id": "d1-brandenburg-gate",
+            "name": "The Brandenburg Gate in evening light",
+            "category": "landmark",
+            "placeName": "Brandenburg Gate",
+            "neighborhood": "Mitte",
+            "approximateStartTime": "19:30",
+            "approximateDurationMinutes": 20,
+            "latitude": 52.51627,
+            "longitude": 13.37822,
+            "sourcePhotoIds": [
+              "berlin-20261",
+              "berlin-20262",
+              "berlin-20263",
+              "berlin-20264"
+            ],
+            "sourceDayId": "day-1",
+            "sourceNarrativeExcerpt": "The Brandenburg Gate at 7:36 PM, still full of light.",
+            "priority": "core"
+          },
+          {
+            "id": "d1-pariser-platz",
+            "name": "Pariser Platz",
+            "category": "neighborhood",
+            "neighborhood": "Mitte",
+            "approximateStartTime": "19:40",
+            "approximateDurationMinutes": 15,
+            "latitude": 52.51673,
+            "longitude": 13.38018,
+            "sourcePhotoIds": [
+              "berlin-20265"
+            ],
+            "sourceDayId": "day-1",
+            "priority": "optional"
+          },
+          {
+            "id": "d1-dinner-walk-south",
+            "name": "Dinner on the walk south",
+            "category": "food",
+            "neighborhood": "Mitte",
+            "approximateStartTime": "20:00",
+            "approximateDurationMinutes": 40,
+            "latitude": 52.512,
+            "longitude": 13.377,
+            "sourcePhotoIds": [],
+            "sourceDayId": "day-1",
+            "sourceNarrativeExcerpt": "Dinner somewhere along the way.",
+            "priority": "core"
+          },
+          {
+            "id": "d1-potsdamer-platz",
+            "name": "Potsdamer Platz",
+            "category": "landmark",
+            "placeName": "Potsdamer Platz",
+            "neighborhood": "Potsdamer Platz",
+            "approximateStartTime": "20:40",
+            "approximateDurationMinutes": 15,
+            "latitude": 52.50985,
+            "longitude": 13.3768,
+            "sourcePhotoIds": [
+              "berlin-20266",
+              "berlin-202613",
+              "berlin-202614"
+            ],
+            "sourceDayId": "day-1",
+            "priority": "optional"
+          },
+          {
+            "id": "d1-checkpoint-charlie",
+            "name": "Checkpoint Charlie at nine",
+            "category": "landmark",
+            "placeName": "Checkpoint Charlie",
+            "neighborhood": "Friedrichstadt",
+            "approximateStartTime": "21:00",
+            "approximateDurationMinutes": 15,
+            "latitude": 52.50795,
+            "longitude": 13.39029,
+            "sourcePhotoIds": [
+              "berlin-20267",
+              "berlin-20268",
+              "berlin-20269",
+              "berlin-202610",
+              "berlin-202611",
+              "berlin-202612"
+            ],
+            "sourceDayId": "day-1",
+            "priority": "core"
+          },
+          {
+            "id": "d1-reichstag-sunset",
+            "name": "Sunset on the Reichstag lawn",
+            "category": "landmark",
+            "placeName": "Reichstag",
+            "neighborhood": "Mitte",
+            "approximateStartTime": "21:30",
+            "approximateDurationMinutes": 20,
+            "latitude": 52.51857,
+            "longitude": 13.37434,
+            "sourcePhotoIds": [
+              "berlin-202615",
+              "berlin-202616",
+              "berlin-202617"
+            ],
+            "sourceDayId": "day-1",
+            "sourceNarrativeExcerpt": "Back across to the Reichstag just in time for the 9:30 sunset.",
+            "priority": "core"
+          },
+          {
+            "id": "d1-spree-bend",
+            "name": "The Spree bend at the Chancellery",
+            "category": "neighborhood",
+            "neighborhood": "Mitte",
+            "approximateStartTime": "21:40",
+            "approximateDurationMinutes": 15,
+            "latitude": 52.51905,
+            "longitude": 13.37242,
+            "sourcePhotoIds": [
+              "berlin-202618"
+            ],
+            "sourceDayId": "day-1",
+            "sourceNarrativeExcerpt": "Finishing on the Spree bend as the light went.",
+            "priority": "optional"
+          }
+        ],
+        "route": [
+          {
+            "lat": 52.51627,
+            "lng": 13.37822,
+            "time": "19:36",
+            "photoId": "berlin-20261"
+          },
+          {
+            "lat": 52.51627,
+            "lng": 13.37821,
+            "time": "19:37",
+            "photoId": "berlin-20262"
+          },
+          {
+            "lat": 52.51627,
+            "lng": 13.37815,
+            "time": "19:37",
+            "photoId": "berlin-20263"
+          },
+          {
+            "lat": 52.51627,
+            "lng": 13.37815,
+            "time": "19:37",
+            "photoId": "berlin-20264"
+          },
+          {
+            "lat": 52.51673,
+            "lng": 13.38018,
+            "time": "19:40",
+            "photoId": "berlin-20265"
+          },
+          {
+            "lat": 52.50985,
+            "lng": 13.3768,
+            "time": "20:41",
+            "photoId": "berlin-20266"
+          },
+          {
+            "lat": 52.50795,
+            "lng": 13.39029,
+            "time": "21:04",
+            "photoId": "berlin-20267"
+          },
+          {
+            "lat": 52.50778,
+            "lng": 13.39037,
+            "time": "21:04",
+            "photoId": "berlin-20268"
+          },
+          {
+            "lat": 52.50758,
+            "lng": 13.39038,
+            "time": "21:06",
+            "photoId": "berlin-20269"
+          },
+          {
+            "lat": 52.50731,
+            "lng": 13.39042,
+            "time": "21:06",
+            "photoId": "berlin-202610"
+          },
+          {
+            "lat": 52.50754,
+            "lng": 13.39045,
+            "time": "21:06",
+            "photoId": "berlin-202611"
+          },
+          {
+            "lat": 52.50763,
+            "lng": 13.39051,
+            "time": "21:07",
+            "photoId": "berlin-202612"
+          },
+          {
+            "lat": 52.50987,
+            "lng": 13.37615,
+            "time": "21:21",
+            "photoId": "berlin-202613"
+          },
+          {
+            "lat": 52.50991,
+            "lng": 13.37637,
+            "time": "21:21",
+            "photoId": "berlin-202614"
+          },
+          {
+            "lat": 52.51857,
+            "lng": 13.37434,
+            "time": "21:35",
+            "photoId": "berlin-202615"
+          },
+          {
+            "lat": 52.51854,
+            "lng": 13.37426,
+            "time": "21:35",
+            "photoId": "berlin-202616"
+          },
+          {
+            "lat": 52.51864,
+            "lng": 13.37425,
+            "time": "21:36",
+            "photoId": "berlin-202617"
+          },
+          {
+            "lat": 52.51905,
+            "lng": 13.37242,
+            "time": "21:40",
+            "photoId": "berlin-202618"
+          }
+        ]
+      },
+      {
+        "id": "day-2",
+        "dayNumber": 2,
+        "title": "Morning with the animals",
+        "date": "2026-06-23",
+        "startTime": "09:45",
+        "endTime": "13:00",
+        "distanceKm": 0.5,
+        "neighborhoods": [
+          "City West",
+          "Tiergarten"
+        ],
+        "summary": "A slow start and coffee in City West, then a late morning at the Zoologischer Garten on the Tiergarten’s west edge — out past the gates after noon, with the afternoon off-camera and the morning train to Kraków ahead.",
+        "weather": {
+          "highF": 84,
+          "lowF": 64,
+          "note": "Bright"
+        },
+        "experiences": [
+          {
+            "id": "d2-coffee-city-west",
+            "name": "Slow morning, coffee in City West",
+            "category": "food",
+            "neighborhood": "City West",
+            "approximateStartTime": "10:00",
+            "approximateDurationMinutes": 45,
+            "latitude": 52.505,
+            "longitude": 13.332,
+            "sourcePhotoIds": [],
+            "sourceDayId": "day-2",
+            "priority": "optional"
+          },
+          {
+            "id": "d2-zoologischer-garten",
+            "name": "Zoologischer Garten — an unhurried loop",
+            "category": "landmark",
+            "placeName": "Zoologischer Garten Berlin",
+            "neighborhood": "Tiergarten",
+            "approximateStartTime": "11:15",
+            "approximateDurationMinutes": 75,
+            "latitude": 52.50754,
+            "longitude": 13.33853,
+            "sourcePhotoIds": [
+              "berlin-202619",
+              "berlin-202620",
+              "berlin-202621",
+              "berlin-202622",
+              "berlin-202623",
+              "berlin-202624",
+              "berlin-202625",
+              "berlin-202626",
+              "berlin-202627",
+              "berlin-202628",
+              "berlin-202629",
+              "berlin-202630",
+              "berlin-202631",
+              "berlin-202632",
+              "berlin-202633",
+              "berlin-202634",
+              "berlin-202635",
+              "berlin-202636",
+              "berlin-202637",
+              "berlin-202638",
+              "berlin-202639",
+              "berlin-202640",
+              "berlin-202641",
+              "berlin-202642",
+              "berlin-202643",
+              "berlin-202644",
+              "berlin-202645",
+              "berlin-202646",
+              "berlin-202647",
+              "berlin-202648",
+              "berlin-202649",
+              "berlin-202650",
+              "berlin-202651",
+              "berlin-202652",
+              "berlin-202653",
+              "berlin-202654",
+              "berlin-202655"
+            ],
+            "sourceDayId": "day-2",
+            "sourceNarrativeExcerpt": "An unhurried hour among the enclosures, camera out in bursts.",
+            "priority": "core"
+          }
+        ],
+        "route": [
+          {
+            "lat": 52.50754,
+            "lng": 13.33853,
+            "time": "11:17",
+            "photoId": "berlin-202619"
+          },
+          {
+            "lat": 52.50744,
+            "lng": 13.33832,
+            "time": "11:17",
+            "photoId": "berlin-202620"
+          },
+          {
+            "lat": 52.50746,
+            "lng": 13.33845,
+            "time": "11:19",
+            "photoId": "berlin-202621"
+          },
+          {
+            "lat": 52.50746,
+            "lng": 13.33845,
+            "time": "11:19",
+            "photoId": "berlin-202622"
+          },
+          {
+            "lat": 52.50764,
+            "lng": 13.33826,
+            "time": "11:19",
+            "photoId": "berlin-202623"
+          },
+          {
+            "lat": 52.5076,
+            "lng": 13.3383,
+            "time": "11:19",
+            "photoId": "berlin-202624"
+          },
+          {
+            "lat": 52.50761,
+            "lng": 13.33824,
+            "time": "11:19",
+            "photoId": "berlin-202625"
+          },
+          {
+            "lat": 52.50766,
+            "lng": 13.33828,
+            "time": "11:21",
+            "photoId": "berlin-202626"
+          },
+          {
+            "lat": 52.5075,
+            "lng": 13.33814,
+            "time": "11:21",
+            "photoId": "berlin-202627"
+          },
+          {
+            "lat": 52.50751,
+            "lng": 13.33821,
+            "time": "11:21",
+            "photoId": "berlin-202628"
+          },
+          {
+            "lat": 52.50773,
+            "lng": 13.33827,
+            "time": "11:23",
+            "photoId": "berlin-202629"
+          },
+          {
+            "lat": 52.5075,
+            "lng": 13.33832,
+            "time": "11:25",
+            "photoId": "berlin-202630"
+          },
+          {
+            "lat": 52.50743,
+            "lng": 13.33836,
+            "time": "11:25",
+            "photoId": "berlin-202631"
+          },
+          {
+            "lat": 52.50745,
+            "lng": 13.33838,
+            "time": "11:26",
+            "photoId": "berlin-202632"
+          },
+          {
+            "lat": 52.50749,
+            "lng": 13.33836,
+            "time": "11:27",
+            "photoId": "berlin-202633"
+          },
+          {
+            "lat": 52.5075,
+            "lng": 13.33831,
+            "time": "11:30",
+            "photoId": "berlin-202634"
+          },
+          {
+            "lat": 52.50744,
+            "lng": 13.3384,
+            "time": "11:30",
+            "photoId": "berlin-202635"
+          },
+          {
+            "lat": 52.50745,
+            "lng": 13.33827,
+            "time": "11:31",
+            "photoId": "berlin-202636"
+          },
+          {
+            "lat": 52.50751,
+            "lng": 13.33839,
+            "time": "11:33",
+            "photoId": "berlin-202637"
+          },
+          {
+            "lat": 52.50756,
+            "lng": 13.33852,
+            "time": "11:35",
+            "photoId": "berlin-202638"
+          },
+          {
+            "lat": 52.50749,
+            "lng": 13.33841,
+            "time": "11:35",
+            "photoId": "berlin-202639"
+          },
+          {
+            "lat": 52.50742,
+            "lng": 13.33839,
+            "time": "11:36",
+            "photoId": "berlin-202640"
+          },
+          {
+            "lat": 52.50744,
+            "lng": 13.33832,
+            "time": "11:37",
+            "photoId": "berlin-202641"
+          },
+          {
+            "lat": 52.50731,
+            "lng": 13.3385,
+            "time": "11:54",
+            "photoId": "berlin-202642"
+          },
+          {
+            "lat": 52.50754,
+            "lng": 13.33843,
+            "time": "11:54",
+            "photoId": "berlin-202643"
+          },
+          {
+            "lat": 52.5075,
+            "lng": 13.33846,
+            "time": "11:55",
+            "photoId": "berlin-202644"
+          },
+          {
+            "lat": 52.50731,
+            "lng": 13.33848,
+            "time": "12:05",
+            "photoId": "berlin-202645"
+          },
+          {
+            "lat": 52.50749,
+            "lng": 13.33821,
+            "time": "12:05",
+            "photoId": "berlin-202646"
+          },
+          {
+            "lat": 52.5076,
+            "lng": 13.33817,
+            "time": "12:06",
+            "photoId": "berlin-202647"
+          },
+          {
+            "lat": 52.50757,
+            "lng": 13.33845,
+            "time": "12:06",
+            "photoId": "berlin-202648"
+          },
+          {
+            "lat": 52.50755,
+            "lng": 13.33843,
+            "time": "12:07",
+            "photoId": "berlin-202649"
+          },
+          {
+            "lat": 52.50752,
+            "lng": 13.33848,
+            "time": "12:07",
+            "photoId": "berlin-202650"
+          },
+          {
+            "lat": 52.50752,
+            "lng": 13.33848,
+            "time": "12:07",
+            "photoId": "berlin-202651"
+          },
+          {
+            "lat": 52.50684,
+            "lng": 13.338,
+            "time": "12:22",
+            "photoId": "berlin-202652"
+          },
+          {
+            "lat": 52.50682,
+            "lng": 13.33802,
+            "time": "12:22",
+            "photoId": "berlin-202653"
+          },
+          {
+            "lat": 52.50691,
+            "lng": 13.33776,
+            "time": "12:22",
+            "photoId": "berlin-202654"
+          },
+          {
+            "lat": 52.50691,
+            "lng": 13.33776,
+            "time": "12:22",
+            "photoId": "berlin-202655"
+          }
+        ]
+      }
+    ]
+  },
+  "krakow-2026": {
+    "id": "krakow-2026",
+    "destination": "Kraków, Poland",
+    "startDate": "2026-06-24",
+    "endDate": "2026-06-27",
+    "durationDays": 3,
+    "baseNeighborhood": "Old Town, off the Rynek",
+    "occasion": "Third leg of the June swing — Berlin behind, the Riviera ahead",
+    "travelerType": "solo",
+    "pace": "moderate",
+    "themes": [
+      "old town",
+      "market squares",
+      "history",
+      "remembrance",
+      "riverside walks",
+      "dawn photography"
+    ],
+    "totalDistanceKm": 63,
+    "days": [
+      {
+        "id": "day-1",
+        "dayNumber": 1,
+        "title": "Into the Old Town",
+        "date": "2026-06-25",
+        "startTime": "11:30",
+        "endTime": "20:45",
+        "distanceKm": 3.4,
+        "neighborhoods": [
+          "Rynek Główny",
+          "Floriańska",
+          "Grodzka",
+          "Vistula boulevards"
+        ],
+        "summary": "A slow first morning after the long train day, then the medieval core mid-afternoon — the Rynek and Cloth Hall, St. Mary’s, Floriańska to the Gate and Barbican — and an evening down Grodzka to the Vistula boulevards below Wawel, back up Kanonicza at dusk.",
+        "weather": {
+          "highF": 82,
+          "lowF": 61,
+          "note": "Warm"
+        },
+        "experiences": [
+          {
+            "id": "d1-slow-morning",
+            "name": "A slow morning after the train day",
+            "category": "rest",
+            "neighborhood": "Old Town",
+            "approximateStartTime": "11:30",
+            "approximateDurationMinutes": 120,
+            "latitude": 50.0617,
+            "longitude": 19.938,
+            "sourcePhotoIds": [],
+            "sourceDayId": "day-1",
+            "sourceNarrativeExcerpt": "A slow first morning after the long train day.",
+            "priority": "optional"
+          },
+          {
+            "id": "d1-rynek-cloth-hall",
+            "name": "Rynek Główny — the Cloth Hall and St. Mary’s",
+            "category": "landmark",
+            "placeName": "Rynek Główny",
+            "neighborhood": "Rynek Główny",
+            "approximateStartTime": "15:45",
+            "approximateDurationMinutes": 35,
+            "latitude": 50.06061,
+            "longitude": 19.93762,
+            "sourcePhotoIds": [
+              "krakow-20261",
+              "krakow-20262",
+              "krakow-20263",
+              "krakow-20264",
+              "krakow-20265"
+            ],
+            "sourceDayId": "day-1",
+            "sourceNarrativeExcerpt": "Out into the medieval core mid-afternoon: the Rynek and its Cloth Hall, St. Mary’s towers.",
+            "priority": "core"
+          },
+          {
+            "id": "d1-florianska-barbican",
+            "name": "Up Floriańska to the Gate and the Barbican",
+            "category": "landmark",
+            "placeName": "St. Florian’s Gate and the Barbican",
+            "neighborhood": "Floriańska",
+            "approximateStartTime": "16:05",
+            "approximateDurationMinutes": 20,
+            "latitude": 50.06262,
+            "longitude": 19.93982,
+            "sourcePhotoIds": [
+              "krakow-20266",
+              "krakow-20267",
+              "krakow-20268"
+            ],
+            "sourceDayId": "day-1",
+            "priority": "core"
+          },
+          {
+            "id": "d1-maly-rynek",
+            "name": "Mały Rynek on the loop back",
+            "category": "neighborhood",
+            "neighborhood": "Old Town",
+            "approximateStartTime": "16:20",
+            "approximateDurationMinutes": 10,
+            "latitude": 50.06155,
+            "longitude": 19.94056,
+            "sourcePhotoIds": [
+              "krakow-20269"
+            ],
+            "sourceDayId": "day-1",
+            "priority": "optional"
+          },
+          {
+            "id": "d1-break-before-dinner",
+            "name": "Break at the flat before dinner",
+            "category": "rest",
+            "neighborhood": "Old Town",
+            "approximateStartTime": "17:00",
+            "approximateDurationMinutes": 75,
+            "latitude": 50.0617,
+            "longitude": 19.938,
+            "sourcePhotoIds": [],
+            "sourceDayId": "day-1",
+            "priority": "optional"
+          },
+          {
+            "id": "d1-dinner-old-town",
+            "name": "Dinner in the Old Town",
+            "category": "food",
+            "neighborhood": "Old Town",
+            "approximateStartTime": "18:15",
+            "approximateDurationMinutes": 60,
+            "latitude": 50.0612,
+            "longitude": 19.937,
+            "sourcePhotoIds": [],
+            "sourceDayId": "day-1",
+            "priority": "core"
+          },
+          {
+            "id": "d1-grodzka-peter-paul",
+            "name": "Down Grodzka, past Sts. Peter & Paul",
+            "category": "neighborhood",
+            "neighborhood": "Grodzka",
+            "approximateStartTime": "19:30",
+            "approximateDurationMinutes": 20,
+            "latitude": 50.05706,
+            "longitude": 19.93823,
+            "sourcePhotoIds": [
+              "krakow-202610"
+            ],
+            "sourceDayId": "day-1",
+            "sourceNarrativeExcerpt": "The evening ran the other way — down Grodzka past Sts. Peter & Paul.",
+            "priority": "core"
+          },
+          {
+            "id": "d1-vistula-below-wawel",
+            "name": "The Vistula boulevards below Wawel",
+            "category": "neighborhood",
+            "neighborhood": "Vistula boulevards",
+            "approximateStartTime": "19:55",
+            "approximateDurationMinutes": 20,
+            "latitude": 50.05094,
+            "longitude": 19.9324,
+            "sourcePhotoIds": [
+              "krakow-202611",
+              "krakow-202612",
+              "krakow-202613"
+            ],
+            "sourceDayId": "day-1",
+            "priority": "core"
+          },
+          {
+            "id": "d1-kanonicza-dusk",
+            "name": "Back up Kanonicza at dusk",
+            "category": "neighborhood",
+            "neighborhood": "Old Town",
+            "approximateStartTime": "20:15",
+            "approximateDurationMinutes": 15,
+            "latitude": 50.05666,
+            "longitude": 19.93816,
+            "sourcePhotoIds": [
+              "krakow-202614",
+              "krakow-202615"
+            ],
+            "sourceDayId": "day-1",
+            "priority": "optional"
+          }
+        ],
+        "route": [
+          {
+            "lat": 50.06061,
+            "lng": 19.93762,
+            "time": "15:53",
+            "photoId": "krakow-20261"
+          },
+          {
+            "lat": 50.0614,
+            "lng": 19.93785,
+            "time": "15:55",
+            "photoId": "krakow-20262"
+          },
+          {
+            "lat": 50.06149,
+            "lng": 19.93789,
+            "time": "15:55",
+            "photoId": "krakow-20263"
+          },
+          {
+            "lat": 50.0616,
+            "lng": 19.93815,
+            "time": "15:56",
+            "photoId": "krakow-20264"
+          },
+          {
+            "lat": 50.06219,
+            "lng": 19.9382,
+            "time": "16:00",
+            "photoId": "krakow-20265"
+          },
+          {
+            "lat": 50.06262,
+            "lng": 19.93982,
+            "time": "16:02",
+            "photoId": "krakow-20266"
+          },
+          {
+            "lat": 50.06453,
+            "lng": 19.94128,
+            "time": "16:05",
+            "photoId": "krakow-20267"
+          },
+          {
+            "lat": 50.06336,
+            "lng": 19.94292,
+            "time": "16:17",
+            "photoId": "krakow-20268"
+          },
+          {
+            "lat": 50.06155,
+            "lng": 19.94056,
+            "time": "16:21",
+            "photoId": "krakow-20269"
+          },
+          {
+            "lat": 50.05706,
+            "lng": 19.93823,
+            "time": "19:38",
+            "photoId": "krakow-202610"
+          },
+          {
+            "lat": 50.05094,
+            "lng": 19.9324,
+            "time": "19:57",
+            "photoId": "krakow-202611"
+          },
+          {
+            "lat": 50.05096,
+            "lng": 19.93238,
+            "time": "19:57",
+            "photoId": "krakow-202612"
+          },
+          {
+            "lat": 50.04942,
+            "lng": 19.9331,
+            "time": "20:01",
+            "photoId": "krakow-202613"
+          },
+          {
+            "lat": 50.05666,
+            "lng": 19.93816,
+            "time": "20:15",
+            "photoId": "krakow-202614"
+          },
+          {
+            "lat": 50.05667,
+            "lng": 19.93816,
+            "time": "20:15",
+            "photoId": "krakow-202615"
+          }
+        ]
+      },
+      {
+        "id": "day-2",
+        "dayNumber": 2,
+        "title": "The Rynek, then Oświęcim",
+        "date": "2026-06-26",
+        "startTime": "11:30",
+        "endTime": "20:30",
+        "distanceKm": 59.1,
+        "neighborhoods": [
+          "Rynek Główny",
+          "Old Town",
+          "Oświęcim"
+        ],
+        "summary": "A late morning back on the square and a long lunch in the Old Town, then the trip’s necessary counterweight: out to Oświęcim — Birkenau first, the ramp and barracks and the long walk to the memorial, then Auschwitz I in the early evening, and the quiet ride back.",
+        "weather": {
+          "highF": 80,
+          "lowF": 59,
+          "note": "Bright"
+        },
+        "experiences": [
+          {
+            "id": "d2-rynek-late-morning",
+            "name": "Late morning on the Rynek",
+            "category": "neighborhood",
+            "neighborhood": "Rynek Główny",
+            "approximateStartTime": "11:45",
+            "approximateDurationMinutes": 30,
+            "latitude": 50.06144,
+            "longitude": 19.93823,
+            "sourcePhotoIds": [
+              "krakow-202616",
+              "krakow-202617",
+              "krakow-202618"
+            ],
+            "sourceDayId": "day-2",
+            "priority": "optional"
+          },
+          {
+            "id": "d2-long-lunch",
+            "name": "A long lunch, then a wander back through the Old Town",
+            "category": "food",
+            "neighborhood": "Old Town",
+            "approximateStartTime": "12:45",
+            "approximateDurationMinutes": 75,
+            "latitude": 50.05819,
+            "longitude": 19.93806,
+            "sourcePhotoIds": [
+              "krakow-202619",
+              "krakow-202620",
+              "krakow-202621",
+              "krakow-202622",
+              "krakow-202623"
+            ],
+            "sourceDayId": "day-2",
+            "sourceNarrativeExcerpt": "A late morning back on the square and a long lunch in the Old Town.",
+            "priority": "core"
+          },
+          {
+            "id": "d2-ride-to-oswiecim",
+            "name": "Out to Oświęcim",
+            "category": "transport",
+            "placeName": "Oświęcim",
+            "approximateStartTime": "14:30",
+            "approximateDurationMinutes": 90,
+            "latitude": 50.034,
+            "longitude": 19.204,
+            "sourcePhotoIds": [],
+            "sourceDayId": "day-2",
+            "sourceNarrativeExcerpt": "Out to Oświęcim in the early afternoon."
+          },
+          {
+            "id": "d2-birkenau",
+            "name": "Auschwitz II–Birkenau — the ramp, the barracks, the far memorial",
+            "category": "landmark",
+            "placeName": "Auschwitz-Birkenau Memorial",
+            "approximateStartTime": "16:15",
+            "approximateDurationMinutes": 90,
+            "latitude": 50.03157,
+            "longitude": 19.18831,
+            "sourcePhotoIds": [
+              "krakow-202624",
+              "krakow-202625",
+              "krakow-202626",
+              "krakow-202627",
+              "krakow-202628",
+              "krakow-202629",
+              "krakow-202630",
+              "krakow-202631",
+              "krakow-202632",
+              "krakow-202633",
+              "krakow-202634",
+              "krakow-202635",
+              "krakow-202636",
+              "krakow-202637",
+              "krakow-202638",
+              "krakow-202639",
+              "krakow-202640",
+              "krakow-202641"
+            ],
+            "sourceDayId": "day-2",
+            "sourceNarrativeExcerpt": "Birkenau first — the ramp, the barracks, the long walk to the memorial at the far end.",
+            "bookingRequired": true,
+            "priority": "core"
+          },
+          {
+            "id": "d2-auschwitz-i",
+            "name": "Auschwitz I in the early evening",
+            "category": "landmark",
+            "placeName": "Auschwitz I",
+            "approximateStartTime": "18:05",
+            "approximateDurationMinutes": 50,
+            "latitude": 50.02755,
+            "longitude": 19.20324,
+            "sourcePhotoIds": [
+              "krakow-202642",
+              "krakow-202643",
+              "krakow-202644",
+              "krakow-202645"
+            ],
+            "sourceDayId": "day-2",
+            "bookingRequired": true,
+            "priority": "core"
+          },
+          {
+            "id": "d2-ride-back",
+            "name": "The quiet ride back to Kraków",
+            "category": "transport",
+            "approximateStartTime": "19:00",
+            "approximateDurationMinutes": 80,
+            "latitude": 50.062,
+            "longitude": 19.938,
+            "sourcePhotoIds": [],
+            "sourceDayId": "day-2",
+            "sourceNarrativeExcerpt": "Then Auschwitz I in the early evening, and the quiet ride back to Kraków."
+          }
+        ],
+        "route": [
+          {
+            "lat": 50.06144,
+            "lng": 19.93823,
+            "time": "11:53",
+            "photoId": "krakow-202616"
+          },
+          {
+            "lat": 50.06085,
+            "lng": 19.93815,
+            "time": "11:54",
+            "photoId": "krakow-202617"
+          },
+          {
+            "lat": 50.06065,
+            "lng": 19.93763,
+            "time": "11:55",
+            "photoId": "krakow-202618"
+          },
+          {
+            "lat": 50.05819,
+            "lng": 19.93806,
+            "time": "13:29",
+            "photoId": "krakow-202619"
+          },
+          {
+            "lat": 50.05781,
+            "lng": 19.93804,
+            "time": "13:35",
+            "photoId": "krakow-202620"
+          },
+          {
+            "lat": 50.0583,
+            "lng": 19.93795,
+            "time": "13:35",
+            "photoId": "krakow-202621"
+          },
+          {
+            "lat": 50.05931,
+            "lng": 19.9387,
+            "time": "13:37",
+            "photoId": "krakow-202622"
+          },
+          {
+            "lat": 50.06091,
+            "lng": 19.94009,
+            "time": "13:40",
+            "photoId": "krakow-202623"
+          },
+          {
+            "lat": 50.03157,
+            "lng": 19.18831,
+            "time": "16:21",
+            "photoId": "krakow-202624"
+          },
+          {
+            "lat": 50.03173,
+            "lng": 19.18828,
+            "time": "16:31",
+            "photoId": "krakow-202625"
+          },
+          {
+            "lat": 50.03456,
+            "lng": 19.18151,
+            "time": "16:55",
+            "photoId": "krakow-202626"
+          },
+          {
+            "lat": 50.03488,
+            "lng": 19.1805,
+            "time": "17:02",
+            "photoId": "krakow-202627"
+          },
+          {
+            "lat": 50.03534,
+            "lng": 19.18039,
+            "time": "17:03",
+            "photoId": "krakow-202628"
+          },
+          {
+            "lat": 50.03544,
+            "lng": 19.18031,
+            "time": "17:03",
+            "photoId": "krakow-202629"
+          },
+          {
+            "lat": 50.0364,
+            "lng": 19.18022,
+            "time": "17:06",
+            "photoId": "krakow-202630"
+          },
+          {
+            "lat": 50.03441,
+            "lng": 19.18004,
+            "time": "17:13",
+            "photoId": "krakow-202631"
+          },
+          {
+            "lat": 50.03447,
+            "lng": 19.17958,
+            "time": "17:13",
+            "photoId": "krakow-202632"
+          },
+          {
+            "lat": 50.03459,
+            "lng": 19.17846,
+            "time": "17:15",
+            "photoId": "krakow-202633"
+          },
+          {
+            "lat": 50.0346,
+            "lng": 19.17846,
+            "time": "17:15",
+            "photoId": "krakow-202634"
+          },
+          {
+            "lat": 50.03477,
+            "lng": 19.17799,
+            "time": "17:16",
+            "photoId": "krakow-202635"
+          },
+          {
+            "lat": 50.03492,
+            "lng": 19.17587,
+            "time": "17:18",
+            "photoId": "krakow-202636"
+          },
+          {
+            "lat": 50.03493,
+            "lng": 19.17588,
+            "time": "17:18",
+            "photoId": "krakow-202637"
+          },
+          {
+            "lat": 50.03521,
+            "lng": 19.17595,
+            "time": "17:20",
+            "photoId": "krakow-202638"
+          },
+          {
+            "lat": 50.03464,
+            "lng": 19.17589,
+            "time": "17:22",
+            "photoId": "krakow-202639"
+          },
+          {
+            "lat": 50.03395,
+            "lng": 19.17026,
+            "time": "17:33",
+            "photoId": "krakow-202640"
+          },
+          {
+            "lat": 50.0346,
+            "lng": 19.17591,
+            "time": "17:41",
+            "photoId": "krakow-202641"
+          },
+          {
+            "lat": 50.02755,
+            "lng": 19.20324,
+            "time": "18:16",
+            "photoId": "krakow-202642"
+          },
+          {
+            "lat": 50.02749,
+            "lng": 19.20329,
+            "time": "18:16",
+            "photoId": "krakow-202643"
+          },
+          {
+            "lat": 50.02744,
+            "lng": 19.2035,
+            "time": "18:18",
+            "photoId": "krakow-202644"
+          },
+          {
+            "lat": 50.02715,
+            "lng": 19.20417,
+            "time": "18:19",
+            "photoId": "krakow-202645"
+          }
+        ]
+      },
+      {
+        "id": "day-3",
+        "dayNumber": 3,
+        "title": "Ten to five on the empty square",
+        "date": "2026-06-27",
+        "startTime": "04:35",
+        "endTime": "09:45",
+        "distanceKm": 0.5,
+        "neighborhoods": [
+          "Rynek Główny",
+          "Old Town"
+        ],
+        "summary": "Up before the sun for one last walk — the Rynek completely empty at ten to five, first light on St. Mary’s towers, half an hour with the square to myself, then coffee, the bags, and the flight south to the Riviera.",
+        "weather": {
+          "highF": 78,
+          "lowF": 58,
+          "note": "Clear dawn, then out"
+        },
+        "experiences": [
+          {
+            "id": "d3-empty-rynek",
+            "name": "The Rynek, empty, at ten to five",
+            "category": "landmark",
+            "placeName": "Rynek Główny",
+            "neighborhood": "Rynek Główny",
+            "approximateStartTime": "04:45",
+            "approximateDurationMinutes": 25,
+            "latitude": 50.06138,
+            "longitude": 19.93613,
+            "sourcePhotoIds": [
+              "krakow-202646"
+            ],
+            "sourceDayId": "day-3",
+            "sourceNarrativeExcerpt": "The Rynek at 4:49 AM, completely empty.",
+            "priority": "core"
+          },
+          {
+            "id": "d3-st-marys-first-light",
+            "name": "First light on St. Mary’s towers",
+            "category": "landmark",
+            "placeName": "St. Mary’s Basilica",
+            "neighborhood": "Rynek Główny",
+            "approximateStartTime": "05:05",
+            "approximateDurationMinutes": 15,
+            "latitude": 50.06101,
+            "longitude": 19.94003,
+            "sourcePhotoIds": [
+              "krakow-202647",
+              "krakow-202648"
+            ],
+            "sourceDayId": "day-3",
+            "sourceNarrativeExcerpt": "First light catching St. Mary’s towers.",
+            "priority": "core"
+          },
+          {
+            "id": "d3-one-last-loop",
+            "name": "One last loop of the square",
+            "category": "neighborhood",
+            "neighborhood": "Rynek Główny",
+            "approximateStartTime": "05:15",
+            "approximateDurationMinutes": 15,
+            "latitude": 50.06057,
+            "longitude": 19.93762,
+            "sourcePhotoIds": [
+              "krakow-202649"
+            ],
+            "sourceDayId": "day-3",
+            "priority": "optional"
+          },
+          {
+            "id": "d3-coffee-and-bags",
+            "name": "Coffee, and the bags",
+            "category": "food",
+            "neighborhood": "Old Town",
+            "approximateStartTime": "07:30",
+            "approximateDurationMinutes": 45,
+            "latitude": 50.0615,
+            "longitude": 19.937,
+            "sourcePhotoIds": [],
+            "sourceDayId": "day-3",
+            "priority": "optional"
+          },
+          {
+            "id": "d3-flight-south",
+            "name": "The flight south to the Riviera",
+            "category": "transport",
+            "placeName": "Kraków Airport",
+            "approximateStartTime": "09:00",
+            "approximateDurationMinutes": 45,
+            "latitude": 50.0777,
+            "longitude": 19.7848,
+            "sourcePhotoIds": [],
+            "sourceDayId": "day-3",
+            "sourceNarrativeExcerpt": "Then coffee, the bags, and the flight south to the Riviera."
+          }
+        ],
+        "route": [
+          {
+            "lat": 50.06138,
+            "lng": 19.93613,
+            "time": "04:49",
+            "photoId": "krakow-202646"
+          },
+          {
+            "lat": 50.06101,
+            "lng": 19.94003,
+            "time": "05:09",
+            "photoId": "krakow-202647"
+          },
+          {
+            "lat": 50.06105,
+            "lng": 19.94029,
+            "time": "05:10",
+            "photoId": "krakow-202648"
+          },
+          {
+            "lat": 50.06057,
+            "lng": 19.93762,
+            "time": "05:17",
+            "photoId": "krakow-202649"
+          }
+        ]
+      }
+    ]
   }
 }
