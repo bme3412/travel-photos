@@ -29,7 +29,11 @@ export async function generateMetadata({ params }) {
   };
 }
 
-const cityName = (slug) => slug.charAt(0).toUpperCase() + slug.slice(1);
+// Prefer the blueprint's spelling ("Kraków, Poland" -> "Kraków"); the
+// capitalized slug is only a fallback for entries with no resolved trips.
+const cityName = (hood) =>
+  hood.trips?.[0]?.destination.split(',')[0] ??
+  hood.city.charAt(0).toUpperCase() + hood.city.slice(1);
 
 export default async function NeighborhoodPage({ params }) {
   const { id } = await params;
@@ -61,7 +65,7 @@ export default async function NeighborhoodPage({ params }) {
 
       <header className="mt-12 sm:mt-14">
         <p className="text-[11px] uppercase tracking-[0.3em] text-accent mb-4">
-          {cityName(hood.city)} · {hood.districts.join(' · ')}
+          {cityName(hood)} · {hood.districts.join(' · ')}
         </p>
         <h1 className="font-display text-4xl sm:text-5xl tracking-tight leading-[1.05]">
           {hood.name}

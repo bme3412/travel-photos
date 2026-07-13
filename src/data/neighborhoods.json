@@ -52,6 +52,47 @@
       { "tripId": "paris-2026", "experienceId": "d2-berthillon" }
     ]
   },
+  "menton-old-town": {
+    "id": "menton-old-town",
+    "name": "Old Town",
+    "city": "menton",
+    "districts": ["Vieille Ville"],
+    "aliases": [],
+    "center": { "lat": 43.7768, "lng": 7.5078 },
+    "radiusKm": 0.35,
+    "summary": "Stepped lanes stacked above the sea — the rampes, the basilica parvis, and Italy visible down the coast.",
+    "essay": "Menton's old town is vertical: everything is a climb or a descent. Up the Rampes Saint-Michel to the parvis, where the basilica hangs over the sea and Italy sits down the coast at sunset. The better version came the next morning — out before six into the blue hour, the lanes empty, the shutters closed, the whole hillside briefly private before coming back down the rampes by half past six.",
+    "experienceRefs": [
+      { "tripId": "menton-2026", "experienceId": "d1-rampes-saint-michel" },
+      { "tripId": "menton-2026", "experienceId": "d1-parvis-saint-michel" },
+      { "tripId": "menton-2026", "experienceId": "d1-basilique-saint-michel" },
+      { "tripId": "menton-2026", "experienceId": "d1-back-down-lanes" },
+      { "tripId": "menton-2026", "experienceId": "d1-sunset-parvis" },
+      { "tripId": "menton-2026", "experienceId": "d2-blue-hour-lanes" },
+      { "tripId": "menton-2026", "experienceId": "d2-climb-past-basilica" },
+      { "tripId": "menton-2026", "experienceId": "d2-down-the-rampes" }
+    ]
+  },
+  "krakow-old-town": {
+    "id": "krakow-old-town",
+    "name": "Old Town",
+    "city": "krakow",
+    "districts": ["Dzielnica I Stare Miasto"],
+    "aliases": [],
+    "center": { "lat": 50.0592, "lng": 19.9384 },
+    "radiusKm": 0.5,
+    "summary": "Home for the Kraków leg — a flat off the Rynek, long lunches, and Kanonicza at dusk.",
+    "essay": "Kraków was lived from inside the Old Town: a flat just off the Rynek, which turns the whole quarter into an extension of the apartment. A slow first morning after the long train day from Berlin, Mały Rynek on the loop back, dinner in the lanes, and Kanonicza — the street of canons running down toward Wawel — at dusk. The last morning was just coffee and the bags, which is its own kind of compliment.",
+    "experienceRefs": [
+      { "tripId": "krakow-2026", "experienceId": "d1-slow-morning" },
+      { "tripId": "krakow-2026", "experienceId": "d1-maly-rynek" },
+      { "tripId": "krakow-2026", "experienceId": "d1-break-before-dinner" },
+      { "tripId": "krakow-2026", "experienceId": "d1-dinner-old-town" },
+      { "tripId": "krakow-2026", "experienceId": "d1-kanonicza-dusk" },
+      { "tripId": "krakow-2026", "experienceId": "d2-long-lunch" },
+      { "tripId": "krakow-2026", "experienceId": "d3-coffee-and-bags" }
+    ]
+  },
   "le-marais": {
     "id": "le-marais",
     "name": "Le Marais",

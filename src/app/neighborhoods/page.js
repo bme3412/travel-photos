@@ -17,7 +17,11 @@ export const metadata = {
 
 export const revalidate = 3600;
 
-const cityName = (slug) => slug.charAt(0).toUpperCase() + slug.slice(1);
+// Prefer the blueprint's spelling ("Kraków, Poland" -> "Kraków"); the
+// capitalized slug is only a fallback for entries with no resolved trips.
+const cityName = (slug, hoods) =>
+  hoods?.[0]?.trips?.[0]?.destination.split(',')[0] ??
+  slug.charAt(0).toUpperCase() + slug.slice(1);
 
 export default async function NeighborhoodsIndexPage() {
   const photosData = await readPhotos();
@@ -43,7 +47,7 @@ export default async function NeighborhoodsIndexPage() {
       {cities.map(({ city, hoods }) => (
         <section key={city} className="mt-10 sm:mt-14">
           <h2 className="text-[11px] uppercase tracking-[0.3em] text-muted border-b border-ink/10 pb-3">
-            {cityName(city)}
+            {cityName(city, hoods)}
           </h2>
           <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
             {hoods.map((hood) => {
