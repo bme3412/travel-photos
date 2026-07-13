@@ -6,8 +6,9 @@ import { buildAlbumSummaries } from './utils/albumSummaries';
 import { getJournalIndex } from './utils/journalContent';
 
 export const metadata = {
-  title: 'Photo Albums',
-  description: 'Browse photo albums from different locations',
+  title: 'Passport & Ponder — Copy a real trip',
+  description:
+    'A photographic travel journal across 57 countries. Replay real routes day by day on the map, then copy a trip and turn it into your own personalized itinerary.',
 };
 
 // Enable ISR - revalidate every hour (3600 seconds)

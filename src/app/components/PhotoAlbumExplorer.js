@@ -6,6 +6,7 @@ import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import { Camera as CameraIcon, ArrowRight, ArrowUpRight, ChevronDown, Play } from 'lucide-react';
 import usePhotoStore from '../store/usePhotoStore';
+import { tripHasBlueprint } from '@/features/copy-trip/availability';
 
 // Album names carry a leading flag emoji ("🇪🇬 Egyptian Explorations") —
 // split it out so the serif display title stays clean and the flag can sit
@@ -43,7 +44,7 @@ const HeroStat = ({ value, label }) => (
   </div>
 );
 
-const FeaturedHero = ({ albums, stats }) => {
+const FeaturedHero = ({ albums, stats, copyTrip }) => {
   const [active, setActive] = useState(0);
 
   // One timeout per slide (not an interval) so a manual jump from the index
@@ -91,28 +92,42 @@ const FeaturedHero = ({ albums, stats }) => {
           Passport &amp; Ponder — a travel journal
         </p>
         <h1 className="fade-up fade-up-1 font-display text-4xl sm:text-6xl md:text-7xl text-paper leading-[1.02] tracking-tight max-w-4xl [text-wrap:balance]">
-          A <em className="italic font-light">photographic journal</em> across{' '}
-          {stats.countries} countries and six continents.
+          Follow the journey, replay the route — then{' '}
+          <em className="italic font-light">copy the trip</em> as your own.
         </h1>
+        <p className="fade-up fade-up-1 mt-5 max-w-2xl text-paper/75 leading-relaxed">
+          A photographic journal across {stats.countries} countries — where the newest
+          dispatches are GPS-true itineraries you can personalize and take with you.
+        </p>
         <div className="fade-up fade-up-2 mt-8 flex flex-wrap items-center gap-x-6 gap-y-4">
+          {copyTrip && (
+            <Link
+              href={`/trips/${copyTrip.id}/copy`}
+              className="group inline-flex items-center gap-2.5 rounded-full bg-accent px-6 py-3
+                         text-[11px] uppercase tracking-[0.2em] text-paper transition-colors duration-300 hover:bg-paper hover:text-ink"
+            >
+              Copy the {splitFlag(copyTrip.name).title} trip
+              <ArrowRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1" />
+            </Link>
+          )}
+          <Link
+            href="/trips"
+            className="group inline-flex items-center gap-2 border-b border-paper/40 pb-1 text-[11px] uppercase
+                       tracking-[0.2em] text-paper transition-colors duration-300 hover:border-accent"
+          >
+            Watch a trip replay
+            <ArrowRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1" />
+          </Link>
           {latest && (
             <Link
               href={`/journal/${latest.id}`}
-              className="group inline-flex items-center gap-2.5 rounded-full bg-accent px-6 py-3
-                         text-[11px] uppercase tracking-[0.2em] text-paper transition-colors duration-300 hover:bg-paper hover:text-ink"
+              className="group inline-flex items-center gap-2 border-b border-paper/40 pb-1 text-[11px] uppercase
+                         tracking-[0.2em] text-paper transition-colors duration-300 hover:border-accent"
             >
               Read the latest dispatch
               <ArrowRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1" />
             </Link>
           )}
-          <Link
-            href="/map"
-            className="group inline-flex items-center gap-2 border-b border-paper/40 pb-1 text-[11px] uppercase
-                       tracking-[0.2em] text-paper transition-colors duration-300 hover:border-accent"
-          >
-            Explore the map
-            <ArrowRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1" />
-          </Link>
         </div>
 
         {/* Folio bar: archive stats on the left, the rotating-cover index on
@@ -155,6 +170,77 @@ const FeaturedHero = ({ albums, stats }) => {
             </div>
           )}
         </div>
+      </div>
+    </section>
+  );
+};
+
+// ————————————————————————— Copy-my-trip band —————————————————————————
+// The product pitch, printed as its own department right under the cover:
+// what "copy my trip" means in three steps, and which trips are open for it.
+
+const COPY_STEPS = [
+  {
+    title: 'Replay the route',
+    text: 'The newest dispatches are real itineraries — every photograph GPS-anchored, replayed day by day on the map.',
+  },
+  {
+    title: 'Make it yours',
+    text: 'Pick the moments worth keeping, then set your own dates, party, pace, and budget.',
+  },
+  {
+    title: 'Travel with it',
+    text: 'Get a personalized day-by-day itinerary, every stop still linked back to the original moment it came from.',
+  },
+];
+
+const CopyTripBand = ({ trips }) => {
+  if (!trips.length) return null;
+
+  return (
+    <section className="max-w-7xl mx-auto px-6 pt-14">
+      <div aria-hidden="true">
+        <div className="h-[3px] bg-ink" />
+        <div className="mt-[3px] h-px bg-ink/25" />
+      </div>
+      <div className="mt-6">
+        <p className="text-[11px] uppercase tracking-[0.3em] text-accent mb-2.5">Copy my trip</p>
+        <h2 className="font-display text-3xl md:text-4xl tracking-tight max-w-2xl [text-wrap:balance]">
+          Don&rsquo;t just read the trip — take it with you.
+        </h2>
+      </div>
+
+      <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-x-8 gap-y-8">
+        {COPY_STEPS.map((step, index) => (
+          <div key={step.title} className="border-t border-ink/15 pt-4">
+            <p className="text-[11px] text-muted tabular-nums">№ {String(index + 1).padStart(2, '0')}</p>
+            <h3 className="font-display text-xl tracking-tight mt-2">{step.title}</h3>
+            <p className="mt-2 text-sm text-ink/70 leading-relaxed">{step.text}</p>
+          </div>
+        ))}
+      </div>
+
+      <div className="mt-10 flex flex-wrap items-center gap-x-3 gap-y-3">
+        <span className="mr-1 text-[11px] uppercase tracking-[0.22em] text-muted">
+          Open for copying
+        </span>
+        {trips.map((trip) => {
+          const { flag, title } = splitFlag(trip.name);
+          return (
+            <Link
+              key={trip.id}
+              href={`/trips/${trip.id}/copy`}
+              className="group inline-flex items-center gap-2 rounded-full border border-ink/15 px-4 py-2
+                         text-[11px] uppercase tracking-[0.18em] text-ink/70 transition-colors duration-200
+                         hover:border-accent hover:text-accent"
+            >
+              {flag && <span className="tracking-normal">{flag}</span>}
+              {title}
+              {trip.year && <span className="text-muted">· {trip.year}</span>}
+              <ArrowRight className="h-3 w-3 transition-transform duration-300 group-hover:translate-x-0.5" />
+            </Link>
+          );
+        })}
       </div>
     </section>
   );
@@ -440,17 +526,31 @@ const PhotoAlbumExplorer = ({ initialAlbums = null }) => {
     fetchAlbums();
   }, [initialAlbums, setAlbums, setLoading, setError]);
 
+  // The store is only populated in the effect above, which never runs on the
+  // server — render from the SSR prop until then so the page ships with real
+  // content (hero CTA, copy band, dispatch feed) instead of an empty shell.
+  const sourceAlbums = albums.length > 0 ? albums : initialAlbums || [];
+
   // The hero rotates through the newest albums that have cover photos
   const featuredAlbums = React.useMemo(() =>
-    [...albums]
+    [...sourceAlbums]
       .sort((a, b) => b.year - a.year)
       .filter((album) => album.coverPhoto?.url)
       .slice(0, 5),
-    [albums]
+    [sourceAlbums]
   );
 
+  // Trips with copy-trip blueprints, newest first. Paris leads the hero CTA —
+  // it's the flagship dispatch — with the first copyable trip as fallback.
+  const copyableAlbums = React.useMemo(
+    () => sourceAlbums.filter((album) => tripHasBlueprint(album.id)).sort((a, b) => b.year - a.year),
+    [sourceAlbums]
+  );
+  const heroCopyTrip =
+    copyableAlbums.find((album) => album.id === 'paris-2026') ?? copyableAlbums[0] ?? null;
+
   const processedAlbums = React.useMemo(() => {
-    const result = albums.filter((album) => album?.id);
+    const result = sourceAlbums.filter((album) => album?.id);
 
     result.sort((a, b) => {
       switch (sortBy) {
@@ -467,13 +567,13 @@ const PhotoAlbumExplorer = ({ initialAlbums = null }) => {
     });
 
     return result;
-  }, [albums, sortBy]);
+  }, [sourceAlbums, sortBy]);
 
   const stats = React.useMemo(() => ({
     countries: 57, // Total countries/territories from travel century list
-    photos: albums.reduce((acc, album) => acc + (album.photoCount || 0), 0),
-    albums: albums.length,
-  }), [albums]);
+    photos: sourceAlbums.reduce((acc, album) => acc + (album.photoCount || 0), 0),
+    albums: sourceAlbums.length,
+  }), [sourceAlbums]);
 
   if (loading) {
     return (
@@ -488,7 +588,9 @@ const PhotoAlbumExplorer = ({ initialAlbums = null }) => {
 
   return (
     <div>
-      <FeaturedHero albums={featuredAlbums} stats={stats} />
+      <FeaturedHero albums={featuredAlbums} stats={stats} copyTrip={heroCopyTrip} />
+
+      <CopyTripBand trips={copyableAlbums} />
 
       <div className="max-w-7xl mx-auto px-6 pt-14 pb-20">
         {/* Section header — a printed department opening: thick-thin rule,
