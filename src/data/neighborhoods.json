@@ -19,6 +19,32 @@
       { "tripId": "paris-2026", "experienceId": "d2-cafe-de-flore" },
       { "tripId": "paris-2026", "experienceId": "d3-cafe-bismuth" },
       { "tripId": "paris-2026", "experienceId": "d3-saint-germain-last-walk" }
+    ],
+    "copyOptions": [
+      {
+        "id": "sgp-jardin-du-luxembourg",
+        "name": "Jardin du Luxembourg",
+        "category": "landmark",
+        "description": "Ten minutes south of the boulevard — take one of the green chairs by the fountain and stay longer than you planned. The best free hour in the quarter."
+      },
+      {
+        "id": "sgp-saint-sulpice",
+        "name": "Église Saint-Sulpice",
+        "category": "landmark",
+        "description": "The quarter's own giant — Delacroix murals just inside the door and a fraction of the crowds anywhere else this size draws."
+      },
+      {
+        "id": "sgp-rue-de-buci-market",
+        "name": "Rue de Buci market street",
+        "category": "food",
+        "description": "The morning version of Saint-Germain: flower stalls, oyster stands, and a coffee standing up before the terraces fill."
+      },
+      {
+        "id": "sgp-les-deux-magots",
+        "name": "Les Deux Magots",
+        "category": "food",
+        "description": "The other literary terrace, across from the abbey — order the chocolat chaud and settle the Flore rivalry yourself."
+      }
     ]
   },
   "montmartre": {
@@ -34,6 +60,27 @@
     "experienceRefs": [
       { "tripId": "paris-2026", "experienceId": "d1-sacre-coeur" },
       { "tripId": "paris-2026", "experienceId": "d1-maison-rose-vineyard" }
+    ],
+    "copyOptions": [
+      {
+        "id": "mm-musee-de-montmartre",
+        "name": "Musée de Montmartre",
+        "category": "tour",
+        "description": "The house where Renoir kept a studio, with gardens that overlook the vineyard you just walked past — the quiet indoor hour the hill doesn't otherwise offer.",
+        "bookingRequired": true
+      },
+      {
+        "id": "mm-place-du-tertre-early",
+        "name": "Place du Tertre before ten",
+        "category": "neighborhood",
+        "description": "The portrait painters' square is a cliché by noon and a pleasure at nine — catch it while the easels are still going up."
+      },
+      {
+        "id": "mm-rue-lepic",
+        "name": "Down Rue Lepic",
+        "category": "food",
+        "description": "The winding market street off the back of the hill — bakeries, the Café des Deux Moulins of Amélie fame, and a natural descent toward Blanche."
+      }
     ]
   },
   "ile-saint-louis": {
@@ -50,6 +97,26 @@
       { "tripId": "paris-2026", "experienceId": "d2-moules-frites-street-jazz" },
       { "tripId": "paris-2026", "experienceId": "d2-ile-saint-louis" },
       { "tripId": "paris-2026", "experienceId": "d2-berthillon" }
+    ],
+    "copyOptions": [
+      {
+        "id": "isl-quai-picnic",
+        "name": "Picnic on the Quai d'Orléans",
+        "category": "rest",
+        "description": "Cheese and a baguette from the main street, then the stone lip of the quay with your feet over the water — the island's cheapest great table."
+      },
+      {
+        "id": "isl-eglise-saint-louis",
+        "name": "Église Saint-Louis-en-l'Île",
+        "category": "landmark",
+        "description": "A small baroque surprise halfway down the main street — gold-lit inside, and almost always nearly empty."
+      },
+      {
+        "id": "isl-rue-saint-louis-shops",
+        "name": "Rue Saint-Louis-en-l'Île shops",
+        "category": "shopping",
+        "description": "The island's single street is a one-lane village: fromagers, galleries, and windows worth the slow walk end to end."
+      }
     ]
   },
   "menton-old-town": {
@@ -105,6 +172,32 @@
     "essay": "So far the Marais belongs to one afternoon: June 21st, the Fête de la Musique, when every courtyard and street corner in the quarter becomes a stage and the crowd drifts from band to band. One visit is not a claim to know the place — this page will grow.",
     "experienceRefs": [
       { "tripId": "paris-2026", "experienceId": "d3-marais-fete" }
+    ],
+    "copyOptions": [
+      {
+        "id": "lm-place-des-vosges",
+        "name": "Place des Vosges",
+        "category": "landmark",
+        "description": "The oldest square in Paris and still the most composed — do a full lap under the arcades, then sit on the grass with everyone else."
+      },
+      {
+        "id": "lm-rue-des-rosiers",
+        "name": "Falafel on Rue des Rosiers",
+        "category": "food",
+        "description": "The L'As du Fallafel line moves faster than it looks and the sandwich is worth every minute of it. Eat it walking."
+      },
+      {
+        "id": "lm-musee-carnavalet",
+        "name": "Musée Carnavalet",
+        "category": "tour",
+        "description": "The history of Paris told across two mansions, and the permanent collection is free — the best rainy-hour insurance in the quarter."
+      },
+      {
+        "id": "lm-marche-enfants-rouges",
+        "name": "Marché des Enfants Rouges",
+        "category": "food",
+        "description": "The city's oldest covered market, now mostly lunch stalls — go hungry and undecided."
+      }
     ]
   }
 }

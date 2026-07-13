@@ -93,6 +93,44 @@ export function getTripNeighborhoods(tripId) {
     .map((hood) => ({ id: hood.id, name: hood.name }));
 }
 
+// The neighborhood guide for a trip's copy flow: every registry entry for
+// the trip's city, carrying the experiences it claims on this trip and the
+// authored copyOptions a visitor can add beyond the original route.
+// Registry-only, client-safe.
+export function getCopyGuide(tripId) {
+  return Object.values(getRegistry() ?? {})
+    .filter((hood) => tripId.startsWith(`${hood.city}-`))
+    .map((hood) => ({
+      id: hood.id,
+      name: hood.name,
+      districts: hood.districts,
+      summary: hood.summary,
+      experienceIds: hood.experienceRefs
+        .filter((ref) => ref.tripId === tripId)
+        .map((ref) => ref.experienceId),
+      copyOptions: hood.copyOptions ?? [],
+    }))
+    .filter((hood) => hood.experienceIds.length > 0 || hood.copyOptions.length > 0)
+    .sort(
+      (a, b) =>
+        b.experienceIds.length + b.copyOptions.length -
+        (a.experienceIds.length + a.copyOptions.length)
+    );
+}
+
+// Flat option lookup for a trip's city — request validation and prompt
+// assembly on the server, provenance labels on the client.
+export function getCopyOptionsForTrip(tripId) {
+  const byId = new Map();
+  for (const hood of Object.values(getRegistry() ?? {})) {
+    if (!tripId.startsWith(`${hood.city}-`)) continue;
+    for (const option of hood.copyOptions ?? []) {
+      byId.set(option.id, { ...option, neighborhood: hood.name, neighborhoodId: hood.id });
+    }
+  }
+  return byId;
+}
+
 // Index model: every neighborhood enriched, grouped by city, richest first
 // within a city. Coverage is uneven by design — the counts are the point.
 export function getNeighborhoodsByCity(photos = []) {

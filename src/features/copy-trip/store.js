@@ -39,6 +39,7 @@ const useCopyTripStore = create(
           selectedExperienceIds: defaultExperienceIds,
           mustKeepExperienceIds: [],
           removedExperienceIds: [],
+          addOnOptionIds: [],
           preferences: null,
           generatedPlan: null,
           status: 'selecting',
@@ -57,6 +58,19 @@ const useCopyTripStore = create(
 
       setSelectedExperienceIds(ids) {
         get().updateSession({ selectedExperienceIds: ids });
+      },
+
+      // Additions chosen from the neighborhood guide (copyOptions in the
+      // registry) — extras beyond the original trip's experiences.
+      toggleAddOnOption(optionId) {
+        const existing = get().session;
+        if (!existing) return;
+        const current = existing.addOnOptionIds ?? [];
+        get().updateSession({
+          addOnOptionIds: current.includes(optionId)
+            ? current.filter((id) => id !== optionId)
+            : [...current, optionId],
+        });
       },
 
       // "+ Add to my trip" from the replay: seed a session with just this

@@ -22,6 +22,8 @@
 // src/data/neighborhoods.json.
 
 import { z } from 'zod';
+// Relative (not @/) so the plain-node validator script can load this module.
+import { EXPERIENCE_CATEGORIES } from '../copy-trip/schema.mjs';
 
 const Slug = z
   .string()
@@ -30,6 +32,20 @@ const Slug = z
 export const ExperienceRefSchema = z.object({
   tripId: Slug,
   experienceId: Slug,
+});
+
+// A curated addition the owner recommends in this neighborhood — something
+// NOT on the documented trips, offered in the copy flow so a visitor's
+// version can branch beyond the original route. Ids are global (they travel
+// through the generate API), so prefix them with the neighborhood, e.g.
+// "sgp-jardin-du-luxembourg". Descriptions are the owner's voice, one or
+// two sentences, no availability claims.
+export const CopyOptionSchema = z.object({
+  id: Slug,
+  name: z.string().min(1),
+  category: z.enum(EXPERIENCE_CATEGORIES),
+  description: z.string().min(1),
+  bookingRequired: z.boolean().optional(),
 });
 
 export const NeighborhoodSchema = z.object({
@@ -48,6 +64,7 @@ export const NeighborhoodSchema = z.object({
   personalHistory: z.string().min(1).optional(),
   firstVisitedYear: z.number().int().min(1900).max(2100).optional(),
   experienceRefs: z.array(ExperienceRefSchema).default([]),
+  copyOptions: z.array(CopyOptionSchema).default([]),
 });
 
 // Keyed by neighborhood id, e.g. { "saint-germain-des-pres": Neighborhood }.
@@ -60,6 +77,7 @@ export const NeighborhoodsFileSchema = z
     // but within one city a label must resolve to exactly one neighborhood.
     const namesSeen = new Map(); // "city:label" (lowercased) -> owning id
     const refsSeen = new Map(); // "tripId/experienceId" -> owning id
+    const optionsSeen = new Map(); // option id -> owning neighborhood id (global)
 
     for (const [key, hood] of Object.entries(entries)) {
       if (key !== hood.id) {
@@ -97,6 +115,16 @@ export const NeighborhoodsFileSchema = z
             message: `trip "${ref.tripId}" is not a ${hood.city} trip`,
           });
         }
+      });
+      (hood.copyOptions ?? []).forEach((option, i) => {
+        if (optionsSeen.has(option.id)) {
+          ctx.addIssue({
+            code: 'custom',
+            path: [key, 'copyOptions', i, 'id'],
+            message: `option id "${option.id}" is already claimed by "${optionsSeen.get(option.id)}"`,
+          });
+        }
+        optionsSeen.set(option.id, hood.id);
       });
     }
   });

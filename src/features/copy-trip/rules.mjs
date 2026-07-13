@@ -7,6 +7,7 @@
 // beyond what the caller passes in.
 
 import { addDaysIso, formatDateRange, titleCase } from './format.mjs';
+import { getCopyOptionsForTrip } from '@/features/neighborhoods/data';
 
 export const PACE_DAILY_EXPERIENCES = { relaxed: 4, moderate: 6, fast: 8 };
 export const PACE_DAILY_WALKING_KM = { relaxed: 8, moderate: 12, fast: 18 };
@@ -356,6 +357,32 @@ export function deriveTransformationRules(blueprint, session, preferences) {
         `${preferences.pace} pace (~${feasibility.limit}/day). Guarantee the must-keeps; mark the rest ` +
         `as optional or drop the least essential, explaining what was cut.`
     );
+  }
+
+  // Additions from the neighborhood guide: owner-curated options the
+  // traveler picked beyond the original route. The id contract ("item id =
+  // option id, status new") is what crossCheckPlan verifies.
+  const addOnIds = session.addOnOptionIds ?? [];
+  if (addOnIds.length) {
+    const optionsById = getCopyOptionsForTrip(blueprint.id);
+    const chosen = addOnIds.map((id) => optionsById.get(id)).filter(Boolean);
+    if (chosen.length) {
+      add(
+        'additions',
+        'The traveler picked these curated additions from the neighborhood guide — not part of the ' +
+          'original trip. Include EACH as an item with status "new", its "id" set exactly to the ' +
+          'option id, scheduled in or near its neighborhood: ' +
+          chosen
+            .map((o) => `${o.name} (id: ${o.id}, ${o.category}, in ${o.neighborhood}) — ${o.description}`)
+            .join('; '),
+        {
+          category: 'Additions',
+          original: 'The route as traveled',
+          personalized: `${chosen.length} ${chosen.length === 1 ? 'pick' : 'picks'} from the neighborhood guide`,
+          reason: 'You branched beyond the original trip while choosing.',
+        }
+      );
+    }
   }
 
   if (mustKeep.length) {

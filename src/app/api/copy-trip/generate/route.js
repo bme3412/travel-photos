@@ -12,6 +12,7 @@ import crypto from 'node:crypto';
 import Anthropic from '@anthropic-ai/sdk';
 import { GenerateRequestSchema } from '@/features/copy-trip/schema.mjs';
 import { getTripBlueprint } from '@/features/copy-trip/blueprint';
+import { getCopyOptionsForTrip } from '@/features/neighborhoods/data';
 import {
   GENERATION_MODEL,
   buildGenerationRequest,
@@ -107,10 +108,17 @@ export async function POST(req) {
     return json({ error: `Unknown experience ids: ${unknown.join(', ')}` }, 400);
   }
 
+  const optionsById = getCopyOptionsForTrip(request.tripId);
+  const unknownOptions = request.addOnOptionIds.filter((id) => !optionsById.has(id));
+  if (unknownOptions.length > 0) {
+    return json({ error: `Unknown addition ids: ${unknownOptions.join(', ')}` }, 400);
+  }
+
   const selection = {
     selectedExperienceIds: request.selectedExperienceIds,
     mustKeepExperienceIds: request.mustKeepExperienceIds.filter((id) => validIds.has(id)),
     removedExperienceIds: request.removedExperienceIds.filter((id) => validIds.has(id)),
+    addOnOptionIds: request.addOnOptionIds,
   };
   const effectiveCount = request.selectedExperienceIds.filter(
     (id) => !selection.removedExperienceIds.includes(id)

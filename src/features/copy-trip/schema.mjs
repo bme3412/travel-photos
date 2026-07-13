@@ -260,6 +260,9 @@ export const GenerateRequestSchema = z.object({
   selectedExperienceIds: z.array(Slug).min(1).max(200),
   mustKeepExperienceIds: z.array(Slug).max(200).default([]),
   removedExperienceIds: z.array(Slug).max(200).default([]),
+  // Curated additions from the neighborhood guide (registry copyOptions),
+  // validated server-side against the trip's city.
+  addOnOptionIds: z.array(Slug).max(40).default([]),
   preferences: CopyTripPreferencesSchema,
   regenerate: z.boolean().optional(),
 });

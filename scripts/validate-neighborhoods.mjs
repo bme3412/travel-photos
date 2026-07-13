@@ -53,7 +53,18 @@ for (const hood of Object.values(neighborhoods)) {
 }
 const cityOfTrip = (tripId) => [...cities].find((c) => tripId.startsWith(`${c}-`));
 
+const allExperienceIds = new Set(
+  [...experiencesByTrip.values()].flatMap((byId) => [...byId.keys()])
+);
+
 for (const [key, hood] of Object.entries(neighborhoods)) {
+  for (const option of hood.copyOptions ?? []) {
+    if (allExperienceIds.has(option.id)) {
+      problems.push(
+        `${key}: copyOption id "${option.id}" collides with a blueprint experience id`
+      );
+    }
+  }
   for (const ref of hood.experienceRefs ?? []) {
     const where = `${key}: ${ref.tripId}/${ref.experienceId}`;
     const byId = experiencesByTrip.get(ref.tripId);
@@ -109,7 +120,7 @@ if (problems.length > 0) {
 for (const [key, hood] of Object.entries(neighborhoods)) {
   console.log(
     `✓ ${key}: ${hood.districts.join(' + ')}, ${hood.experienceRefs.length} experience ref(s), ` +
-      `radius ${hood.radiusKm} km${hood.essay ? ', essay' : ''}`
+      `${(hood.copyOptions ?? []).length} copy option(s), radius ${hood.radiusKm} km${hood.essay ? ', essay' : ''}`
   );
 }
 if (unregistered.size > 0) {

@@ -259,5 +259,22 @@ export function crossCheckPlan(plan, blueprint, selection, preferences) {
     }
   }
 
+  // Neighborhood-guide additions: each requested option must appear as a
+  // "new" item whose id is exactly the option id (the contract set by the
+  // additions rule in rules.mjs).
+  const itemsById = new Map(
+    plan.days.flatMap((d) => d.items.map((item) => [item.id, item]))
+  );
+  for (const optionId of selection.addOnOptionIds ?? []) {
+    const item = itemsById.get(optionId);
+    if (!item) {
+      problems.push(
+        `requested addition "${optionId}" does not appear as an item with that id`
+      );
+    } else if (item.status !== 'new') {
+      problems.push(`addition "${optionId}" must have status "new", got "${item.status}"`);
+    }
+  }
+
   return problems;
 }

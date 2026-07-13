@@ -141,6 +141,7 @@ export default function ResultClient({ blueprint, photoUrlById = {} }) {
           selectedExperienceIds: session.selectedExperienceIds,
           mustKeepExperienceIds: session.mustKeepExperienceIds ?? [],
           removedExperienceIds: session.removedExperienceIds ?? [],
+          addOnOptionIds: session.addOnOptionIds ?? [],
           preferences: session.preferences,
           regenerate,
         }),
@@ -256,6 +257,12 @@ export default function ResultClient({ blueprint, photoUrlById = {} }) {
             : blueprint.baseNeighborhood,
     },
     { label: 'From the original', value: `${keptCount} experiences · ${mustKeepCount} must-keep` },
+    {
+      label: 'Additions',
+      value: (session.addOnOptionIds ?? []).length
+        ? `${session.addOnOptionIds.length} from the neighborhood guide`
+        : null,
+    },
   ].filter((f) => f.value);
 
   return (

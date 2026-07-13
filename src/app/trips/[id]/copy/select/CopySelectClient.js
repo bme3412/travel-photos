@@ -4,9 +4,10 @@ import { useEffect, useMemo, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
-import { ArrowLeft, ArrowRight, Camera, Check, ChevronDown, Minus, Ticket } from 'lucide-react';
+import { ArrowLeft, ArrowRight, Camera, Check, ChevronDown, Minus, Plus, Ticket } from 'lucide-react';
 import useCopyTripStore, { useCopySessionHydrated } from '@/features/copy-trip/store';
 import { fmtTime12 } from '@/features/copy-trip/format.mjs';
+import { getCopyGuide } from '@/features/neighborhoods/data';
 
 const CATEGORY_LABELS = {
   food: 'Food',
@@ -173,6 +174,124 @@ function DayCard({ day, photoUrlById, selectedIds, onToggleDay, onToggleExperien
   );
 }
 
+// A curated addition from the neighborhood guide — selecting it branches
+// the copy beyond the original route.
+function OptionRow({ option, added, onToggle }) {
+  return (
+    <li className="flex items-start gap-3 py-2.5">
+      <button
+        type="button"
+        role="checkbox"
+        aria-checked={added}
+        aria-label={`Add "${option.name}"`}
+        onClick={onToggle}
+        className={`mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full transition-colors duration-150 ${
+          added ? 'bg-accent text-paper' : 'bg-transparent ring-1 ring-inset ring-accent/40 text-accent hover:ring-accent'
+        }`}
+      >
+        {added ? <Check className="h-3.5 w-3.5" strokeWidth={3} /> : <Plus className="h-3.5 w-3.5" strokeWidth={3} />}
+      </button>
+      <button type="button" onClick={onToggle} className="min-w-0 flex-1 text-left">
+        <span className={`block text-[15px] leading-snug ${added ? 'text-ink' : 'text-ink/70'}`}>
+          {option.name}
+          <span className="ml-2 text-[10px] uppercase tracking-[0.2em] text-accent/80">
+            {CATEGORY_LABELS[option.category] || option.category}
+          </span>
+        </span>
+        <span className="mt-0.5 block text-[13px] leading-relaxed text-muted">{option.description}</span>
+        {option.bookingRequired && (
+          <span className="mt-0.5 inline-flex items-center gap-1 text-xs text-accent/90">
+            <Ticket className="h-3 w-3" />
+            Booked activity
+          </span>
+        )}
+      </button>
+    </li>
+  );
+}
+
+function NeighborhoodCard({
+  hood,
+  experiences,
+  photoUrlById,
+  selectedIds,
+  addOnIds,
+  onToggleExperience,
+  onToggleOption,
+}) {
+  const selectedCount = experiences.filter((e) => selectedIds.has(e.id)).length;
+  const addedCount = hood.copyOptions.filter((o) => addOnIds.has(o.id)).length;
+  const thumbs = experiences
+    .flatMap((e) => e.sourcePhotoIds)
+    .filter((pid) => photoUrlById[pid])
+    .slice(0, 5);
+
+  return (
+    <section className="rounded-2xl bg-white/60 ring-1 ring-ink/10 p-5 sm:p-6">
+      <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
+        <h2 className="font-display text-2xl tracking-tight leading-tight">{hood.name}</h2>
+        <span className="text-[10px] uppercase tracking-[0.2em] text-muted">
+          {hood.districts.join(' · ')}
+        </span>
+      </div>
+      <p className="mt-2 text-[15px] leading-relaxed text-ink/70">{hood.summary}</p>
+
+      {thumbs.length > 0 && (
+        <div className="mt-4 flex gap-2">
+          {thumbs.map((pid) => (
+            <div key={pid} className="relative h-14 w-14 overflow-hidden rounded-lg bg-ink/5">
+              <Image src={photoUrlById[pid]} alt="" fill sizes="56px" className="object-cover" />
+            </div>
+          ))}
+        </div>
+      )}
+
+      {experiences.length > 0 && (
+        <div className="mt-5">
+          <p className="text-[11px] uppercase tracking-[0.25em] text-muted">
+            From my trip · {selectedCount} of {experiences.length} kept
+          </p>
+          <ul className="mt-1 divide-y divide-ink/[0.06]">
+            {experiences.map((exp) => (
+              <ExperienceRow
+                key={exp.id}
+                experience={exp}
+                selected={selectedIds.has(exp.id)}
+                onToggle={() => onToggleExperience(exp.id)}
+              />
+            ))}
+          </ul>
+        </div>
+      )}
+
+      {hood.copyOptions.length > 0 && (
+        <div className="mt-5">
+          <p className="text-[11px] uppercase tracking-[0.25em] text-accent">
+            More options here{addedCount > 0 ? ` · ${addedCount} added` : ''}
+          </p>
+          <ul className="mt-1 divide-y divide-ink/[0.06]">
+            {hood.copyOptions.map((option) => (
+              <OptionRow
+                key={option.id}
+                option={option}
+                added={addOnIds.has(option.id)}
+                onToggle={() => onToggleOption(option.id)}
+              />
+            ))}
+          </ul>
+        </div>
+      )}
+
+      <Link
+        href={`/neighborhoods/${hood.id}`}
+        className="mt-4 inline-block text-[11px] uppercase tracking-[0.2em] text-ink/50 hover:text-ink transition-colors"
+      >
+        Read more about {hood.name} →
+      </Link>
+    </section>
+  );
+}
+
 export default function CopySelectClient({ blueprint, photoUrlById }) {
   const router = useRouter();
   const hydrated = useCopySessionHydrated();
@@ -180,10 +299,37 @@ export default function CopySelectClient({ blueprint, photoUrlById }) {
   const beginSession = useCopyTripStore((s) => s.beginSession);
   const setSelectedExperienceIds = useCopyTripStore((s) => s.setSelectedExperienceIds);
   const updateSession = useCopyTripStore((s) => s.updateSession);
+  const toggleAddOnOption = useCopyTripStore((s) => s.toggleAddOnOption);
 
   const allIds = useMemo(
     () => blueprint.days.flatMap((d) => d.experiences.map((e) => e.id)),
     [blueprint]
+  );
+
+  // The neighborhood guide: registry entries for this city, each carrying
+  // this trip's experiences plus the owner's curated extra options.
+  const guide = useMemo(() => getCopyGuide(blueprint.id), [blueprint.id]);
+  const experiencesById = useMemo(
+    () => new Map(blueprint.days.flatMap((d) => d.experiences.map((e) => [e.id, e]))),
+    [blueprint]
+  );
+  const claimedIds = useMemo(
+    () => new Set(guide.flatMap((hood) => hood.experienceIds)),
+    [guide]
+  );
+  const unclaimed = useMemo(
+    () => allIds.filter((eid) => !claimedIds.has(eid)).map((eid) => experiencesById.get(eid)),
+    [allIds, claimedIds, experiencesById]
+  );
+
+  // Neighborhood-first when the guide has content for this trip.
+  const [view, setView] = useState(guide.length > 0 ? 'neighborhood' : 'day');
+  const addOnIds = useMemo(
+    () =>
+      new Set(
+        session && session.sourceTripId === blueprint.id ? session.addOnOptionIds ?? [] : []
+      ),
+    [session, blueprint.id]
   );
 
   // Everything starts selected: the mental model is "start from the real
@@ -263,10 +409,31 @@ export default function CopySelectClient({ blueprint, photoUrlById }) {
             Choose what to keep
           </h1>
           <p className="mt-4 max-w-xl text-lg leading-[1.7] text-ink/75">
-            Keep whole days or hand-pick experiences. Anything you keep stays traceable back to
-            the original trip.
+            Keep whole days or hand-pick experiences — or browse by neighborhood and branch beyond
+            the route with picks from the guide. Everything stays traceable.
           </p>
-          <div className="mt-6 flex items-center gap-5 text-[11px] uppercase tracking-[0.2em]">
+          <div className="mt-6 flex flex-wrap items-center gap-x-5 gap-y-3 text-[11px] uppercase tracking-[0.2em]">
+            {guide.length > 0 && (
+              <div className="flex rounded-full ring-1 ring-ink/15 p-0.5" role="tablist" aria-label="Browse by">
+                {[
+                  { key: 'neighborhood', label: 'By neighborhood' },
+                  { key: 'day', label: 'By day' },
+                ].map(({ key, label }) => (
+                  <button
+                    key={key}
+                    type="button"
+                    role="tab"
+                    aria-selected={view === key}
+                    onClick={() => setView(key)}
+                    className={`rounded-full px-4 py-1.5 transition-colors duration-200 ${
+                      view === key ? 'bg-accent text-paper' : 'text-ink/60 hover:text-ink'
+                    }`}
+                  >
+                    {label}
+                  </button>
+                ))}
+              </div>
+            )}
             <button
               type="button"
               onClick={() => applySelection(new Set(allIds))}
@@ -284,20 +451,58 @@ export default function CopySelectClient({ blueprint, photoUrlById }) {
           </div>
         </header>
 
-        <div className="mt-8 space-y-5">
-          {blueprint.days.map((day) => (
-            <DayCard
-              key={day.id}
-              day={day}
-              photoUrlById={photoUrlById}
-              selectedIds={selectedIds}
-              onToggleDay={toggleDay}
-              onToggleExperience={toggleExperience}
-              expanded={expandedDays.has(day.id)}
-              onToggleExpanded={() => toggleExpanded(day.id)}
-            />
-          ))}
-        </div>
+        {view === 'neighborhood' ? (
+          <div className="mt-8 space-y-5">
+            {guide.map((hood) => (
+              <NeighborhoodCard
+                key={hood.id}
+                hood={hood}
+                experiences={hood.experienceIds.map((eid) => experiencesById.get(eid)).filter(Boolean)}
+                photoUrlById={photoUrlById}
+                selectedIds={selectedIds}
+                addOnIds={addOnIds}
+                onToggleExperience={toggleExperience}
+                onToggleOption={toggleAddOnOption}
+              />
+            ))}
+            {unclaimed.length > 0 && (
+              <section className="rounded-2xl bg-white/60 ring-1 ring-ink/10 p-5 sm:p-6">
+                <h2 className="font-display text-2xl tracking-tight leading-tight">
+                  Elsewhere on the trip
+                </h2>
+                <p className="mt-2 text-[15px] leading-relaxed text-ink/70">
+                  Moments that don&rsquo;t belong to one quarter — arrivals, crossings, and the bits
+                  between neighborhoods.
+                </p>
+                <ul className="mt-3 divide-y divide-ink/[0.06]">
+                  {unclaimed.map((exp) => (
+                    <ExperienceRow
+                      key={exp.id}
+                      experience={exp}
+                      selected={selectedIds.has(exp.id)}
+                      onToggle={() => toggleExperience(exp.id)}
+                    />
+                  ))}
+                </ul>
+              </section>
+            )}
+          </div>
+        ) : (
+          <div className="mt-8 space-y-5">
+            {blueprint.days.map((day) => (
+              <DayCard
+                key={day.id}
+                day={day}
+                photoUrlById={photoUrlById}
+                selectedIds={selectedIds}
+                onToggleDay={toggleDay}
+                onToggleExperience={toggleExperience}
+                expanded={expandedDays.has(day.id)}
+                onToggleExpanded={() => toggleExpanded(day.id)}
+              />
+            ))}
+          </div>
+        )}
       </div>
 
       {/* Sticky continue bar */}
@@ -309,6 +514,13 @@ export default function CopySelectClient({ blueprint, photoUrlById }) {
             ) : (
               <>
                 <span className="text-ink">{selectedCount}</span> of {allIds.length} experiences kept
+                {addOnIds.size > 0 && (
+                  <>
+                    {' · '}
+                    <span className="text-accent">+{addOnIds.size}</span>{' '}
+                    {addOnIds.size === 1 ? 'addition' : 'additions'}
+                  </>
+                )}
               </>
             )}
           </p>

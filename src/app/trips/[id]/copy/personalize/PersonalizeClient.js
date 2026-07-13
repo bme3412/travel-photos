@@ -19,6 +19,7 @@ import {
   TRANSFORMATION_OPTIONS,
 } from '@/features/copy-trip/options';
 import { assessFeasibility } from '@/features/copy-trip/rules.mjs';
+import { getCopyGuide } from '@/features/neighborhoods/data';
 
 const SECTION_KICKER = 'text-[11px] uppercase tracking-[0.25em] text-accent';
 const FIELD_LABEL = 'text-[11px] uppercase tracking-[0.2em] text-muted';
@@ -172,6 +173,15 @@ export default function PersonalizeClient({ blueprint }) {
   );
 
   const [form, setForm] = useState(defaults);
+
+  // The neighborhood guide doubles as an informed base picker — the original
+  // base itself is covered by the "original" mode, so it's excluded here.
+  const baseGuide = useMemo(
+    () => getCopyGuide(blueprint.id).filter((hood) => hood.name !== blueprint.baseNeighborhood),
+    [blueprint]
+  );
+  const pickedBase = baseGuide.find((hood) => hood.name === form.accommodationNeighborhood);
+
   const [dispositions, setDispositions] = useState({});
   const [errors, setErrors] = useState({});
   const [warning, setWarning] = useState(null);
@@ -418,12 +428,45 @@ export default function PersonalizeClient({ blueprint }) {
                   <span className={`text-[15px] ${active ? 'text-ink' : 'text-ink/60'}`}>{label}</span>
                 </button>
                 {mode === 'custom' && active && (
-                  <div className="ml-8 mt-2">
+                  <div className="ml-8 mt-3 space-y-3">
+                    {baseGuide.length > 0 && (
+                      <>
+                        <div className="flex flex-wrap gap-2">
+                          {baseGuide.map((hood) => {
+                            const picked = form.accommodationNeighborhood === hood.name;
+                            return (
+                              <button
+                                key={hood.id}
+                                type="button"
+                                role="radio"
+                                aria-checked={picked}
+                                onClick={() => patch({ accommodationNeighborhood: hood.name })}
+                                className={`rounded-full px-4 py-2 text-[13px] transition-colors duration-200 ${
+                                  picked
+                                    ? 'bg-accent text-paper'
+                                    : 'ring-1 ring-ink/15 text-ink/70 hover:ring-ink/40'
+                                }`}
+                              >
+                                {hood.name}
+                                <span className={`ml-2 text-[10px] uppercase tracking-[0.15em] ${picked ? 'text-paper/70' : 'text-muted'}`}>
+                                  {hood.districts[0]}
+                                </span>
+                              </button>
+                            );
+                          })}
+                        </div>
+                        {pickedBase && (
+                          <p className="max-w-md text-[13px] leading-relaxed text-muted">
+                            {pickedBase.summary}
+                          </p>
+                        )}
+                      </>
+                    )}
                     <input
                       type="text"
                       value={form.accommodationNeighborhood}
                       onChange={(e) => patch({ accommodationNeighborhood: e.target.value })}
-                      placeholder="e.g. Le Marais"
+                      placeholder={baseGuide.length > 0 ? 'Or somewhere else…' : 'e.g. Le Marais'}
                       className="block w-full max-w-[18rem] rounded-lg bg-transparent px-3 py-2 text-[15px]
                                  text-ink ring-1 ring-ink/15 placeholder:text-ink/30
                                  focus:outline-none focus:ring-2 focus:ring-accent"
