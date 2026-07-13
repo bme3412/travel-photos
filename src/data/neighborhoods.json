@@ -1,0 +1,53 @@
+{
+  "saint-germain-des-pres": {
+    "id": "saint-germain-des-pres",
+    "name": "Saint-Germain-des-Prés",
+    "city": "paris",
+    "districts": ["6e arrondissement"],
+    "aliases": ["Saint-Germain"],
+    "center": { "lat": 48.8545, "lng": 2.334 },
+    "radiusKm": 0.8,
+    "summary": "Home base every June — the bookshops, the boulevard terraces, and the streets between the Seine and Sciences Po.",
+    "essay": "Every trip starts and ends here. The apartment on Rue Dauphine sits in a quiet courtyard a few steps from Pont Neuf, and the quarter unfolds from there: breakfast on the Café de Flore terrace, afternoons drifting past the bookshops off Place de l'Odéon, coffee at Café Bismuth when the day needs a pause. The last walk through Saint-Germain before leaving has become a ritual of its own — the same streets, a year older each time.",
+    "personalHistory": "Studied at Sciences Po, just west of the quarter, during the 2009 study-abroad semester — the reason every Paris trip since has been anchored to this side of the river.",
+    "firstVisitedYear": 2009,
+    "experienceRefs": [
+      { "tripId": "paris-2026", "experienceId": "d1-check-in-rue-dauphine" },
+      { "tripId": "paris-2026", "experienceId": "d1-saint-germain-wander" },
+      { "tripId": "paris-2026", "experienceId": "d1-sciences-po" },
+      { "tripId": "paris-2026", "experienceId": "d1-dinner-pre-aux-clercs" },
+      { "tripId": "paris-2026", "experienceId": "d2-cafe-de-flore" },
+      { "tripId": "paris-2026", "experienceId": "d3-cafe-bismuth" },
+      { "tripId": "paris-2026", "experienceId": "d3-saint-germain-last-walk" }
+    ]
+  },
+  "montmartre": {
+    "id": "montmartre",
+    "name": "Montmartre",
+    "city": "paris",
+    "districts": ["18e arrondissement"],
+    "aliases": [],
+    "center": { "lat": 48.8873, "lng": 2.3413 },
+    "radiusKm": 0.6,
+    "summary": "The hilltop village — Sacré-Cœur's panorama, La Maison Rose, and the last working vineyard in Paris.",
+    "essay": "In June 2026 the heat did what nothing else can: it emptied the steps of Sacré-Cœur. The climb rewards either way — the whole city laid out below the basilica — but the better half of Montmartre is the walk down, past the pink façade of La Maison Rose on Rue de l'Abreuvoir and the old vineyard behind it, on streets that still feel like the village the hill used to be.",
+    "experienceRefs": [
+      { "tripId": "paris-2026", "experienceId": "d1-sacre-coeur" },
+      { "tripId": "paris-2026", "experienceId": "d1-maison-rose-vineyard" }
+    ]
+  },
+  "le-marais": {
+    "id": "le-marais",
+    "name": "Le Marais",
+    "city": "paris",
+    "districts": ["3e arrondissement", "4e arrondissement"],
+    "aliases": ["Marais"],
+    "center": { "lat": 48.858, "lng": 2.3605 },
+    "radiusKm": 0.7,
+    "summary": "Courtyards, falafel lines, and — on the day of the Fête de la Musique — a stage on every corner.",
+    "essay": "So far the Marais belongs to one afternoon: June 21st, the Fête de la Musique, when every courtyard and street corner in the quarter becomes a stage and the crowd drifts from band to band. One visit is not a claim to know the place — this page will grow.",
+    "experienceRefs": [
+      { "tripId": "paris-2026", "experienceId": "d3-marais-fete" }
+    ]
+  }
+}

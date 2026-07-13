@@ -12,6 +12,7 @@
     "add-videos": "node scripts/add-videos.mjs",
     "generate-narratives": "node scripts/generate-narratives.mjs",
     "validate-blueprints": "node scripts/validate-blueprints.mjs",
+    "validate-neighborhoods": "node scripts/validate-neighborhoods.mjs",
     "score-photos": "node scripts/score-photos.mjs",
     "migrate-s3": "node scripts/migrate-to-s3.js",
     "convert-heic": "node scripts/convert-heic.js",
