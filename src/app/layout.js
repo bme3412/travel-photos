@@ -18,7 +18,8 @@ const archivo = Archivo({
 
 export const metadata = {
   title: 'Copy My Trip — A Travel Journal',
-  description: 'Exploring the world, one story at a time',
+  description:
+    'Real trips, replayed from GPS trails across 57 countries — copy one and turn it into your own personalized itinerary.',
 };
 
 const NAV_LINKS = [
@@ -39,7 +40,7 @@ export default function RootLayout({ children }) {
                   Copy My Trip
                 </span>
                 <span className="hidden lg:inline text-[10px] uppercase tracking-[0.3em] text-muted">
-                  A travel journal
+                  A travel journal you can copy
                 </span>
               </Link>
 

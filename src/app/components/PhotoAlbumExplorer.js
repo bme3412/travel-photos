@@ -80,24 +80,26 @@ const FeaturedHero = ({ albums, stats, copyTrip }) => {
           />
         </div>
       ))}
-      {/* Bottom-weighted scrim + a soft pool of shade behind the text column,
-          so the photography stays bright where the type isn't. */}
-      <div className="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/30 to-ink/5" />
-      <div className="absolute inset-0 bg-[radial-gradient(110%_85%_at_18%_88%,rgba(27,23,19,0.5),transparent_62%)]" />
+      {/* Bottom-weighted scrim + a left column of shade behind the type, so
+          the text always sits on dark ground while the photo stays bright
+          on the right. */}
+      <div className="absolute inset-0 bg-gradient-to-t from-ink/95 via-ink/50 to-ink/15" />
+      <div className="absolute inset-0 bg-gradient-to-r from-ink/70 via-ink/30 to-transparent" />
       <div className="grain absolute inset-0 pointer-events-none" aria-hidden="true" />
 
       <div className="relative mx-auto flex h-full max-w-7xl flex-col justify-end px-6 pb-10 md:pb-12">
-        <p className="fade-up flex items-center gap-3.5 text-[11px] uppercase tracking-[0.35em] text-paper/70 mb-5">
+        <p className="fade-up flex items-center gap-3.5 text-[11px] uppercase tracking-[0.35em] text-paper/90 mb-5 [text-shadow:0_1px_8px_rgba(27,23,19,0.6)]">
           <span className="h-px w-12 bg-accent" aria-hidden="true" />
-          Copy My Trip — a travel journal
+          A travel journal, open for copying
         </p>
-        <h1 className="fade-up fade-up-1 font-display text-4xl sm:text-6xl md:text-7xl text-paper leading-[1.02] tracking-tight max-w-4xl [text-wrap:balance]">
-          Follow the journey, replay the route — then{' '}
-          <em className="italic font-light">copy the trip</em> as your own.
+        <h1 className="fade-up fade-up-1 font-display text-4xl sm:text-5xl md:text-6xl text-paper leading-[1.06] tracking-tight max-w-3xl [text-wrap:balance] [text-shadow:0_2px_28px_rgba(27,23,19,0.55)]">
+          Every trip here really happened.{' '}
+          <em className="italic font-light">Copy one</em> and make it yours.
         </h1>
-        <p className="fade-up fade-up-1 mt-5 max-w-2xl text-paper/75 leading-relaxed">
-          A photographic journal across {stats.countries} countries — where the newest
-          dispatches are GPS-true itineraries you can personalize and take with you.
+        <p className="fade-up fade-up-1 mt-5 max-w-xl text-paper/95 leading-relaxed [text-shadow:0_1px_12px_rgba(27,23,19,0.6)]">
+          A photographic journal across {stats.countries} countries. The newest trips
+          replay day by day from real GPS trails — pick one, keep what you love, and
+          leave with an itinerary built for you.
         </p>
         <div className="fade-up fade-up-2 mt-8 flex flex-wrap items-center gap-x-6 gap-y-4">
           {copyTrip && (
