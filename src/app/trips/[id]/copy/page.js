@@ -17,9 +17,9 @@ export const revalidate = 3600;
 export async function generateMetadata({ params }) {
   const { id } = await params;
   const blueprint = getTripBlueprint(id);
-  if (!blueprint) return { title: 'Trip Not Found | Passport & Ponder' };
+  if (!blueprint) return { title: 'Trip Not Found | Copy My Trip' };
   return {
-    title: `Make it yours: ${blueprint.destination} | Passport & Ponder`,
+    title: `Make it yours: ${blueprint.destination} | Copy My Trip`,
     description: `Start with the real ${blueprint.destination} trip, then adapt it to your dates, pace, and interests.`,
   };
 }

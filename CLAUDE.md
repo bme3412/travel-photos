@@ -1,4 +1,4 @@
-# Passport & Ponder — travel journal
+# Copy My Trip — travel journal
 
 Personal travel blog (Next.js app router + Tailwind), deployed at
 bme-travel-photos.vercel.app. Trip replays are the flagship; "Copy this

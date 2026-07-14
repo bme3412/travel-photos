@@ -1,7 +1,7 @@
 import Studio from './Studio';
 
 export const metadata = {
-  title: 'Journal Studio | Passport & Ponder',
+  title: 'Journal Studio | Copy My Trip',
   robots: { index: false, follow: false },
 };
 

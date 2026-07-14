@@ -10,7 +10,7 @@ import { transformToCloudFront } from '../utils/imageUtils';
 import { getNeighborhoodsByCity } from '@/features/neighborhoods/data';
 
 export const metadata = {
-  title: 'Neighborhoods | Passport & Ponder',
+  title: 'Neighborhoods | Copy My Trip',
   description:
     'The same streets, a year older each time — every neighborhood, aggregated across trips.',
 };

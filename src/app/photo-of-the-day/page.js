@@ -3,7 +3,7 @@ import { readPhotos, readAlbums, readLocations } from '../utils/fileHandler';
 import { enrichPhotoForDisplay } from '../utils/photoEnrichment';
 
 export const metadata = {
-  title: 'Photo of the Day | Passport & Ponder',
+  title: 'Photo of the Day | Copy My Trip',
   description: 'A new photograph from the archive every day',
 };
 

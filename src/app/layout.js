@@ -17,7 +17,7 @@ const archivo = Archivo({
 });
 
 export const metadata = {
-  title: 'Passport & Ponder — A Travel Journal',
+  title: 'Copy My Trip — A Travel Journal',
   description: 'Exploring the world, one story at a time',
 };
 
@@ -36,7 +36,7 @@ export default function RootLayout({ children }) {
             <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-y-2 py-3 md:py-0 md:h-16">
               <Link href="/" className="group flex items-baseline gap-3 min-w-0">
                 <span className="font-display text-xl sm:text-2xl tracking-tight whitespace-nowrap group-hover:text-accent transition-colors duration-300">
-                  Passport &amp; Ponder
+                  Copy My Trip
                 </span>
                 <span className="hidden lg:inline text-[10px] uppercase tracking-[0.3em] text-muted">
                   A travel journal
@@ -76,7 +76,7 @@ export default function RootLayout({ children }) {
 
         <footer className="border-t border-ink/10">
           <div className="max-w-7xl mx-auto px-6 py-8 flex flex-col sm:flex-row items-center justify-between gap-2 text-[11px] uppercase tracking-[0.2em] text-muted">
-            <span>© {new Date().getFullYear()} Passport &amp; Ponder</span>
+            <span>© {new Date().getFullYear()} Copy My Trip</span>
             <span>57 countries &amp; territories · six continents</span>
           </div>
         </footer>

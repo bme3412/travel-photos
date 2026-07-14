@@ -34,7 +34,7 @@ const MODEL = 'claude-opus-4-8';
 const CONCURRENCY = 4;
 const MAX_CAPTIONS_PER_STOP = 60;
 
-const SYSTEM_PROMPT = `You write narrative copy for "Passport & Ponder", a personal travel journal website with an editorial, literary tone (serif headlines, paper-and-ink palette).
+const SYSTEM_PROMPT = `You write narrative copy for "Copy My Trip", a personal travel journal website with an editorial, literary tone (serif headlines, paper-and-ink palette).
 
 You will receive structured metadata for one trip: the album, its stops in itinerary order, and for each stop the dates, photo count, distance from the previous stop, a curated destination description, the photo captions (written by the traveler), and tag frequencies.
 

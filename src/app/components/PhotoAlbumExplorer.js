@@ -89,7 +89,7 @@ const FeaturedHero = ({ albums, stats, copyTrip }) => {
       <div className="relative mx-auto flex h-full max-w-7xl flex-col justify-end px-6 pb-10 md:pb-12">
         <p className="fade-up flex items-center gap-3.5 text-[11px] uppercase tracking-[0.35em] text-paper/70 mb-5">
           <span className="h-px w-12 bg-accent" aria-hidden="true" />
-          Passport &amp; Ponder — a travel journal
+          Copy My Trip — a travel journal
         </p>
         <h1 className="fade-up fade-up-1 font-display text-4xl sm:text-6xl md:text-7xl text-paper leading-[1.02] tracking-tight max-w-4xl [text-wrap:balance]">
           Follow the journey, replay the route — then{' '}
@@ -580,7 +580,7 @@ const PhotoAlbumExplorer = ({ initialAlbums = null }) => {
       <div className="min-h-screen flex items-center justify-center">
         <div className="text-center space-y-3">
           <p className="font-display text-2xl text-ink/80">Gathering the journals…</p>
-          <p className="text-[11px] uppercase tracking-[0.2em] text-muted">Passport &amp; Ponder</p>
+          <p className="text-[11px] uppercase tracking-[0.2em] text-muted">Copy My Trip</p>
         </div>
       </div>
     );

@@ -13,8 +13,8 @@ export const revalidate = 3600;
 export async function generateMetadata({ params }) {
   const { id } = await params;
   const blueprint = getTripBlueprint(id);
-  if (!blueprint) return { title: 'Trip Not Found | Passport & Ponder' };
-  return { title: `Personalize your version: ${blueprint.destination} | Passport & Ponder` };
+  if (!blueprint) return { title: 'Trip Not Found | Copy My Trip' };
+  return { title: `Personalize your version: ${blueprint.destination} | Copy My Trip` };
 }
 
 export default async function CopyTripPersonalizePage({ params }) {

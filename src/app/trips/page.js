@@ -12,7 +12,7 @@ import { buildAlbumSummaries } from '../utils/albumSummaries';
 import { getJournalIndex } from '../utils/journalContent';
 
 export const metadata = {
-  title: 'Trip Replays | Passport & Ponder',
+  title: 'Trip Replays | Copy My Trip',
   description: 'Retrace every journey — an index of trip replays, stop by stop.',
 };
 

@@ -114,7 +114,7 @@ export async function generateMetadata({ params }) {
       null;
     const title = fm.title || id;
     return {
-      title: `${title} | Passport & Ponder`,
+      title: `${title} | Copy My Trip`,
       description: fm.excerpt || `A travel dispatch from ${title}`,
       openGraph: {
         title,
@@ -125,11 +125,11 @@ export async function generateMetadata({ params }) {
   }
 
   const trip = await getTripData(id);
-  if (!trip) return { title: 'Dispatch Not Found | Passport & Ponder' };
+  if (!trip) return { title: 'Dispatch Not Found | Copy My Trip' };
   const { title } = splitFlag(trip.name);
   const cover = trip.stops[0]?.photos[0]?.url;
   return {
-    title: `${title} | Passport & Ponder`,
+    title: `${title} | Copy My Trip`,
     description: trip.intro?.slice(0, 200) || `A travel dispatch from ${title}`,
     openGraph: {
       title,

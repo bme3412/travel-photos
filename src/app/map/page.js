@@ -41,7 +41,7 @@ async function getMapData() {
 export const revalidate = 3600;
 
 export const metadata = {
-  title: 'Travel Map | Passport & Ponder',
+  title: 'Travel Map | Copy My Trip',
   description: 'Every country and stop from the journal, mapped',
 };
 

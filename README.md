@@ -1,4 +1,4 @@
-# Passport & Ponder · Travel Photo Hub
+# Copy My Trip · Travel Photo Hub
 
 An immersive Next.js 15 experience for cataloging travel photography, mapping every stop on the journey, and sharing a curated “photo of the day.” Albums, data files, and helper scripts all live side by side so you can keep the storytelling layer (the UI) and the source of truth (JSON + S3) in sync.
 

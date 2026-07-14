@@ -6,7 +6,7 @@ import { buildAlbumSummaries } from './utils/albumSummaries';
 import { getJournalIndex } from './utils/journalContent';
 
 export const metadata = {
-  title: 'Passport & Ponder — Copy a real trip',
+  title: 'Copy My Trip — Make a real trip yours',
   description:
     'A photographic travel journal across 57 countries. Replay real routes day by day on the map, then copy a trip and turn it into your own personalized itinerary.',
 };
