@@ -13,9 +13,9 @@ export const revalidate = 3600;
 export async function generateMetadata({ params }) {
   const { id } = await params;
   const blueprint = getTripBlueprint(id);
-  if (!blueprint) return { title: 'Trip Not Found | Copy My Trip' };
+  if (!blueprint) return { title: 'Trip Not Found | Copy This Trip' };
   return {
-    title: `Choose what to keep: ${blueprint.destination} | Copy My Trip`,
+    title: `Choose what to keep: ${blueprint.destination} | Copy This Trip`,
     description: `Select the days and experiences from the ${blueprint.destination} trip to carry into your version.`,
   };
 }

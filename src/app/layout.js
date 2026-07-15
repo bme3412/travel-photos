@@ -17,14 +17,31 @@ const archivo = Archivo({
 });
 
 export const metadata = {
-  title: 'Copy My Trip — A Travel Journal',
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://bme-travel-photos.vercel.app'),
+  title: {
+    default: 'Copy This Trip — Make a real trip yours',
+    template: '%s',
+  },
   description:
-    'Real trips, replayed from GPS trails across 57 countries — copy one and turn it into your own personalized itinerary.',
+    'Choose a trip that really happened, keep what you love, and turn it into a personalized itinerary grounded in the original journey.',
+  openGraph: {
+    type: 'website',
+    siteName: 'Copy This Trip',
+    title: 'Copy This Trip — Make a real trip yours',
+    description:
+      'Choose a real trip, keep what you love, and make a grounded itinerary of your own.',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Copy This Trip — Make a real trip yours',
+    description:
+      'Choose a real trip, keep what you love, and make a grounded itinerary of your own.',
+  },
 };
 
 const NAV_LINKS = [
-  { href: '/trips', label: 'Trip Replays' },
-  { href: '/map', label: 'Map' },
+  { href: '/trips', label: 'Original Trips' },
+  { href: '/map', label: 'Travel Map' },
   { href: '/photo-of-the-day', label: 'Photo of the Day' },
 ];
 
@@ -37,10 +54,10 @@ export default function RootLayout({ children }) {
             <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-y-2 py-3 md:py-0 md:h-16">
               <Link href="/" className="group flex items-baseline gap-3 min-w-0">
                 <span className="font-display text-xl sm:text-2xl tracking-tight whitespace-nowrap group-hover:text-accent transition-colors duration-300">
-                  Copy My Trip
+                  Copy This Trip
                 </span>
                 <span className="hidden lg:inline text-[10px] uppercase tracking-[0.3em] text-muted">
-                  A travel journal you can copy
+                  Real journeys, remade for you
                 </span>
               </Link>
 
@@ -77,8 +94,8 @@ export default function RootLayout({ children }) {
 
         <footer className="border-t border-ink/10">
           <div className="max-w-7xl mx-auto px-6 py-8 flex flex-col sm:flex-row items-center justify-between gap-2 text-[11px] uppercase tracking-[0.2em] text-muted">
-            <span>© {new Date().getFullYear()} Copy My Trip</span>
-            <span>57 countries &amp; territories · six continents</span>
+            <span>© {new Date().getFullYear()} Copy This Trip</span>
+            <span>Every itinerary starts with a trip that happened</span>
           </div>
         </footer>
         <Analytics />

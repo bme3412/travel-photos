@@ -6,7 +6,8 @@ import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import { Camera as CameraIcon, ArrowRight, ArrowUpRight, ChevronDown, Play } from 'lucide-react';
 import usePhotoStore from '../store/usePhotoStore';
-import { tripHasBlueprint } from '@/features/copy-trip/availability';
+import CopyTripCard from './CopyTripCard';
+import CopyTripResume from './CopyTripResume';
 
 // Album names carry a leading flag emoji ("🇪🇬 Egyptian Explorations") —
 // split it out so the serif display title stays clean and the flag can sit
@@ -35,16 +36,7 @@ const formatMeta = (album) => {
 // edge carrying the archive stats and a numbered index of the rotating covers.
 const HERO_INTERVAL_MS = 6000;
 
-const HeroStat = ({ value, label }) => (
-  <div>
-    <div className="font-display text-2xl sm:text-3xl leading-none text-paper tabular-nums">
-      {value}
-    </div>
-    <div className="mt-2 text-[10px] uppercase tracking-[0.22em] text-paper/55">{label}</div>
-  </div>
-);
-
-const FeaturedHero = ({ albums, stats, copyTrip }) => {
+const FeaturedHero = ({ albums, copyTrips }) => {
   const [active, setActive] = useState(0);
 
   // One timeout per slide (not an interval) so a manual jump from the index
@@ -58,11 +50,10 @@ const FeaturedHero = ({ albums, stats, copyTrip }) => {
     return () => clearTimeout(timer);
   }, [active, albums.length]);
 
-  const latest = albums[0];
   const current = albums[active] ? splitFlag(albums[active].name) : null;
 
   return (
-    <section className="relative w-full h-[84vh] min-h-[560px] overflow-hidden bg-ink">
+    <section className="relative w-full min-h-[680px] overflow-hidden bg-ink">
       {albums.map((slide, index) => (
         <div
           key={slide.id}
@@ -87,60 +78,28 @@ const FeaturedHero = ({ albums, stats, copyTrip }) => {
       <div className="absolute inset-0 bg-gradient-to-r from-ink/70 via-ink/30 to-transparent" />
       <div className="grain absolute inset-0 pointer-events-none" aria-hidden="true" />
 
-      <div className="relative mx-auto flex h-full max-w-7xl flex-col justify-end px-6 pb-10 md:pb-12">
+      <div className="relative mx-auto flex max-w-7xl flex-col px-6 py-12 sm:py-14">
         <p className="fade-up flex items-center gap-3.5 text-[11px] uppercase tracking-[0.35em] text-paper/90 mb-5 [text-shadow:0_1px_8px_rgba(27,23,19,0.6)]">
           <span className="h-px w-12 bg-accent" aria-hidden="true" />
-          A travel journal, open for copying
+          Choose the journey. Rewrite the route.
         </p>
-        <h1 className="fade-up fade-up-1 font-display text-4xl sm:text-5xl md:text-6xl text-paper leading-[1.06] tracking-tight max-w-3xl [text-wrap:balance] [text-shadow:0_2px_28px_rgba(27,23,19,0.55)]">
-          Every trip here really happened.{' '}
-          <em className="italic font-light">Copy one</em> and make it yours.
+        <h1 className="fade-up fade-up-1 font-display text-4xl sm:text-5xl text-paper leading-[1.06] tracking-tight max-w-3xl [text-wrap:balance] [text-shadow:0_2px_28px_rgba(27,23,19,0.55)]">
+          Choose a trip that really happened.{' '}
+          <em className="italic font-light">Make it yours.</em>
         </h1>
-        <p className="fade-up fade-up-1 mt-5 max-w-xl text-paper/95 leading-relaxed [text-shadow:0_1px_12px_rgba(27,23,19,0.6)]">
-          A photographic journal across {stats.countries} countries. The newest trips
-          replay day by day from real GPS trails — pick one, keep what you love, and
-          leave with an itinerary built for you.
+        <p className="fade-up fade-up-1 mt-4 max-w-2xl text-paper/90 leading-relaxed [text-shadow:0_1px_12px_rgba(27,23,19,0.6)]">
+          Keep the moments you love, change the pace and dates, and leave with a
+          personalized itinerary whose stops still point back to the original journey.
         </p>
-        <div className="fade-up fade-up-2 mt-8 flex flex-wrap items-center gap-x-6 gap-y-4">
-          {copyTrip && (
-            <Link
-              href={`/trips/${copyTrip.id}/copy`}
-              className="group inline-flex items-center gap-2.5 rounded-full bg-accent px-6 py-3
-                         text-[11px] uppercase tracking-[0.2em] text-paper transition-colors duration-300 hover:bg-paper hover:text-ink"
-            >
-              Copy the {splitFlag(copyTrip.name).title} trip
-              <ArrowRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1" />
-            </Link>
-          )}
-          <Link
-            href="/trips"
-            className="group inline-flex items-center gap-2 border-b border-paper/40 pb-1 text-[11px] uppercase
-                       tracking-[0.2em] text-paper transition-colors duration-300 hover:border-accent"
-          >
-            Watch a trip replay
-            <ArrowRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1" />
-          </Link>
-          {latest && (
-            <Link
-              href={`/journal/${latest.id}`}
-              className="group inline-flex items-center gap-2 border-b border-paper/40 pb-1 text-[11px] uppercase
-                         tracking-[0.2em] text-paper transition-colors duration-300 hover:border-accent"
-            >
-              Read the latest dispatch
-              <ArrowRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1" />
-            </Link>
-          )}
+        <div className="fade-up fade-up-2 mt-8 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4">
+          {copyTrips.map((trip, index) => (
+            <CopyTripCard key={trip.id} trip={trip} index={index} />
+          ))}
         </div>
 
         {/* Folio bar: archive stats on the left, the rotating-cover index on
             the right — a printed footer line inside the cover. */}
-        <div className="fade-up fade-up-3 mt-10 flex flex-wrap items-end justify-between gap-x-10 gap-y-6 border-t border-paper/20 pt-6">
-          <div className="flex items-end gap-x-8 sm:gap-x-10">
-            <HeroStat value={stats.countries} label="Countries & territories" />
-            <HeroStat value={stats.photos.toLocaleString()} label="Photographs" />
-            <HeroStat value={stats.albums} label="Journals" />
-          </div>
-
+        <div className="fade-up fade-up-3 mt-5 flex justify-end border-t border-paper/20 pt-4">
           {albums.length > 1 && current && (
             <div className="hidden sm:flex flex-col items-end gap-3">
               <p className="text-[11px] uppercase tracking-[0.22em] text-paper/75">
@@ -196,9 +155,7 @@ const COPY_STEPS = [
   },
 ];
 
-const CopyTripBand = ({ trips }) => {
-  if (!trips.length) return null;
-
+const CopyTripBand = () => {
   return (
     <section className="max-w-7xl mx-auto px-6 pt-14">
       <div aria-hidden="true">
@@ -206,7 +163,7 @@ const CopyTripBand = ({ trips }) => {
         <div className="mt-[3px] h-px bg-ink/25" />
       </div>
       <div className="mt-6">
-        <p className="text-[11px] uppercase tracking-[0.3em] text-accent mb-2.5">Copy my trip</p>
+        <p className="text-[11px] uppercase tracking-[0.3em] text-accent mb-2.5">How it works</p>
         <h2 className="font-display text-3xl md:text-4xl tracking-tight max-w-2xl [text-wrap:balance]">
           Don&rsquo;t just read the trip — take it with you.
         </h2>
@@ -222,28 +179,6 @@ const CopyTripBand = ({ trips }) => {
         ))}
       </div>
 
-      <div className="mt-10 flex flex-wrap items-center gap-x-3 gap-y-3">
-        <span className="mr-1 text-[11px] uppercase tracking-[0.22em] text-muted">
-          Open for copying
-        </span>
-        {trips.map((trip) => {
-          const { flag, title } = splitFlag(trip.name);
-          return (
-            <Link
-              key={trip.id}
-              href={`/trips/${trip.id}/copy`}
-              className="group inline-flex items-center gap-2 rounded-full border border-ink/15 px-4 py-2
-                         text-[11px] uppercase tracking-[0.18em] text-ink/70 transition-colors duration-200
-                         hover:border-accent hover:text-accent"
-            >
-              {flag && <span className="tracking-normal">{flag}</span>}
-              {title}
-              {trip.year && <span className="text-muted">· {trip.year}</span>}
-              <ArrowRight className="h-3 w-3 transition-transform duration-300 group-hover:translate-x-0.5" />
-            </Link>
-          );
-        })}
-      </div>
     </section>
   );
 };
@@ -485,7 +420,7 @@ const Controls = ({ sortBy, onSortChange, viewMode, onViewModeChange }) => (
 
 // ————————————————————————————— Page —————————————————————————————
 
-const PhotoAlbumExplorer = ({ initialAlbums = null }) => {
+const PhotoAlbumExplorer = ({ initialAlbums = null, copyTrips = [] }) => {
   // Store state
   const albums = usePhotoStore((state) => state.albums);
   const loading = usePhotoStore((state) => state.loading);
@@ -533,23 +468,10 @@ const PhotoAlbumExplorer = ({ initialAlbums = null }) => {
   // content (hero CTA, copy band, dispatch feed) instead of an empty shell.
   const sourceAlbums = albums.length > 0 ? albums : initialAlbums || [];
 
-  // The hero rotates through the newest albums that have cover photos
-  const featuredAlbums = React.useMemo(() =>
-    [...sourceAlbums]
-      .sort((a, b) => b.year - a.year)
-      .filter((album) => album.coverPhoto?.url)
-      .slice(0, 5),
-    [sourceAlbums]
+  const featuredAlbums = React.useMemo(
+    () => copyTrips.filter((trip) => trip.coverPhoto?.url),
+    [copyTrips]
   );
-
-  // Trips with copy-trip blueprints, newest first. Paris leads the hero CTA —
-  // it's the flagship dispatch — with the first copyable trip as fallback.
-  const copyableAlbums = React.useMemo(
-    () => sourceAlbums.filter((album) => tripHasBlueprint(album.id)).sort((a, b) => b.year - a.year),
-    [sourceAlbums]
-  );
-  const heroCopyTrip =
-    copyableAlbums.find((album) => album.id === 'paris-2026') ?? copyableAlbums[0] ?? null;
 
   const processedAlbums = React.useMemo(() => {
     const result = sourceAlbums.filter((album) => album?.id);
@@ -571,18 +493,12 @@ const PhotoAlbumExplorer = ({ initialAlbums = null }) => {
     return result;
   }, [sourceAlbums, sortBy]);
 
-  const stats = React.useMemo(() => ({
-    countries: 57, // Total countries/territories from travel century list
-    photos: sourceAlbums.reduce((acc, album) => acc + (album.photoCount || 0), 0),
-    albums: sourceAlbums.length,
-  }), [sourceAlbums]);
-
   if (loading) {
     return (
       <div className="min-h-screen flex items-center justify-center">
         <div className="text-center space-y-3">
-          <p className="font-display text-2xl text-ink/80">Gathering the journals…</p>
-          <p className="text-[11px] uppercase tracking-[0.2em] text-muted">Copy My Trip</p>
+          <p className="font-display text-2xl text-ink/80">Gathering the journeys…</p>
+          <p className="text-[11px] uppercase tracking-[0.2em] text-muted">Copy This Trip</p>
         </div>
       </div>
     );
@@ -590,9 +506,11 @@ const PhotoAlbumExplorer = ({ initialAlbums = null }) => {
 
   return (
     <div>
-      <FeaturedHero albums={featuredAlbums} stats={stats} copyTrip={heroCopyTrip} />
+      <FeaturedHero albums={featuredAlbums} copyTrips={copyTrips} />
 
-      <CopyTripBand trips={copyableAlbums} />
+      <CopyTripResume trips={copyTrips} />
+
+      <CopyTripBand />
 
       <div className="max-w-7xl mx-auto px-6 pt-14 pb-20">
         {/* Section header — a printed department opening: thick-thin rule,
@@ -604,9 +522,9 @@ const PhotoAlbumExplorer = ({ initialAlbums = null }) => {
           </div>
           <div className="mt-6 flex flex-col sm:flex-row sm:items-end justify-between gap-6">
             <div>
-              <p className="text-[11px] uppercase tracking-[0.3em] text-accent mb-2.5">The journal</p>
+              <p className="text-[11px] uppercase tracking-[0.3em] text-accent mb-2.5">The source material</p>
               <h2 className="font-display text-3xl md:text-4xl tracking-tight">
-                {viewMode === 'feed' ? 'Latest dispatches' : 'All albums'}
+                {viewMode === 'feed' ? 'Explore the original trips' : 'All original trips'}
                 <sup className="ml-2.5 font-sans text-xs tracking-[0.08em] text-muted tabular-nums">
                   {processedAlbums.length}
                 </sup>
@@ -625,9 +543,18 @@ const PhotoAlbumExplorer = ({ initialAlbums = null }) => {
           viewMode === 'feed' ? (
             <div className="max-w-5xl mx-auto">
               <div className="border-t border-ink/10 divide-y divide-ink/10">
-                {processedAlbums.map((album) => (
+                {processedAlbums.slice(0, 8).map((album) => (
                   <DispatchRow key={album.id} album={album} />
                 ))}
+              </div>
+              <div className="mt-8 text-center">
+                <Link
+                  href="/trips"
+                  className="group inline-flex items-center gap-2 border-b border-ink/25 pb-1 text-[11px] uppercase tracking-[0.2em] text-ink/70 transition-colors hover:border-accent hover:text-accent"
+                >
+                  Browse all trip replays
+                  <ArrowRight className="h-3 w-3 transition-transform group-hover:translate-x-1" />
+                </Link>
               </div>
             </div>
           ) : viewMode === 'grid' ? (

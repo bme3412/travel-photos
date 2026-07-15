@@ -22,9 +22,9 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }) {
   const { id } = await params;
   const hood = getNeighborhood(id);
-  if (!hood) return { title: 'Neighborhood Not Found | Copy My Trip' };
+  if (!hood) return { title: 'Neighborhood Not Found | Copy This Trip' };
   return {
-    title: `${hood.name} | Copy My Trip`,
+    title: `${hood.name} | Copy This Trip`,
     description: hood.summary,
   };
 }

@@ -57,7 +57,7 @@ const PhotoOfTheDay = ({ initialPhoto = null }) => {
       <div className="flex items-center justify-center h-[calc(100vh-200px)]">
         <div className="text-center space-y-3">
           <p className="font-display text-2xl text-ink/80">Choosing today&apos;s photograph…</p>
-          <p className="text-[11px] uppercase tracking-[0.2em] text-muted">Copy My Trip</p>
+          <p className="text-[11px] uppercase tracking-[0.2em] text-muted">Copy This Trip</p>
         </div>
       </div>
     );

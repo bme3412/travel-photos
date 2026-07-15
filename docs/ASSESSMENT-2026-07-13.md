@@ -6,7 +6,7 @@ updated, it is superseded by later assessments.
 
 ## What this site is
 
-**Passport & Ponder** — a personal travel journal (bme-travel-photos.vercel.app)
+**Copy This Trip** — a personal travel journal (bme-travel-photos.vercel.app)
 in the middle of a pivot from photo-album site to travel blog. Three ideas
 carry it:
 

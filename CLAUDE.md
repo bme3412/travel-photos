@@ -1,10 +1,11 @@
-# Copy My Trip — travel journal
+# Copy This Trip — grounded itinerary builder
 
-Personal travel blog (Next.js app router + Tailwind), deployed at
-bme-travel-photos.vercel.app. Trip replays are the flagship; "Copy this
-trip" (Claude-generated personalized itineraries) is the differentiator;
-the neighborhood registry feeds the copy flow — it is deliberately NOT a
-standalone nav section.
+Product-led travel site (Next.js app router + Tailwind), deployed at
+bme-travel-photos.vercel.app. Visitors choose a trip that really happened,
+keep the moments they love, and generate a personalized itinerary. Replays,
+dispatches, and photographs are the trust and provenance layer; the
+neighborhood registry feeds branches into the copy flow and is deliberately
+NOT a standalone nav section.
 
 **Read `docs/ROADMAP.md` before proposing work** — it holds the north star,
 decision filters, current priorities, and non-goals. Point-in-time state:

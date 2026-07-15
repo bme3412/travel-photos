@@ -4,11 +4,12 @@ import PhotoAlbumExplorer from './components/PhotoAlbumExplorer';
 import { readAlbums, readPhotos, readLocations, readNarratives } from './utils/fileHandler';
 import { buildAlbumSummaries } from './utils/albumSummaries';
 import { getJournalIndex } from './utils/journalContent';
+import { buildCopyTripCatalog } from '@/features/copy-trip/catalog';
 
 export const metadata = {
-  title: 'Copy My Trip — Make a real trip yours',
+  title: 'Copy This Trip — Make a real trip yours',
   description:
-    'A photographic travel journal across 57 countries. Replay real routes day by day on the map, then copy a trip and turn it into your own personalized itinerary.',
+    'Choose a trip that really happened, keep what you love, and turn it into a personalized itinerary with every stop traced to its source.',
 };
 
 // Enable ISR - revalidate every hour (3600 seconds)
@@ -47,6 +48,7 @@ async function getAlbumsData() {
 export default async function AlbumsPage() {
   // Fetch data at build time (SSG) and revalidate every hour (ISR)
   const { albums } = await getAlbumsData();
+  const copyTrips = buildCopyTripCatalog(albums);
 
-  return <PhotoAlbumExplorer initialAlbums={albums} />;
+  return <PhotoAlbumExplorer initialAlbums={albums} copyTrips={copyTrips} />;
 }

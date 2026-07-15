@@ -1,7 +1,7 @@
 import Studio from './Studio';
 
 export const metadata = {
-  title: 'Journal Studio | Copy My Trip',
+  title: 'Journal Studio | Copy This Trip',
   robots: { index: false, follow: false },
 };
 

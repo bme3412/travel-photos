@@ -1,14 +1,17 @@
 # Roadmap
 
 Living document — update it when direction changes, don't fork it.
-Last updated: **2026-07-13** (after the neighborhood guide → copy flow integration).
+Last updated: **2026-07-15** (after the Copy This Trip product pivot).
 Point-in-time context: `docs/ASSESSMENT-2026-07-13.md`.
 
 ## North star
 
-A personal travel blog where **replays are the flagship**, **"Copy this
-trip" is the differentiator**, and the **neighborhood registry quietly feeds
-both** — with content that compounds every June instead of resetting.
+**Copy This Trip** is a product built from journeys that really happened.
+Visitors choose a source trip, keep the moments they love, and generate a
+personalized version in which every stop is traceable to the original or
+clearly marked as new. Replays, photographs, and dispatches are the trust and
+provenance layer; the neighborhood registry quietly gives each copy room to
+branch. The content compounds every June instead of resetting.
 
 ## Decision filters
 
@@ -17,12 +20,14 @@ Apply these before adding anything:
 1. **Grounded beats generated.** Nothing ships that can't cite a photo, an
    experience id, or the owner's own words. If a feature needs invented
    content, it's out of scope.
-2. **The registry serves the copy flow.** Neighborhood depth exists to give
+2. **The original trip proves the product.** Replays and dispatches should
+   make the source journey tangible, then lead naturally back to copying it.
+3. **The registry serves the copy flow.** Neighborhood depth exists to give
    visitors branches, not to become a destination site. (Owner-set, 2026-07-13.)
-3. **Content over surface.** The machinery is ahead of the content — until
+4. **Content over surface.** The machinery is ahead of the content — until
    the owner-voice pass and guide breadth catch up, prefer fixing and
    deepening over new features.
-4. **Design for uneven coverage forever.** One person, ~2 trips a year.
+5. **Design for uneven coverage forever.** One person, ~2 trips a year.
    Every view must degrade gracefully when data is thin.
 
 ## Now — small, verified, high-trust

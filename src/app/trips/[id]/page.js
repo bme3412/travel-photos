@@ -246,7 +246,7 @@ export async function generateMetadata({ params }) {
 
   if (!trip) {
     return {
-      title: 'Trip Not Found | Copy My Trip',
+      title: 'Trip Not Found | Copy This Trip',
       description: 'This trip could not be found',
     };
   }
@@ -255,7 +255,7 @@ export async function generateMetadata({ params }) {
   const coverUrl = trip.stops[0]?.photos[0]?.url;
 
   return {
-    title: `Replay: ${trip.name} | Copy My Trip`,
+    title: `Replay: ${trip.name} | Copy This Trip`,
     description: `Retrace the ${trip.year} journey — ${route}`,
     openGraph: {
       title: `Replay: ${trip.name}`,
