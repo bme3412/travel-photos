@@ -76,8 +76,11 @@ async function getTripData(id) {
         const overview = {
           id: 'overview',
           kind: 'overview',
-          kicker: `Trip report · ${R.facts?.dates || trip.year}`,
-          title: 'At a glance',
+          // Film title card uses the trip name at render time; kicker/dek prove it happened.
+          kicker: R.facts?.dates
+            ? `A real trip · ${R.facts.dates}`
+            : `A real trip · ${trip.year}`,
+          title: album.name,
           text: R.dek || trip.intro || '',
           facts: R.facts || null,
           backgroundUrl: heroBg,

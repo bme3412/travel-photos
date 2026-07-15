@@ -3,17 +3,14 @@
 import Link from 'next/link';
 import { tripHasBlueprint } from '@/features/copy-trip/availability';
 
-// The persistent per-trip view control: Replay · Story · Photos. Rendered in
-// the same top-right position on all three trip views so switching feels like
-// staying in one place. `variant="light"` sits on paper (album masthead);
-// the default sits on photography/dark heroes.
+// The persistent per-trip view control: Replay · Story · Photos.
 //
 // Optional `context` keeps day/scene focus when hopping between lenses:
 //   { sceneId: 'day-2', dayDate: '2026-06-20' }
 //
-// Trips with a copy blueprint also get the "Copy this trip" CTA beside the
-// switcher — a distinct button, not a fourth view, since copying is a flow
-// that leaves the trip rather than another lens on it.
+// `mode="film"` (replay surface): Story/Photos as quiet text links + a strong
+// Copy CTA — no equal pill cluster fighting the day scrubber.
+// Default mode keeps the pill switcher for Story and Photos pages.
 const VIEWS = [
   {
     key: 'replay',
@@ -39,8 +36,43 @@ export default function TripViewSwitcher({
   active,
   variant = 'dark',
   context = null,
+  mode = 'default',
 }) {
   const light = variant === 'light';
+  const canCopy = tripHasBlueprint(tripId);
+
+  if (mode === 'film') {
+    const support = VIEWS.filter((view) => view.key !== 'replay');
+    return (
+      <div className="pointer-events-auto inline-flex items-center gap-3 sm:gap-4">
+        <nav
+          aria-label="Trip support views"
+          className="inline-flex items-center gap-3 text-[11px] uppercase tracking-[0.18em]"
+        >
+          {support.map((view) => (
+            <Link
+              key={view.key}
+              href={view.href(tripId, context)}
+              className="text-paper/70 transition-colors hover:text-paper"
+            >
+              {view.label}
+            </Link>
+          ))}
+        </nav>
+        {canCopy && (
+          <Link
+            href={`/trips/${tripId}/copy`}
+            className="rounded-full bg-accent px-4 py-2.5 text-[11px] uppercase tracking-[0.18em] text-paper
+                       shadow-sm transition-colors duration-300 hover:bg-paper hover:text-ink"
+          >
+            <span className="hidden sm:inline">Copy this trip</span>
+            <span className="sm:hidden">Copy</span>
+          </Link>
+        )}
+      </div>
+    );
+  }
+
   return (
     <div className="pointer-events-auto inline-flex items-center gap-2">
       <nav
@@ -69,7 +101,7 @@ export default function TripViewSwitcher({
           )
         )}
       </nav>
-      {tripHasBlueprint(tripId) && (
+      {canCopy && (
         <Link
           href={`/trips/${tripId}/copy`}
           className="rounded-full bg-accent px-4 py-2.5 text-[11px] uppercase tracking-[0.18em] text-paper

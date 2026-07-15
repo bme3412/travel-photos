@@ -5,7 +5,18 @@ import Image from 'next/image';
 import Link from 'next/link';
 import MapGL, { Marker, Source, Layer } from 'react-map-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
-import { ArrowLeft, BookOpen, Camera, ChevronLeft, ChevronRight, Clock, Map as MapIcon, Route } from 'lucide-react';
+import {
+  ArrowLeft,
+  ArrowRight,
+  BookOpen,
+  Camera,
+  ChevronDown,
+  ChevronLeft,
+  ChevronRight,
+  Clock,
+  Map as MapIcon,
+  Route,
+} from 'lucide-react';
 import ImageLightbox from '../../components/ImageLightbox';
 import TripViewSwitcher from '../../components/TripViewSwitcher';
 import { tripHasBlueprint } from '@/features/copy-trip/availability';
@@ -33,6 +44,13 @@ const PILL =
   'text-[11px] uppercase tracking-[0.2em] text-ink backdrop-blur-sm ' +
   'border border-transparent hover:border-accent transition-colors duration-200';
 
+const formatShortDay = (iso) => {
+  if (!iso) return null;
+  const d = new Date(`${iso}T12:00:00`);
+  if (Number.isNaN(d.getTime())) return null;
+  return d.toLocaleDateString('en-US', { weekday: 'short', day: 'numeric' });
+};
+
 // Non-interactive inset map. On day scenes it draws that day's actual GPS path
 // (start → end) and fits to it; otherwise it frames the city.
 function InsetMap({ center, route }) {
@@ -44,7 +62,6 @@ function InsetMap({ center, route }) {
     reducedRef.current = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   }, []);
 
-  // Refit whenever the active day's route changes (or the map finishes loading).
   useEffect(() => {
     const map = mapRef.current;
     const pts = route || [];
@@ -119,46 +136,53 @@ function InsetMap({ center, route }) {
   );
 }
 
-// A trip-report facts block: dates, nights, who, where, per-day weather.
-function FactsBlock({ facts }) {
-  const Row = ({ label, children, wide }) => (
-    <div className={wide ? 'col-span-2' : ''}>
-      <dt className="text-[10px] uppercase tracking-[0.2em] text-muted">{label}</dt>
-      <dd className="mt-0.5 text-[14px] text-ink/85 leading-snug">{children}</dd>
-    </div>
-  );
+function TripDetails({ facts }) {
+  if (!facts) return null;
+  const hasExtra = facts.stay || facts.gettingAround || facts.weather?.length;
+  if (!hasExtra) return null;
+
   return (
-    <dl className="mt-5 grid grid-cols-2 gap-x-5 gap-y-3">
-      {facts.dates && <Row label="Dates">{facts.dates}</Row>}
-      {facts.nights != null && <Row label="Nights">{facts.nights}</Row>}
-      {facts.party && <Row label="Who">{facts.party}</Row>}
-      {facts.occasion && <Row label="Occasion">{facts.occasion}</Row>}
-      {facts.stay && (
-        <Row label="Stayed" wide>
-          {facts.stay}
-          {facts.stayNote && (
-            <span className="mt-0.5 block text-[13px] text-ink/55">{facts.stayNote}</span>
-          )}
-        </Row>
-      )}
-      {facts.gettingAround && <Row label="Getting around" wide>{facts.gettingAround}</Row>}
-      {facts.weather?.length > 0 && (
-        <Row label="Weather" wide>
-          <span className="flex flex-wrap gap-x-4 gap-y-1">
-            {facts.weather.map((w) => (
-              <span key={w.day}>
-                <span className="text-ink/60">{w.day}</span> {w.hi}
-                <span className="text-ink/40">/{w.lo}</span>
-              </span>
-            ))}
-          </span>
-        </Row>
-      )}
-    </dl>
+    <details className="mt-5 group border-t border-ink/10 pt-3">
+      <summary className="flex cursor-pointer list-none items-center justify-between gap-2 text-[10px] uppercase tracking-[0.2em] text-muted hover:text-ink">
+        Trip details
+        <ChevronDown className="h-3.5 w-3.5 transition-transform group-open:rotate-180" />
+      </summary>
+      <dl className="mt-3 grid grid-cols-1 gap-3 text-[14px] text-ink/80">
+        {facts.stay && (
+          <div>
+            <dt className="text-[10px] uppercase tracking-[0.18em] text-muted">Stayed</dt>
+            <dd className="mt-0.5 leading-snug">
+              {facts.stay}
+              {facts.stayNote && (
+                <span className="mt-0.5 block text-[13px] text-ink/55">{facts.stayNote}</span>
+              )}
+            </dd>
+          </div>
+        )}
+        {facts.gettingAround && (
+          <div>
+            <dt className="text-[10px] uppercase tracking-[0.18em] text-muted">Getting around</dt>
+            <dd className="mt-0.5 leading-snug">{facts.gettingAround}</dd>
+          </div>
+        )}
+        {facts.weather?.length > 0 && (
+          <div>
+            <dt className="text-[10px] uppercase tracking-[0.18em] text-muted">Weather</dt>
+            <dd className="mt-0.5 flex flex-wrap gap-x-4 gap-y-1 leading-snug">
+              {facts.weather.map((w) => (
+                <span key={w.day}>
+                  <span className="text-ink/55">{w.day}</span> {w.hi}
+                  <span className="text-ink/40">/{w.lo}</span>
+                </span>
+              ))}
+            </dd>
+          </div>
+        )}
+      </dl>
+    </details>
   );
 }
 
-// A trip-report reflections block: numbered takeaways + highlight + verdict.
 function ReflectionsBlock({ reflections }) {
   return (
     <div className="mt-4">
@@ -186,7 +210,9 @@ function ReflectionsBlock({ reflections }) {
         <p className="mt-4 text-[15px] text-ink/80 leading-relaxed">
           <span className="block text-[10px] uppercase tracking-[0.2em] text-muted mb-1">Verdict</span>
           {reflections.verdict}
-          {reflections.rating ? ` · ${'★'.repeat(reflections.rating)}${'☆'.repeat(Math.max(0, 5 - reflections.rating))}` : ''}
+          {reflections.rating
+            ? ` · ${'★'.repeat(reflections.rating)}${'☆'.repeat(Math.max(0, 5 - reflections.rating))}`
+            : ''}
         </p>
       )}
       {reflections.seed && (
@@ -194,13 +220,76 @@ function ReflectionsBlock({ reflections }) {
           Seed reflections drawn from your notes — rewrite in your own words.
         </p>
       )}
+      {reflections.factsExtras}
     </div>
   );
 }
 
-// The narrative card: kicker + title + prose, plus any trip-report blocks
-// (facts / day activities / reflections). Text only and sized to fit the
-// viewport — photos live in the PhotoStrip below, never scrolled inside.
+// Film title card: prove the weekend happened, then Start Day 1 / Copy.
+function TitleCard({ scene, tripTitle, tripId, onStartDay, canCopy }) {
+  const facts = scene.facts || {};
+  const chips = [
+    facts.dates,
+    facts.nights != null ? `${facts.nights} nights` : null,
+    facts.party,
+    facts.occasion,
+  ].filter(Boolean);
+
+  return (
+    <article
+      className="pointer-events-auto relative max-w-md w-full sm:max-w-lg
+                 rounded-2xl bg-paper/95 text-ink backdrop-blur-sm shadow-xl ring-1 ring-ink/5
+                 p-6 sm:p-8"
+    >
+      <p className="text-[11px] uppercase tracking-[0.3em] text-accent mb-3">
+        {scene.kicker || 'A trip that happened'}
+      </p>
+      <h1 className="font-display text-3xl sm:text-4xl tracking-tight leading-[1.05]">
+        {tripTitle}
+      </h1>
+      {scene.text && (
+        <p className="mt-4 text-[15px] leading-relaxed text-ink/80">{scene.text}</p>
+      )}
+
+      {chips.length > 0 && (
+        <ul className="mt-5 flex flex-wrap gap-2">
+          {chips.map((chip) => (
+            <li
+              key={chip}
+              className="rounded-full bg-ink/5 px-3 py-1.5 text-[10px] uppercase tracking-[0.16em] text-ink/70"
+            >
+              {chip}
+            </li>
+          ))}
+        </ul>
+      )}
+
+      <div className="mt-7 flex flex-wrap items-center gap-3">
+        <button
+          type="button"
+          onClick={onStartDay}
+          className="inline-flex items-center gap-2 rounded-full bg-ink px-5 py-3 text-[11px]
+                     uppercase tracking-[0.2em] text-paper transition-colors hover:bg-accent"
+        >
+          Start Day 1
+          <ArrowRight className="h-3.5 w-3.5" />
+        </button>
+        {canCopy && (
+          <Link
+            href={`/trips/${tripId}/copy`}
+            className="inline-flex items-center gap-2 rounded-full border border-ink/15 px-5 py-3 text-[11px]
+                       uppercase tracking-[0.2em] text-ink/70 transition-colors hover:border-accent hover:text-accent"
+          >
+            Copy this trip
+          </Link>
+        )}
+      </div>
+
+      <TripDetails facts={facts} />
+    </article>
+  );
+}
+
 function SceneCard({ scene, tripId }) {
   const dayPhotoHref =
     scene.kind === 'day' && scene.date
@@ -231,7 +320,10 @@ function SceneCard({ scene, tripId }) {
             </span>
           )}
           {scene.distanceKm != null && (
-            <span className="inline-flex items-center gap-1.5" title="Distance traced between photo points (includes any transit)">
+            <span
+              className="inline-flex items-center gap-1.5"
+              title="Distance traced between photo points (includes any transit)"
+            >
               <Route className="h-3 w-3" />~{scene.distanceKm} km
             </span>
           )}
@@ -247,8 +339,6 @@ function SceneCard({ scene, tripId }) {
       {scene.text && (
         <p className="mt-3 text-[15px] leading-relaxed text-ink/80">{scene.text}</p>
       )}
-
-      {scene.facts && <FactsBlock facts={scene.facts} />}
 
       {scene.activities?.length > 0 && (
         <ul className="mt-4 grid grid-cols-1 gap-x-5 gap-y-2 sm:grid-cols-2">
@@ -278,25 +368,21 @@ function SceneCard({ scene, tripId }) {
         </p>
       )}
 
-      {scene.reflections && <ReflectionsBlock reflections={scene.reflections} />}
+      {scene.reflections && (
+        <>
+          <ReflectionsBlock reflections={scene.reflections} />
+          {scene.tripDetailsFacts && <TripDetails facts={scene.tripDetailsFacts} />}
+        </>
+      )}
 
-      {(dayPhotoHref || scene.kind === 'day' || scene.kind === 'overview') && (
+      {dayPhotoHref && (
         <div className="mt-5 flex flex-wrap items-center gap-x-4 gap-y-2 border-t border-ink/10 pt-4 text-[10px] uppercase tracking-[0.18em] text-ink/55">
-          {dayPhotoHref && (
-            <Link
-              href={dayPhotoHref}
-              className="inline-flex items-center gap-1.5 transition-colors hover:text-accent"
-            >
-              <Camera className="h-3 w-3" />
-              Photos from this day
-            </Link>
-          )}
           <Link
-            href={`/journal/${tripId}`}
+            href={dayPhotoHref}
             className="inline-flex items-center gap-1.5 transition-colors hover:text-accent"
           >
-            <BookOpen className="h-3 w-3" />
-            Read the dispatch
+            <Camera className="h-3 w-3" />
+            Photos from this day
           </Link>
         </div>
       )}
@@ -304,8 +390,6 @@ function SceneCard({ scene, tripId }) {
   );
 }
 
-// The scene's photographs as a row of large tiles beneath the card — fixed
-// count (no scrolling), with a final tile opening the full set in the lightbox.
 function PhotoStrip({ scene, sceneIndex, tripId, onOpen }) {
   const photos = scene.photos || [];
   if (!photos.length) return null;
@@ -361,48 +445,59 @@ function PhotoStrip({ scene, sceneIndex, tripId, onOpen }) {
   );
 }
 
-function sceneChipLabel(scene, dayScenes) {
-  if (scene.kind === 'overview') return 'Overview';
-  if (scene.kind === 'reflections') return 'Notes';
+function scrubberLabel(scene, dayScenes) {
+  if (scene.kind === 'overview') return { primary: 'Start', secondary: null };
+  if (scene.kind === 'reflections') return { primary: 'Notes', secondary: null };
   if (scene.kind === 'day') {
     const idx = dayScenes.findIndex((d) => d.id === scene.id);
-    return `D${idx + 1}`;
+    const short = formatShortDay(scene.date);
+    return {
+      primary: short || `Day ${idx + 1}`,
+      secondary: short ? `Day ${idx + 1}` : null,
+    };
   }
-  return scene.id;
+  return { primary: scene.id, secondary: null };
 }
 
 export default function SceneReplayClient({ trip }) {
   const scenes = trip.scenes || [];
   const { flag, title } = splitFlag(trip.name);
+  const canCopy = tripHasBlueprint(trip.id);
 
   const [activeScene, setActiveScene] = useState(0);
-  const [pinned, setPinned] = useState(false); // avoid reduced-motion flash; enable after check
-  const [lightbox, setLightbox] = useState(null); // { scene, index } | null
+  const [pinned, setPinned] = useState(false);
+  const [lightbox, setLightbox] = useState(null);
   const [mobileMapOpen, setMobileMapOpen] = useState(false);
   const sectionRefs = useRef([]);
   const hashReady = useRef(false);
 
   const dayScenes = scenes.filter((s) => s.kind === 'day');
+  const firstDayIndex = scenes.findIndex((s) => s.kind === 'day');
   const active = scenes[activeScene];
+  const isDayScene = active?.kind === 'day';
   const viewContext = {
     sceneId: active?.id || null,
     dayDate: active?.kind === 'day' ? active.date || null : null,
   };
 
-  const goToScene = useCallback((i, { smooth = true } = {}) => {
-    if (i < 0 || i >= scenes.length) return;
-    const el = sectionRefs.current[i];
-    if (el) el.scrollIntoView({ behavior: smooth ? 'smooth' : 'auto', block: 'start' });
-    setActiveScene(i);
-  }, [scenes.length]);
+  // Attach overview facts extras onto reflections so stay/weather survive the title-card pass.
+  const overviewFacts = scenes.find((s) => s.kind === 'overview')?.facts || null;
 
-  // Prefer motion-safe pin once we know the user's preference.
+  const goToScene = useCallback(
+    (i, { smooth = true } = {}) => {
+      if (i < 0 || i >= scenes.length) return;
+      const el = sectionRefs.current[i];
+      if (el) el.scrollIntoView({ behavior: smooth ? 'smooth' : 'auto', block: 'start' });
+      setActiveScene(i);
+    },
+    [scenes.length]
+  );
+
   useEffect(() => {
     const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     setPinned(!reduce);
   }, []);
 
-  // Open a deep-linked chapter (#day-2) once sections are mounted.
   useEffect(() => {
     if (hashReady.current || !scenes.length) return;
     const hash = window.location.hash.replace(/^#/, '');
@@ -412,7 +507,6 @@ export default function SceneReplayClient({ trip }) {
     }
     const index = scenes.findIndex((s) => s.id === hash);
     if (index >= 0) {
-      // Wait a tick so refs populate, then jump without a long scroll animation.
       requestAnimationFrame(() => {
         goToScene(index, { smooth: false });
         hashReady.current = true;
@@ -422,7 +516,6 @@ export default function SceneReplayClient({ trip }) {
     }
   }, [scenes, goToScene]);
 
-  // Keep the URL hash in sync with the active chapter for shareable deep links.
   useEffect(() => {
     if (!hashReady.current) return;
     const scene = scenes[activeScene];
@@ -447,7 +540,6 @@ export default function SceneReplayClient({ trip }) {
     return () => io.disconnect();
   }, [pinned, scenes.length]);
 
-  // Arrow keys move chapters when the lightbox is closed.
   useEffect(() => {
     const onKey = (event) => {
       if (lightbox) return;
@@ -476,77 +568,104 @@ export default function SceneReplayClient({ trip }) {
     [lightboxPhotos.length]
   );
 
-  const chapterLabel = (() => {
-    const s = scenes[activeScene];
-    if (!s) return '';
-    if (s.kind === 'day') {
-      const idx = dayScenes.findIndex((d) => d.id === s.id);
-      return `Day ${idx + 1} of ${dayScenes.length}`;
-    }
-    if (s.kind === 'reflections') return 'Reflections';
-    if (s.kind === 'overview') return 'Overview';
-    return `${activeScene + 1} / ${scenes.length}`;
-  })();
-
-  // Per-trip views live in the shared switcher; global sections stay in the header.
   const TopChrome = (
     <div className="max-w-5xl mx-auto flex items-center justify-between gap-3 px-5 sm:px-6 pt-4">
-      <div className="flex items-center gap-3">
+      <div className="flex items-center gap-3 min-w-0">
         <Link href="/trips" className={PILL} aria-label="Back to all original trips">
           <ArrowLeft className="h-3.5 w-3.5" />
           <span className="hidden sm:inline">Trips</span>
         </Link>
-        <span className="hidden md:inline text-[11px] uppercase tracking-[0.25em] text-paper/85 drop-shadow">
+        <span className="truncate text-[11px] uppercase tracking-[0.22em] text-paper/85 drop-shadow">
           {flag && <span className="mr-1.5">{flag}</span>}
           {title} · {trip.year}
         </span>
       </div>
-      <TripViewSwitcher tripId={trip.id} active="replay" context={viewContext} />
+      <TripViewSwitcher
+        tripId={trip.id}
+        active="replay"
+        context={viewContext}
+        mode="film"
+      />
     </div>
   );
 
-  const ChapterNav = (
-    <div className="absolute bottom-5 left-1/2 z-20 flex -translate-x-1/2 flex-col items-center gap-2 pointer-events-auto">
-      <div className="flex items-center gap-1 rounded-full bg-ink/55 px-1.5 py-1 backdrop-blur-sm">
-        {scenes.map((scene, i) => (
+  const ChapterScrubber = (
+    <div className="absolute bottom-4 left-1/2 z-20 w-[min(100%-1.5rem,36rem)] -translate-x-1/2 pointer-events-auto">
+      <div className="rounded-2xl bg-ink/60 px-2 py-2 backdrop-blur-md ring-1 ring-paper/15">
+        <div className="flex items-center gap-1">
           <button
-            key={scene.id}
             type="button"
-            onClick={() => goToScene(i)}
-            aria-label={`Go to ${sceneChipLabel(scene, dayScenes)}`}
-            aria-current={i === activeScene ? 'true' : undefined}
-            className={`min-w-[2.25rem] rounded-full px-2 py-1 text-[10px] uppercase tracking-[0.14em] transition-colors ${
-              i === activeScene
-                ? 'bg-paper text-ink'
-                : 'text-paper/75 hover:bg-paper/15 hover:text-paper'
-            }`}
+            onClick={() => goToScene(activeScene - 1)}
+            disabled={activeScene === 0}
+            aria-label="Previous chapter"
+            className="grid h-9 w-9 shrink-0 place-items-center rounded-full text-paper/90 transition-colors hover:bg-paper/15 disabled:opacity-30 disabled:hover:bg-transparent"
           >
-            {sceneChipLabel(scene, dayScenes)}
+            <ChevronLeft className="h-4 w-4" />
           </button>
-        ))}
-      </div>
-      <div className="flex items-center gap-1 rounded-full bg-ink/55 px-1.5 py-1 backdrop-blur-sm">
-        <button
-          type="button"
-          onClick={() => goToScene(activeScene - 1)}
-          disabled={activeScene === 0}
-          aria-label="Previous chapter"
-          className="grid h-7 w-7 place-items-center rounded-full text-paper/90 transition-colors hover:bg-paper/15 disabled:opacity-30 disabled:hover:bg-transparent"
-        >
-          <ChevronLeft className="h-4 w-4" />
-        </button>
-        <span className="min-w-[92px] px-1 text-center text-[11px] uppercase tracking-[0.2em] text-paper/90">
-          {chapterLabel}
-        </span>
-        <button
-          type="button"
-          onClick={() => goToScene(activeScene + 1)}
-          disabled={activeScene === scenes.length - 1}
-          aria-label="Next chapter"
-          className="grid h-7 w-7 place-items-center rounded-full text-paper/90 transition-colors hover:bg-paper/15 disabled:opacity-30 disabled:hover:bg-transparent"
-        >
-          <ChevronRight className="h-4 w-4" />
-        </button>
+
+          <div className="flex min-w-0 flex-1 items-stretch gap-1 overflow-x-auto">
+            {scenes.map((scene, i) => {
+              const label = scrubberLabel(scene, dayScenes);
+              const activeChip = i === activeScene;
+              return (
+                <button
+                  key={scene.id}
+                  type="button"
+                  onClick={() => goToScene(i)}
+                  aria-label={`Go to ${label.secondary || label.primary}`}
+                  aria-current={activeChip ? 'true' : undefined}
+                  className={`relative min-w-0 flex-1 rounded-xl px-2 py-1.5 text-center transition-colors ${
+                    activeChip
+                      ? 'bg-paper text-ink'
+                      : 'text-paper/75 hover:bg-paper/10 hover:text-paper'
+                  }`}
+                >
+                  <span className="block text-[10px] uppercase tracking-[0.12em] leading-tight whitespace-nowrap">
+                    {label.primary}
+                  </span>
+                  {label.secondary && (
+                    <span
+                      className={`mt-0.5 block text-[9px] uppercase tracking-[0.1em] leading-none ${
+                        activeChip ? 'text-ink/45' : 'text-paper/45'
+                      }`}
+                    >
+                      {label.secondary}
+                    </span>
+                  )}
+                  {activeChip && (
+                    <span
+                      className="absolute inset-x-2 -bottom-0.5 h-0.5 rounded-full bg-accent"
+                      aria-hidden
+                    />
+                  )}
+                </button>
+              );
+            })}
+          </div>
+
+          <button
+            type="button"
+            onClick={() => goToScene(activeScene + 1)}
+            disabled={activeScene === scenes.length - 1}
+            aria-label="Next chapter"
+            className="grid h-9 w-9 shrink-0 place-items-center rounded-full text-paper/90 transition-colors hover:bg-paper/15 disabled:opacity-30 disabled:hover:bg-transparent"
+          >
+            <ChevronRight className="h-4 w-4" />
+          </button>
+        </div>
+
+        {canCopy && active?.kind !== 'overview' && (
+          <div className="mt-2 border-t border-paper/10 px-2 pt-2 text-center">
+            <Link
+              href={`/trips/${trip.id}/copy`}
+              className="inline-flex items-center gap-1.5 text-[10px] uppercase tracking-[0.18em] text-paper/75
+                         transition-colors hover:text-accent"
+            >
+              Make your own version of this trip
+              <ArrowRight className="h-3 w-3" />
+            </Link>
+          </div>
+        )}
       </div>
     </div>
   );
@@ -554,45 +673,60 @@ export default function SceneReplayClient({ trip }) {
   const ClosingCta = (
     <div className="relative z-10 border-t border-paper/15 bg-ink px-6 py-16 sm:py-20 text-center">
       <p className="text-[11px] uppercase tracking-[0.3em] text-paper/50 mb-4">End of the replay</p>
-      <div className="flex flex-wrap items-center justify-center gap-4">
-        <Link
-          href={`/journal/${trip.id}`}
-          className="inline-flex items-center gap-2.5 rounded-full bg-accent px-6 py-3
-                     text-[11px] uppercase tracking-[0.2em] text-paper hover:bg-paper hover:text-ink
-                     transition-colors duration-300"
-        >
-          <BookOpen className="h-3.5 w-3.5" />
-          Read the full dispatch
-        </Link>
-        <Link
-          href={`/albums/${trip.id}`}
-          className="inline-flex items-center gap-2.5 rounded-full border border-paper/25 px-6 py-3
-                     text-[11px] uppercase tracking-[0.2em] text-paper/85 hover:border-paper hover:text-paper
-                     transition-colors duration-300"
-        >
-          <Camera className="h-3.5 w-3.5" />
-          Browse all {trip.photoCount} photographs
-        </Link>
-      </div>
-      {tripHasBlueprint(trip.id) && (
-        <p className="mt-8 text-[11px] uppercase tracking-[0.2em] text-paper/60">
-          Or make it yours —{' '}
+      {canCopy ? (
+        <>
+          <p className="font-display text-2xl sm:text-3xl tracking-tight text-paper max-w-md mx-auto">
+            Make your own version of this trip
+          </p>
           <Link
             href={`/trips/${trip.id}/copy`}
-            className="text-paper underline decoration-accent underline-offset-4 hover:text-accent transition-colors"
+            className="mt-6 inline-flex items-center gap-2.5 rounded-full bg-accent px-7 py-3.5
+                       text-[11px] uppercase tracking-[0.2em] text-paper hover:bg-paper hover:text-ink
+                       transition-colors duration-300"
           >
-            copy this trip
+            Copy this trip
+            <ArrowRight className="h-3.5 w-3.5" />
           </Link>
-        </p>
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-[11px] uppercase tracking-[0.2em] text-paper/60">
+            <Link href={`/journal/${trip.id}`} className="hover:text-paper transition-colors">
+              Story
+            </Link>
+            <span aria-hidden className="text-paper/25">·</span>
+            <Link href={`/albums/${trip.id}`} className="hover:text-paper transition-colors">
+              Photos
+            </Link>
+          </div>
+        </>
+      ) : (
+        <div className="flex flex-wrap items-center justify-center gap-4">
+          <Link
+            href={`/journal/${trip.id}`}
+            className="inline-flex items-center gap-2.5 rounded-full bg-accent px-6 py-3
+                       text-[11px] uppercase tracking-[0.2em] text-paper hover:bg-paper hover:text-ink
+                       transition-colors duration-300"
+          >
+            <BookOpen className="h-3.5 w-3.5" />
+            Read the story
+          </Link>
+          <Link
+            href={`/albums/${trip.id}`}
+            className="inline-flex items-center gap-2.5 rounded-full border border-paper/25 px-6 py-3
+                       text-[11px] uppercase tracking-[0.2em] text-paper/85 hover:border-paper hover:text-paper
+                       transition-colors duration-300"
+          >
+            <Camera className="h-3.5 w-3.5" />
+            Browse photographs
+          </Link>
+        </div>
       )}
       {getTripNeighborhoods(trip.id).length > 0 && (
-        <p className="mt-4 text-[11px] uppercase tracking-[0.2em] text-paper/60">
-          Neighborhoods from this trip —{' '}
+        <p className="mt-6 text-[11px] uppercase tracking-[0.2em] text-paper/50">
+          Neighborhoods —{' '}
           {getTripNeighborhoods(trip.id).map((hood, i, all) => (
             <span key={hood.id}>
               <Link
                 href={`/neighborhoods/${hood.id}`}
-                className="text-paper underline decoration-accent underline-offset-4 hover:text-accent transition-colors"
+                className="text-paper/75 underline decoration-accent/60 underline-offset-4 hover:text-accent transition-colors"
               >
                 {hood.name}
               </Link>
@@ -614,11 +748,37 @@ export default function SceneReplayClient({ trip }) {
     />
   );
 
-  // ——— Reduced-motion / no-pin fallback: a plain stacked article ———
+  const renderSceneBody = (scene, i) => {
+    if (scene.kind === 'overview') {
+      return (
+        <TitleCard
+          scene={scene}
+          tripTitle={title}
+          tripId={trip.id}
+          canCopy={canCopy}
+          onStartDay={() => goToScene(firstDayIndex >= 0 ? firstDayIndex : 1)}
+        />
+      );
+    }
+    return (
+      <SceneCard
+        scene={
+          scene.kind === 'reflections' && overviewFacts
+            ? { ...scene, tripDetailsFacts: overviewFacts }
+            : scene
+        }
+        tripId={trip.id}
+      />
+    );
+  };
+
+  // ——— Reduced-motion / no-pin fallback ———
   if (!pinned) {
     return (
       <div className="bg-ink text-paper">
-        <div className="sticky top-14 md:top-16 z-20 bg-ink/90 backdrop-blur-sm pb-2">{TopChrome}</div>
+        <div className="sticky top-14 md:top-16 z-20 bg-ink/90 backdrop-blur-sm pb-2">
+          {TopChrome}
+        </div>
         <div className="px-5 sm:px-6 pt-6 pb-10 max-w-3xl mx-auto">
           <p className="text-[11px] uppercase tracking-[0.3em] text-paper/60">
             Replay {flag && <span className="mx-1">{flag}</span>} · {trip.year}
@@ -646,7 +806,7 @@ export default function SceneReplayClient({ trip }) {
               </div>
             )}
             <div className="mt-6 flex flex-col gap-3">
-              <SceneCard scene={scene} tripId={trip.id} />
+              {renderSceneBody(scene, i)}
               <PhotoStrip scene={scene} sceneIndex={i} tripId={trip.id} onOpen={openLightbox} />
             </div>
           </section>
@@ -661,7 +821,6 @@ export default function SceneReplayClient({ trip }) {
   // ——— Default: full-bleed pinned background + scrolling cards ———
   return (
     <div className="relative bg-ink text-paper">
-      {/* Pinned stage — one viewport below the site header */}
       <div className={`sticky ${STAGE_TOP} ${STAGE_HEIGHT} w-full overflow-hidden`}>
         {scenes.map((scene, i) => {
           const near = Math.abs(i - activeScene) <= 1;
@@ -689,29 +848,26 @@ export default function SceneReplayClient({ trip }) {
           );
         })}
 
-        {/* Localized scrims — darken behind the card (left) and top chrome only,
-            so the photograph keeps its color and contrast on the right. */}
         <div className="absolute inset-0 pointer-events-none bg-gradient-to-r from-ink/70 via-ink/15 to-transparent" />
         <div className="absolute inset-x-0 top-0 h-28 pointer-events-none bg-gradient-to-b from-ink/45 to-transparent" />
+        <div className="absolute inset-x-0 bottom-0 h-40 pointer-events-none bg-gradient-to-t from-ink/50 to-transparent" />
 
-        {/* Top chrome */}
         <div className="absolute top-0 inset-x-0 z-20 pointer-events-none">{TopChrome}</div>
 
-        {ChapterNav}
+        {ChapterScrubber}
 
-        {/* Desktop inset map */}
-        {MAPBOX_TOKEN && trip.center && (
+        {/* Day-only inset map — kept off overview/title card */}
+        {MAPBOX_TOKEN && trip.center && isDayScene && (
           <div
-            className="absolute bottom-4 right-4 z-20 hidden sm:block h-32 w-44 lg:h-40 lg:w-56
+            className="absolute bottom-[7.5rem] right-4 z-20 hidden sm:block h-28 w-40 lg:h-36 lg:w-52
                        rounded-xl overflow-hidden border border-paper/20 shadow-lg bg-ink/40"
           >
-            <InsetMap center={trip.center} route={scenes[activeScene]?.route} />
+            <InsetMap center={trip.center} route={active?.route} />
           </div>
         )}
 
-        {/* Mobile route affordance */}
-        {MAPBOX_TOKEN && trip.center && scenes[activeScene]?.route?.length > 0 && (
-          <div className="absolute bottom-28 right-4 z-20 sm:hidden pointer-events-auto">
+        {MAPBOX_TOKEN && trip.center && isDayScene && active?.route?.length > 0 && (
+          <div className="absolute bottom-[7.5rem] right-4 z-20 sm:hidden pointer-events-auto">
             <button
               type="button"
               onClick={() => setMobileMapOpen((open) => !open)}
@@ -724,16 +880,13 @@ export default function SceneReplayClient({ trip }) {
             </button>
             {mobileMapOpen && (
               <div className="mt-2 h-36 w-44 overflow-hidden rounded-xl border border-paper/20 shadow-lg bg-ink/40">
-                <InsetMap center={trip.center} route={scenes[activeScene]?.route} />
+                <InsetMap center={trip.center} route={active?.route} />
               </div>
             )}
           </div>
         )}
       </div>
 
-      {/* Steps — pulled up over the pinned stage. The wrapper + sections are
-          click-transparent so the chrome/controls/map beneath stay interactive;
-          only the cards (pointer-events-auto) capture clicks. */}
       <div className={`relative z-10 ${STAGE_PULL} pointer-events-none`}>
         {scenes.map((scene, i) => (
           <section
@@ -741,10 +894,10 @@ export default function SceneReplayClient({ trip }) {
             id={scene.id}
             data-scene-index={i}
             ref={(el) => (sectionRefs.current[i] = el)}
-            className={`${STAGE_HEIGHT} min-h-[calc(100svh-3.5rem)] md:min-h-[calc(100svh-4rem)] flex flex-col items-start justify-center gap-3 px-5 sm:px-6 pb-28 pointer-events-none`}
+            className={`${STAGE_HEIGHT} min-h-[calc(100svh-3.5rem)] md:min-h-[calc(100svh-4rem)] flex flex-col items-start justify-center gap-3 px-5 sm:px-6 pb-36 pointer-events-none`}
           >
             <div className="w-full max-w-md sm:max-w-lg sm:ml-4 lg:ml-14">
-              <SceneCard scene={scene} tripId={trip.id} />
+              {renderSceneBody(scene, i)}
             </div>
             <div className="sm:ml-4 lg:ml-14">
               <PhotoStrip scene={scene} sceneIndex={i} tripId={trip.id} onOpen={openLightbox} />
