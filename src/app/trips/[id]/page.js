@@ -68,6 +68,9 @@ async function getTripData(id) {
         // Trip-report mode: a facts/overview scene, one scene per day (photos
         // bucketed by capture date), then a reflections scene.
         const R = narrative.report;
+        const blueprint = getTripBlueprint(album.id);
+        const experienceCount =
+          blueprint?.days.reduce((count, day) => count + day.experiences.length, 0) ?? null;
         const heroBg =
           (R.heroBackground && resolve(R.heroBackground)) ||
           (rawPhotos[0] && transformToCloudFront(rawPhotos[0].url)) ||
@@ -83,6 +86,13 @@ async function getTripData(id) {
           title: album.name,
           text: R.dek || trip.intro || '',
           facts: R.facts || null,
+          copySummary: blueprint
+            ? {
+                durationDays: blueprint.durationDays,
+                experienceCount,
+                photoCount: rawPhotos.length,
+              }
+            : null,
           backgroundUrl: heroBg,
           photos: [],
         };
@@ -155,7 +165,7 @@ async function getTripData(id) {
           // Copy-trip integration: match this day's activity lines to
           // blueprint experiences so the replay can offer "+ Add to my trip"
           // per line (null entries get no button).
-          const blueprintDay = getTripBlueprint(album.id)?.days.find((bd) => bd.id === d.id);
+          const blueprintDay = blueprint?.days.find((bd) => bd.id === d.id);
           const copyActions = blueprintDay
             ? matchActivitiesToExperiences(d.activities || [], blueprintDay.experiences).map(
                 (experienceId) => {

@@ -225,14 +225,15 @@ function ReflectionsBlock({ reflections }) {
   );
 }
 
-// Film title card: prove the weekend happened, then Start Day 1 / Copy.
+// Conversion-first title card: explain the personalized outcome, then let the
+// original replay serve as secondary proof.
 function TitleCard({ scene, tripTitle, tripId, onStartDay, canCopy }) {
-  const facts = scene.facts || {};
-  const chips = [
-    facts.dates,
-    facts.nights != null ? `${facts.nights} nights` : null,
-    facts.party,
-    facts.occasion,
+  const summary = scene.copySummary;
+  const sourceLabel = summary?.durationDays <= 3 ? `${tripTitle} weekend` : `${tripTitle} trip`;
+  const proof = [
+    summary?.durationDays ? `${summary.durationDays} days` : null,
+    summary?.experienceCount ? `${summary.experienceCount} real experiences` : null,
+    summary?.photoCount ? `${summary.photoCount} source photographs` : null,
   ].filter(Boolean);
 
   return (
@@ -242,50 +243,70 @@ function TitleCard({ scene, tripTitle, tripId, onStartDay, canCopy }) {
                  p-6 sm:p-8"
     >
       <p className="text-[11px] uppercase tracking-[0.3em] text-accent mb-3">
-        {scene.kicker || 'A trip that happened'}
+        Copied from a real {tripTitle} trip
       </p>
       <h1 className="font-display text-3xl sm:text-4xl tracking-tight leading-[1.05]">
-        {tripTitle}
+        Start with this {sourceLabel}. Make it yours.
       </h1>
-      {scene.text && (
-        <p className="mt-4 text-[15px] leading-relaxed text-ink/80">{scene.text}</p>
-      )}
+      <p className="mt-4 text-[15px] leading-relaxed text-ink/75">
+        Keep the moments you love, change the dates, pace, and budget, and get a
+        day-by-day itinerary grounded in this journey.
+      </p>
 
-      {chips.length > 0 && (
-        <ul className="mt-5 flex flex-wrap gap-2">
-          {chips.map((chip) => (
+      {proof.length > 0 && (
+        <ul className="mt-6 grid grid-cols-3 divide-x divide-ink/10 border-y border-ink/10 py-4">
+          {proof.map((item) => (
             <li
-              key={chip}
-              className="rounded-full bg-ink/5 px-3 py-1.5 text-[10px] uppercase tracking-[0.16em] text-ink/70"
+              key={item}
+              className="px-2 text-center text-[10px] uppercase tracking-[0.13em] leading-snug text-ink/60 first:pl-0 last:pr-0"
             >
-              {chip}
+              {item}
             </li>
           ))}
         </ul>
       )}
 
-      <div className="mt-7 flex flex-wrap items-center gap-3">
-        <button
-          type="button"
-          onClick={onStartDay}
-          className="inline-flex items-center gap-2 rounded-full bg-ink px-5 py-3 text-[11px]
-                     uppercase tracking-[0.2em] text-paper transition-colors hover:bg-accent"
-        >
-          Start Day 1
-          <ArrowRight className="h-3.5 w-3.5" />
-        </button>
-        {canCopy && (
+      <div className="mt-7">
+        {canCopy ? (
           <Link
-            href={`/trips/${tripId}/copy`}
-            className="inline-flex items-center gap-2 rounded-full border border-ink/15 px-5 py-3 text-[11px]
-                       uppercase tracking-[0.2em] text-ink/70 transition-colors hover:border-accent hover:text-accent"
+            href={`/trips/${tripId}/copy/select`}
+            className="group flex w-full items-center justify-center gap-2.5 rounded-full bg-accent px-6 py-3.5
+                       text-[11px] uppercase tracking-[0.2em] text-paper shadow-sm
+                       transition-colors duration-300 hover:bg-ink"
           >
-            Copy this trip
+            Build my {tripTitle} trip
+            <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
           </Link>
+        ) : (
+          <button
+            type="button"
+            onClick={onStartDay}
+            className="flex w-full items-center justify-center gap-2 rounded-full bg-ink px-6 py-3.5 text-[11px]
+                       uppercase tracking-[0.2em] text-paper transition-colors hover:bg-accent"
+          >
+            Watch the original trip
+            <ArrowRight className="h-3.5 w-3.5" />
+          </button>
+        )}
+
+        {canCopy && (
+          <>
+            <p className="mt-2.5 text-center text-[11px] text-ink/45">
+              Choose what to keep · no account required
+            </p>
+            <button
+              type="button"
+              onClick={onStartDay}
+              className="group mx-auto mt-5 flex items-center gap-2 border-b border-ink/20 pb-1
+                         text-[10px] uppercase tracking-[0.18em] text-ink/55
+                         transition-colors hover:border-accent hover:text-accent"
+            >
+              Watch the original trip
+              <ArrowRight className="h-3 w-3 transition-transform group-hover:translate-x-1" />
+            </button>
+          </>
         )}
       </div>
-
-      <TripDetails facts={facts} />
     </article>
   );
 }
@@ -585,6 +606,7 @@ export default function SceneReplayClient({ trip }) {
         active="replay"
         context={viewContext}
         mode="film"
+        showCopy={active?.kind !== 'overview'}
       />
     </div>
   );
@@ -854,7 +876,7 @@ export default function SceneReplayClient({ trip }) {
 
         <div className="absolute top-0 inset-x-0 z-20 pointer-events-none">{TopChrome}</div>
 
-        {ChapterScrubber}
+        {active?.kind !== 'overview' && ChapterScrubber}
 
         {/* Day-only inset map — kept off overview/title card */}
         {MAPBOX_TOKEN && trip.center && isDayScene && (

@@ -37,6 +37,7 @@ export default function TripViewSwitcher({
   variant = 'dark',
   context = null,
   mode = 'default',
+  showCopy = true,
 }) {
   const light = variant === 'light';
   const canCopy = tripHasBlueprint(tripId);
@@ -59,7 +60,7 @@ export default function TripViewSwitcher({
             </Link>
           ))}
         </nav>
-        {canCopy && (
+        {canCopy && showCopy && (
           <Link
             href={`/trips/${tripId}/copy`}
             className="rounded-full bg-accent px-4 py-2.5 text-[11px] uppercase tracking-[0.18em] text-paper
@@ -101,7 +102,7 @@ export default function TripViewSwitcher({
           )
         )}
       </nav>
-      {canCopy && (
+      {canCopy && showCopy && (
         <Link
           href={`/trips/${tripId}/copy`}
           className="rounded-full bg-accent px-4 py-2.5 text-[11px] uppercase tracking-[0.18em] text-paper
