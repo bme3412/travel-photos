@@ -78,7 +78,8 @@ export function AddToTripToast({ tripId }) {
   return (
     <div
       role="status"
-      className="pointer-events-auto fixed inset-x-0 bottom-6 z-40 flex justify-center px-4 animate-fade-in"
+      data-add-to-trip-toast
+      className="pointer-events-auto fixed inset-x-0 bottom-28 z-40 flex justify-center px-4 animate-fade-in sm:bottom-24"
     >
       <div className="flex max-w-md items-center gap-4 rounded-full bg-ink px-5 py-3 text-paper shadow-xl">
         <p className="min-w-0 truncate text-[13px]">

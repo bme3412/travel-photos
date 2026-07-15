@@ -152,7 +152,7 @@ export const revalidate = 3600;
 export default async function AlbumPage({ params }) {
   // Await params in Next.js 15
   const { id } = await params;
-  
+
   // Fetch album data at build time (SSG) and revalidate hourly (ISR)
   const album = await getAlbumData(id);
 

@@ -181,6 +181,13 @@ function PostHero({ cover, flag, kickerParts, title, tripId, metaLine }) {
               <Play className="h-3.5 w-3.5 fill-current" />
               Replay the journey
             </Link>
+            <Link
+              href={`/albums/${tripId}`}
+              className="inline-flex items-center gap-2 border-b border-paper/40 pb-1 text-[11px] uppercase
+                         tracking-[0.2em] text-paper/85 transition-colors hover:border-paper hover:text-paper"
+            >
+              Browse photographs
+            </Link>
             <span className="text-[11px] uppercase tracking-[0.2em] text-paper/70">{metaLine}</span>
           </div>
         </div>
@@ -208,7 +215,7 @@ function ClosingCta({ tripId }) {
         </div>
       )}
       <p className="text-[11px] uppercase tracking-[0.3em] text-muted mb-4">Keep exploring</p>
-      <div className="flex flex-wrap items-center justify-center gap-4">
+      <div className="flex flex-wrap items-center justify-center gap-3">
         <Link
           href={`/trips/${tripId}`}
           className="inline-flex items-center gap-2.5 bg-ink text-paper rounded-full px-6 py-3
@@ -218,11 +225,19 @@ function ClosingCta({ tripId }) {
           Replay this journey
         </Link>
         <Link
-          href="/"
+          href={`/albums/${tripId}`}
+          className="inline-flex items-center gap-2.5 rounded-full border border-ink/15 px-6 py-3
+                     text-[11px] uppercase tracking-[0.2em] text-ink/70 hover:border-accent hover:text-accent
+                     transition-colors duration-300"
+        >
+          Browse photographs
+        </Link>
+        <Link
+          href="/trips"
           className="group inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.2em] text-ink/70
                      hover:text-accent transition-colors duration-200"
         >
-          More dispatches
+          All original trips
           <ArrowRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1" />
         </Link>
       </div>

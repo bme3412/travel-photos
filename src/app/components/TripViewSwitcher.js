@@ -8,16 +8,38 @@ import { tripHasBlueprint } from '@/features/copy-trip/availability';
 // staying in one place. `variant="light"` sits on paper (album masthead);
 // the default sits on photography/dark heroes.
 //
+// Optional `context` keeps day/scene focus when hopping between lenses:
+//   { sceneId: 'day-2', dayDate: '2026-06-20' }
+//
 // Trips with a copy blueprint also get the "Copy this trip" CTA beside the
 // switcher — a distinct button, not a fourth view, since copying is a flow
 // that leaves the trip rather than another lens on it.
 const VIEWS = [
-  { key: 'replay', label: 'Replay', href: (id) => `/trips/${id}` },
-  { key: 'story', label: 'Story', href: (id) => `/journal/${id}` },
-  { key: 'photos', label: 'Photos', href: (id) => `/albums/${id}` },
+  {
+    key: 'replay',
+    label: 'Replay',
+    href: (id, ctx) =>
+      ctx?.sceneId ? `/trips/${id}#${ctx.sceneId}` : `/trips/${id}`,
+  },
+  {
+    key: 'story',
+    label: 'Story',
+    href: (id) => `/journal/${id}`,
+  },
+  {
+    key: 'photos',
+    label: 'Photos',
+    href: (id, ctx) =>
+      ctx?.dayDate ? `/albums/${id}?day=${ctx.dayDate}` : `/albums/${id}`,
+  },
 ];
 
-export default function TripViewSwitcher({ tripId, active, variant = 'dark' }) {
+export default function TripViewSwitcher({
+  tripId,
+  active,
+  variant = 'dark',
+  context = null,
+}) {
   const light = variant === 'light';
   return (
     <div className="pointer-events-auto inline-flex items-center gap-2">
@@ -29,13 +51,17 @@ export default function TripViewSwitcher({ tripId, active, variant = 'dark' }) {
       >
         {VIEWS.map((view) =>
           view.key === active ? (
-            <span key={view.key} aria-current="page" className="rounded-full bg-ink px-3.5 py-1.5 text-paper">
+            <span
+              key={view.key}
+              aria-current="page"
+              className="rounded-full bg-ink px-3.5 py-1.5 text-paper"
+            >
               {view.label}
             </span>
           ) : (
             <Link
               key={view.key}
-              href={view.href(tripId)}
+              href={view.href(tripId, context)}
               className="rounded-full px-3.5 py-1.5 text-ink/60 transition-colors hover:text-ink"
             >
               {view.label}

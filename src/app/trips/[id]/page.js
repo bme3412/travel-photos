@@ -166,6 +166,7 @@ async function getTripData(id) {
           return {
             id: d.id,
             kind: 'day',
+            date: d.date || null,
             kicker: d.kicker,
             title: d.title,
             text: d.text,

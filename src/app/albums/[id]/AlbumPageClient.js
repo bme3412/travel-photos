@@ -1,14 +1,26 @@
 'use client';
 
-import React, { useState, useEffect, Suspense } from 'react';
+import React, { useState, useEffect, useMemo, Suspense } from 'react';
 import Image from 'next/image';
 import usePhotoStore from '../../store/usePhotoStore';
 import ImageLightbox from '../../components/ImageLightbox';
-import { ArrowLeft, Camera, Play, ArrowRight } from 'lucide-react';
+import { ArrowLeft, BookOpen, Camera, Play, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 import { transformToCloudFront } from '../../utils/imageUtils';
 import { bestPhoto } from '../../utils/photoRanking';
 import TripViewSwitcher from '../../components/TripViewSwitcher';
+
+const photoDay = (photo) =>
+  photo?.takenAt ? photo.takenAt.slice(0, 10) : photo?.dateCreated || null;
+
+const formatDay = (iso) => {
+  if (!iso) return '';
+  return new Date(`${iso}T12:00:00`).toLocaleDateString('en-US', {
+    weekday: 'short',
+    month: 'short',
+    day: 'numeric',
+  });
+};
 
 // Lazy load the AlbumMap component
 const AlbumMap = React.lazy(() => import('../../components/AlbumMap'));
@@ -72,6 +84,7 @@ export default function AlbumPageClient({ initialAlbum }) {
 
   const [view, setView] = useState('grid');
   const [currentAlbum, setAlbum] = useState(initialAlbum);
+  const [activeDay, setActiveDay] = useState(null);
 
   useEffect(() => {
     if (initialAlbum) {
@@ -79,18 +92,45 @@ export default function AlbumPageClient({ initialAlbum }) {
     }
   }, [initialAlbum]);
 
+  // Day deep-links (?day=YYYY-MM-DD) are read on the client so the album
+  // page can stay statically generated.
+  useEffect(() => {
+    const day = new URLSearchParams(window.location.search).get('day');
+    if (day) setActiveDay(day);
+  }, []);
+
+  const availableDays = useMemo(() => {
+    const days = new Set();
+    for (const photo of currentAlbum?.photos || []) {
+      const day = photoDay(photo);
+      if (day) days.add(day);
+    }
+    return [...days].sort();
+  }, [currentAlbum]);
+
+  const visiblePhotos = useMemo(() => {
+    const photos = currentAlbum?.photos || [];
+    if (!activeDay) return photos;
+    return photos.filter((photo) => photoDay(photo) === activeDay);
+  }, [currentAlbum, activeDay]);
+
+  // Map day dates to sequential day-N hashes used by the scene replay.
+  const daySceneId = activeDay
+    ? `day-${Math.max(1, availableDays.indexOf(activeDay) + 1)}`
+    : null;
+
   if (!currentAlbum) {
     return (
       <div className="flex flex-col items-center justify-center min-h-[60vh] text-center px-6">
         <Camera className="h-10 w-10 text-ink/20 mb-5" />
         <p className="font-display text-2xl text-ink/70 mb-2">This album isn&apos;t in the archive</p>
         <Link
-          href="/"
+          href="/trips"
           className="group inline-flex items-center gap-2 mt-3 text-[11px] uppercase tracking-[0.2em] text-ink/70
                      border-b border-ink/20 pb-1 hover:border-accent hover:text-ink transition-colors duration-300"
         >
           <ArrowLeft className="h-3.5 w-3.5 transition-transform duration-300 group-hover:-translate-x-1" />
-          Back to the collection
+          Back to original trips
         </Link>
       </div>
     );
@@ -100,7 +140,7 @@ export default function AlbumPageClient({ initialAlbum }) {
 
   // Prominent replay call-to-action, shown on initial load above the grid.
   // Lead with the highest-rated photo (falls back to the first when unrated).
-  const coverUrl = bestPhoto(currentAlbum.photos)?.url || null;
+  const coverUrl = bestPhoto(visiblePhotos)?.url || bestPhoto(currentAlbum.photos)?.url || null;
   const trip = currentAlbum.tripSummary;
   const isMultiStop = trip && trip.stopCount > 1;
   const replayMeta = trip
@@ -111,6 +151,21 @@ export default function AlbumPageClient({ initialAlbum }) {
         .filter(Boolean)
         .join(' · ')
     : '';
+  const replayHref = daySceneId
+    ? `/trips/${currentAlbum.id}#${daySceneId}`
+    : `/trips/${currentAlbum.id}`;
+  const viewContext = {
+    sceneId: daySceneId,
+    dayDate: activeDay,
+  };
+
+  const selectDay = (day) => {
+    setActiveDay(day);
+    const url = day
+      ? `/albums/${currentAlbum.id}?day=${day}`
+      : `/albums/${currentAlbum.id}`;
+    window.history.replaceState(null, '', url);
+  };
 
   return (
     <div className="min-h-screen">
@@ -119,14 +174,19 @@ export default function AlbumPageClient({ initialAlbum }) {
         <div className="max-w-7xl mx-auto px-6 pt-10 pb-8">
           <div className="mb-5 flex items-center justify-between gap-3">
             <Link
-              href="/"
+              href={`/trips/${currentAlbum.id}`}
               className="group inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.2em] text-muted
                          hover:text-ink transition-colors duration-200"
             >
               <ArrowLeft className="h-3.5 w-3.5 transition-transform duration-300 group-hover:-translate-x-1" />
-              The collection
+              Back to replay
             </Link>
-            <TripViewSwitcher tripId={currentAlbum.id} active="photos" variant="light" />
+            <TripViewSwitcher
+              tripId={currentAlbum.id}
+              active="photos"
+              variant="light"
+              context={viewContext}
+            />
           </div>
 
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
@@ -136,7 +196,12 @@ export default function AlbumPageClient({ initialAlbum }) {
               </h1>
               <p className="text-[11px] uppercase tracking-[0.2em] text-muted mt-3">
                 {flag && <span className="mr-1.5 tracking-normal">{flag}</span>}
-                {[currentAlbum.year, `${currentAlbum.photoCount || currentAlbum.photos?.length || 0} photographs`]
+                {[
+                  currentAlbum.year,
+                  activeDay
+                    ? `${visiblePhotos.length} photographs · ${formatDay(activeDay)}`
+                    : `${currentAlbum.photoCount || currentAlbum.photos?.length || 0} photographs`,
+                ]
                   .filter(Boolean)
                   .join(' · ')}
               </p>
@@ -158,54 +223,109 @@ export default function AlbumPageClient({ initialAlbum }) {
               ))}
             </div>
           </div>
+
+          {availableDays.length > 1 && (
+            <div className="mt-6 flex flex-wrap items-center gap-2">
+              <button
+                type="button"
+                onClick={() => selectDay(null)}
+                className={`rounded-full px-3.5 py-1.5 text-[10px] uppercase tracking-[0.16em] transition-colors ${
+                  !activeDay
+                    ? 'bg-ink text-paper'
+                    : 'bg-ink/5 text-ink/60 hover:text-ink'
+                }`}
+              >
+                All days
+              </button>
+              {availableDays.map((day, index) => (
+                <button
+                  key={day}
+                  type="button"
+                  onClick={() => selectDay(day)}
+                  className={`rounded-full px-3.5 py-1.5 text-[10px] uppercase tracking-[0.16em] transition-colors ${
+                    activeDay === day
+                      ? 'bg-ink text-paper'
+                      : 'bg-ink/5 text-ink/60 hover:text-ink'
+                  }`}
+                >
+                  Day {index + 1}
+                  <span
+                    className={`ml-1.5 normal-case tracking-normal ${
+                      activeDay === day ? 'text-paper/65' : 'text-ink/35'
+                    }`}
+                  >
+                    {formatDay(day)}
+                  </span>
+                </button>
+              ))}
+            </div>
+          )}
         </div>
       </div>
 
       <div className="max-w-7xl mx-auto px-6 pb-20">
-        {/* Replay journey — prominent CTA into the trip replay */}
-        <Link
-          href={`/trips/${currentAlbum.id}`}
-          className="group relative block overflow-hidden rounded-2xl border border-ink/10 shadow-sm mt-8"
-          aria-label={`Replay ${title} on the map`}
-        >
-          {coverUrl && (
-            <div className="absolute inset-0">
-              <Image
-                src={coverUrl}
-                alt=""
-                fill
-                sizes="(min-width: 1280px) 1216px, 100vw"
-                className="object-cover object-center transition-transform duration-[1200ms] ease-out group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-gradient-to-r from-ink/90 via-ink/70 to-ink/35" />
+        {/* Cross-links into the other trip lenses */}
+        <div className="mt-8 grid grid-cols-1 gap-3 sm:grid-cols-2">
+          <Link
+            href={replayHref}
+            className="group relative overflow-hidden rounded-2xl border border-ink/10 shadow-sm"
+            aria-label={`Replay ${title}${activeDay ? ` day ${availableDays.indexOf(activeDay) + 1}` : ''}`}
+          >
+            {coverUrl && (
+              <div className="absolute inset-0">
+                <Image
+                  src={coverUrl}
+                  alt=""
+                  fill
+                  sizes="(min-width: 1280px) 600px, 100vw"
+                  className="object-cover object-center transition-transform duration-[1200ms] ease-out group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-r from-ink/90 via-ink/70 to-ink/35" />
+              </div>
+            )}
+            <div className="relative flex items-center gap-4 px-5 sm:px-7 py-7">
+              <span className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-accent text-paper">
+                <Play className="h-5 w-5 fill-current translate-x-0.5" />
+              </span>
+              <div className="min-w-0">
+                <p className="text-[10px] uppercase tracking-[0.28em] text-paper/70 mb-1">Trip replay</p>
+                <h2 className="font-display text-2xl tracking-tight text-paper leading-tight">
+                  {activeDay ? `Replay day ${availableDays.indexOf(activeDay) + 1}` : 'Replay the journey'}
+                </h2>
+                <p className="mt-1.5 text-sm text-paper/80">
+                  {activeDay
+                    ? formatDay(activeDay)
+                    : `Retrace ${title}${replayMeta ? ` · ${replayMeta}` : ''}`}
+                </p>
+              </div>
+              <ArrowRight className="ml-auto hidden sm:block h-5 w-5 text-paper/70 transition-transform group-hover:translate-x-1" />
             </div>
-          )}
-          <div className="relative flex items-center gap-4 sm:gap-6 px-5 sm:px-9 py-7 sm:py-11">
-            <span
-              className="flex h-14 w-14 sm:h-16 sm:w-16 flex-shrink-0 items-center justify-center rounded-full
-                         bg-accent text-paper shadow-lg transition-transform duration-300 group-hover:scale-110"
-            >
-              <Play className="h-6 w-6 sm:h-7 sm:w-7 fill-current translate-x-0.5" />
+          </Link>
+
+          <Link
+            href={`/journal/${currentAlbum.id}`}
+            className="group flex items-center gap-4 rounded-2xl border border-ink/10 bg-paper px-5 sm:px-7 py-7
+                       transition-colors hover:border-accent/40"
+          >
+            <span className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-ink/5 text-ink">
+              <BookOpen className="h-5 w-5" />
             </span>
             <div className="min-w-0">
-              <p className="text-[11px] uppercase tracking-[0.3em] text-paper/70 mb-1.5">Trip replay</p>
-              <h2 className="font-display text-2xl sm:text-3xl md:text-4xl tracking-tight text-paper leading-tight">
-                Replay the journey
-              </h2>
-              <p className="mt-2 text-sm sm:text-[15px] text-paper/85">
-                Retrace {title} on the map, {isMultiStop ? 'stop by stop' : 'frame by frame'}
-                {replayMeta && <span className="text-paper/60"> · {replayMeta}</span>}
+              <p className="text-[10px] uppercase tracking-[0.28em] text-muted mb-1">The dispatch</p>
+              <h2 className="font-display text-2xl tracking-tight leading-tight">Read the story</h2>
+              <p className="mt-1.5 text-sm text-ink/65">
+                The written version of this trip, with the photographs in context.
               </p>
             </div>
-            <ArrowRight className="ml-auto hidden sm:block h-6 w-6 flex-shrink-0 text-paper/70 transition-transform duration-300 group-hover:translate-x-1.5" />
-          </div>
-        </Link>
+            <ArrowRight className="ml-auto hidden sm:block h-5 w-5 text-ink/40 transition-transform group-hover:translate-x-1 group-hover:text-accent" />
+          </Link>
+        </div>
 
         {view === 'map' ? (
           <div className="space-y-6 pt-8">
             <div className="overflow-x-auto">
               <div className="flex gap-4 min-w-min pb-4">
-                {currentAlbum.photos?.map((photo, index) => (
+                {visiblePhotos.map((photo, index) => (
                   <div key={photo.id} className="w-72 flex-shrink-0">
                     <PhotoCard
                       photo={photo}
@@ -218,12 +338,12 @@ export default function AlbumPageClient({ initialAlbum }) {
             </div>
 
             <Suspense fallback={<MapLoading />}>
-              <AlbumMap album={currentAlbum} />
+              <AlbumMap album={{ ...currentAlbum, photos: visiblePhotos }} />
             </Suspense>
           </div>
         ) : (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-8 pt-10">
-            {currentAlbum.photos?.map((photo, index) => (
+            {visiblePhotos.map((photo, index) => (
               <PhotoCard
                 key={photo.id}
                 photo={photo}
@@ -237,16 +357,19 @@ export default function AlbumPageClient({ initialAlbum }) {
 
       {isLightboxOpen && selectedPhoto && (
         <ImageLightbox
-          images={currentAlbum.photos}
-          currentIndex={selectedPhoto.index}
+          images={visiblePhotos}
+          currentIndex={Math.min(selectedPhoto.index, Math.max(0, visiblePhotos.length - 1))}
           onClose={closeLightbox}
           onNext={() => {
-            const nextIndex = (selectedPhoto.index + 1) % currentAlbum.photos.length;
-            openLightbox({ ...currentAlbum.photos[nextIndex], index: nextIndex });
+            if (!visiblePhotos.length) return;
+            const nextIndex = (selectedPhoto.index + 1) % visiblePhotos.length;
+            openLightbox({ ...visiblePhotos[nextIndex], index: nextIndex });
           }}
           onPrevious={() => {
-            const prevIndex = (selectedPhoto.index - 1 + currentAlbum.photos.length) % currentAlbum.photos.length;
-            openLightbox({ ...currentAlbum.photos[prevIndex], index: prevIndex });
+            if (!visiblePhotos.length) return;
+            const prevIndex =
+              (selectedPhoto.index - 1 + visiblePhotos.length) % visiblePhotos.length;
+            openLightbox({ ...visiblePhotos[prevIndex], index: prevIndex });
           }}
         />
       )}
