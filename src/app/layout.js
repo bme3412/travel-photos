@@ -50,7 +50,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${fraunces.variable} ${archivo.variable} h-full`}>
       <body className="min-h-full flex flex-col bg-paper font-sans text-ink">
-        <header className="sticky top-0 z-50 bg-paper/90 backdrop-blur-sm border-b border-ink/10">
+        <header className="sticky top-0 z-50 bg-paper/90 backdrop-blur-sm border-b border-ink/10 print:hidden">
           <div className="max-w-7xl mx-auto px-6">
             <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-y-2 py-3 md:py-0 md:h-16">
               <Link href="/" className="group flex items-baseline gap-3 min-w-0">

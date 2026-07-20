@@ -9,12 +9,13 @@
 
 import { useEffect, useMemo, useRef, useState } from 'react';
 import Link from 'next/link';
-import { ArrowLeft, Check, RefreshCw, Ticket } from 'lucide-react';
+import { ArrowLeft, Check, RefreshCw, Share2, Ticket } from 'lucide-react';
 import useCopyTripStore, { useCopySessionHydrated } from '@/features/copy-trip/store';
 import { copyFlowHref } from '@/features/copy-trip/routes';
 import ProvenanceDrawer from './ProvenanceDrawer';
 import ItinerarySection from './ItinerarySection';
 import { deriveTransformationRules, effectiveExperienceIds } from '@/features/copy-trip/rules.mjs';
+import { encodeSharePayload } from '@/features/copy-trip/share.mjs';
 import { addDaysIso, formatDateRange, titleCase } from '@/features/copy-trip/format.mjs';
 import { BUDGET_OPTIONS } from '@/features/copy-trip/options';
 
@@ -105,7 +106,27 @@ export default function ResultClient({ blueprint, photoUrlById = {} }) {
   const [generating, setGenerating] = useState(false);
   const [generationError, setGenerationError] = useState(null);
   const [drawerExperienceId, setDrawerExperienceId] = useState(null);
+  const [shareState, setShareState] = useState('idle'); // idle | copied | error
   const inFlight = useRef(false);
+
+  // The share link carries the whole plan in the fragment — no server
+  // storage, works without login. See features/copy-trip/share.mjs.
+  const share = async () => {
+    try {
+      const blob = await encodeSharePayload({
+        v: 1,
+        tripId: blueprint.id,
+        prefs: session.preferences,
+        plan: session.generatedPlan,
+      });
+      const url = `${window.location.origin}${copyFlowHref(blueprint.id, 'shared')}#p=${blob}`;
+      await navigator.clipboard.writeText(url);
+      setShareState('copied');
+    } catch {
+      setShareState('error');
+    }
+    setTimeout(() => setShareState('idle'), 4000);
+  };
 
   // Provenance lookup: experience id -> { experience, day } in the blueprint.
   const sourceById = useMemo(() => {
@@ -395,6 +416,23 @@ export default function ResultClient({ blueprint, photoUrlById = {} }) {
                     ? 'You have changes that aren’t in your saved version.'
                     : 'Keeps this version in this browser.'}
               </p>
+              <button
+                type="button"
+                onClick={share}
+                className="group inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.2em]
+                           text-ink/60 hover:text-ink transition-colors"
+              >
+                {shareState === 'copied' ? (
+                  <Check className="h-3.5 w-3.5 text-accent" />
+                ) : (
+                  <Share2 className="h-3.5 w-3.5" />
+                )}
+                {shareState === 'copied'
+                  ? 'Link copied'
+                  : shareState === 'error'
+                    ? 'Copy failed — try again'
+                    : 'Share link'}
+              </button>
               <button
                 type="button"
                 onClick={() => {

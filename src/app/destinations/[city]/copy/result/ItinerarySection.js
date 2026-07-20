@@ -246,14 +246,19 @@ function DayCard({ day, plan, editing, dayNumbers, onViewSource, onApply }) {
   );
 }
 
-export default function ItinerarySection({ plan, onViewSource, onApplyEdit }) {
+export default function ItinerarySection({
+  plan,
+  onViewSource,
+  onApplyEdit,
+  heading = 'Your itinerary',
+}) {
   const [editing, setEditing] = useState(false);
   const dayNumbers = plan.days.map((d) => d.dayNumber);
 
   return (
     <section className="mt-14">
       <div className="flex items-center justify-between">
-        <p className="text-[11px] uppercase tracking-[0.25em] text-accent">Your itinerary</p>
+        <p className="text-[11px] uppercase tracking-[0.25em] text-accent">{heading}</p>
         {onApplyEdit && (
           <button
             type="button"

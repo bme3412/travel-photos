@@ -83,9 +83,13 @@ documented in the assessment; each is a contained change to
       select subhead) — decide the brand line deliberately, then sweep.
       Cards and personalize de-anchored 2026-07-20; routing, hub CTAs,
       and the home cards went destination-first the same day.
-- [ ] **Share/export a copied trip**: a share link or print view. This is
-      the feature's payoff — "here's my version of your trip" — and the
-      current localStorage-only design blocks it.
+- [x] **Share/export a copied trip** (2026-07-20): the result screen's
+      Share link carries the whole plan in the URL fragment
+      (deflate + base64url, `features/copy-trip/share.mjs`) — no server
+      storage, no login, per non-goals — and the read-only shared view
+      (`/destinations/<city>/copy/shared`) validates it, keeps provenance
+      links live, and doubles as the print/PDF export. Long plans mean
+      long links; if that ever bites, a shortener layer is the follow-up.
 
 ## Later — parked until the above lands
 
