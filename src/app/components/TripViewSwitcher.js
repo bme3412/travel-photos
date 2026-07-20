@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { tripHasBlueprint } from '@/features/copy-trip/availability';
+import { copyFlowHref } from '@/features/copy-trip/routes';
 
 // The persistent per-trip view control: Replay · Story · Photos.
 //
@@ -62,7 +63,7 @@ export default function TripViewSwitcher({
         </nav>
         {canCopy && showCopy && (
           <Link
-            href={`/trips/${tripId}/copy/select`}
+            href={copyFlowHref(tripId, 'select')}
             className="rounded-full bg-accent px-4 py-2.5 text-[11px] uppercase tracking-[0.18em] text-paper
                        shadow-sm transition-colors duration-300 hover:bg-paper hover:text-ink"
           >
@@ -104,7 +105,7 @@ export default function TripViewSwitcher({
       </nav>
       {canCopy && showCopy && (
         <Link
-          href={`/trips/${tripId}/copy`}
+          href={copyFlowHref(tripId)}
           className="rounded-full bg-accent px-4 py-2.5 text-[11px] uppercase tracking-[0.18em] text-paper
                      shadow-sm transition-colors duration-300 hover:bg-ink"
         >

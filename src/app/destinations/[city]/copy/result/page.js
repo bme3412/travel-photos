@@ -2,6 +2,7 @@ import { notFound } from 'next/navigation';
 import { readPhotos } from '../../../../utils/fileHandler';
 import { transformToCloudFront } from '../../../../utils/imageUtils';
 import { getTripBlueprint } from '@/features/copy-trip/blueprint';
+import { getCopySourceTripId } from '@/features/destinations/data';
 import ResultClient from './ResultClient';
 
 // The result of the copy flow: generation kickoff, the comparison module,
@@ -11,15 +12,16 @@ import ResultClient from './ResultClient';
 export const revalidate = 3600;
 
 export async function generateMetadata({ params }) {
-  const { id } = await params;
-  const blueprint = getTripBlueprint(id);
+  const { city } = await params;
+  const blueprint = getTripBlueprint(getCopySourceTripId(city));
   if (!blueprint) return { title: 'Trip Not Found | Copy This Trip' };
-  const city = blueprint.destination.split(',')[0];
-  return { title: `Your version of ${city} | Copy This Trip` };
+  const cityName = blueprint.destination.split(',')[0];
+  return { title: `Your version of ${cityName} | Copy This Trip` };
 }
 
 export default async function CopyTripResultPage({ params }) {
-  const { id } = await params;
+  const { city } = await params;
+  const id = getCopySourceTripId(city);
   const blueprint = getTripBlueprint(id);
   if (!blueprint) notFound();
 

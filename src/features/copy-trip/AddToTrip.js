@@ -10,6 +10,7 @@ import Link from 'next/link';
 import { create } from 'zustand';
 import { Check, Plus } from 'lucide-react';
 import useCopyTripStore, { useCopySessionHydrated } from './store';
+import { copyFlowHref } from './routes';
 
 // Ephemeral toast state, shared by every button on the page.
 const useToastStore = create((set) => ({
@@ -91,7 +92,7 @@ export function AddToTripToast({ tripId }) {
           {count > 1 && <span className="text-paper/50"> · {count} kept</span>}
         </p>
         <Link
-          href={`/trips/${tripId}/copy/select`}
+          href={copyFlowHref(tripId, 'select')}
           className="shrink-0 text-[11px] uppercase tracking-[0.15em] text-accent underline-offset-4
                      hover:underline"
         >

@@ -21,6 +21,7 @@ import ImageLightbox from '../../components/ImageLightbox';
 import TripViewSwitcher from '../../components/TripViewSwitcher';
 import { tripHasBlueprint } from '@/features/copy-trip/availability';
 import { getCitySlug } from '@/features/destinations/data';
+import { copyFlowHref } from '@/features/copy-trip/routes';
 import { getTripNeighborhoods } from '@/features/neighborhoods/data';
 import { AddToTripButton, AddToTripToast } from '@/features/copy-trip/AddToTrip';
 
@@ -367,7 +368,7 @@ function TitleCard({ scene, tripTitle, tripId, onStartDay, canCopy }) {
       <div className="mt-7">
         {canCopy ? (
           <Link
-            href={`/trips/${tripId}/copy/select`}
+            href={copyFlowHref(tripId, 'select')}
             className="group flex w-full items-center justify-center gap-2.5 rounded-full bg-accent px-6 py-3.5
                        text-[11px] uppercase tracking-[0.2em] text-paper shadow-sm
                        transition-colors duration-300 hover:bg-ink"
@@ -793,7 +794,7 @@ export default function SceneReplayClient({ trip }) {
             Make your own version of this trip
           </p>
           <Link
-            href={`/trips/${trip.id}/copy/select`}
+            href={copyFlowHref(trip.id, 'select')}
             className="mt-6 inline-flex items-center gap-2.5 rounded-full bg-accent px-7 py-3.5
                        text-[11px] uppercase tracking-[0.2em] text-paper hover:bg-paper hover:text-ink
                        transition-colors duration-300"

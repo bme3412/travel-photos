@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { ArrowLeft } from 'lucide-react';
 import { getTripBlueprint } from '@/features/copy-trip/blueprint';
+import { getCopySourceTripId } from '@/features/destinations/data';
 import PersonalizeClient from './PersonalizeClient';
 
 // Step 2 of the copy flow: dates, party, pace, budget, base, and
@@ -11,15 +12,15 @@ import PersonalizeClient from './PersonalizeClient';
 export const revalidate = 3600;
 
 export async function generateMetadata({ params }) {
-  const { id } = await params;
-  const blueprint = getTripBlueprint(id);
+  const { city } = await params;
+  const blueprint = getTripBlueprint(getCopySourceTripId(city));
   if (!blueprint) return { title: 'Trip Not Found | Copy This Trip' };
   return { title: `Personalize your version: ${blueprint.destination} | Copy This Trip` };
 }
 
 export default async function CopyTripPersonalizePage({ params }) {
-  const { id } = await params;
-  const blueprint = getTripBlueprint(id);
+  const { city } = await params;
+  const blueprint = getTripBlueprint(getCopySourceTripId(city));
   if (!blueprint) notFound();
 
   return (
@@ -27,7 +28,7 @@ export default async function CopyTripPersonalizePage({ params }) {
       <div className="max-w-3xl mx-auto px-6 pt-8 pb-24">
         <div className="flex items-center justify-between">
           <Link
-            href={`/trips/${id}/copy/select`}
+            href={`/destinations/${city}/copy/select`}
             className="group inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.2em] text-muted
                        hover:text-ink transition-colors duration-200"
           >

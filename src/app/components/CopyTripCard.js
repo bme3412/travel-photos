@@ -4,6 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { ArrowRight, Play } from 'lucide-react';
+import { copyFlowHref } from '@/features/copy-trip/routes';
 
 const splitFlag = (name = '') => {
   const match = name.match(/^([\u{1F1E6}-\u{1F1FF}]{2})\s*(.*)$/u);
@@ -24,7 +25,7 @@ export default function CopyTripCard({ trip, index }) {
   const openCopy = (event) => {
     event.preventDefault();
     event.stopPropagation();
-    router.push(`/trips/${trip.id}/copy/select`);
+    router.push(copyFlowHref(trip.id, 'select'));
   };
 
   return (

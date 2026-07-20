@@ -39,6 +39,18 @@ export function getDestinations(albums = []) {
   });
 }
 
+// The visit a copy of this destination starts from: the newest blueprint
+// whose id matches `<slug>-<year>`. Null when the destination has none.
+export function getCopySourceTripId(slug) {
+  const wanted = String(slug ?? '').toLowerCase();
+  const years = Object.keys(blueprintsData)
+    .map((id) => id.match(CITY_VISIT_RE))
+    .filter((match) => match && match[1] === wanted)
+    .map((match) => Number(match[2]))
+    .sort((a, b) => b - a);
+  return years.length ? `${wanted}-${years[0]}` : null;
+}
+
 // One destination or null. Case-insensitive: album ids are lowercase.
 export function getDestination(slug, albums = []) {
   const wanted = String(slug ?? '').toLowerCase();

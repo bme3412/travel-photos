@@ -166,7 +166,7 @@ export default async function DestinationPage({ params }) {
                 </div>
                 {copyEnabled && (
                   <Link
-                    href={`/trips/${visit.id}/copy`}
+                    href={`/destinations/${city.slug}/copy`}
                     className="group flex items-center justify-between border-t border-ink/10 px-4 py-3 text-[10px] uppercase tracking-[0.2em] text-accent transition-colors hover:bg-accent hover:text-paper"
                   >
                     Available to copy

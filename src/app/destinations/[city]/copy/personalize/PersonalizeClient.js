@@ -13,6 +13,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { ArrowRight, Minus, Plus } from 'lucide-react';
 import useCopyTripStore, { useCopySessionHydrated } from '@/features/copy-trip/store';
+import { copyFlowHref } from '@/features/copy-trip/routes';
 import { CopyTripPreferencesSchema } from '@/features/copy-trip/schema.mjs';
 import {
   TRAVELER_TYPE_OPTIONS,
@@ -233,7 +234,7 @@ export default function PersonalizeClient({ blueprint }) {
       status: 'configuring',
     });
     if (forcedPace) setForm((f) => ({ ...f, pace: forcedPace }));
-    router.push(`/trips/${blueprint.id}/copy/result`);
+    router.push(copyFlowHref(blueprint.id, 'result'));
   };
 
   if (!hydrated) return null;
@@ -245,7 +246,7 @@ export default function PersonalizeClient({ blueprint }) {
           Nothing is selected yet — choose the days and experiences to carry over first.
         </p>
         <Link
-          href={`/trips/${blueprint.id}/copy/select`}
+          href={copyFlowHref(blueprint.id, 'select')}
           className="mt-5 inline-flex items-center gap-2.5 rounded-full bg-accent px-6 py-3
                      text-[11px] uppercase tracking-[0.2em] text-paper hover:bg-ink transition-colors duration-300"
         >
@@ -502,7 +503,7 @@ export default function PersonalizeClient({ blueprint }) {
                 : 'Build a fast-paced version'}
             </button>
             <Link
-              href={`/trips/${blueprint.id}/copy/select`}
+              href={copyFlowHref(blueprint.id, 'select')}
               className="text-[11px] uppercase tracking-[0.2em] text-ink/60 hover:text-ink transition-colors"
             >
               Review selections
@@ -525,7 +526,7 @@ export default function PersonalizeClient({ blueprint }) {
         <span className="text-[13px] text-muted">
           {keptCount} experiences · {mustKeepIds.length} must-keep ·{' '}
           <Link
-            href={`/trips/${blueprint.id}/copy/select`}
+            href={copyFlowHref(blueprint.id, 'select')}
             className="underline decoration-ink/25 underline-offset-2 hover:text-ink transition-colors"
           >
             change

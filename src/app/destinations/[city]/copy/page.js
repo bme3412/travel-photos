@@ -5,6 +5,7 @@ import { ArrowLeft, ArrowRight } from 'lucide-react';
 import { readPhotos } from '../../../utils/fileHandler';
 import { transformToCloudFront } from '../../../utils/imageUtils';
 import { getTripBlueprint } from '@/features/copy-trip/blueprint';
+import { getCopySourceTripId } from '@/features/destinations/data';
 import RoutePreview from '@/features/copy-trip/RoutePreview';
 import { formatDateRange, titleCase } from '@/features/copy-trip/format.mjs';
 
@@ -15,8 +16,8 @@ import { formatDateRange, titleCase } from '@/features/copy-trip/format.mjs';
 export const revalidate = 3600;
 
 export async function generateMetadata({ params }) {
-  const { id } = await params;
-  const blueprint = getTripBlueprint(id);
+  const { city } = await params;
+  const blueprint = getTripBlueprint(getCopySourceTripId(city));
   if (!blueprint) return { title: 'Trip Not Found | Copy This Trip' };
   return {
     title: `Make it yours: ${blueprint.destination} | Copy This Trip`,
@@ -25,7 +26,8 @@ export async function generateMetadata({ params }) {
 }
 
 export default async function CopyTripOverviewPage({ params }) {
-  const { id } = await params;
+  const { city } = await params;
+  const id = getCopySourceTripId(city);
   const blueprint = getTripBlueprint(id);
   if (!blueprint) notFound();
 
@@ -122,7 +124,7 @@ export default async function CopyTripOverviewPage({ params }) {
 
             <div className="mt-12 flex flex-wrap items-center gap-5">
               <Link
-                href={`/trips/${id}/copy/select`}
+                href={`/destinations/${city}/copy/select`}
                 className="inline-flex items-center gap-2.5 rounded-full bg-accent px-7 py-3.5
                            text-[11px] uppercase tracking-[0.2em] text-paper shadow-sm
                            transition-colors duration-300 hover:bg-ink"

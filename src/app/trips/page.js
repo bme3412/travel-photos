@@ -11,6 +11,7 @@ import { readAlbums, readPhotos, readLocations, readNarratives } from '../utils/
 import { buildAlbumSummaries } from '../utils/albumSummaries';
 import { getJournalIndex } from '../utils/journalContent';
 import { tripHasBlueprint } from '@/features/copy-trip/availability';
+import { copyFlowHref } from '@/features/copy-trip/routes';
 
 export const metadata = {
   title: 'Original Trips | Copy This Trip',
@@ -118,7 +119,7 @@ export default async function TripsIndexPage() {
                 </Link>
                 {copyEnabled && (
                   <Link
-                    href={`/trips/${trip.id}/copy/select`}
+                    href={copyFlowHref(trip.id, 'select')}
                     className="group flex items-center justify-between px-4 py-3 text-[10px] uppercase tracking-[0.2em] text-accent transition-colors hover:bg-accent hover:text-paper"
                   >
                     Copy this trip

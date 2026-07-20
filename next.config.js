@@ -34,6 +34,14 @@ const nextConfig = {
         destination: '/destinations/:city',
         permanent: true,
       },
+      // The copy flow moved from the visit (/trips/<city>-<year>/copy) to
+      // the destination hub. Copy-enabled trips all follow the
+      // `<city>-<year>` id convention, which is what lets the year drop out.
+      {
+        source: '/trips/:city-:year(\\d{4})/copy/:path*',
+        destination: '/destinations/:city/copy/:path*',
+        permanent: true,
+      },
     ];
   },
   webpack: (config) => {

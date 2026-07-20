@@ -11,6 +11,7 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import Link from 'next/link';
 import { ArrowLeft, Check, RefreshCw, Ticket } from 'lucide-react';
 import useCopyTripStore, { useCopySessionHydrated } from '@/features/copy-trip/store';
+import { copyFlowHref } from '@/features/copy-trip/routes';
 import ProvenanceDrawer from './ProvenanceDrawer';
 import ItinerarySection from './ItinerarySection';
 import { deriveTransformationRules, effectiveExperienceIds } from '@/features/copy-trip/rules.mjs';
@@ -201,7 +202,7 @@ export default function ResultClient({ blueprint, photoUrlById = {} }) {
               There&rsquo;s no personalized version in progress for this trip yet.
             </p>
             <Link
-              href={`/trips/${blueprint.id}/copy`}
+              href={copyFlowHref(blueprint.id)}
               className="mt-5 inline-flex items-center gap-2.5 rounded-full bg-accent px-6 py-3
                          text-[11px] uppercase tracking-[0.2em] text-paper hover:bg-ink transition-colors duration-300"
             >
@@ -270,7 +271,7 @@ export default function ResultClient({ blueprint, photoUrlById = {} }) {
       <div className="max-w-4xl mx-auto px-6 pt-8 pb-24">
         <div className="flex items-center justify-between">
           <Link
-            href={`/trips/${blueprint.id}/copy/personalize`}
+            href={copyFlowHref(blueprint.id, 'personalize')}
             className="group inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.2em] text-muted
                        hover:text-ink transition-colors duration-200"
           >
@@ -327,7 +328,7 @@ export default function ResultClient({ blueprint, photoUrlById = {} }) {
                 Try again
               </button>
               <Link
-                href={`/trips/${blueprint.id}/copy/personalize`}
+                href={copyFlowHref(blueprint.id, 'personalize')}
                 className="text-[11px] uppercase tracking-[0.2em] text-ink/60 hover:text-ink transition-colors"
               >
                 Edit preferences

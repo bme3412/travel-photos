@@ -6,6 +6,7 @@ import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import { ArrowLeft, ArrowRight, Camera, Check, ChevronDown, Minus, Pin, Plus, Ticket } from 'lucide-react';
 import useCopyTripStore, { useCopySessionHydrated } from '@/features/copy-trip/store';
+import { copyFlowHref } from '@/features/copy-trip/routes';
 import { fmtTime12 } from '@/features/copy-trip/format.mjs';
 import { getCopyGuide } from '@/features/neighborhoods/data';
 
@@ -421,7 +422,7 @@ export default function CopySelectClient({ blueprint, photoUrlById }) {
       removedExperienceIds: [],
       status: 'configuring',
     });
-    router.push(`/trips/${blueprint.id}/copy/personalize`);
+    router.push(copyFlowHref(blueprint.id, 'personalize'));
   };
 
   return (
@@ -429,7 +430,7 @@ export default function CopySelectClient({ blueprint, photoUrlById }) {
       <div className="max-w-3xl mx-auto px-6 pt-8 pb-36">
         <div className="flex items-center justify-between">
           <Link
-            href={`/trips/${blueprint.id}/copy`}
+            href={copyFlowHref(blueprint.id)}
             className="group inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.2em] text-muted
                        hover:text-ink transition-colors duration-200"
           >

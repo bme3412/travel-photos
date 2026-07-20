@@ -3,9 +3,10 @@
 import Link from 'next/link';
 import { ArrowRight, Bookmark } from 'lucide-react';
 import useCopyTripStore, { useCopySessionHydrated } from '@/features/copy-trip/store';
+import { copyFlowHref } from '@/features/copy-trip/routes';
 
 function sessionHref(session) {
-  const base = `/trips/${session.sourceTripId}/copy`;
+  const base = copyFlowHref(session.sourceTripId);
   if (session.generatedPlan || ['generating', 'complete', 'error'].includes(session.status)) {
     return `${base}/result`;
   }

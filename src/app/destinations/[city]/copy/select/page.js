@@ -2,6 +2,7 @@ import { notFound } from 'next/navigation';
 import { readPhotos } from '../../../../utils/fileHandler';
 import { transformToCloudFront } from '../../../../utils/imageUtils';
 import { getTripBlueprint } from '@/features/copy-trip/blueprint';
+import { getCopySourceTripId } from '@/features/destinations/data';
 import CopySelectClient from './CopySelectClient';
 
 // Screen 2 of the copy flow: pick the days and experiences to carry into the
@@ -11,8 +12,8 @@ import CopySelectClient from './CopySelectClient';
 export const revalidate = 3600;
 
 export async function generateMetadata({ params }) {
-  const { id } = await params;
-  const blueprint = getTripBlueprint(id);
+  const { city } = await params;
+  const blueprint = getTripBlueprint(getCopySourceTripId(city));
   if (!blueprint) return { title: 'Trip Not Found | Copy This Trip' };
   return {
     title: `Choose what to keep: ${blueprint.destination} | Copy This Trip`,
@@ -21,7 +22,8 @@ export async function generateMetadata({ params }) {
 }
 
 export default async function CopyTripSelectPage({ params }) {
-  const { id } = await params;
+  const { city } = await params;
+  const id = getCopySourceTripId(city);
   const blueprint = getTripBlueprint(id);
   if (!blueprint) notFound();
 

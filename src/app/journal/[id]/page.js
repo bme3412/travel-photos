@@ -19,6 +19,7 @@ import { createMdxComponents } from '../mdxComponents';
 import PostGallery from './PostGallery';
 import TripViewSwitcher from '../../components/TripViewSwitcher';
 import { tripHasBlueprint } from '@/features/copy-trip/availability';
+import { copyFlowHref } from '@/features/copy-trip/routes';
 
 // A trip's "dispatch" reads from content/journal/[id].mdx when the author has
 // written one; otherwise it's assembled from the trip narrative + photos. Both
@@ -205,7 +206,7 @@ function ClosingCta({ tripId }) {
             Want to experience your own version of this trip?
           </p>
           <Link
-            href={`/trips/${tripId}/copy/select`}
+            href={copyFlowHref(tripId, 'select')}
             className="mt-6 inline-flex items-center gap-2.5 bg-accent text-paper rounded-full px-7 py-3.5
                        text-[11px] uppercase tracking-[0.2em] hover:bg-ink transition-colors duration-300"
           >
