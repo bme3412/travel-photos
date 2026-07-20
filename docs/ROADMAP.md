@@ -1,7 +1,8 @@
 # Roadmap
 
 Living document — update it when direction changes, don't fork it.
-Last updated: **2026-07-20** (destination-first inversion set as direction).
+Last updated: **2026-07-20** (destination-first direction set; the routing
+inversion landed the same day).
 Point-in-time context: `docs/ASSESSMENT-2026-07-13.md`.
 
 ## North star
@@ -23,7 +24,11 @@ deepens the same Paris, it does not create a second one.
 
 (Direction set 2026-07-20: destination is the frame, visits are the
 evidence. Presentation-first — trip ids stay `<city>-<year>` as visit ids;
-no data migration until multi-visit pooling is actually needed.)
+no data migration until multi-visit pooling is actually needed. Routing
+landed the same day: `/destinations/<city>` is the hub with Replay and
+Copy as its two doors, the copy flow lives beneath it at
+`/destinations/<city>/copy/*`, the home cards are single-entry doors to
+the hub, and the old `/cities` and `/trips/<id>/copy` paths 301.)
 
 ## Decision filters
 
@@ -73,9 +78,11 @@ documented in the assessment; each is a contained change to
 - [ ] **Owner-voice pass**: replace seed essays/copyOptions/narratives one
       trip at a time. Track which files are still seed copy in this list.
 - [ ] **Destination-language sweep**: remaining trip-framed copy (hero
-      headline "Choose a trip that really happened", copy-overview facts
-      ordering, select subhead) — decide the brand line deliberately, then
-      sweep. Cards and personalize de-anchored 2026-07-20.
+      headline "Choose a trip that really happened", the "Original Trips"
+      nav label and trips-index framing, copy-overview facts ordering,
+      select subhead) — decide the brand line deliberately, then sweep.
+      Cards and personalize de-anchored 2026-07-20; routing, hub CTAs,
+      and the home cards went destination-first the same day.
 - [ ] **Share/export a copied trip**: a share link or print view. This is
       the feature's payoff — "here's my version of your trip" — and the
       current localStorage-only design blocks it.
@@ -89,7 +96,10 @@ documented in the assessment; each is a contained change to
 - **Multi-visit pooling** (activates when Paris 2027 lands): the copy
   source for a destination becomes the union of its `<city>-*` blueprint
   experiences; one Paris page, more depth per June. Registry needs no
-  changes — it is already city-scoped.
+  changes — it is already city-scoped. The routing seam exists too:
+  `getCopySourceTripId` (features/destinations) picks the newest blueprint
+  today and is the one function pooling widens; all copy URLs already go
+  through `copyFlowHref`.
 - Shared rate-limit/cache store for the generate API (only if traffic
   warrants; per-instance is fine today).
 - `npm audit` cleanup (2 critical are in legacy script deps — verify
