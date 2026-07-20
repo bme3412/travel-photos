@@ -40,7 +40,7 @@ const FeaturedHero = ({ copyTrips }) => {
           Keep the moments you love, change the pace and dates, and leave with a
           personalized itinerary.
         </p>
-        <div className="fade-up fade-up-2 mt-12 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="fade-up fade-up-2 mt-12 grid grid-cols-1 gap-x-5 gap-y-10 sm:grid-cols-2 lg:grid-cols-4">
           {copyTrips.map((trip, index) => (
             <CopyTripCard key={trip.id} trip={trip} index={index} />
           ))}
