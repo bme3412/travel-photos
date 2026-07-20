@@ -40,6 +40,7 @@ export const metadata = {
 };
 
 const NAV_LINKS = [
+  { href: '/destinations', label: 'Destinations' },
   { href: '/trips', label: 'Original Trips' },
   { href: '/map', label: 'Travel Map' },
   { href: '/photo-of-the-day', label: 'Photo of the Day' },
