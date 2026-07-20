@@ -65,7 +65,10 @@ export default async function NeighborhoodPage({ params }) {
 
       <header className="mt-12 sm:mt-14">
         <p className="text-[11px] uppercase tracking-[0.3em] text-accent mb-4">
-          {cityName(hood)} · {hood.districts.join(' · ')}
+          <Link href={`/cities/${hood.city}`} className="hover:text-ink transition-colors">
+            {cityName(hood)}
+          </Link>{' '}
+          · {hood.districts.join(' · ')}
         </p>
         <h1 className="font-display text-4xl sm:text-5xl tracking-tight leading-[1.05]">
           {hood.name}
