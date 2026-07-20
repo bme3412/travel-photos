@@ -1,10 +1,6 @@
-'use client';
-
 import Image from 'next/image';
 import Link from 'next/link';
-import { useRouter } from 'next/navigation';
 import { ArrowRight } from 'lucide-react';
-import { copyFlowHref } from '@/features/copy-trip/routes';
 import { getCitySlug } from '@/features/destinations/data';
 
 const splitFlag = (name = '') => {
@@ -12,23 +8,13 @@ const splitFlag = (name = '') => {
   return match ? { flag: match[1], title: match[2] } : { flag: null, title: name };
 };
 
-// The whole card opens the destination page — "show me Paris" — where the
-// visitor chooses Replay or Copy. The one explicit action here is the copy
-// button, a shortcut straight into the flow.
+// One card, one door: the whole card opens the destination page, where the
+// visitor chooses Replay or Copy. No competing in-card actions.
 export default function CopyTripCard({ trip, index }) {
-  const router = useRouter();
   const { flag, title } = splitFlag(trip.name);
   const depthLabel = trip.copyOptionCount
     ? `${trip.copyOptionCount} guide additions`
     : 'Original route only';
-
-  // The card is a Link, so this must be a button (nested anchors are invalid)
-  // that intercepts the click — same idiom as AlbumGridCard.
-  const openCopy = (event) => {
-    event.preventDefault();
-    event.stopPropagation();
-    router.push(copyFlowHref(trip.id, 'select'));
-  };
 
   return (
     <Link
@@ -47,19 +33,6 @@ export default function CopyTripCard({ trip, index }) {
       )}
       <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/45 to-ink/10" />
       <div className="grain absolute inset-0 pointer-events-none" aria-hidden="true" />
-
-      {/* Where the card itself leads — legible before clicking, always shown on touch */}
-      <span
-        aria-hidden="true"
-        className="absolute bottom-5 right-5 z-10 inline-flex items-center gap-1.5 rounded-full
-                   bg-paper/90 px-3 py-1.5 text-[10px] uppercase tracking-[0.15em] text-ink
-                   opacity-0 translate-y-1 transition-all duration-300
-                   group-hover:opacity-100 group-hover:translate-y-0
-                   max-sm:opacity-100 max-sm:translate-y-0"
-      >
-        Explore {title}
-        <ArrowRight className="h-3 w-3" />
-      </span>
 
       <div className="relative flex min-h-[380px] flex-col justify-between p-5">
         <div className="flex items-start justify-between gap-3">
@@ -88,15 +61,13 @@ export default function CopyTripCard({ trip, index }) {
             </p>
           )}
           <div className="mt-6">
-            <button
-              type="button"
-              onClick={openCopy}
+            <span
               className="inline-flex items-center gap-2 bg-accent px-4 py-2.5 text-[10px] uppercase
-                         tracking-[0.2em] text-paper transition-colors hover:bg-paper hover:text-ink"
+                         tracking-[0.2em] text-paper transition-colors group-hover:bg-paper group-hover:text-ink"
             >
-              Copy this trip
-              <ArrowRight className="h-3 w-3" />
-            </button>
+              Explore {title}
+              <ArrowRight className="h-3 w-3 transition-transform group-hover:translate-x-1" />
+            </span>
           </div>
         </div>
       </div>
