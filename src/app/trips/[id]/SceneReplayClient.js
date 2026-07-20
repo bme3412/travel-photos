@@ -20,7 +20,7 @@ import {
 import ImageLightbox from '../../components/ImageLightbox';
 import TripViewSwitcher from '../../components/TripViewSwitcher';
 import { tripHasBlueprint } from '@/features/copy-trip/availability';
-import { getCitySlug } from '@/features/destinations/data';
+import { getCitySlug, storyHref } from '@/features/destinations/data';
 import { copyFlowHref } from '@/features/copy-trip/routes';
 import { getTripNeighborhoods } from '@/features/neighborhoods/data';
 import { AddToTripButton, AddToTripToast } from '@/features/copy-trip/AddToTrip';
@@ -803,7 +803,7 @@ export default function SceneReplayClient({ trip }) {
             <ArrowRight className="h-3.5 w-3.5" />
           </Link>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-[11px] uppercase tracking-[0.2em] text-paper/60">
-            <Link href={`/journal/${trip.id}`} className="hover:text-paper transition-colors">
+            <Link href={storyHref(trip.id)} className="hover:text-paper transition-colors">
               Story
             </Link>
             <span aria-hidden className="text-paper/25">·</span>
@@ -815,7 +815,7 @@ export default function SceneReplayClient({ trip }) {
       ) : (
         <div className="flex flex-wrap items-center justify-center gap-4">
           <Link
-            href={`/journal/${trip.id}`}
+            href={storyHref(trip.id)}
             className="inline-flex items-center gap-2.5 rounded-full bg-accent px-6 py-3
                        text-[11px] uppercase tracking-[0.2em] text-paper hover:bg-paper hover:text-ink
                        transition-colors duration-300"

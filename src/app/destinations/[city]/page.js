@@ -1,19 +1,30 @@
-// One destination, every visit: the hub above the per-visit lenses. Visits are
-// the `<city>-<year>` albums (derived, never curated — see features/destinations);
-// each card links out to the visit's replay, story, and photographs at
-// their usual paths, plus the copy flow when a blueprint exists. The
-// neighborhood grid reuses the registry joins, so both halves of the page
-// deepen automatically when next year's trip lands. Quiet layer: reachable
-// from replays and neighborhood pages, not the nav.
+// One destination, every visit — and its story. The dispatch merged into
+// this page (2026-07-20): the newest visit's MDX post renders inline under
+// a full-bleed photo hero, so the destination page is the proof, not a
+// menu. Visits are the `<city>-<year>` albums (derived, never curated —
+// see features/destinations); each card links out to the visit's replay
+// and photographs at their usual paths, plus the copy flow when a
+// blueprint exists. The neighborhood grid reuses the registry joins, so
+// every section deepens automatically when next year's trip lands. Old
+// /journal/<city>-<year> URLs 301 here (next.config.js).
 
 import Link from 'next/link';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import { ArrowLeft, ArrowRight, Play } from 'lucide-react';
-import { readAlbums, readPhotos, readLocations, readNarratives } from '../../utils/fileHandler';
+import { MDXRemote } from 'next-mdx-remote-client/rsc';
+import {
+  readAlbums,
+  readPhotos,
+  readLocations,
+  readNarratives,
+  readVideos,
+} from '../../utils/fileHandler';
 import { buildAlbumSummaries } from '../../utils/albumSummaries';
-import { getJournalIndex } from '../../utils/journalContent';
+import { getJournalIndex, getJournalPost } from '../../utils/journalContent';
 import { transformToCloudFront } from '../../utils/imageUtils';
+import { buildMediaResolver } from '../../utils/mediaResolver';
+import { createMdxComponents } from '../../journal/mdxComponents';
 import { getDestinations, getDestination } from '@/features/destinations/data';
 import { tripHasBlueprint } from '@/features/copy-trip/availability';
 import { getNeighborhoodsByCity } from '@/features/neighborhoods/data';
@@ -30,11 +41,14 @@ export async function generateMetadata({ params }) {
   const albumsData = await readAlbums();
   const city = getDestination(slug, albumsData?.albums ?? []);
   if (!city) return { title: 'Destination Not Found | Copy This Trip' };
+  const post = getJournalPost(city.visits[0]?.id);
   return {
     title: `${city.name}${city.country ? `, ${city.country}` : ''} | Copy This Trip`,
-    description: `Every visit to ${city.name}, gathered in one place — trip replays, dispatches, and photographs from ${city.visits
-      .map((v) => v.year)
-      .join(', ')}.`,
+    description:
+      post?.frontmatter?.excerpt ||
+      `Every visit to ${city.name}, gathered in one place — trip replays, dispatches, and photographs from ${city.visits
+        .map((v) => v.year)
+        .join(', ')}.`,
   };
 }
 
@@ -46,11 +60,12 @@ const splitFlag = (name = '') => {
 
 export default async function DestinationPage({ params }) {
   const { city: slug } = await params;
-  const [albumsData, photosData, locationsData, narrativesData] = await Promise.all([
+  const [albumsData, photosData, locationsData, narrativesData, videosData] = await Promise.all([
     readAlbums(),
     readPhotos(),
     readLocations(),
     readNarratives(),
+    readVideos(),
   ]);
   const city = getDestination(slug, albumsData?.albums ?? []);
   if (!city) notFound();
@@ -80,184 +95,216 @@ export default async function DestinationPage({ params }) {
   ].filter(Boolean);
 
   // The two front-door actions: replay the newest visit, copy the place.
-  const newestVisit = city.visits[0];
+  const newestVisit = visits[0];
   const copyable = city.visits.some((visit) => tripHasBlueprint(visit.id));
 
-  return (
-    <div className="max-w-7xl mx-auto px-6 py-12 sm:py-16">
-      <Link
-        href="/trips"
-        className="group inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.2em] text-muted
-                   hover:text-ink transition-colors duration-200"
-      >
-        <ArrowLeft className="h-3.5 w-3.5 transition-transform duration-300 group-hover:-translate-x-1" />
-        All original trips
-      </Link>
+  // The newest visit's dispatch, rendered inline. Drafts preview in dev but
+  // stay hidden in production — same rule as the journal.
+  const post = getJournalPost(newestVisit.id);
+  const showPost = Boolean(
+    post && (post.frontmatter.published !== false || process.env.NODE_ENV !== 'production')
+  );
+  const rawPhotos = (photosData?.photos || []).filter((p) => p.albumId === newestVisit.id);
+  const rawVideos = (videosData?.videos || []).filter((v) => v.albumId === newestVisit.id);
+  const resolveImage = buildMediaResolver(rawPhotos, rawVideos);
+  const cover =
+    (showPost && resolveImage(post.frontmatter.cover)) ||
+    newestVisit.summary?.coverPhoto?.url ||
+    null;
 
-      <header className="mt-10 sm:mt-12 max-w-2xl">
-        <p className="text-[11px] uppercase tracking-[0.3em] text-accent mb-3">
-          One city, every visit
-        </p>
-        <h1 className="font-display text-4xl sm:text-5xl tracking-tight">{city.name}</h1>
-        <p className="mt-4 text-ink/70 leading-relaxed">
-          Each visit replayed, written up, and photographed — a page that gets deeper every time
-          this city comes around again.
-        </p>
-        <p className="mt-3 text-[11px] uppercase tracking-[0.2em] text-muted">
-          {facts.join(' · ')}
-        </p>
-        <div className="mt-8 flex flex-wrap items-center gap-4">
-          <Link
-            href={`/trips/${newestVisit.id}`}
-            className="inline-flex items-center gap-2.5 rounded-full bg-ink px-7 py-3.5
-                       text-[11px] uppercase tracking-[0.2em] text-paper shadow-sm
-                       transition-colors duration-300 hover:bg-accent"
-          >
-            <Play className="h-3.5 w-3.5 fill-current" />
-            Replay the trip
-          </Link>
-          {copyable && (
+  return (
+    <div className="bg-paper">
+      <header className="relative h-[62vh] min-h-[440px] w-full overflow-hidden bg-ink">
+        {cover && (
+          <Image src={cover} alt="" fill priority sizes="100vw" className="object-cover" />
+        )}
+        <div className="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/40 to-ink/15" />
+
+        <div className="absolute top-0 inset-x-0">
+          <div className="max-w-7xl mx-auto px-6 pt-6">
             <Link
-              href={`/destinations/${city.slug}/copy`}
-              className="inline-flex items-center gap-2.5 rounded-full bg-accent px-7 py-3.5
-                         text-[11px] uppercase tracking-[0.2em] text-paper shadow-sm
-                         transition-colors duration-300 hover:bg-ink"
+              href="/destinations"
+              className="group inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.2em]
+                         text-paper/80 hover:text-paper transition-colors duration-200"
             >
-              Copy this trip
-              <ArrowRight className="h-3.5 w-3.5" />
+              <ArrowLeft className="h-3.5 w-3.5 transition-transform duration-300 group-hover:-translate-x-1" />
+              All destinations
             </Link>
-          )}
+          </div>
+        </div>
+
+        <div className="absolute inset-x-0 bottom-0">
+          <div className="max-w-7xl mx-auto px-6 pb-10 sm:pb-14">
+            <p className="text-[11px] uppercase tracking-[0.3em] text-paper/75 mb-4">
+              One destination, every visit · {facts.join(' · ')}
+            </p>
+            <h1 className="font-display text-5xl sm:text-7xl text-paper leading-[1.02] tracking-tight">
+              {city.name}
+            </h1>
+            <div className="mt-7 flex flex-wrap items-center gap-4">
+              <Link
+                href={`/trips/${newestVisit.id}`}
+                className="inline-flex items-center gap-2.5 rounded-full bg-paper/90 px-7 py-3.5
+                           text-[11px] uppercase tracking-[0.2em] text-ink shadow-sm
+                           transition-colors duration-300 hover:bg-accent hover:text-paper"
+              >
+                <Play className="h-3.5 w-3.5 fill-current" />
+                Replay the trip
+              </Link>
+              {copyable && (
+                <Link
+                  href={`/destinations/${city.slug}/copy`}
+                  className="inline-flex items-center gap-2.5 rounded-full bg-accent px-7 py-3.5
+                             text-[11px] uppercase tracking-[0.2em] text-paper shadow-sm
+                             transition-colors duration-300 hover:bg-paper hover:text-ink"
+                >
+                  Copy this trip
+                  <ArrowRight className="h-3.5 w-3.5" />
+                </Link>
+              )}
+            </div>
+          </div>
         </div>
       </header>
 
-      <section className="mt-10 sm:mt-14">
-        <h2 className="text-[11px] uppercase tracking-[0.3em] text-muted border-b border-ink/10 pb-3">
-          {visits.length === 1 ? 'The visit' : 'The visits'}
-        </h2>
-        <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
-          {visits.map((visit) => {
-            const { flag, title } = splitFlag(visit.summary?.name ?? '');
-            const photoCount = visit.summary?.photoCount ?? 0;
-            const copyEnabled = tripHasBlueprint(visit.id);
-            return (
-              <article key={visit.id} className="overflow-hidden rounded-2xl bg-ink/5 ring-1 ring-ink/10">
-                <Link
-                  href={`/trips/${visit.id}`}
-                  prefetch={false}
-                  className="group relative block overflow-hidden hover:ring-accent/50 transition-all duration-300"
-                >
-                  <div className="relative aspect-[4/3] overflow-hidden bg-ink/10">
-                    {visit.summary?.coverPhoto?.url && (
-                      <Image
-                        src={visit.summary.coverPhoto.url}
-                        alt={title || visit.id}
-                        fill
-                        sizes="(min-width:1024px) 33vw, (min-width:640px) 50vw, 100vw"
-                        className="object-cover transition-transform duration-700 group-hover:scale-105"
-                      />
-                    )}
-                    <div className="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/15 to-transparent" />
+      {showPost && (
+        <section id="story" className="max-w-5xl mx-auto px-6 pt-14 sm:pt-20">
+          <MDXRemote source={post.body} components={createMdxComponents({ resolveImage })} />
+        </section>
+      )}
 
-                    <span
-                      className="absolute top-3 right-3 inline-flex items-center gap-1.5 rounded-full
-                                 bg-paper/90 px-3 py-1.5 text-[10px] uppercase tracking-[0.2em] text-ink
-                                 opacity-90 group-hover:bg-accent group-hover:text-paper transition-colors duration-300"
-                    >
-                      <Play className="h-3 w-3 fill-current" />
-                      Replay
-                    </span>
-
-                    <div className="absolute bottom-0 inset-x-0 p-4">
-                      <p className="text-[10px] uppercase tracking-[0.25em] text-paper/70 mb-1">
-                        {visit.year} · {photoCount}{' '}
-                        {photoCount === 1 ? 'photograph' : 'photographs'}
-                      </p>
-                      <h3 className="font-display text-2xl text-paper tracking-tight leading-tight">
-                        {flag && <span className="mr-1.5">{flag}</span>}
-                        {title || visit.id}
-                      </h3>
-                    </div>
-                  </div>
-                </Link>
-                <div className="flex items-center gap-x-5 px-4 py-3 text-[10px] uppercase tracking-[0.2em] text-muted">
-                  <Link href={`/trips/${visit.id}`} className="hover:text-ink transition-colors">
-                    Replay
-                  </Link>
-                  <Link href={`/journal/${visit.id}`} className="hover:text-ink transition-colors">
-                    Story
-                  </Link>
-                  <Link href={`/albums/${visit.id}`} className="hover:text-ink transition-colors">
-                    Photos
-                  </Link>
-                </div>
-                {copyEnabled && (
-                  <Link
-                    href={`/destinations/${city.slug}/copy`}
-                    className="group flex items-center justify-between border-t border-ink/10 px-4 py-3 text-[10px] uppercase tracking-[0.2em] text-accent transition-colors hover:bg-accent hover:text-paper"
-                  >
-                    Available to copy
-                    <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
-                  </Link>
-                )}
-              </article>
-            );
-          })}
-        </div>
-      </section>
-
-      {hoods.length > 0 && (
-        <section className="mt-10 sm:mt-14">
+      <div className="max-w-7xl mx-auto px-6 pt-14 sm:pt-20 pb-16">
+        <section>
           <h2 className="text-[11px] uppercase tracking-[0.3em] text-muted border-b border-ink/10 pb-3">
-            Neighborhoods
+            {visits.length === 1 ? 'The visit' : 'The visits'}
           </h2>
           <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
-            {hoods.map((hood) => {
-              const cover = hood.photos[0];
+            {visits.map((visit) => {
+              const { flag, title } = splitFlag(visit.summary?.name ?? '');
+              const photoCount = visit.summary?.photoCount ?? 0;
+              const copyEnabled = tripHasBlueprint(visit.id);
               return (
-                <Link
-                  key={hood.id}
-                  href={`/neighborhoods/${hood.id}`}
-                  prefetch={false}
-                  className="group relative overflow-hidden rounded-2xl bg-ink/5 ring-1 ring-ink/10
-                             hover:ring-accent/50 transition-all duration-300"
-                >
-                  <div className="relative aspect-[4/3] overflow-hidden bg-ink/10">
-                    {cover?.url && (
-                      <Image
-                        src={transformToCloudFront(cover.url)}
-                        alt={hood.name}
-                        fill
-                        sizes="(min-width:1024px) 33vw, (min-width:640px) 50vw, 100vw"
-                        className="object-cover transition-transform duration-700 group-hover:scale-105"
-                      />
-                    )}
-                    <div className="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/15 to-transparent" />
-                    <span
-                      className="absolute top-3 right-3 rounded-full bg-paper/90 px-3 py-1.5
-                                 text-[10px] uppercase tracking-[0.2em] text-ink opacity-90
-                                 group-hover:bg-accent group-hover:text-paper transition-colors duration-300"
-                    >
-                      {hood.districts.join(' · ')}
-                    </span>
-                    <div className="absolute bottom-0 inset-x-0 p-4">
-                      <p className="text-[10px] uppercase tracking-[0.25em] text-paper/70 mb-1">
-                        {hood.photos.length}{' '}
-                        {hood.photos.length === 1 ? 'photograph' : 'photographs'} ·{' '}
-                        {hood.experienceRefs.length}{' '}
-                        {hood.experienceRefs.length === 1 ? 'experience' : 'experiences'}
-                      </p>
-                      <h3 className="font-display text-2xl text-paper tracking-tight leading-tight">
-                        {hood.name}
-                      </h3>
+                <article key={visit.id} className="overflow-hidden rounded-2xl bg-ink/5 ring-1 ring-ink/10">
+                  <Link
+                    href={`/trips/${visit.id}`}
+                    prefetch={false}
+                    className="group relative block overflow-hidden hover:ring-accent/50 transition-all duration-300"
+                  >
+                    <div className="relative aspect-[4/3] overflow-hidden bg-ink/10">
+                      {visit.summary?.coverPhoto?.url && (
+                        <Image
+                          src={visit.summary.coverPhoto.url}
+                          alt={title || visit.id}
+                          fill
+                          sizes="(min-width:1024px) 33vw, (min-width:640px) 50vw, 100vw"
+                          className="object-cover transition-transform duration-700 group-hover:scale-105"
+                        />
+                      )}
+                      <div className="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/15 to-transparent" />
+
+                      <span
+                        className="absolute top-3 right-3 inline-flex items-center gap-1.5 rounded-full
+                                   bg-paper/90 px-3 py-1.5 text-[10px] uppercase tracking-[0.2em] text-ink
+                                   opacity-90 group-hover:bg-accent group-hover:text-paper transition-colors duration-300"
+                      >
+                        <Play className="h-3 w-3 fill-current" />
+                        Replay
+                      </span>
+
+                      <div className="absolute bottom-0 inset-x-0 p-4">
+                        <p className="text-[10px] uppercase tracking-[0.25em] text-paper/70 mb-1">
+                          {visit.year} · {photoCount}{' '}
+                          {photoCount === 1 ? 'photograph' : 'photographs'}
+                        </p>
+                        <h3 className="font-display text-2xl text-paper tracking-tight leading-tight">
+                          {flag && <span className="mr-1.5">{flag}</span>}
+                          {title || visit.id}
+                        </h3>
+                      </div>
                     </div>
+                  </Link>
+                  <div className="flex items-center gap-x-5 px-4 py-3 text-[10px] uppercase tracking-[0.2em] text-muted">
+                    <Link href={`/trips/${visit.id}`} className="hover:text-ink transition-colors">
+                      Replay
+                    </Link>
+                    {showPost && visit.id === newestVisit.id && (
+                      <a href="#story" className="hover:text-ink transition-colors">
+                        Story
+                      </a>
+                    )}
+                    <Link href={`/albums/${visit.id}`} className="hover:text-ink transition-colors">
+                      Photos
+                    </Link>
                   </div>
-                  <p className="p-4 text-[14px] leading-relaxed text-ink/70">{hood.summary}</p>
-                </Link>
+                  {copyEnabled && (
+                    <Link
+                      href={`/destinations/${city.slug}/copy`}
+                      className="group flex items-center justify-between border-t border-ink/10 px-4 py-3 text-[10px] uppercase tracking-[0.2em] text-accent transition-colors hover:bg-accent hover:text-paper"
+                    >
+                      Available to copy
+                      <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
+                    </Link>
+                  )}
+                </article>
               );
             })}
           </div>
         </section>
-      )}
+
+        {hoods.length > 0 && (
+          <section className="mt-10 sm:mt-14">
+            <h2 className="text-[11px] uppercase tracking-[0.3em] text-muted border-b border-ink/10 pb-3">
+              Neighborhoods
+            </h2>
+            <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
+              {hoods.map((hood) => {
+                const hoodCover = hood.photos[0];
+                return (
+                  <Link
+                    key={hood.id}
+                    href={`/neighborhoods/${hood.id}`}
+                    prefetch={false}
+                    className="group relative overflow-hidden rounded-2xl bg-ink/5 ring-1 ring-ink/10
+                               hover:ring-accent/50 transition-all duration-300"
+                  >
+                    <div className="relative aspect-[4/3] overflow-hidden bg-ink/10">
+                      {hoodCover?.url && (
+                        <Image
+                          src={transformToCloudFront(hoodCover.url)}
+                          alt={hood.name}
+                          fill
+                          sizes="(min-width:1024px) 33vw, (min-width:640px) 50vw, 100vw"
+                          className="object-cover transition-transform duration-700 group-hover:scale-105"
+                        />
+                      )}
+                      <div className="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/15 to-transparent" />
+                      <span
+                        className="absolute top-3 right-3 rounded-full bg-paper/90 px-3 py-1.5
+                                   text-[10px] uppercase tracking-[0.2em] text-ink opacity-90
+                                   group-hover:bg-accent group-hover:text-paper transition-colors duration-300"
+                      >
+                        {hood.districts.join(' · ')}
+                      </span>
+                      <div className="absolute bottom-0 inset-x-0 p-4">
+                        <p className="text-[10px] uppercase tracking-[0.25em] text-paper/70 mb-1">
+                          {hood.photos.length}{' '}
+                          {hood.photos.length === 1 ? 'photograph' : 'photographs'} ·{' '}
+                          {hood.experienceRefs.length}{' '}
+                          {hood.experienceRefs.length === 1 ? 'experience' : 'experiences'}
+                        </p>
+                        <h3 className="font-display text-2xl text-paper tracking-tight leading-tight">
+                          {hood.name}
+                        </h3>
+                      </div>
+                    </div>
+                    <p className="p-4 text-[14px] leading-relaxed text-ink/70">{hood.summary}</p>
+                  </Link>
+                );
+              })}
+            </div>
+          </section>
+        )}
+      </div>
     </div>
   );
 }

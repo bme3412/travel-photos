@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { tripHasBlueprint } from '@/features/copy-trip/availability';
 import { copyFlowHref } from '@/features/copy-trip/routes';
+import { storyHref } from '@/features/destinations/data';
 
 // The persistent per-trip view control: Replay · Story · Photos.
 //
@@ -22,7 +23,7 @@ const VIEWS = [
   {
     key: 'story',
     label: 'Story',
-    href: (id) => `/journal/${id}`,
+    href: (id) => storyHref(id),
   },
   {
     key: 'photos',

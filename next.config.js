@@ -42,6 +42,13 @@ const nextConfig = {
         destination: '/destinations/:city/copy/:path*',
         permanent: true,
       },
+      // City dispatches merged into the destination page; legacy albums
+      // (no year suffix) keep their standalone journal posts.
+      {
+        source: '/journal/:city-:year(\\d{4})',
+        destination: '/destinations/:city',
+        permanent: true,
+      },
     ];
   },
   webpack: (config) => {

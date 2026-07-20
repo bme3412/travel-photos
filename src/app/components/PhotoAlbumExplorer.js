@@ -8,6 +8,7 @@ import { Camera as CameraIcon, ArrowRight, ArrowUpRight, ChevronDown, Play } fro
 import usePhotoStore from '../store/usePhotoStore';
 import CopyTripCard from './CopyTripCard';
 import CopyTripResume from './CopyTripResume';
+import { storyHref } from '@/features/destinations/data';
 
 // Album names carry a leading flag emoji ("🇪🇬 Egyptian Explorations") —
 // split it out so the serif display title stays clean and the flag can sit
@@ -242,7 +243,7 @@ const DispatchRow = ({ album }) => {
 
   return (
     <Link
-      href={`/journal/${album.id}`}
+      href={storyHref(album.id)}
       className="group grid grid-cols-1 sm:grid-cols-[minmax(0,2fr)_minmax(0,3fr)] gap-5 sm:gap-8 py-8 sm:py-10 items-center"
       prefetch={false}
     >

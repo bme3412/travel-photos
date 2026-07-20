@@ -39,6 +39,14 @@ export function getDestinations(albums = []) {
   });
 }
 
+// Where a visit's story lives now that city dispatches merged into the
+// destination page (2026-07-20): city visits anchor into the hub's story
+// section; legacy albums keep their standalone journal posts.
+export function storyHref(tripId) {
+  const slug = getCitySlug(tripId);
+  return slug ? `/destinations/${slug}#story` : `/journal/${tripId}`;
+}
+
 // The visit a copy of this destination starts from: the newest blueprint
 // whose id matches `<slug>-<year>`. Null when the destination has none.
 export function getCopySourceTripId(slug) {

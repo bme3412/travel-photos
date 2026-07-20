@@ -9,6 +9,7 @@ import Link from 'next/link';
 import { transformToCloudFront } from '../../utils/imageUtils';
 import { bestPhoto } from '../../utils/photoRanking';
 import TripViewSwitcher from '../../components/TripViewSwitcher';
+import { storyHref } from '@/features/destinations/data';
 
 const photoDay = (photo) =>
   photo?.takenAt ? photo.takenAt.slice(0, 10) : photo?.dateCreated || null;
@@ -303,7 +304,7 @@ export default function AlbumPageClient({ initialAlbum }) {
           </Link>
 
           <Link
-            href={`/journal/${currentAlbum.id}`}
+            href={storyHref(currentAlbum.id)}
             className="group flex items-center gap-4 rounded-2xl border border-ink/10 bg-paper px-5 sm:px-7 py-7
                        transition-colors hover:border-accent/40"
           >
