@@ -20,6 +20,7 @@ import {
 import ImageLightbox from '../../components/ImageLightbox';
 import TripViewSwitcher from '../../components/TripViewSwitcher';
 import { tripHasBlueprint } from '@/features/copy-trip/availability';
+import { getCitySlug } from '@/features/cities/data';
 import { getTripNeighborhoods } from '@/features/neighborhoods/data';
 import { AddToTripButton, AddToTripToast } from '@/features/copy-trip/AddToTrip';
 
@@ -741,21 +742,35 @@ export default function SceneReplayClient({ trip }) {
           </Link>
         </div>
       )}
-      {getTripNeighborhoods(trip.id).length > 0 && (
-        <p className="mt-6 text-[11px] uppercase tracking-[0.2em] text-paper/50">
-          Neighborhoods —{' '}
-          {getTripNeighborhoods(trip.id).map((hood, i, all) => (
-            <span key={hood.id}>
+      {(getTripNeighborhoods(trip.id).length > 0 || getCitySlug(trip.id)) && (
+        <div className="mt-6 space-y-3">
+          {getTripNeighborhoods(trip.id).length > 0 && (
+            <p className="text-[11px] uppercase tracking-[0.2em] text-paper/50">
+              Neighborhoods —{' '}
+              {getTripNeighborhoods(trip.id).map((hood, i, all) => (
+                <span key={hood.id}>
+                  <Link
+                    href={`/neighborhoods/${hood.id}`}
+                    className="text-paper/75 underline decoration-accent/60 underline-offset-4 hover:text-accent transition-colors"
+                  >
+                    {hood.name}
+                  </Link>
+                  {i < all.length - 1 && ' · '}
+                </span>
+              ))}
+            </p>
+          )}
+          {getCitySlug(trip.id) && (
+            <p className="text-[11px] uppercase tracking-[0.2em] text-paper/50">
               <Link
-                href={`/neighborhoods/${hood.id}`}
+                href={`/cities/${getCitySlug(trip.id)}`}
                 className="text-paper/75 underline decoration-accent/60 underline-offset-4 hover:text-accent transition-colors"
               >
-                {hood.name}
+                Every visit to {title} →
               </Link>
-              {i < all.length - 1 && ' · '}
-            </span>
-          ))}
-        </p>
+            </p>
+          )}
+        </div>
       )}
     </div>
   );
