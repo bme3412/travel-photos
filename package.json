@@ -7,6 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "test": "node --import ./scripts/test/register.mjs --test \"src/**/*.test.mjs\"",
     "deploy": "vercel deploy --prod",
     "add-photos": "node scripts/add-photos.js",
     "add-videos": "node scripts/add-videos.mjs",

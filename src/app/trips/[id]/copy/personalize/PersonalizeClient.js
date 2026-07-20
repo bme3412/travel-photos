@@ -1,10 +1,12 @@
 'use client';
 
-// Screen 3 of the copy flow: the personalization form. Answers live in the
-// copy session as the user types (so back-navigation loses nothing), get
-// validated with CopyTripPreferencesSchema on submit, and — when the kept
-// experiences don't fit the requested days at the requested pace — surface
-// the feasibility warning before continuing to the result.
+// Step 2 of the copy flow: the personalization form. What's kept — and what
+// must survive — was decided on the select screen; this form only asks about
+// the traveler. Answers live in the copy session as the user types (so
+// back-navigation loses nothing), get validated with
+// CopyTripPreferencesSchema on submit, and — when the kept experiences don't
+// fit the requested days at the requested pace — surface the feasibility
+// warning before continuing to the result.
 
 import { useEffect, useMemo, useState } from 'react';
 import Link from 'next/link';
@@ -18,11 +20,16 @@ import {
   BUDGET_OPTIONS,
   TRANSFORMATION_OPTIONS,
 } from '@/features/copy-trip/options';
-import { assessFeasibility } from '@/features/copy-trip/rules.mjs';
+import { assessFeasibility, PACE_DAILY_EXPERIENCES } from '@/features/copy-trip/rules.mjs';
 import { getCopyGuide } from '@/features/neighborhoods/data';
 
 const SECTION_KICKER = 'text-[11px] uppercase tracking-[0.25em] text-accent';
 const FIELD_LABEL = 'text-[11px] uppercase tracking-[0.2em] text-muted';
+
+// Days are the traveler's output, not the source's frame: suggest a length
+// sized to what they kept at the given pace, never the original's duration.
+const suggestDays = (momentCount, pace) =>
+  Math.min(14, Math.max(1, Math.ceil(momentCount / (PACE_DAILY_EXPERIENCES[pace] ?? 6))));
 
 function Section({ kicker, title, children }) {
   return (
@@ -92,74 +99,30 @@ function Stepper({ value, min, max, onChange, unit, label }) {
   );
 }
 
-const DISPOSITIONS = [
-  { value: 'must', label: 'Must keep' },
-  { value: 'nice', label: 'Nice to have' },
-  { value: 'remove', label: 'Remove' },
-];
-
-function DispositionControl({ value, onChange, name }) {
-  return (
-    <div
-      role="radiogroup"
-      aria-label={`Priority for ${name}`}
-      className="inline-flex rounded-full ring-1 ring-ink/10 p-0.5 text-[10px] uppercase tracking-[0.12em]"
-    >
-      {DISPOSITIONS.map((d) => {
-        const active = value === d.value;
-        return (
-          <button
-            key={d.value}
-            type="button"
-            role="radio"
-            aria-checked={active}
-            onClick={() => onChange(d.value)}
-            className={`rounded-full px-2.5 py-1 transition-colors ${
-              active
-                ? d.value === 'remove'
-                  ? 'bg-ink/70 text-paper'
-                  : d.value === 'must'
-                    ? 'bg-accent text-paper'
-                    : 'bg-ink/10 text-ink'
-                : 'text-ink/45 hover:text-ink'
-            }`}
-          >
-            {d.label}
-          </button>
-        );
-      })}
-    </div>
-  );
-}
-
 export default function PersonalizeClient({ blueprint }) {
   const router = useRouter();
   const hydrated = useCopySessionHydrated();
   const session = useCopyTripStore((s) => s.session);
   const updateSession = useCopyTripStore((s) => s.updateSession);
 
-  const byId = useMemo(
-    () => new Map(blueprint.days.flatMap((d) => d.experiences.map((e) => [e.id, e]))),
-    [blueprint]
-  );
-  const dayOfExp = useMemo(
-    () =>
-      new Map(
-        blueprint.days.flatMap((d) => d.experiences.map((e) => [e.id, d]))
-      ),
-    [blueprint]
-  );
-
   const forThisTrip = session && session.sourceTripId === blueprint.id;
   const selectedIds = useMemo(
     () => (forThisTrip ? session.selectedExperienceIds : []),
     [forThisTrip, session]
   );
+  // Pinned on the select screen; the itinerary is required to include these.
+  const mustKeepIds = useMemo(
+    () =>
+      forThisTrip
+        ? (session.mustKeepExperienceIds ?? []).filter((id) => selectedIds.includes(id))
+        : [],
+    [forThisTrip, session, selectedIds]
+  );
 
   const defaults = useMemo(
     () => ({
       startDate: '',
-      durationDays: blueprint.durationDays,
+      durationDays: blueprint.durationDays, // replaced by a kept-moment sizing once hydrated
       travelers: 1,
       travelerType: blueprint.travelerType ?? 'solo',
       pace: blueprint.pace,
@@ -182,23 +145,23 @@ export default function PersonalizeClient({ blueprint }) {
   );
   const pickedBase = baseGuide.find((hood) => hood.name === form.accommodationNeighborhood);
 
-  const [dispositions, setDispositions] = useState({});
   const [errors, setErrors] = useState({});
   const [warning, setWarning] = useState(null);
   const [restored, setRestored] = useState(false);
 
-  // Restore saved answers once the persisted session arrives.
+  // Restore saved answers once the persisted session arrives. First visit
+  // (no saved preferences yet): size the suggested days to the moments kept
+  // — including guide additions — rather than to the original's duration.
   useEffect(() => {
     if (!hydrated || restored) return;
     if (forThisTrip) {
-      if (session.preferences) setForm((f) => ({ ...f, ...session.preferences }));
-      const must = new Set(session.mustKeepExperienceIds ?? []);
-      const gone = new Set(session.removedExperienceIds ?? []);
-      const init = {};
-      for (const id of session.selectedExperienceIds) {
-        init[id] = must.has(id) ? 'must' : gone.has(id) ? 'remove' : 'nice';
+      if (session.preferences) {
+        setForm((f) => ({ ...f, ...session.preferences }));
+      } else {
+        const momentCount =
+          session.selectedExperienceIds.length + (session.addOnOptionIds?.length ?? 0);
+        setForm((f) => ({ ...f, durationDays: suggestDays(momentCount, f.pace) }));
       }
-      setDispositions(init);
     }
     setRestored(true);
   }, [hydrated, restored, forThisTrip, session]);
@@ -207,18 +170,6 @@ export default function PersonalizeClient({ blueprint }) {
     setForm((f) => {
       const next = { ...f, ...partial };
       updateSession({ preferences: next });
-      return next;
-    });
-    setWarning(null);
-  };
-
-  const setDisposition = (expId, value) => {
-    setDispositions((prev) => {
-      const next = { ...prev, [expId]: value };
-      updateSession({
-        mustKeepExperienceIds: selectedIds.filter((id) => next[id] === 'must'),
-        removedExperienceIds: selectedIds.filter((id) => next[id] === 'remove'),
-      });
       return next;
     });
     setWarning(null);
@@ -243,8 +194,8 @@ export default function PersonalizeClient({ blueprint }) {
 
   const buildSessionLike = () => ({
     selectedExperienceIds: selectedIds,
-    mustKeepExperienceIds: selectedIds.filter((id) => dispositions[id] === 'must'),
-    removedExperienceIds: selectedIds.filter((id) => dispositions[id] === 'remove'),
+    mustKeepExperienceIds: mustKeepIds,
+    removedExperienceIds: [],
   });
 
   const submit = ({ forcedPace = null, acceptOverpacked = false } = {}) => {
@@ -305,13 +256,13 @@ export default function PersonalizeClient({ blueprint }) {
     );
   }
 
-  const keptCount = selectedIds.filter((id) => dispositions[id] !== 'remove').length;
+  const keptCount = selectedIds.length;
 
   return (
     <div>
       <p className="mt-4 max-w-xl text-lg leading-[1.7] text-ink/75">
         A few questions, then your version gets built from the {keptCount} experiences
-        you kept.
+        you kept{mustKeepIds.length > 0 && <> ({mustKeepIds.length} pinned as must-keep)</>}.
       </p>
 
       <Section kicker="The basics" title="Your dates and party">
@@ -344,7 +295,9 @@ export default function PersonalizeClient({ blueprint }) {
                 label="days"
               />
             </div>
-            <p className="mt-2 text-xs text-muted">The original ran {blueprint.durationDays} days.</p>
+            <p className="mt-2 text-xs text-muted">
+              Suggested from the moments you kept — set whatever fits your dates.
+            </p>
           </div>
           <div>
             <p className={FIELD_LABEL}>Who&rsquo;s going</p>
@@ -385,7 +338,10 @@ export default function PersonalizeClient({ blueprint }) {
                 label="Pace"
               />
             </div>
-            <p className="mt-2 text-xs text-muted">The original moved fast — 40 km in three days.</p>
+            <p className="mt-2 text-xs text-muted">
+              The visits moved {blueprint.pace}
+              {blueprint.totalDistanceKm != null && <> — ≈{blueprint.totalDistanceKm} km on foot</>}.
+            </p>
           </div>
           <div>
             <p className={FIELD_LABEL}>Budget</p>
@@ -505,43 +461,6 @@ export default function PersonalizeClient({ blueprint }) {
         </div>
       </Section>
 
-      <Section kicker="Your priorities" title="The experiences you kept">
-        <p className="text-[13px] text-muted -mt-2 mb-4">
-          Everything here made your cut on the last screen. Mark what the new itinerary must
-          include — or let something go.
-        </p>
-        <ul className="divide-y divide-ink/[0.06] border-y border-ink/[0.06]">
-          {selectedIds.map((id) => {
-            const exp = byId.get(id);
-            if (!exp) return null;
-            const day = dayOfExp.get(id);
-            const disposition = dispositions[id] ?? 'nice';
-            return (
-              <li key={id} className="flex flex-wrap items-center justify-between gap-x-4 gap-y-2 py-3">
-                <div className="min-w-0">
-                  <p
-                    className={`text-[15px] leading-snug ${
-                      disposition === 'remove' ? 'text-ink/35 line-through' : 'text-ink'
-                    }`}
-                  >
-                    {exp.name}
-                  </p>
-                  <p className="text-xs text-muted">
-                    Day {day?.dayNumber}
-                    {exp.neighborhood ? ` · ${exp.neighborhood}` : ''}
-                  </p>
-                </div>
-                <DispositionControl
-                  value={disposition}
-                  onChange={(v) => setDisposition(id, v)}
-                  name={exp.name}
-                />
-              </li>
-            );
-          })}
-        </ul>
-      </Section>
-
       <Section kicker="Anything else" title="In your own words">
         <label htmlFor="copy-notes" className="sr-only">
           Anything else we should change?
@@ -604,8 +523,13 @@ export default function PersonalizeClient({ blueprint }) {
           <ArrowRight className="h-3.5 w-3.5" />
         </button>
         <span className="text-[13px] text-muted">
-          {keptCount} experiences ·{' '}
-          {selectedIds.filter((id) => dispositions[id] === 'must').length} must-keep
+          {keptCount} experiences · {mustKeepIds.length} must-keep ·{' '}
+          <Link
+            href={`/trips/${blueprint.id}/copy/select`}
+            className="underline decoration-ink/25 underline-offset-2 hover:text-ink transition-colors"
+          >
+            change
+          </Link>
         </span>
       </div>
     </div>

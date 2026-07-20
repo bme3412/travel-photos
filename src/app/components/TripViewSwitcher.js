@@ -62,7 +62,7 @@ export default function TripViewSwitcher({
         </nav>
         {canCopy && showCopy && (
           <Link
-            href={`/trips/${tripId}/copy`}
+            href={`/trips/${tripId}/copy/select`}
             className="rounded-full bg-accent px-4 py-2.5 text-[11px] uppercase tracking-[0.18em] text-paper
                        shadow-sm transition-colors duration-300 hover:bg-paper hover:text-ink"
           >

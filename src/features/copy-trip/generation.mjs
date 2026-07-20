@@ -192,6 +192,19 @@ export function parsePlanText(text) {
 const HHMM = /^([01]\d|2[0-3]):[0-5]\d$/;
 const YMD = /^\d{4}-\d{2}-\d{2}$/;
 
+// What a provenanceLabel's leading words claim about the item's status.
+// Only clear leading keywords count — free-form labels make no claim, and
+// flagging those would send fine plans to the repair pass.
+function labelClaimedStatus(label = '') {
+  const l = label.trim().toLowerCase();
+  if (/^new\b/.test(l)) return 'new';
+  if (/^(preserved|kept|unchanged)\b/.test(l)) return 'preserved';
+  if (/^(adapted|modified|adjusted|reworked|re-?scoped|split|shortened|condensed|moved|combined|expanded)\b/.test(l)) {
+    return 'modified';
+  }
+  return null;
+}
+
 export function crossCheckPlan(plan, blueprint, selection, preferences) {
   const problems = [];
   const experienceIds = new Set(
@@ -250,12 +263,45 @@ export function crossCheckPlan(plan, blueprint, selection, preferences) {
       if (item.sourceDayId && !dayIds.has(item.sourceDayId)) {
         problems.push(`${where} cites unknown sourceDayId "${item.sourceDayId}"`);
       }
+      const claimed = labelClaimedStatus(item.provenanceLabel);
+      if (claimed && claimed !== item.status) {
+        problems.push(
+          `${where} has status "${item.status}" but its provenanceLabel ` +
+            `"${item.provenanceLabel}" reads as "${claimed}" — make them agree`
+        );
+      }
     }
   });
 
-  for (const mustId of selection.mustKeepExperienceIds ?? []) {
+  const mustKeep = new Set(selection.mustKeepExperienceIds ?? []);
+  for (const mustId of mustKeep) {
     if (effective.has(mustId) && !citedSourceIds.has(mustId)) {
       problems.push(`must-keep experience "${mustId}" does not appear in the itinerary`);
+    }
+  }
+
+  // No silent drops: an overpacked build may cut optional kept experiences,
+  // but every cut must be owned — the experience named in a warning or a
+  // comparison entry. (Missing must-keeps are already hard errors above.)
+  const expById = new Map(
+    blueprint.days.flatMap((d) => d.experiences.map((e) => [e.id, e]))
+  );
+  const acknowledgments = [
+    ...(plan.warnings ?? []),
+    ...(plan.comparison ?? []).flatMap((c) => [c.original, c.personalized, c.reason]),
+    plan.transformationSummary ?? '',
+  ]
+    .join('\n')
+    .toLowerCase();
+  for (const keptId of effective) {
+    if (citedSourceIds.has(keptId) || mustKeep.has(keptId)) continue;
+    const exp = expById.get(keptId);
+    const mentions = [exp?.name, exp?.placeName, keptId].filter(Boolean);
+    if (!mentions.some((m) => acknowledgments.includes(String(m).toLowerCase()))) {
+      problems.push(
+        `kept experience "${exp?.name ?? keptId}" (${keptId}) was dropped silently — ` +
+          `either schedule it or name it in a warning that explains the cut`
+      );
     }
   }
 

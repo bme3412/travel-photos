@@ -4,8 +4,8 @@ import { ArrowLeft } from 'lucide-react';
 import { getTripBlueprint } from '@/features/copy-trip/blueprint';
 import PersonalizeClient from './PersonalizeClient';
 
-// Screen 3 of the copy flow: dates, party, pace, budget, base, transformation
-// preferences, and per-experience priorities. The form itself is client-side
+// Step 2 of the copy flow: dates, party, pace, budget, base, and
+// transformation preferences. The form itself is client-side
 // (PersonalizeClient) since everything lives in the persisted copy session.
 
 export const revalidate = 3600;
@@ -41,7 +41,7 @@ export default async function CopyTripPersonalizePage({ params }) {
 
         <header className="mt-12 sm:mt-14">
           <p className="text-[11px] uppercase tracking-[0.3em] text-accent mb-4">
-            Copy this trip · Step 3 of 3
+            Copy this trip · Step 2 of 2
           </p>
           <h1 className="font-display text-4xl sm:text-5xl tracking-tight leading-[1.05]">
             Personalize your version

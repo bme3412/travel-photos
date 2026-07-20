@@ -24,112 +24,26 @@ const formatMeta = (album) => {
 };
 
 // ————————————————————————————— Hero —————————————————————————————
-// Rotating multi-destination hero: crossfades between the featured albums,
-// auto-advances, and exposes a destination selector. Pauses on hover.
+// A minimalist front door: paper ground, masthead kicker, statement headline —
+// no backdrop photography or rotation. The copy-trip photo cards below the
+// statement are the only imagery, and the primary CTAs.
 
-// A brand / value-proposition front door — rotating cover imagery as an
-// ambient backdrop behind the journal's statement and primary CTAs. It no
-// longer spotlights a specific album (the dispatches feed below does that).
-//
-// Composed like a magazine cover: masthead kicker, statement headline with an
-// italic serif emphasis, CTAs, and a hairline "folio" bar along the bottom
-// edge carrying the archive stats and a numbered index of the rotating covers.
-const HERO_INTERVAL_MS = 6000;
-
-const FeaturedHero = ({ albums, copyTrips }) => {
-  const [active, setActive] = useState(0);
-
-  // One timeout per slide (not an interval) so a manual jump from the index
-  // restarts the full rotation — and stays in step with the progress hairline.
-  useEffect(() => {
-    if (albums.length < 2) return undefined;
-    const timer = setTimeout(
-      () => setActive((index) => (index + 1) % albums.length),
-      HERO_INTERVAL_MS
-    );
-    return () => clearTimeout(timer);
-  }, [active, albums.length]);
-
-  const current = albums[active] ? splitFlag(albums[active].name) : null;
-
+const FeaturedHero = ({ copyTrips }) => {
   return (
-    <section className="relative w-full min-h-[680px] overflow-hidden bg-ink">
-      {albums.map((slide, index) => (
-        <div
-          key={slide.id}
-          className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
-            index === active ? 'opacity-100 hero-drift' : 'opacity-0'
-          }`}
-        >
-          <Image
-            src={slide.coverPhoto.url}
-            alt=""
-            fill
-            priority={index === 0}
-            sizes="100vw"
-            className="object-cover"
-          />
-        </div>
-      ))}
-      {/* Bottom-weighted scrim + a left column of shade behind the type, so
-          the text always sits on dark ground while the photo stays bright
-          on the right. */}
-      <div className="absolute inset-0 bg-gradient-to-t from-ink/95 via-ink/50 to-ink/15" />
-      <div className="absolute inset-0 bg-gradient-to-r from-ink/70 via-ink/30 to-transparent" />
-      <div className="grain absolute inset-0 pointer-events-none" aria-hidden="true" />
-
-      <div className="relative mx-auto flex max-w-7xl flex-col px-6 py-12 sm:py-14">
-        <p className="fade-up flex items-center gap-3.5 text-[11px] uppercase tracking-[0.35em] text-paper/90 mb-5 [text-shadow:0_1px_8px_rgba(27,23,19,0.6)]">
-          <span className="h-px w-12 bg-accent" aria-hidden="true" />
-          Choose the journey. Rewrite the route.
-        </p>
-        <h1 className="fade-up fade-up-1 font-display text-4xl sm:text-5xl text-paper leading-[1.06] tracking-tight max-w-3xl [text-wrap:balance] [text-shadow:0_2px_28px_rgba(27,23,19,0.55)]">
+    <section className="w-full border-b border-ink/10">
+      <div className="mx-auto flex max-w-7xl flex-col px-6 pt-14 pb-16 sm:pt-20">
+        <h1 className="fade-up font-display text-4xl sm:text-6xl text-ink leading-[1.06] tracking-tight max-w-3xl [text-wrap:balance]">
           Choose a trip that really happened.{' '}
-          <em className="italic font-light">Make it yours.</em>
+          <em className="italic font-light text-accent">Make it yours.</em>
         </h1>
-        <p className="fade-up fade-up-1 mt-4 max-w-2xl text-paper/90 leading-relaxed [text-shadow:0_1px_12px_rgba(27,23,19,0.6)]">
+        <p className="fade-up fade-up-1 mt-5 max-w-2xl text-ink/70 leading-relaxed">
           Keep the moments you love, change the pace and dates, and leave with a
-          personalized itinerary whose stops still point back to the original journey.
+          personalized itinerary.
         </p>
-        <div className="fade-up fade-up-2 mt-8 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="fade-up fade-up-2 mt-12 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4">
           {copyTrips.map((trip, index) => (
             <CopyTripCard key={trip.id} trip={trip} index={index} />
           ))}
-        </div>
-
-        {/* Folio bar: archive stats on the left, the rotating-cover index on
-            the right — a printed footer line inside the cover. */}
-        <div className="fade-up fade-up-3 mt-5 flex justify-end border-t border-paper/20 pt-4">
-          {albums.length > 1 && current && (
-            <div className="hidden sm:flex flex-col items-end gap-3">
-              <p className="text-[11px] uppercase tracking-[0.22em] text-paper/75">
-                <span className="text-paper/45">№ {String(active + 1).padStart(2, '0')}</span>
-                <span className="mx-2 text-paper/30">—</span>
-                {current.title}
-                {albums[active].year && <span className="text-paper/45"> · {albums[active].year}</span>}
-              </p>
-              <div className="flex items-center gap-1.5">
-                {albums.map((slide, index) => (
-                  <button
-                    key={slide.id}
-                    type="button"
-                    onClick={() => setActive(index)}
-                    aria-label={`Show ${slide.name}`}
-                    aria-current={index === active}
-                    className="group/seg relative h-4 w-9"
-                  >
-                    <span className="absolute inset-x-0 top-1/2 h-px -translate-y-1/2 bg-paper/30 transition-colors group-hover/seg:bg-paper/60" />
-                    {index === active && (
-                      <span
-                        className="hero-progress absolute left-0 top-1/2 h-px -translate-y-1/2 bg-paper"
-                        style={{ animationDuration: `${HERO_INTERVAL_MS}ms` }}
-                      />
-                    )}
-                  </button>
-                ))}
-              </div>
-            </div>
-          )}
         </div>
       </div>
     </section>
@@ -468,11 +382,6 @@ const PhotoAlbumExplorer = ({ initialAlbums = null, copyTrips = [] }) => {
   // content (hero CTA, copy band, dispatch feed) instead of an empty shell.
   const sourceAlbums = albums.length > 0 ? albums : initialAlbums || [];
 
-  const featuredAlbums = React.useMemo(
-    () => copyTrips.filter((trip) => trip.coverPhoto?.url),
-    [copyTrips]
-  );
-
   const processedAlbums = React.useMemo(() => {
     const result = sourceAlbums.filter((album) => album?.id);
 
@@ -506,7 +415,7 @@ const PhotoAlbumExplorer = ({ initialAlbums = null, copyTrips = [] }) => {
 
   return (
     <div>
-      <FeaturedHero albums={featuredAlbums} copyTrips={copyTrips} />
+      <FeaturedHero copyTrips={copyTrips} />
 
       <CopyTripResume trips={copyTrips} />
 

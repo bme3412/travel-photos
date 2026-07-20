@@ -290,7 +290,7 @@ export default function AlbumPageClient({ initialAlbum }) {
               <div className="min-w-0">
                 <p className="text-[10px] uppercase tracking-[0.28em] text-paper/70 mb-1">Trip replay</p>
                 <h2 className="font-display text-2xl tracking-tight text-paper leading-tight">
-                  {activeDay ? `Replay day ${availableDays.indexOf(activeDay) + 1}` : 'Replay the journey'}
+                  {activeDay ? `Replay day ${availableDays.indexOf(activeDay) + 1}` : 'Replay this trip'}
                 </h2>
                 <p className="mt-1.5 text-sm text-paper/80">
                   {activeDay

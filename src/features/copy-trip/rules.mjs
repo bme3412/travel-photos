@@ -354,8 +354,9 @@ export function deriveTransformationRules(blueprint, session, preferences) {
     add(
       'overpacked',
       `${feasibility.count} kept experiences across ${feasibility.days} day(s) exceeds a comfortable ` +
-        `${preferences.pace} pace (~${feasibility.limit}/day). Guarantee the must-keeps; mark the rest ` +
-        `as optional or drop the least essential, explaining what was cut.`
+        `${preferences.pace} pace (~${feasibility.limit}/day). Guarantee the must-keeps; drop the least ` +
+        `essential of the rest. Every kept experience you leave out MUST be named (by its exact name) ` +
+        `in a warning or comparison entry that explains the cut — never drop one silently.`
     );
   }
 

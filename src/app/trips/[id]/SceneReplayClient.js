@@ -26,10 +26,9 @@ import { AddToTripButton, AddToTripToast } from '@/features/copy-trip/AddToTrip'
 
 const ACCENT = '#B4441C';
 const MAP_STYLE = 'mapbox://styles/mapbox/streets-v12';
-// Site sticky header sits above the replay stage — keep chrome clear of it.
-const STAGE_TOP = 'top-14 md:top-16';
-const STAGE_HEIGHT = 'h-[calc(100svh-3.5rem)] md:h-[calc(100svh-4rem)]';
-const STAGE_PULL = '-mt-[calc(100svh-3.5rem)] md:-mt-[calc(100svh-4rem)]';
+const STAGE_TOP = 'top-0';
+const STAGE_HEIGHT = 'h-[100svh]';
+const STAGE_PULL = '-mt-[100svh]';
 
 // "🇫🇷 Menton" -> { flag: "🇫🇷", title: "Menton" }
 const splitFlag = (name = '') => {
@@ -41,9 +40,9 @@ const MAPBOX_TOKEN =
   process.env.NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN || process.env.NEXT_PUBLIC_MAPBOX_TOKEN;
 
 const PILL =
-  'pointer-events-auto inline-flex items-center gap-2 rounded-full bg-paper/90 px-4 py-2 ' +
-  'text-[11px] uppercase tracking-[0.2em] text-ink backdrop-blur-sm ' +
-  'border border-transparent hover:border-accent transition-colors duration-200';
+  'pointer-events-auto grid h-9 w-9 shrink-0 place-items-center rounded-full bg-ink/40 ' +
+  'text-paper backdrop-blur-md ring-1 ring-paper/20 hover:bg-paper hover:text-ink ' +
+  'transition-colors duration-200';
 
 const formatShortDay = (iso) => {
   if (!iso) return null;
@@ -134,6 +133,104 @@ function InsetMap({ center, route }) {
         </Marker>
       )}
     </MapGL>
+  );
+}
+
+function DayEvidence({ scene, center, variant = 'inline' }) {
+  const photos = scene.photos || [];
+  const [selectedIndex, setSelectedIndex] = useState(0);
+  const selected = photos[selectedIndex] || null;
+  const hasRoute = MAPBOX_TOKEN && center && scene.route?.length;
+
+  useEffect(() => {
+    setSelectedIndex(0);
+  }, [scene.id]);
+
+  if (!selected && !hasRoute) return null;
+
+  const rail = variant === 'rail';
+
+  return (
+    <aside
+      aria-label={`Photographs and route for ${scene.title}`}
+      className={
+        rail
+          ? 'overflow-hidden rounded-2xl bg-paper/95 p-3 text-ink shadow-xl ring-1 ring-ink/5 backdrop-blur-sm'
+          : 'mt-4 border-t border-ink/10 pt-4'
+      }
+    >
+      <div className="mb-2 flex items-center justify-between gap-3">
+        <p className="text-[10px] uppercase tracking-[0.2em] text-ink/55">
+          From this day
+        </p>
+        <p className="text-[10px] uppercase tracking-[0.14em] text-ink/35">
+          {photos.length > 0 && `${photos.length} photos`}
+          {photos.length > 0 && hasRoute && ' · '}
+          {hasRoute && 'GPS route'}
+        </p>
+      </div>
+
+      {selected && (
+        <>
+          <figure className="relative aspect-[16/10] overflow-hidden rounded-xl bg-ink/10">
+            <Image
+              src={selected.url}
+              alt={selected.caption || scene.title}
+              fill
+              sizes={rail ? '288px' : '(min-width: 640px) 560px, calc(100vw - 72px)'}
+              quality={70}
+              className="object-cover"
+            />
+            {selected.caption && (
+              <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink/80 to-transparent px-3 pb-2.5 pt-8 text-[11px] leading-snug text-paper/90">
+                {selected.caption}
+              </figcaption>
+            )}
+          </figure>
+
+          <div
+            className="replay-scrollbar mt-2 flex gap-1.5 overflow-x-auto pb-0.5"
+            aria-label="Choose a photograph"
+          >
+            {photos.map((photo, index) => (
+              <button
+                key={photo.id}
+                type="button"
+                onClick={() => setSelectedIndex(index)}
+                aria-label={`Show photograph ${index + 1} of ${photos.length}`}
+                aria-pressed={index === selectedIndex}
+                className={`relative h-10 w-14 shrink-0 overflow-hidden rounded-md transition ${
+                  index === selectedIndex
+                    ? 'ring-2 ring-accent ring-offset-1 ring-offset-paper'
+                    : 'opacity-65 hover:opacity-100'
+                }`}
+              >
+                <Image
+                  src={photo.url}
+                  alt=""
+                  fill
+                  sizes="56px"
+                  quality={45}
+                  className="object-cover"
+                />
+              </button>
+            ))}
+          </div>
+        </>
+      )}
+
+      {hasRoute && (
+        <div className="mt-3">
+          <p className="mb-1.5 flex items-center gap-1.5 text-[9px] uppercase tracking-[0.16em] text-ink/45">
+            <MapIcon className="h-3 w-3" />
+            Route traced from photo locations
+          </p>
+          <div className={`${rail ? 'h-28' : 'h-32'} overflow-hidden rounded-xl border border-ink/10 bg-ink/5`}>
+            <InsetMap center={center} route={scene.route} />
+          </div>
+        </div>
+      )}
+    </aside>
   );
 }
 
@@ -275,7 +372,7 @@ function TitleCard({ scene, tripTitle, tripId, onStartDay, canCopy }) {
                        text-[11px] uppercase tracking-[0.2em] text-paper shadow-sm
                        transition-colors duration-300 hover:bg-ink"
           >
-            Build my {tripTitle} trip
+            Copy this trip
             <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
           </Link>
         ) : (
@@ -285,7 +382,7 @@ function TitleCard({ scene, tripTitle, tripId, onStartDay, canCopy }) {
             className="flex w-full items-center justify-center gap-2 rounded-full bg-ink px-6 py-3.5 text-[11px]
                        uppercase tracking-[0.2em] text-paper transition-colors hover:bg-accent"
           >
-            Watch the original trip
+            Watch the replay
             <ArrowRight className="h-3.5 w-3.5" />
           </button>
         )}
@@ -302,7 +399,7 @@ function TitleCard({ scene, tripTitle, tripId, onStartDay, canCopy }) {
                          text-[10px] uppercase tracking-[0.18em] text-ink/55
                          transition-colors hover:border-accent hover:text-accent"
             >
-              Watch the original trip
+              Watch the replay
               <ArrowRight className="h-3 w-3 transition-transform group-hover:translate-x-1" />
             </button>
           </>
@@ -312,24 +409,21 @@ function TitleCard({ scene, tripTitle, tripId, onStartDay, canCopy }) {
   );
 }
 
-function SceneCard({ scene, tripId }) {
-  const dayPhotoHref =
-    scene.kind === 'day' && scene.date
-      ? `/albums/${tripId}?day=${scene.date}`
-      : scene.kind === 'day'
-        ? `/albums/${tripId}`
-        : null;
-
+function SceneCard({ scene, tripId, tripCenter, showEvidence }) {
   return (
     <article
-      className="pointer-events-auto relative max-w-md w-full sm:max-w-lg
+      className="replay-scrollbar pointer-events-auto relative w-full max-w-[38rem]
                  rounded-2xl bg-paper/95 text-ink backdrop-blur-sm shadow-xl ring-1 ring-ink/5
-                 p-6 sm:p-7"
+                 max-h-[calc(100svh-9rem)] overflow-y-auto p-5
+                 sm:max-h-none sm:overflow-visible sm:p-7
+                 [@media(min-width:640px)_and_(max-height:720px)]:p-5"
     >
       {scene.kicker && (
-        <p className="text-[11px] uppercase tracking-[0.3em] text-accent mb-2">{scene.kicker}</p>
+        <p className="mb-2 text-[10px] uppercase tracking-[0.28em] text-accent sm:text-[11px]">
+          {scene.kicker}
+        </p>
       )}
-      <h2 className="font-display text-2xl sm:text-3xl tracking-tight leading-tight">
+      <h2 className="font-display text-2xl tracking-tight leading-[1.08] sm:text-3xl">
         {scene.title}
       </h2>
 
@@ -359,11 +453,13 @@ function SceneCard({ scene, tripId }) {
       )}
 
       {scene.text && (
-        <p className="mt-3 text-[15px] leading-relaxed text-ink/80">{scene.text}</p>
+        <p className="mt-3 text-[15px] leading-relaxed text-ink/80 [@media(min-width:640px)_and_(max-height:720px)]:mt-2 [@media(min-width:640px)_and_(max-height:720px)]:text-[14px] [@media(min-width:640px)_and_(max-height:720px)]:leading-[1.55]">
+          {scene.text}
+        </p>
       )}
 
       {scene.activities?.length > 0 && (
-        <ul className="mt-4 grid grid-cols-1 gap-x-5 gap-y-2 sm:grid-cols-2">
+        <ul className="mt-4 grid grid-cols-1 gap-x-6 gap-y-2 sm:grid-cols-2 [@media(min-width:640px)_and_(max-height:720px)]:mt-3 [@media(min-width:640px)_and_(max-height:720px)]:gap-y-1.5">
           {scene.activities.map((a, i) => {
             const action = scene.copyActions?.[i];
             return (
@@ -390,6 +486,10 @@ function SceneCard({ scene, tripId }) {
         </p>
       )}
 
+      {scene.kind === 'day' && showEvidence && (
+        <DayEvidence scene={scene} center={tripCenter} />
+      )}
+
       {scene.reflections && (
         <>
           <ReflectionsBlock reflections={scene.reflections} />
@@ -397,17 +497,6 @@ function SceneCard({ scene, tripId }) {
         </>
       )}
 
-      {dayPhotoHref && (
-        <div className="mt-5 flex flex-wrap items-center gap-x-4 gap-y-2 border-t border-ink/10 pt-4 text-[10px] uppercase tracking-[0.18em] text-ink/55">
-          <Link
-            href={dayPhotoHref}
-            className="inline-flex items-center gap-1.5 transition-colors hover:text-accent"
-          >
-            <Camera className="h-3 w-3" />
-            Photos from this day
-          </Link>
-        </div>
-      )}
     </article>
   );
 }
@@ -488,8 +577,8 @@ export default function SceneReplayClient({ trip }) {
 
   const [activeScene, setActiveScene] = useState(0);
   const [pinned, setPinned] = useState(false);
+  const [desktopEvidence, setDesktopEvidence] = useState(false);
   const [lightbox, setLightbox] = useState(null);
-  const [mobileMapOpen, setMobileMapOpen] = useState(false);
   const sectionRefs = useRef([]);
   const hashReady = useRef(false);
 
@@ -518,6 +607,14 @@ export default function SceneReplayClient({ trip }) {
   useEffect(() => {
     const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     setPinned(!reduce);
+  }, []);
+
+  useEffect(() => {
+    const query = window.matchMedia('(min-width: 1024px)');
+    const sync = () => setDesktopEvidence(query.matches);
+    sync();
+    query.addEventListener('change', sync);
+    return () => query.removeEventListener('change', sync);
   }, []);
 
   useEffect(() => {
@@ -591,13 +688,19 @@ export default function SceneReplayClient({ trip }) {
   );
 
   const TopChrome = (
-    <div className="max-w-5xl mx-auto flex items-center justify-between gap-3 px-5 sm:px-6 pt-4">
-      <div className="flex items-center gap-3 min-w-0">
+    <div className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 pt-4 sm:px-6">
+      <div className="flex min-w-0 items-center gap-3">
         <Link href="/trips" className={PILL} aria-label="Back to all original trips">
           <ArrowLeft className="h-3.5 w-3.5" />
-          <span className="hidden sm:inline">Trips</span>
         </Link>
-        <span className="truncate text-[11px] uppercase tracking-[0.22em] text-paper/85 drop-shadow">
+        <Link
+          href="/"
+          className="hidden shrink-0 font-display text-xl tracking-tight text-paper drop-shadow-sm transition-colors hover:text-accent sm:block"
+        >
+          Copy This Trip
+        </Link>
+        <span className="hidden h-5 w-px bg-paper/25 sm:block" aria-hidden />
+        <span className="truncate text-[10px] uppercase tracking-[0.2em] text-paper/75 drop-shadow sm:text-[11px]">
           {flag && <span className="mr-1.5">{flag}</span>}
           {title} · {trip.year}
         </span>
@@ -613,8 +716,8 @@ export default function SceneReplayClient({ trip }) {
   );
 
   const ChapterScrubber = (
-    <div className="absolute bottom-4 left-1/2 z-20 w-[min(100%-1.5rem,36rem)] -translate-x-1/2 pointer-events-auto">
-      <div className="rounded-2xl bg-ink/60 px-2 py-2 backdrop-blur-md ring-1 ring-paper/15">
+    <div className="pointer-events-auto absolute bottom-3 left-1/2 z-20 w-[min(100%-1rem,38rem)] -translate-x-1/2 sm:bottom-4">
+      <div className="rounded-2xl bg-ink/65 p-1.5 backdrop-blur-md ring-1 ring-paper/15">
         <div className="flex items-center gap-1">
           <button
             type="button"
@@ -626,7 +729,7 @@ export default function SceneReplayClient({ trip }) {
             <ChevronLeft className="h-4 w-4" />
           </button>
 
-          <div className="flex min-w-0 flex-1 items-stretch gap-1 overflow-x-auto">
+          <div className="replay-scrollbar flex min-w-0 flex-1 items-stretch gap-1 overflow-x-auto">
             {scenes.map((scene, i) => {
               const label = scrubberLabel(scene, dayScenes);
               const activeChip = i === activeScene;
@@ -637,7 +740,7 @@ export default function SceneReplayClient({ trip }) {
                   onClick={() => goToScene(i)}
                   aria-label={`Go to ${label.secondary || label.primary}`}
                   aria-current={activeChip ? 'true' : undefined}
-                  className={`relative min-w-0 flex-1 rounded-xl px-2 py-1.5 text-center transition-colors ${
+                  className={`relative min-w-[4.25rem] shrink-0 rounded-xl px-2 py-1.5 text-center transition-colors sm:min-w-0 sm:flex-1 ${
                     activeChip
                       ? 'bg-paper text-ink'
                       : 'text-paper/75 hover:bg-paper/10 hover:text-paper'
@@ -677,18 +780,6 @@ export default function SceneReplayClient({ trip }) {
           </button>
         </div>
 
-        {canCopy && active?.kind !== 'overview' && (
-          <div className="mt-2 border-t border-paper/10 px-2 pt-2 text-center">
-            <Link
-              href={`/trips/${trip.id}/copy`}
-              className="inline-flex items-center gap-1.5 text-[10px] uppercase tracking-[0.18em] text-paper/75
-                         transition-colors hover:text-accent"
-            >
-              Make your own version of this trip
-              <ArrowRight className="h-3 w-3" />
-            </Link>
-          </div>
-        )}
       </div>
     </div>
   );
@@ -702,7 +793,7 @@ export default function SceneReplayClient({ trip }) {
             Make your own version of this trip
           </p>
           <Link
-            href={`/trips/${trip.id}/copy`}
+            href={`/trips/${trip.id}/copy/select`}
             className="mt-6 inline-flex items-center gap-2.5 rounded-full bg-accent px-7 py-3.5
                        text-[11px] uppercase tracking-[0.2em] text-paper hover:bg-paper hover:text-ink
                        transition-colors duration-300"
@@ -785,7 +876,7 @@ export default function SceneReplayClient({ trip }) {
     />
   );
 
-  const renderSceneBody = (scene, i) => {
+  const renderSceneBody = (scene) => {
     if (scene.kind === 'overview') {
       return (
         <TitleCard
@@ -805,6 +896,8 @@ export default function SceneReplayClient({ trip }) {
             : scene
         }
         tripId={trip.id}
+        tripCenter={trip.center}
+        showEvidence={!pinned || (!desktopEvidence && scene.id === active?.id)}
       />
     );
   };
@@ -812,8 +905,8 @@ export default function SceneReplayClient({ trip }) {
   // ——— Reduced-motion / no-pin fallback ———
   if (!pinned) {
     return (
-      <div className="bg-ink text-paper">
-        <div className="sticky top-14 md:top-16 z-20 bg-ink/90 backdrop-blur-sm pb-2">
+      <div data-immersive-replay className="bg-ink text-paper">
+        <div className="sticky top-0 z-20 bg-ink/90 pb-2 backdrop-blur-sm">
           {TopChrome}
         </div>
         <div className="px-5 sm:px-6 pt-6 pb-10 max-w-3xl mx-auto">
@@ -843,8 +936,15 @@ export default function SceneReplayClient({ trip }) {
               </div>
             )}
             <div className="mt-6 flex flex-col gap-3">
-              {renderSceneBody(scene, i)}
-              <PhotoStrip scene={scene} sceneIndex={i} tripId={trip.id} onOpen={openLightbox} />
+              {renderSceneBody(scene)}
+              {scene.kind !== 'day' && (
+                <PhotoStrip
+                  scene={scene}
+                  sceneIndex={i}
+                  tripId={trip.id}
+                  onOpen={openLightbox}
+                />
+              )}
             </div>
           </section>
         ))}
@@ -857,7 +957,7 @@ export default function SceneReplayClient({ trip }) {
 
   // ——— Default: full-bleed pinned background + scrolling cards ———
   return (
-    <div className="relative bg-ink text-paper">
+    <div data-immersive-replay className="relative bg-ink text-paper">
       <div className={`sticky ${STAGE_TOP} ${STAGE_HEIGHT} w-full overflow-hidden`}>
         {scenes.map((scene, i) => {
           const near = Math.abs(i - activeScene) <= 1;
@@ -893,35 +993,12 @@ export default function SceneReplayClient({ trip }) {
 
         {active?.kind !== 'overview' && ChapterScrubber}
 
-        {/* Day-only inset map — kept off overview/title card */}
-        {MAPBOX_TOKEN && trip.center && isDayScene && (
-          <div
-            className="absolute bottom-[7.5rem] right-4 z-20 hidden sm:block h-28 w-40 lg:h-36 lg:w-52
-                       rounded-xl overflow-hidden border border-paper/20 shadow-lg bg-ink/40"
-          >
-            <InsetMap center={trip.center} route={active?.route} />
+        {isDayScene && desktopEvidence && (
+          <div className="pointer-events-auto absolute right-4 top-20 z-20 w-72 lg:right-6 xl:top-24 xl:w-80">
+            <DayEvidence key={active.id} scene={active} center={trip.center} variant="rail" />
           </div>
         )}
 
-        {MAPBOX_TOKEN && trip.center && isDayScene && active?.route?.length > 0 && (
-          <div className="absolute bottom-[7.5rem] right-4 z-20 sm:hidden pointer-events-auto">
-            <button
-              type="button"
-              onClick={() => setMobileMapOpen((open) => !open)}
-              className="inline-flex items-center gap-1.5 rounded-full bg-ink/60 px-3 py-2 text-[10px]
-                         uppercase tracking-[0.16em] text-paper backdrop-blur-sm border border-paper/20"
-              aria-expanded={mobileMapOpen}
-            >
-              <MapIcon className="h-3 w-3" />
-              {mobileMapOpen ? 'Hide route' : 'Route'}
-            </button>
-            {mobileMapOpen && (
-              <div className="mt-2 h-36 w-44 overflow-hidden rounded-xl border border-paper/20 shadow-lg bg-ink/40">
-                <InsetMap center={trip.center} route={active?.route} />
-              </div>
-            )}
-          </div>
-        )}
       </div>
 
       <div className={`relative z-10 ${STAGE_PULL} pointer-events-none`}>
@@ -931,14 +1008,21 @@ export default function SceneReplayClient({ trip }) {
             id={scene.id}
             data-scene-index={i}
             ref={(el) => (sectionRefs.current[i] = el)}
-            className={`${STAGE_HEIGHT} min-h-[calc(100svh-3.5rem)] md:min-h-[calc(100svh-4rem)] flex flex-col items-start justify-center gap-3 px-5 sm:px-6 pb-36 pointer-events-none`}
+            className={`${STAGE_HEIGHT} flex min-h-[100svh] flex-col items-start justify-center gap-3 px-4 pb-20 pt-16 pointer-events-none sm:px-6 sm:pb-24 sm:pt-20`}
           >
-            <div className="w-full max-w-md sm:max-w-lg sm:ml-4 lg:ml-14">
-              {renderSceneBody(scene, i)}
+            <div className="w-full max-w-[38rem] sm:ml-4 lg:ml-10 xl:ml-14">
+              {renderSceneBody(scene)}
             </div>
-            <div className="sm:ml-4 lg:ml-14">
-              <PhotoStrip scene={scene} sceneIndex={i} tripId={trip.id} onOpen={openLightbox} />
-            </div>
+            {scene.kind !== 'day' && (
+              <div className="sm:ml-4 lg:ml-10 xl:ml-14">
+                <PhotoStrip
+                  scene={scene}
+                  sceneIndex={i}
+                  tripId={trip.id}
+                  onOpen={openLightbox}
+                />
+              </div>
+            )}
           </section>
         ))}
       </div>

@@ -4,7 +4,7 @@ import { useEffect, useMemo, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
-import { ArrowLeft, ArrowRight, Camera, Check, ChevronDown, Minus, Plus, Ticket } from 'lucide-react';
+import { ArrowLeft, ArrowRight, Camera, Check, ChevronDown, Minus, Pin, Plus, Ticket } from 'lucide-react';
 import useCopyTripStore, { useCopySessionHydrated } from '@/features/copy-trip/store';
 import { fmtTime12 } from '@/features/copy-trip/format.mjs';
 import { getCopyGuide } from '@/features/neighborhoods/data';
@@ -45,7 +45,7 @@ function CheckControl({ state, onToggle, label }) {
   );
 }
 
-function ExperienceRow({ experience, selected, onToggle }) {
+function ExperienceRow({ experience, selected, onToggle, mustKeep, onToggleMustKeep }) {
   const meta = [
     fmtTime12(experience.approximateStartTime),
     experience.approximateDurationMinutes ? `${experience.approximateDurationMinutes} min` : null,
@@ -86,11 +86,29 @@ function ExperienceRow({ experience, selected, onToggle }) {
           )}
         </span>
       </button>
+      {selected && (
+        <button
+          type="button"
+          aria-pressed={mustKeep}
+          aria-label={`Must keep "${experience.name}"`}
+          title="Must keep — your version can't drop this"
+          onClick={onToggleMustKeep}
+          className={`mt-0.5 inline-flex shrink-0 items-center gap-1 rounded-full px-2.5 py-1
+                      text-[10px] uppercase tracking-[0.14em] transition-colors duration-150 ${
+                        mustKeep
+                          ? 'bg-accent text-paper'
+                          : 'text-ink/40 ring-1 ring-inset ring-ink/15 hover:text-ink hover:ring-ink/40'
+                      }`}
+        >
+          <Pin className="h-3 w-3" />
+          Must
+        </button>
+      )}
     </li>
   );
 }
 
-function DayCard({ day, photoUrlById, selectedIds, onToggleDay, onToggleExperience, expanded, onToggleExpanded }) {
+function DayCard({ day, photoUrlById, selectedIds, mustKeepIds, onToggleDay, onToggleExperience, onToggleMustKeep, expanded, onToggleExpanded }) {
   const expIds = day.experiences.map((e) => e.id);
   const selectedCount = expIds.filter((eid) => selectedIds.has(eid)).length;
   const dayState = selectedCount === 0 ? 'none' : selectedCount === expIds.length ? 'all' : 'some';
@@ -163,7 +181,9 @@ function DayCard({ day, photoUrlById, selectedIds, onToggleDay, onToggleExperien
                   key={exp.id}
                   experience={exp}
                   selected={selectedIds.has(exp.id)}
+                  mustKeep={mustKeepIds.has(exp.id)}
                   onToggle={() => onToggleExperience(exp.id)}
+                  onToggleMustKeep={() => onToggleMustKeep(exp.id)}
                 />
               ))}
             </ul>
@@ -215,8 +235,10 @@ function NeighborhoodCard({
   experiences,
   photoUrlById,
   selectedIds,
+  mustKeepIds,
   addOnIds,
   onToggleExperience,
+  onToggleMustKeep,
   onToggleOption,
 }) {
   const selectedCount = experiences.filter((e) => selectedIds.has(e.id)).length;
@@ -257,7 +279,9 @@ function NeighborhoodCard({
                 key={exp.id}
                 experience={exp}
                 selected={selectedIds.has(exp.id)}
+                mustKeep={mustKeepIds.has(exp.id)}
                 onToggle={() => onToggleExperience(exp.id)}
+                onToggleMustKeep={() => onToggleMustKeep(exp.id)}
               />
             ))}
           </ul>
@@ -300,6 +324,7 @@ export default function CopySelectClient({ blueprint, photoUrlById }) {
   const setSelectedExperienceIds = useCopyTripStore((s) => s.setSelectedExperienceIds);
   const updateSession = useCopyTripStore((s) => s.updateSession);
   const toggleAddOnOption = useCopyTripStore((s) => s.toggleAddOnOption);
+  const toggleMustKeep = useCopyTripStore((s) => s.toggleMustKeep);
 
   const allIds = useMemo(
     () => blueprint.days.flatMap((d) => d.experiences.map((e) => e.id)),
@@ -328,6 +353,13 @@ export default function CopySelectClient({ blueprint, photoUrlById }) {
     () =>
       new Set(
         session && session.sourceTripId === blueprint.id ? session.addOnOptionIds ?? [] : []
+      ),
+    [session, blueprint.id]
+  );
+  const mustKeepIds = useMemo(
+    () =>
+      new Set(
+        session && session.sourceTripId === blueprint.id ? session.mustKeepExperienceIds ?? [] : []
       ),
     [session, blueprint.id]
   );
@@ -380,7 +412,15 @@ export default function CopySelectClient({ blueprint, photoUrlById }) {
     const selectedDayIds = blueprint.days
       .filter((d) => d.experiences.every((e) => selectedIds.has(e.id)))
       .map((d) => d.id);
-    updateSession({ selectedDayIds, status: 'configuring' });
+    // This screen is the single source of truth for what's kept: pins carry
+    // forward as must-keeps, and anything deselected is simply out — clear
+    // the legacy per-experience "remove" dispositions from older sessions.
+    updateSession({
+      selectedDayIds,
+      mustKeepExperienceIds: [...mustKeepIds].filter((id) => selectedIds.has(id)),
+      removedExperienceIds: [],
+      status: 'configuring',
+    });
     router.push(`/trips/${blueprint.id}/copy/personalize`);
   };
 
@@ -403,14 +443,16 @@ export default function CopySelectClient({ blueprint, photoUrlById }) {
 
         <header className="mt-12 sm:mt-14">
           <p className="text-[11px] uppercase tracking-[0.3em] text-accent mb-4">
-            Copy this trip · Step 2 of 3
+            Copy this trip · Step 1 of 2
           </p>
           <h1 className="font-display text-4xl sm:text-5xl tracking-tight leading-[1.05]">
             Choose what to keep
           </h1>
           <p className="mt-4 max-w-xl text-lg leading-[1.7] text-ink/75">
             Keep whole days or hand-pick experiences — or browse by neighborhood and branch beyond
-            the route with picks from the guide. Everything stays traceable.
+            the route with picks from the guide. Pin{' '}
+            <Pin className="inline h-3.5 w-3.5 align-[-2px] text-accent" aria-hidden="true" /> the
+            moments your version must include. Everything stays traceable.
           </p>
           <div className="mt-6 flex flex-wrap items-center gap-x-5 gap-y-3 text-[11px] uppercase tracking-[0.2em]">
             {guide.length > 0 && (
@@ -460,8 +502,10 @@ export default function CopySelectClient({ blueprint, photoUrlById }) {
                 experiences={hood.experienceIds.map((eid) => experiencesById.get(eid)).filter(Boolean)}
                 photoUrlById={photoUrlById}
                 selectedIds={selectedIds}
+                mustKeepIds={mustKeepIds}
                 addOnIds={addOnIds}
                 onToggleExperience={toggleExperience}
+                onToggleMustKeep={toggleMustKeep}
                 onToggleOption={toggleAddOnOption}
               />
             ))}
@@ -480,7 +524,9 @@ export default function CopySelectClient({ blueprint, photoUrlById }) {
                       key={exp.id}
                       experience={exp}
                       selected={selectedIds.has(exp.id)}
+                      mustKeep={mustKeepIds.has(exp.id)}
                       onToggle={() => toggleExperience(exp.id)}
+                      onToggleMustKeep={() => toggleMustKeep(exp.id)}
                     />
                   ))}
                 </ul>
@@ -495,8 +541,10 @@ export default function CopySelectClient({ blueprint, photoUrlById }) {
                 day={day}
                 photoUrlById={photoUrlById}
                 selectedIds={selectedIds}
+                mustKeepIds={mustKeepIds}
                 onToggleDay={toggleDay}
                 onToggleExperience={toggleExperience}
+                onToggleMustKeep={toggleMustKeep}
                 expanded={expandedDays.has(day.id)}
                 onToggleExpanded={() => toggleExpanded(day.id)}
               />
@@ -514,6 +562,12 @@ export default function CopySelectClient({ blueprint, photoUrlById }) {
             ) : (
               <>
                 <span className="text-ink">{selectedCount}</span> of {allIds.length} experiences kept
+                {mustKeepIds.size > 0 && (
+                  <>
+                    {' · '}
+                    <span className="text-ink">{mustKeepIds.size}</span> must-keep
+                  </>
+                )}
                 {addOnIds.size > 0 && (
                   <>
                     {' · '}

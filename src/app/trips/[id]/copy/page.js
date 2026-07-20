@@ -85,7 +85,7 @@ export default async function CopyTripOverviewPage({ params }) {
           {/* Left: the pitch and the source-trip summary */}
           <div>
             <p className="text-[11px] uppercase tracking-[0.3em] text-accent mb-4">
-              Copy this trip · Step 1 of 3
+              Copy this trip
             </p>
             <h1 className="font-display text-5xl sm:text-6xl tracking-tight leading-[1.02]">
               Make it yours

@@ -179,7 +179,7 @@ function PostHero({ cover, flag, kickerParts, title, tripId, metaLine }) {
                          text-[11px] uppercase tracking-[0.2em] hover:bg-paper hover:text-ink transition-colors duration-300"
             >
               <Play className="h-3.5 w-3.5 fill-current" />
-              Replay the journey
+              Replay this trip
             </Link>
             <Link
               href={`/albums/${tripId}`}
@@ -205,7 +205,7 @@ function ClosingCta({ tripId }) {
             Want to experience your own version of this trip?
           </p>
           <Link
-            href={`/trips/${tripId}/copy`}
+            href={`/trips/${tripId}/copy/select`}
             className="mt-6 inline-flex items-center gap-2.5 bg-accent text-paper rounded-full px-7 py-3.5
                        text-[11px] uppercase tracking-[0.2em] hover:bg-ink transition-colors duration-300"
           >
@@ -222,7 +222,7 @@ function ClosingCta({ tripId }) {
                      text-[11px] uppercase tracking-[0.2em] hover:bg-accent transition-colors duration-300"
         >
           <Play className="h-3.5 w-3.5 fill-current" />
-          Replay this journey
+          Replay this trip
         </Link>
         <Link
           href={`/albums/${tripId}`}

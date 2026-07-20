@@ -57,7 +57,27 @@ const useCopyTripStore = create(
       },
 
       setSelectedExperienceIds(ids) {
-        get().updateSession({ selectedExperienceIds: ids });
+        const existing = get().session;
+        if (!existing) return;
+        // A deselected experience can't stay pinned as must-keep.
+        get().updateSession({
+          selectedExperienceIds: ids,
+          mustKeepExperienceIds: (existing.mustKeepExperienceIds ?? []).filter((id) =>
+            ids.includes(id)
+          ),
+        });
+      },
+
+      // Pin a kept experience so the generated itinerary can't drop it.
+      toggleMustKeep(experienceId) {
+        const existing = get().session;
+        if (!existing) return;
+        const current = existing.mustKeepExperienceIds ?? [];
+        get().updateSession({
+          mustKeepExperienceIds: current.includes(experienceId)
+            ? current.filter((id) => id !== experienceId)
+            : [...current, experienceId],
+        });
       },
 
       // Additions chosen from the neighborhood guide (copyOptions in the

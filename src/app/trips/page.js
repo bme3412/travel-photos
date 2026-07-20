@@ -118,10 +118,10 @@ export default async function TripsIndexPage() {
                 </Link>
                 {copyEnabled && (
                   <Link
-                    href={`/trips/${trip.id}/copy`}
+                    href={`/trips/${trip.id}/copy/select`}
                     className="group flex items-center justify-between px-4 py-3 text-[10px] uppercase tracking-[0.2em] text-accent transition-colors hover:bg-accent hover:text-paper"
                   >
-                    Available to copy
+                    Copy this trip
                     <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
                   </Link>
                 )}

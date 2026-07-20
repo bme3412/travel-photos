@@ -24,6 +24,17 @@ export function buildCopyTripCatalog(albums = []) {
         0
       );
 
+      // Destination-first framing: the card leads with the collection
+      // (moments, quarters); the visit date is trailing metadata.
+      const visitedLabel = blueprint.startDate
+        ? new Date(`${blueprint.startDate}T12:00:00`).toLocaleDateString('en-US', {
+            month: 'long',
+            year: 'numeric',
+          })
+        : album.year
+          ? String(album.year)
+          : null;
+
       return {
         id: tripId,
         name: album.name,
@@ -35,6 +46,8 @@ export function buildCopyTripCatalog(albums = []) {
         themes: blueprint.themes.slice(0, 3),
         experienceCount,
         copyOptionCount,
+        neighborhoodCount: guide.length,
+        visitedLabel,
       };
     })
     .filter(Boolean)
