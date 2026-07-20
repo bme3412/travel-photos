@@ -1,7 +1,7 @@
-// The city layer, derived entirely from the `<city>-<year>` trip-id
+// The destination layer, derived entirely from the `<city>-<year>` trip-id
 // convention (CLAUDE.md) — no registry file. Legacy country-slug albums
-// ("france", "chile") don't match and are deliberately absent: a city hub
-// only claims visits that are grounded as city-scoped trips. Display
+// ("france", "chile") don't match and are deliberately absent: a destination
+// hub only claims visits that are grounded as city-scoped trips. Display
 // name/country come from a visit's blueprint destination; like
 // tripHasBlueprint, this reads the raw JSON without Zod so it stays safe
 // in client bundles.
@@ -16,12 +16,12 @@ export function getCitySlug(albumId) {
   return match ? match[1] : null;
 }
 
-// Every city with at least one `<city>-<year>` album:
+// Every destination with at least one `<city>-<year>` album:
 // [{ slug, name, country, visits: [{ id, year }] }], visits newest first.
 // "Kraków, Poland" -> name "Kraków", country "Poland"; the capitalized
 // slug is only a fallback for visits with no blueprint (same pattern as
 // the neighborhoods index).
-export function getCities(albums = []) {
+export function getDestinations(albums = []) {
   const bySlug = new Map();
   for (const album of albums) {
     const match = String(album?.id ?? '').match(CITY_VISIT_RE);
@@ -39,8 +39,8 @@ export function getCities(albums = []) {
   });
 }
 
-// One city or null. Case-insensitive: album ids are lowercase.
-export function getCity(slug, albums = []) {
+// One destination or null. Case-insensitive: album ids are lowercase.
+export function getDestination(slug, albums = []) {
   const wanted = String(slug ?? '').toLowerCase();
-  return getCities(albums).find((city) => city.slug === wanted) ?? null;
+  return getDestinations(albums).find((city) => city.slug === wanted) ?? null;
 }

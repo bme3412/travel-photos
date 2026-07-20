@@ -1,5 +1,5 @@
-// One city, every visit: the hub above the per-visit lenses. Visits are the
-// `<city>-<year>` albums (derived, never curated — see features/cities);
+// One destination, every visit: the hub above the per-visit lenses. Visits are
+// the `<city>-<year>` albums (derived, never curated — see features/destinations);
 // each card links out to the visit's replay, story, and photographs at
 // their usual paths, plus the copy flow when a blueprint exists. The
 // neighborhood grid reuses the registry joins, so both halves of the page
@@ -14,7 +14,7 @@ import { readAlbums, readPhotos, readLocations, readNarratives } from '../../uti
 import { buildAlbumSummaries } from '../../utils/albumSummaries';
 import { getJournalIndex } from '../../utils/journalContent';
 import { transformToCloudFront } from '../../utils/imageUtils';
-import { getCities, getCity } from '@/features/cities/data';
+import { getDestinations, getDestination } from '@/features/destinations/data';
 import { tripHasBlueprint } from '@/features/copy-trip/availability';
 import { getNeighborhoodsByCity } from '@/features/neighborhoods/data';
 
@@ -22,14 +22,14 @@ export const revalidate = 3600;
 
 export async function generateStaticParams() {
   const albumsData = await readAlbums();
-  return getCities(albumsData?.albums ?? []).map((city) => ({ city: city.slug }));
+  return getDestinations(albumsData?.albums ?? []).map((city) => ({ city: city.slug }));
 }
 
 export async function generateMetadata({ params }) {
   const { city: slug } = await params;
   const albumsData = await readAlbums();
-  const city = getCity(slug, albumsData?.albums ?? []);
-  if (!city) return { title: 'City Not Found | Copy This Trip' };
+  const city = getDestination(slug, albumsData?.albums ?? []);
+  if (!city) return { title: 'Destination Not Found | Copy This Trip' };
   return {
     title: `${city.name}${city.country ? `, ${city.country}` : ''} | Copy This Trip`,
     description: `Every visit to ${city.name}, gathered in one place — trip replays, dispatches, and photographs from ${city.visits
@@ -44,7 +44,7 @@ const splitFlag = (name = '') => {
   return match ? { flag: match[1], title: match[2] } : { flag: null, title: name };
 };
 
-export default async function CityPage({ params }) {
+export default async function DestinationPage({ params }) {
   const { city: slug } = await params;
   const [albumsData, photosData, locationsData, narrativesData] = await Promise.all([
     readAlbums(),
@@ -52,7 +52,7 @@ export default async function CityPage({ params }) {
     readLocations(),
     readNarratives(),
   ]);
-  const city = getCity(slug, albumsData?.albums ?? []);
+  const city = getDestination(slug, albumsData?.albums ?? []);
   if (!city) notFound();
 
   const visitIds = new Set(city.visits.map((v) => v.id));

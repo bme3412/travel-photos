@@ -20,7 +20,7 @@ import {
 import ImageLightbox from '../../components/ImageLightbox';
 import TripViewSwitcher from '../../components/TripViewSwitcher';
 import { tripHasBlueprint } from '@/features/copy-trip/availability';
-import { getCitySlug } from '@/features/cities/data';
+import { getCitySlug } from '@/features/destinations/data';
 import { getTripNeighborhoods } from '@/features/neighborhoods/data';
 import { AddToTripButton, AddToTripToast } from '@/features/copy-trip/AddToTrip';
 
@@ -854,7 +854,7 @@ export default function SceneReplayClient({ trip }) {
           {getCitySlug(trip.id) && (
             <p className="text-[11px] uppercase tracking-[0.2em] text-paper/50">
               <Link
-                href={`/cities/${getCitySlug(trip.id)}`}
+                href={`/destinations/${getCitySlug(trip.id)}`}
                 className="text-paper/75 underline decoration-accent/60 underline-offset-4 hover:text-accent transition-colors"
               >
                 Every visit to {title} →

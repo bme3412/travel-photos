@@ -47,7 +47,7 @@ export default async function NeighborhoodsIndexPage() {
       {cities.map(({ city, hoods }) => (
         <section key={city} className="mt-10 sm:mt-14">
           <h2 className="text-[11px] uppercase tracking-[0.3em] text-muted border-b border-ink/10 pb-3">
-            <Link href={`/cities/${city}`} className="hover:text-ink transition-colors">
+            <Link href={`/destinations/${city}`} className="hover:text-ink transition-colors">
               {cityName(city, hoods)}
             </Link>
           </h2>

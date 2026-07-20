@@ -25,6 +25,17 @@ const nextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
   },
+  async redirects() {
+    return [
+      // The destination hub shipped briefly as /cities before the segment
+      // was renamed to match the product term.
+      {
+        source: '/cities/:city',
+        destination: '/destinations/:city',
+        permanent: true,
+      },
+    ];
+  },
   webpack: (config) => {
     // Add fallback for 'fs' module required by Mapbox GL
     config.resolve.fallback = {
