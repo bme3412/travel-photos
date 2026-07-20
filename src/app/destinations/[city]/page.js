@@ -79,6 +79,10 @@ export default async function DestinationPage({ params }) {
     `${totalPhotos} ${totalPhotos === 1 ? 'photograph' : 'photographs'}`,
   ].filter(Boolean);
 
+  // The two front-door actions: replay the newest visit, copy the place.
+  const newestVisit = city.visits[0];
+  const copyable = city.visits.some((visit) => tripHasBlueprint(visit.id));
+
   return (
     <div className="max-w-7xl mx-auto px-6 py-12 sm:py-16">
       <Link
@@ -102,6 +106,28 @@ export default async function DestinationPage({ params }) {
         <p className="mt-3 text-[11px] uppercase tracking-[0.2em] text-muted">
           {facts.join(' · ')}
         </p>
+        <div className="mt-8 flex flex-wrap items-center gap-4">
+          <Link
+            href={`/trips/${newestVisit.id}`}
+            className="inline-flex items-center gap-2.5 rounded-full bg-ink px-7 py-3.5
+                       text-[11px] uppercase tracking-[0.2em] text-paper shadow-sm
+                       transition-colors duration-300 hover:bg-accent"
+          >
+            <Play className="h-3.5 w-3.5 fill-current" />
+            Replay the trip
+          </Link>
+          {copyable && (
+            <Link
+              href={`/destinations/${city.slug}/copy`}
+              className="inline-flex items-center gap-2.5 rounded-full bg-accent px-7 py-3.5
+                         text-[11px] uppercase tracking-[0.2em] text-paper shadow-sm
+                         transition-colors duration-300 hover:bg-ink"
+            >
+              Copy this trip
+              <ArrowRight className="h-3.5 w-3.5" />
+            </Link>
+          )}
+        </div>
       </header>
 
       <section className="mt-10 sm:mt-14">

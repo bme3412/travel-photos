@@ -3,16 +3,18 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import { ArrowRight, Play } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { copyFlowHref } from '@/features/copy-trip/routes';
+import { getCitySlug } from '@/features/destinations/data';
 
 const splitFlag = (name = '') => {
   const match = name.match(/^([\u{1F1E6}-\u{1F1FF}]{2})\s*(.*)$/u);
   return match ? { flag: match[1], title: match[2] } : { flag: null, title: name };
 };
 
-// The whole card opens the replay — "show me Paris" — which itself opens on a
-// conversion-first Copy card. The one explicit action here is the copy button.
+// The whole card opens the destination page — "show me Paris" — where the
+// visitor chooses Replay or Copy. The one explicit action here is the copy
+// button, a shortcut straight into the flow.
 export default function CopyTripCard({ trip, index }) {
   const router = useRouter();
   const { flag, title } = splitFlag(trip.name);
@@ -30,7 +32,7 @@ export default function CopyTripCard({ trip, index }) {
 
   return (
     <Link
-      href={`/trips/${trip.id}`}
+      href={`/destinations/${getCitySlug(trip.id)}`}
       className="group relative block min-h-[380px] overflow-hidden bg-ink text-paper"
     >
       {trip.coverPhoto?.url && (
@@ -55,8 +57,8 @@ export default function CopyTripCard({ trip, index }) {
                    group-hover:opacity-100 group-hover:translate-y-0
                    max-sm:opacity-100 max-sm:translate-y-0"
       >
-        <Play className="h-3 w-3 fill-current" />
-        Replay
+        Explore {title}
+        <ArrowRight className="h-3 w-3" />
       </span>
 
       <div className="relative flex min-h-[380px] flex-col justify-between p-5">
